@@ -35,48 +35,16 @@
 
 
 
-# Modules
-
-| Module        | Description                        |
-| ------------- | ---------------------------------- |
-| ATFoundation  | Foundation extension and wrapper   |
-| ATProgressHUD | a easy-to-use pop view             |
-| ATCarousel    | a carousel view                    |
-| ATDrawer      | drawer gesture controller          |
-| ATTabBar      | a slideable tabbar view controller |
-
-
-
-
-
 # Documentation
 
-These documents have published to author [**@xaoxuu**](http://www.jianshu.com/users/8a50e44f862a/latest_articles) 's  [**AXKit开源框架**](http://www.jianshu.com/notebooks/6236581/latest) subject。
+**Click here to [read Documentation of AXKit on GitBook](https://docs.axkit.xaoxuu.com)**.
 
-### ATFoundation
+Or go to author [**@xaoxuu**](http://www.jianshu.com/users/8a50e44f862a/latest_articles) 's  [**AXKit开源框架**](http://www.jianshu.com/notebooks/6236581/latest) subject。
 
-Advice on this part of the global header file is used, contains a lot of the strengthening of the basis functions.
 
 - [**FileStream chained wrapper, more elegantly access sandbox files**](http://www.jianshu.com/p/6e9f562d81d2)
 
 - [**Get Color from UIImageView**](http://www.jianshu.com/p/829624b5ffe1)
-
-
-### ATProgressHUD
-
-Prompt dialog box controls.
-
-### ATDrawer
-
-Lateral spreads gestures framework.
-
-### ATCarousel
-
-Carousel view framework.
-
-### ATTabBar
-
-Slideable TabBar framework (currently only at the top of the title bar of the TabBar)
 
 
 
@@ -128,52 +96,17 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 
 
 
-
-
-# 模块
-
-| 模块            | 描述                       |
-| ------------- | ------------------------ |
-| ATFoundation  | Foundation 的扩展和增强        |
-| ATProgressHUD | 一个简单易用的提示框               |
-| ATCarousel    | 轮播图                      |
-| ATDrawer      | 侧滑手势框架                   |
-| ATTabBar      | 可滑动的TabBar(目前只有顶部TabBar) |
-
-
-
-
-
 # 详细使用文档
 
-这些文档发布在作者[**@xaoxuu**](http://www.jianshu.com/users/8a50e44f862a/latest_articles)的简书[**AXKit开源框架**](http://www.jianshu.com/notebooks/6236581/latest)专题。
 
-### ATFoundation
+**AXKit的文档发布在[GitBook](https://docs.axkit.xaoxuu.com)**.
 
-这一部分建议放在全局头文件中使用，包含了很多基础功能的强化
+或者去作者[**@xaoxuu**](http://www.jianshu.com/users/8a50e44f862a/latest_articles)的简书[**AXKit开源框架**](http://www.jianshu.com/notebooks/6236581/latest)专题查看。
+
 
 - [**FileStream链式封装，更优雅地存取沙盒文件**](http://www.jianshu.com/p/6e9f562d81d2)
 
 - [**从UIImageView中指定点取色**](http://www.jianshu.com/p/829624b5ffe1)
-
-
-### ATProgressHUD
-
-提示框控件
-
-### ATDrawer
-
-侧滑手势
-
-### ATCarousel
-
-轮播图
-
-### ATTabBar
-
-支持滑动的TabBar框架（目前只有顶部标题栏的TabBar）
-
-
 
 
 
