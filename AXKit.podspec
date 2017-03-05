@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/xaoxuu/AXKit.git", :tag => "#{s.version}", :submodules => true}
 
   # s.source_files  = "AXKit/**/*.{h,m}"
-  s.public_header_files = 'AXKit/AXKit.h'
-  s.source_files = 'AXKit/*.{h,m}'
+  s.public_header_files = 'AXKit/**/*.{h}'
+  s.source_files = 'AXKit/**/*.{h,m}'
 
   # s.exclude_files = "Classes/Exclude"
   # s.public_header_files = 'AXKit/**/*.{h}'
