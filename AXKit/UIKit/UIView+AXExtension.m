@@ -8,6 +8,7 @@
 
 #import "UIView+AXExtension.h"
 #import "Foundation+CoreGraphics.h"
+#import "UIViewController+AXExtension.h"
 
 inline UIView *UIViewWithHeight(CGFloat height){
     return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, height)];
@@ -24,6 +25,10 @@ inline UIView *UIViewWithHeight(CGFloat height){
             return (UIViewController *)responder;
     }
     return nil;
+}
+
+- (nullable UIViewController *)rootVC{
+    return self.controller.rootVC;
 }
 
 - (void)ax_removeAllSubviews:(Class)subClass {

@@ -21,7 +21,7 @@
 
 
 // result macro
-#define AXLogBOOL(BOOL) NSLog((@"\n➤ func:%s " "line:%d\n" "%@" "\n\n"), __FUNCTION__, __LINE__, BOOL ? @"🔵success" : @"🔴fail")
+#define AXLogBOOL(BOOL) NSLog((@"\n➤ func:%s " "line:%d\n" "%@" "\n\n"), __FUNCTION__, __LINE__, BOOL ? @"🔵true" : @"🔴false")
 
 #define AXLogSuccess(format, ...) NSLog((@"\n➤ func:%s " "line:%d\n" "🔵success: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 

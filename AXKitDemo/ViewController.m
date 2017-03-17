@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AXKit/AXKit.h>
 
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *themeview;
 @property (weak, nonatomic) IBOutlet UIView *accentview;
@@ -23,10 +24,36 @@
     
     AXLogOBJ(self);
     
-    
-    
+    [NSUserDefaults ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
+        [defaultUser ax_cacheBool:1 key:@""];
+        
+    }];
+    [NSUserDefaults ax_readUserDefaultBoolWithKey:@""];
 }
 
+- (IBAction)btn:(UIButton *)sender {
+    AXLogOBJ(sender.rootVC);
+    switch (sender.tag) {
+        case 0:
+            AXLogOBJ(@"a".readUserDefaultValue);
+            AXLogBOOL(@"b".readUserDefaultBool);
+            AXLogOBJ(@"c".readUserDefaultValue);
+            break;
+        case 1:
+            AXLogOBJ(@"a".readUserDefaultValue);
+            AXLogBOOL(@"b".readUserDefaultBool);
+            AXLogOBJ(@"c".readUserDefaultValue);
+            break;
+        case 2:
+            AXLogOBJ(@"a".readUserDefaultValue);
+            AXLogBOOL(@"b".readUserDefaultBool);
+            AXLogOBJ(@"c".readUserDefaultValue);
+            break;
+            
+        default:
+            break;
+    }
+}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
@@ -34,6 +61,8 @@
     self.themeview.backgroundColor = axColor.theme;
     self.accentview.backgroundColor = axColor.accent;
     AXLogFunc;
+    
+    
     
 }
 

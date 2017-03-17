@@ -29,6 +29,13 @@ CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
  */
 - (nullable UIViewController *)controller;
 
+/**
+ 获取根控制器
+ 
+ @return 根控制器rootVC
+ */
+- (nullable UIViewController *)rootVC;
+
 /*!
  *	@author Aesir Titan, 2016-08-31
  *

@@ -30,6 +30,11 @@
 		8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8579EF1B1E6BEE4F00C33881 /* AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8579EF201E6BEE4F00C33881 /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
 		8579EF211E6BEE4F00C33881 /* AXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
+		CD2E9F331E7BC1BC00C57CA6 /* SecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */; };
+		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
 		CDAB58DF1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB58E01E6BF2160017CA1E /* CALayer+AXChainedWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -119,6 +124,12 @@
 		8579EF191E6BEE4F00C33881 /* AXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8579EF1B1E6BEE4F00C33881 /* AXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXKit.h; sourceTree = "<group>"; };
 		8579EF1C1E6BEE4F00C33881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
+		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
+		CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecViewController.h; sourceTree = "<group>"; };
+		CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecViewController.m; sourceTree = "<group>"; };
+		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
+		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
 		CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+AXChainedWrapper.h"; sourceTree = "<group>"; };
 		CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+AXChainedWrapper.m"; sourceTree = "<group>"; };
 		CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXLogExtension.h"; sourceTree = "<group>"; };
@@ -214,6 +225,8 @@
 				8579EF011E6BEDF900C33881 /* AppDelegate.m */,
 				8579EF031E6BEDF900C33881 /* ViewController.h */,
 				8579EF041E6BEDF900C33881 /* ViewController.m */,
+				CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */,
+				CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */,
 				8579EF061E6BEDF900C33881 /* Main.storyboard */,
 				8579EF091E6BEDF900C33881 /* Assets.xcassets */,
 				8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */,
@@ -257,6 +270,8 @@
 				CDAB58EE1E6BF5A20017CA1E /* NSString+AXExtension.m */,
 				CDAB58F11E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.h */,
 				CDAB58F21E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m */,
+				CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */,
+				CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */,
 				CDAB58F51E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h */,
 				CDAB58F61E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m */,
 				CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */,
@@ -301,6 +316,8 @@
 				CDAB593A1E6BFE700017CA1E /* UIView+AXFrameWrapper.m */,
 				CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */,
 				CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */,
+				CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */,
+				CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -336,7 +353,9 @@
 				CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */,
 				CDAB59331E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.h in Headers */,
 				CDAB59231E6BFC2F0017CA1E /* UIImageView+AXGetColor.h in Headers */,
+				CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */,
 				CDAB58F31E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.h in Headers */,
+				CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +406,7 @@
 		8579EEF21E6BEDF900C33881 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Titan Studio";
 				TargetAttributes = {
 					8579EEF91E6BEDF900C33881 = {
@@ -468,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2E9F331E7BC1BC00C57CA6 /* SecViewController.m in Sources */,
 				8579EF051E6BEDF900C33881 /* ViewController.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
@@ -482,6 +502,7 @@
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,
 				CDAB58EC1E6BF4EC0017CA1E /* NSObject+AXBlockWrapper.m in Sources */,
+				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,
 				CDAB58F41E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m in Sources */,
 				CDAB59141E6BF9FE0017CA1E /* UIColorManager.m in Sources */,
 				CDAB593C1E6BFE700017CA1E /* UIView+AXFrameWrapper.m in Sources */,
@@ -492,6 +513,7 @@
 				CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */,
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
+				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
 				CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */,
 				CDAB59101E6BF9B90017CA1E /* UIColor+MDColorPack.m in Sources */,
@@ -553,6 +575,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -600,6 +623,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -750,6 +774,7 @@
 				CDAB59481E6C0F270017CA1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
