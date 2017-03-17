@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)Btn:(UIButton *)sender {
-    AXLogOBJ(sender.rootVC);
+    
 }
 
 /*

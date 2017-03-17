@@ -27,9 +27,11 @@ inline UIView *UIViewWithHeight(CGFloat height){
     return nil;
 }
 
+/*
 - (nullable UIViewController *)rootVC{
     return self.controller.rootVC;
 }
+ */
 
 - (void)ax_removeAllSubviews:(Class)subClass {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {

@@ -32,7 +32,7 @@
 }
 
 - (IBAction)btn:(UIButton *)sender {
-    AXLogOBJ(sender.rootVC);
+    
     switch (sender.tag) {
         case 0:
             AXLogOBJ(@"a".readUserDefaultValue);
