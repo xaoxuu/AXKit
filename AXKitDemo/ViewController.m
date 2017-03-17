@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    AXLogOBJ(self);
     
     
     
@@ -33,7 +33,7 @@
     self.view.backgroundColor = axColor.background;
     self.themeview.backgroundColor = axColor.theme;
     self.accentview.backgroundColor = axColor.accent;
-    
+    AXLogFunc;
     
 }
 
