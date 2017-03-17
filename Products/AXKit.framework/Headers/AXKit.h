@@ -30,6 +30,8 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/NSObject+AXBlockWrapper.h>
 // 对NSTimer的block封装，基于<BlocksKit>改编
 #import <AXKit/NSTimer+AXBlockWrapper.h>
+// 对NSUserDefaults的封装
+#import <AXKit/NSUserDefaults+AXWrapper.h>
 
 
 #pragma mark - UIKit
@@ -67,6 +69,9 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/UIView+AXFrameWrapper.h>
 // UIView的手势封装，便于快速给一个view添加手势
 #import <AXKit/UIView+AXGestureExtension.h>
+
+// UIViewController的功能扩展
+#import <AXKit/UIViewController+AXExtension.h>
 
 // UITextView的功能扩展
 #import <AXKit/UITextView+AXExtension.h>
