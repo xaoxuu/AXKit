@@ -90,22 +90,22 @@ static inline AXEventTarget *AXTargetWith(__kindof UIControl *obj, UIControlEven
 
 @implementation UIButton (AXBlockWrapper)
 
-- (void)ax_addEventHandler:(void (^)(UIButton *sender))handler forControlEvents:(UIControlEvents)controlEvents {
+- (void)ax_addEventHandler:(void (^)(__kindof UIButton *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
     AXDefaultTargetFor(controlEvents);
 }
 
-- (void)ax_addTouchDownHandler:(void (^)(UIButton *sender))handler{
+- (void)ax_addTouchDownHandler:(void (^)(__kindof UIButton *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventTouchDown);
 }
 
-- (void)ax_addTouchUpInsideHandler:(void (^)(UIButton *sender))handler{
+- (void)ax_addTouchUpInsideHandler:(void (^)(__kindof UIButton *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventTouchUpInside);
 }
 
-- (void)ax_addTouchUpInsideHandler:(void (^)(UIButton *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
+- (void)ax_addTouchUpInsideHandler:(void (^)(__kindof UIButton *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
     // add a control events to target
     AXEventTarget *target = AXDefaultTargetFor(UIControlEventTouchUpInside);
     [target setupAnimationWithView:self scale:scale duration:duration];
@@ -118,34 +118,34 @@ static inline AXEventTarget *AXTargetWith(__kindof UIControl *obj, UIControlEven
 
 @implementation UISlider (AXBlockWrapper)
 
-- (void)ax_addEventHandler:(void (^)(UISlider *sender))handler forControlEvents:(UIControlEvents)controlEvents {
+- (void)ax_addEventHandler:(void (^)(__kindof UISlider *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
     AXDefaultTargetFor(controlEvents);
 }
 
-- (void)ax_addTouchDownHandler:(void (^)(UISlider *sender))handler{
+- (void)ax_addTouchDownHandler:(void (^)(__kindof UISlider *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventTouchDown);
 }
 
-- (void)ax_addTouchDownHandler:(void (^)(UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
+- (void)ax_addTouchDownHandler:(void (^)(__kindof UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
     // add a control events to target
     AXEventTarget *target = AXDefaultTargetFor(UIControlEventTouchDown);
     [target setupAnimationWithView:self scale:scale duration:duration];
 }
 
-- (void)ax_addValueChangedHandler:(void (^)(UISlider *sender))handler{
+- (void)ax_addValueChangedHandler:(void (^)(__kindof UISlider *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventValueChanged);
 }
 
-- (void)ax_addTouchUpHandler:(void (^)(UISlider *sender))handler{
+- (void)ax_addTouchUpHandler:(void (^)(__kindof UISlider *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventTouchUpInside);
     AXDefaultTargetFor(UIControlEventTouchUpOutside);
 }
 
-- (void)ax_addTouchUpHandler:(void (^)(UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
+- (void)ax_addTouchUpHandler:(void (^)(__kindof UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
     // add a control events to target
     AXEventTarget *target = AXDefaultTargetFor(UIControlEventTouchUpInside);
     [target setupAnimationWithView:self scale:scale duration:duration];
@@ -160,22 +160,22 @@ static inline AXEventTarget *AXTargetWith(__kindof UIControl *obj, UIControlEven
 
 @implementation UISwitch (AXBlockWrapper)
 
-- (void)ax_addEventHandler:(void (^)(UISwitch *sender))handler forControlEvents:(UIControlEvents)controlEvents {
+- (void)ax_addEventHandler:(void (^)(__kindof UISwitch *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
     AXDefaultTargetFor(controlEvents);
 }
 
-- (void)ax_addTouchDownHandler:(void (^)(UISwitch *sender))handler{
+- (void)ax_addTouchDownHandler:(void (^)(__kindof UISwitch *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventTouchDown);
 }
 
-- (void)ax_addValueChangedHandler:(void (^)(UISwitch *sender))handler{
+- (void)ax_addValueChangedHandler:(void (^)(__kindof UISwitch *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventValueChanged);
 }
 
-- (void)ax_addTouchUpInsideHandler:(void (^)(UISwitch *sender))handler{
+- (void)ax_addTouchUpInsideHandler:(void (^)(__kindof UISwitch *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventTouchUpInside);
 }
@@ -187,12 +187,12 @@ static inline AXEventTarget *AXTargetWith(__kindof UIControl *obj, UIControlEven
 
 @implementation UISegmentedControl (AXBlockWrapper)
 
-- (void)ax_addEventHandler:(void (^)(UISegmentedControl *sender))handler forControlEvents:(UIControlEvents)controlEvents {
+- (void)ax_addEventHandler:(void (^)(__kindof UISegmentedControl *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
     AXDefaultTargetFor(controlEvents);
 }
 
-- (void)ax_addValueChangedHandler:(void (^)(UISegmentedControl *sender))handler{
+- (void)ax_addValueChangedHandler:(void (^)(__kindof UISegmentedControl *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventValueChanged);
 }
@@ -204,38 +204,38 @@ static inline AXEventTarget *AXTargetWith(__kindof UIControl *obj, UIControlEven
 
 @implementation UITextField (AXBlockWrapper)
 
-- (void)ax_addEventHandler:(void (^)(UITextField *sender))handler forControlEvents:(UIControlEvents)controlEvents {
+- (void)ax_addEventHandler:(void (^)(__kindof UITextField *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
     AXDefaultTargetFor(controlEvents);
 }
 
-- (void)ax_addEditingBeginHandler:(void (^)(UITextField *sender))handler{
+- (void)ax_addEditingBeginHandler:(void (^)(__kindof UITextField *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventEditingDidBegin);
 }
 
-- (void)ax_addEditingBeginHandler:(void (^)(UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
+- (void)ax_addEditingBeginHandler:(void (^)(__kindof UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
     // add a control events to target
     AXEventTarget *target = AXDefaultTargetFor(UIControlEventEditingDidBegin);
     [target setupAnimationWithView:self scale:scale duration:duration];
 }
 
-- (void)ax_addEditingChangedHandler:(void (^)(UITextField *sender))handler{
+- (void)ax_addEditingChangedHandler:(void (^)(__kindof UITextField *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventEditingChanged);
 }
 
-- (void)ax_addEditingEndOnExitHandler:(void (^)(UITextField *sender))handler{
+- (void)ax_addEditingEndOnExitHandler:(void (^)(__kindof UITextField *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventEditingDidEndOnExit);
 }
 
-- (void)ax_addEditingEndHandler:(void (^)(UITextField *sender))handler{
+- (void)ax_addEditingEndHandler:(void (^)(__kindof UITextField *sender))handler{
     // add a control events to target
     AXDefaultTargetFor(UIControlEventEditingDidEnd);
 }
 
-- (void)ax_addEditingEndHandler:(void (^)(UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
+- (void)ax_addEditingEndHandler:(void (^)(__kindof UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
     // add a control events to target
     AXEventTarget *target =  AXDefaultTargetFor(UIControlEventEditingDidEnd);
     [target setupAnimationWithView:self scale:scale duration:duration];

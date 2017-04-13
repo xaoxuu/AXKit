@@ -95,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param rotation 双指旋转手势
  @param handler  处理手势的block
  
- rotation.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
+ sender.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
  sender.rotation = 0;
  */
 - (void)ax_addRotationGesture:(nullable void (^)(UIRotationGestureRecognizer *sender))rotation handler:(void (^)(UIRotationGestureRecognizer *sender))handler;

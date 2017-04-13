@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import <AXKit/AXKit.h>
-
-
+#import "MyButton.h"
+#import "MyButton2.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *themeview;
 @property (weak, nonatomic) IBOutlet UIView *accentview;
+@property (weak, nonatomic) IBOutlet MyButton2 *myBtn;
 
 @end
 
@@ -23,12 +24,26 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     AXLogOBJ(self);
-    
+    AXLogSuccess();
     [NSUserDefaults ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
         [defaultUser ax_cacheBool:1 key:@""];
         
     }];
     [NSUserDefaults ax_readUserDefaultBoolWithKey:@""];
+    
+    // 要执行的代码
+    [self.view ax_addRotationGesture:^(UIRotationGestureRecognizer * _Nonnull sender) {
+        sender.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
+        sender.rotation = 0;
+    } handler:^(UIRotationGestureRecognizer * _Nonnull sender) {
+        // 要执行的代码
+    }];
+    
+    
+    [self.myBtn ax_addTouchUpInsideHandler:^(__kindof UIButton * _Nonnull sender) {
+        AXLogOBJ(NSStringFromCGFloat(1.2));
+    }];
+    
 }
 
 - (IBAction)btn:(UIButton *)sender {

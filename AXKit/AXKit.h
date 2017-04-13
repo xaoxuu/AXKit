@@ -5,6 +5,11 @@
 //  Created by xaoxuu on 05/03/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
+//  Homepage  https://axkit.xaoxuu.com
+//
+//  GitHub    https://github.com/xaoxuu/AXKit
+//
+//
 
 #import <UIKit/UIKit.h>
 

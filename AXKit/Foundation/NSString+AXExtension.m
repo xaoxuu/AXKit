@@ -11,19 +11,19 @@
 
 
 NSString *NSStringFromInt32(int x){
-    return [NSString stringWithFormat:@"%d",x];
+    return [NSNumber numberWithInt:x].stringValue;
 }
 
 NSString *NSStringFromNSInteger(NSInteger x){
-    return [NSString stringWithFormat:@"%ld",(long)x];
+    return [NSNumber numberWithInteger:x].stringValue;
 }
 
 NSString *NSStringFromNSUInteger(NSUInteger x){
-    return [NSString stringWithFormat:@"%ld",(unsigned long)x];
+    return [NSNumber numberWithUnsignedInteger:x].stringValue;
 }
 
 NSString *NSStringFromCGFloat(CGFloat x){
-    return [NSString stringWithFormat:@"%lf",x];
+    return [NSNumber numberWithDouble:x].stringValue;
 }
 
 NSString *NSStringFromPointer(id x){

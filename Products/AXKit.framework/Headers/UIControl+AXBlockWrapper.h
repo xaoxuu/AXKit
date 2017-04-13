@@ -63,21 +63,21 @@ NS_ASSUME_NONNULL_BEGIN
  @param handler       处理事件的block
  @param controlEvents 事件
  */
-- (void)ax_addEventHandler:(void (^)(UIButton *sender))handler forControlEvents:(UIControlEvents)controlEvents;
+- (void)ax_addEventHandler:(void (^)(__kindof UIButton *sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
 /**
  添加一个TouchDown事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addTouchDownHandler:(void (^)(UIButton *sender))handler;
+- (void)ax_addTouchDownHandler:(void (^)(__kindof UIButton *sender))handler;
 
 /**
  添加一个TouchUpInside事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addTouchUpInsideHandler:(void (^)(UIButton *sender))handler;
+- (void)ax_addTouchUpInsideHandler:(void (^)(__kindof UIButton *sender))handler;
 
 /**
  添加一个TouchUpInside事件，并附加动画
@@ -86,7 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param scale    动画的缩放比例
  @param duration 动画持续时间
  */
-- (void)ax_addTouchUpInsideHandler:(nullable void (^)(UIButton *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
+- (void)ax_addTouchUpInsideHandler:(nullable void (^)(__kindof UIButton *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
 
 @end
@@ -100,14 +100,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param handler       处理事件的block
  @param controlEvents 事件
  */
-- (void)ax_addEventHandler:(void (^)(UISlider *sender))handler forControlEvents:(UIControlEvents)controlEvents;
+- (void)ax_addEventHandler:(void (^)(__kindof UISlider *sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
 /**
  添加一个TouchDown事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addTouchDownHandler:(void (^)(UISlider *sender))handler;
+- (void)ax_addTouchDownHandler:(void (^)(__kindof UISlider *sender))handler;
 
 /**
  添加一个TouchDown事件，并附加动画
@@ -116,7 +116,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param scale    动画的缩放比例
  @param duration 动画持续时间
  */
-- (void)ax_addTouchDownHandler:(nullable void (^)(UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
+- (void)ax_addTouchDownHandler:(nullable void (^)(__kindof UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
 
 /**
@@ -124,14 +124,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param handler 处理事件的block
  */
-- (void)ax_addValueChangedHandler:(void (^)(UISlider *sender))handler;
+- (void)ax_addValueChangedHandler:(void (^)(__kindof UISlider *sender))handler;
 
 /**
  添加一个TouchUp事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addTouchUpHandler:(void (^)(UISlider *sender))handler;
+- (void)ax_addTouchUpHandler:(void (^)(__kindof UISlider *sender))handler;
 
 /**
  添加一个TouchUp事件，并附加动画
@@ -140,7 +140,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param scale    动画的缩放比例
  @param duration 动画持续时间
  */
-- (void)ax_addTouchUpHandler:(nullable void (^)(UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
+- (void)ax_addTouchUpHandler:(nullable void (^)(__kindof UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
 
 @end
@@ -154,28 +154,28 @@ NS_ASSUME_NONNULL_BEGIN
  @param handler       处理事件的block
  @param controlEvents 事件
  */
-- (void)ax_addEventHandler:(void (^)(UISwitch *sender))handler forControlEvents:(UIControlEvents)controlEvents;
+- (void)ax_addEventHandler:(void (^)(__kindof UISwitch *sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
 /**
  添加一个TouchDown事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addTouchDownHandler:(void (^)(UISwitch *sender))handler;
+- (void)ax_addTouchDownHandler:(void (^)(__kindof UISwitch *sender))handler;
 
 /**
  添加一个ValueChanged事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addValueChangedHandler:(void (^)(UISwitch *sender))handler;
+- (void)ax_addValueChangedHandler:(void (^)(__kindof UISwitch *sender))handler;
 
 /**
  添加一个TouchUp事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addTouchUpInsideHandler:(void (^)(UISwitch *sender))handler;
+- (void)ax_addTouchUpInsideHandler:(void (^)(__kindof UISwitch *sender))handler;
 
 @end
 
@@ -188,14 +188,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param handler       处理事件的block
  @param controlEvents 事件
  */
-- (void)ax_addEventHandler:(void (^)(UISegmentedControl *sender))handler forControlEvents:(UIControlEvents)controlEvents;
+- (void)ax_addEventHandler:(void (^)(__kindof UISegmentedControl *sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
 /**
  添加一个ValueChanged事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addValueChangedHandler:(void (^)(UISegmentedControl *sender))handler;
+- (void)ax_addValueChangedHandler:(void (^)(__kindof UISegmentedControl *sender))handler;
 
 
 @end
@@ -209,14 +209,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param handler       处理事件的block
  @param controlEvents 事件
  */
-- (void)ax_addEventHandler:(void (^)(UITextField *sender))handler forControlEvents:(UIControlEvents)controlEvents;
+- (void)ax_addEventHandler:(void (^)(__kindof UITextField *sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
 /**
  添加一个EditingBegin事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addEditingBeginHandler:(void (^)(UITextField *sender))handler;
+- (void)ax_addEditingBeginHandler:(void (^)(__kindof UITextField *sender))handler;
 
 /**
  添加一个EditingBegin事件，并附加动画
@@ -225,28 +225,28 @@ NS_ASSUME_NONNULL_BEGIN
  @param scale    动画的缩放比例
  @param duration 动画持续时间
  */
-- (void)ax_addEditingBeginHandler:(nullable void (^)(UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
+- (void)ax_addEditingBeginHandler:(nullable void (^)(__kindof UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
 /**
  添加一个EditingChanged事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addEditingChangedHandler:(void (^)(UITextField *sender))handler;
+- (void)ax_addEditingChangedHandler:(void (^)(__kindof UITextField *sender))handler;
 
 /**
  添加一个EditingEndOnExit事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addEditingEndOnExitHandler:(void (^)(UITextField *sender))handler;
+- (void)ax_addEditingEndOnExitHandler:(void (^)(__kindof UITextField *sender))handler;
 
 /**
  添加一个EditingEnd事件
  
  @param handler       处理事件的block
  */
-- (void)ax_addEditingEndHandler:(void (^)(UITextField *sender))handler;
+- (void)ax_addEditingEndHandler:(void (^)(__kindof UITextField *sender))handler;
 
 /**
  添加一个EditingEnd事件，并附加动画
@@ -255,7 +255,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param scale    动画的缩放比例
  @param duration 动画持续时间
  */
-- (void)ax_addEditingEndHandler:(nullable void (^)(UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
+- (void)ax_addEditingEndHandler:(nullable void (^)(__kindof UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
 
 @end

@@ -35,6 +35,8 @@
 		CD2E9F331E7BC1BC00C57CA6 /* SecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
+		CD784DC01E9CA0F80056EF1E /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD784DBF1E9CA0F80056EF1E /* MyButton.m */; };
+		CD784DC31E9CA21E0056EF1E /* MyButton2.m in Sources */ = {isa = PBXBuildFile; fileRef = CD784DC21E9CA21E0056EF1E /* MyButton2.m */; };
 		CDAB58DF1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB58E01E6BF2160017CA1E /* CALayer+AXChainedWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -130,6 +132,10 @@
 		CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecViewController.m; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
+		CD784DBE1E9CA0F80056EF1E /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		CD784DBF1E9CA0F80056EF1E /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		CD784DC11E9CA21E0056EF1E /* MyButton2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton2.h; sourceTree = "<group>"; };
+		CD784DC21E9CA21E0056EF1E /* MyButton2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton2.m; sourceTree = "<group>"; };
 		CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+AXChainedWrapper.h"; sourceTree = "<group>"; };
 		CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+AXChainedWrapper.m"; sourceTree = "<group>"; };
 		CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXLogExtension.h"; sourceTree = "<group>"; };
@@ -225,6 +231,10 @@
 				8579EF011E6BEDF900C33881 /* AppDelegate.m */,
 				8579EF031E6BEDF900C33881 /* ViewController.h */,
 				8579EF041E6BEDF900C33881 /* ViewController.m */,
+				CD784DBE1E9CA0F80056EF1E /* MyButton.h */,
+				CD784DBF1E9CA0F80056EF1E /* MyButton.m */,
+				CD784DC11E9CA21E0056EF1E /* MyButton2.h */,
+				CD784DC21E9CA21E0056EF1E /* MyButton2.m */,
 				CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */,
 				CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */,
 				8579EF061E6BEDF900C33881 /* Main.storyboard */,
@@ -489,8 +499,10 @@
 			files = (
 				CD2E9F331E7BC1BC00C57CA6 /* SecViewController.m in Sources */,
 				8579EF051E6BEDF900C33881 /* ViewController.m in Sources */,
+				CD784DC31E9CA21E0056EF1E /* MyButton2.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
+				CD784DC01E9CA0F80056EF1E /* MyButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
