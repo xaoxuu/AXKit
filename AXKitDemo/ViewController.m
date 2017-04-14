@@ -34,7 +34,8 @@
     }];
     [NSUserDefaults ax_readUserDefaultBoolWithKey:@""];
     
-    
+    NSString *str = @"abc".append(@"d").appendCGFloat(1.2).appendReturn().appendNSInteger(50);
+    NSLog(@"%@",str);
     
     
     self.timer = [NSTimer ax_scheduledTimerWithTimeInterval:10 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {

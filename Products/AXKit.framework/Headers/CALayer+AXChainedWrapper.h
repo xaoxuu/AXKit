@@ -14,37 +14,46 @@
 #pragma mark - corner
 
 /**
- clip
+ 剪裁成圆形（适用用于头像）
  */
 - (CALayer *(^)())ax_maskToCircle;
 
 #pragma mark - shadow
 
+
 /**
- AXShadow
+ 阴影效果
+
+ - AXShadowDownLight: 适用于浅色NavigationBar
+ - AXShadowDownNormal: 适用于深色NavigationBar
+ - AXShadowDownFloat: 适用于浮起的按钮
+ - AXShadowUpLight: 适用于浅色的TabBar
+ - AXShadowUpNormal: 适用于深色的TabBar
+ - AXShadowCenterLight: 适用于浅色的按钮、图片等控件
+ - AXShadowCenterNormal: 适用于普通的按钮、图片等控件
+ - AXShadowCenterHeavy: 适用于深色的按钮、图片等控件
  */
 typedef NS_ENUM(NSUInteger,AXShadow) {
-    // for light top bar
+    
     AXShadowDownLight,
-    // for normal top bar
+    
     AXShadowDownNormal,
-    // for raised button
+    
     AXShadowDownFloat,
-    // for light bottom bar
+    
     AXShadowUpLight,
-    // for normal bottom bar
+    
     AXShadowUpNormal,
-    // for light view
+    
     AXShadowCenterLight,
-    // for normal view
+    
     AXShadowCenterNormal,
-    // for dark view
+    
     AXShadowCenterHeavy,
 };
 
-
 /**
- shadow
+ 阴影效果
  */
 - (CALayer *(^)(AXShadow type))ax_shadow;
 
@@ -52,14 +61,15 @@ typedef NS_ENUM(NSUInteger,AXShadow) {
 
 
 /**
- a white border with width
+ 指定宽度的白色边框
  */
 - (CALayer *(^)(CGFloat width))ax_whiteBorder;
 
 
 /**
- a theme color border with width
+ 指定宽度的主题色边框
  */
 - (CALayer *(^)(CGFloat width))ax_themeBorder;
+
 
 @end

@@ -84,6 +84,9 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 // UIFont的封装
 #import <AXKit/UIFont+AXWrapper.h>
 
+// UIResponder
+#import <AXKit/UIResponder+AXExtension.h>
 
-
+// UINavigationController
+#import <AXKit/UINavigationController+AXExtension.h>
 

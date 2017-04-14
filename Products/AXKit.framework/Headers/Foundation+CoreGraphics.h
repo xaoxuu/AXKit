@@ -69,6 +69,9 @@ CG_EXTERN CGRect CGRectWithTopAndBottomMargin(CGFloat top, CGFloat bottom);
 CG_EXTERN CGRect CGRectWithViewInScreen(UIView *targetView);
 
 
+/**
+ NSUInteger类型的取值范围（最小值，最大值）
+ */
 struct AXUIntegerRange {
     NSUInteger minValue;
     NSUInteger maxValue;
@@ -76,39 +79,42 @@ struct AXUIntegerRange {
 
 typedef struct AXUIntegerRange AXUIntegerRange;
 
+
 /**
- get a length range
+ 产生一个NSUInteger取值范围
 
- @param minValue min length
- @param maxValue max length
-
- @return a length range
+ @param minValue 最小NSUInteger值
+ @param maxValue 最大NSUInteger值
+ @return 长度范围
  */
 CG_EXTERN AXUIntegerRange AXUIntegerRangeMake(NSUInteger minValue, NSUInteger maxValue);
 
+
 /**
- get a random from length range
+ 产生一个随机NSUInteger
 
- @param range langth range
-
- @return a random length
+ @param range NSUInteger取值范围
+ @return 随机的NSUInteger
  */
 CG_EXTERN NSUInteger AXRandomUIntegerFrom(AXUIntegerRange range);
 
 
+/**
+ Float类型的取值范围（最小值，最大值）
+ */
 struct AXFloatRange{
     CGFloat minValue;
     CGFloat maxValue;
 };
 typedef struct AXFloatRange AXFloatRange;
 
+
 /**
- get a CGFloat range
+ 产生一个Float取值范围
 
- @param minValue min value
- @param maxValue max value
-
- @return a CGFloat range
+ @param minValue 最小Float值
+ @param maxValue 最大Float值
+ @return Float范围
  */
 CG_EXTERN AXFloatRange AXFloatRangeMake(CGFloat minValue, CGFloat maxValue);
 
