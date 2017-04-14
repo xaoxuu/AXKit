@@ -111,22 +111,22 @@ static CGFloat static_color_ratio = 0.6;
 }
 
 
-- (CGFloat)getRed{
+- (CGFloat)redValue{
     CGFloat red;
     [self getRed:&red green:nil blue:nil alpha:nil];
     return red;
 }
-- (CGFloat)getGreen{
+- (CGFloat)greenValue{
     CGFloat green;
     [self getRed:nil green:&green blue:nil alpha:nil];
     return green;
 }
-- (CGFloat)getBlue{
+- (CGFloat)blueValue{
     CGFloat blue;
     [self getRed:nil green:nil blue:&blue alpha:nil];
     return blue;
 }
-- (CGFloat)getAlpha{
+- (CGFloat)alphaValue{
     CGFloat alpha;
     [self getRed:nil green:nil blue:nil alpha:&alpha];
     return alpha;

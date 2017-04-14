@@ -11,30 +11,95 @@
 @interface UIColor (AXExtension)
 
 
+/**
+ 颜色变深
+
+ @return 变深之后的颜色
+ */
 - (UIColor *)dark;
 
+/**
+ 颜色变浅
+
+ @return 变浅之后的颜色
+ */
 - (UIColor *)light;
 
-- (UIColor *(^)(CGFloat))darkRatio;
+/**
+ 颜色变深，传入参数ratio为比例（0~1）
+ */
+- (UIColor *(^)(CGFloat ratio))darkRatio;
 
-- (UIColor *(^)(CGFloat))lightRatio;
+/**
+ 颜色变浅，传入参数ratio为比例（0~1）
+ */
+- (UIColor *(^)(CGFloat ratio))lightRatio;
 
+
+/**
+ 随机色
+
+ @return 随机色
+ */
 + (UIColor *)randomColor;
 
+/**
+ 以HEX创建颜色
+
+ @param hex 16进制
+ @return UIColor实例
+ */
 + (UIColor *)colorWithHex:(NSUInteger)hex;
 
+/**
+ 以HEX字符串创建颜色
+
+ @param hexStr HEX字符串
+ @return UIColor实例
+ */
 + (UIColor *)colorWithHexString:(NSString *)hexStr;
 
-- (CGFloat)getRed;
+/**
+ 获取UIColor中的R值
 
-- (CGFloat)getGreen;
+ @return R值（0~1）
+ */
+- (CGFloat)redValue;
 
-- (CGFloat)getBlue;
+/**
+ 获取UIColor中的G值
+ 
+ @return R值（0~1）
+ */
+- (CGFloat)greenValue;
 
-- (CGFloat)getAlpha;
+/**
+ 获取UIColor中的B值
+ 
+ @return R值（0~1）
+ */
+- (CGFloat)blueValue;
 
+/**
+ 获取UIColor中的Alpha值
+ 
+ @return R值（0~1）
+ */
+- (CGFloat)alphaValue;
+
+
+/**
+ 获取颜色的HEX字符串（不含Alpha值）
+
+ @return HEX字符串
+ */
 - (NSString *)hexString;
 
+/**
+ 获取颜色的HEX字符串
+ 
+ @return HEX字符串
+ */
 - (NSString *)hexStringWithAlpha;
 
 

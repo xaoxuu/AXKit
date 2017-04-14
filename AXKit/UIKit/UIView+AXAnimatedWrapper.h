@@ -36,15 +36,6 @@
 
 
 #pragma mark - build out
-/*!
- *	@author Aesir Titan, 2016-08-27
- *
- *	@brief build out animation with scale
- *
- *	@param scale		scale
- *	@param duration		duration
- *	@param completion	completion
- */
 
 /**
  build out 动画

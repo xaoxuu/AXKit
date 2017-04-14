@@ -86,6 +86,11 @@
 		CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */; };
 		CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */; };
+		CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */; };
+		CDD7A0741EA06E570068FDBF /* MyNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A0731EA06E570068FDBF /* MyNavViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +190,12 @@
 		CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXGestureExtension.h"; sourceTree = "<group>"; };
 		CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXGestureExtension.m"; sourceTree = "<group>"; };
 		CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXMacros.h"; sourceTree = "<group>"; };
+		CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+AXExtension.h"; sourceTree = "<group>"; };
+		CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+AXExtension.m"; sourceTree = "<group>"; };
+		CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXExtension.h"; sourceTree = "<group>"; };
+		CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AXExtension.m"; sourceTree = "<group>"; };
+		CDD7A0721EA06E570068FDBF /* MyNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavViewController.h; sourceTree = "<group>"; };
+		CDD7A0731EA06E570068FDBF /* MyNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +249,8 @@
 				CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */,
 				CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */,
 				8579EF061E6BEDF900C33881 /* Main.storyboard */,
+				CDD7A0721EA06E570068FDBF /* MyNavViewController.h */,
+				CDD7A0731EA06E570068FDBF /* MyNavViewController.m */,
 				8579EF091E6BEDF900C33881 /* Assets.xcassets */,
 				8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */,
 				8579EF0E1E6BEDF900C33881 /* Info.plist */,
@@ -328,6 +341,10 @@
 				CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */,
 				CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */,
 				CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */,
+				CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */,
+				CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */,
+				CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */,
+				CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -366,6 +383,8 @@
 				CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */,
 				CDAB58F31E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.h in Headers */,
 				CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */,
+				CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */,
+				CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +519,7 @@
 				CD2E9F331E7BC1BC00C57CA6 /* SecViewController.m in Sources */,
 				8579EF051E6BEDF900C33881 /* ViewController.m in Sources */,
 				CD784DC31E9CA21E0056EF1E /* MyButton2.m in Sources */,
+				CDD7A0741EA06E570068FDBF /* MyNavViewController.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CD784DC01E9CA0F80056EF1E /* MyButton.m in Sources */,
@@ -517,6 +537,7 @@
 				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,
 				CDAB58F41E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m in Sources */,
 				CDAB59141E6BF9FE0017CA1E /* UIColorManager.m in Sources */,
+				CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */,
 				CDAB593C1E6BFE700017CA1E /* UIView+AXFrameWrapper.m in Sources */,
 				CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */,
 				CDAB59041E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.m in Sources */,
@@ -527,6 +548,7 @@
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
 				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
+				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
 				CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */,
 				CDAB59101E6BF9B90017CA1E /* UIColor+MDColorPack.m in Sources */,
 				CDAB592C1E6BFD050017CA1E /* UITextView+AXExtension.m in Sources */,

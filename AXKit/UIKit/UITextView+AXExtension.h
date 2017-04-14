@@ -20,6 +20,13 @@
 - (void)ax_adjustViewFrameWithKeyboard:(UIView *)view;
 
 
+/**
+ 获取TextView的高度
+
+ @param text TextView的文本
+ @param range 高度范围（保证高度值不会超出此范围）
+ @return 高度
+ */
 - (CGFloat)ax_heightWithText:(NSString *)text heightRange:(AXFloatRange)range;
 
 

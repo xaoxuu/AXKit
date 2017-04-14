@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIView *accentview;
 @property (weak, nonatomic) IBOutlet MyButton2 *myBtn;
 
+// @xaoxuu: timer
+@property (strong, nonatomic) NSTimer *timer;
+
 @end
 
 @implementation ViewController
@@ -30,6 +33,13 @@
         
     }];
     [NSUserDefaults ax_readUserDefaultBoolWithKey:@""];
+    
+    
+    
+    
+    self.timer = [NSTimer ax_scheduledTimerWithTimeInterval:10 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
+        AXLogOBJ(@"abc".append(@"d").append(@"e").append(@"f"));
+    }];
     
     // 要执行的代码
     [self.view ax_addRotationGesture:^(UIRotationGestureRecognizer * _Nonnull sender) {
@@ -47,22 +57,16 @@
 }
 
 - (IBAction)btn:(UIButton *)sender {
-    
+    AXLogOBJ(sender.rootVC);
     switch (sender.tag) {
         case 0:
-            AXLogOBJ(@"a".readUserDefaultValue);
-            AXLogBOOL(@"b".readUserDefaultBool);
-            AXLogOBJ(@"c".readUserDefaultValue);
+            [self.timer ax_pause];
             break;
         case 1:
-            AXLogOBJ(@"a".readUserDefaultValue);
-            AXLogBOOL(@"b".readUserDefaultBool);
-            AXLogOBJ(@"c".readUserDefaultValue);
+            [self.timer ax_restart];
             break;
         case 2:
-            AXLogOBJ(@"a".readUserDefaultValue);
-            AXLogBOOL(@"b".readUserDefaultBool);
-            AXLogOBJ(@"c".readUserDefaultValue);
+            [self.timer ax_turnover];
             break;
             
         default:
@@ -81,10 +85,16 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)sw:(UISwitch *)sender {
+    [self.navigationController ax_hidesBottomBarWhenPushed:sender.on];
 }
+
+
+- (IBAction)turnOn:(UIButton *)sender {
+    [self.navigationController ax_hidesBottomBarWhenPushed:sender.tag];
+}
+
 
 
 @end

@@ -38,11 +38,6 @@ CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
 - (nullable UIViewController *)rootVC;
 */
 
-/*!
- *	@author Aesir Titan, 2016-08-31
- *
- *	@brief remove all subviews
- */
 
 /**
  移除所有子视图

@@ -13,21 +13,25 @@
 
 @interface AXEventTarget : NSObject
 
-// target handler
+// @xaoxuu: 事件处理器target
 @property (copy, nonatomic) void (^handler)(id sender);
 
-// animation view
+// @xaoxuu: 动画的view
 @property (strong, nonatomic) UIView *view;
-// scale
+
+// @xaoxuu: 动画的scale
 @property (assign, nonatomic) CGFloat scale;
-// duration
+
+// @xaoxuu: 动画的duration
 @property (assign, nonatomic) NSTimeInterval duration;
 
-
+// @xaoxuu: 创建一个事件处理器target
 + (instancetype)targetWithHandler:(void (^)(id sender))handler;
 
+// @xaoxuu: 设置view动画
 - (void)setupAnimationWithView:(UIView *)view scale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
+// @xaoxuu: 执行事件
 - (void)handleEvent:(id)sender;
 
 @end

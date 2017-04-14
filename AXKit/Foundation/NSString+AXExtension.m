@@ -57,6 +57,41 @@ NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length){
 }
 
 
+@implementation NSString (AXAppendExtension)
+
+- (NSString *(^)(NSString *string))append{
+    return ^(NSString *string){
+        if (string.length) {
+            return [self stringByAppendingString:string];;
+        } else{
+            return self;
+        }
+    };
+}
+
+- (NSString *(^)(NSInteger x))appendNSInteger{
+    return ^(NSInteger x){
+        return [self stringByAppendingString:NSStringFromNSInteger(x)];;
+    };
+}
+- (NSString *(^)(NSUInteger x))appendNSUInteger{
+    return ^(NSUInteger x){
+        return [self stringByAppendingString:NSStringFromNSUInteger(x)];;
+    };
+}
+- (NSString *(^)(CGFloat x))appendCGFloat{
+    return ^(CGFloat x){
+        return [self stringByAppendingString:NSStringFromCGFloat(x)];;
+    };
+}
+- (NSString *(^)())appendReturn{
+    return ^{
+        return [self stringByAppendingString:@"\n"];;
+    };
+}
+
+@end
+
 
 @implementation NSString (AXRandomExtension)
 

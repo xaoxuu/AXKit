@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    AXLogOBJ(self.rootVC);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,7 +25,8 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)Btn:(UIButton *)sender {
-    
+    AXLogOBJ(sender.rootVC);
+    [self dismissViewControllerAnimated:YES completion:nil];    
 }
 
 /*

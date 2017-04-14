@@ -5,6 +5,8 @@
 //  Created by xaoxuu on 05/03/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
+// @xaoxuu: 此分类的颜色取自Google Material Design
+// @xaoxuu: Material Design配色网站: http://www.materialpalette.com
 
 #import <UIKit/UIKit.h>
 

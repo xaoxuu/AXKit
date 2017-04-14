@@ -14,7 +14,7 @@
 @implementation NSTimer (AXBlockWrapper)
 
 
-+ (instancetype)ax_scheduleTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats usingBlock:(void (^)(NSTimer *timer))block{
++ (instancetype)ax_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats usingBlock:(void (^)(NSTimer *timer))block{
     NSTimer *timer = [self ax_timerWithTimeInterval:interval repeats:repeats usingBlock:block];
     [NSRunLoop.currentRunLoop addTimer:timer forMode:NSRunLoopCommonModes];
     return timer;
@@ -40,7 +40,7 @@
         return NO;
     }
 }
-- (BOOL)ax_resume{
+- (BOOL)ax_restart{
     if ([self isValid]) {
         [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:self.timeInterval]];
         return YES;
@@ -53,7 +53,7 @@
     if (self.ax_isRunning) {
         [self ax_pause];
     } else{
-        [self ax_resume];
+        [self ax_restart];
     }
     return self.ax_isRunning;
 }
