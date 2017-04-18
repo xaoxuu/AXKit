@@ -34,13 +34,10 @@
     }];
     [NSUserDefaults ax_readUserDefaultBoolWithKey:@""];
     
-    NSString *str = @"abc".append(@"d").appendCGFloat(1.2).appendReturn().appendNSInteger(50);
-    NSLog(@"%@",str);
+//    NSString *str = @"abc".append(@"d").appendCGFloat(1.2).appendReturn().appendNSInteger(50);
+//    NSLog(@"%@",str);
+//    
     
-    
-    self.timer = [NSTimer ax_scheduledTimerWithTimeInterval:10 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
-        AXLogOBJ(@"abc".append(@"d").append(@"e").append(@"f"));
-    }];
     
     // 要执行的代码
     [self.view ax_addRotationGesture:^(UIRotationGestureRecognizer * _Nonnull sender) {
@@ -93,9 +90,24 @@
 
 
 - (IBAction)turnOn:(UIButton *)sender {
-    [self.navigationController ax_hidesBottomBarWhenPushed:sender.tag];
+//    [self.navigationController ax_hidesBottomBarWhenPushed:sender.tag];
+    
+    self.timer = [NSTimer ax_scheduledTimerWithTimeInterval:10 repeats:sender.tag usingBlock:^(NSTimer * _Nonnull timer) {
+        AXLogOBJ(@"abc".append(@"d").append(@"e").append(@"f"));
+    }];
+    
 }
 
+- (IBAction)restart:(UIButton *)sender {
+    [self.timer ax_restart];
+    
+}
+- (IBAction)pause:(UIButton *)sender {
+    [self.timer ax_pause];
+}
+- (IBAction)isRunning:(UIButton *)sender {
+    AXLogBOOL(self.timer.ax_isRunning);
+}
 
 
 @end
