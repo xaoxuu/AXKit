@@ -65,7 +65,7 @@ FOUNDATION_EXTERN NSString *NSStringFromRandom(AXRandomStringType type, AXUInteg
 - (NSString *(^)(CGFloat x))appendCGFloat;
 
 /**
- 拼接@"\n"
+ 拼接换行符
  */
 - (NSString *(^)())appendReturn;
 
