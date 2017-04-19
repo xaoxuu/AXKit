@@ -69,6 +69,49 @@ CG_EXTERN CGRect CGRectWithTopAndBottomMargin(CGFloat top, CGFloat bottom);
 CG_EXTERN CGRect CGRectWithViewInScreen(UIView *targetView);
 
 
+#pragma mark 取值范围
+
+/**
+ Float类型的取值范围（最小值，最大值）
+ */
+struct AXFloatRange{
+    CGFloat minValue;
+    CGFloat maxValue;
+};
+typedef struct AXFloatRange AXFloatRange;
+
+
+/**
+ 产生一个Float取值范围
+ 
+ @param minValue 最小Float值
+ @param maxValue 最大Float值
+ @return Float范围
+ */
+CG_EXTERN AXFloatRange AXFloatRangeMake(CGFloat minValue, CGFloat maxValue);
+
+
+/**
+ NSUInteger类型的取值范围（最小值，最大值）
+ */
+struct AXIntegerRange {
+    NSInteger minValue;
+    NSInteger maxValue;
+};
+
+typedef struct AXIntegerRange AXIntegerRange;
+
+
+/**
+ 产生一个NSInteger取值范围
+ 
+ @param minValue 最小NSInteger值
+ @param maxValue 最大NSInteger值
+ @return 长度范围
+ */
+CG_EXTERN AXIntegerRange AXIntegerRangeMake(NSInteger minValue, NSInteger maxValue);
+
+
 /**
  NSUInteger类型的取值范围（最小值，最大值）
  */
@@ -90,34 +133,43 @@ typedef struct AXUIntegerRange AXUIntegerRange;
 CG_EXTERN AXUIntegerRange AXUIntegerRangeMake(NSUInteger minValue, NSUInteger maxValue);
 
 
+
+#pragma mark 随机值
 /**
  产生一个随机NSUInteger
-
+ 
  @param range NSUInteger取值范围
  @return 随机的NSUInteger
  */
 CG_EXTERN NSUInteger AXRandomUIntegerFrom(AXUIntegerRange range);
 
 
-/**
- Float类型的取值范围（最小值，最大值）
- */
-struct AXFloatRange{
-    CGFloat minValue;
-    CGFloat maxValue;
-};
-typedef struct AXFloatRange AXFloatRange;
+#pragma mark 确保值的范围
 
 
 /**
- 产生一个Float取值范围
+ 确保值在某个范围内
 
- @param minValue 最小Float值
- @param maxValue 最大Float值
- @return Float范围
+ @param value 原始值
+ @param range 取值范围
+ @return 最终值
  */
-CG_EXTERN AXFloatRange AXFloatRangeMake(CGFloat minValue, CGFloat maxValue);
+CG_EXTERN CGFloat AXFloatInRange(CGFloat value, AXFloatRange range);
 
+/**
+ 确保值在某个范围内
+ 
+ @param value 原始值
+ @param range 取值范围
+ @return 最终值
+ */
+CG_EXTERN NSInteger AXIntegerInRange(NSInteger value, AXIntegerRange range);
 
-
-
+/**
+ 确保值在某个范围内
+ 
+ @param value 原始值
+ @param range 取值范围
+ @return 最终值
+ */
+CG_EXTERN NSUInteger AXUIntegerInRange(NSUInteger value, AXUIntegerRange range);

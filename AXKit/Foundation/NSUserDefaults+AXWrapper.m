@@ -31,8 +31,13 @@
 }
 
 
++ (void)ax_cacheObject:(nullable id)obj key:(NSString *)key{
+    [AXDefaultUser setObject:obj forKey:key];
+    [AXDefaultUser synchronize];
+}
+
 + (void)ax_cacheValue:(nullable id)value key:(NSString *)key{
-    [AXDefaultUser setObject:value forKey:key];
+    [AXDefaultUser setValue:value forKey:key];
     [AXDefaultUser synchronize];
 }
 
@@ -57,8 +62,12 @@
 }
 
 
+- (void)ax_cacheObject:(nullable id)obj key:(NSString *)key{
+    [AXDefaultUser setObject:obj forKey:key];
+}
+
 - (void)ax_cacheValue:(nullable id)value key:(NSString *)key{
-    [AXDefaultUser setObject:value forKey:key];
+    [AXDefaultUser setValue:value forKey:key];
 }
 
 - (void)ax_cacheBool:(BOOL)x key:(NSString *)key{
@@ -77,6 +86,18 @@
     [AXDefaultUser setDouble:x forKey:key];
 }
 
+
+
+#pragma mark remove
+
++ (void)ax_removeObjectForKey:(NSString *)key{
+    [AXDefaultUser removeObjectForKey:key];
+    [AXDefaultUser synchronize];
+}
+
+- (void)ax_removeObjectForKey:(NSString *)key{
+    [AXDefaultUser removeObjectForKey:key];
+}
 
 @end
 

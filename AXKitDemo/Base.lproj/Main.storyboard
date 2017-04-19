@@ -238,7 +238,7 @@
         <!--B1-->
         <scene sceneID="ba7-qQ-I5N">
             <objects>
-                <viewController id="eoG-bN-U9u" sceneMemberID="viewController">
+                <viewController id="eoG-bN-U9u" customClass="B1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mwL-Gt-XUP"/>
                         <viewControllerLayoutGuide type="bottom" id="PHL-Q0-X22"/>
@@ -255,10 +255,23 @@
                                     <segue destination="VPa-gQ-RxX" kind="show" id="pFr-d2-RlA"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhf-Cc-twp">
+                                <rect key="frame" x="44" y="107" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="input:" destination="eoG-bN-U9u" eventType="editingChanged" id="3c9-Rl-tay"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="B1" id="rsv-PA-Spq"/>
+                    <connections>
+                        <outlet property="input" destination="vhf-Cc-twp" id="AfH-Cb-Zbf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQ7-yb-FOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

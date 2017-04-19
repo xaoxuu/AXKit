@@ -91,6 +91,7 @@
 		CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */; };
 		CDD7A0741EA06E570068FDBF /* MyNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A0731EA06E570068FDBF /* MyNavViewController.m */; };
+		CDE521A31EA73CF200A1F56A /* B1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE521A21EA73CF200A1F56A /* B1ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,8 @@
 		CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A0721EA06E570068FDBF /* MyNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavViewController.h; sourceTree = "<group>"; };
 		CDD7A0731EA06E570068FDBF /* MyNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavViewController.m; sourceTree = "<group>"; };
+		CDE521A11EA73CF200A1F56A /* B1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B1ViewController.h; sourceTree = "<group>"; };
+		CDE521A21EA73CF200A1F56A /* B1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = B1ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,8 @@
 				CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */,
 				CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */,
 				8579EF061E6BEDF900C33881 /* Main.storyboard */,
+				CDE521A11EA73CF200A1F56A /* B1ViewController.h */,
+				CDE521A21EA73CF200A1F56A /* B1ViewController.m */,
 				CDD7A0721EA06E570068FDBF /* MyNavViewController.h */,
 				CDD7A0731EA06E570068FDBF /* MyNavViewController.m */,
 				8579EF091E6BEDF900C33881 /* Assets.xcassets */,
@@ -523,6 +528,7 @@
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CD784DC01E9CA0F80056EF1E /* MyButton.m in Sources */,
+				CDE521A31EA73CF200A1F56A /* B1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
