@@ -57,6 +57,10 @@ NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length){
 }
 
 
+inline NSString *NSStringFromASCIIValue(unsigned char ASCIIValue){
+    return [NSString stringWithFormat:@"%c",ASCIIValue];
+}
+
 @implementation NSString (AXAppendExtension)
 
 - (NSString *(^)(NSString *string))append{

@@ -22,7 +22,7 @@
 }
 
 + (UIColor *)ax_green {
-    return [UIColor colorWithHexString:@"7CC353"];
+    return [UIColor colorWithHexString:@"#7CC353"];
 }
 
 + (UIColor *)ax_cyan {
@@ -30,7 +30,7 @@
 }
 
 + (UIColor *)ax_blue {
-    return [UIColor colorWithHexString:@"2CA3FF"];
+    return [UIColor colorWithHexString:@"#2CA3FF"];
 }
 
 

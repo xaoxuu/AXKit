@@ -32,6 +32,7 @@ inline CGRect CGRectWithViewInScreen(UIView *targetView){
 
 #pragma mark 取值范围
 
+
 inline AXFloatRange AXFloatRangeMake(CGFloat minValue, CGFloat maxValue){
     return (AXFloatRange){minValue,maxValue};
 }

@@ -39,8 +39,16 @@ typedef NS_ENUM(NSUInteger, AXRandomStringType){
 };
 
 
+/**
+ 产生随机字符串
+
+ @param type 随机类型
+ @param length 长度范围
+ @return 字符串
+ */
 FOUNDATION_EXTERN NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length);
 
+FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
 @interface NSString (AXAppendExtension)
 
