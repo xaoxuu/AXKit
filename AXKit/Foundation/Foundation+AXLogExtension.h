@@ -29,7 +29,7 @@
 
 #define AXLogFail(format, ...) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
-#define AXLogError(NSError) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: %@" "\nreason: %@" "\n\n"), __FUNCTION__, __LINE__, NSError.localizedDescription, error.localizedFailureReason)
+#define AXLogError(NSError) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: %@" "\nreason: %@" "\n\n"), __FUNCTION__, __LINE__, NSError.localizedDescription, NSError.localizedFailureReason)
 
 
 // obj macro
