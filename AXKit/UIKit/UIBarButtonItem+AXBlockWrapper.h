@@ -36,6 +36,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)ax_itemWithTitle:(NSString *)title action:(void (^)(id sender))action;
 
+/**
+ 快速创建一个baritem
+ 
+ @param view 自定义视图
+ @param action 响应的事件
+ @return baritem实例
+ */
++ (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action;
+
 
 #pragma mark 普通
 
@@ -124,6 +133,15 @@ NS_ASSUME_NONNULL_BEGIN
  @return item实例
  */
 - (instancetype)ax_initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void (^)(id sender))action AX_INITIALIZER;
+
+/**
+ 快速创建一个baritem
+ 
+ @param view 自定义视图
+ @param action 响应的事件
+ @return baritem实例
+ */
+- (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action AX_INITIALIZER;
 
 @end
 

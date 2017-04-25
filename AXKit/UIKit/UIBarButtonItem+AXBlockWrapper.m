@@ -7,6 +7,7 @@
 //
 
 #import "UIBarButtonItem+AXBlockWrapper.h"
+#import "UIView+AXGestureExtension.h"
 @import ObjectiveC.runtime;
 
 static const void *UIBarButtonItemATBlockWrapperKey = &UIBarButtonItemATBlockWrapperKey;
@@ -29,6 +30,10 @@ static const void *UIBarButtonItemATBlockWrapperKey = &UIBarButtonItemATBlockWra
 
 + (instancetype)ax_itemWithTitle:(NSString *)title action:(void (^)(id sender))action{
     return [self ax_itemWithTitle:title style:UIBarButtonItemStylePlain action:action];
+}
+
++ (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action{
+    return [self ax_itemWithCustomView:view action:action];
 }
 
 
@@ -103,6 +108,17 @@ static const void *UIBarButtonItemATBlockWrapperKey = &UIBarButtonItemATBlockWra
     return self;
 }
 
-
+- (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action AX_INITIALIZER{
+    self = [self initWithCustomView:view];
+    if (!self) {
+        return nil;
+    }
+    [view ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+        if (action) {
+            action(self);
+        }
+    }];
+    return self;
+}
 
 @end
