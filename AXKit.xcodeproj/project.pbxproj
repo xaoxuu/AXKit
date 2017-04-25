@@ -96,6 +96,9 @@
 		CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */; };
 		CDE91FA41EAEEDF100FC5A88 /* C1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FA31EAEEDF100FC5A88 /* C1ViewController.m */; };
 		CDE91FA71EAEEE2F00FC5A88 /* redVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FA61EAEEE2F00FC5A88 /* redVC.m */; };
+		CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */; };
+		CDE91FC51EAF4AE300FC5A88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDE91FC71EAF4AE300FC5A88 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +212,13 @@
 		CDE91FA31EAEEDF100FC5A88 /* C1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C1ViewController.m; sourceTree = "<group>"; };
 		CDE91FA51EAEEE2F00FC5A88 /* redVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redVC.h; sourceTree = "<group>"; };
 		CDE91FA61EAEEE2F00FC5A88 /* redVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = redVC.m; sourceTree = "<group>"; };
+		CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+AXExtension.h"; sourceTree = "<group>"; };
+		CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AXExtension.m"; sourceTree = "<group>"; };
+		CDE91FC61EAF4AE300FC5A88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CDE91FC81EAF4AE700FC5A88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CDE91FC91EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CDE91FCB1EAF4E6F00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +272,7 @@
 				CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */,
 				CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */,
 				8579EF061E6BEDF900C33881 /* Main.storyboard */,
+				CDE91FC71EAF4AE300FC5A88 /* Localizable.strings */,
 				CDE521A11EA73CF200A1F56A /* B1ViewController.h */,
 				CDE521A21EA73CF200A1F56A /* B1ViewController.m */,
 				CDE91FA21EAEEDF100FC5A88 /* C1ViewController.h */,
@@ -319,6 +330,8 @@
 				CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */,
 				CDE91F9E1EAEE6E000FC5A88 /* NSError+AXExtension.h */,
 				CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */,
+				CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */,
+				CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -406,6 +419,7 @@
 				CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */,
 				CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */,
 				CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */,
+				CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */,
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
 			);
@@ -484,6 +498,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 8579EEF11E6BEDF900C33881;
 			productRefGroup = 8579EEFB1E6BEDF900C33881 /* Products */;
@@ -503,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
+				CDE91FC51EAF4AE300FC5A88 /* Localizable.strings in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
 				8579EF081E6BEDF900C33881 /* Main.storyboard in Resources */,
 			);
@@ -572,6 +588,7 @@
 				CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */,
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
+				CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */,
 				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
 				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
@@ -602,6 +619,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8579EF071E6BEDF900C33881 /* Base */,
+				CDE91FC91EAF4E6E00FC5A88 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -610,8 +628,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				8579EF0C1E6BEDF900C33881 /* Base */,
+				CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CDE91FC71EAF4AE300FC5A88 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDE91FC61EAF4AE300FC5A88 /* Base */,
+				CDE91FC81EAF4AE700FC5A88 /* en */,
+				CDE91FCB1EAF4E6F00FC5A88 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -621,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -669,6 +699,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

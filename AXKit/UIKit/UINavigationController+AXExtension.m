@@ -8,7 +8,6 @@
 
 #import "UINavigationController+AXExtension.h"
 #import "Foundation+AXLogExtension.h"
-#import "NSString+AXExtension.h"
 @import ObjectiveC.runtime;
 
 static const void *UINavigationControllerAXExtensionKey = &UINavigationControllerAXExtensionKey;
@@ -38,8 +37,7 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
         objc_setAssociatedObject(self, UINavigationControllerAXExtensionKey, imps, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
-    BOOL isExchanged = [imps[NSStringFromPointer((__bridge id _Nonnull)(method_origin))] boolValue];
-    
+    BOOL isExchanged = [imps[[NSString stringWithFormat:@"%p",(__bridge id _Nonnull)method_origin]] boolValue];
     if (hide^isExchanged) {
         // @xaoxuu: new method
         Method method_new = class_getInstanceMethod([self class], @selector(ax_pushViewControllerHidesBottomBar:animated:));
@@ -47,7 +45,7 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
         ax_class_addMethod([self class], @selector(ax_pushViewControllerHidesBottomBar:animated:), method_new);
         // @xaoxuu: exchange methods
         ax_exchangeSelector([self class], @selector(pushViewController:animated:), @selector(ax_pushViewControllerHidesBottomBar:animated:));
-        imps[NSStringFromPointer((__bridge id _Nonnull)(method_origin))] = @(hide);
+        imps[[NSString stringWithFormat:@"%p",(__bridge id _Nonnull)method_origin]] = @(hide);
     }
 }
 

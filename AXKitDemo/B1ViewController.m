@@ -7,9 +7,12 @@
 //
 
 #import "B1ViewController.h"
-#import <AXKit/AXKit.h>
+#import "AXKit/AXKit.h"
 @interface B1ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *input;
+
+@property (weak, nonatomic) IBOutlet UIView *local;
+
 
 @end
 
@@ -18,6 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.local ax_eachSubview:[UILabel class] action:^(__kindof UIView * _Nonnull subview) {
+        UILabel *lb = subview;
+        AXLocalizedLabel(lb);
+    }];
+    [self.local ax_eachSubview:[UITextField class] action:^(__kindof UIView * _Nonnull subview) {
+        UITextField *tf = subview;
+        AXLocalizedTextField(tf);
+    }];
+    [self.local ax_eachSubview:[UITextView class] action:^(__kindof UIView * _Nonnull subview) {
+        UITextView *tv = subview;
+        AXLocalizedTextView(tv);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
