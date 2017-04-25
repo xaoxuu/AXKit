@@ -12,7 +12,6 @@ inline void AXLocalizedLabel(UILabel *label){
     label.text = NSLocalizedString(label.text, nil);
 }
 
-
 inline void AXLocalizedTextView(UITextView *textView){
     textView.text = NSLocalizedString(textView.text, nil);
 }

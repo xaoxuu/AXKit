@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -350,43 +351,56 @@
                                     <action selector="push:" destination="eoG-bN-U9u" eventType="touchUpInside" id="QTz-pN-mnU"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-go-rg2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-go-rg2">
                                 <rect key="frame" x="16" y="77" width="240" height="265"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="标签" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-zB-LhE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标签" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-zB-LhE">
                                         <rect key="frame" x="14" y="8" width="35" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBD-60-AZu">
-                                        <rect key="frame" x="14" y="46" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBD-60-AZu">
+                                        <rect key="frame" x="8" y="37" width="64" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="这是一段文字" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pfl-mq-u3b">
-                                        <rect key="frame" x="0.0" y="129" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="这是一段文字" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pfl-mq-u3b">
+                                        <rect key="frame" x="8" y="113" width="224" height="144"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="文本" borderStyle="roundedRect" placeholder="请输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJZ-6Z-fXN">
-                                        <rect key="frame" x="14" y="84" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="文本" borderStyle="roundedRect" placeholder="请输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJZ-6Z-fXN">
+                                        <rect key="frame" x="8" y="75" width="64" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Pfl-mq-u3b" secondAttribute="bottom" constant="8" id="EAV-Dp-CRW"/>
+                                    <constraint firstItem="Pfl-mq-u3b" firstAttribute="top" secondItem="WJZ-6Z-fXN" secondAttribute="bottom" constant="8" id="HsB-6h-4ge"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pfl-mq-u3b" secondAttribute="trailing" constant="8" id="JZh-71-25N"/>
+                                    <constraint firstItem="s6M-zB-LhE" firstAttribute="leading" secondItem="Pev-go-rg2" secondAttribute="leading" constant="14" id="Lu7-Eu-m9d"/>
+                                    <constraint firstAttribute="height" constant="265" id="Myc-6n-UIh"/>
+                                    <constraint firstItem="Pfl-mq-u3b" firstAttribute="leading" secondItem="Pev-go-rg2" secondAttribute="leading" constant="8" id="PA0-Wa-bn1"/>
+                                    <constraint firstAttribute="width" constant="240" id="TJv-Ay-VIn"/>
+                                    <constraint firstItem="s6M-zB-LhE" firstAttribute="top" secondItem="Pev-go-rg2" secondAttribute="top" constant="8" id="UNL-eL-HBp"/>
+                                    <constraint firstItem="eBD-60-AZu" firstAttribute="top" secondItem="s6M-zB-LhE" secondAttribute="bottom" constant="8" id="b2L-Tx-mKm"/>
+                                    <constraint firstItem="WJZ-6Z-fXN" firstAttribute="leading" secondItem="Pev-go-rg2" secondAttribute="leading" constant="8" id="cDy-Ss-7aD"/>
+                                    <constraint firstItem="WJZ-6Z-fXN" firstAttribute="top" secondItem="eBD-60-AZu" secondAttribute="bottom" constant="8" id="wx7-N5-Lu5"/>
+                                    <constraint firstItem="eBD-60-AZu" firstAttribute="leading" secondItem="Pev-go-rg2" secondAttribute="leading" constant="8" id="yUI-Hb-c7i"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pev-go-rg2" firstAttribute="top" secondItem="mwL-Gt-XUP" secondAttribute="bottom" constant="13" id="iIx-AG-7as"/>
+                            <constraint firstItem="Pev-go-rg2" firstAttribute="leading" secondItem="bTk-J9-yTk" secondAttribute="leadingMargin" id="svG-tQ-Pkf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="B1" id="rsv-PA-Spq"/>
                     <connections>
