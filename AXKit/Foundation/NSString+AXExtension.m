@@ -30,6 +30,11 @@ NSString *NSStringFromPointer(id x){
     return [NSString stringWithFormat:@"%p",x];
 }
 
+NSString *NSStringFromPercent(CGFloat x){
+    x = AXFloatInRange(x, AXFloatRangeMake(0, 1));
+    NSNumber *num = [NSNumber numberWithFloat:x * 100];
+    return [NSString stringWithFormat:@"%@%%",num];
+}
 
 NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length){
     switch (type) {

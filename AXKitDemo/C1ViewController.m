@@ -9,6 +9,7 @@
 #import "C1ViewController.h"
 #import "AXKit.h"
 @interface C1ViewController ()
+@property (weak, nonatomic) IBOutlet UIView *testView;
 
 @end
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.testView ax_eachSubview:[UIButton class] action:^(__kindof UIView * _Nonnull subview) {
+        UIButton *btn = subview;
+        AXLogOBJ(NSStringFromPercent(btn.titleLabel.text.floatValue));
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
