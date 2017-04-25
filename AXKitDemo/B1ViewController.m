@@ -32,5 +32,8 @@
     CGFloat g = AXFloatInRange(o, AXFloatRangeMake(0, 1));
     AXLogCGFloat(g);
 }
+- (IBAction)push:(UIButton *)sender {
+    [self ax_pushViewControllerNamed:@"redVC2" animated:YES];
+}
 
 @end

@@ -39,7 +39,8 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/NSTimer+AXBlockWrapper.h>
 // 对NSUserDefaults的封装
 #import <AXKit/NSUserDefaults+AXWrapper.h>
-
+// 对NSError的封装
+#import <AXKit/NSError+AXExtension.h>
 
 #pragma mark - UIKit
 // 对UIBarButtonItem的block封装，基于<BlocksKit>改编
