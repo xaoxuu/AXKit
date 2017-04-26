@@ -44,12 +44,21 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
     // 获取键盘高度
     CGRect keyBoardBounds  = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyBoardHeight = keyBoardBounds.size.height;
+    // @xaoxuu: 获取view距离底部的高度
+    CGFloat superH = self.ax_superview.frame.size.height;
+    CGFloat superF = self.ax_superview.frame.origin.y;
+    CGFloat heightToBottom = kScreenH - superF - superH;
+    // @xaoxuu: 被遮挡的高度
+    CGFloat offset = keyBoardHeight - heightToBottom;
+    if (offset < 0) {
+        offset = 0;
+    }
     // 获取键盘动画时间
     CGFloat animationTime  = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     // 定义好动作
     void (^animation)(void) = ^void(void) {
-        self.ax_superview.transform = CGAffineTransformMakeTranslation(0, - keyBoardHeight);
+        self.ax_superview.transform = CGAffineTransformMakeTranslation(0, - offset);
     };
     
     if (animationTime > 0) {
@@ -59,6 +68,7 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
     }
     
 }
+
 
 // 隐藏键盘
 - (void)_keyBoardWillHide:(NSNotification *) note {
@@ -109,7 +119,7 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
     return objc_getAssociatedObject(self, UITextFieldAXExtensionKey_SuperView);
 }
 
-- (void)setax_superview:(UIView *)ax_superview{
+- (void)setAx_superview:(UIView *)ax_superview{
     objc_setAssociatedObject(self, UITextFieldAXExtensionKey_SuperView, ax_superview, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 

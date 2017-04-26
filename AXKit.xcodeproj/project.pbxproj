@@ -99,6 +99,7 @@
 		CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */; };
 		CDE91FC51EAF4AE300FC5A88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDE91FC71EAF4AE300FC5A88 /* Localizable.strings */; };
+		CDE91FCE1EAF675200FC5A88 /* A2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FCD1EAF675200FC5A88 /* A2ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,8 @@
 		CDE91FC91EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CDE91FCB1EAF4E6F00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CDE91FCC1EAF675200FC5A88 /* A2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A2ViewController.h; sourceTree = "<group>"; };
+		CDE91FCD1EAF675200FC5A88 /* A2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A2ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +278,8 @@
 				CDE91FC71EAF4AE300FC5A88 /* Localizable.strings */,
 				CDE521A11EA73CF200A1F56A /* B1ViewController.h */,
 				CDE521A21EA73CF200A1F56A /* B1ViewController.m */,
+				CDE91FCC1EAF675200FC5A88 /* A2ViewController.h */,
+				CDE91FCD1EAF675200FC5A88 /* A2ViewController.m */,
 				CDE91FA21EAEEDF100FC5A88 /* C1ViewController.h */,
 				CDE91FA31EAEEDF100FC5A88 /* C1ViewController.m */,
 				CDE91FA51EAEEE2F00FC5A88 /* redVC.h */,
@@ -564,6 +569,7 @@
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CD784DC01E9CA0F80056EF1E /* MyButton.m in Sources */,
 				CDE521A31EA73CF200A1F56A /* B1ViewController.m in Sources */,
+				CDE91FCE1EAF675200FC5A88 /* A2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
