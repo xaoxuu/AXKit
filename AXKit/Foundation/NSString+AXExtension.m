@@ -10,33 +10,43 @@
 #import "NSString+AXExtension.h"
 
 
-NSString *NSStringFromInt32(int x){
-    return [NSNumber numberWithInt:x].stringValue;
+inline NSString *NSStringFromBool(BOOL x){
+    return [NSNumber numberWithBool:x].stringValue;
 }
 
-NSString *NSStringFromNSInteger(NSInteger x){
-    return [NSNumber numberWithInteger:x].stringValue;
+inline NSString *NSStringFromFloat(float x){
+    return [NSNumber numberWithFloat:x].stringValue;
 }
 
-NSString *NSStringFromNSUInteger(NSUInteger x){
-    return [NSNumber numberWithUnsignedInteger:x].stringValue;
-}
-
-NSString *NSStringFromCGFloat(CGFloat x){
+inline NSString *NSStringFromCGFloat(CGFloat x){
     return [NSNumber numberWithDouble:x].stringValue;
 }
 
-NSString *NSStringFromPointer(id x){
+inline NSString *NSStringFromInt(int x){
+    return [NSNumber numberWithInt:x].stringValue;
+}
+
+inline NSString *NSStringFromNSInteger(NSInteger x){
+    return [NSNumber numberWithInteger:x].stringValue;
+}
+
+inline NSString *NSStringFromNSUInteger(NSUInteger x){
+    return [NSNumber numberWithUnsignedInteger:x].stringValue;
+}
+
+
+
+inline NSString *NSStringFromPointer(id x){
     return [NSString stringWithFormat:@"%p",x];
 }
 
-NSString *NSStringFromPercent(CGFloat x){
+inline NSString *NSStringFromPercent(CGFloat x){
     x = AXFloatInRange(x, AXFloatRangeMake(0, 1));
     NSNumber *num = [NSNumber numberWithFloat:x * 100];
     return [NSString stringWithFormat:@"%@%%",num];
 }
 
-NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length){
+inline NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length){
     switch (type) {
         case AXRandomName: {
             return [NSString ax_stringWithRandomNameWithLength:length];
@@ -62,7 +72,7 @@ NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length){
 }
 
 
-inline NSString *NSStringFromASCIIValue(unsigned char ASCIIValue){
+inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
     return [NSString stringWithFormat:@"%c",ASCIIValue];
 }
 

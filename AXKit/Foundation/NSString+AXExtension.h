@@ -15,12 +15,37 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - get a string from ...
 
 /**
+ BOOL转字符串(0/1)
+ 
+ @param x BOOL类型
+ @return 字符串
+ */
+FOUNDATION_EXTERN NSString *NSStringFromBool(BOOL x);
+
+/**
+ CGFloat转字符串
+ 
+ @param x CGFloat
+ @return 字符串
+ */
+FOUNDATION_EXTERN NSString *NSStringFromFloat(float x);
+
+/**
+ CGFloat转字符串
+ 
+ @param x CGFloat
+ @return 字符串
+ */
+FOUNDATION_EXTERN NSString *NSStringFromCGFloat(CGFloat x);
+
+
+/**
  int转字符串
  
  @param x int
  @return 字符串
  */
-FOUNDATION_EXTERN NSString *NSStringFromInt32(int x);
+FOUNDATION_EXTERN NSString *NSStringFromInt(int x);
 
 /**
  NSInteger转字符串
@@ -38,13 +63,6 @@ FOUNDATION_EXTERN NSString *NSStringFromNSInteger(NSInteger x);
  */
 FOUNDATION_EXTERN NSString *NSStringFromNSUInteger(NSUInteger x);
 
-/**
- CGFloat转字符串
-
- @param x CGFloat
- @return 字符串
- */
-FOUNDATION_EXTERN NSString *NSStringFromCGFloat(CGFloat x);
 
 
 /**
