@@ -23,12 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- push到指定name的控制器
+ push到指定name的控制器，animated为YES
  
  @param vcName VC的name
- @param animated 是否显示动画
  */
-- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated;
+- (void)ax_pushViewControllerNamed:(NSString *)vcName;
 
 
 /**

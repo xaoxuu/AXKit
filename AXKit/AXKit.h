@@ -69,6 +69,8 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/CIImage+AXScaleExtension.h>
 // 从UIImageView指定位置获取颜色
 #import <AXKit/UIImageView+AXGetColor.h>
+// UIImageView的功能扩展
+#import <AXKit/UIImageView+AXExtension.h>
 // UIImage的功能扩展
 #import <AXKit/UIImage+AXExtension.h>
 

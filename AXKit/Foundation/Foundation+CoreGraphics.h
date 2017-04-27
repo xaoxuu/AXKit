@@ -172,3 +172,37 @@ CG_EXTERN NSInteger AXIntegerInRange(NSInteger value, AXIntegerRange range);
  @return 最终值
  */
 CG_EXTERN NSUInteger AXUIntegerInRange(NSUInteger value, AXUIntegerRange range);
+
+
+
+#pragma mark 值是否在范围内
+
+/**
+ 判断值是否在某个范围内
+ 
+ @param range 取值范围
+ @param value 值
+ @return 是否包含该值
+ */
+CG_EXTERN BOOL AXFloatRangeContainsFloat(AXFloatRange range, CGFloat value);
+
+/**
+ 判断值是否在某个范围内
+ 
+ @param range 取值范围
+ @param value 值
+ @return 是否包含该值
+ */
+CG_EXTERN BOOL AXIntegerRangeContainsInteger(AXIntegerRange range, NSInteger value);
+
+/**
+ 判断值是否在某个范围内
+ 
+ @param range 取值范围
+ @param value 值
+ @return 是否包含该值
+ */
+CG_EXTERN BOOL AXUIntegerRangeContainsUInteger(AXUIntegerRange range, NSUInteger value);
+
+
+

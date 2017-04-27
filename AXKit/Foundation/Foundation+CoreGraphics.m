@@ -73,3 +73,29 @@ inline NSUInteger AXUIntegerInRange(NSUInteger value, AXUIntegerRange range){
     return value;
 }
 
+
+#pragma mark 值是否在范围内
+
+inline BOOL AXFloatRangeContainsFloat(AXFloatRange range, CGFloat value){
+    if (value >= range.minValue && value <= range.maxValue) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+inline BOOL AXIntegerRangeContainsInteger(AXIntegerRange range, NSInteger value){
+    if (value >= range.minValue && value <= range.maxValue) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+inline BOOL AXUIntegerRangeContainsUInteger(AXUIntegerRange range, NSUInteger value){
+    if (value >= range.minValue && value <= range.maxValue) {
+        return YES;
+    } else {
+        return NO;
+    }
+}

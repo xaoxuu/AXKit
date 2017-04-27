@@ -50,7 +50,7 @@
     AXLogCGFloat(g);
 }
 - (IBAction)push:(UIButton *)sender {
-    [self.navigationController ax_pushViewControllerNamed:@"redVC2" animated:YES];
+    [self.navigationController ax_pushViewControllerNamed:@"redVC2"];
 }
 
 @end

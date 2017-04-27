@@ -58,8 +58,8 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
 }
 
 
-- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated{
-    [self ax_pushViewControllerNamed:vcName animated:animated completion:^(UIViewController * _Nonnull targetVC) {
+- (void)ax_pushViewControllerNamed:(NSString *)vcName{
+    [self ax_pushViewControllerNamed:vcName animated:YES completion:^(UIViewController * _Nonnull targetVC) {
         // @xaoxuu: do nothing.
     } fail:^(NSError * _Nonnull error) {
         // @xaoxuu: do nothing.

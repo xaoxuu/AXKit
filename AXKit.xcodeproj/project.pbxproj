@@ -30,6 +30,9 @@
 		8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8579EF1B1E6BEE4F00C33881 /* AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8579EF201E6BEE4F00C33881 /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
 		8579EF211E6BEE4F00C33881 /* AXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD004D171EB2049C00ACC0B8 /* C2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD004D161EB2049C00ACC0B8 /* C2ViewController.m */; };
+		CD004D1A1EB2128C00ACC0B8 /* UIImageView+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD004D181EB2128C00ACC0B8 /* UIImageView+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD004D1B1EB2128C00ACC0B8 /* UIImageView+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD004D191EB2128C00ACC0B8 /* UIImageView+AXExtension.m */; };
 		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD2E9F331E7BC1BC00C57CA6 /* SecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */; };
@@ -140,6 +143,10 @@
 		8579EF191E6BEE4F00C33881 /* AXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8579EF1B1E6BEE4F00C33881 /* AXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXKit.h; sourceTree = "<group>"; };
 		8579EF1C1E6BEE4F00C33881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD004D151EB2049C00ACC0B8 /* C2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C2ViewController.h; sourceTree = "<group>"; };
+		CD004D161EB2049C00ACC0B8 /* C2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C2ViewController.m; sourceTree = "<group>"; };
+		CD004D181EB2128C00ACC0B8 /* UIImageView+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AXExtension.h"; sourceTree = "<group>"; };
+		CD004D191EB2128C00ACC0B8 /* UIImageView+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AXExtension.m"; sourceTree = "<group>"; };
 		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecViewController.h; sourceTree = "<group>"; };
@@ -275,6 +282,8 @@
 				CD2E9F311E7BC1BC00C57CA6 /* SecViewController.h */,
 				CD2E9F321E7BC1BC00C57CA6 /* SecViewController.m */,
 				8579EF061E6BEDF900C33881 /* Main.storyboard */,
+				CD004D151EB2049C00ACC0B8 /* C2ViewController.h */,
+				CD004D161EB2049C00ACC0B8 /* C2ViewController.m */,
 				CDE91FC71EAF4AE300FC5A88 /* Localizable.strings */,
 				CDE521A11EA73CF200A1F56A /* B1ViewController.h */,
 				CDE521A21EA73CF200A1F56A /* B1ViewController.m */,
@@ -364,6 +373,8 @@
 				CDAB591A1E6BFB9A0017CA1E /* UIFont+AXWrapper.m */,
 				CDAB591D1E6BFBCE0017CA1E /* UIImage+AXExtension.h */,
 				CDAB591E1E6BFBCE0017CA1E /* UIImage+AXExtension.m */,
+				CD004D181EB2128C00ACC0B8 /* UIImageView+AXExtension.h */,
+				CD004D191EB2128C00ACC0B8 /* UIImageView+AXExtension.m */,
 				CDAB59211E6BFC2F0017CA1E /* UIImageView+AXGetColor.h */,
 				CDAB59221E6BFC2F0017CA1E /* UIImageView+AXGetColor.m */,
 				CDAB59251E6BFC730017CA1E /* UITextField+AXExtension.h */,
@@ -424,6 +435,7 @@
 				CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */,
 				CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */,
 				CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */,
+				CD004D1A1EB2128C00ACC0B8 /* UIImageView+AXExtension.h in Headers */,
 				CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */,
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
@@ -568,6 +580,7 @@
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CD784DC01E9CA0F80056EF1E /* MyButton.m in Sources */,
+				CD004D171EB2049C00ACC0B8 /* C2ViewController.m in Sources */,
 				CDE521A31EA73CF200A1F56A /* B1ViewController.m in Sources */,
 				CDE91FCE1EAF675200FC5A88 /* A2ViewController.m in Sources */,
 			);
@@ -595,6 +608,7 @@
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
 				CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */,
+				CD004D1B1EB2128C00ACC0B8 /* UIImageView+AXExtension.m in Sources */,
 				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
 				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
