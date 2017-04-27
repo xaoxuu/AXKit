@@ -71,7 +71,7 @@ FOUNDATION_EXTERN NSString *NSStringFromNSUInteger(NSUInteger x);
  @param x id指针
  @return id指针的地址
  */
-FOUNDATION_EXTERN NSString *NSStringFromPointer(id x);
+CG_EXTERN NSString *NSStringFromPointer(id x);
 
 /**
  输出百分比

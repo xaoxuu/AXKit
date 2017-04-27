@@ -40,7 +40,9 @@
 }
 */
 - (IBAction)push:(UIButton *)sender {
-    [self ax_pushViewControllerNamed:@"redV3C" animated:YES completion:^(UIViewController *targetVC) {
+    [self.navigationController ax_pushViewControllerNamed:@"redV3C" animated:YES completion:^(UIViewController *targetVC) {
+        
+    } fail:^(NSError * _Nonnull error) {
         
     }];
 }

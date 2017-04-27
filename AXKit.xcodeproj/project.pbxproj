@@ -378,10 +378,10 @@
 				CDAB593A1E6BFE700017CA1E /* UIView+AXFrameWrapper.m */,
 				CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */,
 				CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */,
-				CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */,
-				CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */,
 				CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */,
 				CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */,
+				CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */,
+				CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */,
 				CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */,
 				CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */,
 			);
