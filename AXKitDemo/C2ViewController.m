@@ -22,7 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    [self.navigationController ax_pushViewControllerNamed:@"tmpVC" animated:YES completion:^(UIViewController * _Nonnull targetVC) {
+        targetVC.title = @"tmp";
+    } fail:^(NSError * _Nonnull error) {
+        AXLogError(error);
+    }];
     
 }
 

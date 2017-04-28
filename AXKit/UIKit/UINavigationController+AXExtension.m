@@ -69,17 +69,13 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
 
 - (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion fail:(void (^)(NSError *error))fail{
     UIViewController *vc = [[NSClassFromString(vcName) class] new];
-    if (vc && self.navigationController) {
+    if (vc) {
         [self.navigationController pushViewController:vc animated:animated];
         if (completion) {
             completion(vc);
         }
     } else {
-        NSMutableString *reason = [NSMutableString string];
-        if (!vc) {
-            [reason appendFormat:@"The targetVC named: \'%@\' not found.\n",vcName];
-        }
-        
+        NSString *reason = [NSString stringWithFormat:@"The targetVC named: \'%@\' not found.\n",vcName];
         NSError *error = [NSError ax_errorWithDomain:ERROR_DEFAULT_DOMAIN code:AXErrorCodePushNavVC description:nil reason:reason suggestion:nil];
         AXLogError(error);
         if (fail && error) {
