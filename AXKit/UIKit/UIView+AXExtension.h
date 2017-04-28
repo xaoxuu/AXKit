@@ -20,6 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
 
+/**
+ 从xib加载view
+
+ @param name xib名
+ @return view
+ */
+CG_EXTERN UIView *UIViewFromNibNamed(NSString *name);
+
 
 @interface UIView (AXExtension)
 

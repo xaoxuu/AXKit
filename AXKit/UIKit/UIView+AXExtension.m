@@ -14,6 +14,10 @@ inline UIView *UIViewWithHeight(CGFloat height){
     return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, height)];
 }
 
+inline UIView *UIViewFromNibNamed(NSString *name){
+    return [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil].firstObject;
+}
+
 
 @implementation UIView (AXExtension)
 
