@@ -15,36 +15,36 @@
 #ifdef DEBUG // ==================== [ DEBUG Macro ] ==================== //
 
 
-#define AXLogFormat(format, ...) NSLog((@"\n➤ func:%s " "line:%d\n" "💬" format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define AXLogFormat(format, ...) NSLog((@"\n➤ func:%s " "line:%d" "\n💬" format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
-#define AXLogFunc NSLog((@"\n➤ func:%s " "line:%d\n" "\n"), __FUNCTION__, __LINE__)
+#define AXLogFunc NSLog((@"\n➤ func:%s " "line:%d" "\n\n"), __FUNCTION__, __LINE__)
 
 
 // result macro
-#define AXLogBOOL(BOOL) NSLog((@"\n➤ func:%s " "line:%d\n" "%@" "\n\n"), __FUNCTION__, __LINE__, BOOL ? @"🔵true" : @"🔴false")
+#define AXLogBOOL(BOOL) NSLog((@"\n➤ func:%s " "line:%d" "\n%@" "\n\n"), __FUNCTION__, __LINE__, BOOL ? @"🔵true" : @"🔴false")
 
-#define AXLogSuccess(format, ...) NSLog((@"\n➤ func:%s " "line:%d\n" "🔵success: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define AXLogSuccess(format, ...) NSLog((@"\n➤ func:%s " "line:%d" "\n🔵success: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
-#define AXLogWarning(format, ...) NSLog((@"\n➤ func:%s" " line:%d\n" "⚠️warning: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define AXLogWarning(format, ...) NSLog((@"\n➤ func:%s" " line:%d" "\n⚠️warning: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
-#define AXLogFail(format, ...) NSLog((@"\n➤ func:%s " "line:%d\n" "🔴error: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define AXLogFail(format, ...) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
-#define AXLogError(NSError) NSLog((@"\n➤ func:%s " "line:%d\n" "🔴error: %@" "\n\n"), __FUNCTION__, __LINE__, NSError.localizedDescription)
+#define AXLogError(NSError) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: %@" "\nreason: %@" "\n\n"), __FUNCTION__, __LINE__, NSError.localizedDescription, NSError.localizedFailureReason)
 
 
 // obj macro
-#define AXLogOBJ(NSObject) NSLog((@"\n➤ func:%s " "line:%d\n" "💬%@" "\n\n"), __FUNCTION__, __LINE__, NSObject)
+#define AXLogOBJ(NSObject) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSObject)
 
 
 // CG macro
-#define AXLogNSInteger(NSInteger) NSLog((@"\n➤ func:%s " "line:%d\n" "💬%ld" "\n\n"), __FUNCTION__, __LINE__, NSInteger)
-#define AXLogNSUInteger(NSUInteger) NSLog((@"\n➤ func:%s " "line:%d\n" "💬%lld" "\n\n"), __FUNCTION__, __LINE__, NSUInteger)
+#define AXLogNSInteger(NSInteger) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%ld" "\n\n"), __FUNCTION__, __LINE__, NSInteger)
+#define AXLogNSUInteger(NSUInteger) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%lld" "\n\n"), __FUNCTION__, __LINE__, NSUInteger)
 
-#define AXLogCGFloat(CGFloat) NSLog((@"\n➤ func:%s " "line:%d\n" "💬%f" "\n\n"), __FUNCTION__, __LINE__, CGFloat)
-#define AXLogCGPoint(CGPoint) NSLog((@"\n➤ func:%s " "line:%d\n" "💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGPoint(CGPoint))
+#define AXLogCGFloat(CGFloat) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%f" "\n\n"), __FUNCTION__, __LINE__, CGFloat)
+#define AXLogCGPoint(CGPoint) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGPoint(CGPoint))
 
-#define AXLogCGSize(CGSize) NSLog((@"\n➤ func:%s " "line:%d\n" "💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGSize(CGSize))
-#define AXLogCGRect(CGRect) NSLog((@"\n➤ func:%s " "line:%d\n" "💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGRect(CGRect))
+#define AXLogCGSize(CGSize) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGSize(CGSize))
+#define AXLogCGRect(CGRect) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGRect(CGRect))
 
 
 #else

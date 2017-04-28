@@ -35,7 +35,9 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    AXLocalizedAllSubviewsInView(self.a1);
+    // @xaoxuu: 建议在项目成型之前使用，避免了频繁更改造成代码混乱，也能够提高开发效率。
+    // @xaoxuu: 缺点是略微影响性能，可以在项目成型之后删掉此代码，手动替换。
+    AXLocalizedAllSubviewsInView(self.view);
     
 }
 

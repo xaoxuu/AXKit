@@ -42,6 +42,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  保存用户设置，自带synchronize
+ 
+ @param obj   值
+ @param key   键
+ */
++ (void)ax_cacheObject:(nullable id)obj key:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
 
  @param value 值
  @param key   键
@@ -80,6 +88,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)ax_cacheDouble:(double)x key:(NSString *)key;
 
+
+
+/**
+ 保存用户设置，不带synchronize
+ 
+ @param obj 值
+ @param key 键
+ */
+- (void)ax_cacheObject:(nullable id)obj key:(NSString *)key;
 
 /**
  保存用户设置，不带synchronize
@@ -120,6 +137,23 @@ NS_ASSUME_NONNULL_BEGIN
  @param key 键
  */
 - (void)ax_cacheDouble:(double)x key:(NSString *)key;
+
+#pragma mark remove
+
+
+/**
+ 删除用户设置，自带synchronize
+
+ @param key 键
+ */
++ (void)ax_removeObjectForKey:(NSString *)key;
+
+/**
+ 删除用户设置，不带synchronize
+
+ @param key 键
+ */
+- (void)ax_removeObjectForKey:(NSString *)key;
 
 
 @end

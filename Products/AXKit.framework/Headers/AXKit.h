@@ -5,9 +5,11 @@
 //  Created by xaoxuu on 05/03/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
-//  Homepage  https://axkit.xaoxuu.com
+//  Homepage   https://xaoxuu.com (主页)
 //
-//  GitHub    https://github.com/xaoxuu/AXKit
+//  GitHub     https://github.com/xaoxuu/AXKit (喜欢请Star或Fork)
+//
+//  issues     https://github.com/xaoxuu/AXKit/issues/new (反馈BUG或意见)
 //
 //
 
@@ -37,6 +39,10 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/NSTimer+AXBlockWrapper.h>
 // 对NSUserDefaults的封装
 #import <AXKit/NSUserDefaults+AXWrapper.h>
+// 对NSError的封装
+#import <AXKit/NSError+AXExtension.h>
+// 对NSBundle的封装
+#import <AXKit/NSBundle+AXExtension.h>
 
 
 #pragma mark - UIKit
@@ -63,6 +69,8 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/CIImage+AXScaleExtension.h>
 // 从UIImageView指定位置获取颜色
 #import <AXKit/UIImageView+AXGetColor.h>
+// UIImageView的功能扩展
+#import <AXKit/UIImageView+AXExtension.h>
 // UIImage的功能扩展
 #import <AXKit/UIImage+AXExtension.h>
 
