@@ -11,6 +11,7 @@
 
 
 // screen marco
+#define kScreenBounds [UIScreen mainScreen].bounds
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
 #define kScreenCenterX (0.5 * kScreenW)
