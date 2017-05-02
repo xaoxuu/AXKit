@@ -226,11 +226,17 @@ static inline AXEventTarget *AXTargetWith(__kindof UIControl *obj, UIControlEven
 }
 
 - (void)ax_addEditingEndOnExitHandler:(void (^)(__kindof UITextField *sender))handler{
+    // resign first responder
+    [self resignFirstResponder];
     // add a control events to target
     AXDefaultTargetFor(UIControlEventEditingDidEndOnExit);
 }
 
 - (void)ax_addEditingEndHandler:(void (^)(__kindof UITextField *sender))handler{
+    // resign first responder
+    [self ax_addEditingEndOnExitHandler:^(__kindof UITextField * _Nonnull sender) {
+        // do nothing
+    }];
     // add a control events to target
     AXDefaultTargetFor(UIControlEventEditingDidEnd);
 }
