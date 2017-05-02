@@ -9,20 +9,19 @@
 #import "NSBundle+AXExtension.h"
 #import "UIView+AXExtension.h"
 
-
 inline void AXLocalizeLabel(UILabel *label){
-    if (label.text.length) {
+    if (label.attributedText.length) {
+        
+    } else if (label.text.length) {
         label.text = NSLocalizedString(label.text, nil);
-    } else if (label.attributedText.length) {
-        label.attributedText = NSLocalizedString(label.attributedText, nil);
     }
 }
 
 inline void AXLocalizeTextView(UITextView *textView){
-    if (textView.text.length) {
+    if (textView.attributedText.length) {
+        
+    } else if (textView.text.length) {
         textView.text = NSLocalizedString(textView.text, nil);
-    } else if (textView.attributedText.length) {
-        textView.attributedText = NSLocalizedString(textView.attributedText, nil);
     }
 }
 
@@ -30,10 +29,10 @@ inline void AXLocalizeTextField(UITextField *textField){
     if (textField.placeholder.length) {
         textField.placeholder = NSLocalizedString(textField.placeholder, nil);
     }
-    if (textField.text.length) {
+    if (textField.attributedText.length) {
+        
+    } else if (textField.text.length) {
         textField.text = NSLocalizedString(textField.text, nil);
-    } else if (textField.attributedText.length) {
-        textField.attributedText = NSLocalizedString(textField.attributedText, nil);
     }
     
 }
