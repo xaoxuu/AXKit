@@ -33,7 +33,7 @@ static const void *UIBarButtonItemATBlockWrapperKey = &UIBarButtonItemATBlockWra
 }
 
 + (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action{
-    return [self ax_itemWithCustomView:view action:action];
+    return [[self alloc] ax_initWithCustomView:view action:action];
 }
 
 
@@ -108,7 +108,7 @@ static const void *UIBarButtonItemATBlockWrapperKey = &UIBarButtonItemATBlockWra
     return self;
 }
 
-- (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action AX_INITIALIZER{
+- (instancetype)ax_initWithCustomView:(UIView *)view action:(void (^)(id sender))action AX_INITIALIZER{
     self = [self initWithCustomView:view];
     if (!self) {
         return nil;

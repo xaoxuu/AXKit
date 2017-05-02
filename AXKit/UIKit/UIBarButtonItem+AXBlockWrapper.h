@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  创建一个baritem
-
+ 
  @param image 图片名
  @param action 响应的事件
  @return baritem实例
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  快速创建一个baritem
-
+ 
  @param title 标题
  @param action 响应的事件
  @return baritem实例
@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  创建一个system样式的baritem
-
+ 
  @param systemItem 系统item样式
  @param action 响应的事件
  @return item实例
@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  创建一个自定义baritem
-
+ 
  @param image 图片
  @param style 样式
  @param action 响应的事件
@@ -83,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  创建一个文字baritem
-
+ 
  @param title 文字
  @param style 样式
  @param action 响应的事件
@@ -141,7 +141,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return baritem实例
  */
-- (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action AX_INITIALIZER;
+- (instancetype)ax_initWithCustomView:(UIView *)view action:(void (^)(id sender))action AX_INITIALIZER;
 
 @end
 
