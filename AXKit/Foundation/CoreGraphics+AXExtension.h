@@ -1,5 +1,5 @@
 //
-//  Foundation+CoreGraphics.h
+//  CoreGraphics+AXExtension.h
 //  AXKit
 //
 //  Created by xaoxuu on 05/03/2017.
@@ -59,15 +59,6 @@ CG_EXTERN CGRect CGRectWithTopMargin(CGFloat top);
  @return a rect
  */
 CG_EXTERN CGRect CGRectWithTopAndBottomMargin(CGFloat top, CGFloat bottom);
-
-/**
- convert the target view's frame to superview
-
- @param targetView target view
-
- @return a rect
- */
-CG_EXTERN CGRect CGRectWithViewInScreen(UIView *targetView);
 
 
 #pragma mark 取值范围
@@ -154,7 +145,7 @@ CG_EXTERN NSUInteger AXRandomUIntegerFrom(AXUIntegerRange range);
  @param range 取值范围
  @return 最终值
  */
-CG_EXTERN CGFloat AXFloatInRange(CGFloat value, AXFloatRange range);
+CG_EXTERN CGFloat AXMakeFloatInRange(CGFloat value, AXFloatRange range);
 
 /**
  确保值在某个范围内
@@ -163,7 +154,7 @@ CG_EXTERN CGFloat AXFloatInRange(CGFloat value, AXFloatRange range);
  @param range 取值范围
  @return 最终值
  */
-CG_EXTERN NSInteger AXIntegerInRange(NSInteger value, AXIntegerRange range);
+CG_EXTERN NSInteger AXMakeIntegerInRange(NSInteger value, AXIntegerRange range);
 
 /**
  确保值在某个范围内
@@ -172,7 +163,7 @@ CG_EXTERN NSInteger AXIntegerInRange(NSInteger value, AXIntegerRange range);
  @param range 取值范围
  @return 最终值
  */
-CG_EXTERN NSUInteger AXUIntegerInRange(NSUInteger value, AXUIntegerRange range);
+CG_EXTERN NSUInteger AXMakeUIntegerInRange(NSUInteger value, AXUIntegerRange range);
 
 
 
@@ -185,7 +176,7 @@ CG_EXTERN NSUInteger AXUIntegerInRange(NSUInteger value, AXUIntegerRange range);
  @param value 值
  @return 是否包含该值
  */
-CG_EXTERN BOOL AXFloatRangeContainsFloat(AXFloatRange range, CGFloat value);
+CG_EXTERN BOOL AXRangeContainsFloat(AXFloatRange range, CGFloat value);
 
 /**
  判断值是否在某个范围内
@@ -194,7 +185,7 @@ CG_EXTERN BOOL AXFloatRangeContainsFloat(AXFloatRange range, CGFloat value);
  @param value 值
  @return 是否包含该值
  */
-CG_EXTERN BOOL AXIntegerRangeContainsInteger(AXIntegerRange range, NSInteger value);
+CG_EXTERN BOOL AXRangeContainsInteger(AXIntegerRange range, NSInteger value);
 
 /**
  判断值是否在某个范围内
@@ -203,7 +194,7 @@ CG_EXTERN BOOL AXIntegerRangeContainsInteger(AXIntegerRange range, NSInteger val
  @param value 值
  @return 是否包含该值
  */
-CG_EXTERN BOOL AXUIntegerRangeContainsUInteger(AXUIntegerRange range, NSUInteger value);
+CG_EXTERN BOOL AXRangeContainsUInteger(AXUIntegerRange range, NSUInteger value);
 
 
 

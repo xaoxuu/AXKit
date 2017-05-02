@@ -1,12 +1,12 @@
 //
-//  Foundation+CoreGraphics.m
+//  CoreGraphics+AXExtension.m
 //  AXKit
 //
 //  Created by xaoxuu on 05/03/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "Foundation+CoreGraphics.h"
+#import "CoreGraphics+AXExtension.h"
 
 
 inline CGSize CGSizeUp(CGFloat upOffset){
@@ -23,11 +23,6 @@ inline CGRect CGRectWithTopMargin(CGFloat top){
 }
 inline CGRect CGRectWithTopAndBottomMargin(CGFloat top, CGFloat bottom){
     return CGRectMake(0, top, kScreenW, kScreenH-top-bottom);
-}
-
-inline CGRect CGRectWithViewInScreen(UIView *targetView){
-    UIView *main = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    return [targetView.superview convertRect:targetView.frame toView:main];
 }
 
 #pragma mark 取值范围
@@ -55,19 +50,19 @@ inline NSUInteger AXRandomUIntegerFrom(AXUIntegerRange length){
 
 #pragma mark 确保值的范围
 
-inline CGFloat AXFloatInRange(CGFloat value, AXFloatRange range){
+inline CGFloat AXMakeFloatInRange(CGFloat value, AXFloatRange range){
     value = MAX(value, range.minValue);
     value = MIN(value, range.maxValue);
     return value;
 }
 
-inline NSInteger AXIntegerInRange(NSInteger value, AXIntegerRange range){
+inline NSInteger AXMakeIntegerInRange(NSInteger value, AXIntegerRange range){
     value = MAX(value, range.minValue);
     value = MIN(value, range.maxValue);
     return value;
 }
 
-inline NSUInteger AXUIntegerInRange(NSUInteger value, AXUIntegerRange range){
+inline NSUInteger AXMakeUIntegerInRange(NSUInteger value, AXUIntegerRange range){
     value = MAX(value, range.minValue);
     value = MIN(value, range.maxValue);
     return value;
@@ -76,7 +71,7 @@ inline NSUInteger AXUIntegerInRange(NSUInteger value, AXUIntegerRange range){
 
 #pragma mark 值是否在范围内
 
-inline BOOL AXFloatRangeContainsFloat(AXFloatRange range, CGFloat value){
+inline BOOL AXRangeContainsFloat(AXFloatRange range, CGFloat value){
     if (value >= range.minValue && value <= range.maxValue) {
         return YES;
     } else {
@@ -84,7 +79,7 @@ inline BOOL AXFloatRangeContainsFloat(AXFloatRange range, CGFloat value){
     }
 }
 
-inline BOOL AXIntegerRangeContainsInteger(AXIntegerRange range, NSInteger value){
+inline BOOL AXRangeContainsInteger(AXIntegerRange range, NSInteger value){
     if (value >= range.minValue && value <= range.maxValue) {
         return YES;
     } else {
@@ -92,7 +87,7 @@ inline BOOL AXIntegerRangeContainsInteger(AXIntegerRange range, NSInteger value)
     }
 }
 
-inline BOOL AXUIntegerRangeContainsUInteger(AXUIntegerRange range, NSUInteger value){
+inline BOOL AXRangeContainsUInteger(AXUIntegerRange range, NSUInteger value){
     if (value >= range.minValue && value <= range.maxValue) {
         return YES;
     } else {

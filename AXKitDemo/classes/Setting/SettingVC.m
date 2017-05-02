@@ -1,22 +1,22 @@
 //
-//  redVC.m
+//  SettingVC.m
 //  AXKit
 //
-//  Created by xaoxuu on 25/04/2017.
+//  Created by xaoxuu on 29/04/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "redVC.h"
+#import "SettingVC.h"
 
-@interface redVC ()
+@interface SettingVC ()
 
 @end
 
-@implementation redVC
+@implementation SettingVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

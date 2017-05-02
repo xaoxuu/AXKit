@@ -7,7 +7,7 @@
 //
 
 #import "UIView+AXFrameWrapper.h"
-#import "Foundation+CoreGraphics.h"
+#import "CoreGraphics+AXExtension.h"
 
 @implementation UIView (AXFrameWrapper)
 

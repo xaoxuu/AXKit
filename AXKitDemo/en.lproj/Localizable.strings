@@ -2,13 +2,8 @@
   Localizable.strings
   AXKit
 
-  Created by xaoxuu on 25/04/2017.
+  Created by xaoxuu on 29/04/2017.
   Copyright © 2017 Titan Studio. All rights reserved.
 */
-"标签" = "label";
-
-"请输入" = "please input";
-
-"文本" = "text content";
-
-"这是一段文字" = "This is a piece of writing.";
+"HomeVC" = "Home";
+"SettingVC" = "Setting";

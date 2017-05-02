@@ -1,32 +1,27 @@
 //
-//  SecViewController.m
+//  HomeVC.m
 //  AXKit
 //
-//  Created by xaoxuu on 17/03/2017.
+//  Created by xaoxuu on 29/04/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "SecViewController.h"
-#import <AXKit/AXKit.h>
-@interface SecViewController ()
+#import "HomeVC.h"
+
+@interface HomeVC ()
 
 @end
 
-@implementation SecViewController
+@implementation HomeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    AXLogOBJ(self.rootVC);
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)Btn:(UIButton *)sender {
-    AXLogOBJ(sender.rootVC);
-    [self dismissViewControllerAnimated:YES completion:nil];    
 }
 
 /*

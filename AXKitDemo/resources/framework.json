@@ -1,0 +1,29 @@
+{
+    "group":"Classes",
+    "items":[
+      {
+        "group":"Controller",
+        "items":[
+          {
+            "group":"Home",
+            "items":[
+              {
+                " ":"HomeVC",
+                "desc":"主页",
+              }
+            ]
+          },{
+            "key":"Setting",
+            "items":[
+              {
+                "key":"Setting",
+                "desc":"设置",
+              }
+            ]
+          }
+        ]
+      },
+
+    ],
+
+}

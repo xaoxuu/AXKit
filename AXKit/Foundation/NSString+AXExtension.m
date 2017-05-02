@@ -41,7 +41,7 @@ inline NSString *NSStringFromPointer(id x){
 }
 
 inline NSString *NSStringFromPercent(CGFloat x){
-    x = AXFloatInRange(x, AXFloatRangeMake(0, 1));
+    x = AXMakeFloatInRange(x, AXFloatRangeMake(0, 1));
     NSNumber *num = [NSNumber numberWithFloat:x * 100];
     return [NSString stringWithFormat:@"%@%%",num];
 }

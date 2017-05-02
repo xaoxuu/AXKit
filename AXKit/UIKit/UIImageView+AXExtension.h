@@ -18,4 +18,9 @@
  */
 - (void)ax_fillWithColor:(UIColor *)color;
 
+/**
+ 填充随机色（多用于项目初期）
+ */
+- (void)ax_fillWithRandomColor;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "UIView+AXExtension.h"
-#import "Foundation+CoreGraphics.h"
+#import "CoreGraphics+AXExtension.h"
 #import "UIViewController+AXExtension.h"
 
 inline UIView *UIViewWithHeight(CGFloat height){
@@ -74,7 +74,7 @@ inline UIView *UIViewFromNibNamed(NSString *name){
 - (void)ax_eachSubviewWithTags:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
-            if (AXIntegerRangeContainsInteger(tagRange, subview.tag)) {
+            if (AXRangeContainsInteger(tagRange, subview.tag)) {
                 action(subview);
             }
         }
@@ -96,6 +96,11 @@ inline UIView *UIViewFromNibNamed(NSString *name){
     view.backgroundColor = [UIColor whiteColor];
     view.layer.cornerRadius = 0.5 * fmin(rect.size.width, rect.size.height);
     return view;
+}
+
+- (CGRect)frameInScreen{
+    UIView *main = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    return [self.superview convertRect:self.frame toView:main];
 }
 
 

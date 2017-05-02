@@ -10,70 +10,85 @@
 #import "UIView+AXExtension.h"
 
 
-inline void AXLocalizedLabel(UILabel *label){
-    label.text = NSLocalizedString(label.text, nil);
+inline void AXLocalizeLabel(UILabel *label){
+    if (label.text.length) {
+        label.text = NSLocalizedString(label.text, nil);
+    } else if (label.attributedText.length) {
+        label.attributedText = NSLocalizedString(label.attributedText, nil);
+    }
 }
 
-inline void AXLocalizedTextView(UITextView *textView){
-    textView.text = NSLocalizedString(textView.text, nil);
+inline void AXLocalizeTextView(UITextView *textView){
+    if (textView.text.length) {
+        textView.text = NSLocalizedString(textView.text, nil);
+    } else if (textView.attributedText.length) {
+        textView.attributedText = NSLocalizedString(textView.attributedText, nil);
+    }
 }
 
-inline void AXLocalizedTextField(UITextField *textField){
-    textField.placeholder = NSLocalizedString(textField.placeholder, nil);
-    textField.text = NSLocalizedString(textField.text, nil);
+inline void AXLocalizeTextField(UITextField *textField){
+    if (textField.placeholder.length) {
+        textField.placeholder = NSLocalizedString(textField.placeholder, nil);
+    }
+    if (textField.text.length) {
+        textField.text = NSLocalizedString(textField.text, nil);
+    } else if (textField.attributedText.length) {
+        textField.attributedText = NSLocalizedString(textField.attributedText, nil);
+    }
+    
 }
 
 
-inline void AXLocalizedAllLabelsInView(UIView *view){
+inline void AXLocalizeAllLabelsInView(UIView *view){
     [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
-            AXLocalizedAllLabelsInView(subview);
+            AXLocalizeAllLabelsInView(subview);
         }
         if ([subview isKindOfClass:[UILabel class]]) {
             UILabel *lb = subview;
-            AXLocalizedLabel(lb);
+            AXLocalizeLabel(lb);
         }
     }];
 }
 
-inline void AXLocalizedAllTextFieldsInView(UIView *view){
+inline void AXLocalizeAllTextFieldsInView(UIView *view){
     [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
-            AXLocalizedAllTextFieldsInView(subview);
+            AXLocalizeAllTextFieldsInView(subview);
         }
         if ([subview isKindOfClass:[UITextField class]]) {
             UITextField *tf = subview;
-            AXLocalizedTextField(tf);
+            AXLocalizeTextField(tf);
         }
     }];
 }
 
-inline void AXLocalizedAllTextViewsInView(UIView *view){
+inline void AXLocalizeAllTextViewsInView(UIView *view){
     [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
-            AXLocalizedAllTextViewsInView(subview);
+            AXLocalizeAllTextViewsInView(subview);
         }
         if ([subview isKindOfClass:[UITextView class]]) {
             UITextView *tv = subview;
-            AXLocalizedTextView(tv);
+            AXLocalizeTextView(tv);
         }
     }];
 }
 
-inline void AXLocalizedAllSubviewsInView(UIView *view){
+inline void AXLocalizeAllSubviewsInView(UIView *view){
     [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
-            AXLocalizedAllSubviewsInView(subview);
+            AXLocalizeAllSubviewsInView(subview);
         }
         if ([subview isKindOfClass:[UILabel class]]) {
             UILabel *lb = subview;
-            AXLocalizedLabel(lb);
+            AXLocalizeLabel(lb);
         } else if ([subview isKindOfClass:[UITextField class]]) {
             UITextField *tf = subview;
-            AXLocalizedTextField(tf);
+            AXLocalizeTextField(tf);
         } else if ([subview isKindOfClass:[UITextView class]]) {
             UITextView *tv = subview;
-            AXLocalizedTextView(tv);
+            AXLocalizeTextView(tv);
         }
     }];
 }

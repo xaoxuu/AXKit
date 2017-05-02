@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Foundation+CoreGraphics.h"
+#import "CoreGraphics+AXExtension.h"
 
 @interface UITextField (AXExtension)
 

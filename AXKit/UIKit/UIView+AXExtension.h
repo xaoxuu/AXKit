@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Foundation+CoreGraphics.h"
+#import "CoreGraphics+AXExtension.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -119,6 +119,13 @@ CG_EXTERN UIView *UIViewFromNibNamed(NSString *name);
  */
 + (instancetype)ax_roundedViewWithFrame:(CGRect)rect;
 
+
+/**
+ view在screen中的frame
+
+ @return view在screen中的frame
+ */
+- (CGRect)frameInScreen;
 
 @end
 
