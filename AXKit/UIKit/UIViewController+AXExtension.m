@@ -8,6 +8,11 @@
 
 #import "UIViewController+AXExtension.h"
 
+inline UIViewController *UIViewControllerFromString(NSString *name){
+    return [[NSClassFromString(name) class] new];
+}
+
+
 @implementation UIViewController (AXExtension)
 
 

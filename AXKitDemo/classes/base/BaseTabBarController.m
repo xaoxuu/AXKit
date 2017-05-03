@@ -7,8 +7,12 @@
 //
 
 #import "BaseTabBarController.h"
+#import "BaseNavController.h"
 
 @interface BaseTabBarController ()
+
+// @xaoxuu: child controllers
+@property (strong, nonatomic) NSArray<NSDictionary *> *controllers;
 
 @end
 
@@ -17,6 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    for (NSDictionary *dict in self.controllers) {
+        UIViewController *vc = [[[NSClassFromString(dict[@"vc"]) class] alloc] init];
+        BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:vc];
+        [self addChildViewController:nav];
+        [self setupChlidController:vc title:dict[@"title"] image:dict[@"icon"] selectedImage:dict[@"icon_sel"]];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +37,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSArray<NSDictionary *> *)controllers{
+    if (!_controllers) {
+        _controllers = @"DemoFramework".plist.mainBundlePath.readArray;
+    }
+    return _controllers;
 }
-*/
+
+
+// setup child controllers
+- (void)setupChlidController:(UIViewController * __nonnull)vc title:(NSString * __nullable)title image:(NSString * __nonnull)image selectedImage:(NSString * __nullable)selectedImage {
+    if (vc) {
+        vc.tabBarItem.title = title;
+        if (image.length) {
+            vc.tabBarItem.image = [UIImage imageNamed:image];
+            if (selectedImage) {
+                vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
+            }
+        }
+    }
+}
+
 
 @end

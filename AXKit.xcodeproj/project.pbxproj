@@ -34,14 +34,6 @@
 		CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD0645A51EB3A3DF007FBF06 /* Localizable.strings */; };
 		CD0645AB1EB3AA78007FBF06 /* framework.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0645A91EB3AA78007FBF06 /* framework.json */; };
 		CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = CD0645AA1EB3AA78007FBF06 /* Localizable.xlsx */; };
-		CD0645B11EB3ABA8007FBF06 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0645B01EB3ABA8007FBF06 /* RootViewController.m */; };
-		CD0645B41EB3ABE3007FBF06 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0645B31EB3ABE3007FBF06 /* BaseTabBarController.m */; };
-		CD0645B71EB3ABF5007FBF06 /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0645B61EB3ABF5007FBF06 /* BaseNavController.m */; };
-		CD0645BA1EB3AC07007FBF06 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0645B91EB3AC07007FBF06 /* BaseViewController.m */; };
-		CD0645C01EB3AC59007FBF06 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0645BE1EB3AC59007FBF06 /* HomeVC.m */; };
-		CD0645C11EB3AC59007FBF06 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0645BF1EB3AC59007FBF06 /* HomeVC.xib */; };
-		CD0645C51EB3AC66007FBF06 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0645C31EB3AC66007FBF06 /* SettingVC.m */; };
-		CD0645C61EB3AC66007FBF06 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0645C41EB3AC66007FBF06 /* SettingVC.xib */; };
 		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,6 +95,24 @@
 		CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */; };
 		CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */; };
+		CDF18CCA1EB884F1004B4794 /* DemoFramework.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CB81EB884F1004B4794 /* DemoFramework.plist */; };
+		CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBA1EB884F1004B4794 /* BaseNavController.m */; };
+		CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBC1EB884F1004B4794 /* BaseTabBarController.m */; };
+		CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBE1EB884F1004B4794 /* BaseViewController.m */; };
+		CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CC01EB884F1004B4794 /* RootViewController.m */; };
+		CDF18CCF1EB884F1004B4794 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CC41EB884F1004B4794 /* HomeVC.m */; };
+		CDF18CD01EB884F1004B4794 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CC51EB884F1004B4794 /* HomeVC.xib */; };
+		CDF18CD11EB884F1004B4794 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CC81EB884F1004B4794 /* SettingVC.m */; };
+		CDF18CD21EB884F1004B4794 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CC91EB884F1004B4794 /* SettingVC.xib */; };
+		CDF18CD51EB8850F004B4794 /* DemoMarcos.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CD41EB8850F004B4794 /* DemoMarcos.m */; };
+		CDF18CDE1EB88881004B4794 /* SettingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CD81EB88881004B4794 /* SettingListModel.m */; };
+		CDF18CDF1EB88881004B4794 /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CDA1EB88881004B4794 /* SettingTableView.m */; };
+		CDF18CE01EB88881004B4794 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CDC1EB88881004B4794 /* SettingTableViewCell.m */; };
+		CDF18CE11EB88881004B4794 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CDD1EB88881004B4794 /* SettingTableViewCell.xib */; };
+		CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CE41EB888BE004B4794 /* UITableView+Creator.m */; };
+		CDF18CE81EB888BE004B4794 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CE61EB888BE004B4794 /* UIViewController+AXExtension.m */; };
+		CDF18CED1EB88967004B4794 /* AXLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CEB1EB88967004B4794 /* AXLogVC.m */; };
+		CDF18CEE1EB88967004B4794 /* AXLogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CEC1EB88967004B4794 /* AXLogVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,20 +159,6 @@
 		CD0645A71EB3A3E4007FBF06 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CD0645A91EB3AA78007FBF06 /* framework.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = framework.json; sourceTree = "<group>"; };
 		CD0645AA1EB3AA78007FBF06 /* Localizable.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Localizable.xlsx; sourceTree = "<group>"; };
-		CD0645AF1EB3ABA8007FBF06 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		CD0645B01EB3ABA8007FBF06 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		CD0645B21EB3ABE3007FBF06 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
-		CD0645B31EB3ABE3007FBF06 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
-		CD0645B51EB3ABF5007FBF06 /* BaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavController.h; sourceTree = "<group>"; };
-		CD0645B61EB3ABF5007FBF06 /* BaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavController.m; sourceTree = "<group>"; };
-		CD0645B81EB3AC07007FBF06 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		CD0645B91EB3AC07007FBF06 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		CD0645BD1EB3AC59007FBF06 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
-		CD0645BE1EB3AC59007FBF06 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
-		CD0645BF1EB3AC59007FBF06 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		CD0645C21EB3AC66007FBF06 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
-		CD0645C31EB3AC66007FBF06 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
-		CD0645C41EB3AC66007FBF06 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
 		CD0645C71EB3AC96007FBF06 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
@@ -227,6 +223,37 @@
 		CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AXExtension.m"; sourceTree = "<group>"; };
 		CDE91FC91EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CDF18CB81EB884F1004B4794 /* DemoFramework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DemoFramework.plist; sourceTree = "<group>"; };
+		CDF18CB91EB884F1004B4794 /* BaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavController.h; sourceTree = "<group>"; };
+		CDF18CBA1EB884F1004B4794 /* BaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavController.m; sourceTree = "<group>"; };
+		CDF18CBB1EB884F1004B4794 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		CDF18CBC1EB884F1004B4794 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		CDF18CBD1EB884F1004B4794 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		CDF18CBE1EB884F1004B4794 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		CDF18CBF1EB884F1004B4794 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		CDF18CC01EB884F1004B4794 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		CDF18CC31EB884F1004B4794 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		CDF18CC41EB884F1004B4794 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		CDF18CC51EB884F1004B4794 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		CDF18CC71EB884F1004B4794 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		CDF18CC81EB884F1004B4794 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		CDF18CC91EB884F1004B4794 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		CDF18CD31EB8850F004B4794 /* DemoMarcos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMarcos.h; sourceTree = "<group>"; };
+		CDF18CD41EB8850F004B4794 /* DemoMarcos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMarcos.m; sourceTree = "<group>"; };
+		CDF18CD71EB88881004B4794 /* SettingListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingListModel.h; sourceTree = "<group>"; };
+		CDF18CD81EB88881004B4794 /* SettingListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingListModel.m; sourceTree = "<group>"; };
+		CDF18CD91EB88881004B4794 /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
+		CDF18CDA1EB88881004B4794 /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
+		CDF18CDB1EB88881004B4794 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
+		CDF18CDC1EB88881004B4794 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
+		CDF18CDD1EB88881004B4794 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		CDF18CE31EB888BE004B4794 /* UITableView+Creator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Creator.h"; sourceTree = "<group>"; };
+		CDF18CE41EB888BE004B4794 /* UITableView+Creator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Creator.m"; sourceTree = "<group>"; };
+		CDF18CE51EB888BE004B4794 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
+		CDF18CE61EB888BE004B4794 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
+		CDF18CEA1EB88967004B4794 /* AXLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXLogVC.h; sourceTree = "<group>"; };
+		CDF18CEB1EB88967004B4794 /* AXLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXLogVC.m; sourceTree = "<group>"; };
+		CDF18CEC1EB88967004B4794 /* AXLogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXLogVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,7 +296,7 @@
 		8579EEFC1E6BEDF900C33881 /* AXKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CD0645AD1EB3AA82007FBF06 /* classes */,
+				CDF18CB61EB884F1004B4794 /* classes */,
 				CD0645A81EB3AA78007FBF06 /* resources */,
 				8579EF001E6BEDF900C33881 /* AppDelegate.h */,
 				8579EF011E6BEDF900C33881 /* AppDelegate.m */,
@@ -310,51 +337,6 @@
 				CD0645AA1EB3AA78007FBF06 /* Localizable.xlsx */,
 			);
 			path = resources;
-			sourceTree = "<group>";
-		};
-		CD0645AD1EB3AA82007FBF06 /* classes */ = {
-			isa = PBXGroup;
-			children = (
-				CD0645BB1EB3AC2D007FBF06 /* Home */,
-				CD0645BC1EB3AC2D007FBF06 /* Setting */,
-				CD0645AE1EB3AA82007FBF06 /* base */,
-			);
-			path = classes;
-			sourceTree = "<group>";
-		};
-		CD0645AE1EB3AA82007FBF06 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				CD0645AF1EB3ABA8007FBF06 /* RootViewController.h */,
-				CD0645B01EB3ABA8007FBF06 /* RootViewController.m */,
-				CD0645B21EB3ABE3007FBF06 /* BaseTabBarController.h */,
-				CD0645B31EB3ABE3007FBF06 /* BaseTabBarController.m */,
-				CD0645B51EB3ABF5007FBF06 /* BaseNavController.h */,
-				CD0645B61EB3ABF5007FBF06 /* BaseNavController.m */,
-				CD0645B81EB3AC07007FBF06 /* BaseViewController.h */,
-				CD0645B91EB3AC07007FBF06 /* BaseViewController.m */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
-		CD0645BB1EB3AC2D007FBF06 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				CD0645BD1EB3AC59007FBF06 /* HomeVC.h */,
-				CD0645BE1EB3AC59007FBF06 /* HomeVC.m */,
-				CD0645BF1EB3AC59007FBF06 /* HomeVC.xib */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		CD0645BC1EB3AC2D007FBF06 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				CD0645C21EB3AC66007FBF06 /* SettingVC.h */,
-				CD0645C31EB3AC66007FBF06 /* SettingVC.m */,
-				CD0645C41EB3AC66007FBF06 /* SettingVC.xib */,
-			);
-			path = Setting;
 			sourceTree = "<group>";
 		};
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
@@ -432,6 +414,100 @@
 				CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CDF18CB61EB884F1004B4794 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CB71EB884F1004B4794 /* base */,
+				CDF18CC11EB884F1004B4794 /* const */,
+				CDF18CC21EB884F1004B4794 /* home */,
+				CDF18CC61EB884F1004B4794 /* setting */,
+				CDF18CD61EB8886C004B4794 /* views */,
+				CDF18CE21EB8889F004B4794 /* util */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		CDF18CB71EB884F1004B4794 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CBF1EB884F1004B4794 /* RootViewController.h */,
+				CDF18CC01EB884F1004B4794 /* RootViewController.m */,
+				CDF18CB81EB884F1004B4794 /* DemoFramework.plist */,
+				CDF18CB91EB884F1004B4794 /* BaseNavController.h */,
+				CDF18CBA1EB884F1004B4794 /* BaseNavController.m */,
+				CDF18CBB1EB884F1004B4794 /* BaseTabBarController.h */,
+				CDF18CBC1EB884F1004B4794 /* BaseTabBarController.m */,
+				CDF18CBD1EB884F1004B4794 /* BaseViewController.h */,
+				CDF18CBE1EB884F1004B4794 /* BaseViewController.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		CDF18CC11EB884F1004B4794 /* const */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CD31EB8850F004B4794 /* DemoMarcos.h */,
+				CDF18CD41EB8850F004B4794 /* DemoMarcos.m */,
+			);
+			path = const;
+			sourceTree = "<group>";
+		};
+		CDF18CC21EB884F1004B4794 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CC31EB884F1004B4794 /* HomeVC.h */,
+				CDF18CC41EB884F1004B4794 /* HomeVC.m */,
+				CDF18CC51EB884F1004B4794 /* HomeVC.xib */,
+				CDF18CE91EB88950004B4794 /* axlog */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		CDF18CC61EB884F1004B4794 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CC71EB884F1004B4794 /* SettingVC.h */,
+				CDF18CC81EB884F1004B4794 /* SettingVC.m */,
+				CDF18CC91EB884F1004B4794 /* SettingVC.xib */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		CDF18CD61EB8886C004B4794 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CD71EB88881004B4794 /* SettingListModel.h */,
+				CDF18CD81EB88881004B4794 /* SettingListModel.m */,
+				CDF18CD91EB88881004B4794 /* SettingTableView.h */,
+				CDF18CDA1EB88881004B4794 /* SettingTableView.m */,
+				CDF18CDB1EB88881004B4794 /* SettingTableViewCell.h */,
+				CDF18CDC1EB88881004B4794 /* SettingTableViewCell.m */,
+				CDF18CDD1EB88881004B4794 /* SettingTableViewCell.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		CDF18CE21EB8889F004B4794 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CE31EB888BE004B4794 /* UITableView+Creator.h */,
+				CDF18CE41EB888BE004B4794 /* UITableView+Creator.m */,
+				CDF18CE51EB888BE004B4794 /* UIViewController+AXExtension.h */,
+				CDF18CE61EB888BE004B4794 /* UIViewController+AXExtension.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		CDF18CE91EB88950004B4794 /* axlog */ = {
+			isa = PBXGroup;
+			children = (
+				CDF18CEA1EB88967004B4794 /* AXLogVC.h */,
+				CDF18CEB1EB88967004B4794 /* AXLogVC.m */,
+				CDF18CEC1EB88967004B4794 /* AXLogVC.xib */,
+			);
+			path = axlog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,12 +647,15 @@
 			files = (
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
+				CDF18CEE1EB88967004B4794 /* AXLogVC.xib in Resources */,
+				CDF18CD21EB884F1004B4794 /* SettingVC.xib in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* framework.json in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
 				8579EF081E6BEDF900C33881 /* Main.storyboard in Resources */,
-				CD0645C61EB3AC66007FBF06 /* SettingVC.xib in Resources */,
+				CDF18CD01EB884F1004B4794 /* HomeVC.xib in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
-				CD0645C11EB3AC59007FBF06 /* HomeVC.xib in Resources */,
+				CDF18CE11EB88881004B4794 /* SettingTableViewCell.xib in Resources */,
+				CDF18CCA1EB884F1004B4794 /* DemoFramework.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,14 +689,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD0645B41EB3ABE3007FBF06 /* BaseTabBarController.m in Sources */,
-				CD0645BA1EB3AC07007FBF06 /* BaseViewController.m in Sources */,
-				CD0645B71EB3ABF5007FBF06 /* BaseNavController.m in Sources */,
-				CD0645C01EB3AC59007FBF06 /* HomeVC.m in Sources */,
+				CDF18CDE1EB88881004B4794 /* SettingListModel.m in Sources */,
+				CDF18CDF1EB88881004B4794 /* SettingTableView.m in Sources */,
+				CDF18CE01EB88881004B4794 /* SettingTableViewCell.m in Sources */,
+				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
+				CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */,
+				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
+				CDF18CCF1EB884F1004B4794 /* HomeVC.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
-				CD0645C51EB3AC66007FBF06 /* SettingVC.m in Sources */,
+				CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */,
+				CDF18CE81EB888BE004B4794 /* UIViewController+AXExtension.m in Sources */,
+				CDF18CD11EB884F1004B4794 /* SettingVC.m in Sources */,
+				CDF18CD51EB8850F004B4794 /* DemoMarcos.m in Sources */,
+				CDF18CED1EB88967004B4794 /* AXLogVC.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
-				CD0645B11EB3ABA8007FBF06 /* RootViewController.m in Sources */,
+				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

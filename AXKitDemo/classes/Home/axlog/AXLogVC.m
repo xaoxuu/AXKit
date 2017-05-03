@@ -1,31 +1,22 @@
 //
-//  RootViewController.m
+//  AXLogVC.m
 //  AXKit
 //
-//  Created by xaoxuu on 29/04/2017.
+//  Created by xaoxuu on 02/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "RootViewController.h"
-#import "BaseTabBarController.h"
+#import "AXLogVC.h"
 
-@interface RootViewController ()
-
-// @xaoxuu: tabbar controller
-@property (strong, nonatomic) BaseTabBarController *mainTabBarVC;
+@interface AXLogVC ()
 
 @end
 
-@implementation RootViewController
+@implementation AXLogVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.mainTabBarVC = [[BaseTabBarController alloc] init];
-    [self addChildViewController:self.mainTabBarVC];
-    [self.view addSubview:self.mainTabBarVC.view];
-    
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
