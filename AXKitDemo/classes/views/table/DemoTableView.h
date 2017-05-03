@@ -1,14 +1,14 @@
 //
-//  SettingTableView.h
+//  DemoTableView.h
 //  AXKit
 //
-//  Created by xaoxuu on 17/04/2017.
+//  Created by xaoxuu on 03/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SettingTableView : UIView
+@interface DemoTableView : UIView
 
 // @xaoxuu: 数据源plist名
 @property (copy, nonatomic) NSString *sourcePlistName;
@@ -18,9 +18,10 @@
 @property (assign, nonatomic) CGFloat rowHeight;
 
 
-- (NSString *)ax_tableViewCellDetailForIndexPath:(NSIndexPath *)indexPath;
-- (BOOL)ax_tableViewCellSwitchOnForIndexPath:(NSIndexPath *)indexPath;
-- (void)ax_tableViewCellSwitchStatusChanged:(BOOL)on forIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row;
+- (BOOL)tableViewCellSwitchOnForSection:(NSUInteger)section row:(NSUInteger)row;
+- (void)tableViewCellSwitchStatusChanged:(BOOL)on forSection:(NSUInteger)section row:(NSUInteger)row;
+
 
 - (void)reloadData;
 
@@ -32,5 +33,6 @@
 - (void)setupTableViewHeader:(UIView *)header;
 
 - (void)setupTableViewFooter:(UIView *)footer;
+
 
 @end

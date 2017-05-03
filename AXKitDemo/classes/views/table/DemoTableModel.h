@@ -1,14 +1,14 @@
 //
-//  SettingListModel.h
+//  DemoTableModel.h
 //  AXKit
 //
-//  Created by xaoxuu on 17/04/2017.
+//  Created by xaoxuu on 03/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface SettingListModel : NSObject
+@interface DemoTableModel : NSObject
 
 #pragma mark ui
 // @xaoxuu: icon path
@@ -26,7 +26,7 @@
 // @xaoxuu: 是否显示消息数badge，默认为NO
 @property (assign, nonatomic) BOOL showBadge;
 
-#pragma mark 功能
+#pragma mark action
 // @xaoxuu: 跳转到某控制器
 @property (copy, nonatomic) NSString *target;
 

@@ -40,7 +40,7 @@
 
 - (NSArray<NSDictionary *> *)controllers{
     if (!_controllers) {
-        _controllers = @"DemoFramework".plist.mainBundlePath.readArray;
+        _controllers = @"TabBarControllers".plist.mainBundlePath.readArray;
     }
     return _controllers;
 }
@@ -49,7 +49,7 @@
 // setup child controllers
 - (void)setupChlidController:(UIViewController * __nonnull)vc title:(NSString * __nullable)title image:(NSString * __nonnull)image selectedImage:(NSString * __nullable)selectedImage {
     if (vc) {
-        vc.tabBarItem.title = title;
+        vc.title = NSLocalizedString(title, nil);
         if (image.length) {
             vc.tabBarItem.image = [UIImage imageNamed:image];
             if (selectedImage) {

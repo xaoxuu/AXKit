@@ -9,6 +9,26 @@
 #import "CoreGraphics+AXExtension.h"
 
 
+#pragma mark - 常量
+
+const CGFloat kStatusBarHeight = 20;
+const CGFloat kNavBarHeight = 44;
+const CGFloat kTopBarHeight = 64;
+const CGFloat kTabBarHeight = 49;
+
+const CGFloat kMarginNarrow = 4;
+const CGFloat kMarginNormal = 8;
+const CGFloat kMarginWide = 16;
+
+
+
+
+
+inline CGRect CGRectFromScreen(){
+    return [UIScreen mainScreen].bounds;
+}
+
+
 inline CGSize CGSizeUp(CGFloat upOffset){
     return CGSizeMake(0, -upOffset);
 }

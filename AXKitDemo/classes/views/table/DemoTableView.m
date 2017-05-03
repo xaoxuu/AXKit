@@ -1,35 +1,35 @@
 //
-//  SettingTableView.m
+//  DemoTableView.m
 //  AXKit
 //
-//  Created by xaoxuu on 17/04/2017.
+//  Created by xaoxuu on 03/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "SettingTableView.h"
-#import "SettingListModel.h"
+#import "DemoTableView.h"
 #import "UITableView+Creator.h"
-#import "SettingTableViewCell.h"
-#import <MJExtension.h>
+#import "MJExtension.h"
+#import "DemoTableModel.h"
+#import "DemoTableViewCell.h"
 
+@interface DemoTableView () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
-
-@interface SettingTableView () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 
 // @xaoxuu: table view
 @property (strong, nonatomic) UITableView *tableView;
 
 // @xaoxuu: list
-@property (strong, nonatomic) NSArray<NSArray<SettingListModel *> *> *list;
+@property (strong, nonatomic) NSArray<NSArray<DemoTableModel *> *> *list;
 
 
 
 @property (copy, nonatomic) void (^switchStatusChanged)(NSIndexPath *indexPath, BOOL on);
 
+
 @end
 
-@implementation SettingTableView
+@implementation DemoTableView
 
 - (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name{
     if (self = [self initWithFrame:frame]) {
@@ -42,7 +42,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        _cellNibName = @"SettingTableViewCell";
+        _cellNibName = @"DemoTableViewCell";
         [self setupTableView];
         self.rowHeight = 44;
     }
@@ -76,9 +76,9 @@
 }
 
 
-- (NSArray<NSArray<SettingListModel *> *> *)list{
+- (NSArray<NSArray<DemoTableModel *> *> *)list{
     if (!_list.count) {
-        _list = [SettingListModel mj_objectArrayWithKeyValuesArray:self.sourcePlistName.plist.mainBundlePath.readArray];
+        _list = [DemoTableModel mj_objectArrayWithKeyValuesArray:self.sourcePlistName.plist.mainBundlePath.readArray];
         if (!_list) {
             _list = [NSArray array];
         }
@@ -95,15 +95,16 @@
     [self.tableView reloadData];
 }
 
-- (NSString *)ax_tableViewCellDetailForIndexPath:(NSIndexPath *)indexPath{
+
+- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
     return nil;
 }
 
-- (BOOL)ax_tableViewCellSwitchOnForIndexPath:(NSIndexPath *)indexPath{
+- (BOOL)tableViewCellSwitchOnForSection:(NSUInteger)section row:(NSUInteger)row{
     return NO;
 }
 
-- (void)ax_tableViewCellSwitchStatusChanged:(BOOL)on forIndexPath:(NSIndexPath *)indexPath{
+- (void)tableViewCellSwitchStatusChanged:(BOOL)on forSection:(NSUInteger)section row:(NSUInteger)row{
     
 }
 
@@ -116,13 +117,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
-    SettingListModel *model = self.list[indexPath.section][indexPath.row];
-    model.detail = [self ax_tableViewCellDetailForIndexPath:indexPath];
+    DemoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
+    DemoTableModel *model = self.list[indexPath.section][indexPath.row];
+    model.detail = [self tableViewCellDetailForSection:indexPath.section row:indexPath.row];
     cell.model = model;
-    cell.sw.on = [self ax_tableViewCellSwitchOnForIndexPath:indexPath];
+    cell.sw.on = [self tableViewCellSwitchOnForSection:indexPath.section row:indexPath.row];
     [cell switchStatusChanged:^(BOOL on) {
-        [self ax_tableViewCellSwitchStatusChanged:on forIndexPath:indexPath];
+        [self tableViewCellSwitchStatusChanged:on forSection:indexPath.section row:indexPath.row];
         if (self.switchStatusChanged) {
             self.switchStatusChanged(indexPath, on);
         }

@@ -12,6 +12,16 @@
 	</dict>
 	<dict>
 		<key>vc</key>
+		<string>BlogVC</string>
+		<key>title</key>
+		<string>博客</string>
+		<key>icon</key>
+		<string></string>
+		<key>icon_sel</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>vc</key>
 		<string>SettingVC</string>
 		<key>title</key>
 		<string>设置</string>

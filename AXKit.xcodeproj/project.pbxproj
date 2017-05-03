@@ -38,6 +38,7 @@
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
+		CD6C676A1EB9F2BC00B57279 /* DemoWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6C67691EB9F2BC00B57279 /* DemoWebVC.m */; };
 		CDAB58DF1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB58E01E6BF2160017CA1E /* CALayer+AXChainedWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,6 +88,32 @@
 		CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */; };
 		CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39B41EB9D74E00E8ED25 /* DemoConst.m */; };
+		CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39B61EB9D74E00E8ED25 /* DemoMarcos.m */; };
+		CDBB39C61EB9D96B00E8ED25 /* AXLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39BD1EB9D96B00E8ED25 /* AXLogVC.m */; };
+		CDBB39C71EB9D96B00E8ED25 /* AXLogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39BE1EB9D96B00E8ED25 /* AXLogVC.xib */; };
+		CDBB39C81EB9D96B00E8ED25 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39C01EB9D96B00E8ED25 /* HomeVC.m */; };
+		CDBB39C91EB9D96B00E8ED25 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39C11EB9D96B00E8ED25 /* HomeVC.xib */; };
+		CDBB39CA1EB9D96B00E8ED25 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39C41EB9D96B00E8ED25 /* SettingVC.m */; };
+		CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39C51EB9D96B00E8ED25 /* SettingVC.xib */; };
+		CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39D41EB9DD1400E8ED25 /* BlogVC.m */; };
+		CDBB39D71EB9DD1400E8ED25 /* BlogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39D51EB9DD1400E8ED25 /* BlogVC.xib */; };
+		CDBB3B021EB9DF7A00E8ED25 /* DemoTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B011EB9DF7A00E8ED25 /* DemoTableModel.m */; };
+		CDBB3B051EB9DFAD00E8ED25 /* DemoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B041EB9DFAD00E8ED25 /* DemoTableView.m */; };
+		CDBB3B091EB9E01000E8ED25 /* DemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B071EB9E01000E8ED25 /* DemoTableViewCell.m */; };
+		CDBB3B0A1EB9E01000E8ED25 /* DemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB3B081EB9E01000E8ED25 /* DemoTableViewCell.xib */; };
+		CDBB3B0C1EB9E17500E8ED25 /* SettingTableView.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */; };
+		CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */; };
+		CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B131EB9E80F00E8ED25 /* MJExtensionConst.m */; };
+		CDBB3B271EB9E80F00E8ED25 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B151EB9E80F00E8ED25 /* MJFoundation.m */; };
+		CDBB3B281EB9E80F00E8ED25 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B171EB9E80F00E8ED25 /* MJProperty.m */; };
+		CDBB3B291EB9E80F00E8ED25 /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B191EB9E80F00E8ED25 /* MJPropertyKey.m */; };
+		CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B1B1EB9E80F00E8ED25 /* MJPropertyType.m */; };
+		CDBB3B2B1EB9E80F00E8ED25 /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B1D1EB9E80F00E8ED25 /* NSObject+MJClass.m */; };
+		CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B1F1EB9E80F00E8ED25 /* NSObject+MJCoding.m */; };
+		CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B211EB9E80F00E8ED25 /* NSObject+MJKeyValue.m */; };
+		CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B231EB9E80F00E8ED25 /* NSObject+MJProperty.m */; };
+		CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */; };
 		CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */; };
 		CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,24 +122,13 @@
 		CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */; };
 		CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */; };
-		CDF18CCA1EB884F1004B4794 /* DemoFramework.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CB81EB884F1004B4794 /* DemoFramework.plist */; };
+		CDF18CCA1EB884F1004B4794 /* TabBarControllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CB81EB884F1004B4794 /* TabBarControllers.plist */; };
 		CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBA1EB884F1004B4794 /* BaseNavController.m */; };
 		CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBC1EB884F1004B4794 /* BaseTabBarController.m */; };
 		CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBE1EB884F1004B4794 /* BaseViewController.m */; };
 		CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CC01EB884F1004B4794 /* RootViewController.m */; };
-		CDF18CCF1EB884F1004B4794 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CC41EB884F1004B4794 /* HomeVC.m */; };
-		CDF18CD01EB884F1004B4794 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CC51EB884F1004B4794 /* HomeVC.xib */; };
-		CDF18CD11EB884F1004B4794 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CC81EB884F1004B4794 /* SettingVC.m */; };
-		CDF18CD21EB884F1004B4794 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CC91EB884F1004B4794 /* SettingVC.xib */; };
-		CDF18CD51EB8850F004B4794 /* DemoMarcos.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CD41EB8850F004B4794 /* DemoMarcos.m */; };
-		CDF18CDE1EB88881004B4794 /* SettingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CD81EB88881004B4794 /* SettingListModel.m */; };
-		CDF18CDF1EB88881004B4794 /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CDA1EB88881004B4794 /* SettingTableView.m */; };
-		CDF18CE01EB88881004B4794 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CDC1EB88881004B4794 /* SettingTableViewCell.m */; };
-		CDF18CE11EB88881004B4794 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CDD1EB88881004B4794 /* SettingTableViewCell.xib */; };
 		CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CE41EB888BE004B4794 /* UITableView+Creator.m */; };
 		CDF18CE81EB888BE004B4794 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CE61EB888BE004B4794 /* UIViewController+AXExtension.m */; };
-		CDF18CED1EB88967004B4794 /* AXLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CEB1EB88967004B4794 /* AXLogVC.m */; };
-		CDF18CEE1EB88967004B4794 /* AXLogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF18CEC1EB88967004B4794 /* AXLogVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +180,8 @@
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
+		CD6C67681EB9F2BC00B57279 /* DemoWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoWebVC.h; sourceTree = "<group>"; };
+		CD6C67691EB9F2BC00B57279 /* DemoWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoWebVC.m; sourceTree = "<group>"; };
 		CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+AXChainedWrapper.h"; sourceTree = "<group>"; };
 		CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+AXChainedWrapper.m"; sourceTree = "<group>"; };
 		CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXLogExtension.h"; sourceTree = "<group>"; };
@@ -213,6 +231,53 @@
 		CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXGestureExtension.h"; sourceTree = "<group>"; };
 		CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXGestureExtension.m"; sourceTree = "<group>"; };
 		CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXMacros.h"; sourceTree = "<group>"; };
+		CDBB39B31EB9D74E00E8ED25 /* DemoConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoConst.h; sourceTree = "<group>"; };
+		CDBB39B41EB9D74E00E8ED25 /* DemoConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoConst.m; sourceTree = "<group>"; };
+		CDBB39B51EB9D74E00E8ED25 /* DemoMarcos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMarcos.h; sourceTree = "<group>"; };
+		CDBB39B61EB9D74E00E8ED25 /* DemoMarcos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMarcos.m; sourceTree = "<group>"; };
+		CDBB39BC1EB9D96B00E8ED25 /* AXLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXLogVC.h; sourceTree = "<group>"; };
+		CDBB39BD1EB9D96B00E8ED25 /* AXLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXLogVC.m; sourceTree = "<group>"; };
+		CDBB39BE1EB9D96B00E8ED25 /* AXLogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXLogVC.xib; sourceTree = "<group>"; };
+		CDBB39BF1EB9D96B00E8ED25 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		CDBB39C01EB9D96B00E8ED25 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		CDBB39C11EB9D96B00E8ED25 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		CDBB39C31EB9D96B00E8ED25 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		CDBB39C41EB9D96B00E8ED25 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		CDBB39C51EB9D96B00E8ED25 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		CDBB39D31EB9DD1400E8ED25 /* BlogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogVC.h; sourceTree = "<group>"; };
+		CDBB39D41EB9DD1400E8ED25 /* BlogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogVC.m; sourceTree = "<group>"; };
+		CDBB39D51EB9DD1400E8ED25 /* BlogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogVC.xib; sourceTree = "<group>"; };
+		CDBB3B001EB9DF7A00E8ED25 /* DemoTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableModel.h; sourceTree = "<group>"; };
+		CDBB3B011EB9DF7A00E8ED25 /* DemoTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableModel.m; sourceTree = "<group>"; };
+		CDBB3B031EB9DFAD00E8ED25 /* DemoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableView.h; sourceTree = "<group>"; };
+		CDBB3B041EB9DFAD00E8ED25 /* DemoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableView.m; sourceTree = "<group>"; };
+		CDBB3B061EB9E01000E8ED25 /* DemoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewCell.h; sourceTree = "<group>"; };
+		CDBB3B071EB9E01000E8ED25 /* DemoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewCell.m; sourceTree = "<group>"; };
+		CDBB3B081EB9E01000E8ED25 /* DemoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoTableViewCell.xib; sourceTree = "<group>"; };
+		CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingTableView.plist; sourceTree = "<group>"; };
+		CDBB3B0D1EB9E19D00E8ED25 /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
+		CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
+		CDBB3B111EB9E80F00E8ED25 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		CDBB3B121EB9E80F00E8ED25 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		CDBB3B131EB9E80F00E8ED25 /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
+		CDBB3B141EB9E80F00E8ED25 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		CDBB3B151EB9E80F00E8ED25 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		CDBB3B161EB9E80F00E8ED25 /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		CDBB3B171EB9E80F00E8ED25 /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		CDBB3B181EB9E80F00E8ED25 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		CDBB3B191EB9E80F00E8ED25 /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
+		CDBB3B1A1EB9E80F00E8ED25 /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		CDBB3B1B1EB9E80F00E8ED25 /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
+		CDBB3B1C1EB9E80F00E8ED25 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		CDBB3B1D1EB9E80F00E8ED25 /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
+		CDBB3B1E1EB9E80F00E8ED25 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		CDBB3B1F1EB9E80F00E8ED25 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		CDBB3B201EB9E80F00E8ED25 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		CDBB3B211EB9E80F00E8ED25 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		CDBB3B221EB9E80F00E8ED25 /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		CDBB3B231EB9E80F00E8ED25 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		CDBB3B241EB9E80F00E8ED25 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+AXExtension.h"; sourceTree = "<group>"; };
 		CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXExtension.h"; sourceTree = "<group>"; };
@@ -223,7 +288,7 @@
 		CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AXExtension.m"; sourceTree = "<group>"; };
 		CDE91FC91EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		CDF18CB81EB884F1004B4794 /* DemoFramework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DemoFramework.plist; sourceTree = "<group>"; };
+		CDF18CB81EB884F1004B4794 /* TabBarControllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBarControllers.plist; sourceTree = "<group>"; };
 		CDF18CB91EB884F1004B4794 /* BaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavController.h; sourceTree = "<group>"; };
 		CDF18CBA1EB884F1004B4794 /* BaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavController.m; sourceTree = "<group>"; };
 		CDF18CBB1EB884F1004B4794 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
@@ -232,28 +297,10 @@
 		CDF18CBE1EB884F1004B4794 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		CDF18CBF1EB884F1004B4794 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		CDF18CC01EB884F1004B4794 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		CDF18CC31EB884F1004B4794 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
-		CDF18CC41EB884F1004B4794 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
-		CDF18CC51EB884F1004B4794 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		CDF18CC71EB884F1004B4794 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
-		CDF18CC81EB884F1004B4794 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
-		CDF18CC91EB884F1004B4794 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
-		CDF18CD31EB8850F004B4794 /* DemoMarcos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMarcos.h; sourceTree = "<group>"; };
-		CDF18CD41EB8850F004B4794 /* DemoMarcos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMarcos.m; sourceTree = "<group>"; };
-		CDF18CD71EB88881004B4794 /* SettingListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingListModel.h; sourceTree = "<group>"; };
-		CDF18CD81EB88881004B4794 /* SettingListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingListModel.m; sourceTree = "<group>"; };
-		CDF18CD91EB88881004B4794 /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
-		CDF18CDA1EB88881004B4794 /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
-		CDF18CDB1EB88881004B4794 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
-		CDF18CDC1EB88881004B4794 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
-		CDF18CDD1EB88881004B4794 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		CDF18CE31EB888BE004B4794 /* UITableView+Creator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Creator.h"; sourceTree = "<group>"; };
 		CDF18CE41EB888BE004B4794 /* UITableView+Creator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Creator.m"; sourceTree = "<group>"; };
 		CDF18CE51EB888BE004B4794 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CDF18CE61EB888BE004B4794 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
-		CDF18CEA1EB88967004B4794 /* AXLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXLogVC.h; sourceTree = "<group>"; };
-		CDF18CEB1EB88967004B4794 /* AXLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXLogVC.m; sourceTree = "<group>"; };
-		CDF18CEC1EB88967004B4794 /* AXLogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXLogVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,12 +347,12 @@
 				CD0645A81EB3AA78007FBF06 /* resources */,
 				8579EF001E6BEDF900C33881 /* AppDelegate.h */,
 				8579EF011E6BEDF900C33881 /* AppDelegate.m */,
+				CD0645C71EB3AC96007FBF06 /* PrefixHeader.pch */,
 				CD0645A51EB3A3DF007FBF06 /* Localizable.strings */,
 				8579EF061E6BEDF900C33881 /* Main.storyboard */,
 				8579EF091E6BEDF900C33881 /* Assets.xcassets */,
 				8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */,
 				8579EF0E1E6BEDF900C33881 /* Info.plist */,
-				CD0645C71EB3AC96007FBF06 /* PrefixHeader.pch */,
 				8579EEFD1E6BEDF900C33881 /* Supporting Files */,
 			);
 			path = AXKitDemo;
@@ -337,6 +384,15 @@
 				CD0645AA1EB3AA78007FBF06 /* Localizable.xlsx */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		CD6C67671EB9F2BC00B57279 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C67681EB9F2BC00B57279 /* DemoWebVC.h */,
+				CD6C67691EB9F2BC00B57279 /* DemoWebVC.m */,
+			);
+			path = web;
 			sourceTree = "<group>";
 		};
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
@@ -416,15 +472,139 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		CDBB39B21EB9D74E00E8ED25 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB39B31EB9D74E00E8ED25 /* DemoConst.h */,
+				CDBB39B41EB9D74E00E8ED25 /* DemoConst.m */,
+				CDBB39B51EB9D74E00E8ED25 /* DemoMarcos.h */,
+				CDBB39B61EB9D74E00E8ED25 /* DemoMarcos.m */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		CDBB39B91EB9D96B00E8ED25 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C67671EB9F2BC00B57279 /* web */,
+				CDBB39BA1EB9D96B00E8ED25 /* home */,
+				CDBB39CD1EB9DCEA00E8ED25 /* blog */,
+				CDBB39C21EB9D96B00E8ED25 /* setting */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		CDBB39BA1EB9D96B00E8ED25 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB39BB1EB9D96B00E8ED25 /* axlog */,
+				CDBB39BF1EB9D96B00E8ED25 /* HomeVC.h */,
+				CDBB39C01EB9D96B00E8ED25 /* HomeVC.m */,
+				CDBB39C11EB9D96B00E8ED25 /* HomeVC.xib */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		CDBB39BB1EB9D96B00E8ED25 /* axlog */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB39BC1EB9D96B00E8ED25 /* AXLogVC.h */,
+				CDBB39BD1EB9D96B00E8ED25 /* AXLogVC.m */,
+				CDBB39BE1EB9D96B00E8ED25 /* AXLogVC.xib */,
+			);
+			path = axlog;
+			sourceTree = "<group>";
+		};
+		CDBB39C21EB9D96B00E8ED25 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB39C31EB9D96B00E8ED25 /* SettingVC.h */,
+				CDBB39C41EB9D96B00E8ED25 /* SettingVC.m */,
+				CDBB39C51EB9D96B00E8ED25 /* SettingVC.xib */,
+				CDBB3B0D1EB9E19D00E8ED25 /* SettingTableView.h */,
+				CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */,
+				CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		CDBB39CC1EB9D97900E8ED25 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		CDBB39CD1EB9DCEA00E8ED25 /* blog */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB39D31EB9DD1400E8ED25 /* BlogVC.h */,
+				CDBB39D41EB9DD1400E8ED25 /* BlogVC.m */,
+				CDBB39D51EB9DD1400E8ED25 /* BlogVC.xib */,
+			);
+			path = blog;
+			sourceTree = "<group>";
+		};
+		CDBB39D81EB9DD6600E8ED25 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB3B101EB9E80F00E8ED25 /* MJExtension */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		CDBB3AFF1EB9DF6B00E8ED25 /* table */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB3B001EB9DF7A00E8ED25 /* DemoTableModel.h */,
+				CDBB3B011EB9DF7A00E8ED25 /* DemoTableModel.m */,
+				CDBB3B031EB9DFAD00E8ED25 /* DemoTableView.h */,
+				CDBB3B041EB9DFAD00E8ED25 /* DemoTableView.m */,
+				CDBB3B061EB9E01000E8ED25 /* DemoTableViewCell.h */,
+				CDBB3B071EB9E01000E8ED25 /* DemoTableViewCell.m */,
+				CDBB3B081EB9E01000E8ED25 /* DemoTableViewCell.xib */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
+		CDBB3B101EB9E80F00E8ED25 /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CDBB3B111EB9E80F00E8ED25 /* MJExtension.h */,
+				CDBB3B121EB9E80F00E8ED25 /* MJExtensionConst.h */,
+				CDBB3B131EB9E80F00E8ED25 /* MJExtensionConst.m */,
+				CDBB3B141EB9E80F00E8ED25 /* MJFoundation.h */,
+				CDBB3B151EB9E80F00E8ED25 /* MJFoundation.m */,
+				CDBB3B161EB9E80F00E8ED25 /* MJProperty.h */,
+				CDBB3B171EB9E80F00E8ED25 /* MJProperty.m */,
+				CDBB3B181EB9E80F00E8ED25 /* MJPropertyKey.h */,
+				CDBB3B191EB9E80F00E8ED25 /* MJPropertyKey.m */,
+				CDBB3B1A1EB9E80F00E8ED25 /* MJPropertyType.h */,
+				CDBB3B1B1EB9E80F00E8ED25 /* MJPropertyType.m */,
+				CDBB3B1C1EB9E80F00E8ED25 /* NSObject+MJClass.h */,
+				CDBB3B1D1EB9E80F00E8ED25 /* NSObject+MJClass.m */,
+				CDBB3B1E1EB9E80F00E8ED25 /* NSObject+MJCoding.h */,
+				CDBB3B1F1EB9E80F00E8ED25 /* NSObject+MJCoding.m */,
+				CDBB3B201EB9E80F00E8ED25 /* NSObject+MJKeyValue.h */,
+				CDBB3B211EB9E80F00E8ED25 /* NSObject+MJKeyValue.m */,
+				CDBB3B221EB9E80F00E8ED25 /* NSObject+MJProperty.h */,
+				CDBB3B231EB9E80F00E8ED25 /* NSObject+MJProperty.m */,
+				CDBB3B241EB9E80F00E8ED25 /* NSString+MJExtension.h */,
+				CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
 		CDF18CB61EB884F1004B4794 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				CDF18CB71EB884F1004B4794 /* base */,
-				CDF18CC11EB884F1004B4794 /* const */,
-				CDF18CC21EB884F1004B4794 /* home */,
-				CDF18CC61EB884F1004B4794 /* setting */,
-				CDF18CD61EB8886C004B4794 /* views */,
+				CDBB39D81EB9DD6600E8ED25 /* vendor */,
+				CDBB39B21EB9D74E00E8ED25 /* config */,
 				CDF18CE21EB8889F004B4794 /* util */,
+				CDF18CB71EB884F1004B4794 /* base */,
+				CDBB39B91EB9D96B00E8ED25 /* controllers */,
+				CDF18CD61EB8886C004B4794 /* views */,
+				CDBB39CC1EB9D97900E8ED25 /* models */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -434,7 +614,7 @@
 			children = (
 				CDF18CBF1EB884F1004B4794 /* RootViewController.h */,
 				CDF18CC01EB884F1004B4794 /* RootViewController.m */,
-				CDF18CB81EB884F1004B4794 /* DemoFramework.plist */,
+				CDF18CB81EB884F1004B4794 /* TabBarControllers.plist */,
 				CDF18CB91EB884F1004B4794 /* BaseNavController.h */,
 				CDF18CBA1EB884F1004B4794 /* BaseNavController.m */,
 				CDF18CBB1EB884F1004B4794 /* BaseTabBarController.h */,
@@ -445,46 +625,10 @@
 			path = base;
 			sourceTree = "<group>";
 		};
-		CDF18CC11EB884F1004B4794 /* const */ = {
-			isa = PBXGroup;
-			children = (
-				CDF18CD31EB8850F004B4794 /* DemoMarcos.h */,
-				CDF18CD41EB8850F004B4794 /* DemoMarcos.m */,
-			);
-			path = const;
-			sourceTree = "<group>";
-		};
-		CDF18CC21EB884F1004B4794 /* home */ = {
-			isa = PBXGroup;
-			children = (
-				CDF18CC31EB884F1004B4794 /* HomeVC.h */,
-				CDF18CC41EB884F1004B4794 /* HomeVC.m */,
-				CDF18CC51EB884F1004B4794 /* HomeVC.xib */,
-				CDF18CE91EB88950004B4794 /* axlog */,
-			);
-			path = home;
-			sourceTree = "<group>";
-		};
-		CDF18CC61EB884F1004B4794 /* setting */ = {
-			isa = PBXGroup;
-			children = (
-				CDF18CC71EB884F1004B4794 /* SettingVC.h */,
-				CDF18CC81EB884F1004B4794 /* SettingVC.m */,
-				CDF18CC91EB884F1004B4794 /* SettingVC.xib */,
-			);
-			path = setting;
-			sourceTree = "<group>";
-		};
 		CDF18CD61EB8886C004B4794 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				CDF18CD71EB88881004B4794 /* SettingListModel.h */,
-				CDF18CD81EB88881004B4794 /* SettingListModel.m */,
-				CDF18CD91EB88881004B4794 /* SettingTableView.h */,
-				CDF18CDA1EB88881004B4794 /* SettingTableView.m */,
-				CDF18CDB1EB88881004B4794 /* SettingTableViewCell.h */,
-				CDF18CDC1EB88881004B4794 /* SettingTableViewCell.m */,
-				CDF18CDD1EB88881004B4794 /* SettingTableViewCell.xib */,
+				CDBB3AFF1EB9DF6B00E8ED25 /* table */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -498,16 +642,6 @@
 				CDF18CE61EB888BE004B4794 /* UIViewController+AXExtension.m */,
 			);
 			path = util;
-			sourceTree = "<group>";
-		};
-		CDF18CE91EB88950004B4794 /* axlog */ = {
-			isa = PBXGroup;
-			children = (
-				CDF18CEA1EB88967004B4794 /* AXLogVC.h */,
-				CDF18CEB1EB88967004B4794 /* AXLogVC.m */,
-				CDF18CEC1EB88967004B4794 /* AXLogVC.xib */,
-			);
-			path = axlog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -645,17 +779,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBB39D71EB9DD1400E8ED25 /* BlogVC.xib in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
+				CDBB3B0C1EB9E17500E8ED25 /* SettingTableView.plist in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
-				CDF18CEE1EB88967004B4794 /* AXLogVC.xib in Resources */,
-				CDF18CD21EB884F1004B4794 /* SettingVC.xib in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* framework.json in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
 				8579EF081E6BEDF900C33881 /* Main.storyboard in Resources */,
-				CDF18CD01EB884F1004B4794 /* HomeVC.xib in Resources */,
+				CDBB39C71EB9D96B00E8ED25 /* AXLogVC.xib in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
-				CDF18CE11EB88881004B4794 /* SettingTableViewCell.xib in Resources */,
-				CDF18CCA1EB884F1004B4794 /* DemoFramework.plist in Resources */,
+				CDBB39C91EB9D96B00E8ED25 /* HomeVC.xib in Resources */,
+				CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */,
+				CDBB3B0A1EB9E01000E8ED25 /* DemoTableViewCell.xib in Resources */,
+				CDF18CCA1EB884F1004B4794 /* TabBarControllers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,20 +825,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF18CDE1EB88881004B4794 /* SettingListModel.m in Sources */,
-				CDF18CDF1EB88881004B4794 /* SettingTableView.m in Sources */,
-				CDF18CE01EB88881004B4794 /* SettingTableViewCell.m in Sources */,
+				CDBB3B271EB9E80F00E8ED25 /* MJFoundation.m in Sources */,
+				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
+				CDBB39C81EB9D96B00E8ED25 /* HomeVC.m in Sources */,
 				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
 				CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */,
+				CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */,
+				CDBB3B291EB9E80F00E8ED25 /* MJPropertyKey.m in Sources */,
+				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
+				CD6C676A1EB9F2BC00B57279 /* DemoWebVC.m in Sources */,
+				CDBB3B091EB9E01000E8ED25 /* DemoTableViewCell.m in Sources */,
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
-				CDF18CCF1EB884F1004B4794 /* HomeVC.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
+				CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */,
+				CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */,
 				CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */,
+				CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */,
 				CDF18CE81EB888BE004B4794 /* UIViewController+AXExtension.m in Sources */,
-				CDF18CD11EB884F1004B4794 /* SettingVC.m in Sources */,
-				CDF18CD51EB8850F004B4794 /* DemoMarcos.m in Sources */,
-				CDF18CED1EB88967004B4794 /* AXLogVC.m in Sources */,
+				CDBB3B281EB9E80F00E8ED25 /* MJProperty.m in Sources */,
+				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
+				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
+				CDBB3B2B1EB9E80F00E8ED25 /* NSObject+MJClass.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
+				CDBB39CA1EB9D96B00E8ED25 /* SettingVC.m in Sources */,
+				CDBB39C61EB9D96B00E8ED25 /* AXLogVC.m in Sources */,
+				CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */,
+				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
+				CDBB3B021EB9DF7A00E8ED25 /* DemoTableModel.m in Sources */,
+				CDBB3B051EB9DFAD00E8ED25 /* DemoTableView.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

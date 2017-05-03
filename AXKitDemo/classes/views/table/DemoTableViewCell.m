@@ -1,31 +1,32 @@
 //
-//  SettingTableViewCell.m
+//  DemoTableViewCell.m
 //  AXKit
 //
-//  Created by xaoxuu on 17/04/2017.
+//  Created by xaoxuu on 03/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "SettingTableViewCell.h"
+#import "DemoTableViewCell.h"
 
-@interface SettingTableViewCell ()
+@interface DemoTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *img_icon;
+
 @property (weak, nonatomic) IBOutlet UILabel *lb_title;
 @property (weak, nonatomic) IBOutlet UILabel *lb_detail;
 
 // @xaoxuu:
 @property (copy, nonatomic) void (^switchStatusChanged)(BOOL on);
 
+
+
 @end
 
-@implementation SettingTableViewCell
+@implementation DemoTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -34,7 +35,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(SettingListModel *)model{
+- (void)setModel:(DemoTableModel *)model{
     _model = model;
     
     // @xaoxuu: 数据显示
@@ -73,5 +74,6 @@
 - (void)switchStatusChanged:(void (^)(BOOL on))changed{
     self.switchStatusChanged = changed;
 }
+
 
 @end

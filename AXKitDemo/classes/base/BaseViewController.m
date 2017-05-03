@@ -17,8 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(NSStringFromClass([self class]), nil);
-    
+    self.view.frame = CGRectFromScreen();
 }
 
 - (void)didReceiveMemoryWarning {

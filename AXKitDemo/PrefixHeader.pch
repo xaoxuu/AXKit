@@ -9,6 +9,13 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+// @xaoxuu: vendor
+//#import "YYKit.h"
+// @xaoxuu: common
 #import "AXKit.h"
+
+// @xaoxuu: demo
+#import "DemoConst.h"
+#import "DemoMarcos.h"
 
 #endif /* PrefixHeader_pch */
