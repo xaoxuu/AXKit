@@ -20,11 +20,7 @@
     
     [self.view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         [subview ax_fillWithRandomColor];
-        [subview ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
-//            [self.navigationController ax_pushViewControllerNamed:@"TestVC1"];
-            TestVC1 *vc = [TestVC1 new];
-            [self.navigationController pushViewController:vc animated:YES];
-        }];
+
     }];
     
 }
@@ -34,14 +30,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)btn1:(UIButton *)sender {
+    [NSBlockOperation ax_delay:0 cooldown:3 token:self performInMainQueue:^{
+        [sender ax_fillWithRandomColor];
+    }];
 }
-*/
+
+- (IBAction)btn2:(UIButton *)sender {
+    [NSBlockOperation ax_delay:2 cooldown:5 token:self performInMainQueue:^{
+        [sender ax_fillWithRandomColor];
+    }];
+}
+// @xaoxuu: 两者的token相同则共享冷却时间。
+
 
 @end

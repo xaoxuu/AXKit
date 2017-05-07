@@ -39,6 +39,8 @@ FOUNDATION_EXPORT NSString * _Nonnull AXKitErrorDomain;
 #import <AXKit/NSString+AXExtension.h>
 // 对NSObject的performSelector的block封装，基于<BlocksKit>改编
 #import <AXKit/NSObject+AXBlockWrapper.h>
+// 对NSOperation的扩展，基于<BlocksKit>改编
+#import <AXKit/NSOperation+AXExtension.h>
 // 对NSTimer的block封装，基于<BlocksKit>改编
 #import <AXKit/NSTimer+AXBlockWrapper.h>
 // 对NSUserDefaults的封装

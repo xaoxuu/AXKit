@@ -48,6 +48,8 @@
 		CD77FE7E1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE7C1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m */; };
 		CD77FE811EBEF8DF001A5787 /* Foundation+AXRangeExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE7F1EBEF8DF001A5787 /* Foundation+AXRangeExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD77FE821EBEF8DF001A5787 /* Foundation+AXRangeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE801EBEF8DF001A5787 /* Foundation+AXRangeExtension.m */; };
+		CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */; };
 		CDAB58DF1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB58E01E6BF2160017CA1E /* CALayer+AXChainedWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -206,6 +208,8 @@
 		CD77FE7C1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXRandomExtension.m"; sourceTree = "<group>"; };
 		CD77FE7F1EBEF8DF001A5787 /* Foundation+AXRangeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXRangeExtension.h"; sourceTree = "<group>"; };
 		CD77FE801EBEF8DF001A5787 /* Foundation+AXRangeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXRangeExtension.m"; sourceTree = "<group>"; };
+		CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperation+AXExtension.h"; sourceTree = "<group>"; };
+		CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperation+AXExtension.m"; sourceTree = "<group>"; };
 		CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+AXChainedWrapper.h"; sourceTree = "<group>"; };
 		CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+AXChainedWrapper.m"; sourceTree = "<group>"; };
 		CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXLogExtension.h"; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 				CDAB58E61E6BF37E0017CA1E /* CoreGraphics+AXExtension.m */,
 				CDAB58E91E6BF4EC0017CA1E /* NSObject+AXBlockWrapper.h */,
 				CDAB58EA1E6BF4EC0017CA1E /* NSObject+AXBlockWrapper.m */,
+				CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */,
+				CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */,
 				CD77FE681EBEE62E001A5787 /* NSString */,
 				CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */,
 				CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */,
@@ -767,6 +773,7 @@
 				CD77FE811EBEF8DF001A5787 /* Foundation+AXRangeExtension.h in Headers */,
 				CD77FE7D1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h in Headers */,
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
+				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,6 +974,7 @@
 				CDAB59201E6BFBCE0017CA1E /* UIImage+AXExtension.m in Sources */,
 				CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */,
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
+				CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
 				CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */,
 				CD004D1B1EB2128C00ACC0B8 /* UIImageView+AXExtension.m in Sources */,
