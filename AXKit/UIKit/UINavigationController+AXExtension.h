@@ -41,5 +41,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion fail:(void (^)(NSError *error))fail;
 
 
+/**
+ pop到指定viewController
+
+ @param index 从rootVC开始向后数的index，rootVC为0
+ */
+- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index;
+
+/**
+ pop到指定viewController
+
+ @param index 从当前viewController开始向前数的index，当前VC为0
+ */
+- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index;
+
 @end
 NS_ASSUME_NONNULL_END

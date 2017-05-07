@@ -1,31 +1,32 @@
 //
-//  HomeVC.m
+//  TestVC1.m
 //  AXKit
 //
-//  Created by xaoxuu on 29/04/2017.
+//  Created by xaoxuu on 07/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "HomeVC.h"
 #import "TestVC1.h"
-@interface HomeVC ()
+
+@interface TestVC1 ()
 
 @end
 
-@implementation HomeVC
+@implementation TestVC1
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
     
-    [self.view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
-        [subview ax_fillWithRandomColor];
-        [subview ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
-//            [self.navigationController ax_pushViewControllerNamed:@"TestVC1"];
-            TestVC1 *vc = [TestVC1 new];
-            [self.navigationController pushViewController:vc animated:YES];
-        }];
+    [self.view addSubview:UIViewFromNibNamed(@"PopView")];
+    
+    [self.view ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+        [self.navigationController ax_pushViewControllerNamed:@"TestVC2"];
+
     }];
+    
+    
+    
     
 }
 

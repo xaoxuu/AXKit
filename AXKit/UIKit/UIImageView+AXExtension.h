@@ -8,19 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+
+/**
+ 根据image名创建一个imgage view
+
+ @param name image名
+ @return image view
+ */
+CG_EXTERN UIImageView *UIImageViewWithImageNamed(NSString *name);
+
 @interface UIImageView (AXExtension)
 
 
-/**
- 填充颜色
-
- @param color 颜色
- */
-- (void)ax_fillWithColor:(UIColor *)color;
-
-/**
- 填充随机色（多用于项目初期）
- */
-- (void)ax_fillWithRandomColor;
 
 @end

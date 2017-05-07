@@ -18,6 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.frame = CGRectFromScreen();
+    self.view.backgroundColor = axColor.background;
+    if (!self.title.length) {
+        self.title = NSLocalizedString(NSStringFromClass([self class]), nil);
+    }
 }
 
 - (void)didReceiveMemoryWarning {

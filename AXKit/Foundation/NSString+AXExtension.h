@@ -6,9 +6,9 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CoreGraphics+AXExtension.h"
+#import "Foundation+AXRangeExtension.h"
+#import "Foundation+AXRandomExtension.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -81,24 +81,7 @@ CG_EXTERN NSString *NSStringFromPointer(id x);
  */
 FOUNDATION_EXTERN NSString *NSStringFromPercent(CGFloat x);
 
-typedef NS_ENUM(NSUInteger, AXRandomStringType){
-    AXRandomName,
-    AXRandomPassword,
-    
-    AXRandomLowerString,
-    AXRandomUpperString,
-    AXRandomCapitalizeString,
-};
 
-
-/**
- 产生随机字符串
-
- @param type 随机类型
- @param length 长度范围
- @return 字符串
- */
-FOUNDATION_EXTERN NSString *NSStringFromRandom(AXRandomStringType type, AXUIntegerRange length);
 
 /**
  ASCIIValue转字符串
@@ -139,52 +122,12 @@ FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 @end
 
 
-@interface NSString (AXRandomExtension)
+@interface NSString (AXExtension)
 
-
-/**
- 产生指定长度的随机字符串（适用于用户名）
-
- @param length 长度范围（最小长度，最大长度）
- @return 随机字符串
- */
-+ (NSString *)ax_stringWithRandomNameWithLength:(AXUIntegerRange)length;
-
-
-/**
- 产生指定长度的随机字符串（适用于密码）
-
- @param length 长度范围（最小长度，最大长度）
- @return 随机字符串
- */
-+ (NSString *)ax_stringWithRandomPasswordWithLength:(AXUIntegerRange)length;
-
-
-/**
- 产生指定长度的随机字符串（纯小写）
- 
- @param length 长度范围（最小长度，最大长度）
- @return 随机字符串
- */
-+ (NSString *)ax_stringWithRandomLowerStringWithLength:(AXUIntegerRange)length;
-
-/**
- 产生指定长度的随机字符串（纯大写）
- 
- @param length 长度范围（最小长度，最大长度）
- @return 随机字符串
- */
-+ (NSString *)ax_stringWithRandomUpperStringWithLength:(AXUIntegerRange)length;
-
-/**
- 产生指定长度的随机字符串（首字母大写）
- 
- @param length 长度范围（最小长度，最大长度）
- @return 随机字符串
- */
-+ (NSString *)ax_stringWithRandomCapitalizeStringWithLength:(AXUIntegerRange)length;
+- (NSURL *)absoluteURL;
 
 @end
+
 
 
 NS_ASSUME_NONNULL_END

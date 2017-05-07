@@ -52,11 +52,6 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
 }
 
 
-- (void)ax_pushViewControllerHidesBottomBar:(UIViewController *)viewController animated:(BOOL)animated{
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self ax_pushViewControllerHidesBottomBar:viewController animated:animated];
-}
-
 
 - (void)ax_pushViewControllerNamed:(NSString *)vcName{
     [self ax_pushViewControllerNamed:vcName animated:YES completion:^(UIViewController * _Nonnull targetVC) {
@@ -70,7 +65,7 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
 - (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion fail:(void (^)(NSError *error))fail{
     UIViewController *vc = [[NSClassFromString(vcName) class] new];
     if (vc) {
-        [self.navigationController pushViewController:vc animated:animated];
+        [self pushViewController:vc animated:animated];
         if (completion) {
             completion(vc);
         }
@@ -82,6 +77,29 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
             fail(error);
         }
     }
+}
+
+
+- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index{
+    NSArray *vcs = self.viewControllers;
+    NSUInteger targetIndex = MIN(index, vcs.count-1);
+    [self popToViewController:vcs[targetIndex] animated:YES];
+}
+
+- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index{
+    NSArray *vcs = self.viewControllers;
+    index = MIN(index, vcs.count-1);
+    NSUInteger targetIndex = vcs.count-1-index;
+    [self popToViewController:vcs[targetIndex] animated:YES];
+}
+
+
+#pragma mark - 私有
+
+
+- (void)ax_pushViewControllerHidesBottomBar:(UIViewController *)viewController animated:(BOOL)animated{
+    viewController.hidesBottomBarWhenPushed = YES;
+    [self ax_pushViewControllerHidesBottomBar:viewController animated:animated];
 }
 
 

@@ -14,7 +14,7 @@ inline UIView *UIViewWithHeight(CGFloat height){
     return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, height)];
 }
 
-inline UIView *UIViewFromNibNamed(NSString *name){
+inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     return [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil].firstObject;
 }
 
@@ -101,6 +101,14 @@ inline UIView *UIViewFromNibNamed(NSString *name){
 - (CGRect)frameInScreen{
     UIView *main = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     return [self.superview convertRect:self.frame toView:main];
+}
+
+- (void)ax_fillWithColor:(UIColor *)color{
+    self.backgroundColor = color;
+}
+
+- (void)ax_fillWithRandomColor{
+    [self ax_fillWithColor:[UIColor colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0]];
 }
 
 
