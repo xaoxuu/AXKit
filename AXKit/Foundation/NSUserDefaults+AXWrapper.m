@@ -155,7 +155,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (NSDictionary<NSString *, id> *)ax_readDictionaryWithValuesForKeys:(NSArray<NSString *> *)keys{
-// #warning 有些值为空会不会崩溃
+// mark 有些值为空会不会崩溃
     return [DefaultUser() dictionaryWithValuesForKeys:keys];
 }
 
