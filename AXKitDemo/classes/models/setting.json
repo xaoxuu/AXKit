@@ -1,0 +1,67 @@
+{
+    "title":"设置",
+    "header_title":"this is table header",
+    "header_height":"20",
+    "footer_title":"this is table footer",
+    "footer_height":"20",
+    "sections":[
+        {
+            "header_title":"this is section header",
+            "header_height":"20",
+            "footer_title":"this is section footer",
+            "footer_height":"20",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"关于",
+                    "desc":"这是本app的描述",
+                    "icon":"tmp.png",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"default",
+                    "cmd":""
+                },
+                {
+                    "title":"关于2",
+                    "desc":"这是本app的描述",
+                    "icon":"tmp.png",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"default",
+                    "cmd":""
+                }
+            ]
+        },
+        {
+            "header_title":"this is section header",
+            "header_height":"20",
+            "footer_title":"this is section footer",
+            "footer_height":"20",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"关于3",
+                    "desc":"这是本app的描述",
+                    "icon":"tmp.png",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"default",
+                    "cmd":""
+                },
+                {
+                    "title":"关于4",
+                    "desc":"这是本app的描述",
+                    "icon":"tmp.png",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"default",
+                    "cmd":""
+                }
+            ]
+        }
+    ]
+}

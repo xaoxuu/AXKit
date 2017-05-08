@@ -1,16 +1,17 @@
 //
-//  DemoTableViewCell.m
+//  BaseTableViewCell.m
 //  AXKit
 //
-//  Created by xaoxuu on 03/05/2017.
+//  Created by xaoxuu on 07/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "DemoTableViewCell.h"
+#import "BaseTableViewCell.h"
 #import "DefaultViewController.h"
 #import "SettingSwitch.h"
 
-@interface DemoTableViewCell ()
+@interface BaseTableViewCell ()
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *img_icon;
 
@@ -21,11 +22,12 @@
 // @xaoxuu:
 @property (copy, nonatomic) void (^switchStatusChanged)(BOOL on);
 
-
+// @xaoxuu: switch
+@property (strong, nonatomic) SettingSwitch *sw;
 
 @end
 
-@implementation DemoTableViewCell
+@implementation BaseTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -38,7 +40,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(DemoTableModel *)model{
+- (void)setModel:(BaseTableModel *)model{
     _model = model;
     if (model.icon.length) {
         self.lb_title_only.text = @"";
@@ -47,16 +49,17 @@
         self.lb_title_only.text = NSLocalizedString(model.title, nil);
         self.lb_title.text = @"";
     }
-
+    
     // @xaoxuu: 数据显示
     self.img_icon.image = [UIImage imageNamed:model.icon];
-    self.lb_detail.text = NSLocalizedString(model.detail, nil);
+    self.lb_detail.text = NSLocalizedString(model.desc, nil);
+    
     
     // @xaoxuu: 样式
     self.accessoryType = model.showAccessory ? UITableViewCellAccessoryDisclosureIndicator:UITableViewCellAccessoryNone;
     if (model.showSwitch) {
         SettingSwitch *sw = [[SettingSwitch alloc] init];
-        sw.on = NO;
+        sw.on = model.switch_on;
         self.accessoryView = sw;
         [sw ax_addValueChangedHandler:^(__kindof UISwitch * _Nonnull sender) {
             if (self.switchStatusChanged) {
@@ -64,9 +67,6 @@
             }
         }];
         self.sw = sw;
-    }
-    if (model.showBadge) {
-        
     }
     
     
@@ -77,16 +77,18 @@
             vc.title = NSLocalizedString(model.title, nil);
             [self.controller.navigationController pushViewController:vc animated:YES];
         } else if (model.target.length) {
-            UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.detail, nil)];
+            UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
             [self.controller.navigationController pushViewController:vc animated:YES];
         }
     }];
-    
+
 }
+
 
 - (void)switchStatusChanged:(void (^)(BOOL on))changed{
     self.switchStatusChanged = changed;
 }
+
 
 
 @end

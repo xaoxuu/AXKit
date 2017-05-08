@@ -6,7 +6,7 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 @interface NSUserDefaults (AXWrapper)
@@ -15,20 +15,173 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 读取用户设置
+ 读取object值
 
  @param key 键
  @return 值
  */
-+ (BOOL)ax_readUserDefaultBoolWithKey:(NSString *)key;
++ (nullable id)ax_readObjectForKey:(NSString *)key;
 
 /**
- 读取用户设置
+ 读取object值
+ 
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id))completion fail:(void (^)(NSError *))fail;
 
+/**
+ 读取BOOL值
+ 
  @param key 键
  @return 值
  */
-+ (nullable id)ax_readUserDefaultValueWithKey:(NSString *)key;
++ (BOOL)ax_readBoolForKey:(NSString *)key;
+
+/**
+ 读取NSInteger值
+ 
+ @param key 键
+ @return 值
+ */
++ (NSInteger)ax_readIntegerForKey:(NSString *)key;
+
+/**
+ 读取float值
+ 
+ @param key 键
+ @return 值
+ */
++ (float)ax_readFloatForKey:(NSString *)key;
+
+/**
+ 读取double值
+ 
+ @param key 键
+ @return 值
+ */
++ (double)ax_readDoubleForKey:(NSString *)key;
+
+/**
+ 读取CGFloat值
+ 
+ @param key 键
+ @return 值
+ */
++ (CGFloat)ax_readCGFloatForKey:(NSString *)key;
+
+
+/**
+ 读取NSData值
+ 
+ @param key 键
+ @return 值
+ */
++ (nullable NSData *)ax_readDataForKey:(NSString *)key;
+
+/**
+ 读取NSData值
+
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *))completion fail:(void (^)(NSError *))fail;
+
+/**
+ 读取NSString值
+ 
+ @param key 键
+ @return 值
+ */
++ (nullable NSString *)ax_readStringForKey:(NSString *)key;
+
+/**
+ 读取NSString值
+ 
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *))completion fail:(void (^)(NSError *))fail;
+
+/**
+ 读取字符串数组
+ 
+ @param key 键
+ @return 值
+ */
++ (nullable NSArray<NSString *> *)ax_readStringArrayForKey:(NSString *)key;
+
+/**
+ 读取字符串数组
+ 
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *))completion fail:(void (^)(NSError *))fail;
+
+/**
+ 读取NSArray值
+ 
+ @param key 键
+ @return 值
+ */
++ (nullable NSArray *)ax_readArrayForKey:(NSString *)key;
+
+/**
+ 读取NSArray值
+ 
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *))completion fail:(void (^)(NSError *))fail;
+
+/**
+ 读取NSDictionary值
+ 
+ @param key 键
+ @return 值
+ */
++ (nullable NSDictionary<NSString *, id> *)ax_readDictionaryForKey:(NSString *)key;
+
+/**
+ 读取NSDictionary值
+ 
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *))completion fail:(void (^)(NSError *))fail;
+
+/**
+ 读取若干字符串值，并组装成NSDictionary
+
+ @param keys 键
+ @return 值
+ */
++ (NSDictionary<NSString *, id> *)ax_readDictionaryWithValuesForKeys:(NSArray<NSString *> *)keys;
+
+/**
+ 读取URL值
+ 
+ @param key 键
+ @return 值
+ */
++ (nullable NSURL *)ax_readURLForKey:(NSString *)key;
+
+/**
+ 读取NSURL值
+ 
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *))completion fail:(void (^)(NSError *))fail;
+
 
 
 #pragma mark write
@@ -46,7 +199,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param obj   值
  @param key   键
  */
-+ (void)ax_cacheObject:(nullable id)obj key:(NSString *)key;
++ (void)ax_setObject:(nullable id)obj forKey:(NSString *)key;
 
 /**
  保存用户设置，自带synchronize
@@ -54,7 +207,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param value 值
  @param key   键
  */
-+ (void)ax_cacheValue:(nullable id)value key:(NSString *)key;
++ (void)ax_setValue:(nullable id)value forKey:(NSString *)key;
 
 /**
  保存用户设置，自带synchronize
@@ -62,7 +215,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param x 值
  @param key 键
  */
-+ (void)ax_cacheBool:(BOOL)x key:(NSString *)key;
++ (void)ax_setBool:(BOOL)x forKey:(NSString *)key;
 
 /**
  保存用户设置，自带synchronize
@@ -70,7 +223,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param x 值
  @param key 键
  */
-+ (void)ax_cacheInteger:(NSInteger)x key:(NSString *)key;
++ (void)ax_setInteger:(NSInteger)x forKey:(NSString *)key;
 
 /**
  保存用户设置，自带synchronize
@@ -78,7 +231,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param x 值
  @param key 键
  */
-+ (void)ax_cacheFloat:(float)x key:(NSString *)key;
++ (void)ax_setFloat:(float)x forKey:(NSString *)key;
 
 /**
  保存用户设置，自带synchronize
@@ -86,57 +239,122 @@ NS_ASSUME_NONNULL_BEGIN
  @param x 值
  @param key 键
  */
-+ (void)ax_cacheDouble:(double)x key:(NSString *)key;
++ (void)ax_setDouble:(double)x forKey:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
+ 
+ @param x 值
+ @param key 键
+ */
++ (void)ax_setCGFloat:(CGFloat)x forKey:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
+ 
+ @param data 值
+ @param key 键
+ */
++ (void)ax_setData:(NSData *)data forKey:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
+ 
+ @param string 值
+ @param key 键
+ */
++ (void)ax_setString:(NSString *)string forKey:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
+ 
+ @param stringArray 值
+ @param key 键
+ */
++ (void)ax_setStringArray:(NSArray<NSString *> *)stringArray forKey:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
+ 
+ @param array 值
+ @param key 键
+ */
++ (void)ax_setArray:(NSArray *)array forKey:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
+ 
+ @param dictionary 值
+ @param key 键
+ */
++ (void)ax_setDictionary:(NSDictionary<NSString *, id> *)dictionary forKey:(NSString *)key;
+
+/**
+ 保存用户设置，自带synchronize
+ 
+ @param url 值
+ @param key 键
+ */
++ (void)ax_setURL:(NSURL *)url forKey:(NSString *)key;
 
 
+/**
+ 批量保存用户设置，自带synchronize
+
+ @param action 批量保存用户设置的block
+ */
+- (void)ax_caches:(void (^)(NSUserDefaults *user))action;
 
 /**
  保存用户设置，不带synchronize
  
- @param obj 值
+ @param data 值
  @param key 键
  */
-- (void)ax_cacheObject:(nullable id)obj key:(NSString *)key;
+- (void)ax_setData:(NSData *)data forKey:(NSString *)key;
 
 /**
  保存用户设置，不带synchronize
-
- @param value 值
+ 
+ @param string 值
  @param key 键
  */
-- (void)ax_cacheValue:(nullable id)value key:(NSString *)key;
+- (void)ax_setString:(NSString *)string forKey:(NSString *)key;
 
 /**
  保存用户设置，不带synchronize
-
- @param x 值
+ 
+ @param stringArray 值
  @param key 键
  */
-- (void)ax_cacheBool:(BOOL)x key:(NSString *)key;
+- (void)ax_setStringArray:(NSArray<NSString *> *)stringArray forKey:(NSString *)key;
 
 /**
  保存用户设置，不带synchronize
-
- @param x 值
+ 
+ @param array 值
  @param key 键
  */
-- (void)ax_cacheInteger:(NSInteger)x key:(NSString *)key;
+- (void)ax_setArray:(NSArray *)array forKey:(NSString *)key;
 
 /**
  保存用户设置，不带synchronize
-
- @param x 值
+ 
+ @param dictionary 值
  @param key 键
  */
-- (void)ax_cacheFloat:(float)x key:(NSString *)key;
+- (void)ax_setDictionary:(NSDictionary<NSString *, id> *)dictionary forKey:(NSString *)key;
 
 /**
  保存用户设置，不带synchronize
-
- @param x 值
+ 
+ @param url 值
  @param key 键
  */
-- (void)ax_cacheDouble:(double)x key:(NSString *)key;
+- (void)ax_setURL:(NSURL *)url forKey:(NSString *)key;
+
+
+
 
 #pragma mark remove
 
@@ -147,42 +365,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param key 键
  */
 + (void)ax_removeObjectForKey:(NSString *)key;
-
-/**
- 删除用户设置，不带synchronize
-
- @param key 键
- */
-- (void)ax_removeObjectForKey:(NSString *)key;
-
-
-@end
-
-@interface NSString (CacheUserDefaults)
-
-/**
- 快速读取用户设置，调用者为键
-
- @return 值
- */
-- (id)readUserDefaultValue;
-
-/**
- 快速读取用户设置，调用者为键
-
- @return 值
- */
-- (BOOL)readUserDefaultBool;
-
-/**
- 快速保存用户设置，调用者为键
- */
-- (NSString *(^)(id))cacheUserDefaultValue;
-
-/**
- 快速保存用户设置，调用者为键
- */
-- (NSString *(^)(BOOL))cacheUserDefaultBool;
 
 
 @end

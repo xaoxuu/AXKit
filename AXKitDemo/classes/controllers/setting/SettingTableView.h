@@ -7,7 +7,8 @@
 //
 
 #import "DemoTableView.h"
+#import "BaseTableView.h"
 
-@interface SettingTableView : DemoTableView
+@interface SettingTableView : BaseTableView
 
 @end

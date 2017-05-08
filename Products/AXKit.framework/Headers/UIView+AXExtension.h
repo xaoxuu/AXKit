@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Foundation+CoreGraphics.h"
+#import "Foundation+AXRangeExtension.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,7 +26,7 @@ CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
  @param name xib名
  @return view
  */
-CG_EXTERN UIView *UIViewFromNibNamed(NSString *name);
+CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 
 
 @interface UIView (AXExtension)
@@ -118,6 +118,27 @@ CG_EXTERN UIView *UIViewFromNibNamed(NSString *name);
  @return 圆角view
  */
 + (instancetype)ax_roundedViewWithFrame:(CGRect)rect;
+
+
+/**
+ view在screen中的frame
+
+ @return view在screen中的frame
+ */
+- (CGRect)frameInScreen;
+
+
+/**
+ 填充颜色
+ 
+ @param color 颜色
+ */
+- (void)ax_fillWithColor:(UIColor *)color;
+
+/**
+ 填充随机色（多用于项目初期）
+ */
+- (void)ax_fillWithRandomColor;
 
 
 @end

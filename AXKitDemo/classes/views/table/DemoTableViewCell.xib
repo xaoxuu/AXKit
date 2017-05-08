@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,6 +36,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hc-n1-x9q">
                                 <rect key="frame" x="283" y="13" width="29" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有图的设置项" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51g-5d-4BA">
+                                <rect key="frame" x="16" y="14" width="100" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,12 +49,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DBt-8w-Gx5" firstAttribute="centerY" secondItem="Dln-iL-nKm" secondAttribute="centerY" id="9Ex-Lz-MXE"/>
+                            <constraint firstItem="8hc-n1-x9q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DBt-8w-Gx5" secondAttribute="trailing" constant="8" id="DI4-7l-fs9"/>
                             <constraint firstItem="JAK-vA-P03" firstAttribute="top" secondItem="Dln-iL-nKm" secondAttribute="top" constant="8" id="Ug8-DD-yHU"/>
                             <constraint firstItem="JAK-vA-P03" firstAttribute="leading" secondItem="Dln-iL-nKm" secondAttribute="leading" constant="8" id="W8v-D3-E92"/>
+                            <constraint firstItem="51g-5d-4BA" firstAttribute="leading" secondItem="Dln-iL-nKm" secondAttribute="leading" constant="16" id="X2t-9t-eTd"/>
                             <constraint firstItem="DBt-8w-Gx5" firstAttribute="leading" secondItem="JAK-vA-P03" secondAttribute="trailing" constant="8" id="YS0-Ji-fb0"/>
                             <constraint firstAttribute="trailing" secondItem="8hc-n1-x9q" secondAttribute="trailing" constant="8" id="Z62-tp-P4J"/>
                             <constraint firstAttribute="bottom" secondItem="JAK-vA-P03" secondAttribute="bottom" constant="8" id="fZy-bd-vp1"/>
+                            <constraint firstItem="8hc-n1-x9q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="51g-5d-4BA" secondAttribute="trailing" constant="8" id="gRr-oG-1AV"/>
                             <constraint firstItem="8hc-n1-x9q" firstAttribute="centerY" secondItem="Dln-iL-nKm" secondAttribute="centerY" id="v5T-FU-aQE"/>
+                            <constraint firstItem="51g-5d-4BA" firstAttribute="centerY" secondItem="Dln-iL-nKm" secondAttribute="centerY" id="xOH-60-rco"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -64,6 +73,7 @@
                 <outlet property="img_icon" destination="JAK-vA-P03" id="Yea-aT-deL"/>
                 <outlet property="lb_detail" destination="8hc-n1-x9q" id="pdn-KH-FBz"/>
                 <outlet property="lb_title" destination="DBt-8w-Gx5" id="ZZ2-hH-iFG"/>
+                <outlet property="lb_title_only" destination="51g-5d-4BA" id="N0d-CD-jcu"/>
             </connections>
         </tableViewCell>
     </objects>

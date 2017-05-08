@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Foundation+CoreGraphics.h"
+#import "CoreGraphics+AXExtension.h"
+#import "Foundation+AXRangeExtension.h"
 
 @interface UITextView (AXExtension)
 

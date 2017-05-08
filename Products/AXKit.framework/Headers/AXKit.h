@@ -22,9 +22,13 @@ FOUNDATION_EXPORT double AXKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AXKit/PublicHeader.h>
-
+FOUNDATION_EXPORT NSString * _Nonnull AXKitErrorDomain;
 
 #pragma mark - Foundation
+// 取值范围扩展
+#import <AXKit/Foundation+AXRangeExtension.h>
+// 随机数、随机字符串
+#import <AXKit/Foundation+AXRandomExtension.h>
 // 对layer的链式封装，便于快速设置图层样式
 #import <AXKit/CALayer+AXChainedWrapper.h>
 // NSLog的宏以及Log字典、数组内容的扩展
@@ -35,15 +39,18 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/NSString+AXExtension.h>
 // 对NSObject的performSelector的block封装，基于<BlocksKit>改编
 #import <AXKit/NSObject+AXBlockWrapper.h>
+// 对NSOperation的扩展，基于<BlocksKit>改编
+#import <AXKit/NSOperation+AXExtension.h>
 // 对NSTimer的block封装，基于<BlocksKit>改编
 #import <AXKit/NSTimer+AXBlockWrapper.h>
 // 对NSUserDefaults的封装
 #import <AXKit/NSUserDefaults+AXWrapper.h>
-// 对NSError的封装
+// 对NSError的扩展
 #import <AXKit/NSError+AXExtension.h>
-// 对NSBundle的封装
+// 对NSBundle的扩展
 #import <AXKit/NSBundle+AXExtension.h>
-
+// 对NSURL的扩展
+#import <AXKit/NSURL+AXExtension.h>
 
 #pragma mark - UIKit
 // 对UIBarButtonItem的block封装，基于<BlocksKit>改编

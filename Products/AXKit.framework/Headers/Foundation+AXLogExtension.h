@@ -37,10 +37,12 @@
 
 
 // CG macro
-#define AXLogNSInteger(NSInteger) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%ld" "\n\n"), __FUNCTION__, __LINE__, NSInteger)
-#define AXLogNSUInteger(NSUInteger) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%lld" "\n\n"), __FUNCTION__, __LINE__, NSUInteger)
+#define AXLogInt(int) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, [NSNumber numberWithInt:int])
+#define AXLogNSInteger(NSInteger) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, [NSNumber numberWithInteger:NSInteger])
+#define AXLogNSUInteger(NSUInteger) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, [NSNumber numberWithUnsignedInteger:NSUInteger])
 
-#define AXLogCGFloat(CGFloat) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%f" "\n\n"), __FUNCTION__, __LINE__, CGFloat)
+#define AXLogFloat(float) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, [NSNumber numberWithFloat:float])
+#define AXLogCGFloat(CGFloat) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, [NSNumber numberWithDouble:CGFloat])
 #define AXLogCGPoint(CGPoint) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGPoint(CGPoint))
 
 #define AXLogCGSize(CGSize) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGSize(CGSize))
@@ -60,8 +62,10 @@
 // obj macro
 #define AXLogOBJ(NSObject)
 // CG macro
+#define AXLogInt(int)
 #define AXLogNSInteger(NSInteger)
 #define AXLogNSUInteger(NSUInteger)
+#define AXLogFloat(float)
 #define AXLogCGFloat(CGFloat)
 #define AXLogCGPoint(CGPoint)
 #define AXLogCGSize(CGSize)

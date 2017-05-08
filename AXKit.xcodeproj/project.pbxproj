@@ -50,6 +50,21 @@
 		CD77FE821EBEF8DF001A5787 /* Foundation+AXRangeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE801EBEF8DF001A5787 /* Foundation+AXRangeExtension.m */; };
 		CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */; };
+		CD77FE8B1EBF5697001A5787 /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE891EBF5697001A5787 /* DefaultViewController.m */; };
+		CD77FE8C1EBF5697001A5787 /* DefaultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77FE8A1EBF5697001A5787 /* DefaultViewController.xib */; };
+		CD77FE901EBF592D001A5787 /* BaseSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE8F1EBF592D001A5787 /* BaseSwitch.m */; };
+		CD77FE931EBF594B001A5787 /* SettingSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE921EBF594B001A5787 /* SettingSwitch.m */; };
+		CD77FE9C1EBF5D8B001A5787 /* BaseServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE9B1EBF5D8B001A5787 /* BaseServices.m */; };
+		CD77FEA11EBF5DD5001A5787 /* BaseDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEA01EBF5DD5001A5787 /* BaseDataAccess.m */; };
+		CD77FEA41EBF5DE7001A5787 /* ServicesLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEA31EBF5DE7001A5787 /* ServicesLayer.m */; };
+		CD77FEA71EBF5DF3001A5787 /* DataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEA61EBF5DF3001A5787 /* DataAccessLayer.m */; };
+		CD77FEAA1EBF5E0D001A5787 /* CacheServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEA91EBF5E0D001A5787 /* CacheServices.m */; };
+		CD77FEB11EBF6583001A5787 /* datamap.json in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEB01EBF6583001A5787 /* datamap.json */; };
+		CD77FEB51EBF67DC001A5787 /* setting.json in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEB41EBF67DC001A5787 /* setting.json */; };
+		CD77FEB81EBF67F4001A5787 /* BaseTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEB71EBF67F4001A5787 /* BaseTableModel.m */; };
+		CD77FEBB1EBF6805001A5787 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEBA1EBF6805001A5787 /* BaseTableView.m */; };
+		CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */; };
+		CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */; };
 		CDAB58DF1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB58E01E6BF2160017CA1E /* CALayer+AXChainedWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -210,6 +225,32 @@
 		CD77FE801EBEF8DF001A5787 /* Foundation+AXRangeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXRangeExtension.m"; sourceTree = "<group>"; };
 		CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperation+AXExtension.h"; sourceTree = "<group>"; };
 		CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperation+AXExtension.m"; sourceTree = "<group>"; };
+		CD77FE881EBF5697001A5787 /* DefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultViewController.h; sourceTree = "<group>"; };
+		CD77FE891EBF5697001A5787 /* DefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultViewController.m; sourceTree = "<group>"; };
+		CD77FE8A1EBF5697001A5787 /* DefaultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultViewController.xib; sourceTree = "<group>"; };
+		CD77FE8E1EBF592D001A5787 /* BaseSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSwitch.h; sourceTree = "<group>"; };
+		CD77FE8F1EBF592D001A5787 /* BaseSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSwitch.m; sourceTree = "<group>"; };
+		CD77FE911EBF594B001A5787 /* SettingSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingSwitch.h; sourceTree = "<group>"; };
+		CD77FE921EBF594B001A5787 /* SettingSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingSwitch.m; sourceTree = "<group>"; };
+		CD77FE9A1EBF5D8B001A5787 /* BaseServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseServices.h; sourceTree = "<group>"; };
+		CD77FE9B1EBF5D8B001A5787 /* BaseServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseServices.m; sourceTree = "<group>"; };
+		CD77FE9F1EBF5DD5001A5787 /* BaseDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataAccess.h; sourceTree = "<group>"; };
+		CD77FEA01EBF5DD5001A5787 /* BaseDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataAccess.m; sourceTree = "<group>"; };
+		CD77FEA21EBF5DE7001A5787 /* ServicesLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesLayer.h; sourceTree = "<group>"; };
+		CD77FEA31EBF5DE7001A5787 /* ServicesLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesLayer.m; sourceTree = "<group>"; };
+		CD77FEA51EBF5DF3001A5787 /* DataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccessLayer.h; sourceTree = "<group>"; };
+		CD77FEA61EBF5DF3001A5787 /* DataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccessLayer.m; sourceTree = "<group>"; };
+		CD77FEA81EBF5E0D001A5787 /* CacheServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheServices.h; sourceTree = "<group>"; };
+		CD77FEA91EBF5E0D001A5787 /* CacheServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheServices.m; sourceTree = "<group>"; };
+		CD77FEB01EBF6583001A5787 /* datamap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datamap.json; sourceTree = "<group>"; };
+		CD77FEB41EBF67DC001A5787 /* setting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setting.json; sourceTree = "<group>"; };
+		CD77FEB61EBF67F4001A5787 /* BaseTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableModel.h; sourceTree = "<group>"; };
+		CD77FEB71EBF67F4001A5787 /* BaseTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableModel.m; sourceTree = "<group>"; };
+		CD77FEB91EBF6805001A5787 /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		CD77FEBA1EBF6805001A5787 /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		CD77FEBC1EBF681E001A5787 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
 		CDAB58DD1E6BF2160017CA1E /* CALayer+AXChainedWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+AXChainedWrapper.h"; sourceTree = "<group>"; };
 		CDAB58DE1E6BF2160017CA1E /* CALayer+AXChainedWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+AXChainedWrapper.m"; sourceTree = "<group>"; };
 		CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXLogExtension.h"; sourceTree = "<group>"; };
@@ -492,6 +533,68 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		CD77FE871EBF5684001A5787 /* default */ = {
+			isa = PBXGroup;
+			children = (
+				CD77FE881EBF5697001A5787 /* DefaultViewController.h */,
+				CD77FE891EBF5697001A5787 /* DefaultViewController.m */,
+				CD77FE8A1EBF5697001A5787 /* DefaultViewController.xib */,
+			);
+			path = default;
+			sourceTree = "<group>";
+		};
+		CD77FE8D1EBF590F001A5787 /* switch */ = {
+			isa = PBXGroup;
+			children = (
+				CD77FE8E1EBF592D001A5787 /* BaseSwitch.h */,
+				CD77FE8F1EBF592D001A5787 /* BaseSwitch.m */,
+				CD77FE911EBF594B001A5787 /* SettingSwitch.h */,
+				CD77FE921EBF594B001A5787 /* SettingSwitch.m */,
+			);
+			path = switch;
+			sourceTree = "<group>";
+		};
+		CD77FE941EBF5D20001A5787 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				CD77FE9E1EBF5DAB001A5787 /* layers */,
+				CD77FE951EBF5D50001A5787 /* data_access */,
+				CD77FE961EBF5D50001A5787 /* services */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		CD77FE951EBF5D50001A5787 /* data_access */ = {
+			isa = PBXGroup;
+			children = (
+				CD77FE9F1EBF5DD5001A5787 /* BaseDataAccess.h */,
+				CD77FEA01EBF5DD5001A5787 /* BaseDataAccess.m */,
+			);
+			path = data_access;
+			sourceTree = "<group>";
+		};
+		CD77FE961EBF5D50001A5787 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				CD77FE9A1EBF5D8B001A5787 /* BaseServices.h */,
+				CD77FE9B1EBF5D8B001A5787 /* BaseServices.m */,
+				CD77FEA81EBF5E0D001A5787 /* CacheServices.h */,
+				CD77FEA91EBF5E0D001A5787 /* CacheServices.m */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		CD77FE9E1EBF5DAB001A5787 /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				CD77FEA21EBF5DE7001A5787 /* ServicesLayer.h */,
+				CD77FEA31EBF5DE7001A5787 /* ServicesLayer.m */,
+				CD77FEA51EBF5DF3001A5787 /* DataAccessLayer.h */,
+				CD77FEA61EBF5DF3001A5787 /* DataAccessLayer.m */,
+			);
+			path = layers;
+			sourceTree = "<group>";
+		};
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +667,7 @@
 		CDBB39B91EB9D96B00E8ED25 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD77FE871EBF5684001A5787 /* default */,
 				CD6C67671EB9F2BC00B57279 /* web */,
 				CDBB39BA1EB9D96B00E8ED25 /* home */,
 				CDBB39CD1EB9DCEA00E8ED25 /* blog */,
@@ -618,6 +722,8 @@
 		CDBB39CC1EB9D97900E8ED25 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				CD77FEB01EBF6583001A5787 /* datamap.json */,
+				CD77FEB41EBF67DC001A5787 /* setting.json */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -650,6 +756,13 @@
 				CDBB3B061EB9E01000E8ED25 /* DemoTableViewCell.h */,
 				CDBB3B071EB9E01000E8ED25 /* DemoTableViewCell.m */,
 				CDBB3B081EB9E01000E8ED25 /* DemoTableViewCell.xib */,
+				CD77FEB61EBF67F4001A5787 /* BaseTableModel.h */,
+				CD77FEB71EBF67F4001A5787 /* BaseTableModel.m */,
+				CD77FEB91EBF6805001A5787 /* BaseTableView.h */,
+				CD77FEBA1EBF6805001A5787 /* BaseTableView.m */,
+				CD77FEBC1EBF681E001A5787 /* BaseTableViewCell.h */,
+				CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */,
+				CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */,
 			);
 			path = table;
 			sourceTree = "<group>";
@@ -689,6 +802,7 @@
 				CDBB39B21EB9D74E00E8ED25 /* config */,
 				CDF18CE21EB8889F004B4794 /* util */,
 				CDF18CB71EB884F1004B4794 /* base */,
+				CD77FE941EBF5D20001A5787 /* framework */,
 				CDBB39B91EB9D96B00E8ED25 /* controllers */,
 				CDF18CD61EB8886C004B4794 /* views */,
 				CDBB39CC1EB9D97900E8ED25 /* models */,
@@ -715,6 +829,7 @@
 		CDF18CD61EB8886C004B4794 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				CD77FE8D1EBF590F001A5787 /* switch */,
 				CDBB3AFF1EB9DF6B00E8ED25 /* table */,
 			);
 			path = views;
@@ -870,19 +985,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD77FE8C1EBF5697001A5787 /* DefaultViewController.xib in Resources */,
 				CDBB39D71EB9DD1400E8ED25 /* BlogVC.xib in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
 				CD77FE7A1EBEF09D001A5787 /* PopView.xib in Resources */,
 				CDBB3B0C1EB9E17500E8ED25 /* SettingTableView.plist in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
+				CD77FEB51EBF67DC001A5787 /* setting.json in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* framework.json in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
 				8579EF081E6BEDF900C33881 /* Main.storyboard in Resources */,
 				CDBB39C71EB9D96B00E8ED25 /* AXLogVC.xib in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
+				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
 				CDBB39C91EB9D96B00E8ED25 /* HomeVC.xib in Resources */,
 				CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */,
 				CDBB3B0A1EB9E01000E8ED25 /* DemoTableViewCell.xib in Resources */,
+				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
 				CDF18CCA1EB884F1004B4794 /* TabBarControllers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -921,7 +1040,10 @@
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CDBB39C81EB9D96B00E8ED25 /* HomeVC.m in Sources */,
 				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
+				CD77FEA11EBF5DD5001A5787 /* BaseDataAccess.m in Sources */,
+				CD77FEAA1EBF5E0D001A5787 /* CacheServices.m in Sources */,
 				CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */,
+				CD77FEB81EBF67F4001A5787 /* BaseTableModel.m in Sources */,
 				CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */,
 				CDBB3B291EB9E80F00E8ED25 /* MJPropertyKey.m in Sources */,
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
@@ -931,9 +1053,11 @@
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */,
 				CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */,
+				CD77FE931EBF594B001A5787 /* SettingSwitch.m in Sources */,
 				CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */,
 				CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */,
 				CD77FE751EBEE9D0001A5787 /* TestVC3.m in Sources */,
+				CD77FEBB1EBF6805001A5787 /* BaseTableView.m in Sources */,
 				CDF18CE81EB888BE004B4794 /* UIViewController+AXExtension.m in Sources */,
 				CDBB3B281EB9E80F00E8ED25 /* MJProperty.m in Sources */,
 				CD77FE6F1EBEE9C2001A5787 /* TestVC1.m in Sources */,
@@ -944,12 +1068,18 @@
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CDBB39CA1EB9D96B00E8ED25 /* SettingVC.m in Sources */,
 				CDBB39C61EB9D96B00E8ED25 /* AXLogVC.m in Sources */,
+				CD77FEA71EBF5DF3001A5787 /* DataAccessLayer.m in Sources */,
 				CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CDBB3B021EB9DF7A00E8ED25 /* DemoTableModel.m in Sources */,
+				CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */,
+				CD77FE9C1EBF5D8B001A5787 /* BaseServices.m in Sources */,
 				CDBB3B051EB9DFAD00E8ED25 /* DemoTableView.m in Sources */,
+				CD77FEA41EBF5DE7001A5787 /* ServicesLayer.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
+				CD77FE8B1EBF5697001A5787 /* DefaultViewController.m in Sources */,
 				CD77FE721EBEE9C9001A5787 /* TestVC2.m in Sources */,
+				CD77FE901EBF592D001A5787 /* BaseSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

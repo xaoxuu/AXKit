@@ -7,7 +7,7 @@
 			<key>icon</key>
 			<string></string>
 			<key>title</key>
-			<string>名称</string>
+			<string>关于</string>
 			<key>detail</key>
 			<string>My Watch</string>
 			<key>showAccessory</key>
@@ -77,7 +77,7 @@
 			<key>title</key>
 			<string>两地时设置</string>
 			<key>detail</key>
-			<string></string>
+			<string>计步开关sdafdasdfsafsad计步开关sdafdasdfsafsad</string>
 			<key>showAccessory</key>
 			<true/>
 			<key>showSwitch</key>
@@ -93,9 +93,9 @@
 			<key>icon</key>
 			<string></string>
 			<key>title</key>
-			<string>计步开关</string>
+			<string>计步开关sdafdasdfsafsad</string>
 			<key>detail</key>
-			<string></string>
+			<string>计步开关sdafdasdfsafsad计步开关sdafdasdfsafsad</string>
 			<key>showAccessory</key>
 			<false/>
 			<key>showSwitch</key>
