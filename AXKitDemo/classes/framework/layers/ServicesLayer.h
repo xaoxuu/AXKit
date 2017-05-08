@@ -7,6 +7,7 @@
 //
 
 #import "BaseServices.h"
+#import "AppServices.h"
 #import "CacheServices.h"
 
 
@@ -15,6 +16,8 @@ extern ServicesLayer *services;
 
 @interface ServicesLayer : BaseServices
 
+// @xaoxuu: app
+@property (strong, nonatomic) AppServices *app;
 // @xaoxuu: cache
 @property (strong, nonatomic) CacheServices *cache;
 

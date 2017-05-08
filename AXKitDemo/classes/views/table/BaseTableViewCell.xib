@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,14 +22,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-Gw-qfq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4OE-9d-N2x">
-                                <rect key="frame" x="8" y="8" width="27.5" height="27.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_default" translatesAutoresizingMaskIntoConstraints="NO" id="4OE-9d-N2x">
+                                <rect key="frame" x="16" y="8" width="27.5" height="27.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4OE-9d-N2x" secondAttribute="height" multiplier="1:1" id="mHk-iQ-Bza"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="某设置项" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDI-fA-ZuU">
-                                <rect key="frame" x="43" y="13" width="58" height="17"/>
+                                <rect key="frame" x="51" y="13" width="58" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +51,7 @@
                         <constraints>
                             <constraint firstItem="LZJ-Es-lvv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H99-kv-BkC" secondAttribute="trailing" constant="8" id="5UO-QC-lPh"/>
                             <constraint firstItem="VDI-fA-ZuU" firstAttribute="leading" secondItem="4OE-9d-N2x" secondAttribute="trailing" constant="8" id="6KR-R8-mvq"/>
-                            <constraint firstItem="4OE-9d-N2x" firstAttribute="leading" secondItem="HEf-Gw-qfq" secondAttribute="leading" constant="8" id="Bx1-5J-fwP"/>
+                            <constraint firstItem="4OE-9d-N2x" firstAttribute="leading" secondItem="HEf-Gw-qfq" secondAttribute="leading" constant="16" id="Bx1-5J-fwP"/>
                             <constraint firstAttribute="trailing" secondItem="LZJ-Es-lvv" secondAttribute="trailing" constant="8" id="Hh0-B5-DxY"/>
                             <constraint firstAttribute="bottom" secondItem="4OE-9d-N2x" secondAttribute="bottom" constant="8" id="Ixi-Tg-LfQ"/>
                             <constraint firstItem="4OE-9d-N2x" firstAttribute="top" secondItem="HEf-Gw-qfq" secondAttribute="top" constant="8" id="PYf-rz-49v"/>
@@ -59,6 +60,7 @@
                             <constraint firstItem="LZJ-Es-lvv" firstAttribute="centerY" secondItem="HEf-Gw-qfq" secondAttribute="centerY" id="bZA-cx-GGx"/>
                             <constraint firstItem="VDI-fA-ZuU" firstAttribute="centerY" secondItem="HEf-Gw-qfq" secondAttribute="centerY" id="bcS-H1-jdX"/>
                             <constraint firstItem="LZJ-Es-lvv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VDI-fA-ZuU" secondAttribute="trailing" constant="8" id="pIe-CC-BTO"/>
+                            <constraint firstItem="LZJ-Es-lvv" firstAttribute="width" relation="lessThanOrEqual" secondItem="HEf-Gw-qfq" secondAttribute="width" multiplier="0.5" id="z1s-lo-9Y9"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -77,4 +79,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="setting_default" width="40" height="40"/>
+    </resources>
 </document>

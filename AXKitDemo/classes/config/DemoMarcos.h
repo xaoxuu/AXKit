@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-#define kURL_BLOG @"https://blog.xaoxuu.com"
+//#define kURL_BLOG @"https://blog.xaoxuu.com"
 
 
 @interface DemoMarcos : NSObject

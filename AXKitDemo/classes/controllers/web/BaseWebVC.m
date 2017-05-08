@@ -1,16 +1,16 @@
 //
-//  DemoWebVC.m
+//  BaseWebVC.m
 //  AXKit
 //
 //  Created by xaoxuu on 03/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "DemoWebVC.h"
+#import "BaseWebVC.h"
 #import <WebKit/WebKit.h>
 
 
-@interface DemoWebVC ()<WKUIDelegate, WKNavigationDelegate>
+@interface BaseWebVC ()<WKUIDelegate, WKNavigationDelegate>
 
 // @xaoxuu: wk
 @property (strong, nonatomic) WKWebView *webView;
@@ -20,18 +20,26 @@
 @end
 
 
-@implementation DemoWebVC
+@implementation BaseWebVC
 
-
-+ (instancetype)webVCWithTitle:(NSString *)title URL:(NSString *)url{
-    return [[self alloc] initWithTitle:title URL:url];
++ (instancetype)webVCWithURLString:(NSString *)url{
+    return [[self alloc] initWithURLString:url];
 }
 
-- (instancetype)initWithTitle:(NSString *)title URL:(NSString *)url{
+- (instancetype)initWithURLString:(NSString *)url{
     if (self = [super init]) {
-        self.title = title;
         _urlStr = url;
-        
+    }
+    return self;
+}
+
++ (instancetype)webVCWithTitle:(NSString *)title URLString:(NSString *)url{
+    return [[self alloc] initWithTitle:title URLString:url];
+}
+
+- (instancetype)initWithTitle:(NSString *)title URLString:(NSString *)url{
+    if (self = [self initWithURLString:url]) {
+        self.title = title;
     }
     return self;
 }
@@ -41,7 +49,9 @@
     // Do any additional setup after loading the view.
     [self setupWebView];
     [self reloadWeb];
-    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
+        [self reloadWeb];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

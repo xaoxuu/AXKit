@@ -75,7 +75,7 @@ static NSString *txt   = @"txt";
 #pragma mark - path
 
 - (NSString *)mainBundlePath{
-    NSString *path = [[NSBundle mainBundle] pathForResource:self ofType:nil];
+    NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:self];
     if (!path.length) {
         if ([self containsString:@"."]) {
             AXLogFail(@"path not found.");

@@ -1,5 +1,5 @@
 //
-//  DemoWebVC.h
+//  BaseWebVC.h
 //  AXKit
 //
 //  Created by xaoxuu on 03/05/2017.
@@ -8,13 +8,15 @@
 
 #import "BaseViewController.h"
 
-@interface DemoWebVC : BaseViewController
+@interface BaseWebVC : BaseViewController
 
 
 // @xaoxuu: url string
 @property (copy, nonatomic) NSString *urlStr;
 
-+ (instancetype)webVCWithTitle:(NSString *)title URL:(NSString *)url;
++ (instancetype)webVCWithURLString:(NSString *)url;
+
++ (instancetype)webVCWithTitle:(NSString *)title URLString:(NSString *)url;
 
 - (void)reloadWeb;
 

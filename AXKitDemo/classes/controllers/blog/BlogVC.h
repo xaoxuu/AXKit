@@ -6,9 +6,8 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "BaseViewController.h"
-#import "DemoWebVC.h"
+#import "BaseWebVC.h"
 
-@interface BlogVC : DemoWebVC
+@interface BlogVC : BaseWebVC
 
 @end

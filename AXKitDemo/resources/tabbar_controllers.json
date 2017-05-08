@@ -1,0 +1,14 @@
+[
+    {
+      "vc":"HomeVC",
+      "title":"主页",
+      "icon":"",
+      "icon_sel":"",
+    },
+    {
+      "vc":"SettingVC",
+      "title":"设置",
+      "icon":"",
+      "icon_sel":"",
+    }
+]

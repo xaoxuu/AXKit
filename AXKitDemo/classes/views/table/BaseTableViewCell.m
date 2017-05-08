@@ -53,12 +53,12 @@
     // @xaoxuu: 数据显示
     self.lb_detail.text = NSLocalizedString(model.desc, nil);
     // @xaoxuu: 图片
-    if ([model.icon containsString:@"http://"] || [model.icon containsString:@"https://"]) {
+    if (model.icon.isURLString) {
         // @xaoxuu: 网络图片
-        
+        [self.img_icon setImageWithURL:model.icon.absoluteURL placeholder:services.app.placeholderForSetting];
     } else {
         // @xaoxuu: 本地图片
-        self.img_icon.image = [UIImage imageNamed:model.icon];
+        self.img_icon.image = model.icon.image;
     }
     
     

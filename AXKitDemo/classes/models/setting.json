@@ -14,8 +14,8 @@
             "rows":[
                 {
                     "title":"关于",
-                    "desc":"这是本app的描述",
-                    "icon":"tmp.png",
+                    "desc":"关于本app",
+                    "icon":"https://xaoxuu.com/images/avatar.png",
                     "showAccessory":"1",
                     "showSwitch":"0",
                     "switch_on":"0",
@@ -23,13 +23,23 @@
                     "cmd":""
                 },
                 {
-                    "title":"关于2",
-                    "desc":"这是本app的描述",
-                    "icon":"tmp.png",
+                    "title":"博客",
+                    "desc":"xaoxuu's blog",
+                    "icon":"https://xaoxuu.com/images/avatar.png",
                     "showAccessory":"1",
                     "showSwitch":"0",
                     "switch_on":"0",
-                    "target":"default",
+                    "target":"BlogVC",
+                    "cmd":""
+                },
+                {
+                    "title":"反馈",
+                    "desc":"bug反馈、功能建议",
+                    "icon":"about",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"FeedbackVC",
                     "cmd":""
                 }
             ]
@@ -44,7 +54,7 @@
                 {
                     "title":"关于3",
                     "desc":"这是本app的描述",
-                    "icon":"tmp.png",
+                    "icon":"https://github.com/xaoxuu/AXKit/raw/master/resources/icons/header.pngl",
                     "showAccessory":"1",
                     "showSwitch":"0",
                     "switch_on":"0",
@@ -54,7 +64,7 @@
                 {
                     "title":"关于4",
                     "desc":"这是本app的描述",
-                    "icon":"tmp.png",
+                    "icon":"",
                     "showAccessory":"1",
                     "showSwitch":"0",
                     "switch_on":"0",

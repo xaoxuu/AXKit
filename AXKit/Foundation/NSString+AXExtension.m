@@ -92,4 +92,16 @@ inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
     return [NSURL URLWithString:self].absoluteURL;
 }
 
+- (BOOL)isURLString{
+    if ([self containsString:@"http://"] || [self containsString:@"https://"]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (UIImage *)image{
+    return [UIImage imageNamed:self];
+}
+
 @end

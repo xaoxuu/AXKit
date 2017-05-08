@@ -126,6 +126,10 @@ FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
 - (NSURL *)absoluteURL;
 
+- (BOOL)isURLString;
+
+- (UIImage *)image;
+
 @end
 
 

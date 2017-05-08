@@ -93,9 +93,9 @@
     [self.tableView reloadData];
 }
 
-- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
-    return nil;
-}
+//- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
+//    return nil;
+//}
 
 - (BOOL)tableViewCellSwitchOnForSection:(NSUInteger)section row:(NSUInteger)row{
     return NO;
@@ -119,7 +119,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
     BaseTableModel *model = self.dataList[indexPath.section].rows[indexPath.row];
-    model.desc = [self tableViewCellDetailForSection:indexPath.section row:indexPath.row];
+//    model.desc = [self tableViewCellDetailForSection:indexPath.section row:indexPath.row];
     cell.model = model;
     
     [cell switchStatusChanged:^(BOOL on) {

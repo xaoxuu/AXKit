@@ -10,7 +10,8 @@
 #define PrefixHeader_pch
 
 // @xaoxuu: vendor
-//#import "YYKit.h"
+//#import <YYKit/YYKit.h>
+#import "YYKit.h"
 // @xaoxuu: common
 #import "AXKit.h"
 

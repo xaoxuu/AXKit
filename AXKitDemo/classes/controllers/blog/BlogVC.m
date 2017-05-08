@@ -15,16 +15,16 @@
 @implementation BlogVC
 
 - (void)viewDidLoad {
-    self.urlStr = kURL_BLOG;
+    self.urlStr = services.app.blogURL;
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self setupTopBar];
+//    [self setupTopBar];
     
-    [self.tabBarController.tabBar ax_addDoubleTapGesture:nil duration:1 handler:^(UITapGestureRecognizer * _Nonnull sender) {
-        [self reloadWeb];
-    }];
+//    [self.tabBarController.tabBar ax_addDoubleTapGesture:nil duration:1 handler:^(UITapGestureRecognizer * _Nonnull sender) {
+//        [self reloadWeb];
+//    }];
     
 }
 
@@ -33,13 +33,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setupTopBar{
-    
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
-        [self reloadWeb];
-    }];
-}
+//- (void)setupTopBar{
+//    
+////    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
+//        [self reloadWeb];
+//    }];
+//}
 
 @end
