@@ -81,13 +81,13 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
 }
 
 
-- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index{
+- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index animated:(BOOL)animated{
     NSArray *vcs = self.viewControllers;
     NSUInteger targetIndex = MIN(index, vcs.count-1);
     [self popToViewController:vcs[targetIndex] animated:YES];
 }
 
-- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index{
+- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index animated:(BOOL)animated{
     NSArray *vcs = self.viewControllers;
     index = MIN(index, vcs.count-1);
     NSUInteger targetIndex = vcs.count-1-index;
