@@ -41,7 +41,6 @@
         }
         
         NSArray *sections = dict[@"sections"];
-#warning rows没有解析
         _settingList = [BaseTableModelList mj_objectArrayWithKeyValuesArray:sections];
         if (!_settingList) {
             

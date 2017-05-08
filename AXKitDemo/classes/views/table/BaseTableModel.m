@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableModel.h"
+#import "MJExtension.h"
 
 @implementation BaseTableModel
 
@@ -14,6 +15,8 @@
 
 @implementation BaseTableModelList
 
-
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"rows":[BaseTableModel class]};
+}
 
 @end

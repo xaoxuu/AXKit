@@ -1,15 +1,15 @@
 {
     "title":"设置",
     "header_title":"this is table header",
-    "header_height":"20",
+    "header_height":"32",
     "footer_title":"this is table footer",
-    "footer_height":"20",
+    "footer_height":"32",
     "sections":[
         {
             "header_title":"this is section header",
-            "header_height":"20",
+            "header_height":"32",
             "footer_title":"this is section footer",
-            "footer_height":"20",
+            "footer_height":"32",
             "rowHeight":"44",
             "rows":[
                 {
@@ -36,9 +36,9 @@
         },
         {
             "header_title":"this is section header",
-            "header_height":"20",
+            "header_height":"32",
             "footer_title":"this is section footer",
-            "footer_height":"20",
+            "footer_height":"32",
             "rowHeight":"44",
             "rows":[
                 {

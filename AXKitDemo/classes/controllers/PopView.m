@@ -17,11 +17,11 @@
 @implementation PopView
 
 - (IBAction)popFromRoot:(UIButton *)sender {
-    [self.controller.navigationController ax_popToViewControllerWithIndexFromRoot:sender.titleLabel.text.integerValue];
+    [self.controller.navigationController ax_popToViewControllerWithIndexFromRoot:sender.titleLabel.text.integerValue animated:YES];
 }
 
 - (IBAction)popFromSelf:(UIButton *)sender {
-    [self.controller.navigationController ax_popToViewControllerWithIndexFromSelf:sender.titleLabel.text.integerValue];
+    [self.controller.navigationController ax_popToViewControllerWithIndexFromSelf:sender.titleLabel.text.integerValue animated:YES];
 }
 
 @end
