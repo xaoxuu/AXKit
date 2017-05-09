@@ -26,6 +26,16 @@
 }
 
 
-
+- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
+    ThemeColorModel *colorStr = services.json.colors[section].rows[row];
+    UIColor *color = [UIColor colorWithHexString:colorStr.hex];
+    CGFloat r = color.redValue;
+    CGFloat g = color.greenValue;
+    CGFloat b = color.blueValue;
+    CGFloat x = r*g*b;
+    CGFloat y = r+g+b;
+    return [NSString stringWithFormat:@"x%.2f,y%.2f,%.2f,%.2f",x,y,x*y,x+y];
+    
+}
 
 @end

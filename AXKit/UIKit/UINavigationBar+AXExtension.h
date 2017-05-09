@@ -12,8 +12,8 @@
 
 
 /**
- 移除系统自带的分割线
+ 隐藏系统自带的分割线
  */
-- (void)ax_removeSeparator;
+- (void)ax_hideSeparator;
 
 @end

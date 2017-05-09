@@ -21,6 +21,8 @@
 
 @optional
 
+- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row;
+
 - (UIImage *)tableViewCellIconForSection:(NSUInteger)section row:(NSUInteger)row;
 
 - (void)tableViewCellDidSelected:(__kindof BaseTableModel *)model;

@@ -12,10 +12,12 @@
 @implementation UITabBar (AXExtension)
 
 
-- (void)ax_removeSeparator{
+- (void)ax_hideSeparator{
     [self ax_eachSubview:[NSClassFromString(@"UIBarBackground") class] action:^(__kindof UIView * _Nonnull subview) {
         [subview ax_eachImageViewInvokeAction:^(__kindof UIImageView * _Nonnull imageView) {
-            imageView.hidden = YES;
+            if (imageView.frame.size.height < 2) {
+                imageView.hidden = YES;
+            }
         }];
     }];
 }

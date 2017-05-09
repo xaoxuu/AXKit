@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
     
     [self.view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         [subview ax_fillWithRandomColor];

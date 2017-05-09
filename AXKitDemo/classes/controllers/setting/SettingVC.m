@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
     [self setupTable];
     
 }
@@ -31,7 +32,7 @@
 }
 
 - (void)setupTable{
-    self.table = [[SettingTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight)];
+    self.table = [[SettingTableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.table];
 }
 

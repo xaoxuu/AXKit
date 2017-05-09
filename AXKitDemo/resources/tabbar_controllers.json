@@ -2,19 +2,19 @@
     {
       "vc":"HomeVC",
       "title":"主页",
-      "icon":"https://github.com/xaoxuu/AXKit/blob/master/AXKitDemo/resources/icons/tabbar/home.png?raw=true",
+      "icon":"tabbar_home",
       "icon_sel":"",
     },
     {
       "vc":"DebugVC",
       "title":"调试",
-      "icon":"https://github.com/xaoxuu/AXKit/blob/master/AXKitDemo/resources/icons/tabbar/debug.png?raw=true",
+      "icon":"tabbar_debug",
       "icon_sel":"",
     },
     {
       "vc":"SettingVC",
       "title":"设置",
-      "icon":"https://github.com/xaoxuu/AXKit/blob/master/AXKitDemo/resources/icons/tabbar/setting.png?raw=true",
+      "icon":"tabbar_setting",
       "icon_sel":"",
     }
 ]

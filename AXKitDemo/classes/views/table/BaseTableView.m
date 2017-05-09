@@ -112,7 +112,11 @@
     NSUInteger row = indexPath.row;
     BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
     BaseTableModel *model = self.dataList[section].rows[row];
+    if ([self respondsToSelector:@selector(tableViewCellDetailForSection:row:)]) {
+        model.desc = [self tableViewCellDetailForSection:section row:row];
+    }
     cell.model = model;
+    
     
     // @xaoxuu: 自定义icon
     if ([self respondsToSelector:@selector(tableViewCellIconForSection:row:)]) {

@@ -49,7 +49,7 @@
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    [self.tabBar ax_removeSeparator];
+    [self.tabBar ax_hideSeparator];
 }
 
 - (NSArray<NSDictionary *> *)controllers{
@@ -73,7 +73,7 @@
                 
             } else {
                 // @xaoxuu: 本地图片
-                vc.tabBarItem.image = image.image;
+                vc.tabBarItem.image = [UIImage imageNamed:image];
             }
             if (selectedImage) {
                 if (image.isURLString) {
