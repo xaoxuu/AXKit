@@ -65,9 +65,27 @@
     if (vc) {
         vc.title = NSLocalizedString(title, nil);
         if (image.length) {
-            vc.tabBarItem.image = [UIImage imageNamed:image];
+            if (image.isURLString) {
+                // @xaoxuu: 网络图片
+                [[[UIImageView alloc] init] setImageWithURL:image.absoluteURL placeholder:nil options:YYWebImageOptionProgressiveBlur completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                    vc.tabBarItem.image = image;
+                }];
+                
+            } else {
+                // @xaoxuu: 本地图片
+                vc.tabBarItem.image = image.image;
+            }
             if (selectedImage) {
-                vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
+                if (image.isURLString) {
+                    // @xaoxuu: 网络图片
+                    [[[UIImageView alloc] init] setImageWithURL:selectedImage.absoluteURL placeholder:nil options:YYWebImageOptionProgressiveBlur completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                        vc.tabBarItem.selectedImage = image;
+                    }];
+                    
+                } else {
+                    // @xaoxuu: 本地图片
+                    vc.tabBarItem.selectedImage = selectedImage.image;
+                }
             }
         }
     }

@@ -58,19 +58,6 @@
         self.img_icon.image = model.icon.image;
     }
     
-    
-    
-    // @xaoxuu: 控制器跳转
-//    [self ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
-//        UIViewController *vc = UIViewControllerFromString(model.target);
-//        if (vc) {
-//            vc.title = NSLocalizedString(model.title, nil);
-//            [self.controller.navigationController pushViewController:vc animated:YES];
-//        } else if (model.target.length) {
-//            UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
-//            [self.controller.navigationController pushViewController:vc animated:YES];
-//        }
-//    }];
 
 }
 
