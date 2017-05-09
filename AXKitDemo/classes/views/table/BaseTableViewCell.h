@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableModel.h"
+#import "BaseSwitch.h"
 
 @interface BaseTableViewCell : UITableViewCell
 
 // @xaoxuu: model
-@property (strong, nonatomic) BaseTableModel *model;
+@property (strong, readwrite, nonatomic) BaseTableModel *model;
 
-- (void)switchStatusChanged:(void (^)(BOOL on))changed;
+// @xaoxuu: switch
+@property (strong, readonly, nonatomic) BaseSwitch *sw;
 
 
 @end

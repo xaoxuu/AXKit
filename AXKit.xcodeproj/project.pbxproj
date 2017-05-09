@@ -40,6 +40,8 @@
 		CD2386011EC0CD3F007AB90B /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2385FF1EC0CD3F007AB90B /* FeedbackVC.xib */; };
 		CD2386031EC0CF0F007AB90B /* urls.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386021EC0CF0F007AB90B /* urls.json */; };
 		CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386041EC0D25D007AB90B /* tabbar_controllers.json */; };
+		CD23DC971EC18621006E331B /* DebugVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DC951EC18621006E331B /* DebugVC.m */; };
+		CD23DC981EC18621006E331B /* DebugVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD23DC961EC18621006E331B /* DebugVC.xib */; };
 		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -219,6 +221,9 @@
 		CD2385FF1EC0CD3F007AB90B /* FeedbackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
 		CD2386021EC0CF0F007AB90B /* urls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = urls.json; sourceTree = "<group>"; };
 		CD2386041EC0D25D007AB90B /* tabbar_controllers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tabbar_controllers.json; sourceTree = "<group>"; };
+		CD23DC941EC18621006E331B /* DebugVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugVC.h; sourceTree = "<group>"; };
+		CD23DC951EC18621006E331B /* DebugVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugVC.m; sourceTree = "<group>"; };
+		CD23DC961EC18621006E331B /* DebugVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugVC.xib; sourceTree = "<group>"; };
 		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
@@ -500,6 +505,16 @@
 			path = feedback;
 			sourceTree = "<group>";
 		};
+		CD23DC931EC18613006E331B /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				CD23DC941EC18621006E331B /* DebugVC.h */,
+				CD23DC951EC18621006E331B /* DebugVC.m */,
+				CD23DC961EC18621006E331B /* DebugVC.xib */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
 		CD6C67671EB9F2BC00B57279 /* web */ = {
 			isa = PBXGroup;
 			children = (
@@ -712,6 +727,7 @@
 		CDBB39B91EB9D96B00E8ED25 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD23DC931EC18613006E331B /* debug */,
 				CD2385F91EC0CD18007AB90B /* feedback */,
 				CD77FE871EBF5684001A5787 /* default */,
 				CD6C67671EB9F2BC00B57279 /* web */,
@@ -862,10 +878,10 @@
 				CDF18CBF1EB884F1004B4794 /* RootViewController.h */,
 				CDF18CC01EB884F1004B4794 /* RootViewController.m */,
 				CDF18CB81EB884F1004B4794 /* TabBarControllers.plist */,
-				CDF18CB91EB884F1004B4794 /* BaseNavController.h */,
-				CDF18CBA1EB884F1004B4794 /* BaseNavController.m */,
 				CDF18CBB1EB884F1004B4794 /* BaseTabBarController.h */,
 				CDF18CBC1EB884F1004B4794 /* BaseTabBarController.m */,
+				CDF18CB91EB884F1004B4794 /* BaseNavController.h */,
+				CDF18CBA1EB884F1004B4794 /* BaseNavController.m */,
 				CDF18CBD1EB884F1004B4794 /* BaseViewController.h */,
 				CDF18CBE1EB884F1004B4794 /* BaseViewController.m */,
 			);
@@ -1057,6 +1073,7 @@
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
 				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
 				CDBB39C91EB9D96B00E8ED25 /* HomeVC.xib in Resources */,
+				CD23DC981EC18621006E331B /* DebugVC.xib in Resources */,
 				CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */,
 				CDBB3B0A1EB9E01000E8ED25 /* DemoTableViewCell.xib in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
@@ -1178,6 +1195,7 @@
 				CDBB39C61EB9D96B00E8ED25 /* AXLogVC.m in Sources */,
 				CD77FEA71EBF5DF3001A5787 /* DataAccessLayer.m in Sources */,
 				CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */,
+				CD23DC971EC18621006E331B /* DebugVC.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CDBB3B021EB9DF7A00E8ED25 /* DemoTableModel.m in Sources */,
 				CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */,

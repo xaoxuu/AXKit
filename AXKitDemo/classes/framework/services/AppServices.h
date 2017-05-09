@@ -7,6 +7,7 @@
 //
 
 #import "BaseServices.h"
+#import "DefaultViewController.h"
 
 FOUNDATION_EXTERN NSString *kBlogURL;
 
@@ -23,5 +24,8 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 // @xaoxuu: feedback
 @property (copy, nonatomic) NSString *feedbackURL;
 
+
+// @xaoxuu: default vc
+@property (strong, readonly, nonatomic) DefaultViewController *defaultVC;
 
 @end

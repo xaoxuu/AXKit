@@ -21,6 +21,9 @@ CG_EXTERN UIViewController *UIViewControllerFromString(NSString *name);
 @interface UIViewController (AXExtension)
 
 
+//- (void)ax_hidesNavBarInRootController:(BOOL)hidden animated:(BOOL)animated;
+//
+//- (void)ax_hidesBottomBarWhenPushed:(BOOL)pushed;
 
 @end
 NS_ASSUME_NONNULL_END

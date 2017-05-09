@@ -99,7 +99,13 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
 
 
 - (void)ax_pushViewControllerHidesBottomBar:(UIViewController *)viewController animated:(BOOL)animated{
-    viewController.hidesBottomBarWhenPushed = YES;
+    
+    if (!self.viewControllers.count) {
+        viewController.hidesBottomBarWhenPushed = NO;
+    } else {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    
     [self ax_pushViewControllerHidesBottomBar:viewController animated:animated];
 }
 

@@ -24,6 +24,8 @@
         _homePageURL = self.jsonFile[@"homePageURL"];
         _blogURL = self.jsonFile[@"blogURL"];
         _feedbackURL = self.jsonFile[@"feedbackURL"];
+        _defaultVC = [DefaultViewController new];
+        
     }
     return self;
 }

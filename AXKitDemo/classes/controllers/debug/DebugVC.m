@@ -1,31 +1,22 @@
 //
-//  RootViewController.m
+//  DebugVC.m
 //  AXKit
 //
-//  Created by xaoxuu on 29/04/2017.
+//  Created by xaoxuu on 09/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "RootViewController.h"
-#import "BaseTabBarController.h"
+#import "DebugVC.h"
 
-@interface RootViewController ()
-
-// @xaoxuu: tabbar controller
-@property (strong, nonatomic) BaseTabBarController *mainTabBarVC;
+@interface DebugVC ()
 
 @end
 
-@implementation RootViewController
+@implementation DebugVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = axColor.background;
-    self.mainTabBarVC = [[BaseTabBarController alloc] init];
-    [self addChildViewController:self.mainTabBarVC];
-    [self.view addSubview:self.mainTabBarVC.view];
-    
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

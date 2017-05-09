@@ -6,6 +6,12 @@
       "icon_sel":"",
     },
     {
+      "vc":"DebugVC",
+      "title":"调试",
+      "icon":"",
+      "icon_sel":"",
+    },
+    {
       "vc":"SettingVC",
       "title":"设置",
       "icon":"",

@@ -101,9 +101,10 @@
 - (UIProgressView *)progressView{
     if (!_progressView) {
         _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 2)];
-        _progressView.tintColor = axColor.theme;
+        _progressView.tintColor = axColor.white;
         _progressView.trackTintColor = [UIColor clearColor];
-        [self.webView.scrollView addSubview:_progressView];
+        _progressView.bottom = self.navigationController.navigationBar.height;
+        [self.navigationController.navigationBar addSubview:_progressView];
     }
     return _progressView;
 }

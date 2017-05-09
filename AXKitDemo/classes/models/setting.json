@@ -45,6 +45,45 @@
             ]
         },
         {
+            "header_title":"个性化设置",
+            "header_height":"32",
+            "footer_title":"",
+            "footer_height":"8",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"主题色",
+                    "desc":"app的主题色",
+                    "icon":"about",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"default",
+                    "cmd":""
+                },
+                {
+                    "title":"字体",
+                    "desc":"app的字体",
+                    "icon":"",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"default",
+                    "cmd":""
+                },
+                {
+                    "title":"图标",
+                    "desc":"app的图标",
+                    "icon":"",
+                    "showAccessory":"1",
+                    "showSwitch":"0",
+                    "switch_on":"0",
+                    "target":"default",
+                    "cmd":""
+                }
+            ]
+        },
+        {
             "header_title":"this is section header",
             "header_height":"32",
             "footer_title":"this is section footer",
@@ -54,7 +93,7 @@
                 {
                     "title":"关于3",
                     "desc":"这是本app的描述",
-                    "icon":"https://github.com/xaoxuu/AXKit/raw/master/resources/icons/header.pngl",
+                    "icon":"https://github.com/xaoxuu/AXKit/raw/master/resources/icons/header.png",
                     "showAccessory":"1",
                     "showSwitch":"0",
                     "switch_on":"0",

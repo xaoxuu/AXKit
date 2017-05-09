@@ -7,14 +7,49 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseSwitch.h"
 
-@interface BaseTableView : UIView
+@protocol BaseTableViewDelegate <NSObject>
 
 
-- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row;
-- (BOOL)tableViewCellSwitchOnForSection:(NSUInteger)section row:(NSUInteger)row;
-- (void)tableViewCellSwitchStatusChanged:(BOOL)on forSection:(NSUInteger)section row:(NSUInteger)row;
+/**
+ 默认是显示">"
+ 
+ @return 是否显示
+ */
+- (BOOL)tableViewCellShowAccessoryDisclosureIndicatorForSection:(NSUInteger)section row:(NSUInteger)row;
 
+/**
+ 是否显示开关，默认不显示
+
+ @param sw 开关
+ @param section section
+ @param row row
+ @return 是否显示开关
+ */
+- (BOOL)tableViewCellShowSwitch:(BaseSwitch *)sw forSection:(NSUInteger)section row:(NSUInteger)row;
+
+
+/**
+ 开关状态改变了
+
+ @param sw 开关
+ @param section section
+ @param row row
+ */
+- (void)tableViewCellDidSwitchStatusChanged:(BaseSwitch *)sw forSection:(NSUInteger)section row:(NSUInteger)row;
+
+
+@end
+
+@interface BaseTableView : UIView <BaseTableViewDelegate>
+
+// @xaoxuu: delegate
+//@property (weak, nonatomic) id<BaseTableViewDelegate> delegate;
+
+//- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row;
+//- (BOOL)tableViewCellSwitchOnForSection:(NSUInteger)section row:(NSUInteger)row;
+//- (void)tableViewCellSwitchStatusChanged:(BOOL)on forSection:(NSUInteger)section row:(NSUInteger)row;
 
 - (void)reloadData;
 

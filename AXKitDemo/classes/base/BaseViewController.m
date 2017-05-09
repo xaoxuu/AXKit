@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view.
     self.view.frame = CGRectFromScreen();
     self.view.backgroundColor = axColor.background;
+    self.navigationItem.backBarButtonItem = [UIBarButtonItem ax_itemWithTitle:NSLocalizedString(@"", nil) action:^(id  _Nonnull sender) {
+        
+    }];
+    [self setNeedsStatusBarAppearanceUpdate];
+    
     if (!self.title.length) {
         self.title = NSLocalizedString(NSStringFromClass([self class]), nil);
     }
@@ -32,6 +37,21 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+}
+
+
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
+- (BOOL)hidesBottomBarWhenPushed{
+    if (self.navigationController.viewControllers.count == 1) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 

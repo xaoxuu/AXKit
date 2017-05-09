@@ -8,7 +8,6 @@
 
 #import "BaseTableViewCell.h"
 #import "DefaultViewController.h"
-#import "SettingSwitch.h"
 
 @interface BaseTableViewCell ()
 
@@ -19,11 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_detail;
 @property (weak, nonatomic) IBOutlet UILabel *lb_title_only;
 
-// @xaoxuu:
-@property (copy, nonatomic) void (^switchStatusChanged)(BOOL on);
-
-// @xaoxuu: switch
-@property (strong, nonatomic) SettingSwitch *sw;
 
 @end
 
@@ -31,6 +25,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    _sw = [BaseSwitch new];
     // Initialization code
 }
 
@@ -63,22 +58,6 @@
     
     
     
-    
-    // @xaoxuu: 样式
-    self.accessoryType = model.showAccessory ? UITableViewCellAccessoryDisclosureIndicator:UITableViewCellAccessoryNone;
-    if (model.showSwitch) {
-        SettingSwitch *sw = [[SettingSwitch alloc] init];
-        sw.on = model.switch_on;
-        self.accessoryView = sw;
-        [sw ax_addValueChangedHandler:^(__kindof UISwitch * _Nonnull sender) {
-            if (self.switchStatusChanged) {
-                self.switchStatusChanged(sender.on);
-            }
-        }];
-        self.sw = sw;
-    }
-    
-    
     // @xaoxuu: 控制器跳转
     [self ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
         UIViewController *vc = UIViewControllerFromString(model.target);
@@ -91,11 +70,6 @@
         }
     }];
 
-}
-
-
-- (void)switchStatusChanged:(void (^)(BOOL on))changed{
-    self.switchStatusChanged = changed;
 }
 
 

@@ -93,17 +93,6 @@
     [self.tableView reloadData];
 }
 
-//- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
-//    return nil;
-//}
-
-- (BOOL)tableViewCellSwitchOnForSection:(NSUInteger)section row:(NSUInteger)row{
-    return NO;
-}
-
-- (void)tableViewCellSwitchStatusChanged:(BOOL)on forSection:(NSUInteger)section row:(NSUInteger)row{
-    
-}
 
 
 #pragma mark - data source
@@ -117,15 +106,31 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSUInteger section = indexPath.section;
+    NSUInteger row = indexPath.row;
     BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
-    BaseTableModel *model = self.dataList[indexPath.section].rows[indexPath.row];
-//    model.desc = [self tableViewCellDetailForSection:indexPath.section row:indexPath.row];
+    BaseTableModel *model = self.dataList[section].rows[row];
     cell.model = model;
     
-    [cell switchStatusChanged:^(BOOL on) {
-        [self tableViewCellSwitchStatusChanged:on forSection:indexPath.section row:indexPath.row];
-        
-    }];
+    // @xaoxuu: 是否显示">"
+    BOOL showAccessory = YES;
+    if ([self respondsToSelector:@selector(tableViewCellShowAccessoryDisclosureIndicatorForSection:row:)]) {
+        showAccessory = [self tableViewCellShowAccessoryDisclosureIndicatorForSection:section row:row];
+    }
+    cell.accessoryType = showAccessory ? UITableViewCellAccessoryDisclosureIndicator:UITableViewCellAccessoryNone;
+    
+    // @xaoxuu: 是否显示开关
+    BOOL showSwitch = NO;
+    if ([self respondsToSelector:@selector(tableViewCellShowSwitch:forSection:row:)]) {
+        showSwitch = [self tableViewCellShowSwitch:cell.sw forSection:section row:row];
+        [cell.sw ax_addValueChangedHandler:^(__kindof UISwitch * _Nonnull sender) {
+            if ([self respondsToSelector:@selector(tableViewCellDidSwitchStatusChanged:forSection:row:)]) {
+                [self tableViewCellDidSwitchStatusChanged:cell.sw forSection:section row:row];
+            }
+        }];
+    }
+    cell.accessoryView = showSwitch ? cell.sw : nil;
+    
     
     return cell;
 }

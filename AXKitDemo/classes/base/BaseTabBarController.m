@@ -8,6 +8,7 @@
 
 #import "BaseTabBarController.h"
 #import "BaseNavController.h"
+#import "DefaultViewController.h"
 
 @interface BaseTabBarController ()
 
@@ -24,7 +25,8 @@
     
     
     for (NSDictionary *dict in self.controllers) {
-        UIViewController *vc = [[[NSClassFromString(dict[@"vc"]) class] alloc] init];
+        
+        UIViewController *vc = UIViewControllerFromString(dict[@"vc"]) ?: services.app.defaultVC;
         BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:vc];
         [self addChildViewController:nav];
         [self setupChlidController:vc title:dict[@"title"] image:dict[@"icon"] selectedImage:dict[@"icon_sel"]];

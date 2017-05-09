@@ -18,13 +18,6 @@
 // @xaoxuu: icon path(支持本地图片和网络图片)
 @property (copy, nonatomic) NSString *icon;
 
-#pragma mark style
-// @xaoxuu: 是否显示">"，默认为YES
-@property (assign, nonatomic) BOOL showAccessory;
-// @xaoxuu: 是否显示开关，默认为NO
-@property (assign, nonatomic) BOOL showSwitch;
-// @xaoxuu: 开关状态，默认为NO
-@property (assign, nonatomic) BOOL switch_on;
 
 #pragma mark action
 // @xaoxuu: 跳转到某控制器
