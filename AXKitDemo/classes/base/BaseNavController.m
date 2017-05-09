@@ -17,17 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationBar.barTintColor = axColor.theme;
-    self.navigationBar.tintColor = axColor.white;
-    self.navigationItem.titleView.tintColor = axColor.white;
+    
     
     
     [UINavigationBar appearance].barStyle = UIBarStyleDefault;
     [UINavigationBar appearance].translucent = NO;
     [UINavigationBar appearance].opaque = YES;
+    [UINavigationBar appearance].barTintColor = axColor.theme;
+    [UINavigationBar appearance].tintColor = axColor.white;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-    [self removeSeparator];
+    [self.navigationBar ax_removeSeparator];
+    self.navigationBar.layer.ax_shadow(AXShadowDownNormal);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,15 +48,5 @@
 
 
 
-
-- (void)removeSeparator{
-    [self.navigationBar ax_eachSubview:[NSClassFromString(@"UIBarBackground") class] action:^(__kindof UIView * _Nonnull subview) {
-        [subview ax_eachImageViewInvokeAction:^(__kindof UIImageView * _Nonnull imageView) {
-            imageView.hidden = YES;
-            AXLogFunc;
-        }];
-    }];
-    
-}
 
 @end

@@ -69,6 +69,10 @@
     [self.webView loadRequest:request];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.progressView setProgress:0.0f animated:NO];
+}
 
 - (void)setupWebView{
     [self webView];

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @class UIColorManager;
 extern UIColorManager *axColor;
 
@@ -17,38 +17,36 @@ extern UIColorManager *axColor;
 
 
 /**
- 当前app的主题色
+ 当前app的主题色，set方法会做本地缓存
  */
-@property (strong, nonatomic) UIColor *theme;
+@property (strong, readwrite, nonatomic) UIColor *theme;
 
 
 /**
- 当前app的强调色
+ 当前app的强调色，set方法会做本地缓存
  */
-@property (strong, nonatomic) UIColor *accent;
+@property (strong, readwrite, nonatomic) UIColor *accent;
 
 
 /**
- 当前app的背景色（一般为白色或很浅的灰色）
+ 当前app的背景色，set方法会做本地缓存（一般为白色或很浅的灰色）
  */
-@property (strong, nonatomic) UIColor *background;
+@property (strong, readwrite, nonatomic) UIColor *background;
 
 
 #pragma mark - 颜色工具
 
-/**
- 保存颜色配置文件
- */
-- (void)saveCurrentColorProfiles;
+
 
 /**
- 保存颜色配置文件（在appDelegate中配置一次即可）
+ 设置默认的颜色配置（会被新的更改覆盖，一般用在appDelegate中）
 
  @param theme 主题色
  @param accent 强调色
  @param background 背景色
  */
-- (void)saveColorProfilesWithTheme:(UIColor *)theme accent:(UIColor *)accent background:(UIColor *)background;
+- (void)setupDefaultColorConfigurationTheme:(nullable UIColor *(^)())theme accent:(nullable UIColor *(^)())accent background:(nullable UIColor *(^)())background;
+
 
 #pragma mark - 系统颜色
 
@@ -65,6 +63,8 @@ extern UIColorManager *axColor;
 
 + (instancetype)defaultManager;
 
++ (instancetype)sharedInstance;
+
 @end
 
-
+NS_ASSUME_NONNULL_END

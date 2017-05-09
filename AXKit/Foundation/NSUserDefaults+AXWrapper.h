@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completion 读取成功
  @param fail 读取失败（没有值）
  */
-+ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id))completion fail:(void (^)(NSError *))fail;
++ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion fail:(void (^)(NSError *error))fail;
 
 /**
  读取BOOL值
@@ -87,7 +87,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completion 读取成功
  @param fail 读取失败（没有值）
  */
-+ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *))completion fail:(void (^)(NSError *))fail;
++ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion fail:(void (^)(NSError *error))fail;
 
 /**
  读取NSString值
@@ -104,7 +104,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completion 读取成功
  @param fail 读取失败（没有值）
  */
-+ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *))completion fail:(void (^)(NSError *))fail;
++ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion fail:(void (^)(NSError *error))fail;
 
 /**
  读取字符串数组
@@ -121,7 +121,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completion 读取成功
  @param fail 读取失败（没有值）
  */
-+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *))completion fail:(void (^)(NSError *))fail;
++ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *array))completion fail:(void (^)(NSError *error))fail;
 
 /**
  读取NSArray值
@@ -138,7 +138,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completion 读取成功
  @param fail 读取失败（没有值）
  */
-+ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *))completion fail:(void (^)(NSError *))fail;
++ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion fail:(void (^)(NSError *error))fail;
 
 /**
  读取NSDictionary值
@@ -155,7 +155,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completion 读取成功
  @param fail 读取失败（没有值）
  */
-+ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *))completion fail:(void (^)(NSError *))fail;
++ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion fail:(void (^)(NSError *error))fail;
 
 /**
  读取若干字符串值，并组装成NSDictionary
@@ -180,7 +180,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completion 读取成功
  @param fail 读取失败（没有值）
  */
-+ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *))completion fail:(void (^)(NSError *))fail;
++ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion fail:(void (^)(NSError *error))fail;
 
 
 

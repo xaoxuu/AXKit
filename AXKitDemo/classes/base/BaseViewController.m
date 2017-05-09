@@ -22,7 +22,7 @@
     self.navigationItem.backBarButtonItem = [UIBarButtonItem ax_itemWithTitle:NSLocalizedString(@"", nil) action:^(id  _Nonnull sender) {
         
     }];
-    [self setNeedsStatusBarAppearanceUpdate];
+    
     
     if (!self.title.length) {
         self.title = NSLocalizedString(NSStringFromClass([self class]), nil);
@@ -40,11 +40,6 @@
 }
 
 
-
-
-- (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
 
 - (BOOL)hidesBottomBarWhenPushed{
     if (self.navigationController.viewControllers.count == 1) {

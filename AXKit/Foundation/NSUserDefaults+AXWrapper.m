@@ -24,7 +24,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() objectForKey:key];
 }
 
-+ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id))completion fail:(void (^)(NSError *))fail{
++ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion fail:(void (^)(NSError *error))fail{
     id obj = [self ax_readObjectForKey:key];
     if (obj && completion) {
         completion(obj);
@@ -63,7 +63,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() dataForKey:key];
 }
 
-+ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *))completion fail:(void (^)(NSError *))fail{
++ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion fail:(void (^)(NSError *error))fail{
     NSData *data = [self ax_readDataForKey:key];
     if (data && completion) {
         completion(data);
@@ -82,7 +82,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() stringForKey:key];
 }
 
-+ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *))completion fail:(void (^)(NSError *))fail{
++ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion fail:(void (^)(NSError *error))fail{
     NSString *string = [self ax_readStringForKey:key];
     if (string && completion) {
         completion(string);
@@ -101,7 +101,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() stringArrayForKey:key];
 }
 
-+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *))completion fail:(void (^)(NSError *))fail{
++ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *string))completion fail:(void (^)(NSError *error))fail{
     NSArray<NSString *> *stringArray = [self ax_readStringArrayForKey:key];
     if (stringArray && completion) {
         completion(stringArray);
@@ -120,7 +120,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() arrayForKey:key];
 }
 
-+ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *))completion fail:(void (^)(NSError *))fail{
++ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion fail:(void (^)(NSError *error))fail{
     NSArray *array = [self ax_readArrayForKey:key];
     if (array && completion) {
         completion(array);
@@ -139,7 +139,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() dictionaryForKey:key];
 }
 
-+ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *))completion fail:(void (^)(NSError *))fail{
++ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion fail:(void (^)(NSError *error))fail{
     NSDictionary *dictionary = [self ax_readDictionaryForKey:key];
     if (dictionary && completion) {
         completion(dictionary);
@@ -163,7 +163,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 
-+ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *))completion fail:(void (^)(NSError *))fail{
++ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion fail:(void (^)(NSError *error))fail{
     NSURL *url = [self ax_readURLForKey:key];
     if (url && completion) {
         completion(url);

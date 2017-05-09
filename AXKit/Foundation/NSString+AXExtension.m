@@ -100,7 +100,7 @@ inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
     }
 }
 
-- (UIImage *)image{
+- (nullable UIImage *)image{
     return [UIImage imageNamed:self];
 }
 

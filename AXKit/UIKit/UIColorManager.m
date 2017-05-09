@@ -9,45 +9,56 @@
 #import "UIColorManager.h"
 #import "UIColor+MDColorPack.h"
 #import "UIColor+AXExtension.h"
+#import "NSUserDefaults+AXWrapper.h"
 
 UIColorManager *axColor = nil;
 
-#define ColorProfiles_Theme @"ColorProfiles_Theme"
-#define ColorProfiles_Accent @"ColorProfiles_Accent"
-#define ColorProfiles_Background @"ColorProfiles_Background"
+#define CACHE_COLOR_THEME @"CACHE_COLOR_THEME"
+#define CACHE_COLOR_ACCENT @"CACHE_COLOR_ACCENT"
+#define CACHE_COLOR_BG @"CACHE_COLOR_BG"
 
 @implementation UIColorManager
 
 #pragma mark - color tool
 
-- (void)saveColorProfilesWithTheme:(UIColor *)theme accent:(UIColor *)accent background:(UIColor *)background{
-    self.theme = theme;
-    self.accent = accent;
-    self.background = background;
-    // save
-    [self saveCurrentColorProfiles];
+- (void)setupDefaultColorConfigurationTheme:(UIColor *(^)())theme accent:(UIColor *(^)())accent background:(UIColor *(^)())background{
+    if (theme) {
+        [NSUserDefaults ax_readStringForKey:CACHE_COLOR_THEME completion:^(NSString * _Nonnull string) {
+            self.theme = [UIColor colorWithHexString:string];
+        } fail:^(NSError * _Nonnull error) {
+            self.theme = theme() ?: [UIColor md_blue];
+        }];
+    }
+    if (accent) {
+        [NSUserDefaults ax_readStringForKey:CACHE_COLOR_ACCENT completion:^(NSString * _Nonnull string) {
+            self.accent = [UIColor colorWithHexString:string];
+        } fail:^(NSError * _Nonnull error) {
+            self.accent = accent() ?: [UIColor md_orange];
+        }];
+    }
+    if (background) {
+        [NSUserDefaults ax_readStringForKey:CACHE_COLOR_BG completion:^(NSString * _Nonnull string) {
+            self.background = [UIColor colorWithHexString:string];
+        } fail:^(NSError * _Nonnull error) {
+            self.background = background() ?: [UIColor whiteColor];
+        }];
+    }
 }
 
-- (void)saveCurrentColorProfiles{
-    [[NSUserDefaults standardUserDefaults] setObject:self.theme.hexString forKey:ColorProfiles_Theme];
-    [[NSUserDefaults standardUserDefaults] setObject:self.accent.hexString forKey:ColorProfiles_Accent];
-    [[NSUserDefaults standardUserDefaults] setObject:self.background.hexString forKey:ColorProfiles_Background];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+
+- (void)setTheme:(UIColor *)theme{
+    _theme = theme;
+    [NSUserDefaults ax_setString:self.theme.hexString forKey:CACHE_COLOR_THEME];
 }
 
-- (void)readColorProfiles{
-    NSString *theme = [[NSUserDefaults standardUserDefaults] objectForKey:ColorProfiles_Theme];
-    NSString *accent = [[NSUserDefaults standardUserDefaults] objectForKey:ColorProfiles_Accent];
-    NSString *background = [[NSUserDefaults standardUserDefaults] objectForKey:ColorProfiles_Background];
-    if (theme.length) {
-        self.theme = [UIColor colorWithHex:theme.integerValue];
-    }
-    if (accent.length) {
-        self.accent = [UIColor colorWithHex:accent.integerValue];
-    }
-    if (background.length) {
-        self.background = [UIColor colorWithHex:background.integerValue];
-    }
+- (void)setAccent:(UIColor *)accent{
+    _accent = accent;
+    [NSUserDefaults ax_setString:self.accent.hexString forKey:CACHE_COLOR_ACCENT];
+}
+
+- (void)setBackground:(UIColor *)background{
+    _background = background;
+    [NSUserDefaults ax_setString:self.background.hexString forKey:CACHE_COLOR_BG];
 }
 
 #pragma mark - system color
@@ -88,11 +99,11 @@ UIColorManager *axColor = nil;
 
 // defaultManager
 + (instancetype)defaultManager{
-    return [self sharedManager];
+    return [self sharedInstance];
 }
 
-// sharedManager
-+ (instancetype)sharedManager{
+// sharedInstance
++ (instancetype)sharedInstance{
     if (!axColor) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
@@ -129,40 +140,41 @@ UIColorManager *axColor = nil;
     }
     
     // init
-    _theme = [UIColor md_blue];
-    _accent = [UIColor md_orange];
-    _background = [UIColor whiteColor];
-    
-    // load cache
-    [self readColorProfiles];
-    
+//    [self setupDefaultColorConfigurationTheme:nil accent:nil background:nil];
+    [self setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
+        return nil;
+    } accent:^UIColor * _Nonnull{
+        return nil;
+    } background:^UIColor * _Nonnull{
+        return nil;
+    }];
     return axColor;
     
 }
 
 // copyWithZone
 + (id)copyWithZone:(struct _NSZone *)zone{
-    return [self sharedManager];
+    return [self sharedInstance];
 }
 
 // copyWithZone
 - (id)copyWithZone:(struct _NSZone *)zone{
-    return [UIColorManager sharedManager];
+    return [UIColorManager sharedInstance];
 }
 
 // mutableCopyWithZone
 + (id)mutableCopyWithZone:(struct _NSZone *)zone{
-    return [self sharedManager];
+    return [self sharedInstance];
 }
 
 // mutableCopyWithZone
 - (id)mutableCopyWithZone:(struct _NSZone *)zone{
-    return [UIColorManager sharedManager];
+    return [UIColorManager sharedInstance];
 }
 
 // copy
 + (id)copy{
-    return [UIColorManager sharedManager];
+    return [UIColorManager sharedInstance];
 }
 
 @end

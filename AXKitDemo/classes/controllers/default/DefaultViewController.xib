@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmZ-a4-jWl">
-                    <rect key="frame" x="16" y="80" width="343" height="17"/>
+                    <rect key="frame" x="16" y="16" width="343" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFR-L4-0LZ">
-                    <rect key="frame" x="16" y="105" width="343" height="17"/>
+                    <rect key="frame" x="16" y="41" width="343" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -36,12 +36,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="qFR-L4-0LZ" secondAttribute="trailing" constant="16" id="543-40-ZrM"/>
-                <constraint firstItem="bmZ-a4-jWl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="MM1-qd-z4R"/>
+                <constraint firstItem="bmZ-a4-jWl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="MM1-qd-z4R"/>
                 <constraint firstItem="qFR-L4-0LZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="b2z-Td-Ubr"/>
                 <constraint firstItem="qFR-L4-0LZ" firstAttribute="top" secondItem="bmZ-a4-jWl" secondAttribute="bottom" constant="8" id="hae-3a-bif"/>
                 <constraint firstItem="bmZ-a4-jWl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="lOY-ho-Qj1"/>
                 <constraint firstAttribute="trailing" secondItem="bmZ-a4-jWl" secondAttribute="trailing" constant="16" id="tHS-XI-WDy"/>
             </constraints>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
     </objects>
 </document>

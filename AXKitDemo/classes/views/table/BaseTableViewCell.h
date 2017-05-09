@@ -13,10 +13,15 @@
 @interface BaseTableViewCell : UITableViewCell
 
 // @xaoxuu: model
-@property (strong, readwrite, nonatomic) BaseTableModel *model;
+@property (strong, readwrite, nonatomic) __kindof BaseTableModel *model;
 
 // @xaoxuu: switch
 @property (strong, readonly, nonatomic) BaseSwitch *sw;
 
+// @xaoxuu: image
+@property (strong, nonatomic) UIImage *icon;
+
+// @xaoxuu: icon
+@property (weak, readonly, nonatomic) IBOutlet UIImageView *img_icon;
 
 @end

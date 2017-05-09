@@ -32,6 +32,14 @@
         [self setupChlidController:vc title:dict[@"title"] image:dict[@"icon"] selectedImage:dict[@"icon_sel"]];
     }
     
+    [UITabBar appearance].barStyle = UIBarStyleDefault;
+    [UITabBar appearance].translucent = NO;
+    [UITabBar appearance].opaque = YES;
+    [UITabBar appearance].barTintColor = axColor.white;
+    [UITabBar appearance].tintColor = axColor.theme;
+    
+    self.tabBar.layer.ax_shadow(AXShadowUpLight);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +47,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [self.tabBar ax_removeSeparator];
+}
 
 - (NSArray<NSDictionary *> *)controllers{
     if (!_controllers) {
@@ -60,6 +72,7 @@
         }
     }
 }
+
 
 
 @end

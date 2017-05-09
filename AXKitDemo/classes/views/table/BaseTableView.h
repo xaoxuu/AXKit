@@ -8,9 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseSwitch.h"
+#import "BaseTableViewCell.h"
 
+@class BaseTableView;
 @protocol BaseTableViewDelegate <NSObject>
 
+- (NSString *)sourceJsonFileNameForTableView:(UITableView *)tableView;
+
+
+- (NSArray<BaseTableModelList *> *)dataListForTableView:(UITableView *)tableView;
+
+
+@optional
+
+- (UIImage *)tableViewCellIconForSection:(NSUInteger)section row:(NSUInteger)row;
+
+- (void)tableViewCellDidSelected:(__kindof BaseTableModel *)model;
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  默认是显示">"
@@ -62,10 +77,6 @@
 
 - (void)setupTableViewFooter:(UIView *)footer;
 
-
-
-
-- (NSString *)tableViewJsonDataSourceName;
 
 
 @end

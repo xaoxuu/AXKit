@@ -33,7 +33,7 @@
                 break;
             }
             case AXShadowDownNormal: {
-                self.shadowOpacity = 0.5;
+                self.shadowOpacity = 0.4;
                 self.shadowRadius = 1;
                 self.shadowOffset = CGSizeMake(0, 1);
                 break;
@@ -47,7 +47,7 @@
             }
                 // for bottom bar
             case AXShadowUpLight: {
-                self.shadowOpacity = 0.3;
+                self.shadowOpacity = 0.15;
                 self.shadowRadius = 0.8;
                 self.shadowOffset = CGSizeMake(0, -0.8);
                 break;

@@ -26,9 +26,19 @@ NSString *AXKitErrorDomain = @"com.xaoxuu.axkit.error";
                       description:(nullable NSString *(^)())description
                            reason:(nullable NSString *(^)())reason
                        suggestion:(nullable NSString *(^)())suggestion{
-    NSString *desc = description();
-    NSString *reas = reason();
-    NSString *sugg = suggestion();
+    NSString *desc = nil;
+    NSString *reas = nil;
+    NSString *sugg = nil;
+    
+    if (description) {
+        desc = description();
+    }
+    if (reason) {
+        reas = reason();
+    }
+    if (suggestion) {
+        sugg = suggestion();
+    }
     desc = desc ? : ERROR_DEFAULT_DESCRIPTION;
     reas = reas.length?reas:ERROR_DEFAULT_REASON;
     sugg  = sugg  ? : ERROR_DEFAULT_SUGGESTION;

@@ -23,8 +23,16 @@
     // Override point for customization after application launch.
     
     // @xaoxuu: 配置主题色
-    [[UIColorManager defaultManager] saveColorProfilesWithTheme:[UIColor md_lightBlue] accent:[UIColor md_deepOrange] background:[UIColor whiteColor]];
-    
+    [[UIColorManager sharedInstance] setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
+        return [UIColor md_lime];
+    } accent:^UIColor * _Nonnull{
+        return [UIColor md_yellow];
+    } background:^UIColor * _Nonnull{
+        return [UIColor whiteColor];
+    }];
+    [[UIColorManager sharedInstance] setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
+        return nil;
+    } accent:nil background:nil];
     // @xaoxuu: 激活服务
     [ServicesLayer sharedInstance];
     

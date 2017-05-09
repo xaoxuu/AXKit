@@ -1,0 +1,70 @@
+{
+    "title":"主题色",
+    "header_title":"this is table header",
+    "header_height":"32",
+    "footer_title":"this is table footer",
+    "footer_height":"32",
+    "sections":[
+        {
+            "header_title":"this is section header",
+            "header_height":"32",
+            "footer_title":"this is section footer",
+            "footer_height":"32",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"md_red",
+                    "hex":"#F44336",
+                },
+                {
+                    "title":"md_pink",
+                    "hex":"#E91E63",
+                },
+                {
+                    "title":"md_indigo",
+                    "hex":"#3F51B5",
+                },
+                {
+                    "title":"md_blue",
+                    "hex":"#2196F3",
+                },
+                {
+                    "title":"md_lightBlue",
+                    "hex":"#03A9F4",
+                },
+                {
+                    "title":"md_cyan",
+                    "hex":"#00BCD4",
+                },
+                {
+                    "title":"md_green",
+                    "hex":"#4CAF50",
+                },
+                {
+                    "title":"md_lightGreen",
+                    "hex":"#8BC34A",
+                },
+                {
+                    "title":"md_lime",
+                    "hex":"#CDDC39",
+                },
+                {
+                    "title":"md_yellow",
+                    "hex":"#FFEB3B",
+                },
+                {
+                    "title":"md_amber",
+                    "hex":"#FFC107",
+                },
+                {
+                    "title":"md_orange",
+                    "hex":"#FF9800",
+                },
+                {
+                    "title":"md_deepOrange",
+                    "hex":"#FF5722",
+                }
+            ]
+        }
+    ]
+}

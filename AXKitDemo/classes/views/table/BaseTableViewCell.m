@@ -12,7 +12,7 @@
 @interface BaseTableViewCell ()
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *img_icon;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *lb_title;
 @property (weak, nonatomic) IBOutlet UILabel *lb_detail;
@@ -26,6 +26,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     _sw = [BaseSwitch new];
+//    self.img_icon.layer.cornerRadius = 5;
+    self.img_icon.layer.ax_maskToCircle();
     // Initialization code
 }
 
@@ -59,19 +61,28 @@
     
     
     // @xaoxuu: 控制器跳转
-    [self ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
-        UIViewController *vc = UIViewControllerFromString(model.target);
-        if (vc) {
-            vc.title = NSLocalizedString(model.title, nil);
-            [self.controller.navigationController pushViewController:vc animated:YES];
-        } else if (model.target.length) {
-            UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
-            [self.controller.navigationController pushViewController:vc animated:YES];
-        }
-    }];
+//    [self ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+//        UIViewController *vc = UIViewControllerFromString(model.target);
+//        if (vc) {
+//            vc.title = NSLocalizedString(model.title, nil);
+//            [self.controller.navigationController pushViewController:vc animated:YES];
+//        } else if (model.target.length) {
+//            UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
+//            [self.controller.navigationController pushViewController:vc animated:YES];
+//        }
+//    }];
 
 }
 
+
+- (void)setIcon:(UIImage *)icon{
+    _icon = icon;
+    self.img_icon.image = icon;
+    if (self.lb_title_only.text.length) {
+        self.lb_title.text = self.lb_title_only.text;
+        self.lb_title_only.text = @"";
+    }
+}
 
 
 @end

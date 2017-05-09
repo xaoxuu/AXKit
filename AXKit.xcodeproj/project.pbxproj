@@ -42,6 +42,17 @@
 		CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386041EC0D25D007AB90B /* tabbar_controllers.json */; };
 		CD23DC971EC18621006E331B /* DebugVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DC951EC18621006E331B /* DebugVC.m */; };
 		CD23DC981EC18621006E331B /* DebugVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD23DC961EC18621006E331B /* DebugVC.xib */; };
+		CD23DCA51EC1DD76006E331B /* UINavigationBar+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD23DCA31EC1DD76006E331B /* UINavigationBar+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD23DCA61EC1DD76006E331B /* UINavigationBar+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCA41EC1DD76006E331B /* UINavigationBar+AXExtension.m */; };
+		CD23DCA91EC1DDD5006E331B /* UITabBar+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD23DCA71EC1DDD5006E331B /* UITabBar+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD23DCAA1EC1DDD5006E331B /* UITabBar+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCA81EC1DDD5006E331B /* UITabBar+AXExtension.m */; };
+		CD23DCAF1EC1E166006E331B /* ThemeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCAD1EC1E166006E331B /* ThemeColorVC.m */; };
+		CD23DCB01EC1E166006E331B /* ThemeColorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCAE1EC1E166006E331B /* ThemeColorVC.xib */; };
+		CD23DCB41EC1E381006E331B /* theme_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCB31EC1E381006E331B /* theme_color.json */; };
+		CD23DCB71EC1E3A4006E331B /* ThemeColorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCB61EC1E3A4006E331B /* ThemeColorTableView.m */; };
+		CD23DCBA1EC1E5A4006E331B /* ThemeColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */; };
+		CD23DCBD1EC1E61D006E331B /* JsonServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCBC1EC1E61D006E331B /* JsonServices.m */; };
+		CD23DCBF1EC1E8B0006E331B /* setting.json in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCBE1EC1E8B0006E331B /* setting.json */; };
 		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,7 +79,6 @@
 		CD77FEA71EBF5DF3001A5787 /* DataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEA61EBF5DF3001A5787 /* DataAccessLayer.m */; };
 		CD77FEAA1EBF5E0D001A5787 /* CacheServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEA91EBF5E0D001A5787 /* CacheServices.m */; };
 		CD77FEB11EBF6583001A5787 /* datamap.json in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEB01EBF6583001A5787 /* datamap.json */; };
-		CD77FEB51EBF67DC001A5787 /* setting.json in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEB41EBF67DC001A5787 /* setting.json */; };
 		CD77FEB81EBF67F4001A5787 /* BaseTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEB71EBF67F4001A5787 /* BaseTableModel.m */; };
 		CD77FEBB1EBF6805001A5787 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEBA1EBF6805001A5787 /* BaseTableView.m */; };
 		CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */; };
@@ -224,6 +234,21 @@
 		CD23DC941EC18621006E331B /* DebugVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugVC.h; sourceTree = "<group>"; };
 		CD23DC951EC18621006E331B /* DebugVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugVC.m; sourceTree = "<group>"; };
 		CD23DC961EC18621006E331B /* DebugVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugVC.xib; sourceTree = "<group>"; };
+		CD23DCA31EC1DD76006E331B /* UINavigationBar+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+AXExtension.h"; sourceTree = "<group>"; };
+		CD23DCA41EC1DD76006E331B /* UINavigationBar+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+AXExtension.m"; sourceTree = "<group>"; };
+		CD23DCA71EC1DDD5006E331B /* UITabBar+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+AXExtension.h"; sourceTree = "<group>"; };
+		CD23DCA81EC1DDD5006E331B /* UITabBar+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+AXExtension.m"; sourceTree = "<group>"; };
+		CD23DCAC1EC1E166006E331B /* ThemeColorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorVC.h; sourceTree = "<group>"; };
+		CD23DCAD1EC1E166006E331B /* ThemeColorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorVC.m; sourceTree = "<group>"; };
+		CD23DCAE1EC1E166006E331B /* ThemeColorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeColorVC.xib; sourceTree = "<group>"; };
+		CD23DCB31EC1E381006E331B /* theme_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = theme_color.json; sourceTree = "<group>"; };
+		CD23DCB51EC1E3A4006E331B /* ThemeColorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorTableView.h; sourceTree = "<group>"; };
+		CD23DCB61EC1E3A4006E331B /* ThemeColorTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorTableView.m; sourceTree = "<group>"; };
+		CD23DCB81EC1E5A4006E331B /* ThemeColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorModel.h; sourceTree = "<group>"; };
+		CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorModel.m; sourceTree = "<group>"; };
+		CD23DCBB1EC1E61D006E331B /* JsonServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonServices.h; sourceTree = "<group>"; };
+		CD23DCBC1EC1E61D006E331B /* JsonServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonServices.m; sourceTree = "<group>"; };
+		CD23DCBE1EC1E8B0006E331B /* setting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setting.json; sourceTree = "<group>"; };
 		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
@@ -263,7 +288,6 @@
 		CD77FEA81EBF5E0D001A5787 /* CacheServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheServices.h; sourceTree = "<group>"; };
 		CD77FEA91EBF5E0D001A5787 /* CacheServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheServices.m; sourceTree = "<group>"; };
 		CD77FEB01EBF6583001A5787 /* datamap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = datamap.json; sourceTree = "<group>"; };
-		CD77FEB41EBF67DC001A5787 /* setting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setting.json; sourceTree = "<group>"; };
 		CD77FEB61EBF67F4001A5787 /* BaseTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableModel.h; sourceTree = "<group>"; };
 		CD77FEB71EBF67F4001A5787 /* BaseTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableModel.m; sourceTree = "<group>"; };
 		CD77FEB91EBF6805001A5787 /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
@@ -515,6 +539,21 @@
 			path = debug;
 			sourceTree = "<group>";
 		};
+		CD23DCAB1EC1E152006E331B /* theme */ = {
+			isa = PBXGroup;
+			children = (
+				CD23DCAC1EC1E166006E331B /* ThemeColorVC.h */,
+				CD23DCAD1EC1E166006E331B /* ThemeColorVC.m */,
+				CD23DCB51EC1E3A4006E331B /* ThemeColorTableView.h */,
+				CD23DCB61EC1E3A4006E331B /* ThemeColorTableView.m */,
+				CD23DCAE1EC1E166006E331B /* ThemeColorVC.xib */,
+				CD23DCB31EC1E381006E331B /* theme_color.json */,
+				CD23DCB81EC1E5A4006E331B /* ThemeColorModel.h */,
+				CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */,
+			);
+			path = theme;
+			sourceTree = "<group>";
+		};
 		CD6C67671EB9F2BC00B57279 /* web */ = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +679,8 @@
 				CD2385F71EC0C5BA007AB90B /* AppServices.m */,
 				CD77FEA81EBF5E0D001A5787 /* CacheServices.h */,
 				CD77FEA91EBF5E0D001A5787 /* CacheServices.m */,
+				CD23DCBB1EC1E61D006E331B /* JsonServices.h */,
+				CD23DCBC1EC1E61D006E331B /* JsonServices.m */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -695,6 +736,10 @@
 				CDAB58FE1E6BF8620017CA1E /* Foundation+AXEventTarget.m */,
 				CDAB59011E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.h */,
 				CDAB59021E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.m */,
+				CD23DCA31EC1DD76006E331B /* UINavigationBar+AXExtension.h */,
+				CD23DCA41EC1DD76006E331B /* UINavigationBar+AXExtension.m */,
+				CD23DCA71EC1DDD5006E331B /* UITabBar+AXExtension.h */,
+				CD23DCA81EC1DDD5006E331B /* UITabBar+AXExtension.m */,
 				CD77FE6A1EBEE685001A5787 /* UIColor */,
 				CDAB59151E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h */,
 				CDAB59161E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m */,
@@ -727,6 +772,7 @@
 		CDBB39B91EB9D96B00E8ED25 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD23DCAB1EC1E152006E331B /* theme */,
 				CD23DC931EC18613006E331B /* debug */,
 				CD2385F91EC0CD18007AB90B /* feedback */,
 				CD77FE871EBF5684001A5787 /* default */,
@@ -774,6 +820,7 @@
 				CDBB39C31EB9D96B00E8ED25 /* SettingVC.h */,
 				CDBB39C41EB9D96B00E8ED25 /* SettingVC.m */,
 				CDBB39C51EB9D96B00E8ED25 /* SettingVC.xib */,
+				CD23DCBE1EC1E8B0006E331B /* setting.json */,
 				CDBB3B0D1EB9E19D00E8ED25 /* SettingTableView.h */,
 				CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */,
 				CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */,
@@ -785,7 +832,6 @@
 			isa = PBXGroup;
 			children = (
 				CD77FEB01EBF6583001A5787 /* datamap.json */,
-				CD77FEB41EBF67DC001A5787 /* setting.json */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -957,6 +1003,8 @@
 				CDCF31121EBB11A4005AC6CD /* NSURL+AXExtension.h in Headers */,
 				CD77FE811EBEF8DF001A5787 /* Foundation+AXRangeExtension.h in Headers */,
 				CD77FE7D1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h in Headers */,
+				CD23DCA91EC1DDD5006E331B /* UITabBar+AXExtension.h in Headers */,
+				CD23DCA51EC1DD76006E331B /* UINavigationBar+AXExtension.h in Headers */,
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
@@ -1062,19 +1110,21 @@
 				CDBB39D71EB9DD1400E8ED25 /* BlogVC.xib in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
 				CD77FE7A1EBEF09D001A5787 /* PopView.xib in Resources */,
+				CD23DCB01EC1E166006E331B /* ThemeColorVC.xib in Resources */,
 				CDBB3B0C1EB9E17500E8ED25 /* SettingTableView.plist in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
-				CD77FEB51EBF67DC001A5787 /* setting.json in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* framework.json in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
 				CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */,
 				8579EF081E6BEDF900C33881 /* Main.storyboard in Resources */,
 				CDBB39C71EB9D96B00E8ED25 /* AXLogVC.xib in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
+				CD23DCB41EC1E381006E331B /* theme_color.json in Resources */,
 				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
 				CDBB39C91EB9D96B00E8ED25 /* HomeVC.xib in Resources */,
 				CD23DC981EC18621006E331B /* DebugVC.xib in Resources */,
 				CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */,
+				CD23DCBF1EC1E8B0006E331B /* setting.json in Resources */,
 				CDBB3B0A1EB9E01000E8ED25 /* DemoTableViewCell.xib in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CD2386011EC0CD3F007AB90B /* FeedbackVC.xib in Resources */,
@@ -1163,6 +1213,7 @@
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CDBB39C81EB9D96B00E8ED25 /* HomeVC.m in Sources */,
 				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
+				CD23DCAF1EC1E166006E331B /* ThemeColorVC.m in Sources */,
 				CD77FEA11EBF5DD5001A5787 /* BaseDataAccess.m in Sources */,
 				CD77FEAA1EBF5E0D001A5787 /* CacheServices.m in Sources */,
 				CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */,
@@ -1171,6 +1222,7 @@
 				CDBB3B291EB9E80F00E8ED25 /* MJPropertyKey.m in Sources */,
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
 				CD6C676A1EB9F2BC00B57279 /* BaseWebVC.m in Sources */,
+				CD23DCBA1EC1E5A4006E331B /* ThemeColorModel.m in Sources */,
 				CDBB3B091EB9E01000E8ED25 /* DemoTableViewCell.m in Sources */,
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
@@ -1189,6 +1241,7 @@
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
 				CD77FE781EBEF095001A5787 /* PopView.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
+				CD23DCB71EC1E3A4006E331B /* ThemeColorTableView.m in Sources */,
 				CDBB3B2B1EB9E80F00E8ED25 /* NSObject+MJClass.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CDBB39CA1EB9D96B00E8ED25 /* SettingVC.m in Sources */,
@@ -1203,6 +1256,7 @@
 				CDBB3B051EB9DFAD00E8ED25 /* DemoTableView.m in Sources */,
 				CD77FEA41EBF5DE7001A5787 /* ServicesLayer.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
+				CD23DCBD1EC1E61D006E331B /* JsonServices.m in Sources */,
 				CD77FE8B1EBF5697001A5787 /* DefaultViewController.m in Sources */,
 				CD77FE721EBEE9C9001A5787 /* TestVC2.m in Sources */,
 				CD77FE901EBF592D001A5787 /* BaseSwitch.m in Sources */,
@@ -1227,6 +1281,7 @@
 				CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */,
 				CDAB59041E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.m in Sources */,
 				CDAB591C1E6BFB9A0017CA1E /* UIFont+AXWrapper.m in Sources */,
+				CD23DCAA1EC1DDD5006E331B /* UITabBar+AXExtension.m in Sources */,
 				CDAB59201E6BFBCE0017CA1E /* UIImage+AXExtension.m in Sources */,
 				CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */,
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
@@ -1237,6 +1292,7 @@
 				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
 				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
+				CD23DCA61EC1DD76006E331B /* UINavigationBar+AXExtension.m in Sources */,
 				CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */,
 				CDAB59101E6BF9B90017CA1E /* UIColor+MDColorPack.m in Sources */,
 				CDAB592C1E6BFD050017CA1E /* UITextView+AXExtension.m in Sources */,

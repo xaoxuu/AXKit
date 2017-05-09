@@ -40,7 +40,7 @@
 // @xaoxuu: rowHeight
 @property (copy, nonatomic) NSString *rowHeight;
 // @xaoxuu: rows
-@property (strong, nonatomic) NSArray<BaseTableModel *> *rows;
+@property (strong, nonatomic) NSArray<__kindof BaseTableModel *> *rows;
 
 
 @end

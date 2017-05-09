@@ -39,11 +39,10 @@
     return self;
 }
 
-- (NSString *)tableViewJsonDataSourceName{
+
+- (NSString *)sourceJsonFileNameForTableView:(BaseTableView *)tableView{
     return @"setting";
 }
-
-
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -81,10 +80,9 @@
 }
 
 
+
 - (NSArray<BaseTableModelList *> *)dataList{
-    if (!_dataList) {
-        _dataList = services.cache.settingList;
-    }
+    _dataList = [self dataListForTableView:self.tableView];
     return _dataList;
 }
 
@@ -94,6 +92,10 @@
 }
 
 
+#pragma mark - base table view delegate
+- (NSArray<BaseTableModelList *> *)dataListForTableView:(UITableView *)tableView{
+    return services.cache.settingList;
+}
 
 #pragma mark - data source
 
@@ -111,6 +113,12 @@
     BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
     BaseTableModel *model = self.dataList[section].rows[row];
     cell.model = model;
+    
+    // @xaoxuu: 自定义icon
+    if ([self respondsToSelector:@selector(tableViewCellIconForSection:row:)]) {
+        UIImage *img = [self tableViewCellIconForSection:section row:row];
+        cell.icon = img;
+    }
     
     // @xaoxuu: 是否显示">"
     BOOL showAccessory = YES;
@@ -147,6 +155,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BaseTableModel *model = self.dataList[indexPath.section].rows[indexPath.row];
+    if (!model) {
+        return;
+    }
+    UIViewController *vc = UIViewControllerFromString(model.target);
+    if (vc) {
+        vc.title = NSLocalizedString(model.title, nil);
+        [self.controller.navigationController pushViewController:vc animated:YES];
+    } else if (model.target.length) {
+        UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
+        [self.controller.navigationController pushViewController:vc animated:YES];
+    }
+    if ([self respondsToSelector:@selector(tableViewCellDidSelected:)]) {
+        [self tableViewCellDidSelected:model];
+    }
 }
 
 

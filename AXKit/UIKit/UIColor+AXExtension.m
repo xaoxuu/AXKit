@@ -104,7 +104,8 @@ static CGFloat static_color_ratio = 0.6;
             NSLog(@"🔴func:%s Scan hex error", __func__);
         }
     } else {
-        NSLog(@"🔴func:%s Invalid RGB string: '%@', missing '#' as prefix", __func__, hexStr);
+//        NSLog(@"🔴func:%s Invalid RGB string: '%@', missing '#' as prefix", __func__, hexStr);
+        return [self colorWithHexString:[NSString stringWithFormat:@"#%@",hexStr]];
     }
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];

@@ -31,7 +31,7 @@
 }
 
 - (void)setupTable{
-    self.table = [[SettingTableView alloc] initWithFrame:self.view.bounds];
+    self.table = [[SettingTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight)];
     [self.view addSubview:self.table];
 }
 

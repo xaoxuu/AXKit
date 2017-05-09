@@ -54,11 +54,11 @@
                 {
                     "title":"主题色",
                     "desc":"app的主题色",
-                    "icon":"about",
+                    "icon":"https://github.com/xaoxuu/AXKit/tree/master/AXKitDemo/resources",
                     "showAccessory":"1",
                     "showSwitch":"0",
                     "switch_on":"0",
-                    "target":"default",
+                    "target":"ThemeColorVC",
                     "cmd":""
                 },
                 {

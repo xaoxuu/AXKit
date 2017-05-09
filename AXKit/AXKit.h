@@ -105,3 +105,7 @@ FOUNDATION_EXPORT NSString * _Nonnull AXKitErrorDomain;
 // UINavigationController
 #import <AXKit/UINavigationController+AXExtension.h>
 
+// UINavigationBar
+#import <AXKit/UINavigationBar+AXExtension.h>
+// UITabBar
+#import <AXKit/UITabBar+AXExtension.h>

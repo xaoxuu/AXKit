@@ -128,7 +128,7 @@ FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
 - (BOOL)isURLString;
 
-- (UIImage *)image;
+- (nullable UIImage *)image;
 
 @end
 
