@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTabBarController.h"
 
 @interface RootViewController : UIViewController
+
+// @xaoxuu: tabbar controller
+@property (strong, nonatomic) BaseTabBarController *mainTabBarVC;
+
 
 @end

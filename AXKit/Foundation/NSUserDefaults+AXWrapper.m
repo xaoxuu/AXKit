@@ -18,7 +18,7 @@ static inline NSUserDefaults *DefaultUser(){
 @implementation NSUserDefaults (AXWrapper)
 
 
-#pragma mark read
+#pragma mark - read
 
 + (nullable id)ax_readObjectForKey:(NSString *)key{
     return [DefaultUser() objectForKey:key];
@@ -181,7 +181,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 
 
-#pragma mark write
+#pragma mark - write
 
 + (void)ax_caches:(void (^)(NSUserDefaults *defaultUser))action{
     action(DefaultUser());
@@ -243,23 +243,24 @@ static inline NSUserDefaults *DefaultUser(){
     }];
 }
 
-+ (void)ax_setStringArray:(NSArray<NSString *> *)stringArray forKey:(NSString *)key{
++ (void)ax_setStringArray:(NSArray *(^)(NSArray<NSString *> *cachedArray))block forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setObject:stringArray forKey:key];
+        [defaultUser ax_setArray:block forKey:key];
     }];
 }
 
-+ (void)ax_setArray:(NSArray *)array forKey:(NSString *)key{
++ (void)ax_setArray:(NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setObject:array forKey:key];
+        [defaultUser ax_setArray:block forKey:key];
     }];
 }
 
-+ (void)ax_setDictionary:(NSDictionary<NSString *, id> *)dictionary forKey:(NSString *)key{
++ (void)ax_setDictionary:(NSDictionary *(^)(NSMutableDictionary <NSString *, id> * dict))block forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setObject:dictionary forKey:key];
+        [defaultUser ax_setDictionary:block forKey:key];
     }];
 }
+
 
 + (void)ax_setURL:(NSURL *)url forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
@@ -281,25 +282,33 @@ static inline NSUserDefaults *DefaultUser(){
     [self setObject:string forKey:key];
 }
 
-- (void)ax_setStringArray:(NSArray<NSString *> *)stringArray forKey:(NSString *)key{
-    [self setObject:stringArray forKey:key];
+
+- (void)ax_setStringArray:(NSArray *(^)(NSArray<NSString *> *cachedArray))block forKey:(NSString *)key{
+    [self ax_setArray:block forKey:key];
 }
 
-- (void)ax_setArray:(NSArray *)array forKey:(NSString *)key{
-    [self setObject:array forKey:key];
+- (void)ax_setArray:(NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key{
+    if (block) {
+        NSMutableArray *arrM = [NSMutableArray array];
+        NSArray *arr = block(arrM);
+        [self setObject:arr ?: arrM forKey:key];
+    }
 }
 
-- (void)ax_setDictionary:(NSDictionary<NSString *, id> *)dictionary forKey:(NSString *)key{
-    [self setObject:dictionary forKey:key];
+- (void)ax_setDictionary:(NSDictionary *(^)(NSMutableDictionary <NSString *, id> * dict))block forKey:(NSString *)key{
+    if (block) {
+        NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+        NSDictionary *dict = block(dictM);
+        [self setObject:dict ?: dictM forKey:key];
+    }
 }
-
 - (void)ax_setURL:(NSURL *)url forKey:(NSString *)key{
     [self setObject:url forKey:key];
 }
 
 
 
-#pragma mark remove
+#pragma mark - remove
 
 + (void)ax_removeObjectForKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {

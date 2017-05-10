@@ -7,12 +7,10 @@
 //
 
 #import "RootViewController.h"
-#import "BaseTabBarController.h"
+
 
 @interface RootViewController ()
 
-// @xaoxuu: tabbar controller
-@property (strong, nonatomic) BaseTabBarController *mainTabBarVC;
 
 @end
 
@@ -25,7 +23,7 @@
     self.mainTabBarVC = [[BaseTabBarController alloc] init];
     [self addChildViewController:self.mainTabBarVC];
     [self.view addSubview:self.mainTabBarVC.view];
-    
+    [services.app applyTheme];
 }
 
 - (void)didReceiveMemoryWarning {

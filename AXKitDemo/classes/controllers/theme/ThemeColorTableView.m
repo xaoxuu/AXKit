@@ -23,6 +23,8 @@
 - (void)tableViewCellDidSelected:(__kindof BaseTableModel *)model{
     ThemeColorModel *color = model;
     axColor.theme = [UIColor colorWithHexString:color.hex];
+    [services.app applyTheme];
+    
 }
 
 
@@ -34,7 +36,7 @@
     CGFloat b = color.blueValue;
     CGFloat x = r*g*b;
     CGFloat y = r+g+b;
-    return [NSString stringWithFormat:@"x%.2f,y%.2f,%.2f,%.2f",x,y,x*y,x+y];
+    return [NSString stringWithFormat:@"x%.2f, y%.2f, %.1f",x,y,2*x*y+x+y];
     
 }
 

@@ -28,4 +28,8 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 // @xaoxuu: default vc
 @property (strong, readonly, nonatomic) DefaultViewController *defaultVC;
 
+- (void)applyTheme;
+
+- (void)reloadAllView;
+
 @end
