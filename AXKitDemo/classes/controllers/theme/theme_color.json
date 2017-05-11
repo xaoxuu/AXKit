@@ -6,9 +6,9 @@
     "footer_height":"32",
     "sections":[
         {
-            "header_title":"this is section header",
+            "header_title":"请选择你喜爱的颜色应用到主题。",
             "header_height":"32",
-            "footer_title":"this is section footer",
+            "footer_title":"这是测试版，暂时没有更多了哦~",
             "footer_height":"32",
             "rowHeight":"44",
             "rows":[

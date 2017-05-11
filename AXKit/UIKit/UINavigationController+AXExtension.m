@@ -70,7 +70,9 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
             completion(vc);
         }
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodePushNavVC description:nil reason:^NSString * _Nonnull{
+        NSError *error = [NSError ax_errorWithDomain:^NSErrorDomain _Nonnull{
+            return AXKitErrorDomain;
+        } code:AXKitErrorCodePushNavVC description:nil reason:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"The targetVC named: \'%@\' not found.\n",vcName];
         } suggestion:nil];
         AXLogError(error);

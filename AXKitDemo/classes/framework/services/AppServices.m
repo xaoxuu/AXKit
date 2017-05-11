@@ -10,6 +10,7 @@
 #import "BaseTabBarController.h"
 #import "BaseNavController.h"
 
+
 @interface AppServices ()
 
 // @xaoxuu: json file
@@ -55,6 +56,18 @@
 }
 
 
+- (void)applyThemeWithColor:(ThemeColorModel *)color{
+    
+    NSString *msg = [NSString stringWithFormat:@"将应用此主题:%@",color.title];
+    UIColor *tmp = [UIColor colorWithHexString:color.hex];
+    [services.alert alertForConfirmTheme:tmp message:msg completion:^{
+        axColor.theme = tmp;
+        [services.app applyTheme];
+        
+    }];
+    
+}
+
 - (void)applyTheme{
     CGFloat r = axColor.theme.redValue;
     CGFloat g = axColor.theme.greenValue;
@@ -90,21 +103,21 @@
                 if ([obj isKindOfClass:[BaseNavController class]]) {
                     BaseNavController *navVC = obj;
                     navVC.navigationBar.barTintColor = axColor.theme;
-                    if (2*x*y+x+y < 2) {
+                    if (x*y+x*x+y*y < 3) {
                         navVC.navigationBar.tintColor = axColor.white;
                         [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.white}];
                     } else {
-                        navVC.navigationBar.tintColor = axColor.black;
-                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.black}];
+                        navVC.navigationBar.tintColor = axColor.theme.darkRatio(0.6);
+                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.theme.darkRatio(0.6)}];
                         
                     }
                 }
             }];
 //            tabbarVC.tabBar.tintColor = axColor.theme;
-            if (2*x*y+x+y < 2) {
+            if (x*y+x*x+y*y < 3) {
                 tabbarVC.tabBar.tintColor = axColor.theme;
             } else {
-                tabbarVC.tabBar.tintColor = axColor.theme.dark;
+                tabbarVC.tabBar.tintColor = axColor.theme.darkRatio(0.3);
                 
             }
         }

@@ -21,6 +21,9 @@
     
     [self.navigationBar ax_hideSeparator];
     self.navigationBar.layer.ax_shadow(AXShadowDownNormal);
+    
+    [services.app applyTheme];
+    
 }
 
 - (void)didReceiveMemoryWarning {

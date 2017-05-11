@@ -1,14 +1,17 @@
 PODS:
+  - SCLAlertView-Objective-C (1.1.2)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - SCLAlertView-Objective-C
   - YYKit
 
 SPEC CHECKSUMS:
+  SCLAlertView-Objective-C: 0e54351fa4f98a5c7c6ad3727e6dbb46784534e5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: ddec407ce9b7f82689761594e7752d94499eda34
+PODFILE CHECKSUM: 820e45f723682237f60d53ada6ca52951d0bd075
 
 COCOAPODS: 1.2.0

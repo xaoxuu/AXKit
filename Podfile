@@ -4,6 +4,9 @@ target ‘AXKitDemo’ do
 
 pod 'YYKit'                             
 
+pod 'SCLAlertView-Objective-C'
+
+
 end
 
 

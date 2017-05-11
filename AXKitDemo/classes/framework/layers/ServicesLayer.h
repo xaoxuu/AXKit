@@ -10,6 +10,7 @@
 #import "AppServices.h"
 #import "CacheServices.h"
 #import "JsonServices.h"
+#import "AlertServices.h"
 
 @class ServicesLayer;
 extern ServicesLayer *services;
@@ -22,6 +23,9 @@ extern ServicesLayer *services;
 @property (strong, nonatomic) CacheServices *cache;
 // @xaoxuu: json
 @property (strong, nonatomic) JsonServices *json;
+// @xaoxuu: alert
+@property (strong, nonatomic) AlertServices *alert;
+
 
 + (instancetype)sharedInstance;
 

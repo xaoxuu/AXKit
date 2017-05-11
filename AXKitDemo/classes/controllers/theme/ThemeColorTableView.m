@@ -7,6 +7,7 @@
 //
 
 #import "ThemeColorTableView.h"
+#import "SCLAlertView+AXWrapper.h"
 
 @implementation ThemeColorTableView
 
@@ -21,23 +22,13 @@
 }
 
 - (void)tableViewCellDidSelected:(__kindof BaseTableModel *)model{
-    ThemeColorModel *color = model;
-    axColor.theme = [UIColor colorWithHexString:color.hex];
-    [services.app applyTheme];
-    
+    [services.app applyThemeWithColor:model];
 }
 
 
 - (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
     ThemeColorModel *colorStr = services.json.colors[section].rows[row];
-    UIColor *color = [UIColor colorWithHexString:colorStr.hex];
-    CGFloat r = color.redValue;
-    CGFloat g = color.greenValue;
-    CGFloat b = color.blueValue;
-    CGFloat x = r*g*b;
-    CGFloat y = r+g+b;
-    return [NSString stringWithFormat:@"x%.2f, y%.2f, %.1f",x,y,2*x*y+x+y];
-    
+    return [NSString stringWithFormat:@"%@",colorStr.hex];
 }
 
 @end

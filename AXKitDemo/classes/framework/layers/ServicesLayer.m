@@ -40,7 +40,7 @@ ServicesLayer *services = nil;
     _app = [AppServices new];
     _cache = [CacheServices new];
     _json = [JsonServices new];
-    
+    _alert = [AlertServices new];
     
     
     return services;

@@ -8,6 +8,7 @@
 
 #import "BaseServices.h"
 #import "DefaultViewController.h"
+#import "ThemeColorModel.h"
 
 FOUNDATION_EXTERN NSString *kBlogURL;
 
@@ -27,6 +28,9 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 
 // @xaoxuu: default vc
 @property (strong, readonly, nonatomic) DefaultViewController *defaultVC;
+
+
+- (void)applyThemeWithColor:(ThemeColorModel *)color;
 
 - (void)applyTheme;
 

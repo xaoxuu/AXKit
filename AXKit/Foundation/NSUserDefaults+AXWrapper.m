@@ -14,6 +14,17 @@
 static inline NSUserDefaults *DefaultUser(){
     return [NSUserDefaults standardUserDefaults];
 }
+@implementation NSError (AXUserDefaults)
+
++ (instancetype)ax_errorWithReason:(NSString *(^)())reason{
+    return [NSError ax_errorWithDomain:^NSErrorDomain _Nonnull{
+        return AXKitErrorDomain;
+    } code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
+        return reason();
+    } suggestion:nil];
+}
+
+@end
 
 @implementation NSUserDefaults (AXWrapper)
 
@@ -29,9 +40,9 @@ static inline NSUserDefaults *DefaultUser(){
     if (obj && completion) {
         completion(obj);
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
+        NSError *error = [NSError ax_errorWithReason:^NSString *{
             return [NSString stringWithFormat:@"The object for key: \'%@\' not found.\n",key];
-        } suggestion:nil];
+        }];
         AXLogError(error);
         if (fail && error) {
             fail(error);
@@ -68,9 +79,9 @@ static inline NSUserDefaults *DefaultUser(){
     if (data && completion) {
         completion(data);
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
+        NSError *error = [NSError ax_errorWithReason:^NSString *{
             return [NSString stringWithFormat:@"The data for key: \'%@\' not found.\n",key];
-        } suggestion:nil];
+        }];
         AXLogError(error);
         if (fail && error) {
             fail(error);
@@ -87,9 +98,9 @@ static inline NSUserDefaults *DefaultUser(){
     if (string && completion) {
         completion(string);
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
+        NSError *error = [NSError ax_errorWithReason:^NSString *{
             return [NSString stringWithFormat:@"The string for key: \'%@\' not found.\n",key];
-        } suggestion:nil];
+        }];
         AXLogError(error);
         if (fail && error) {
             fail(error);
@@ -106,9 +117,9 @@ static inline NSUserDefaults *DefaultUser(){
     if (stringArray && completion) {
         completion(stringArray);
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
-            return [NSString stringWithFormat:@"The string array for key: \'%@\' not found.\n",key];
-        } suggestion:nil];
+        NSError *error = [NSError ax_errorWithReason:^NSString *{
+            return [NSString stringWithFormat:@"The array for key: \'%@\' not found.\n",key];
+        }];
         AXLogError(error);
         if (fail && error) {
             fail(error);
@@ -125,9 +136,9 @@ static inline NSUserDefaults *DefaultUser(){
     if (array && completion) {
         completion(array);
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
+        NSError *error = [NSError ax_errorWithReason:^NSString *{
             return [NSString stringWithFormat:@"The array for key: \'%@\' not found.\n",key];
-        } suggestion:nil];
+        }];
         AXLogError(error);
         if (fail && error) {
             fail(error);
@@ -144,9 +155,9 @@ static inline NSUserDefaults *DefaultUser(){
     if (dictionary && completion) {
         completion(dictionary);
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
+        NSError *error = [NSError ax_errorWithReason:^NSString *{
             return [NSString stringWithFormat:@"The dictionary for key: \'%@\' not found.\n",key];
-        } suggestion:nil];
+        }];
         AXLogError(error);
         if (fail && error) {
             fail(error);
@@ -168,9 +179,9 @@ static inline NSUserDefaults *DefaultUser(){
     if (url && completion) {
         completion(url);
     } else {
-        NSError *error = [NSError ax_errorWithDomain:AXKitErrorDomain code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
+        NSError *error = [NSError ax_errorWithReason:^NSString *{
             return [NSString stringWithFormat:@"The url for key: \'%@\' not found.\n",key];
-        } suggestion:nil];
+        }];
         AXLogError(error);
         if (fail && error) {
             fail(error);
@@ -318,4 +329,10 @@ static inline NSUserDefaults *DefaultUser(){
 
 
 
+#pragma mark - private 
+
+
+
 @end
+
+

@@ -11,9 +11,6 @@
 
 @interface BaseTableViewCell ()
 
-
-
-
 @property (weak, nonatomic) IBOutlet UILabel *lb_title;
 @property (weak, nonatomic) IBOutlet UILabel *lb_detail;
 @property (weak, nonatomic) IBOutlet UILabel *lb_title_only;

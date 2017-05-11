@@ -8,11 +8,11 @@
 
 #import "NSError+AXExtension.h"
 
-NSString *AXKitErrorDomain = @"com.xaoxuu.axkit.error";
+NSErrorDomain const AXKitErrorDomain = @"com.xaoxuu.axkit.error";
 
 @implementation NSError (AXExtension)
 
-+ (instancetype)ax_errorWithDomain:(NSErrorDomain)domain
++ (instancetype)ax_errorWithDomain:(NSErrorDomain (^)())domain
                               code:(NSInteger)code
                        description:(nullable NSString *(^)())description
                             reason:(nullable NSString *(^)())reason
@@ -21,7 +21,7 @@ NSString *AXKitErrorDomain = @"com.xaoxuu.axkit.error";
 }
 
 
-- (instancetype)ax_initWithDomain:(NSErrorDomain)domain
+- (instancetype)ax_initWithDomain:(NSErrorDomain (^)())domain
                              code:(NSInteger)code
                       description:(nullable NSString *(^)())description
                            reason:(nullable NSString *(^)())reason
@@ -47,7 +47,7 @@ NSString *AXKitErrorDomain = @"com.xaoxuu.axkit.error";
                                NSLocalizedFailureReasonErrorKey:NSLocalizedString(reas, nil),
                                NSLocalizedRecoverySuggestionErrorKey:NSLocalizedString(sugg, nil),
                                };
-    NSError *error = [NSError errorWithDomain:domain code:code userInfo:userInfo];
+    NSError *error = [NSError errorWithDomain:domain()?:@"unknown" code:code userInfo:userInfo];
     return error;
 }
 

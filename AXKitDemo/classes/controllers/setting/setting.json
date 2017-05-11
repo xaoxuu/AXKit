@@ -54,7 +54,7 @@
                 {
                     "title":"主题色",
                     "desc":"app的主题色",
-                    "icon":"https://github.com/xaoxuu/AXKit/blob/master/AXKitDemo/resources/icons/setting/theme.png?raw=true",
+                    "icon":"setting_theme",
                     "showAccessory":"1",
                     "showSwitch":"0",
                     "switch_on":"0",
