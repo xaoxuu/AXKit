@@ -47,6 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight);
     [self setupWebView];
     [self reloadWeb];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {

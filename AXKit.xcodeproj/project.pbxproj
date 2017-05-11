@@ -146,10 +146,6 @@
 		CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39C51EB9D96B00E8ED25 /* SettingVC.xib */; };
 		CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39D41EB9DD1400E8ED25 /* BlogVC.m */; };
 		CDBB39D71EB9DD1400E8ED25 /* BlogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39D51EB9DD1400E8ED25 /* BlogVC.xib */; };
-		CDBB3B021EB9DF7A00E8ED25 /* DemoTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B011EB9DF7A00E8ED25 /* DemoTableModel.m */; };
-		CDBB3B051EB9DFAD00E8ED25 /* DemoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B041EB9DFAD00E8ED25 /* DemoTableView.m */; };
-		CDBB3B091EB9E01000E8ED25 /* DemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B071EB9E01000E8ED25 /* DemoTableViewCell.m */; };
-		CDBB3B0A1EB9E01000E8ED25 /* DemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB3B081EB9E01000E8ED25 /* DemoTableViewCell.xib */; };
 		CDBB3B0C1EB9E17500E8ED25 /* SettingTableView.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */; };
 		CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */; };
 		CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B131EB9E80F00E8ED25 /* MJExtensionConst.m */; };
@@ -368,13 +364,6 @@
 		CDBB39D31EB9DD1400E8ED25 /* BlogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogVC.h; sourceTree = "<group>"; };
 		CDBB39D41EB9DD1400E8ED25 /* BlogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogVC.m; sourceTree = "<group>"; };
 		CDBB39D51EB9DD1400E8ED25 /* BlogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogVC.xib; sourceTree = "<group>"; };
-		CDBB3B001EB9DF7A00E8ED25 /* DemoTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableModel.h; sourceTree = "<group>"; };
-		CDBB3B011EB9DF7A00E8ED25 /* DemoTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableModel.m; sourceTree = "<group>"; };
-		CDBB3B031EB9DFAD00E8ED25 /* DemoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableView.h; sourceTree = "<group>"; };
-		CDBB3B041EB9DFAD00E8ED25 /* DemoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableView.m; sourceTree = "<group>"; };
-		CDBB3B061EB9E01000E8ED25 /* DemoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewCell.h; sourceTree = "<group>"; };
-		CDBB3B071EB9E01000E8ED25 /* DemoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewCell.m; sourceTree = "<group>"; };
-		CDBB3B081EB9E01000E8ED25 /* DemoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoTableViewCell.xib; sourceTree = "<group>"; };
 		CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingTableView.plist; sourceTree = "<group>"; };
 		CDBB3B0D1EB9E19D00E8ED25 /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
 		CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
@@ -863,13 +852,6 @@
 		CDBB3AFF1EB9DF6B00E8ED25 /* table */ = {
 			isa = PBXGroup;
 			children = (
-				CDBB3B001EB9DF7A00E8ED25 /* DemoTableModel.h */,
-				CDBB3B011EB9DF7A00E8ED25 /* DemoTableModel.m */,
-				CDBB3B031EB9DFAD00E8ED25 /* DemoTableView.h */,
-				CDBB3B041EB9DFAD00E8ED25 /* DemoTableView.m */,
-				CDBB3B061EB9E01000E8ED25 /* DemoTableViewCell.h */,
-				CDBB3B071EB9E01000E8ED25 /* DemoTableViewCell.m */,
-				CDBB3B081EB9E01000E8ED25 /* DemoTableViewCell.xib */,
 				CD77FEB61EBF67F4001A5787 /* BaseTableModel.h */,
 				CD77FEB71EBF67F4001A5787 /* BaseTableModel.m */,
 				CD77FEB91EBF6805001A5787 /* BaseTableView.h */,
@@ -1132,7 +1114,6 @@
 				CD23DC981EC18621006E331B /* DebugVC.xib in Resources */,
 				CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */,
 				CD23DCBF1EC1E8B0006E331B /* setting.json in Resources */,
-				CDBB3B0A1EB9E01000E8ED25 /* DemoTableViewCell.xib in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CD2386011EC0CD3F007AB90B /* FeedbackVC.xib in Resources */,
 				CD2386031EC0CF0F007AB90B /* urls.json in Resources */,
@@ -1230,7 +1211,6 @@
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
 				CD6C676A1EB9F2BC00B57279 /* BaseWebVC.m in Sources */,
 				CD23DCBA1EC1E5A4006E331B /* ThemeColorModel.m in Sources */,
-				CDBB3B091EB9E01000E8ED25 /* DemoTableViewCell.m in Sources */,
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */,
@@ -1257,10 +1237,8 @@
 				CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */,
 				CD23DC971EC18621006E331B /* DebugVC.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
-				CDBB3B021EB9DF7A00E8ED25 /* DemoTableModel.m in Sources */,
 				CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */,
 				CD77FE9C1EBF5D8B001A5787 /* BaseServices.m in Sources */,
-				CDBB3B051EB9DFAD00E8ED25 /* DemoTableView.m in Sources */,
 				CD77FEA41EBF5DE7001A5787 /* ServicesLayer.m in Sources */,
 				CD23DCD91EC35F35006E331B /* AlertServices.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,

@@ -6,7 +6,6 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "DemoTableView.h"
 #import "BaseTableView.h"
 
 @interface SettingTableView : BaseTableView
