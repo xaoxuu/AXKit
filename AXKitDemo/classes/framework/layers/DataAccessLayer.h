@@ -7,7 +7,15 @@
 //
 
 #import "BaseDataAccess.h"
+#import "AssetsDataAccess.h"
+
 
 @interface DataAccessLayer : BaseDataAccess
+
+// @xaoxuu: assets
+@property (strong, nonatomic) AssetsDataAccess *assets;
+
+
++ (instancetype)sharedInstance;
 
 @end

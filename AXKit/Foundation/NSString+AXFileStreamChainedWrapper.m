@@ -57,6 +57,12 @@ static NSString *txt   = @"txt";
     };
 }
 
+- (BOOL(^)(NSObject<NSCoding> *))saveArchivedObject{
+    return ^(id file){
+        return [self writeArchivedFile:file extension:nil completion:nil];
+    };
+}
+
 #pragma mark - remove
 
 - (BOOL)removePlist{
@@ -112,7 +118,9 @@ static NSString *txt   = @"txt";
 }
 
 #pragma mark - all
-
+- (id)readArchivedObject{
+    return [self readArchivedFileWithExtension:nil];
+}
 - (id)readArchivedFile{
     return [self readArchivedFileWithExtension:nil];
 }

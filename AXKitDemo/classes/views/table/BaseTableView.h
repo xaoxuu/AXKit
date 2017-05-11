@@ -13,10 +13,16 @@
 @class BaseTableView;
 @protocol BaseTableViewDelegate <NSObject>
 
-- (NSString *)sourceJsonFileNameForTableView:(UITableView *)tableView;
+//- (NSString *)sourceJsonFileNameForTableView:(UITableView *)tableView;
 
 
-- (NSArray<BaseTableModelList *> *)dataListForTableView:(UITableView *)tableView;
+/**
+ 数据源
+
+ @param tableView tableview
+ @return 数据源
+ */
+- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView;
 
 
 @optional
@@ -25,7 +31,11 @@
 
 - (UIImage *)tableViewCellIconForSection:(NSUInteger)section row:(NSUInteger)row;
 
-- (void)tableViewCellDidSelected:(__kindof BaseTableModel *)model;
+- (void)tableViewCellDidSelected:(__kindof BaseTableModelRow *)model;
+
+- (void)tableViewCellDidSelectedInSection:(NSUInteger)section row:(NSUInteger)row;
+
+- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model;
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 

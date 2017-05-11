@@ -15,6 +15,11 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 
 @interface AppServices : BaseServices
 
+
+// @xaoxuu: json file
+@property (strong, nonatomic) NSDictionary *urlsFile;
+
+
 // @xaoxuu: setting icon placeholder
 @property (strong, readonly, nonatomic) UIImage *placeholderForSetting;
 
@@ -23,17 +28,21 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 // @xaoxuu: blog url
 @property (copy, readonly, nonatomic) NSString *blogURL;
 // @xaoxuu: feedback
-@property (copy, nonatomic) NSString *feedbackURL;
+@property (copy, readonly, nonatomic) NSString *feedbackURL;
 
+// @xaoxuu: feedback email
+@property (copy, readonly, nonatomic) NSString *feedbackEmail;
 
 // @xaoxuu: default vc
 @property (strong, readonly, nonatomic) DefaultViewController *defaultVC;
 
 
-- (void)applyThemeWithColor:(ThemeColorModel *)color;
+- (void)applyThemeWithColor:(ThemeColorModelRow *)color completion:(void (^)())completion;
 
 - (void)applyTheme;
 
 - (void)reloadAllView;
+
+- (NSString *(^)(NSString *name))assetURLWithName;
 
 @end

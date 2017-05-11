@@ -12,6 +12,18 @@
 
 @interface JsonServices : BaseServices
 
-- (NSArray<ThemeColorModelList *> *)colors;
+
+
+- (BaseTableModelListType (^)(NSString *json))modelList;
+
+
+
+- (BaseTableModelListType)colors;
+
+
+- (NSString *((^)(NSString *)))titleForVC;
+
+
+
 
 @end

@@ -23,6 +23,7 @@ static UIView *popView;
 static UIView *maskView;
 
 
+
 @implementation AXProgressHUD
 
 
@@ -49,7 +50,7 @@ static UIView *maskView;
     sLabel.centerX = popView.centerX;
     [sLabel sizeToFit];
     sLabel.centerY = popView.centerY;
-    
+    sLabel.textAlignment = NSTextAlignmentCenter;
     // view
     popView.backgroundColor = [UIColor whiteColor];
     popView.transform = CGAffineTransformMakeScale(0.8, 0.8);
@@ -68,16 +69,16 @@ static UIView *maskView;
     [self.rootVC.view addSubview:popView];
     
     
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseOut animations:^{
             self.rootVC.view.layer.cornerRadius = 12;
             popView.alpha = 1;
             popView.backgroundColor = [UIColor whiteColor];
             popView.transform = CGAffineTransformIdentity;
-            maskView.transform = CGAffineTransformMakeScale(50, 50);
+            maskView.transform = CGAffineTransformMakeScale(120, 120);
         } completion:^(BOOL finished) {
             
             [NSBlockOperation ax_delay:duration performInMainQueue:^{
-                [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     self.rootVC.view.layer.cornerRadius = 0;
                     popView.alpha = 0;
                     popView.backgroundColor = [UIColor lightGrayColor];
@@ -95,22 +96,34 @@ static UIView *maskView;
 
 
 + (void)ax_target:(UIView *)target showInfo:(NSString *)info duration:(NSTimeInterval)duration {
-    if (!isShowing) {
+//    if (!isShowing) {
+    if (isShowing) {
+        [self _hideTips];
+    }
         sPopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0.6*kScreenW, 30)];
         [self _initMaskView];
         [self setupLabelWithContent:info];
         [self pushTo:target duration:duration];
-    }
+//    } else {
+//        [self _hideTips];
+//        
+//    }
 }
 
 + (void)ax_target:(UIView *)target point:(CGPoint)point showInfo:(NSString *)info duration:(NSTimeInterval)duration {
-    if (!isShowing) {
+//    if (!isShowing) {
+    if (isShowing) {
+        [self _hideTips];
+    }
         sPopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0.6*kScreenW, 30)];
         [self _initMaskView];
         [self setupLabelWithContent:info];
         [self moveToView:target point:point];
         [self pushTo:target duration:duration];
-    }
+//    } else {
+//        [self _hideTips];
+//        
+//    }
 }
 
 // setup label
@@ -120,12 +133,19 @@ static UIView *maskView;
     [sPopView addSubview:sLabel];
     sLabel.numberOfLines = 0;
     sLabel.text = content;
-    sLabel.font = [UIFont systemFontOfSize:13];
+    sLabel.font = [UIFont boldSystemFontOfSize:14];
+    sLabel.textAlignment = NSTextAlignmentCenter;
     sLabel.textColor = axColor.theme;
-    sLabel.width = sPopView.width - 32;
-    sLabel.centerX = sPopView.centerX;
+    
     sLabel.top = 16;
+    //    sLabel.height = sPopView.height - 32;
+    sLabel.left = 16;
+    sLabel.width = sPopView.width - 32;
     [sLabel sizeToFit];
+    if (sLabel.width < sPopView.width - 32) {
+        sLabel.centerX = sPopView.centerX;
+    }
+    
     
     // view
     sPopView.backgroundColor = [UIColor whiteColor];
@@ -134,10 +154,18 @@ static UIView *maskView;
     sPopView.layer.cornerRadius = 10;
     sPopView.layer.ax_shadow(AXShadowDownFloat);
     
+    
 //    sPopView.height = sLabel.top + sLabel.height + 16;
-    sPopView.height = sPopView.width;
+    sPopView.height = sLabel.height + 32;
     sPopView.centerX = kScreenCenterX;
     sPopView.centerY = kScreenCenterY;
+    sMaskView.centerY = sPopView.centerY;
+    
+    
+    if (axColor.theme.isLightColor) {
+        sLabel.textColor = axColor.theme.darkRatio(0.3);
+    }
+    
     
 }
 
@@ -149,11 +177,11 @@ static UIView *maskView;
     if (sPopView.bottom > view.height) {
         sPopView.bottom = view.height - 8;
     }
-    if (sPopView.left < 0) {
+    if (sPopView.left < 8) {
         sPopView.left = 8;
     }
-    if (sPopView.top < 0) {
-        sPopView.top = 8;
+    if (sPopView.top < 28) {
+        sPopView.top = 28;
     }
 }
 
@@ -162,19 +190,21 @@ static UIView *maskView;
     [self _hideTips];
     
     [view addSubview:sPopView];
-    if (!isShowing) {
+//    if (!isShowing) {
         isShowing = YES;
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
             [self _showTips];
         } completion:^(BOOL finished) {
             [self performSelector:@selector(_dismissAnimation) withObject:nil afterDelay:duration];
         }];
-    }
+//    } else {
+//        
+//    }
 }
 
 + (void)_dismissAnimation{
     if (isShowing) {
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
             [self _hideTips];
         } completion:^(BOOL finished) {
             isShowing = NO;
@@ -184,17 +214,23 @@ static UIView *maskView;
 }
 
 + (void)_hideTips{
-    sPopView.alpha = 0;
-    sPopView.backgroundColor = [UIColor lightGrayColor];
-    sPopView.transform = CGAffineTransformMakeScale(0.8, 0.8);
+    popView = sPopView;
+    maskView = sMaskView;
+    popView.alpha = 0;
+    popView.backgroundColor = [UIColor lightGrayColor];
+    popView.transform = CGAffineTransformMakeScale(0.8, 0.8);
     sMaskView.transform = CGAffineTransformIdentity;
+//    sPopView.alpha = 0;
+//    sPopView.backgroundColor = [UIColor lightGrayColor];
+//    sPopView.transform = CGAffineTransformMakeScale(0.8, 0.8);
+//    sMaskView.transform = CGAffineTransformIdentity;
 }
 
 + (void)_showTips{
     sPopView.alpha = 1;
     sPopView.backgroundColor = [UIColor whiteColor];
     sPopView.transform = CGAffineTransformIdentity;
-    sMaskView.transform = CGAffineTransformMakeScale(40, 40);
+    sMaskView.transform = CGAffineTransformMakeScale(80, 80);
 }
 
 + (void)_initMaskView{

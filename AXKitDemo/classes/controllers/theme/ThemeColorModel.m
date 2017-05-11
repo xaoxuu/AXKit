@@ -8,14 +8,14 @@
 
 #import "ThemeColorModel.h"
 
-@implementation ThemeColorModel
+@implementation ThemeColorModelRow
 
 @end
 
-@implementation ThemeColorModelList
+@implementation ThemeColorModelSection
 
 + (NSDictionary *)mj_objectClassInArray{
-    return @{@"rows":[ThemeColorModel class]};
+    return @{@"rows":[ThemeColorModelRow class]};
 }
 
 

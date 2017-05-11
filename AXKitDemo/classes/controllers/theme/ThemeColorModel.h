@@ -8,14 +8,14 @@
 
 #import "BaseTableModel.h"
 
-@interface ThemeColorModel : BaseTableModel
+@interface ThemeColorModelRow : BaseTableModelRow
 
 // @xaoxuu: hex
 @property (copy, nonatomic) NSString *hex;
 
 @end
 
-@interface ThemeColorModelList : BaseTableModelList
+@interface ThemeColorModelSection : BaseTableModelSection
 
 
 @end

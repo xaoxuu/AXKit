@@ -17,16 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.frame = CGRectFromScreen();
-    self.view.backgroundColor = axColor.background;
-    self.navigationItem.backBarButtonItem = [UIBarButtonItem ax_itemWithTitle:NSLocalizedString(@"", nil) action:^(id  _Nonnull sender) {
-        
-    }];
     
     
-    if (!self.title.length) {
-        self.title = NSLocalizedString(NSStringFromClass([self class]), nil);
-    }
+    
+    [self _base_setupTopBar];
+    [self _base_setupContentView];
+    
+    [self setupChildViewControllerUIKit];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +39,19 @@
 
 
 
+- (void)setupChildViewControllerUIKit{
+    if ([self respondsToSelector:@selector(setupTableView)]) {
+        [self setupTableView];
+    }
+    
+    if ([self respondsToSelector:@selector(setupButtons)]) {
+        [self setupButtons];
+    }
+    
+}
+
+
+
 - (BOOL)hidesBottomBarWhenPushed{
     if (self.navigationController.viewControllers.count == 1) {
         return NO;
@@ -49,5 +60,51 @@
     }
 }
 
+
+- (void)_base_setupTopBar{
+    
+    if (!self.title.length) {
+        self.title = services.json.titleForVC(NSStringFromClass([self class]));
+    }
+    
+    self.navigationItem.backBarButtonItem = [UIBarButtonItem ax_itemWithTitle:NSLocalizedString(@"", nil) action:^(id  _Nonnull sender) {
+    }];
+    
+    
+}
+
+- (void)_base_setupContentView{
+    self.view.frame = CGRectFromScreen();
+    self.view.backgroundColor = axColor.background;
+    if ([self respondsToSelector:@selector(setupViewControllerHeight)]) {
+        ViewControllerHeight height = [self setupViewControllerHeight];
+        switch (height) {
+            case ViewControllerHeightFullScreen:
+            
+            break;
+            case ViewControllerHeightWithoutTopBar:
+            self.view.top = kTopBarHeight;
+            self.view.height -= kTopBarHeight;
+            break;
+            case ViewControllerHeightWithoutBottomBar:
+            self.view.height -= kTabBarHeight;
+            break;
+            case ViewControllerHeightWithoutTopAndBottomBar:
+            self.view.top = kTopBarHeight;
+            self.view.height -= kTopBarHeight + kTabBarHeight;
+            break;
+            default:
+            break;
+        }
+    }
+}
+
+
+
+#pragma mark - delegate
+
+- (ViewControllerHeight)setupViewControllerHeight{
+    return ViewControllerHeightWithoutTopBar;
+}
 
 @end

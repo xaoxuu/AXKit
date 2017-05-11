@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BaseTableModel : NSObject
+@interface BaseTableModelRow : NSObject <NSCoding>
 
 #pragma mark ui
 // @xaoxuu: title
@@ -27,7 +27,7 @@
 
 @end
 
-@interface BaseTableModelList : NSObject
+@interface BaseTableModelSection : NSObject
 
 // @xaoxuu: header_title
 @property (copy, nonatomic) NSString *header_title;
@@ -40,7 +40,7 @@
 // @xaoxuu: rowHeight
 @property (copy, nonatomic) NSString *rowHeight;
 // @xaoxuu: rows
-@property (strong, nonatomic) NSArray<__kindof BaseTableModel *> *rows;
+@property (strong, nonatomic) NSMutableArray<__kindof BaseTableModelRow *> *rows;
 
 
 @end

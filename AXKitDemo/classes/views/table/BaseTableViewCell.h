@@ -13,7 +13,7 @@
 @interface BaseTableViewCell : UITableViewCell
 
 // @xaoxuu: model
-@property (strong, readwrite, nonatomic) __kindof BaseTableModel *model;
+@property (strong, readwrite, nonatomic) __kindof BaseTableModelRow *model;
 
 // @xaoxuu: switch
 @property (strong, readonly, nonatomic) BaseSwitch *sw;

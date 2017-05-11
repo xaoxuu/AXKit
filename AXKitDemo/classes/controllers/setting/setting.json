@@ -6,19 +6,16 @@
     "footer_height":"32",
     "sections":[
         {
-            "header_title":"this is section header",
+            "header_title":"基本信息",
             "header_height":"32",
-            "footer_title":"this is section footer",
-            "footer_height":"32",
+            "footer_title":"",
+            "footer_height":"8",
             "rowHeight":"44",
             "rows":[
                 {
                     "title":"关于",
                     "desc":"关于本app",
                     "icon":"https://xaoxuu.com/images/avatar.png",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
                     "target":"default",
                     "cmd":""
                 },
@@ -26,21 +23,29 @@
                     "title":"博客",
                     "desc":"xaoxuu's blog",
                     "icon":"https://xaoxuu.com/images/avatar.png",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
                     "target":"BlogVC",
                     "cmd":""
                 },
                 {
-                    "title":"反馈",
-                    "desc":"bug反馈、功能建议",
-                    "icon":"about",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
-                    "target":"FeedbackVC",
+                    "title":"项目",
+                    "desc":"xaoxuu's blog",
+                    "icon":"https://xaoxuu.com/images/avatar.png",
+                    "target":"ProjectsVC",
                     "cmd":""
+                },
+                {
+                    "title":"GitHub反馈",
+                    "desc":"bug反馈、功能建议",
+                    "icon":"setting_feedback",
+                    "target":"FeedbackVC",
+                    "cmd":"feedbackURL"
+                },
+                {
+                    "title":"邮件反馈",
+                    "desc":"直接发邮件给开发者",
+                    "icon":"setting_feedback",
+                    "target":"FeedbackVC",
+                    "cmd":"feedbackEmail"
                 }
             ]
         },
@@ -55,60 +60,61 @@
                     "title":"主题色",
                     "desc":"app的主题色",
                     "icon":"setting_theme",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
                     "target":"ThemeColorVC",
                     "cmd":""
                 },
                 {
                     "title":"字体",
                     "desc":"app的字体",
-                    "icon":"",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
+                    "icon":"setting_font",
                     "target":"default",
                     "cmd":""
                 },
                 {
                     "title":"图标",
                     "desc":"app的图标",
-                    "icon":"",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
+                    "icon":"setting_icon",
                     "target":"default",
                     "cmd":""
                 }
             ]
         },
         {
-            "header_title":"this is section header",
+            "header_title":"高级设置",
             "header_height":"32",
-            "footer_title":"this is section footer",
-            "footer_height":"32",
+            "footer_title":"",
+            "footer_height":"8",
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"关于3",
-                    "desc":"这是本app的描述",
-                    "icon":"https://github.com/xaoxuu/AXKit/raw/master/resources/icons/header.png",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
-                    "target":"default",
-                    "cmd":""
+                    "title":"组间距",
+                    "desc":"8",
+                    "icon":"",
+                    "target":"CustomTableVC",
+                    "cmd":"margin"
                 },
                 {
-                    "title":"关于4",
-                    "desc":"这是本app的描述",
+                    "title":"行高",
+                    "desc":"44",
                     "icon":"",
-                    "showAccessory":"1",
-                    "showSwitch":"0",
-                    "switch_on":"0",
-                    "target":"default",
-                    "cmd":""
+                    "target":"CustomTableVC",
+                    "cmd":"rowHeight"
+                }
+            ]
+        },
+        {
+            "header_title":"缓存",
+            "header_height":"32",
+            "footer_title":"",
+            "footer_height":"8",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"清除缓存",
+                    "desc":"",
+                    "icon":"setting_trash",
+                    "target":"RemoveCacheVC",
+                    "cmd":"setting"
                 }
             ]
         }

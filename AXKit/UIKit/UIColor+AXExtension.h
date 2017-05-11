@@ -104,6 +104,13 @@
 
 
 
+/**
+ 粗略判断颜色是不是浅色调
+
+ @return 是不是浅色
+ */
+- (BOOL)isLightColor;
+
 @end
 
 

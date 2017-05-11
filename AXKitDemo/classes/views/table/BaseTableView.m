@@ -17,7 +17,7 @@
 @property (strong, nonatomic) UITableView *tableView;
 
 // @xaoxuu: list
-@property (strong, nonatomic) NSArray<BaseTableModelList *> *dataList;
+@property (strong, nonatomic) BaseTableModelListType dataList;
 
 // @xaoxuu: table view cell name
 @property (copy, nonatomic) NSString *cellNibName;
@@ -81,7 +81,7 @@
 
 
 
-- (NSArray<BaseTableModelList *> *)dataList{
+- (BaseTableModelListType)dataList{
     _dataList = [self dataListForTableView:self.tableView];
     return _dataList;
 }
@@ -93,7 +93,7 @@
 
 
 #pragma mark - base table view delegate
-- (NSArray<BaseTableModelList *> *)dataListForTableView:(UITableView *)tableView{
+- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
     return services.cache.settingList;
 }
 
@@ -111,9 +111,12 @@
     NSUInteger section = indexPath.section;
     NSUInteger row = indexPath.row;
     BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
-    BaseTableModel *model = self.dataList[section].rows[row];
+    BaseTableModelRow *model = self.dataList[section].rows[row];
     if ([self respondsToSelector:@selector(tableViewCellDetailForSection:row:)]) {
-        model.desc = [self tableViewCellDetailForSection:section row:row];
+        NSString *detail = [self tableViewCellDetailForSection:section row:row];
+        if (detail) {
+            model.desc = detail;
+        }
     }
     cell.model = model;
     
@@ -159,14 +162,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    BaseTableModel *model = self.dataList[indexPath.section].rows[indexPath.row];
+    if ([self respondsToSelector:@selector(tableViewCellDidSelectedInSection:row:)]) {
+        [self tableViewCellDidSelectedInSection:indexPath.section row:indexPath.row];
+    }
+    BaseTableModelRow *model = self.dataList[indexPath.section].rows[indexPath.row];
     if (!model) {
         return;
     }
-    UIViewController *vc = UIViewControllerFromString(model.target);
+    BaseViewController *vc = (BaseViewController *)UIViewControllerFromString(model.target);
     if (vc) {
         vc.title = NSLocalizedString(model.title, nil);
-        [self.controller.navigationController pushViewController:vc animated:YES];
+        if ([self respondsToSelector:@selector(tableViewCellShouldPushToViewController:withModel:)]) {
+            if ([self tableViewCellShouldPushToViewController:vc withModel:model]) {
+                [self.controller.navigationController pushViewController:vc animated:YES];
+            }
+        } else {
+            [self.controller.navigationController pushViewController:vc animated:YES];
+        }
+        
     } else if (model.target.length) {
         UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
         [self.controller.navigationController pushViewController:vc animated:YES];
@@ -183,9 +196,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return self.dataList[section].header_height.floatValue;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return self.dataList[section].footer_height.floatValue;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//    return self.dataList[section].footer_height.floatValue;
+//}
 
 
 @end

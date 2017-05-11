@@ -10,7 +10,9 @@
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 #import "SCLAlertView+AXWrapper.h"
 #import "AppDelegate.h"
+#import "DataAccessLayer.h"
 
+#define daLayer [DataAccessLayer sharedInstance]
 
 @interface AlertServices ()
 
@@ -69,7 +71,14 @@
             }];
         }
     }];
-    [alert showCustom:self.rootVC image:[UIImage imageNamed:@"alert_theme"] color:axColor.theme title:NSLocalizedString(@"提示", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"取消", nil) duration:0];
+    [alert showCustom:self.rootVC image:daLayer.assets.alert.theme.image color:axColor.theme title:NSLocalizedString(@"提示", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"取消", nil) duration:0];
+}
+
+- (void)alertForOptionDoneWithMessage:(NSString *)msg{
+//    SCLAlertView *alert = [SCLAlertView ax_SCLAlertViewWithDefaultColor];
+//    self.alert = alert;
+//    [alert showCustom:self.rootVC image:[UIImage imageNamed:@"alert_theme"] color:axColor.theme title:NSLocalizedString(@"完成", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"确定", nil) duration:1];
+    [AXProgressHUD ax_target:self.rootVC.view showInfo:msg duration:1];
 }
 
 - (void)hideAlertView{

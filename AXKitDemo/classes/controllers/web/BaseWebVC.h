@@ -8,7 +8,18 @@
 
 #import "BaseViewController.h"
 
-@interface BaseWebVC : BaseViewController
+
+@protocol BaseWebVCDelegate <NSObject>
+@optional
+
+- (void)didLoadWebView;
+
+
+@end
+
+
+@interface BaseWebVC : BaseViewController <BaseWebVCDelegate>
+
 
 
 // @xaoxuu: url string
@@ -18,6 +29,6 @@
 
 + (instancetype)webVCWithTitle:(NSString *)title URLString:(NSString *)url;
 
-- (void)reloadWeb;
+- (void)reloadWebView;
 
 @end

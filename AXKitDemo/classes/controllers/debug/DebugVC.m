@@ -25,6 +25,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.view layoutSubviews];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -34,5 +39,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)hitTest:(UIButton *)sender {
+    [self.navigationController ax_pushViewControllerNamed:@"HitTestVC"];
+}
+
+
 
 @end

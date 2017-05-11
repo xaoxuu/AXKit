@@ -8,6 +8,31 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+typedef NS_ENUM(NSUInteger, ViewControllerHeight) {
+    ViewControllerHeightFullScreen,
+    ViewControllerHeightWithoutBottomBar,
+    ViewControllerHeightWithoutTopBar,
+    ViewControllerHeightWithoutTopAndBottomBar,
+};
+
+@protocol BaseViewControllerDelegate <NSObject>
+
+@required
+
+- (ViewControllerHeight)setupViewControllerHeight;
+
+@optional
+
+- (void)setupTableView;
+- (void)setupButtons;
+
+
+
+
+
+@end
+
+
+@interface BaseViewController : UIViewController <BaseViewControllerDelegate>
 
 @end

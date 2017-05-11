@@ -11,10 +11,10 @@
 #import "BaseNavController.h"
 
 
+
+
 @interface AppServices ()
 
-// @xaoxuu: json file
-@property (strong, nonatomic) NSDictionary *jsonFile;
 
 @end
 
@@ -24,20 +24,20 @@
     if (self = [super init]) {
         _placeholderForSetting = [UIImage imageNamed:@"setting_default"];
         
-        _homePageURL = self.jsonFile[@"homePageURL"];
-        _blogURL = self.jsonFile[@"blogURL"];
-        _feedbackURL = self.jsonFile[@"feedbackURL"];
+        _homePageURL = self.urlsFile[@"homePageURL"];
+        _blogURL = self.urlsFile[@"blogURL"];
+        _feedbackURL = self.urlsFile[@"feedbackURL"];
         _defaultVC = [DefaultViewController new];
-        
+        _feedbackEmail = self.urlsFile[@"feedbackEmail"];
     }
     return self;
 }
 
-- (NSDictionary *)jsonFile{
-    if (!_jsonFile) {
-        _jsonFile = @"urls".mainBundlePath.readJson;
+- (NSDictionary *)urlsFile{
+    if (!_urlsFile) {
+        _urlsFile = @"urls".mainBundlePath.readJson;
     }
-    return _jsonFile;
+    return _urlsFile;
 }
 
 
@@ -56,32 +56,32 @@
 }
 
 
-- (void)applyThemeWithColor:(ThemeColorModel *)color{
+- (void)applyThemeWithColor:(ThemeColorModelRow *)color completion:(void (^)())completion{
     
     NSString *msg = [NSString stringWithFormat:@"将应用此主题:%@",color.title];
     UIColor *tmp = [UIColor colorWithHexString:color.hex];
     [services.alert alertForConfirmTheme:tmp message:msg completion:^{
         axColor.theme = tmp;
         [services.app applyTheme];
-        
+        if (completion) {
+            completion();
+        }
     }];
     
 }
 
 - (void)applyTheme{
-    CGFloat r = axColor.theme.redValue;
-    CGFloat g = axColor.theme.greenValue;
-    CGFloat b = axColor.theme.blueValue;
-    CGFloat x = r*g*b;
-    CGFloat y = r+g+b;
-    if (2*x*y+x+y < 2) {
+
+    if (axColor.theme.isLightColor) {
+        [UINavigationBar appearance].tintColor = axColor.theme.darkRatio(0.6);
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.theme.darkRatio(0.6)}];
+        [UITabBar appearance].tintColor = axColor.theme.darkRatio(0.3);
+    } else {
         [UINavigationBar appearance].tintColor = axColor.white;
         [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.white}];
-    } else {
-        [UINavigationBar appearance].tintColor = axColor.black;
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.black}];
-        
+        [UITabBar appearance].tintColor = axColor.theme;
     }
+    
     [UINavigationBar appearance].barStyle = UIBarStyleDefault;
     [UINavigationBar appearance].translucent = NO;
     [UINavigationBar appearance].opaque = YES;
@@ -103,27 +103,36 @@
                 if ([obj isKindOfClass:[BaseNavController class]]) {
                     BaseNavController *navVC = obj;
                     navVC.navigationBar.barTintColor = axColor.theme;
-                    if (x*y+x*x+y*y < 3) {
-                        navVC.navigationBar.tintColor = axColor.white;
-                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.white}];
-                    } else {
+                    if (axColor.theme.isLightColor) {
                         navVC.navigationBar.tintColor = axColor.theme.darkRatio(0.6);
                         [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.theme.darkRatio(0.6)}];
+                        
+                    } else {
+                        navVC.navigationBar.tintColor = axColor.white;
+                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.white}];
                         
                     }
                 }
             }];
 //            tabbarVC.tabBar.tintColor = axColor.theme;
-            if (x*y+x*x+y*y < 3) {
-                tabbarVC.tabBar.tintColor = axColor.theme;
-            } else {
+            if (axColor.theme.isLightColor) {
                 tabbarVC.tabBar.tintColor = axColor.theme.darkRatio(0.3);
-                
+            } else {
+                tabbarVC.tabBar.tintColor = axColor.theme;
             }
         }
     }];
     
     
 }
+
+
+- (NSString *(^)(NSString *name))assetURLWithName{
+    return ^(NSString *name){
+        name = [name stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
+        return [NSString stringWithFormat:@"%@/%@.%@",@"https://github.com/xaoxuu/assets/blob/axkit",name,@"png?raw=true"];
+    };
+}
+
 
 @end

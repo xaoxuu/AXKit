@@ -242,6 +242,10 @@ static inline AXEventTarget *AXTargetWith(__kindof UIControl *obj, UIControlEven
 }
 
 - (void)ax_addEditingEndHandler:(void (^)(__kindof UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
+    // resign first responder
+    [self ax_addEditingEndOnExitHandler:^(__kindof UITextField * _Nonnull sender) {
+        // do nothing
+    }];
     // add a control events to target
     AXEventTarget *target =  AXDefaultTargetFor(UIControlEventEditingDidEnd);
     [target setupAnimationWithView:self scale:scale duration:duration];

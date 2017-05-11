@@ -23,8 +23,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     _sw = [BaseSwitch new];
-//    self.img_icon.layer.cornerRadius = 5;
-    self.img_icon.layer.ax_maskToCircle();
+    self.img_icon.layer.cornerRadius = 5;
+//    self.img_icon.layer.ax_maskToCircle();
     // Initialization code
 }
 
@@ -34,7 +34,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(BaseTableModel *)model{
+- (void)setModel:(BaseTableModelRow *)model{
     _model = model;
     if (model.icon.length) {
         self.lb_title_only.text = @"";
@@ -46,15 +46,16 @@
     
     // @xaoxuu: 数据显示
     self.lb_detail.text = NSLocalizedString(model.desc, nil);
-    // @xaoxuu: 图片
+    // @xaoxuu: 首先显示的图片
     if (model.icon.isURLString) {
         // @xaoxuu: 网络图片
         [self.img_icon setImageWithURL:model.icon.absoluteURL placeholder:services.app.placeholderForSetting];
     } else {
         // @xaoxuu: 本地图片
         self.img_icon.image = model.icon.image;
+        // @xaoxuu: 远程服务器有没有同名图片，如果有则优先显示
+        [self.img_icon setImageWithURL:services.app.assetURLWithName(model.icon).absoluteURL placeholder:self.img_icon.image];
     }
-    
 
 }
 

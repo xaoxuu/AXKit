@@ -33,13 +33,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)setupTopBar{
-//    
-////    [self.navigationController setNavigationBarHidden:YES animated:NO];
-//    
-//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
-//        [self reloadWeb];
-//    }];
-//}
+- (void)didLoadWebView{
+    
+}
 
 @end

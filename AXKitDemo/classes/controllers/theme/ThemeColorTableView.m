@@ -12,22 +12,24 @@
 @implementation ThemeColorTableView
 
 
-- (NSArray<BaseTableModelList *> *)dataListForTableView:(UITableView *)tableView{
+- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
     return services.json.colors;
 }
 
 - (UIImage *)tableViewCellIconForSection:(NSUInteger)section row:(NSUInteger)row{
-    ThemeColorModel *model = services.json.colors[section].rows[row];
+    ThemeColorModelRow *model = services.json.colors[section].rows[row];
     return [UIImage imageWithColor:[UIColor colorWithHexString:model.hex]];
 }
 
-- (void)tableViewCellDidSelected:(__kindof BaseTableModel *)model{
-    [services.app applyThemeWithColor:model];
+- (void)tableViewCellDidSelected:(__kindof BaseTableModelRow *)model{
+    [services.app applyThemeWithColor:model completion:^{
+        [self.controller.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 
 - (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
-    ThemeColorModel *colorStr = services.json.colors[section].rows[row];
+    ThemeColorModelRow *colorStr = services.json.colors[section].rows[row];
     return [NSString stringWithFormat:@"%@",colorStr.hex];
 }
 

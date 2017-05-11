@@ -8,6 +8,41 @@
 
 #import "DataAccessLayer.h"
 
+DataAccessLayer *instance = nil;
+
 @implementation DataAccessLayer
+
+
++ (instancetype)sharedInstance{
+    if (!instance) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            if (!instance) {
+                instance = [[DataAccessLayer alloc] init];
+            }
+        });
+    }
+    return instance;
+}
+
+
+- (instancetype)init{
+    if (!instance) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            if (!instance) {
+                instance = [super init];
+            }
+        });
+    }
+    
+    _assets = [AssetsDataAccess new];
+    
+    
+    
+    return instance;
+}
+
+
 
 @end

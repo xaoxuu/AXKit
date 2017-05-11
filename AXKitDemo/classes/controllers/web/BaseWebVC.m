@@ -49,10 +49,13 @@
     // Do any additional setup after loading the view.
     self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight);
     [self setupWebView];
-    [self reloadWeb];
+    [self reloadWebView];
+    
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
-        [self reloadWeb];
+        [self reloadWebView];
     }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,9 +63,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)reloadWeb{
+
+
+- (void)reloadWebView{
     [self loadWithURLString];
+    if ([self respondsToSelector:@selector(didLoadWebView)]) {
+        [self didLoadWebView];
+    }
 }
+
+
 
 - (void)loadWithURLString{
     NSURL *url = [NSURL URLWithString:self.urlStr];

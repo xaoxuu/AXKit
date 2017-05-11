@@ -36,4 +36,9 @@
     [self.view addSubview:self.table];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.table reloadData];
+}
+
 @end

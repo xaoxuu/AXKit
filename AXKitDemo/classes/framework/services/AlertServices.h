@@ -12,6 +12,9 @@
 
 - (void)alertForConfirmTheme:(UIColor *)color message:(NSString *)msg completion:(void (^)())completion;
 
+- (void)alertForOptionDoneWithMessage:(NSString *)msg;
+
+
 - (void)hideAlertView;
 
 @end
