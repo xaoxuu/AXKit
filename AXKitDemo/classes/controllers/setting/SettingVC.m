@@ -11,8 +11,6 @@
 
 @interface SettingVC ()
 
-// @xaoxuu: table
-@property (strong, nonatomic) SettingTableView *table;
 
 @end
 
@@ -21,8 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
-    [self setupTable];
     
 }
 
@@ -31,14 +27,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setupTable{
-    self.table = [[SettingTableView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.table];
+- (ViewControllerHeight)setupViewControllerHeight{
+    return ViewControllerHeightWithoutTopAndBottomBar;
+}
+
+- (BaseTableView *)setupTableView{
+    return [[SettingTableView alloc] initWithFrame:self.view.bounds];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.table reloadData];
+    [self.tableView reloadTableView];
 }
+
+- (void)setupRightRefreshBarButton:(UIBarButtonItem *)sender{
+    [self.tableView reloadDataSourceAndRefreshTableView];
+}
+
+
 
 @end

@@ -11,6 +11,7 @@
 #import "CacheServices.h"
 #import "JsonServices.h"
 #import "AlertServices.h"
+#import "GitHubServices.h"
 
 @class ServicesLayer;
 extern ServicesLayer *services;
@@ -25,6 +26,8 @@ extern ServicesLayer *services;
 @property (strong, nonatomic) JsonServices *json;
 // @xaoxuu: alert
 @property (strong, nonatomic) AlertServices *alert;
+// @xaoxuu: github
+@property (strong, nonatomic) GitHubServices *git;
 
 
 + (instancetype)sharedInstance;

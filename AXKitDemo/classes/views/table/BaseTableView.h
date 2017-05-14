@@ -10,11 +10,12 @@
 #import "BaseSwitch.h"
 #import "BaseTableViewCell.h"
 
-@class BaseTableView;
+@class BaseTableView,BaseViewController;
 @protocol BaseTableViewDelegate <NSObject>
 
-//- (NSString *)sourceJsonFileNameForTableView:(UITableView *)tableView;
 
+
+@optional
 
 /**
  数据源
@@ -25,7 +26,22 @@
 - (BaseTableModelListType)dataListForTableView:(UITableView *)tableView;
 
 
-@optional
+/**
+ 异步加载的数据源
+ 
+ @param completion 加载完成的回调
+ */
+- (void)setupTableViewWithDataSource:(void (^)(BaseTableModelListType sections))completion;
+
+
+
+- (BOOL)setupEditEnable;
+
+- (void)setupTableViewHeader:(UIView *)header;
+
+- (void)setupTableViewFooter:(UIView *)footer;
+
+
 
 - (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row;
 
@@ -35,7 +51,7 @@
 
 - (void)tableViewCellDidSelectedInSection:(NSUInteger)section row:(NSUInteger)row;
 
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model;
+- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row;
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
@@ -71,24 +87,21 @@
 
 @interface BaseTableView : UIView <BaseTableViewDelegate>
 
-// @xaoxuu: delegate
-//@property (weak, nonatomic) id<BaseTableViewDelegate> delegate;
+// @xaoxuu: table view
+@property (strong, nonatomic) UITableView *tableView;
 
-//- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row;
-//- (BOOL)tableViewCellSwitchOnForSection:(NSUInteger)section row:(NSUInteger)row;
-//- (void)tableViewCellSwitchStatusChanged:(BOOL)on forSection:(NSUInteger)section row:(NSUInteger)row;
+- (void)reloadTableView;
 
-- (void)reloadData;
+- (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList;
+
+- (void)reloadDataSourceAndRefreshTableView;
 
 - (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name;
 
 
 //- (void)switchStatusChanged:(void (^)(NSIndexPath *indexPath, BOOL on))changed;
 
-- (void)setupTableViewHeader:(UIView *)header;
 
-- (void)setupTableViewFooter:(UIView *)footer;
-
-
+- (void)deleteCellInSection:(NSUInteger)section row:(NSUInteger)row;
 
 @end

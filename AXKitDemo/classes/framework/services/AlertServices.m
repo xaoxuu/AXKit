@@ -44,17 +44,14 @@
 }
 
 
-
-
-
-
-
-- (void)alertFotConfirmWithMessage:(NSString *)msg confirm:(void (^)())confirm{
+- (void)alertForConfirmWithMessage:(NSString * (^)())msg completion:(void (^)())completion{
     SCLAlertView *alert = [SCLAlertView ax_SCLAlertViewWithDefaultColor];
     [alert addButton:NSLocalizedString(@"确认", nil) actionBlock:^{
-        confirm();
+        if (completion) {
+            completion();
+        }
     }];
-    [alert showQuestion:self.rootVC title:NSLocalizedString(@"提示", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"取消", nil) duration:0];
+    [alert showQuestion:self.rootVC title:NSLocalizedString(@"提示", nil) subTitle:msg?msg():@"" closeButtonTitle:NSLocalizedString(@"取消", nil) duration:0];
     
 }
 

@@ -31,16 +31,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setupTableView{
-    self.cacheTable = [[CacheTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight)];
-    [self.view addSubview:self.cacheTable];
+- (BaseTableView *)setupTableView{
+    return [[CacheTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight)];
+    
 }
+
 
 
 - (void)setupButtons{
     self.btn_remove.layer.ax_shadow(AXShadowUpLight);
     [self.btn_remove ax_addTouchUpInsideHandler:^(__kindof UIButton * _Nonnull sender) {
-        [services.cache removeSettingCacheCompletion:^{
+        [services.cache removeAllCacheCompletion:^{
             [sender setEnabled:NO];
         }];
     }];

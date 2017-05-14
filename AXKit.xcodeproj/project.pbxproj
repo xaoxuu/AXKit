@@ -43,13 +43,13 @@
 		CD0B63021EC4A42F0024F25E /* ProjectsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B63001EC4A42F0024F25E /* ProjectsVC.m */; };
 		CD0B63031EC4A42F0024F25E /* ProjectsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0B63011EC4A42F0024F25E /* ProjectsVC.xib */; };
 		CD0B63091EC4A4730024F25E /* ProjectsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B63081EC4A4730024F25E /* ProjectsTableView.m */; };
-		CD0B630B1EC4A4A80024F25E /* projects.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0B630A1EC4A4A80024F25E /* projects.json */; };
+		CD0B630B1EC4A4A80024F25E /* ProjectsTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0B630A1EC4A4A80024F25E /* ProjectsTableView.json */; };
 		CD0B63151EC4C66D0024F25E /* ProjectDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B63131EC4C66D0024F25E /* ProjectDetailVC.m */; };
 		CD0B63161EC4C66D0024F25E /* ProjectDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0B63141EC4C66D0024F25E /* ProjectDetailVC.xib */; };
 		CD2385F81EC0C5BA007AB90B /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2385F71EC0C5BA007AB90B /* AppServices.m */; };
 		CD2386001EC0CD3F007AB90B /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2385FE1EC0CD3F007AB90B /* FeedbackVC.m */; };
 		CD2386011EC0CD3F007AB90B /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2385FF1EC0CD3F007AB90B /* FeedbackVC.xib */; };
-		CD2386031EC0CF0F007AB90B /* urls.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386021EC0CF0F007AB90B /* urls.json */; };
+		CD2386031EC0CF0F007AB90B /* app_config.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386021EC0CF0F007AB90B /* app_config.json */; };
 		CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386041EC0D25D007AB90B /* tabbar_controllers.json */; };
 		CD23DC971EC18621006E331B /* DebugVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DC951EC18621006E331B /* DebugVC.m */; };
 		CD23DC981EC18621006E331B /* DebugVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD23DC961EC18621006E331B /* DebugVC.xib */; };
@@ -63,7 +63,7 @@
 		CD23DCB71EC1E3A4006E331B /* ThemeColorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCB61EC1E3A4006E331B /* ThemeColorTableView.m */; };
 		CD23DCBA1EC1E5A4006E331B /* ThemeColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */; };
 		CD23DCBD1EC1E61D006E331B /* JsonServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCBC1EC1E61D006E331B /* JsonServices.m */; };
-		CD23DCBF1EC1E8B0006E331B /* setting.json in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCBE1EC1E8B0006E331B /* setting.json */; };
+		CD23DCBF1EC1E8B0006E331B /* SettingTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCBE1EC1E8B0006E331B /* SettingTableView.json */; };
 		CD23DCD91EC35F35006E331B /* AlertServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCD81EC35F35006E331B /* AlertServices.m */; };
 		CD23DCDF1EC36017006E331B /* SCLAlertView+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCDE1EC36017006E331B /* SCLAlertView+AXWrapper.m */; };
 		CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCE11EC36DE7006E331B /* AXProgressHUD.m */; };
@@ -71,6 +71,8 @@
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
+		CD6A83A21EC5F37A00A3ECC7 /* EmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6A83A01EC5F37A00A3ECC7 /* EmailVC.m */; };
+		CD6A83A31EC5F37A00A3ECC7 /* EmailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6A83A11EC5F37A00A3ECC7 /* EmailVC.xib */; };
 		CD6C676A1EB9F2BC00B57279 /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6C67691EB9F2BC00B57279 /* BaseWebVC.m */; };
 		CD77FE6F1EBEE9C2001A5787 /* TestVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE6E1EBEE9C2001A5787 /* TestVC1.m */; };
 		CD77FE721EBEE9C9001A5787 /* TestVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE711EBEE9C9001A5787 /* TestVC2.m */; };
@@ -98,6 +100,7 @@
 		CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */; };
 		CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */; };
 		CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEC91EC0C041001A5787 /* Setting.xcassets */; };
+		CD7AA7281EC85F6000865FC9 /* CacheDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7AA7271EC85F6000865FC9 /* CacheDataAccess.m */; };
 		CD91CB131EC42EA500984F71 /* HitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD91CB111EC42EA500984F71 /* HitTestVC.m */; };
 		CD91CB141EC42EA500984F71 /* HitTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD91CB121EC42EA500984F71 /* HitTestVC.xib */; };
 		CD91CB191EC437D800984F71 /* CustomTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD91CB171EC437D800984F71 /* CustomTableVC.m */; };
@@ -185,6 +188,24 @@
 		CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */; };
 		CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */; };
+		CDE94E691EC6FB7E00596B93 /* NetworkDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E681EC6FB7E00596B93 /* NetworkDataAccess.m */; };
+		CDE94E6F1EC6FDB300596B93 /* GitHubServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E6E1EC6FDB300596B93 /* GitHubServices.m */; };
+		CDE94E721EC6FE1D00596B93 /* DeveloperDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E711EC6FE1D00596B93 /* DeveloperDataAccess.m */; };
+		CDE94E751EC6FFDA00596B93 /* AppDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E741EC6FFDA00596B93 /* AppDataAccess.m */; };
+		CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E8A1EC705C800596B93 /* GitHubIssueModel.m */; };
+		CDE94E941EC705C800596B93 /* GitHubLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E8C1EC705C800596B93 /* GitHubLabelModel.m */; };
+		CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E8E1EC705C800596B93 /* GitHubModels.m */; };
+		CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E901EC705C800596B93 /* GitHubRepoModel.m */; };
+		CDE94E971EC705C800596B93 /* GitHubUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E921EC705C800596B93 /* GitHubUserModel.m */; };
+		CDE94E9A1EC7073100596B93 /* GitHubApiDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E991EC7073100596B93 /* GitHubApiDataAccess.m */; };
+		CDE94E9C1EC709D700596B93 /* github_config.json in Resources */ = {isa = PBXBuildFile; fileRef = CDE94E9B1EC709D700596B93 /* github_config.json */; };
+		CDE94EA11EC712CF00596B93 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E9F1EC712CF00596B93 /* HelpVC.m */; };
+		CDE94EA21EC712CF00596B93 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE94EA01EC712CF00596B93 /* HelpVC.xib */; };
+		CDE94EA51EC716ED00596B93 /* HelpTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94EA41EC716ED00596B93 /* HelpTableView.m */; };
+		CDE94EA91EC72C2E00596B93 /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94EA81EC72C2E00596B93 /* BaseLoadingView.m */; };
+		CDE94EAC1EC72DDD00596B93 /* DefaultIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94EAB1EC72DDD00596B93 /* DefaultIndicatorView.m */; };
+		CDE94EB01EC732DF00596B93 /* HelpDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94EAE1EC732DF00596B93 /* HelpDetailVC.m */; };
+		CDE94EB11EC732DF00596B93 /* HelpDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE94EAF1EC732DF00596B93 /* HelpDetailVC.xib */; };
 		CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBA1EB884F1004B4794 /* BaseNavController.m */; };
 		CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBC1EB884F1004B4794 /* BaseTabBarController.m */; };
 		CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CBE1EB884F1004B4794 /* BaseViewController.m */; };
@@ -253,7 +274,7 @@
 		CD0B63011EC4A42F0024F25E /* ProjectsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectsVC.xib; sourceTree = "<group>"; };
 		CD0B63071EC4A4730024F25E /* ProjectsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsTableView.h; sourceTree = "<group>"; };
 		CD0B63081EC4A4730024F25E /* ProjectsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsTableView.m; sourceTree = "<group>"; };
-		CD0B630A1EC4A4A80024F25E /* projects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projects.json; sourceTree = "<group>"; };
+		CD0B630A1EC4A4A80024F25E /* ProjectsTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProjectsTableView.json; sourceTree = "<group>"; };
 		CD0B63121EC4C66D0024F25E /* ProjectDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailVC.h; sourceTree = "<group>"; };
 		CD0B63131EC4C66D0024F25E /* ProjectDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailVC.m; sourceTree = "<group>"; };
 		CD0B63141EC4C66D0024F25E /* ProjectDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectDetailVC.xib; sourceTree = "<group>"; };
@@ -262,7 +283,7 @@
 		CD2385FD1EC0CD3F007AB90B /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
 		CD2385FE1EC0CD3F007AB90B /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
 		CD2385FF1EC0CD3F007AB90B /* FeedbackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
-		CD2386021EC0CF0F007AB90B /* urls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = urls.json; sourceTree = "<group>"; };
+		CD2386021EC0CF0F007AB90B /* app_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = app_config.json; sourceTree = "<group>"; };
 		CD2386041EC0D25D007AB90B /* tabbar_controllers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tabbar_controllers.json; sourceTree = "<group>"; };
 		CD23DC941EC18621006E331B /* DebugVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugVC.h; sourceTree = "<group>"; };
 		CD23DC951EC18621006E331B /* DebugVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugVC.m; sourceTree = "<group>"; };
@@ -281,7 +302,7 @@
 		CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorModel.m; sourceTree = "<group>"; };
 		CD23DCBB1EC1E61D006E331B /* JsonServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonServices.h; sourceTree = "<group>"; };
 		CD23DCBC1EC1E61D006E331B /* JsonServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonServices.m; sourceTree = "<group>"; };
-		CD23DCBE1EC1E8B0006E331B /* setting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setting.json; sourceTree = "<group>"; };
+		CD23DCBE1EC1E8B0006E331B /* SettingTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SettingTableView.json; sourceTree = "<group>"; };
 		CD23DCD71EC35F35006E331B /* AlertServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertServices.h; sourceTree = "<group>"; };
 		CD23DCD81EC35F35006E331B /* AlertServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertServices.m; sourceTree = "<group>"; };
 		CD23DCDD1EC36017006E331B /* SCLAlertView+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView+AXWrapper.h"; sourceTree = "<group>"; };
@@ -292,6 +313,9 @@
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
+		CD6A839F1EC5F37A00A3ECC7 /* EmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailVC.h; sourceTree = "<group>"; };
+		CD6A83A01EC5F37A00A3ECC7 /* EmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailVC.m; sourceTree = "<group>"; };
+		CD6A83A11EC5F37A00A3ECC7 /* EmailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailVC.xib; sourceTree = "<group>"; };
 		CD6C67681EB9F2BC00B57279 /* BaseWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebVC.h; sourceTree = "<group>"; };
 		CD6C67691EB9F2BC00B57279 /* BaseWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebVC.m; sourceTree = "<group>"; };
 		CD77FE6D1EBEE9C2001A5787 /* TestVC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC1.h; sourceTree = "<group>"; };
@@ -335,6 +359,8 @@
 		CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
 		CD77FEC91EC0C041001A5787 /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
+		CD7AA7261EC85F6000865FC9 /* CacheDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheDataAccess.h; sourceTree = "<group>"; };
+		CD7AA7271EC85F6000865FC9 /* CacheDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheDataAccess.m; sourceTree = "<group>"; };
 		CD91CB101EC42EA500984F71 /* HitTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitTestVC.h; sourceTree = "<group>"; };
 		CD91CB111EC42EA500984F71 /* HitTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HitTestVC.m; sourceTree = "<group>"; };
 		CD91CB121EC42EA500984F71 /* HitTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HitTestVC.xib; sourceTree = "<group>"; };
@@ -445,6 +471,39 @@
 		CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AXExtension.m"; sourceTree = "<group>"; };
 		CDE91FC91EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CDE94E671EC6FB7E00596B93 /* NetworkDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDataAccess.h; sourceTree = "<group>"; };
+		CDE94E681EC6FB7E00596B93 /* NetworkDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDataAccess.m; sourceTree = "<group>"; };
+		CDE94E6D1EC6FDB300596B93 /* GitHubServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubServices.h; sourceTree = "<group>"; };
+		CDE94E6E1EC6FDB300596B93 /* GitHubServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubServices.m; sourceTree = "<group>"; };
+		CDE94E701EC6FE1D00596B93 /* DeveloperDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeveloperDataAccess.h; sourceTree = "<group>"; };
+		CDE94E711EC6FE1D00596B93 /* DeveloperDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeveloperDataAccess.m; sourceTree = "<group>"; };
+		CDE94E731EC6FFDA00596B93 /* AppDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDataAccess.h; sourceTree = "<group>"; };
+		CDE94E741EC6FFDA00596B93 /* AppDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDataAccess.m; sourceTree = "<group>"; };
+		CDE94E891EC705C800596B93 /* GitHubIssueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubIssueModel.h; sourceTree = "<group>"; };
+		CDE94E8A1EC705C800596B93 /* GitHubIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubIssueModel.m; sourceTree = "<group>"; };
+		CDE94E8B1EC705C800596B93 /* GitHubLabelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubLabelModel.h; sourceTree = "<group>"; };
+		CDE94E8C1EC705C800596B93 /* GitHubLabelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubLabelModel.m; sourceTree = "<group>"; };
+		CDE94E8D1EC705C800596B93 /* GitHubModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubModels.h; sourceTree = "<group>"; };
+		CDE94E8E1EC705C800596B93 /* GitHubModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubModels.m; sourceTree = "<group>"; };
+		CDE94E8F1EC705C800596B93 /* GitHubRepoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubRepoModel.h; sourceTree = "<group>"; };
+		CDE94E901EC705C800596B93 /* GitHubRepoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubRepoModel.m; sourceTree = "<group>"; };
+		CDE94E911EC705C800596B93 /* GitHubUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubUserModel.h; sourceTree = "<group>"; };
+		CDE94E921EC705C800596B93 /* GitHubUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubUserModel.m; sourceTree = "<group>"; };
+		CDE94E981EC7073100596B93 /* GitHubApiDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubApiDataAccess.h; sourceTree = "<group>"; };
+		CDE94E991EC7073100596B93 /* GitHubApiDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubApiDataAccess.m; sourceTree = "<group>"; };
+		CDE94E9B1EC709D700596B93 /* github_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = github_config.json; sourceTree = "<group>"; };
+		CDE94E9E1EC712CF00596B93 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
+		CDE94E9F1EC712CF00596B93 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
+		CDE94EA01EC712CF00596B93 /* HelpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
+		CDE94EA31EC716ED00596B93 /* HelpTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpTableView.h; sourceTree = "<group>"; };
+		CDE94EA41EC716ED00596B93 /* HelpTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpTableView.m; sourceTree = "<group>"; };
+		CDE94EA71EC72C2E00596B93 /* BaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLoadingView.h; sourceTree = "<group>"; };
+		CDE94EA81EC72C2E00596B93 /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
+		CDE94EAA1EC72DDD00596B93 /* DefaultIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultIndicatorView.h; sourceTree = "<group>"; };
+		CDE94EAB1EC72DDD00596B93 /* DefaultIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultIndicatorView.m; sourceTree = "<group>"; };
+		CDE94EAD1EC732DF00596B93 /* HelpDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDetailVC.h; sourceTree = "<group>"; };
+		CDE94EAE1EC732DF00596B93 /* HelpDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpDetailVC.m; sourceTree = "<group>"; };
+		CDE94EAF1EC732DF00596B93 /* HelpDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpDetailVC.xib; sourceTree = "<group>"; };
 		CDF18CB91EB884F1004B4794 /* BaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavController.h; sourceTree = "<group>"; };
 		CDF18CBA1EB884F1004B4794 /* BaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavController.m; sourceTree = "<group>"; };
 		CDF18CBB1EB884F1004B4794 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
@@ -551,7 +610,8 @@
 			children = (
 				CD2386041EC0D25D007AB90B /* tabbar_controllers.json */,
 				CD0645A91EB3AA78007FBF06 /* view_controller_titles.json */,
-				CD2386021EC0CF0F007AB90B /* urls.json */,
+				CD2386021EC0CF0F007AB90B /* app_config.json */,
+				CDE94E9B1EC709D700596B93 /* github_config.json */,
 				CD0645AA1EB3AA78007FBF06 /* Localizable.xlsx */,
 			);
 			path = resources;
@@ -578,7 +638,7 @@
 				CD0B63011EC4A42F0024F25E /* ProjectsVC.xib */,
 				CD0B63071EC4A4730024F25E /* ProjectsTableView.h */,
 				CD0B63081EC4A4730024F25E /* ProjectsTableView.m */,
-				CD0B630A1EC4A4A80024F25E /* projects.json */,
+				CD0B630A1EC4A4A80024F25E /* ProjectsTableView.json */,
 				CD0B63121EC4C66D0024F25E /* ProjectDetailVC.h */,
 				CD0B63131EC4C66D0024F25E /* ProjectDetailVC.m */,
 				CD0B63141EC4C66D0024F25E /* ProjectDetailVC.xib */,
@@ -644,6 +704,16 @@
 				CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */,
 			);
 			path = theme;
+			sourceTree = "<group>";
+		};
+		CD6A839E1EC5F36A00A3ECC7 /* email */ = {
+			isa = PBXGroup;
+			children = (
+				CD6A839F1EC5F37A00A3ECC7 /* EmailVC.h */,
+				CD6A83A01EC5F37A00A3ECC7 /* EmailVC.m */,
+				CD6A83A11EC5F37A00A3ECC7 /* EmailVC.xib */,
+			);
+			path = email;
 			sourceTree = "<group>";
 		};
 		CD6C67671EB9F2BC00B57279 /* web */ = {
@@ -758,8 +828,18 @@
 			children = (
 				CD77FE9F1EBF5DD5001A5787 /* BaseDataAccess.h */,
 				CD77FEA01EBF5DD5001A5787 /* BaseDataAccess.m */,
+				CDE94E701EC6FE1D00596B93 /* DeveloperDataAccess.h */,
+				CDE94E711EC6FE1D00596B93 /* DeveloperDataAccess.m */,
+				CDE94E981EC7073100596B93 /* GitHubApiDataAccess.h */,
+				CDE94E991EC7073100596B93 /* GitHubApiDataAccess.m */,
+				CD7AA7261EC85F6000865FC9 /* CacheDataAccess.h */,
+				CD7AA7271EC85F6000865FC9 /* CacheDataAccess.m */,
+				CDE94E731EC6FFDA00596B93 /* AppDataAccess.h */,
+				CDE94E741EC6FFDA00596B93 /* AppDataAccess.m */,
 				CD0B62EB1EC454DF0024F25E /* AssetsDataAccess.h */,
 				CD0B62EC1EC454DF0024F25E /* AssetsDataAccess.m */,
+				CDE94E671EC6FB7E00596B93 /* NetworkDataAccess.h */,
+				CDE94E681EC6FB7E00596B93 /* NetworkDataAccess.m */,
 			);
 			path = data_access;
 			sourceTree = "<group>";
@@ -777,6 +857,8 @@
 				CD23DCBC1EC1E61D006E331B /* JsonServices.m */,
 				CD23DCD71EC35F35006E331B /* AlertServices.h */,
 				CD23DCD81EC35F35006E331B /* AlertServices.m */,
+				CDE94E6D1EC6FDB300596B93 /* GitHubServices.h */,
+				CDE94E6E1EC6FDB300596B93 /* GitHubServices.m */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -900,12 +982,14 @@
 		CDBB39B91EB9D96B00E8ED25 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CDE94E9D1EC712BE00596B93 /* help */,
 				CD0B62FE1EC4A4130024F25E /* projects */,
 				CD91CB211EC44BDB00984F71 /* cache */,
 				CD91CB151EC437C300984F71 /* custom */,
 				CD23DCAB1EC1E152006E331B /* theme */,
 				CD23DC931EC18613006E331B /* debug */,
 				CD2385F91EC0CD18007AB90B /* feedback */,
+				CD6A839E1EC5F36A00A3ECC7 /* email */,
 				CD77FE871EBF5684001A5787 /* default */,
 				CD6C67671EB9F2BC00B57279 /* web */,
 				CDBB39BA1EB9D96B00E8ED25 /* home */,
@@ -951,9 +1035,9 @@
 				CDBB39C31EB9D96B00E8ED25 /* SettingVC.h */,
 				CDBB39C41EB9D96B00E8ED25 /* SettingVC.m */,
 				CDBB39C51EB9D96B00E8ED25 /* SettingVC.xib */,
-				CD23DCBE1EC1E8B0006E331B /* setting.json */,
 				CDBB3B0D1EB9E19D00E8ED25 /* SettingTableView.h */,
 				CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */,
+				CD23DCBE1EC1E8B0006E331B /* SettingTableView.json */,
 				CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */,
 			);
 			path = setting;
@@ -962,6 +1046,7 @@
 		CDBB39CC1EB9D97900E8ED25 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				CDE94E881EC705C800596B93 /* GitHubModels */,
 				CD77FEB01EBF6583001A5787 /* datamap.json */,
 			);
 			path = models;
@@ -1027,6 +1112,49 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		CDE94E881EC705C800596B93 /* GitHubModels */ = {
+			isa = PBXGroup;
+			children = (
+				CDE94E891EC705C800596B93 /* GitHubIssueModel.h */,
+				CDE94E8A1EC705C800596B93 /* GitHubIssueModel.m */,
+				CDE94E8B1EC705C800596B93 /* GitHubLabelModel.h */,
+				CDE94E8C1EC705C800596B93 /* GitHubLabelModel.m */,
+				CDE94E8D1EC705C800596B93 /* GitHubModels.h */,
+				CDE94E8E1EC705C800596B93 /* GitHubModels.m */,
+				CDE94E8F1EC705C800596B93 /* GitHubRepoModel.h */,
+				CDE94E901EC705C800596B93 /* GitHubRepoModel.m */,
+				CDE94E911EC705C800596B93 /* GitHubUserModel.h */,
+				CDE94E921EC705C800596B93 /* GitHubUserModel.m */,
+			);
+			path = GitHubModels;
+			sourceTree = "<group>";
+		};
+		CDE94E9D1EC712BE00596B93 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				CDE94E9E1EC712CF00596B93 /* HelpVC.h */,
+				CDE94E9F1EC712CF00596B93 /* HelpVC.m */,
+				CDE94EA01EC712CF00596B93 /* HelpVC.xib */,
+				CDE94EA31EC716ED00596B93 /* HelpTableView.h */,
+				CDE94EA41EC716ED00596B93 /* HelpTableView.m */,
+				CDE94EAD1EC732DF00596B93 /* HelpDetailVC.h */,
+				CDE94EAE1EC732DF00596B93 /* HelpDetailVC.m */,
+				CDE94EAF1EC732DF00596B93 /* HelpDetailVC.xib */,
+			);
+			path = help;
+			sourceTree = "<group>";
+		};
+		CDE94EA61EC72C2200596B93 /* loading */ = {
+			isa = PBXGroup;
+			children = (
+				CDE94EA71EC72C2E00596B93 /* BaseLoadingView.h */,
+				CDE94EA81EC72C2E00596B93 /* BaseLoadingView.m */,
+				CDE94EAA1EC72DDD00596B93 /* DefaultIndicatorView.h */,
+				CDE94EAB1EC72DDD00596B93 /* DefaultIndicatorView.m */,
+			);
+			path = loading;
+			sourceTree = "<group>";
+		};
 		CDF18CB61EB884F1004B4794 /* classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1060,6 +1188,7 @@
 		CDF18CD61EB8886C004B4794 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				CDE94EA61EC72C2200596B93 /* loading */,
 				CD0B62EE1EC45E060024F25E /* button */,
 				CD77FE8D1EBF590F001A5787 /* switch */,
 				CDBB3AFF1EB9DF6B00E8ED25 /* table */,
@@ -1234,9 +1363,10 @@
 			files = (
 				CD0B63031EC4A42F0024F25E /* ProjectsVC.xib in Resources */,
 				CD77FE8C1EBF5697001A5787 /* DefaultViewController.xib in Resources */,
-				CD0B630B1EC4A4A80024F25E /* projects.json in Resources */,
+				CD0B630B1EC4A4A80024F25E /* ProjectsTableView.json in Resources */,
 				CDBB39D71EB9DD1400E8ED25 /* BlogVC.xib in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
+				CD6A83A31EC5F37A00A3ECC7 /* EmailVC.xib in Resources */,
 				CD77FE7A1EBEF09D001A5787 /* PopView.xib in Resources */,
 				CD23DCB01EC1E166006E331B /* ThemeColorVC.xib in Resources */,
 				CD91CB261EC44BF000984F71 /* RemoveCacheVC.xib in Resources */,
@@ -1246,6 +1376,7 @@
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* view_controller_titles.json in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
+				CDE94E9C1EC709D700596B93 /* github_config.json in Resources */,
 				CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */,
 				8579EF081E6BEDF900C33881 /* Main.storyboard in Resources */,
 				CDBB39C71EB9D96B00E8ED25 /* AXLogVC.xib in Resources */,
@@ -1255,11 +1386,13 @@
 				CDBB39C91EB9D96B00E8ED25 /* HomeVC.xib in Resources */,
 				CD23DC981EC18621006E331B /* DebugVC.xib in Resources */,
 				CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */,
-				CD23DCBF1EC1E8B0006E331B /* setting.json in Resources */,
+				CDE94EB11EC732DF00596B93 /* HelpDetailVC.xib in Resources */,
+				CD23DCBF1EC1E8B0006E331B /* SettingTableView.json in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CD91CB141EC42EA500984F71 /* HitTestVC.xib in Resources */,
 				CD2386011EC0CD3F007AB90B /* FeedbackVC.xib in Resources */,
-				CD2386031EC0CF0F007AB90B /* urls.json in Resources */,
+				CDE94EA21EC712CF00596B93 /* HelpVC.xib in Resources */,
+				CD2386031EC0CF0F007AB90B /* app_config.json in Resources */,
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1339,28 +1472,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE94EB01EC732DF00596B93 /* HelpDetailVC.m in Sources */,
 				CDBB3B271EB9E80F00E8ED25 /* MJFoundation.m in Sources */,
+				CDE94E9A1EC7073100596B93 /* GitHubApiDataAccess.m in Sources */,
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */,
 				CDBB39C81EB9D96B00E8ED25 /* HomeVC.m in Sources */,
 				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
 				CD23DCAF1EC1E166006E331B /* ThemeColorVC.m in Sources */,
 				CD77FEA11EBF5DD5001A5787 /* BaseDataAccess.m in Sources */,
+				CDE94E751EC6FFDA00596B93 /* AppDataAccess.m in Sources */,
 				CD23DCDF1EC36017006E331B /* SCLAlertView+AXWrapper.m in Sources */,
 				CD77FEAA1EBF5E0D001A5787 /* CacheServices.m in Sources */,
 				CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */,
 				CD77FEB81EBF67F4001A5787 /* BaseTableModel.m in Sources */,
+				CDE94E691EC6FB7E00596B93 /* NetworkDataAccess.m in Sources */,
 				CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */,
 				CDBB3B291EB9E80F00E8ED25 /* MJPropertyKey.m in Sources */,
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
 				CD6C676A1EB9F2BC00B57279 /* BaseWebVC.m in Sources */,
 				CD23DCBA1EC1E5A4006E331B /* ThemeColorModel.m in Sources */,
+				CDE94E721EC6FE1D00596B93 /* DeveloperDataAccess.m in Sources */,
+				CDE94EA91EC72C2E00596B93 /* BaseLoadingView.m in Sources */,
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				CD0B62FD1EC473CB0024F25E /* CacheTableView.m in Sources */,
 				CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */,
 				CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */,
 				CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */,
+				CDE94E941EC705C800596B93 /* GitHubLabelModel.m in Sources */,
 				CD77FE931EBF594B001A5787 /* SettingSwitch.m in Sources */,
 				CD2385F81EC0C5BA007AB90B /* AppServices.m in Sources */,
 				CD0B62ED1EC454DF0024F25E /* AssetsDataAccess.m in Sources */,
@@ -1370,31 +1510,41 @@
 				CD0B63151EC4C66D0024F25E /* ProjectDetailVC.m in Sources */,
 				CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */,
 				CD77FE751EBEE9D0001A5787 /* TestVC3.m in Sources */,
+				CD6A83A21EC5F37A00A3ECC7 /* EmailVC.m in Sources */,
 				CD77FEBB1EBF6805001A5787 /* BaseTableView.m in Sources */,
+				CDE94E971EC705C800596B93 /* GitHubUserModel.m in Sources */,
 				CDBB3B281EB9E80F00E8ED25 /* MJProperty.m in Sources */,
 				CD77FE6F1EBEE9C2001A5787 /* TestVC1.m in Sources */,
+				CDE94EAC1EC72DDD00596B93 /* DefaultIndicatorView.m in Sources */,
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
 				CD91CB191EC437D800984F71 /* CustomTableVC.m in Sources */,
 				CD0B63021EC4A42F0024F25E /* ProjectsVC.m in Sources */,
 				CD77FE781EBEF095001A5787 /* PopView.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
 				CD23DCB71EC1E3A4006E331B /* ThemeColorTableView.m in Sources */,
+				CD7AA7281EC85F6000865FC9 /* CacheDataAccess.m in Sources */,
 				CDBB3B2B1EB9E80F00E8ED25 /* NSObject+MJClass.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CDBB39CA1EB9D96B00E8ED25 /* SettingVC.m in Sources */,
 				CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */,
+				CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */,
 				CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */,
 				CDBB39C61EB9D96B00E8ED25 /* AXLogVC.m in Sources */,
 				CD77FEA71EBF5DF3001A5787 /* DataAccessLayer.m in Sources */,
 				CD91CB131EC42EA500984F71 /* HitTestVC.m in Sources */,
+				CDE94E6F1EC6FDB300596B93 /* GitHubServices.m in Sources */,
 				CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */,
+				CDE94EA51EC716ED00596B93 /* HelpTableView.m in Sources */,
 				CD23DC971EC18621006E331B /* DebugVC.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */,
 				CD77FE9C1EBF5D8B001A5787 /* BaseServices.m in Sources */,
 				CD77FEA41EBF5DE7001A5787 /* ServicesLayer.m in Sources */,
 				CD23DCD91EC35F35006E331B /* AlertServices.m in Sources */,
+				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
+				CDE94EA11EC712CF00596B93 /* HelpVC.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
+				CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */,
 				CD91CB251EC44BF000984F71 /* RemoveCacheVC.m in Sources */,
 				CD23DCBD1EC1E61D006E331B /* JsonServices.m in Sources */,
 				CD77FE8B1EBF5697001A5787 /* DefaultViewController.m in Sources */,

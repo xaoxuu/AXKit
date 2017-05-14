@@ -12,6 +12,11 @@
 //#define kURL_BLOG @"https://blog.xaoxuu.com"
 
 
+
+@class BaseTableModelSection;
+typedef NSMutableArray<__kindof BaseTableModelSection *> * BaseTableModelListType;
+
+
 @interface DemoMarcos : NSObject
 
 @end

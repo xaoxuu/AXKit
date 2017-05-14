@@ -33,6 +33,16 @@ CG_EXTERN const CGFloat kButtonHeight;
 
 CG_EXTERN UIFont *kFontNormal();
 
+// @xaoxuu: 重载冷却（1秒内最多加载一次数据）
+CG_EXTERN NSTimeInterval reloadCooldown;
+// @xaoxuu: 重载计时id（id相同则共享冷却时间）
+FOUNDATION_EXTERN NSString *reloadToken;
+
+// @xaoxuu: 刷新按钮的冷却（1秒内最多接受一次点击）
+CG_EXTERN NSTimeInterval reloadBtnCooldown;
+// @xaoxuu: 重载计时id（id相同则共享冷却时间）
+FOUNDATION_EXTERN NSString *reloadBtnToken;
+
 
 
 @interface DemoConst : NSObject

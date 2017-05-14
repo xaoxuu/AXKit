@@ -12,6 +12,10 @@
 @implementation SettingTableView
 
 
+- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
+    return services.cache.settingList;
+}
+
 - (BOOL)tableViewCellShouldPushToViewController:(__kindof UIViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model{
     
     if ([targetVC isKindOfClass:[FeedbackVC class]]) {
@@ -30,7 +34,7 @@
 - (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
     if (section == 3) {
         if (row == 0) {
-            return services.cache.cacheBytes.append(@"bytes");
+            return services.cache.cachedFileSize;
         }
     }
     return nil;

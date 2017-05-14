@@ -36,9 +36,12 @@ DataAccessLayer *instance = nil;
         });
     }
     
+    _developer = [DeveloperDataAccess new];
+    _app = [AppDataAccess new];
     _assets = [AssetsDataAccess new];
-    
-    
+    _cache = [CacheDataAccess new];
+    _network = [NetworkDataAccess new];
+    _github = [GitHubApiDataAccess new];
     
     return instance;
 }

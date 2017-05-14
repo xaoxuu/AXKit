@@ -8,6 +8,9 @@
 
 #import "JsonServices.h"
 #import "MJExtension.h"
+#import "DataAccessLayer.h"
+
+#define daLayer [DataAccessLayer sharedInstance]
 
 #define CACHE_COLORS @"theme_color"
 
@@ -36,16 +39,16 @@
     return ^(NSString *json){
         BaseTableModelListType list = json.json.cachePath.readArchivedObject;
         if (!list) {
-            list = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:self.sections(json)];
+            list = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:self.jsonInBundle(json)];
             if (!list) {
-                list = [NSArray array];
+                list = [NSMutableArray array];
             }
         }
         return list;
     };
 }
 
-- (NSArray *(^)(NSString *))sections{
+- (NSArray *(^)(NSString *))jsonInBundle{
     return ^(NSString *json){
         NSDictionary *dict = json.json.mainBundlePath.readJson;
         return dict[@"sections"];
@@ -61,7 +64,7 @@
         NSArray *sections = jsonFile[@"sections"];
         _colors = [ThemeColorModelSection mj_objectArrayWithKeyValuesArray:sections];
         if (!_colors) {
-            _colors = [NSArray array];
+            _colors = [NSMutableArray array];
         }
     }
     return _colors;

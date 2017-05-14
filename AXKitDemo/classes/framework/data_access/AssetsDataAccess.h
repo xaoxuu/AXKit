@@ -30,7 +30,8 @@
 
 @interface SettingAssetsDataAccess : NSObject
 
-
+// @xaoxuu: placeholder
+@property (copy, nonatomic) NSString *placeholder;
 
 
 @end

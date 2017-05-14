@@ -41,7 +41,7 @@ ServicesLayer *services = nil;
     _cache = [CacheServices new];
     _json = [JsonServices new];
     _alert = [AlertServices new];
-    
+    _git = [GitHubServices new];
     
     return services;
 }

@@ -155,8 +155,12 @@
 }
 
 - (void)dealloc{
-    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
-    [self.webView removeObserver:self forKeyPath:@"title"];
+    @try {
+        [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+        [self.webView removeObserver:self forKeyPath:@"title"];
+    }
+    @catch (NSException *exception) {
+    }
 }
 
 @end

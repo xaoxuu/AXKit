@@ -14,8 +14,8 @@
             "rows":[
                 {
                     "title":"关于",
-                    "desc":"关于本app",
-                    "icon":"https://xaoxuu.com/images/avatar.png",
+                    "desc":"about axkit",
+                    "icon":"setting_about",
                     "target":"default",
                     "cmd":""
                 },
@@ -28,25 +28,32 @@
                 },
                 {
                     "title":"项目",
-                    "desc":"xaoxuu's blog",
-                    "icon":"https://xaoxuu.com/images/avatar.png",
+                    "desc":"xaoxuu's proj",
+                    "icon":"setting_projects",
                     "target":"ProjectsVC",
                     "cmd":""
                 },
                 {
                     "title":"GitHub反馈",
                     "desc":"bug反馈、功能建议",
-                    "icon":"setting_feedback",
+                    "icon":"setting_feedback_github",
                     "target":"FeedbackVC",
                     "cmd":"feedbackURL"
                 },
                 {
                     "title":"邮件反馈",
                     "desc":"直接发邮件给开发者",
-                    "icon":"setting_feedback",
+                    "icon":"setting_feedback_email",
                     "target":"FeedbackVC",
                     "cmd":"feedbackEmail"
-                }
+                    },
+                    {
+                    "title":"帮助",
+                    "desc":"",
+                    "icon":"setting_help",
+                    "target":"HelpVC",
+                    "cmd":""
+                    }
             ]
         },
         {

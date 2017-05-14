@@ -22,6 +22,9 @@
     
     [self _base_setupTopBar];
     [self _base_setupContentView];
+    [self _base_setupTableView];
+    
+    
     
     [self setupChildViewControllerUIKit];
     
@@ -40,10 +43,25 @@
 
 
 - (void)setupChildViewControllerUIKit{
-    if ([self respondsToSelector:@selector(setupTableView)]) {
-        [self setupTableView];
+    
+    if ([self respondsToSelector:@selector(setupRightRefreshBarButton:)]) {
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem * _Nonnull sender) {
+            sender.enabled = NO;
+            [NSBlockOperation ax_delay:0 cooldown:reloadBtnCooldown token:reloadBtnToken performInMainQueue:^{
+                [self setupRightRefreshBarButton:sender];
+                
+                [NSBlockOperation ax_delay:reloadBtnCooldown performInMainQueue:^{
+                    sender.enabled = YES;
+                }];
+            }];
+        }];
+        
     }
     
+    if ([self respondsToSelector:@selector(setupTableView)]) {
+        self.tableView = [self setupTableView];
+        [self.view addSubview:self.tableView];
+    }
     if ([self respondsToSelector:@selector(setupButtons)]) {
         [self setupButtons];
     }
@@ -97,6 +115,11 @@
             break;
         }
     }
+}
+
+- (void)_base_setupTableView{
+    
+    
 }
 
 

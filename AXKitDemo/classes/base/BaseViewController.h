@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTableView.h"
 
 typedef NS_ENUM(NSUInteger, ViewControllerHeight) {
     ViewControllerHeightFullScreen,
@@ -23,7 +24,11 @@ typedef NS_ENUM(NSUInteger, ViewControllerHeight) {
 
 @optional
 
-- (void)setupTableView;
+- (BaseTableView *)setupTableView;
+
+- (void)setupRightRefreshBarButton:(UIBarButtonItem *)sender;
+
+
 - (void)setupButtons;
 
 
@@ -34,5 +39,8 @@ typedef NS_ENUM(NSUInteger, ViewControllerHeight) {
 
 
 @interface BaseViewController : UIViewController <BaseViewControllerDelegate>
+
+// @xaoxuu: table view
+@property (strong, nonatomic) __kindof BaseTableView *tableView;
 
 @end

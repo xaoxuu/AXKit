@@ -10,11 +10,13 @@
 #import "UITableView+Creator.h"
 #import "MJExtension.h"
 #import "BaseTableViewCell.h"
+#import "DefaultIndicatorView.h"
+
+
 
 @interface BaseTableView () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
-// @xaoxuu: table view
-@property (strong, nonatomic) UITableView *tableView;
+
 
 // @xaoxuu: list
 @property (strong, nonatomic) BaseTableModelListType dataList;
@@ -24,6 +26,8 @@
 // @xaoxuu: row height
 @property (assign, nonatomic) CGFloat rowHeight;
 
+// @xaoxuu: indicator
+@property (strong, nonatomic) DefaultIndicatorView *indicator;
 
 @end
 
@@ -40,13 +44,20 @@
 }
 
 
-- (NSString *)sourceJsonFileNameForTableView:(BaseTableView *)tableView{
-    return @"setting";
+
+
+- (instancetype)init{
+    if (self = [super initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)]) {
+        
+    }
+    return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         _cellNibName = @"BaseTableViewCell";
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        self.indicator = [DefaultIndicatorView defaultIndicatorAddToView:self];
         [self setupTableView];
         self.rowHeight = 44;
     }
@@ -55,47 +66,127 @@
 
 - (void)setupTableView{
     self.tableView = [UITableView ax_tableViewWithView:self frame:self.bounds style:UITableViewStyleGrouped registerNibForCellReuseIdentifier:self.cellNibName];
-    
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     self.tableView.sectionHeaderHeight = kMarginNormal;
     self.tableView.sectionFooterHeight = kMarginNormal;
     
+    if ([self respondsToSelector:@selector(setupTableViewHeader:)]) {
+        UIView *view = UIViewWithHeight(kMargin16);
+        self.tableView.tableHeaderView = view;
+        [self setupTableViewHeader:view];
+    }
+    if ([self respondsToSelector:@selector(setupTableViewFooter:)]) {
+        UIView *view = UIViewWithHeight(kMargin16);
+        self.tableView.tableFooterView = view;
+        [self setupTableViewFooter:view];
+    }
     
-    [self setupTableViewHeader:viewWithHeight(kMargin16)];
-    [self setupTableViewFooter:viewWithHeight(kMargin16)];
+    if ([self respondsToSelector:@selector(setupEditEnable)]) {
+        self.tableView.editing = [self setupEditEnable];
+    } else {
+        self.tableView.editing = NO;
+    }
     
 }
 
 - (void)setRowHeight:(CGFloat)rowHeight{
     _rowHeight = rowHeight;
+//    [super setRowHeight:rowHeight];
     self.tableView.rowHeight = rowHeight;
 }
 
 - (void)setupTableViewHeader:(UIView *)header{
-    self.tableView.tableHeaderView = header;
+    
 }
 
 - (void)setupTableViewFooter:(UIView *)footer{
-    self.tableView.tableFooterView = footer;
+    
 }
 
 
 
 - (BaseTableModelListType)dataList{
-    _dataList = [self dataListForTableView:self.tableView];
+    if (!_dataList.count) {
+        // @xaoxuu: 先用上次的缓存填充界面
+        if (!_dataList) {
+            _dataList = [services.cache loadObjWithKey:NSStringFromClass([self class])];
+        }
+        // @xaoxuu: 本地资源
+        if ([self respondsToSelector:@selector(dataListForTableView:)]) {
+            _dataList = [self dataListForTableView:self.tableView];
+            if (_dataList.count) {
+                // @xaoxuu: 缓存列表
+                [services.cache cacheObj:_dataList forKey:NSStringFromClass([self class]) completion:^{
+                    
+                }];
+                [self.indicator stopAnimating];
+            }
+        }
+        // @xaoxuu: 网络资源
+        if ([self respondsToSelector:@selector(setupTableViewWithDataSource:)]) {
+            [self.indicator startAnimating];
+            [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:reloadToken performInBackground:^{
+                [self setupTableViewWithDataSource:^(BaseTableModelListType sections) {
+                    _dataList = sections;
+                    // @xaoxuu: 缓存列表
+                    [services.cache cacheObj:_dataList forKey:NSStringFromClass([self class]) completion:^{
+                        
+                    }];
+                    // @xaoxuu: 重载界面
+                    [self reloadTableViewWithDataSource:sections];
+                    
+                }];
+            }];
+        }
+        
+        
+        if (!_dataList) {
+            // @xaoxuu: 空数组
+            _dataList = [NSMutableArray array];
+        }
+    }
     return _dataList;
 }
 
 
-- (void)reloadData{
-    [self.tableView reloadData];
+#pragma mark - 功能
+
+// @xaoxuu: 根据加载到的数据刷新tableview
+- (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList{
+    self.dataList = dataList;
+    [self reloadTableView];
 }
 
+
+- (void)reloadTableView{
+    [NSBlockOperation ax_delay:0 performInMainQueue:^{
+        if (self.dataList.count) {
+            [self.indicator stopAnimating];
+        } else {
+            [self.indicator startAnimating];
+        }
+        [self.tableView reloadData];
+        for (UIBarButtonItem *item in self.controller.navigationItem.rightBarButtonItems) {
+            item.enabled = YES;
+        }
+    }];
+}
+
+- (void)reloadDataSourceAndRefreshTableView{
+    [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:@"reloadDataSourceAndRefreshTableView" performInMainQueue:^{
+        [self.dataList removeAllObjects];
+        [self reloadTableView];
+    }];
+}
+
+- (void)deleteCellInSection:(NSUInteger)section row:(NSUInteger)row{
+    [self.tableView deleteRow:row inSection:section withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.dataList[section].rows removeObjectAtIndex:row];
+}
 
 #pragma mark - base table view delegate
-- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
-    return services.cache.settingList;
-}
+
 
 #pragma mark - data source
 
@@ -162,32 +253,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSUInteger section = indexPath.section;
+    NSUInteger row = indexPath.row;
     if ([self respondsToSelector:@selector(tableViewCellDidSelectedInSection:row:)]) {
-        [self tableViewCellDidSelectedInSection:indexPath.section row:indexPath.row];
+        [self tableViewCellDidSelectedInSection:section row:row];
     }
-    BaseTableModelRow *model = self.dataList[indexPath.section].rows[indexPath.row];
+    BaseTableModelRow *model = self.dataList[section].rows[row];
     if (!model) {
         return;
     }
     BaseViewController *vc = (BaseViewController *)UIViewControllerFromString(model.target);
     if (vc) {
         vc.title = NSLocalizedString(model.title, nil);
-        if ([self respondsToSelector:@selector(tableViewCellShouldPushToViewController:withModel:)]) {
-            if ([self tableViewCellShouldPushToViewController:vc withModel:model]) {
-                [self.controller.navigationController pushViewController:vc animated:YES];
-            }
-        } else {
-            [self.controller.navigationController pushViewController:vc animated:YES];
-        }
-        
+        [self tryToPushToViewController:vc withModel:model section:section row:row];
     } else if (model.target.length) {
-        UIViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
-        [self.controller.navigationController pushViewController:vc animated:YES];
+        DefaultViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
+        [self tryToPushToViewController:vc withModel:model section:section row:row];
     }
     if ([self respondsToSelector:@selector(tableViewCellDidSelected:)]) {
         [self tableViewCellDidSelected:model];
     }
 }
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -199,6 +286,22 @@
 //- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
 //    return self.dataList[section].footer_height.floatValue;
 //}
+
+
+
+#pragma mark - util
+
+- (void)tryToPushToViewController:(__kindof BaseViewController *)targetVC withModel:(BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
+    if ([self respondsToSelector:@selector(tableViewCellShouldPushToViewController:withModel:section:row:)]) {
+        if ([self tableViewCellShouldPushToViewController:targetVC withModel:model section:section row:row]) {
+            [self.controller.navigationController pushViewController:targetVC animated:YES];
+        }
+    } else {
+        [self.controller.navigationController pushViewController:targetVC animated:YES];
+    }
+}
+
+
 
 
 @end

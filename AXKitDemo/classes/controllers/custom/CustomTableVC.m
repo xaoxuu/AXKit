@@ -43,6 +43,7 @@
             CGFloat height = self.lb_detail.text.floatValue;
             height = AXMakeFloatInRange(height, AXFloatRangeMake(0, 1000));
             self.lb_detail.text = NSStringFromCGFloat(height);
+            
             [services.cache updateSetting:^(BaseTableModelListType setting) {
                 for (BaseTableModelSection *sec in setting) {
                     sec.footer_height = NSStringFromCGFloat(height);

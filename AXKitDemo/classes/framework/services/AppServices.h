@@ -16,8 +16,6 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 @interface AppServices : BaseServices
 
 
-// @xaoxuu: json file
-@property (strong, nonatomic) NSDictionary *urlsFile;
 
 
 // @xaoxuu: setting icon placeholder

@@ -15,7 +15,7 @@
 @implementation FeedbackVC
 
 - (void)viewDidLoad {
-    self.urlStr = services.app.urlsFile[self.urlStr];
+    self.urlStr = services.app.feedbackURL;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     

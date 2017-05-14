@@ -27,6 +27,10 @@
 @implementation SettingAssetsDataAccess
 
 
+- (NSString *)placeholder{
+    return @"setting_default";
+}
+
 
 @end
 

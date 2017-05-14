@@ -29,10 +29,12 @@
 }
 
 
-- (void)setupTableView{
-    self.projectTable = [[ProjectsTableView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:self.projectTable];
+- (BaseTableView *)setupTableView{
+    return [[ProjectsTableView alloc] initWithFrame:self.view.bounds];
 }
+
+
+
 
 
 

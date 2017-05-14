@@ -8,8 +8,13 @@
 
 #import "CacheServices.h"
 #import "MJExtension.h"
+#import "DataAccessLayer.h"
 
-#define CACHE_SETTING @"setting"
+#define daLayer [DataAccessLayer sharedInstance]
+
+// @xaoxuu: 务必保证：【key = json文件名 = tableview类名】
+static NSString *key_setting = @"SettingTableView";
+static NSString *key_projects = @"ProjectsTableView";
 
 @interface CacheServices ()
 
@@ -22,7 +27,12 @@
 // @xaoxuu: proj list
 @property (strong, nonatomic) BaseTableModelListType projectList;
 
+
+
 @end
+
+
+
 
 @implementation CacheServices
 
@@ -36,24 +46,65 @@
 }
 
 
+
+
+#pragma mark - 指定文件
+
+- (void)cacheObj:(BaseTableModelListType)obj forKey:(NSString *)key completion:(void (^)())completion{
+    [daLayer.cache cacheObj:obj forKey:key completion:^{
+        AXLogSuccess(@"%@ 已完成缓存",key);
+        [self asyncCalculateCache];
+    } fail:^{
+        AXLogFail(@"%@ 缓存失败",key);
+    }];
+}
+
+- (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion{
+    [daLayer.cache removeObjWithKey:key completion:^{
+        AXLogSuccess(@"%@ 已清除缓存",key);
+        [self asyncCalculateCache];
+    } fail:^{
+        AXLogFail(@"%@ 清除缓存失败",key);
+    }];
+}
+
+- (BaseTableModelListType)loadObjWithKey:(NSString *)key{
+    return [daLayer.cache loadObjWithKey:key];
+}
+
+
+
+#pragma mark - 更新
+
+- (void)updateSetting:(void (^)(BaseTableModelListType setting))update{
+    if (update) {
+        update(self.settingList);
+        [self cacheObj:self.settingList forKey:key_setting completion:^{
+            AXLogFormat(@"%@ 已更新",key_setting);
+        }];
+    }
+}
+
+
+#pragma mark - 清空
+
+- (void)removeAllCacheCompletion:(void (^)())completion{
+    [daLayer.cache removeAllCacheCompletion:completion];
+}
+
+
+#pragma mark - overwrite
+
 - (BaseTableModelListType)settingList{
-    if (!_settingList) {
-        NSString *cachePath = CACHE_SETTING.json.cachePath;
-        NSString *bundlePath = CACHE_SETTING.json.mainBundlePath;
-        _settingList = cachePath.readArchivedObject;
-        if (!_settingList) {
-            NSDictionary *dict = bundlePath.readJson;
-            NSArray *sections = dict[@"sections"];
-            _settingList = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:sections];
-        }
-        
-        if (!_settingList) {
-            _settingList = [NSArray array];
-        }
-        cachePath.saveArchivedObject(_settingList);
-        
-        [NSBlockOperation ax_delay:0 performInBackground:^{
-            [self cacheList];
+    if (!_settingList.count) {
+        // @xaoxuu: 取出模型
+        _settingList = [self loadObjWithKey:key_setting];
+        // @xaoxuu: cache缓存
+        [self cacheObj:_settingList forKey:key_setting completion:^{
+            // @xaoxuu: load cache if need
+            [NSBlockOperation ax_delay:0 performInBackground:^{
+                [self cacheList];
+            }];
         }];
         
     }
@@ -61,175 +112,73 @@
 }
 
 
-- (void)updateSetting:(void (^)(BaseTableModelListType setting))update{
-    if (update) {
-        update(self.settingList);
-        CACHE_SETTING.json.cachePath.saveArchivedObject(self.settingList);
-    }
-}
-
-
-- (NSString *)cacheBytes{
-    NSData *data = [NSData dataWithContentsOfFile:CACHE_SETTING.json.cachePath];
-    return NSStringFromNSUInteger(data.length);
-}
-
-
-- (BaseTableModelListType)cacheList{
-    if (!_cacheList) {
-        // @xaoxuu: cache
-        BaseTableModelSection *section1 = [BaseTableModelSection new];
-        NSArray<NSString *> *subPathArr = @"".cachePath.subpaths(@"");
-        section1.header_title = @"~/cache/";
-        for (NSString *tmp in subPathArr) {
-            BaseTableModelRow *row = [BaseTableModelRow new];
-            row.title = tmp.lastPathComponent;
-            row.desc = NSStringFromNSUInteger([NSData dataWithContentsOfFile:tmp].length).append(@"bytes");
-            [section1.rows addObject:row];
-        }
-        _cacheList = [NSArray arrayWithObjects:section1, nil];
-    }
-    return _cacheList;
-}
-
 // @xaoxuu: 项目列表
 - (BaseTableModelListType)projectList{
-    if (!_projectList) {
-        // @xaoxuu: json服务取出模型
-        _projectList = services.json.modelList(@"projects");
+    if (!_projectList.count) {
+        // @xaoxuu: 取出模型
+        _projectList = [self loadObjWithKey:key_projects];
         // @xaoxuu: cache缓存
-        @"projects".json.cachePath.saveArchivedObject(_projectList);
+        [self cacheObj:_projectList forKey:key_projects completion:^{
+            // @xaoxuu: load cache if need
+            [NSBlockOperation ax_delay:0 performInBackground:^{
+                [self cacheList];
+            }];
+        }];
         
     }
     return _projectList;
 }
 
-#pragma mark - 清除缓存
 
 
-- (void)removeAllCacheCompletion:(void (^)())completion{
-    
-    [NSBlockOperation ax_delay:0 performInBackground:^{
-        self.settingList = nil;
-        self.projectList = nil;
-        BOOL ret = [self clearCacheWithFilePath:@"".cachePath];
-        if (completion) {
-            [NSBlockOperation ax_delay:0 performInMainQueue:^{
-                completion();
-            }];
+
+// @xaoxuu: 缓存列表
+- (BaseTableModelListType)cacheList{
+    if (!_cacheList.count) {
+        // @xaoxuu: cache
+        BaseTableModelSection *section1 = [BaseTableModelSection new];
+        NSArray<NSString *> *subPathArr = daLayer.cache.allCachePaths;
+        section1.header_title = @"~/cache/";
+        for (NSString *path in subPathArr) {
+            BaseTableModelRow *row = [BaseTableModelRow new];
+            row.title = path.lastPathComponent;
+            NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+            NSInteger size = [dict[@"NSFileSize"] integerValue];
+            row.cmd = NSStringFromNSInteger(size);
+            if (size > 10) {
+                row.desc = [NSString stringWithFormat:@"%.2fKB",size/1000.0f];
+            } else {
+                row.desc = [NSString stringWithFormat:@"%.0fbytes",size/1.0f];
+            }
+            [section1.rows addObject:row];
         }
-        if (ret) {
-            [services.alert alertForOptionDoneWithMessage:@"已清除缓存"];
-        }
-        AXLogBOOL(ret);
-    }];
-    
-}
-
-- (void)removeSettingCacheCompletion:(void (^)())completion{
-    self.settingList = nil;
-    BOOL ret = CACHE_SETTING.json.cachePath.remove;
-    if (ret && completion) {
-        completion();
+        AXLogWarning(@"计算了一次缓存");
+        _cacheList = [NSMutableArray arrayWithArray:@[section1]];
     }
-    if (ret) {
-        [services.alert alertForOptionDoneWithMessage:@"已清除缓存"];
-    }
-    AXLogBOOL(ret);
+    return _cacheList;
 }
 
 
 #pragma mark - async
 // @xaoxuu: 异步计算缓存大小、提前取出模型
 - (void)asyncCalculateCache{
-    [NSBlockOperation ax_delay:0 performInBackground:^{
-        self.cacheFileSize = [self getCacheSizeWithFilePath:@"".cachePath];
-        [self cacheList];
-        [self cacheBytes];
+    [NSBlockOperation ax_delay:0 cooldown:3 token:@"asyncCalculateCache" performInBackground:^{
         [self settingList];
+        _cacheList = nil;
+        [self cacheList];
+        
+        NSInteger length = 0;
+        for (BaseTableModelSection *sec in self.cacheList) {
+            for (BaseTableModelRow *row in sec.rows) {
+                length += row.cmd.integerValue;
+            }
+        }
+        _cachedFileSize = [NSString stringWithFormat:@"%.2fKB",length/1000.0f];
     }];
 }
 
 
-#pragma mark - util
 
-#pragma mark 获取path路径下文件夹大小
-- (NSString *)getCacheSizeWithFilePath:(NSString *)path{
-    
-    // 获取“path”文件夹下的所有文件
-    NSArray *subPathArr = [[NSFileManager defaultManager] subpathsAtPath:path];
-    
-    NSString *filePath  = nil;
-    NSInteger totleSize = 0;
-    
-    for (NSString *subPath in subPathArr){
-        
-        // 1. 拼接每一个文件的全路径
-        filePath =[path stringByAppendingPathComponent:subPath];
-        // 2. 是否是文件夹，默认不是
-        BOOL isDirectory = NO;
-        // 3. 判断文件是否存在
-        BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
-        
-        // 4. 以上判断目的是忽略不需要计算的文件
-        if (!isExist || isDirectory || [filePath containsString:@".DS"]){
-            // 过滤: 1. 文件夹不存在  2. 过滤文件夹  3. 隐藏文件
-            continue;
-        }
-        
-        // 5. 指定路径，获取这个路径的属性
-        NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
-        /**
-         attributesOfItemAtPath: 文件夹路径
-         该方法只能获取文件的属性, 无法获取文件夹属性, 所以也是需要遍历文件夹的每一个文件的原因
-         */
-        
-        // 6. 获取每一个文件的大小
-        NSInteger size = [dict[@"NSFileSize"] integerValue];
-        
-        // 7. 计算总大小
-        totleSize += size;
-    }
-    
-    //8. 将文件夹大小转换为 M/KB/B
-    NSString *totleStr = nil;
-    
-    if (totleSize > 1000 * 1000){
-        totleStr = [NSString stringWithFormat:@"%.2fM",totleSize / 1000.00f /1000.00f];
-        
-    }else if (totleSize > 1000){
-        totleStr = [NSString stringWithFormat:@"%.2fKB",totleSize / 1000.00f ];
-        
-    }else{
-        totleStr = [NSString stringWithFormat:@"%.2fB",totleSize / 1.00f];
-    }
-    
-    return totleStr;
-}
-
-
-#pragma mark 清除path文件夹下缓存大小
-- (BOOL)clearCacheWithFilePath:(NSString *)path{
-    
-    //拿到path路径的下一级目录的子文件夹
-    NSArray *subPathArr = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
-    
-    NSString *filePath = nil;
-    
-    NSError *error = nil;
-    
-    for (NSString *subPath in subPathArr)
-    {
-        filePath = [path stringByAppendingPathComponent:subPath];
-        
-        //删除子文件夹
-        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
-        if (error) {
-            return NO;
-        }
-    }
-    return YES;
-}
 
 
 @end

@@ -15,5 +15,21 @@
     return services.cache.cacheList;
 }
 
+- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
+    [services.alert alertForConfirmWithMessage:^NSString *{
+        return [NSString stringWithFormat:@"删除缓存文件\"%@\"",model.title];
+    } completion:^{
+        [services.cache removeObjWithKey:model.title completion:^{
+            [self reloadDataSourceAndRefreshTableView];
+        }];
+    }];
+    return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [tableView reloadData];
+    }
+}
 
 @end

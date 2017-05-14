@@ -9,8 +9,9 @@
 #import "AppServices.h"
 #import "BaseTabBarController.h"
 #import "BaseNavController.h"
+#import "DataAccessLayer.h"
 
-
+#define daLayer [DataAccessLayer sharedInstance]
 
 
 @interface AppServices ()
@@ -22,23 +23,21 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        _placeholderForSetting = [UIImage imageNamed:@"setting_default"];
         
-        _homePageURL = self.urlsFile[@"homePageURL"];
-        _blogURL = self.urlsFile[@"blogURL"];
-        _feedbackURL = self.urlsFile[@"feedbackURL"];
+        _placeholderForSetting = daLayer.assets.setting.placeholder.image;
+        
+        _homePageURL = daLayer.developer.homePageURL;
+        _blogURL = daLayer.developer.blogURL;
+        _feedbackURL = daLayer.developer.feedbackURL;
+        _feedbackEmail = daLayer.developer.feedbackEmail;
+        
         _defaultVC = [DefaultViewController new];
-        _feedbackEmail = self.urlsFile[@"feedbackEmail"];
+        
+        
     }
     return self;
 }
 
-- (NSDictionary *)urlsFile{
-    if (!_urlsFile) {
-        _urlsFile = @"urls".mainBundlePath.readJson;
-    }
-    return _urlsFile;
-}
 
 
 - (void)reloadAllView{
