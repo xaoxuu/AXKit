@@ -41,12 +41,12 @@
         [self.lb_detail ax_addEditingEndHandler:^(__kindof UITextField * _Nonnull sender) {
             
             CGFloat height = self.lb_detail.text.floatValue;
-            height = AXMakeFloatInRange(height, AXFloatRangeMake(0, 1000));
+            height = AXMakeFloatInRange(height, AXFloatRangeMake(32, 1000));
             self.lb_detail.text = NSStringFromCGFloat(height);
             
             [services.cache updateSetting:^(BaseTableModelListType setting) {
                 for (BaseTableModelSection *sec in setting) {
-                    sec.footer_height = NSStringFromCGFloat(height);
+                    sec.header_height = NSStringFromCGFloat(height);
                     for (BaseTableModelRow *row in sec.rows) {
                         if ([row.title isEqualToString:@"组间距"]) {
                             row.desc = NSStringFromCGFloat(height);

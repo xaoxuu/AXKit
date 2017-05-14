@@ -11,8 +11,7 @@
 
 @interface ThemeColorVC ()
 
-// @xaoxuu: table view
-@property (strong, nonatomic) ThemeColorTableView *table;
+
 
 @end
 
@@ -23,7 +22,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"主题色", nil);
     
-    [self setupTable];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,10 +30,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setupTable{
-    self.table = [[ThemeColorTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight)];
-    [self.view addSubview:self.table];
-}
 
+
+
+- (BaseTableView *)setupTableView{
+    return [[ThemeColorTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight)];
+}
 
 @end

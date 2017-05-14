@@ -59,7 +59,13 @@
     }
     
     if ([self respondsToSelector:@selector(setupTableView)]) {
+        [self.view addSubview:UIViewWithHeight(1)];
         self.tableView = [self setupTableView];
+        // init and add to superview
+        self.tableView.dataSource = self.tableView;
+        self.tableView.delegate = self.tableView;
+        self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [self.tableView setAutoresizesSubviews:NO];
         [self.view addSubview:self.tableView];
     }
     if ([self respondsToSelector:@selector(setupButtons)]) {

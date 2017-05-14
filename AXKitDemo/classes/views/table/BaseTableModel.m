@@ -50,9 +50,9 @@
 - (instancetype)init{
     if (self = [super init]) {
         _header_title = @"";
-        _header_height = @"32";
+        _header_height = @"44";
         _footer_title = @"";
-        _footer_height = @"8";
+        _footer_height = @"0";
         _rowHeight = @"44";
         _rows = [NSMutableArray array];
     }

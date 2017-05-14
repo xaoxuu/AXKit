@@ -140,10 +140,11 @@
 - (UIView *(^)(CGFloat))leftAndRightMargin{
     return ^(CGFloat margin){
         self.left = margin;
+        self.width -= 2*margin;
         if (self.superview) {
-            self.right = self.superview.right - margin;
+            self.width = self.superview.width - 2*margin;
         } else{
-            self.right = kScreenW - margin;
+            self.width = kScreenW - 2*margin;
         }
         return self;
     };
@@ -153,9 +154,9 @@
     return ^(CGFloat margin){
         self.top = margin;
         if (self.superview) {
-            self.bottom = self.superview.bottom - margin;
+            self.height = self.superview.height - 2*margin;
         } else{
-            self.bottom = kScreenH - margin;
+            self.height = kScreenH - 2*margin;
         }
         return self;
     };

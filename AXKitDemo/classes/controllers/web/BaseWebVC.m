@@ -7,7 +7,7 @@
 //
 
 #import "BaseWebVC.h"
-#import <WebKit/WebKit.h>
+
 
 
 @interface BaseWebVC ()<WKUIDelegate, WKNavigationDelegate>
@@ -48,7 +48,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight);
-    [self setupWebView];
+    if ([self respondsToSelector:@selector(setupFrame)]) {
+        [self setupFrame];
+    }
+    [self _base_setupWebView];
     [self reloadWebView];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
@@ -63,15 +66,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (void)reloadWebView{
     [self loadWithURLString];
     if ([self respondsToSelector:@selector(didLoadWebView)]) {
         [self didLoadWebView];
     }
 }
-
 
 
 - (void)loadWithURLString{
@@ -85,13 +85,16 @@
     [self.progressView setProgress:0.0f animated:NO];
 }
 
-- (void)setupWebView{
+- (void)_base_setupWebView{
     [self webView];
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
     [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
     [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
-
+    
+    if ([self respondsToSelector:@selector(setupWebView:)]) {
+        [self setupWebView:self.webView];
+    }
 }
 
 - (WKWebView *)webView{

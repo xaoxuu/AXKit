@@ -37,28 +37,32 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 - (void)cacheObj:(BaseTableModelListType)obj forKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail{
     BOOL ret = key.ax_cacheObj(obj);
-    if (ret) {
-        if (completion) {
-            completion();
+    [NSBlockOperation ax_delay:0 performInMainQueue:^{
+        if (ret) {
+            if (completion) {
+                completion();
+            }
+        } else {
+            if (fail) {
+                fail();
+            }
         }
-    } else {
-        if (fail) {
-            fail();
-        }
-    }
+    }];
 }
 
 - (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail{
     BOOL ret = key.ax_removeObj;
-    if (ret) {
-        if (completion) {
-            completion();
+    [NSBlockOperation ax_delay:0 performInMainQueue:^{
+        if (ret) {
+            if (completion) {
+                completion();
+            }
+        } else {
+            if (fail) {
+                fail();
+            }
         }
-    } else {
-        if (fail) {
-            fail();
-        }
-    }
+    }];
 }
 
 - (BaseTableModelListType)loadObjWithKey:(NSString *)key{

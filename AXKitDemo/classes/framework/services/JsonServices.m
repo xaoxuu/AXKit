@@ -12,7 +12,7 @@
 
 #define daLayer [DataAccessLayer sharedInstance]
 
-#define CACHE_COLORS @"theme_color"
+#define CACHE_COLORS @"ThemeColorTableView"
 
 #define BUNDLE_VC_TITLES @"view_controller_titles".mainBundlePath
 

@@ -18,13 +18,12 @@
 
 
 
-// @xaoxuu: list
-@property (strong, nonatomic) BaseTableModelListType dataList;
+
 
 // @xaoxuu: table view cell name
 @property (copy, nonatomic) NSString *cellNibName;
 // @xaoxuu: row height
-@property (assign, nonatomic) CGFloat rowHeight;
+//@property (assign, nonatomic) CGFloat rowHeight;
 
 // @xaoxuu: indicator
 @property (strong, nonatomic) DefaultIndicatorView *indicator;
@@ -34,16 +33,16 @@
 @implementation BaseTableView
 
 
-- (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name{
-    if (self = [self initWithFrame:frame]) {
-        
-        
-        
-    }
-    return self;
-}
-
-
+//- (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name{
+//    if (self = [self initWithFrame:frame]) {
+//        
+//        
+//        
+//    }
+//    return self;
+//}
+//
+//
 
 
 - (instancetype)init{
@@ -54,80 +53,64 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
+    if (self = [self initWithFrame:frame style:UITableViewStyleGrouped]) {
         _cellNibName = @"BaseTableViewCell";
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        self.indicator = [DefaultIndicatorView defaultIndicatorAddToView:self];
-        [self setupTableView];
         self.rowHeight = 44;
+        [self _base_setupTableView];
+        
+        [self _base_setupDelegates];
+        
+        
     }
     return self;
 }
 
-- (void)setupTableView{
-    self.tableView = [UITableView ax_tableViewWithView:self frame:self.bounds style:UITableViewStyleGrouped registerNibForCellReuseIdentifier:self.cellNibName];
-    self.tableView.backgroundColor = [UIColor clearColor];
-    
-    self.tableView.sectionHeaderHeight = kMarginNormal;
-    self.tableView.sectionFooterHeight = kMarginNormal;
-    
-    if ([self respondsToSelector:@selector(setupTableViewHeader:)]) {
-        UIView *view = UIViewWithHeight(kMargin16);
-        self.tableView.tableHeaderView = view;
-        [self setupTableViewHeader:view];
+- (void)_base_setupTableView{
+    // @xaoxuu: 注册复用池
+    if (_cellNibName.length) {
+        [self registerNib:[UINib nibWithNibName:_cellNibName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:_cellNibName];
     }
-    if ([self respondsToSelector:@selector(setupTableViewFooter:)]) {
-        UIView *view = UIViewWithHeight(kMargin16);
-        self.tableView.tableFooterView = view;
-        [self setupTableViewFooter:view];
-    }
+    // @xaoxuu: 背景透明
+    self.backgroundColor = [UIColor clearColor];
+    // @xaoxuu: 高度
+    self.estimatedRowHeight = 44;
+    self.estimatedSectionHeaderHeight = 0;
+//    self.sectionHeaderHeight = kMarginNormal;
+//    self.sectionFooterHeight = kMarginNormal;
     
-    if ([self respondsToSelector:@selector(setupEditEnable)]) {
-        self.tableView.editing = [self setupEditEnable];
-    } else {
-        self.tableView.editing = NO;
+    self.tableHeaderView = UIViewWithHeight(1);
+    self.tableFooterView = services.app.tableFooter;
+    // @xaoxuu: 指示器
+    self.indicator = [DefaultIndicatorView defaultIndicatorAddToView:self];
+    
+    
+    
+}
+
+- (void)_base_setupDelegates{
+    // @xaoxuu: 设置table view
+    if ([self respondsToSelector:@selector(setupTableView:)]) {
+        [NSBlockOperation ax_delay:0 performInMainQueue:^{
+            [self setupTableView:self];
+        }];
     }
     
 }
 
-- (void)setRowHeight:(CGFloat)rowHeight{
-    _rowHeight = rowHeight;
-//    [super setRowHeight:rowHeight];
-    self.tableView.rowHeight = rowHeight;
-}
-
-- (void)setupTableViewHeader:(UIView *)header{
-    
-}
-
-- (void)setupTableViewFooter:(UIView *)footer{
-    
-}
 
 
 
 - (BaseTableModelListType)dataList{
     if (!_dataList.count) {
         // @xaoxuu: 先用上次的缓存填充界面
-        if (!_dataList) {
+        if (!_dataList.count) {
             _dataList = [services.cache loadObjWithKey:NSStringFromClass([self class])];
         }
-        // @xaoxuu: 本地资源
-        if ([self respondsToSelector:@selector(dataListForTableView:)]) {
-            _dataList = [self dataListForTableView:self.tableView];
-            if (_dataList.count) {
-                // @xaoxuu: 缓存列表
-                [services.cache cacheObj:_dataList forKey:NSStringFromClass([self class]) completion:^{
-                    
-                }];
-                [self.indicator stopAnimating];
-            }
-        }
-        // @xaoxuu: 网络资源
-        if ([self respondsToSelector:@selector(setupTableViewWithDataSource:)]) {
+        // @xaoxuu: 加载数据源
+        if ([self respondsToSelector:@selector(setupTableViewDataSource:)]) {
             [self.indicator startAnimating];
             [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:reloadToken performInBackground:^{
-                [self setupTableViewWithDataSource:^(BaseTableModelListType sections) {
+                [self setupTableViewDataSource:^(BaseTableModelListType sections) {
                     _dataList = sections;
                     // @xaoxuu: 缓存列表
                     [services.cache cacheObj:_dataList forKey:NSStringFromClass([self class]) completion:^{
@@ -139,7 +122,6 @@
                 }];
             }];
         }
-        
         
         if (!_dataList) {
             // @xaoxuu: 空数组
@@ -166,7 +148,7 @@
         } else {
             [self.indicator startAnimating];
         }
-        [self.tableView reloadData];
+        [self reloadData];
         for (UIBarButtonItem *item in self.controller.navigationItem.rightBarButtonItems) {
             item.enabled = YES;
         }
@@ -180,9 +162,15 @@
     }];
 }
 
-- (void)deleteCellInSection:(NSUInteger)section row:(NSUInteger)row{
-    [self.tableView deleteRow:row inSection:section withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.dataList[section].rows removeObjectAtIndex:row];
+
+- (void)deleteCellWithIndexPath:(NSIndexPath *)indexPath{
+    [self.dataList[indexPath.section].rows removeObjectAtIndex:indexPath.row];
+    [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    [self reloadTableView];
+}
+
+- (BaseTableModelRow *)rowModelWithIndexPath:(NSIndexPath *)indexPath{
+    return self.dataList[indexPath.section].rows[indexPath.row];
 }
 
 #pragma mark - base table view delegate
@@ -283,11 +271,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return self.dataList[section].header_height.floatValue;
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//    return self.dataList[section].footer_height.floatValue;
-//}
 
-
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
+    return self.dataList[section].header_height.floatValue;
+}
 
 #pragma mark - util
 

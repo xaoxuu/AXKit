@@ -59,7 +59,7 @@
 		CD23DCAA1EC1DDD5006E331B /* UITabBar+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCA81EC1DDD5006E331B /* UITabBar+AXExtension.m */; };
 		CD23DCAF1EC1E166006E331B /* ThemeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCAD1EC1E166006E331B /* ThemeColorVC.m */; };
 		CD23DCB01EC1E166006E331B /* ThemeColorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCAE1EC1E166006E331B /* ThemeColorVC.xib */; };
-		CD23DCB41EC1E381006E331B /* theme_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCB31EC1E381006E331B /* theme_color.json */; };
+		CD23DCB41EC1E381006E331B /* ThemeColorTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CD23DCB31EC1E381006E331B /* ThemeColorTableView.json */; };
 		CD23DCB71EC1E3A4006E331B /* ThemeColorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCB61EC1E3A4006E331B /* ThemeColorTableView.m */; };
 		CD23DCBA1EC1E5A4006E331B /* ThemeColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */; };
 		CD23DCBD1EC1E61D006E331B /* JsonServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCBC1EC1E61D006E331B /* JsonServices.m */; };
@@ -166,7 +166,6 @@
 		CDBB39CB1EB9D96B00E8ED25 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39C51EB9D96B00E8ED25 /* SettingVC.xib */; };
 		CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39D41EB9DD1400E8ED25 /* BlogVC.m */; };
 		CDBB39D71EB9DD1400E8ED25 /* BlogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBB39D51EB9DD1400E8ED25 /* BlogVC.xib */; };
-		CDBB3B0C1EB9E17500E8ED25 /* SettingTableView.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */; };
 		CDBB3B0F1EB9E19D00E8ED25 /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */; };
 		CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B131EB9E80F00E8ED25 /* MJExtensionConst.m */; };
 		CDBB3B271EB9E80F00E8ED25 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B151EB9E80F00E8ED25 /* MJFoundation.m */; };
@@ -295,7 +294,7 @@
 		CD23DCAC1EC1E166006E331B /* ThemeColorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorVC.h; sourceTree = "<group>"; };
 		CD23DCAD1EC1E166006E331B /* ThemeColorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorVC.m; sourceTree = "<group>"; };
 		CD23DCAE1EC1E166006E331B /* ThemeColorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeColorVC.xib; sourceTree = "<group>"; };
-		CD23DCB31EC1E381006E331B /* theme_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = theme_color.json; sourceTree = "<group>"; };
+		CD23DCB31EC1E381006E331B /* ThemeColorTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ThemeColorTableView.json; sourceTree = "<group>"; };
 		CD23DCB51EC1E3A4006E331B /* ThemeColorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorTableView.h; sourceTree = "<group>"; };
 		CD23DCB61EC1E3A4006E331B /* ThemeColorTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorTableView.m; sourceTree = "<group>"; };
 		CD23DCB81EC1E5A4006E331B /* ThemeColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorModel.h; sourceTree = "<group>"; };
@@ -435,7 +434,6 @@
 		CDBB39D31EB9DD1400E8ED25 /* BlogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogVC.h; sourceTree = "<group>"; };
 		CDBB39D41EB9DD1400E8ED25 /* BlogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogVC.m; sourceTree = "<group>"; };
 		CDBB39D51EB9DD1400E8ED25 /* BlogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogVC.xib; sourceTree = "<group>"; };
-		CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingTableView.plist; sourceTree = "<group>"; };
 		CDBB3B0D1EB9E19D00E8ED25 /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
 		CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
 		CDBB3B111EB9E80F00E8ED25 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
@@ -699,7 +697,7 @@
 				CD23DCAE1EC1E166006E331B /* ThemeColorVC.xib */,
 				CD23DCB51EC1E3A4006E331B /* ThemeColorTableView.h */,
 				CD23DCB61EC1E3A4006E331B /* ThemeColorTableView.m */,
-				CD23DCB31EC1E381006E331B /* theme_color.json */,
+				CD23DCB31EC1E381006E331B /* ThemeColorTableView.json */,
 				CD23DCB81EC1E5A4006E331B /* ThemeColorModel.h */,
 				CD23DCB91EC1E5A4006E331B /* ThemeColorModel.m */,
 			);
@@ -1038,7 +1036,6 @@
 				CDBB3B0D1EB9E19D00E8ED25 /* SettingTableView.h */,
 				CDBB3B0E1EB9E19D00E8ED25 /* SettingTableView.m */,
 				CD23DCBE1EC1E8B0006E331B /* SettingTableView.json */,
-				CDBB3B0B1EB9E17500E8ED25 /* SettingTableView.plist */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -1372,7 +1369,6 @@
 				CD91CB261EC44BF000984F71 /* RemoveCacheVC.xib in Resources */,
 				CD0B63161EC4C66D0024F25E /* ProjectDetailVC.xib in Resources */,
 				CD91CB1A1EC437D800984F71 /* CustomTableVC.xib in Resources */,
-				CDBB3B0C1EB9E17500E8ED25 /* SettingTableView.plist in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* view_controller_titles.json in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
@@ -1381,7 +1377,7 @@
 				8579EF081E6BEDF900C33881 /* Main.storyboard in Resources */,
 				CDBB39C71EB9D96B00E8ED25 /* AXLogVC.xib in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
-				CD23DCB41EC1E381006E331B /* theme_color.json in Resources */,
+				CD23DCB41EC1E381006E331B /* ThemeColorTableView.json in Resources */,
 				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
 				CDBB39C91EB9D96B00E8ED25 /* HomeVC.xib in Resources */,
 				CD23DC981EC18621006E331B /* DebugVC.xib in Resources */,

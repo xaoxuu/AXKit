@@ -8,7 +8,6 @@
 
 #import "HelpTableView.h"
 #import "HelpDetailVC.h"
-#import "BaseWebVC.h"
 
 @interface HelpTableView () <UISearchBarDelegate, UIScrollViewDelegate>
 
@@ -31,18 +30,26 @@
 
 
 
+- (void)setupTableView:(BaseTableView *)tableView{
+//    UIView *view = UIViewWithHeight(44);
+//    [view addSubview:self.searchBar];
+//    self.searchBar.centerY = 0.5*view.height;
+//    tableView.tableHeaderView = view;
+    
+    tableView.tableHeaderView = self.searchBar;
+}
 
-- (void)setupTableViewWithDataSource:(void (^)(BaseTableModelListType))completion{
+- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{
     [services.git getHelpIssuesList:^(GitHubIssueListModel *issues) {
-        
         BaseTableModelSection *sec = [BaseTableModelSection new];
-        sec.header_height = NSStringFromCGFloat(kMarginNormal);
         for (GitHubIssueModel *issue in issues.items) {
             BaseTableModelRow *row = [BaseTableModelRow new];
             row.title = issue.title;
             row.cmd = issue.html_url;
+            
             [sec.rows addObject:row];
         }
+        sec.header_height = @"0";
         self.source = [NSMutableArray arrayWithArray:@[sec]];
         if (completion) {
             completion(self.source);
@@ -50,21 +57,15 @@
     }];
 }
 
-- (void)setupTableViewHeader:(UIView *)header{
-    [header addSubview:self.searchBar];
-    header.height = self.searchBar.height;
-}
 
 
 -(void)tableViewCellDidSelected:(__kindof BaseTableModelRow *)model{
-    BaseWebVC *vc = [BaseWebVC webVCWithTitle:model.title URLString:model.cmd];
+    HelpDetailVC *vc = [HelpDetailVC webVCWithTitle:model.title URLString:model.cmd];
     [self.controller.navigationController pushViewController:vc animated:YES];
 }
 
 
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model{
-    
-    
+- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
     return NO;
 }
 
@@ -74,7 +75,7 @@
 - (UISearchBar *)searchBar{
     if (!_searchBar) {
         // create it
-        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 4, kScreenW, kNavBarHeight)];
+        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 2*kMarginNormal, kScreenW, kNavBarHeight)];
         _searchBar.delegate = self;
         // style
         _searchBar.searchBarStyle = UISearchBarStyleMinimal;
@@ -92,8 +93,6 @@
     }
     return _searchBar;
 }
-
-
 
 
 

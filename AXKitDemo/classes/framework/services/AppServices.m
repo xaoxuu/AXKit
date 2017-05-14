@@ -134,4 +134,57 @@
 }
 
 
+- (UIView *)tableFooter{
+    UIView *footer = UIViewWithHeight(64);
+    CALayer *line = [CALayer layer];
+    line.width = footer.width;
+    line.height = 0.5;
+    line.centerY = 0.5*footer.height;
+    line.backgroundColor = [UIColor groupTableViewBackgroundColor].darkRatio(0.1).CGColor;
+    [footer.layer addSublayer:line];
+    UILabel *label = [[UILabel alloc] initWithFrame:footer.bounds];
+    [footer addSubview:label];
+    label.textColor = [UIColor darkGrayColor];
+    label.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:12];
+    label.text = [self randomTips];
+    [label sizeToFit];
+    label.width += kMarginNormal;
+    label.centerX = 0.5*footer.width;
+    label.centerY = 0.5*footer.height;
+    return footer;
+}
+
+
+- (NSString *)randomTips{
+    int i = arc4random_uniform(150);
+    if (i < 20) {
+        return @"😏你还想看什么";
+    } else if (i < 40) {
+        return @"我可是有底线的";
+    } else if (i < 60) {
+        return @"😱没有更多了";
+    } else if (i < 80) {
+        return @"我可是有底线的😡";
+    } else if (i < 100) {
+        return @"⚠️高压危险";
+    } else if (i < 110) {
+        return @"🚫少儿不宜";
+    } else if (i < 120) {
+        return @"🙄";
+    } else if (i < 130) {
+        return @"👌加载完毕";
+    } else if (i < 140) {
+        return @"内有🐶恶犬";
+    } else if (i < 150) {
+        return @"😂";
+    }
+    
+    
+    return @"";
+    
+    
+}
+
 @end

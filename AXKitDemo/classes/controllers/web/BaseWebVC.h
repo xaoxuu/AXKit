@@ -7,12 +7,20 @@
 //
 
 #import "BaseViewController.h"
+#import <WebKit/WebKit.h>
 
-
+@class BaseWebVC;
 @protocol BaseWebVCDelegate <NSObject>
 @optional
 
+- (void)setupFrame;
+
+- (void)setupWebView:(WKWebView *)webView;
+
+
 - (void)didLoadWebView;
+
+
 
 
 @end

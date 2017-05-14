@@ -11,35 +11,32 @@
 #import "BaseTableViewCell.h"
 
 @class BaseTableView,BaseViewController;
-@protocol BaseTableViewDelegate <NSObject>
+@protocol BaseTableViewDelegate <UITableViewDataSource,UITableViewDelegate>
 
-
-
-@optional
-
-/**
- 数据源
-
- @param tableView tableview
- @return 数据源
- */
-- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView;
-
+@required
 
 /**
  异步加载的数据源
  
  @param completion 加载完成的回调
  */
-- (void)setupTableViewWithDataSource:(void (^)(BaseTableModelListType sections))completion;
+- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))completion;
+
+@optional
 
 
+/**
+ 自定义table view
 
-- (BOOL)setupEditEnable;
+ @param tableView table view
+ */
+- (void)setupTableView:(BaseTableView *)tableView;
 
 - (void)setupTableViewHeader:(UIView *)header;
 
 - (void)setupTableViewFooter:(UIView *)footer;
+
+
 
 
 
@@ -85,10 +82,10 @@
 
 @end
 
-@interface BaseTableView : UIView <BaseTableViewDelegate>
+@interface BaseTableView : UITableView <BaseTableViewDelegate>
 
 // @xaoxuu: table view
-@property (strong, nonatomic) UITableView *tableView;
+//@property (strong, nonatomic) UITableView *tableView;
 
 - (void)reloadTableView;
 
@@ -96,12 +93,17 @@
 
 - (void)reloadDataSourceAndRefreshTableView;
 
-- (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name;
+// @xaoxuu: list
+@property (strong, nonatomic) BaseTableModelListType dataList;
+
+- (BaseTableModelRow *)rowModelWithIndexPath:(NSIndexPath *)indexPath;
+
+//- (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name;
 
 
 //- (void)switchStatusChanged:(void (^)(NSIndexPath *indexPath, BOOL on))changed;
 
-
-- (void)deleteCellInSection:(NSUInteger)section row:(NSUInteger)row;
+- (void)deleteCellWithRowModel:(BaseTableModelRow *)row;
+- (void)deleteCellWithIndexPath:(NSIndexPath *)indexPath;
 
 @end

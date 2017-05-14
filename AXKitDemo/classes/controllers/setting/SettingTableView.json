@@ -1,15 +1,15 @@
 {
     "title":"设置",
     "header_title":"this is table header",
-    "header_height":"32",
+    "header_height":"0",
     "footer_title":"this is table footer",
-    "footer_height":"32",
+    "footer_height":"0",
     "sections":[
         {
             "header_title":"基本信息",
             "header_height":"32",
             "footer_title":"",
-            "footer_height":"8",
+            "footer_height":"0",
             "rowHeight":"44",
             "rows":[
                 {
@@ -60,7 +60,7 @@
             "header_title":"个性化设置",
             "header_height":"32",
             "footer_title":"",
-            "footer_height":"8",
+            "footer_height":"0",
             "rowHeight":"44",
             "rows":[
                 {
@@ -90,12 +90,12 @@
             "header_title":"高级设置",
             "header_height":"32",
             "footer_title":"",
-            "footer_height":"8",
+            "footer_height":"0",
             "rowHeight":"44",
             "rows":[
                 {
                     "title":"组间距",
-                    "desc":"8",
+                    "desc":"0",
                     "icon":"",
                     "target":"CustomTableVC",
                     "cmd":"margin"
@@ -113,7 +113,7 @@
             "header_title":"缓存",
             "header_height":"32",
             "footer_title":"",
-            "footer_height":"8",
+            "footer_height":"0",
             "rowHeight":"44",
             "rows":[
                 {

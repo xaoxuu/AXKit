@@ -12,8 +12,13 @@
 @implementation ThemeColorTableView
 
 
-- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
-    return services.json.colors;
+//- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
+//    return services.json.colors;
+//}
+- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{
+    if (completion) {
+        completion(services.json.colors);
+    }
 }
 
 - (UIImage *)tableViewCellIconForSection:(NSUInteger)section row:(NSUInteger)row{
@@ -31,6 +36,11 @@
 - (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
     ThemeColorModelRow *colorStr = services.json.colors[section].rows[row];
     return [NSString stringWithFormat:@"%@",colorStr.hex];
+}
+
+
+- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
+    return NO;
 }
 
 @end

@@ -12,11 +12,24 @@
 @implementation SettingTableView
 
 
-- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
-    return services.cache.settingList;
+
+
+- (void)setupTableView:(BaseTableView *)tableView{
+    tableView.estimatedSectionFooterHeight = 0;
+    tableView.sectionFooterHeight = 0;
+    
+    
+    
 }
 
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof UIViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model{
+- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{
+    if (completion) {
+        completion(services.cache.settingList);
+    }
+}
+
+
+- (BOOL)tableViewCellShouldPushToViewController:(__kindof UIViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
     
     if ([targetVC isKindOfClass:[FeedbackVC class]]) {
         FeedbackVC *vc = targetVC;
@@ -39,5 +52,9 @@
     }
     return nil;
 }
+
+
+
+
 
 @end

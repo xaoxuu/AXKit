@@ -43,4 +43,7 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 
 - (NSString *(^)(NSString *name))assetURLWithName;
 
+
+- (UIView *)tableFooter;
+
 @end
