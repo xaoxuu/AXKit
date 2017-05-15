@@ -192,7 +192,7 @@ static UIView *maskView;
     [view addSubview:sPopView];
 //    if (!isShowing) {
         isShowing = YES;
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
             [self _showTips];
         } completion:^(BOOL finished) {
             [self performSelector:@selector(_dismissAnimation) withObject:nil afterDelay:duration];
@@ -204,7 +204,7 @@ static UIView *maskView;
 
 + (void)_dismissAnimation{
     if (isShowing) {
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
             [self _hideTips];
         } completion:^(BOOL finished) {
             isShowing = NO;

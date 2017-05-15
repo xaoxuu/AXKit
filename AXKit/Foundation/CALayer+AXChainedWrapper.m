@@ -27,41 +27,41 @@
         switch (type) {
                 // for top bar
             case AXShadowDownLight: {
-                self.shadowOpacity = 0.4;
-                self.shadowRadius = 0.8;
-                self.shadowOffset = CGSizeMake(0, 0.8);
-                break;
-            }
-            case AXShadowDownNormal: {
-                self.shadowOpacity = 0.4;
+                self.shadowOpacity = 0.2;
                 self.shadowRadius = 1;
                 self.shadowOffset = CGSizeMake(0, 1);
                 break;
             }
+            case AXShadowDownNormal: {
+                self.shadowOpacity = 0.4;
+                self.shadowRadius = 1.3;
+                self.shadowOffset = CGSizeMake(0, 1.3);
+                break;
+            }
                 // for raised view
             case AXShadowDownFloat: {
-                self.shadowOpacity = 0.4;
-                self.shadowRadius = 3;
-                self.shadowOffset = CGSizeMake(0, 2.8);
+                self.shadowOpacity = 0.2;
+                self.shadowRadius = 5;
+                self.shadowOffset = CGSizeMake(0, 4);
                 break;
             }
                 // for bottom bar
             case AXShadowUpLight: {
-                self.shadowOpacity = 0.12;
-                self.shadowRadius = 0.9;
-                self.shadowOffset = CGSizeMake(0, -0.9);
+                self.shadowOpacity = 0.1;
+                self.shadowRadius = 1;
+                self.shadowOffset = CGSizeMake(0, -1);
                 break;
             }
             case AXShadowUpNormal: {
-                self.shadowOpacity = 0.4;
-                self.shadowRadius = 0.8;
-                self.shadowOffset = CGSizeMake(0, -0.8);
+                self.shadowOpacity = 0.35;
+                self.shadowRadius = 1;
+                self.shadowOffset = CGSizeMake(0, -1);
                 break;
             }
                 // for center views
             case AXShadowCenterLight: {
                 self.shadowOpacity = 0.3;
-                self.shadowRadius = 1;
+                self.shadowRadius = 1.2;
                 self.shadowOffset = CGSizeZero;
                 break;
             }
