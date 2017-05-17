@@ -8,9 +8,13 @@
 
 #import "NSError+AXExtension.h"
 
-NSErrorDomain const AXKitErrorDomain = @"com.xaoxuu.axkit.error";
+static NSErrorDomain userErrorDomain = @"unknown";
 
 @implementation NSError (AXExtension)
+
++ (void)configErrorDomain:(NSErrorDomain)domain{
+    userErrorDomain = domain;
+}
 
 + (instancetype)ax_errorWithDomain:(NSErrorDomain (^)())domain
                               code:(NSInteger)code
@@ -52,3 +56,5 @@ NSErrorDomain const AXKitErrorDomain = @"com.xaoxuu.axkit.error";
 }
 
 @end
+
+

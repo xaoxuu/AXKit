@@ -9,6 +9,10 @@
 #import "NSBundle+AXExtension.h"
 #import "UIView+AXExtension.h"
 
+
+
+
+
 inline void AXLocalizeLabel(UILabel *label){
     if (label.text.length) {
         label.text = NSLocalizedString(label.text, nil);
@@ -87,5 +91,27 @@ inline void AXLocalizeAllSubviewsInView(UIView *view){
 }
 
 @implementation NSBundle (AXExtension)
+
+
++ (NSString *)ax_appName{
+    return [self.ax_localizedInfoDictionary objectForKey:@"CFBundleDisplayName"] ?: [self.ax_infoDictionary objectForKey:@"CFBundleDisplayName"];
+}
+
++ (NSString *)ax_appVersion{
+    return [self.ax_infoDictionary objectForKey:@"CFBundleShortVersionString"];
+}
+
++ (NSString *)ax_appBuild{
+    return [self.ax_infoDictionary objectForKey:@"CFBundleVersion"];
+}
+
++ (NSDictionary *)ax_localizedInfoDictionary{
+    return [[NSBundle mainBundle] localizedInfoDictionary];
+}
+
++ (NSDictionary *)ax_infoDictionary{
+    return [[NSBundle mainBundle] infoDictionary];
+}
+
 
 @end

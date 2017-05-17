@@ -27,15 +27,15 @@
         switch (type) {
                 // for top bar
             case AXShadowDownLight: {
-                self.shadowOpacity = 0.2;
+                self.shadowOpacity = 0.3;
                 self.shadowRadius = 1;
                 self.shadowOffset = CGSizeMake(0, 1);
                 break;
             }
             case AXShadowDownNormal: {
-                self.shadowOpacity = 0.4;
-                self.shadowRadius = 1.3;
-                self.shadowOffset = CGSizeMake(0, 1.3);
+                self.shadowOpacity = 0.3;
+                self.shadowRadius = 1.2;
+                self.shadowOffset = CGSizeMake(0, 1.2);
                 break;
             }
                 // for raised view
@@ -53,7 +53,7 @@
                 break;
             }
             case AXShadowUpNormal: {
-                self.shadowOpacity = 0.35;
+                self.shadowOpacity = 0.3;
                 self.shadowRadius = 1;
                 self.shadowOffset = CGSizeMake(0, -1);
                 break;

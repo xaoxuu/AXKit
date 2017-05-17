@@ -13,6 +13,7 @@
 #import "DefaultIndicatorView.h"
 
 
+static NSTimeInterval loadingTimeout = 5;
 
 @interface BaseTableView () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
@@ -110,7 +111,9 @@
         if ([self respondsToSelector:@selector(setupTableViewDataSource:)]) {
             [self.indicator startAnimating];
             [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:reloadToken performInBackground:^{
+                __block BOOL loadDone = NO;
                 [self setupTableViewDataSource:^(BaseTableModelListType sections) {
+                    loadDone = YES;
                     _dataList = sections;
                     // @xaoxuu: 缓存列表
                     [services.cache cacheObj:_dataList forKey:NSStringFromClass([self class]) completion:^{
@@ -119,6 +122,12 @@
                     // @xaoxuu: 重载界面
                     [self reloadTableViewWithDataSource:sections];
                     
+                }];
+                [NSBlockOperation ax_delay:loadingTimeout performInMainQueue:^{
+                    if (!loadDone && self.controller) {
+                        [self.indicator stopAnimating];
+                        [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"加载失败", nil) message:NSLocalizedString(@"请确认数据源是否正确", nil)];
+                    }
                 }];
             }];
         }
@@ -166,7 +175,6 @@
 - (void)deleteCellWithIndexPath:(NSIndexPath *)indexPath{
     [self.dataList[indexPath.section].rows removeObjectAtIndex:indexPath.row];
     [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    [self reloadTableView];
 }
 
 - (BaseTableModelRow *)rowModelWithIndexPath:(NSIndexPath *)indexPath{
@@ -288,7 +296,11 @@
     }
 }
 
+#pragma mark - self delegate
 
+- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))dataSource{
+    
+}
 
 
 @end

@@ -28,6 +28,16 @@
         }];
     }];
     
+    [self.view ax_eachButtonInvokeAction:^(__kindof UIButton * _Nonnull button) {
+        [button ax_addTouchUpInsideHandler:^(__kindof UIButton * _Nonnull sender) {
+            [self.navigationController ax_pushViewControllerNamed:@"TestVC12"];
+        }];
+    }];
+    [self.view ax_eachImageViewInvokeAction:^(__kindof UIImageView * _Nonnull imageView) {
+        [imageView ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+            [self.navigationController ax_pushViewControllerNamed:@"TestVC13"];
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

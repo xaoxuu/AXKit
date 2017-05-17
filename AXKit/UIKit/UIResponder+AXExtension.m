@@ -8,12 +8,24 @@
 
 #import "UIResponder+AXExtension.h"
 
+static UIViewController *static_rootViewController = nil;
+
+inline UIViewController *AXRootViewController(){
+    if (!static_rootViewController) {
+        UIResponder *appDelegate = (UIResponder *)[UIApplication sharedApplication].delegate;
+        static_rootViewController = (UIViewController *)[appDelegate valueForKeyPath:@"window.rootViewController"];
+    }
+    return static_rootViewController;
+}
 
 @implementation UIResponder (AXExtension)
 
+- (UIViewController *)rootViewController{
+    return AXRootViewController();
+}
+
 - (UIViewController *)rootVC{
-    UIResponder *appDelegate = (UIResponder *)[UIApplication sharedApplication].delegate;
-    return (UIViewController *)[appDelegate valueForKeyPath:@"window.rootViewController"];
+    return AXRootViewController();
 }
  
 

@@ -18,6 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
+    
+    UIViewController *vc = self.rootVC;
+    
+    UIViewController *vc2 = AXRootViewController();
+    AXLogOBJ(vc);
+    AXLogOBJ(vc2);
+    
+    [NSUserDefaults ax_readStringForKey:@"adf" completion:^(NSString * _Nonnull string) {
+        
+    } fail:^(NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

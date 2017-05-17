@@ -8,7 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+
+/**
+ 根控制器
+
+ @return 根控制器
+ */
+FOUNDATION_EXTERN UIViewController *AXRootViewController();
+
+
 @interface UIResponder (AXExtension)
+
+/**
+ 获取app根控制器
+ 
+ @return 根控制器rootVC
+ */
+- (UIViewController *)rootViewController;
 
 /**
  获取app根控制器

@@ -18,9 +18,9 @@
 /**
  异步加载的数据源
  
- @param completion 加载完成的回调
+ @param dataSource 加载完成的回调
  */
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))completion;
+- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))dataSource;
 
 @optional
 
@@ -103,7 +103,9 @@
 
 //- (void)switchStatusChanged:(void (^)(NSIndexPath *indexPath, BOOL on))changed;
 
-- (void)deleteCellWithRowModel:(BaseTableModelRow *)row;
+//- (void)deleteCellWithRowModel:(BaseTableModelRow *)rowModel;
 - (void)deleteCellWithIndexPath:(NSIndexPath *)indexPath;
+
+
 
 @end
