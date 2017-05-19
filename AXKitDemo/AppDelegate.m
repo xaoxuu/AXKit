@@ -24,15 +24,13 @@
     
     // @xaoxuu: 配置主题色
     [[UIColorManager sharedInstance] setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
-        return [UIColor md_lime];
-    } accent:^UIColor * _Nonnull{
         return [UIColor md_yellow];
+    } accent:^UIColor * _Nonnull{
+        return [UIColor md_lime];
     } background:^UIColor * _Nonnull{
         return [UIColor whiteColor];
     }];
-    [[UIColorManager sharedInstance] setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
-        return nil;
-    } accent:nil background:nil];
+    
     // @xaoxuu: 激活服务
     [ServicesLayer sharedInstance];
     

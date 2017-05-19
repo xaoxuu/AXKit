@@ -48,12 +48,17 @@
             if (error) {
                 AXLogError(error);
                 if (fail) {
-                    fail(error);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        fail(error);
+                    });
                 }
+                
             } else {
                 if (completion) {
-                    id ret = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                    completion(ret);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        id ret = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                        completion(ret);
+                    });
                 }
             }
         }];

@@ -34,5 +34,9 @@
 // @xaoxuu: help
 @property (copy, readonly, nonatomic) NSString *gitIssueHelpURL;
 
+// @xaoxuu: blog list
+@property (copy, readonly, nonatomic) NSString *blogListURL;
+
+
 
 @end

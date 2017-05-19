@@ -34,6 +34,8 @@
         _gitIssuesURL = self.githubConfig[@"issuesURL"];
         _gitIssueHelpURL = self.githubConfig[@"helpURL"];
         
+        _blogListURL = self.githubConfig[@"blogURL"];
+        
     }
     return self;
 }

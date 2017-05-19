@@ -21,6 +21,7 @@ UIColorManager *axColor = nil;
 
 #pragma mark - color tool
 
+
 - (void)setupDefaultColorConfigurationTheme:(UIColor *(^)())theme accent:(UIColor *(^)())accent background:(UIColor *(^)())background{
     if (theme) {
         [NSUserDefaults ax_readStringForKey:CACHE_COLOR_THEME completion:^(NSString * _Nonnull string) {
@@ -141,13 +142,13 @@ UIColorManager *axColor = nil;
     
     // init
 //    [self setupDefaultColorConfigurationTheme:nil accent:nil background:nil];
-    [self setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
-        return nil;
-    } accent:^UIColor * _Nonnull{
-        return nil;
-    } background:^UIColor * _Nonnull{
-        return nil;
-    }];
+//    [self setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
+//        return nil;
+//    } accent:^UIColor * _Nonnull{
+//        return nil;
+//    } background:^UIColor * _Nonnull{
+//        return nil;
+//    }];
     return axColor;
     
 }

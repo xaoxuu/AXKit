@@ -7,7 +7,7 @@
     "sections":[
         {
             "header_title":"基本信息",
-            "header_height":"32",
+            "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
             "rowHeight":"44",
@@ -24,6 +24,13 @@
                     "desc":"xaoxuu's blog",
                     "icon":"https://xaoxuu.com/images/avatar.png",
                     "target":"BlogVC",
+                    "cmd":""
+                },
+                {
+                    "title":"博客2",
+                    "desc":"xaoxuu's blog",
+                    "icon":"https://xaoxuu.com/images/avatar.png",
+                    "target":"BlogListVC",
                     "cmd":""
                 },
                 {
@@ -58,7 +65,7 @@
         },
         {
             "header_title":"个性化设置",
-            "header_height":"32",
+            "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
             "rowHeight":"44",
@@ -81,14 +88,14 @@
                     "title":"图标",
                     "desc":"app的图标",
                     "icon":"setting_icon",
-                    "target":"default",
+                    "target":"CustomIconVC",
                     "cmd":""
                 }
             ]
         },
         {
             "header_title":"高级设置",
-            "header_height":"32",
+            "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
             "rowHeight":"44",
@@ -111,7 +118,7 @@
         },
         {
             "header_title":"缓存",
-            "header_height":"32",
+            "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
             "rowHeight":"44",

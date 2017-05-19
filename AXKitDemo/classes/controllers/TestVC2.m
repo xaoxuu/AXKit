@@ -29,6 +29,7 @@
 
     }];
     
+    [UIAlertController ax_showAlertWithTitle:nil message:nil];
     AXLogOBJ(AXRandomStringFrom(RandomStringTypeName, AXUIntegerRangeMake(2, 20)));
     
 }

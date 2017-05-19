@@ -9,6 +9,7 @@
 #import "DebugVC.h"
 
 @interface DebugVC ()
+@property (weak, nonatomic) IBOutlet UIImageView *appIcon;
 
 @end
 
@@ -19,17 +20,12 @@
     // Do any additional setup after loading the view from its nib.
     self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
     
-    UIViewController *vc = self.rootVC;
     
-    UIViewController *vc2 = AXRootViewController();
-    AXLogOBJ(vc);
-    AXLogOBJ(vc2);
+    self.appIcon.image = [UIImage imageNamed:[NSBundle ax_appIcon]];
+    self.appIcon.layer.cornerRadius = self.appIcon.width/6;
+    self.appIcon.layer.masksToBounds = YES;
     
-    [NSUserDefaults ax_readStringForKey:@"adf" completion:^(NSString * _Nonnull string) {
-        
-    } fail:^(NSError * _Nonnull error) {
-        
-    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

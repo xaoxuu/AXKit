@@ -20,9 +20,6 @@ inline UIViewController *AXRootViewController(){
 
 @implementation UIResponder (AXExtension)
 
-- (UIViewController *)rootViewController{
-    return AXRootViewController();
-}
 
 - (UIViewController *)rootVC{
     return AXRootViewController();

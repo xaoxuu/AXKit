@@ -105,6 +105,10 @@ inline void AXLocalizeAllSubviewsInView(UIView *view){
     return [self.ax_infoDictionary objectForKey:@"CFBundleVersion"];
 }
 
++ (NSString *)ax_appIcon{
+    return [[self.ax_infoDictionary valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"]lastObject];
+}
+
 + (NSDictionary *)ax_localizedInfoDictionary{
     return [[NSBundle mainBundle] localizedInfoDictionary];
 }

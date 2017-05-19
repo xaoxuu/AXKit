@@ -68,7 +68,9 @@ static inline AXEventTarget *AXTargetWith(UIView *obj, __kindof UIGestureRecogni
 #pragma mark tap / long press
 
 - (void)ax_addTapGestureHandler:(void (^)(UITapGestureRecognizer *sender))handler{
-    
+    if ([self isKindOfClass:[UIImageView class]]) {
+        self.userInteractionEnabled = YES;
+    }
     UITapGestureRecognizer *gesture = [UITapGestureRecognizer new];
     AXBindGestureAndTarget(gesture, AXDefaultTarget);
     

@@ -50,7 +50,7 @@
     daLayer.network.URLString = daLayer.network.gitIssueHelpURL;
     [daLayer.network getURLCompletion:^(id response) {
         NSDictionary *dataDict = response;
-        GitHubIssueListModel * list = [GitHubIssueListModel modelWithDictionary:dataDict];
+        GitHubIssueListModel *list = [GitHubIssueListModel modelWithDictionary:dataDict];
         
         if (completion) {
             completion(list);
@@ -65,7 +65,7 @@
     daLayer.network.URLString = [self queryURLWithKeyword:keyword];
     [daLayer.network getURLCompletion:^(id response) {
         NSDictionary *dataDict = response;
-        GitHubIssueListModel * list = [GitHubIssueListModel modelWithDictionary:dataDict];
+        GitHubIssueListModel *list = [GitHubIssueListModel modelWithDictionary:dataDict];
         if (completion) {
             completion(list);
         }
@@ -73,6 +73,29 @@
         
     }];
 }
+
+
+- (void)getBlogList:(void (^)(NSArray<BlogListModel *> *blogs))completion{
+    AXLogOBJ(daLayer.network.blogListURL);
+    daLayer.network.URLString = daLayer.network.blogListURL;
+    [daLayer.network getURLCompletion:^(id response) {
+        NSArray *dataArr = response;
+        NSMutableArray<BlogListModel *> *ret = [NSMutableArray array];
+        for (NSDictionary *dataDict in dataArr) {
+            BlogListModel *blogs = [BlogListModel modelWithDictionary:dataDict];
+            [ret addObject:blogs];
+        }
+        if (completion) {
+            completion(ret);
+        }
+    } fail:^(NSError *error) {
+        
+    }];
+}
+
+
+
+
 
 
 #pragma mark - util

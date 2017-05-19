@@ -23,7 +23,7 @@
     self.mainTabBarVC = [[BaseTabBarController alloc] init];
     [self addChildViewController:self.mainTabBarVC];
     [self.view addSubview:self.mainTabBarVC.view];
-    
+    [services.app applyTheme];
 }
 
 - (void)didReceiveMemoryWarning {

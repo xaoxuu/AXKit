@@ -5,11 +5,13 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DebugVC">
             <connections>
+                <outlet property="appIcon" destination="ncD-hI-eGs" id="nEE-16-fbh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,11 +33,20 @@
                         <action selector="hitTest:" destination="-1" eventType="touchUpInside" id="DMA-Dk-0G9"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ncD-hI-eGs">
+                    <rect key="frame" x="155.5" y="301.5" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ncD-hI-eGs" secondAttribute="height" multiplier="1:1" id="SiF-v5-DtJ"/>
+                        <constraint firstAttribute="width" constant="64" id="pX4-bQ-eeP"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ncD-hI-eGs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0wf-mu-gfl"/>
                 <constraint firstAttribute="trailing" secondItem="INi-e8-bv5" secondAttribute="trailing" id="KYo-gj-KgL"/>
                 <constraint firstAttribute="bottom" secondItem="INi-e8-bv5" secondAttribute="bottom" id="Ovc-Qt-c2f"/>
+                <constraint firstItem="ncD-hI-eGs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eTr-40-Stt"/>
                 <constraint firstItem="INi-e8-bv5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jNf-P3-fxB"/>
             </constraints>
         </view>
