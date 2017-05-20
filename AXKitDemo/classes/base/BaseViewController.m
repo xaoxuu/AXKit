@@ -44,6 +44,7 @@
 
 - (void)setupChildViewControllerUIKit{
     
+    // @xaoxuu: refresh button
     if ([self respondsToSelector:@selector(setupRightRefreshBarButton:)]) {
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem * _Nonnull sender) {
             sender.enabled = NO;
@@ -58,6 +59,7 @@
         
     }
     
+    // @xaoxuu: table view
     if ([self respondsToSelector:@selector(setupTableView)]) {
         [self.view addSubview:UIViewWithHeight(1)];
         self.tableView = [self setupTableView];

@@ -16,7 +16,7 @@
                     "title":"关于",
                     "desc":"about axkit",
                     "icon":"setting_about",
-                    "target":"default",
+                    "target":"AboutVC",
                     "cmd":""
                 },
                 {

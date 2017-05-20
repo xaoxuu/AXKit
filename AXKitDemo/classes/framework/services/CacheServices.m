@@ -15,6 +15,8 @@
 // @xaoxuu: 务必保证：【key = json文件名 = tableview类名】
 static NSString *key_setting = @"SettingTableView";
 static NSString *key_projects = @"ProjectsTableView";
+static NSString *key_about = @"AboutTableView";
+
 
 @interface CacheServices ()
 
@@ -27,7 +29,8 @@ static NSString *key_projects = @"ProjectsTableView";
 // @xaoxuu: proj list
 @property (strong, nonatomic) BaseTableModelListType projectList;
 
-
+// @xaoxuu: about list
+@property (strong, nonatomic) BaseTableModelListType aboutList;
 
 @end
 
@@ -52,8 +55,12 @@ static NSString *key_projects = @"ProjectsTableView";
 
 - (void)cacheObj:(BaseTableModelListType)obj forKey:(NSString *)key completion:(void (^)())completion{
     [daLayer.cache cacheObj:obj forKey:key completion:^{
-        AXLogSuccess(@"%@ 已完成缓存",key);
-        [self asyncCalculateCache];
+        // @xaoxuu: async calculate cache
+        [NSBlockOperation ax_delay:0 cooldown:1 token:@"async calculate cache" performInBackground:^{
+            AXLogSuccess(@"%@ 已完成缓存",key);
+            [self asyncCalculateCache];
+            [self cacheList];
+        }];
     } fail:^{
         AXLogFail(@"%@ 缓存失败",key);
     }];
@@ -100,12 +107,7 @@ static NSString *key_projects = @"ProjectsTableView";
         // @xaoxuu: 取出模型
         _settingList = [self loadObjWithKey:key_setting];
         // @xaoxuu: cache缓存
-        [self cacheObj:_settingList forKey:key_setting completion:^{
-            // @xaoxuu: load cache if need
-            [NSBlockOperation ax_delay:0 performInBackground:^{
-                [self cacheList];
-            }];
-        }];
+        [self cacheObj:_settingList forKey:key_setting completion:nil];
         
     }
     return _settingList;
@@ -118,15 +120,21 @@ static NSString *key_projects = @"ProjectsTableView";
         // @xaoxuu: 取出模型
         _projectList = [self loadObjWithKey:key_projects];
         // @xaoxuu: cache缓存
-        [self cacheObj:_projectList forKey:key_projects completion:^{
-            // @xaoxuu: load cache if need
-            [NSBlockOperation ax_delay:0 performInBackground:^{
-                [self cacheList];
-            }];
-        }];
+        [self cacheObj:_projectList forKey:key_projects completion:nil];
         
     }
     return _projectList;
+}
+
+// @xaoxuu: 关于
+- (BaseTableModelListType)aboutList{
+    if (!_aboutList.count) {
+        // @xaoxuu: 取出模型
+        _aboutList = [self loadObjWithKey:key_about];
+        // @xaoxuu: cache缓存
+        [self cacheObj:_aboutList forKey:key_about completion:nil];
+    }
+    return _aboutList;
 }
 
 

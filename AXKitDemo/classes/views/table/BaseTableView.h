@@ -13,16 +13,16 @@
 @class BaseTableView,BaseViewController;
 @protocol BaseTableViewDelegate <UITableViewDataSource,UITableViewDelegate>
 
-@required
+@optional
 
 /**
- 异步加载的数据源
+ 异步加载的数据源(使用本地同名json数据源可以不用实现此方法)
  
  @param dataSource 加载完成的回调
  */
 - (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))dataSource;
 
-@optional
+
 
 
 /**
@@ -32,9 +32,9 @@
  */
 - (void)setupTableView:(BaseTableView *)tableView;
 
-- (void)setupTableViewHeader:(UIView *)header;
-
-- (void)setupTableViewFooter:(UIView *)footer;
+//- (void)setupTableViewHeader:(UIView *)header;
+//
+//- (void)setupTableViewFooter:(UIView *)footer;
 
 
 

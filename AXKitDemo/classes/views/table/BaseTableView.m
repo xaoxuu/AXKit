@@ -34,17 +34,6 @@ static NSTimeInterval loadingTimeout = 5;
 @implementation BaseTableView
 
 
-//- (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name{
-//    if (self = [self initWithFrame:frame]) {
-//        
-//        
-//        
-//    }
-//    return self;
-//}
-//
-//
-
 
 - (instancetype)init{
     if (self = [super initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)]) {
@@ -76,8 +65,6 @@ static NSTimeInterval loadingTimeout = 5;
     // @xaoxuu: 高度
     self.estimatedRowHeight = 44;
     self.estimatedSectionHeaderHeight = 0;
-//    self.sectionHeaderHeight = kMarginNormal;
-//    self.sectionFooterHeight = kMarginNormal;
     
     self.tableHeaderView = UIViewWithHeight(1);
     self.tableFooterView = services.app.tableFooter;
@@ -105,7 +92,11 @@ static NSTimeInterval loadingTimeout = 5;
     if (!_dataList.count) {
         // @xaoxuu: 先用上次的缓存填充界面
         if (!_dataList.count) {
+            // @xaoxuu: 注意：如果使用本地数据源，如果json文件和tableview文件名一致，则无需实现"setupTableViewDataSource"方法即可自动加载数据源。
             _dataList = [services.cache loadObjWithKey:NSStringFromClass([self class])];
+            if (_dataList.count) {
+                [self.indicator stopAnimating];
+            }
         }
         // @xaoxuu: 加载数据源
         if ([self respondsToSelector:@selector(setupTableViewDataSource:)]) {
@@ -165,7 +156,7 @@ static NSTimeInterval loadingTimeout = 5;
 }
 
 - (void)reloadDataSourceAndRefreshTableView{
-    [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:@"reloadDataSourceAndRefreshTableView" performInMainQueue:^{
+    [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:@"reload data source and refresh table view" performInMainQueue:^{
         [self.dataList removeAllObjects];
         [self reloadTableView];
     }];
@@ -298,9 +289,7 @@ static NSTimeInterval loadingTimeout = 5;
 
 #pragma mark - self delegate
 
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))dataSource{
-    
-}
+
 
 
 @end

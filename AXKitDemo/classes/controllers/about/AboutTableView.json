@@ -1,0 +1,55 @@
+{
+    "title":"关于",
+    "header_title":"this is table header",
+    "header_height":"0",
+    "footer_title":"this is table footer",
+    "footer_height":"0",
+    "sections":[
+        {
+            "header_title":"",
+            "header_height":"8",
+            "footer_title":"",
+            "footer_height":"8",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"build",
+                    "desc":"",
+                    "icon":"",
+                    "target":"",
+                    "cmd":""
+                }
+            ]
+        },
+        {
+            "header_title":"",
+            "header_height":"8",
+            "footer_title":"",
+            "footer_height":"8",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"开发者网站",
+                    "desc":"",
+                    "icon":"",
+                    "target":"default",
+                    "cmd":"https://xaoxuu.com"
+                },
+                {
+                    "title":"项目源码",
+                    "desc":"",
+                    "icon":"",
+                    "target":"default",
+                    "cmd":"https://github.com/xaoxuu/AXKit"
+                },
+                {
+                    "title":"反馈邮箱",
+                    "desc":"",
+                    "icon":"",
+                    "target":"default",
+                    "cmd":"mailto://stackxu@gmail.com"
+                }
+            ]
+        },
+    ]
+}

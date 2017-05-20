@@ -186,6 +186,12 @@
 		CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B211EB9E80F00E8ED25 /* NSObject+MJKeyValue.m */; };
 		CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B231EB9E80F00E8ED25 /* NSObject+MJProperty.m */; };
 		CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */; };
+		CDC1A7781ECFD6C8003AAA63 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7761ECFD6C8003AAA63 /* AboutVC.m */; };
+		CDC1A7791ECFD6C8003AAA63 /* AboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC1A7771ECFD6C8003AAA63 /* AboutVC.xib */; };
+		CDC1A77C1ECFD6F7003AAA63 /* AboutTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A77B1ECFD6F7003AAA63 /* AboutTableView.m */; };
+		CDC1A7851ECFDC63003AAA63 /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7841ECFDC63003AAA63 /* BaseLabel.m */; };
+		CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */; };
+		CDC1A78A1ECFDFAD003AAA63 /* AboutTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CDC1A7891ECFDFAD003AAA63 /* AboutTableView.json */; };
 		CDC8CDF51ECC92B7009F855E /* UIAlertController+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC8CDF31ECC92B7009F855E /* UIAlertController+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDC8CDF61ECC92B7009F855E /* UIAlertController+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */; };
 		CDC8CDFD1ECCA5F2009F855E /* AXKitHelpServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC8CDFB1ECCA5F2009F855E /* AXKitHelpServices.h */; };
@@ -486,6 +492,16 @@
 		CDBB3B231EB9E80F00E8ED25 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		CDBB3B241EB9E80F00E8ED25 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		CDC1A7751ECFD6C8003AAA63 /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
+		CDC1A7761ECFD6C8003AAA63 /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
+		CDC1A7771ECFD6C8003AAA63 /* AboutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutVC.xib; sourceTree = "<group>"; };
+		CDC1A77A1ECFD6F7003AAA63 /* AboutTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableView.h; sourceTree = "<group>"; };
+		CDC1A77B1ECFD6F7003AAA63 /* AboutTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableView.m; sourceTree = "<group>"; };
+		CDC1A7831ECFDC63003AAA63 /* BaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
+		CDC1A7841ECFDC63003AAA63 /* BaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
+		CDC1A7861ECFDC98003AAA63 /* NormalLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalLabel.h; sourceTree = "<group>"; };
+		CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalLabel.m; sourceTree = "<group>"; };
+		CDC1A7891ECFDFAD003AAA63 /* AboutTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AboutTableView.json; sourceTree = "<group>"; };
 		CDC8CDF31ECC92B7009F855E /* UIAlertController+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+AXWrapper.h"; sourceTree = "<group>"; };
 		CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+AXWrapper.m"; sourceTree = "<group>"; };
 		CDC8CDFB1ECCA5F2009F855E /* AXKitHelpServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitHelpServices.h; sourceTree = "<group>"; };
@@ -1053,6 +1069,7 @@
 		CDBB39B91EB9D96B00E8ED25 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CDC1A7741ECFD6B5003AAA63 /* about */,
 				CD88D1981ECF2F3E004FC692 /* bloglist */,
 				CD88D18F1ECF2A9D004FC692 /* icon */,
 				CDE94E9D1EC712BE00596B93 /* help */,
@@ -1185,6 +1202,30 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		CDC1A7741ECFD6B5003AAA63 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				CDC1A7751ECFD6C8003AAA63 /* AboutVC.h */,
+				CDC1A7761ECFD6C8003AAA63 /* AboutVC.m */,
+				CDC1A7771ECFD6C8003AAA63 /* AboutVC.xib */,
+				CDC1A77A1ECFD6F7003AAA63 /* AboutTableView.h */,
+				CDC1A77B1ECFD6F7003AAA63 /* AboutTableView.m */,
+				CDC1A7891ECFDFAD003AAA63 /* AboutTableView.json */,
+			);
+			path = about;
+			sourceTree = "<group>";
+		};
+		CDC1A7821ECFDC55003AAA63 /* label */ = {
+			isa = PBXGroup;
+			children = (
+				CDC1A7831ECFDC63003AAA63 /* BaseLabel.h */,
+				CDC1A7841ECFDC63003AAA63 /* BaseLabel.m */,
+				CDC1A7861ECFDC98003AAA63 /* NormalLabel.h */,
+				CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */,
+			);
+			path = label;
+			sourceTree = "<group>";
+		};
 		CDC8CDFF1ECCAE6A009F855E /* Priv */ = {
 			isa = PBXGroup;
 			children = (
@@ -1270,6 +1311,7 @@
 		CDF18CD61EB8886C004B4794 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				CDC1A7821ECFDC55003AAA63 /* label */,
 				CDE94EA61EC72C2200596B93 /* loading */,
 				CD0B62EE1EC45E060024F25E /* button */,
 				CD77FE8D1EBF590F001A5787 /* switch */,
@@ -1454,9 +1496,11 @@
 				CD6A83A31EC5F37A00A3ECC7 /* EmailVC.xib in Resources */,
 				CD77FE7A1EBEF09D001A5787 /* PopView.xib in Resources */,
 				CD23DCB01EC1E166006E331B /* ThemeColorVC.xib in Resources */,
+				CDC1A7791ECFD6C8003AAA63 /* AboutVC.xib in Resources */,
 				CD91CB261EC44BF000984F71 /* RemoveCacheVC.xib in Resources */,
 				CD0B63161EC4C66D0024F25E /* ProjectDetailVC.xib in Resources */,
 				CD91CB1A1EC437D800984F71 /* CustomTableVC.xib in Resources */,
+				CDC1A78A1ECFDFAD003AAA63 /* AboutTableView.json in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* view_controller_titles.json in Resources */,
 				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
@@ -1562,6 +1606,7 @@
 				CDE94E9A1EC7073100596B93 /* GitHubApiDataAccess.m in Sources */,
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */,
+				CDC1A7851ECFDC63003AAA63 /* BaseLabel.m in Sources */,
 				CDBB39C81EB9D96B00E8ED25 /* HomeVC.m in Sources */,
 				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
 				CD23DCAF1EC1E166006E331B /* ThemeColorVC.m in Sources */,
@@ -1570,6 +1615,7 @@
 				CD23DCDF1EC36017006E331B /* SCLAlertView+AXWrapper.m in Sources */,
 				CD77FEAA1EBF5E0D001A5787 /* CacheServices.m in Sources */,
 				CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */,
+				CDC1A77C1ECFD6F7003AAA63 /* AboutTableView.m in Sources */,
 				CD88D1AA1ECF30B6004FC692 /* BlogContentModel.m in Sources */,
 				CD77FEB81EBF67F4001A5787 /* BaseTableModel.m in Sources */,
 				CDE94E691EC6FB7E00596B93 /* NetworkDataAccess.m in Sources */,
@@ -1586,6 +1632,7 @@
 				CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */,
 				CDBB39D61EB9DD1400E8ED25 /* BlogVC.m in Sources */,
 				CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */,
+				CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */,
 				CD88D1A01ECF2F5D004FC692 /* BlogListTableView.m in Sources */,
 				CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */,
 				CDE94E941EC705C800596B93 /* GitHubLabelModel.m in Sources */,
@@ -1635,6 +1682,7 @@
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
 				CDE94EA11EC712CF00596B93 /* HelpVC.m in Sources */,
 				CD88D19C1ECF2F4E004FC692 /* BlogListVC.m in Sources */,
+				CDC1A7781ECFD6C8003AAA63 /* AboutVC.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
 				CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */,
 				CD91CB251EC44BF000984F71 /* RemoveCacheVC.m in Sources */,
