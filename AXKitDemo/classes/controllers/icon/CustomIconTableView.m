@@ -10,6 +10,8 @@
 
 @implementation CustomIconTableView
 
-
+- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))dataSource{
+    
+}
 
 @end

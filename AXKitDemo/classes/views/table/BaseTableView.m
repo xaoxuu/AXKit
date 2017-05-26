@@ -121,6 +121,12 @@ static NSTimeInterval loadingTimeout = 5;
                     }
                 }];
             }];
+        } else {
+            if (!_dataList.count) {
+                NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"请在\"%@.m\"文件中实现数据源协议：\n\"- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))dataSource;\"", nil), NSStringFromClass([self class])];
+                [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"加载失败", nil) message:msg];
+                [self.indicator startAnimating];
+            }
         }
         
         if (!_dataList) {

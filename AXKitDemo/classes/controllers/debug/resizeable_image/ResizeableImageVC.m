@@ -29,6 +29,8 @@
     
     self.targetView.layer.cornerRadius = 8;
     self.targetView.layer.ax_shadow(AXShadowDownNormal);
+    self.moveGestureView.layer.ax_maskToCircle();
+    self.resizeGestureView.layer.ax_maskToCircle();
     
     UIImage *image = [UIImage imageNamed:@"chat"];
     CGFloat x = image.size.width / 2;
