@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResizeableImageVC">
+            <connections>
+                <outlet property="bgImageView" destination="U5B-7Y-mQx" id="qsg-HI-nzz"/>
+                <outlet property="moveGestureView" destination="6fP-ms-mCV" id="Cho-3U-4ww"/>
+                <outlet property="resizeGestureView" destination="UtU-iR-4AF" id="GYN-T4-3ZW"/>
+                <outlet property="targetView" destination="ptq-sH-xbu" id="o2G-NH-YpH"/>
+                <outlet property="textV" destination="kSS-xZ-k8k" id="iiE-Ym-VUO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptq-sH-xbu">
+                    <rect key="frame" x="24" y="88" width="64" height="60"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-7Y-mQx">
+                            <rect key="frame" x="8" y="8" width="48" height="44"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="11" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="kSS-xZ-k8k">
+                            <rect key="frame" x="20" y="32" width="24" height="4"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                        </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fP-ms-mCV">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Y15-IB-67o"/>
+                                <constraint firstAttribute="height" constant="40" id="Ybd-IC-Roc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtU-iR-4AF">
+                            <rect key="frame" x="26" y="22" width="30" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="eok-2c-yri"/>
+                                <constraint firstAttribute="height" constant="30" id="hBr-ix-1Dh"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="U5B-7Y-mQx" firstAttribute="top" secondItem="ptq-sH-xbu" secondAttribute="topMargin" id="5jt-HR-dI4"/>
+                        <constraint firstItem="6fP-ms-mCV" firstAttribute="top" secondItem="ptq-sH-xbu" secondAttribute="top" id="8C1-ZE-vni"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="UtU-iR-4AF" secondAttribute="bottom" id="DY5-4Z-gam"/>
+                        <constraint firstItem="U5B-7Y-mQx" firstAttribute="leading" secondItem="ptq-sH-xbu" secondAttribute="leadingMargin" id="MrO-PT-wNo"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="kSS-xZ-k8k" secondAttribute="bottom" constant="16" id="NXY-QC-ejx"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="kSS-xZ-k8k" secondAttribute="trailing" constant="12" id="OrX-fl-sqX"/>
+                        <constraint firstItem="6fP-ms-mCV" firstAttribute="leading" secondItem="ptq-sH-xbu" secondAttribute="leading" id="P0X-aa-sJ9"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="U5B-7Y-mQx" secondAttribute="bottom" id="Yj5-ty-8Gx"/>
+                        <constraint firstItem="kSS-xZ-k8k" firstAttribute="leading" secondItem="ptq-sH-xbu" secondAttribute="leadingMargin" constant="12" id="ZZL-0V-X2D"/>
+                        <constraint firstItem="kSS-xZ-k8k" firstAttribute="top" secondItem="ptq-sH-xbu" secondAttribute="topMargin" constant="24" id="k5O-h0-b9W"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="UtU-iR-4AF" secondAttribute="trailing" id="lV3-Cd-ju8"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="U5B-7Y-mQx" secondAttribute="trailing" id="tTu-6Y-qAd"/>
+                        <constraint firstAttribute="height" constant="60" id="xEC-Gw-uZp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ptq-sH-xbu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="80" id="dPs-YI-156"/>
+                <constraint firstItem="ptq-sH-xbu" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.2" id="f54-S8-shF"/>
+                <constraint firstItem="ptq-sH-xbu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="16" id="f6d-LN-oVu"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="chat" width="52" height="63"/>
+    </resources>
+</document>

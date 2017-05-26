@@ -51,6 +51,12 @@
     [self.navigationController ax_pushViewControllerNamed:@"HitTestVC"];
 }
 
+- (IBAction)resizeableImage:(UIButton *)sender {
+    [self.navigationController ax_pushViewControllerNamed:@"ResizeableImageVC"];
+    
+}
+
+
 
 
 @end

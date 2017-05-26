@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,10 +40,26 @@
                         <constraint firstAttribute="width" constant="64" id="pX4-bQ-eeP"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQD-Vs-L8Z" customClass="ThemeBgButton">
+                    <rect key="frame" x="0.0" y="568" width="375" height="49"/>
+                    <color key="backgroundColor" red="0.99607843139999996" green="0.66666666669999997" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="tdC-RZ-mgq"/>
+                    </constraints>
+                    <state key="normal" title="resizeable image">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="resizeableImage:" destination="-1" eventType="touchUpInside" id="7Qt-sW-d2D"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ncD-hI-eGs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0wf-mu-gfl"/>
+                <constraint firstItem="INi-e8-bv5" firstAttribute="top" secondItem="pQD-Vs-L8Z" secondAttribute="bottom" constant="1" id="BC3-j9-12t"/>
+                <constraint firstItem="pQD-Vs-L8Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DMj-QF-Y5i"/>
+                <constraint firstAttribute="trailing" secondItem="pQD-Vs-L8Z" secondAttribute="trailing" id="JPq-zx-6DV"/>
                 <constraint firstAttribute="trailing" secondItem="INi-e8-bv5" secondAttribute="trailing" id="KYo-gj-KgL"/>
                 <constraint firstAttribute="bottom" secondItem="INi-e8-bv5" secondAttribute="bottom" id="Ovc-Qt-c2f"/>
                 <constraint firstItem="ncD-hI-eGs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eTr-40-Stt"/>

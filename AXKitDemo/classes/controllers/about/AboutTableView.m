@@ -15,7 +15,7 @@ static CGFloat const iconSize = 64;
 @implementation AboutTableView
 
 
-- (void)setupTableView:(BaseTableView *)tableView{
+- (void)initTableView:(BaseTableView *)tableView{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0.3*kScreenH)];
     // @xaoxuu: icon
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconSize, iconSize)];
@@ -46,27 +46,26 @@ static CGFloat const iconSize = 64;
     tableView.tableHeaderView = view;
     tableView.tableFooterView = nil;
 }
-
-- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
-    if (section == 0 && row == 0) {
-        return [NSBundle ax_appBuild];
+- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            model.desc = [NSBundle ax_appBuild];
+        }
     }
-    return nil;
 }
 
 
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
+- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
     NSString *urlStr = model.cmd;
     if (urlStr.length) {
         [[UIApplication sharedApplication] openURL:urlStr.absoluteURL options:@{} completionHandler:^(BOOL success) {
             
         }];
     }
-    return NO;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return self.dataList[section].footer_height.floatValue;
+    return [self sectionModel:section].footer_height.floatValue;
 }
 
 @end

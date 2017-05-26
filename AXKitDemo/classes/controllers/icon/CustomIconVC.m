@@ -25,7 +25,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BaseTableView *)setupTableView{
+- (BaseTableView *)installTableView{
     return [[CustomIconTableView alloc] initWithFrame:self.view.bounds];
 }
 

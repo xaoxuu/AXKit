@@ -17,7 +17,7 @@
 
 #define AXLogFormat(format, ...) NSLog((@"\n➤ func:%s " "line:%d" "\n💬" format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
-#define AXLogFunc NSLog((@"\n➤ func:%s " "line:%d" "\n\n"), __FUNCTION__, __LINE__)
+#define AXLogFunc() NSLog((@"\n➤ func:%s " "line:%d" "\n\n"), __FUNCTION__, __LINE__)
 
 
 // result macro
@@ -52,7 +52,7 @@
 #else
 
 #define AXLogFormat(format, ...)
-#define AXLogFunc
+#define AXLogFunc()
 // result macro
 #define AXLogBOOL(BOOL)
 #define AXLogSuccess(format, ...)

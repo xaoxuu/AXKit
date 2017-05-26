@@ -14,7 +14,7 @@
 
 
 
-- (void)setupTableView:(BaseTableView *)tableView{
+- (void)initTableView:(BaseTableView *)tableView{
     tableView.estimatedSectionFooterHeight = 0;
     tableView.sectionFooterHeight = 0;
     
@@ -28,9 +28,8 @@
     }
 }
 
-
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof UIViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
-    
+- (void)indexPath:(NSIndexPath *)indexPath willPushTo:(__kindof BaseViewController *)targetVC {
+    BaseTableModelRow *model = [self rowModel:indexPath];
     if ([targetVC isKindOfClass:[FeedbackVC class]]) {
         FeedbackVC *vc = targetVC;
         vc.urlStr = model.cmd;
@@ -40,20 +39,17 @@
         CustomTableVC *vc = targetVC;
         vc.cmd = model.cmd;
     }
-    return YES;
+    
 }
 
 
-- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
-    if (section == 3) {
-        if (row == 0) {
-            return services.cache.cachedFileSize;
+- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
+    if (indexPath.section == 3) {
+        if (indexPath.row == 0) {
+            model.desc = services.cache.cachedFileSize;
         }
     }
-    return nil;
 }
-
-
 
 
 

@@ -15,13 +15,9 @@
 // @xaoxuu: model
 @property (strong, readwrite, nonatomic) __kindof BaseTableModelRow *model;
 
-// @xaoxuu: switch
-@property (strong, readonly, nonatomic) BaseSwitch *sw;
-
 // @xaoxuu: image
 @property (strong, nonatomic) UIImage *icon;
 
-// @xaoxuu: icon
-@property (weak, readonly, nonatomic) IBOutlet UIImageView *img_icon;
+
 
 @end

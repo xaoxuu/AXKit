@@ -29,13 +29,13 @@
 }
 
 
-- (BaseTableView *)setupTableView{
+- (BaseTableView *)installTableView{
     self.tableView = [[HelpTableView alloc] initWithFrame:self.view.bounds];
     return self.tableView;
 }
 
-- (void)setupRightRefreshBarButton:(UIBarButtonItem *)sender{
-    [self.tableView reloadDataSourceAndRefreshTableView];
+- (void)installRightRefreshBarButton:(UIBarButtonItem *)sender{
+    [self.tableView reloadDataSourceAndTableView];
 }
 
 

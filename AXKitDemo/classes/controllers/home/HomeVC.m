@@ -20,7 +20,6 @@
     self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
     
     
-    
     AXLogOBJ([NSBundle ax_appName]);
     AXLogOBJ([NSBundle ax_appVersion]);
     AXLogOBJ([NSBundle ax_appBuild]);

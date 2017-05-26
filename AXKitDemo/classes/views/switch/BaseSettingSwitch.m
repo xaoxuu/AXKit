@@ -1,14 +1,14 @@
 //
-//  SettingSwitch.m
+//  BaseSettingSwitch.m
 //  AXKit
 //
 //  Created by xaoxuu on 07/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "SettingSwitch.h"
+#import "BaseSettingSwitch.h"
 
-@implementation SettingSwitch
+@implementation BaseSettingSwitch
 
 
 - (void)awakeFromNib{
@@ -25,6 +25,7 @@
 }
 
 - (void)setupUI{
+    
     
     [self setOnTintColor:axColor.theme];
     [self setOffImage:[UIImage imageNamed:@"watch_close"]];

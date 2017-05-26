@@ -19,6 +19,8 @@ static NSTimeInterval loadingTimeout = 5;
 
 
 
+// @xaoxuu: list
+@property (strong, nonatomic) BaseTableModelListType dataList;
 
 
 // @xaoxuu: table view cell name
@@ -77,10 +79,8 @@ static NSTimeInterval loadingTimeout = 5;
 
 - (void)_base_setupDelegates{
     // @xaoxuu: 设置table view
-    if ([self respondsToSelector:@selector(setupTableView:)]) {
-        [NSBlockOperation ax_delay:0 performInMainQueue:^{
-            [self setupTableView:self];
-        }];
+    if ([self respondsToSelector:@selector(initTableView:)]) {
+        [self initTableView:self];
     }
     
 }
@@ -134,15 +134,10 @@ static NSTimeInterval loadingTimeout = 5;
 
 #pragma mark - 功能
 
-// @xaoxuu: 根据加载到的数据刷新tableview
-- (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList{
-    self.dataList = dataList;
-    [self reloadTableView];
-}
-
-
+// @xaoxuu: 刷新tableView
 - (void)reloadTableView{
-    [NSBlockOperation ax_delay:0 performInMainQueue:^{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // @xaoxuu: in background queue
         if (self.dataList.count) {
             [self.indicator stopAnimating];
         } else {
@@ -152,23 +147,34 @@ static NSTimeInterval loadingTimeout = 5;
         for (UIBarButtonItem *item in self.controller.navigationItem.rightBarButtonItems) {
             item.enabled = YES;
         }
-    }];
+    });
+    
 }
 
-- (void)reloadDataSourceAndRefreshTableView{
+// @xaoxuu: 重新获取数据源并刷新tableView
+- (void)reloadDataSourceAndTableView{
     [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:@"reload data source and refresh table view" performInMainQueue:^{
         [self.dataList removeAllObjects];
         [self reloadTableView];
     }];
 }
 
+// @xaoxuu: 根据指定的新数据源重新加载tableView
+- (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList{
+    self.dataList = dataList;
+    [self reloadTableView];
+}
 
 - (void)deleteCellWithIndexPath:(NSIndexPath *)indexPath{
     [self.dataList[indexPath.section].rows removeObjectAtIndex:indexPath.row];
     [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (BaseTableModelRow *)rowModelWithIndexPath:(NSIndexPath *)indexPath{
+- (BaseTableModelSection *)sectionModel:(NSInteger)section{
+    return self.dataList[section];
+}
+
+- (BaseTableModelRow *)rowModel:(NSIndexPath *)indexPath{
     return self.dataList[indexPath.section].rows[indexPath.row];
 }
 
@@ -190,39 +196,46 @@ static NSTimeInterval loadingTimeout = 5;
     NSUInteger row = indexPath.row;
     BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
     BaseTableModelRow *model = self.dataList[section].rows[row];
-    if ([self respondsToSelector:@selector(tableViewCellDetailForSection:row:)]) {
-        NSString *detail = [self tableViewCellDetailForSection:section row:row];
-        if (detail) {
-            model.desc = detail;
-        }
+    // @xaoxuu: 即将设置模型
+    if ([self respondsToSelector:@selector(indexPath:willSetModel:)]) {
+        [self indexPath:indexPath willSetModel:model];
     }
     cell.model = model;
     
     
     // @xaoxuu: 自定义icon
-    if ([self respondsToSelector:@selector(tableViewCellIconForSection:row:)]) {
-        UIImage *img = [self tableViewCellIconForSection:section row:row];
-        cell.icon = img;
+    if ([self respondsToSelector:@selector(indexPath:icon:)]) {
+        [self indexPath:indexPath icon:^(UIImage *icon) {
+            cell.icon = icon;
+        }];
+        
     }
-    
-    // @xaoxuu: 是否显示">"
-    BOOL showAccessory = YES;
-    if ([self respondsToSelector:@selector(tableViewCellShowAccessoryDisclosureIndicatorForSection:row:)]) {
-        showAccessory = [self tableViewCellShowAccessoryDisclosureIndicatorForSection:section row:row];
-    }
-    cell.accessoryType = showAccessory ? UITableViewCellAccessoryDisclosureIndicator:UITableViewCellAccessoryNone;
     
     // @xaoxuu: 是否显示开关
-    BOOL showSwitch = NO;
-    if ([self respondsToSelector:@selector(tableViewCellShowSwitch:forSection:row:)]) {
-        showSwitch = [self tableViewCellShowSwitch:cell.sw forSection:section row:row];
-        [cell.sw ax_addValueChangedHandler:^(__kindof UISwitch * _Nonnull sender) {
-            if ([self respondsToSelector:@selector(tableViewCellDidSwitchStatusChanged:forSection:row:)]) {
-                [self tableViewCellDidSwitchStatusChanged:cell.sw forSection:section row:row];
+    if ([self respondsToSelector:@selector(indexPath:showSwitch:)]) {
+        [self indexPath:indexPath showSwitch:^(BOOL show, BOOL open) {
+            if (show) {
+                BaseSettingSwitch *sw = [BaseSettingSwitch new];
+                sw.on = open;
+                cell.accessoryView = sw;
+                if ([self respondsToSelector:@selector(indexPath:switchValueChanged:)]) {
+                    [sw ax_addValueChangedHandler:^(__kindof UISwitch * _Nonnull sender) {
+                        [self indexPath:indexPath switchValueChanged:sender];
+                    }];
+                }
+            } else {
+                cell.accessoryView = nil;
             }
         }];
     }
-    cell.accessoryView = showSwitch ? cell.sw : nil;
+    
+    // @xaoxuu: 默认显示">"
+    if ([self respondsToSelector:@selector(indexPath:accessoryType:)]) {
+        [self indexPath:indexPath accessoryType:^(UITableViewCellAccessoryType accessoryType) {
+            cell.accessoryType = accessoryType;
+        }];
+    }
+        
     
     
     return cell;
@@ -242,24 +255,27 @@ static NSTimeInterval loadingTimeout = 5;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSUInteger section = indexPath.section;
     NSUInteger row = indexPath.row;
-    if ([self respondsToSelector:@selector(tableViewCellDidSelectedInSection:row:)]) {
-        [self tableViewCellDidSelectedInSection:section row:row];
-    }
     BaseTableModelRow *model = self.dataList[section].rows[row];
     if (!model) {
         return;
     }
+    // @xaoxuu: selection action
+    if ([self respondsToSelector:@selector(indexPath:didSelected:)]) {
+        [self indexPath:indexPath didSelected:model];
+        return;
+    }
+    
+    // @xaoxuu: push action
     BaseViewController *vc = (BaseViewController *)UIViewControllerFromString(model.target);
     if (vc) {
         vc.title = NSLocalizedString(model.title, nil);
-        [self tryToPushToViewController:vc withModel:model section:section row:row];
+        [self _indexPath:indexPath tryPush:vc withModel:model];
     } else if (model.target.length) {
+        // @xaoxuu: push default vc
         DefaultViewController *vc = [DefaultViewController defaultVCWithTitle:NSLocalizedString(model.title, nil) detail:NSLocalizedString(model.desc, nil)];
-        [self tryToPushToViewController:vc withModel:model section:section row:row];
+        [self _indexPath:indexPath tryPush:vc withModel:model];
     }
-    if ([self respondsToSelector:@selector(tableViewCellDidSelected:)]) {
-        [self tableViewCellDidSelected:model];
-    }
+    
 }
 
 
@@ -277,15 +293,22 @@ static NSTimeInterval loadingTimeout = 5;
 
 #pragma mark - util
 
-- (void)tryToPushToViewController:(__kindof BaseViewController *)targetVC withModel:(BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
-    if ([self respondsToSelector:@selector(tableViewCellShouldPushToViewController:withModel:section:row:)]) {
-        if ([self tableViewCellShouldPushToViewController:targetVC withModel:model section:section row:row]) {
-            [self.controller.navigationController pushViewController:targetVC animated:YES];
+- (void)_indexPath:(NSIndexPath *)indexPath tryPush:(__kindof BaseViewController *)targetVC withModel:(BaseTableModelRow *)model{
+    void (^block_push)() = ^{
+        if ([self respondsToSelector:@selector(indexPath:willPush:)]) {
+            [self indexPath:indexPath willPush:targetVC];
+        }
+        [self.controller.navigationController pushViewController:targetVC animated:YES];
+    };
+    if ([self respondsToSelector:@selector(indexPath:shouldPush:)]) {
+        if ([self indexPath:indexPath shouldPush:targetVC]) {
+            block_push();
         }
     } else {
-        [self.controller.navigationController pushViewController:targetVC animated:YES];
+        block_push();
     }
 }
+
 
 #pragma mark - self delegate
 

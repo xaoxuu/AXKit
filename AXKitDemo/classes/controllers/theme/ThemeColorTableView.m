@@ -12,35 +12,36 @@
 @implementation ThemeColorTableView
 
 
-//- (BaseTableModelListType)dataListForTableView:(UITableView *)tableView{
-//    return services.json.colors;
-//}
+
 - (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{
     if (completion) {
         completion(services.json.colors);
     }
 }
 
-- (UIImage *)tableViewCellIconForSection:(NSUInteger)section row:(NSUInteger)row{
-    ThemeColorModelRow *model = services.json.colors[section].rows[row];
-    return [UIImage imageWithColor:[UIColor colorWithHexString:model.hex]];
+
+
+- (void)indexPath:(NSIndexPath *)indexPath icon:(void (^)(UIImage *))icon{
+    BaseTableModelRow *model = [self rowModel:indexPath];
+    if ([model isKindOfClass:[ThemeColorModelRow class]]) {
+        ThemeColorModelRow *color = (ThemeColorModelRow *)model;
+        icon([UIImage imageWithColor:[UIColor colorWithHexString:color.hex]]);
+    }
 }
 
-- (void)tableViewCellDidSelected:(__kindof BaseTableModelRow *)model{
+- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
     [services.app applyThemeWithColor:model completion:^{
         [self.controller.navigationController popViewControllerAnimated:YES];
     }];
 }
 
 
-- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row{
-    ThemeColorModelRow *colorStr = services.json.colors[section].rows[row];
-    return [NSString stringWithFormat:@"%@",colorStr.hex];
+- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
+    ThemeColorModelRow *colorStr = services.json.colors[indexPath.section].rows[indexPath.row];
+    model.desc = [NSString stringWithFormat:@"%@",colorStr.hex];
 }
 
 
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
-    return NO;
-}
+
 
 @end

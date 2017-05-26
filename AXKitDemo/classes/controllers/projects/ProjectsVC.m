@@ -29,7 +29,7 @@
 }
 
 
-- (BaseTableView *)setupTableView{
+- (BaseTableView *)installTableView{
     return [[ProjectsTableView alloc] initWithFrame:self.view.bounds];
 }
 

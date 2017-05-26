@@ -27,11 +27,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (ViewControllerHeight)setupViewControllerHeight{
-    return ViewControllerHeightWithoutTopAndBottomBar;
+- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
+    style(ContentViewStyleNoTopAndBottomBar);
 }
 
-- (BaseTableView *)setupTableView{
+
+- (BaseTableView *)installTableView{
     return [[SettingTableView alloc] initWithFrame:self.view.bounds];
 }
 
@@ -40,8 +41,8 @@
     [self.tableView reloadTableView];
 }
 
-- (void)setupRightRefreshBarButton:(UIBarButtonItem *)sender{
-    [self.tableView reloadDataSourceAndRefreshTableView];
+- (void)installRightRefreshBarButton:(UIBarButtonItem *)sender{
+    [self.tableView reloadDataSourceAndTableView];
 }
 
 

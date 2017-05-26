@@ -26,10 +26,10 @@
     }];
 }
 
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
+- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
     BaseWebVC *vc = [BaseWebVC webVCWithURLString:model.cmd];
     [self.controller.navigationController pushViewController:vc animated:YES];
-    return NO;
 }
+
 
 @end

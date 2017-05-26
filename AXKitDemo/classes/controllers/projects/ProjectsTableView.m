@@ -19,7 +19,8 @@
     }
 }
 
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
+- (BOOL)indexPath:(NSIndexPath *)indexPath shouldPushTo:(__kindof BaseViewController *)targetVC {
+    BaseTableModelRow *model = [self rowModel:indexPath];
     if ([model.cmd containsString:@"apple.com"]) {
         [NSBlockOperation ax_delay:0.5 performInBackground:^{
             [[UIApplication sharedApplication] openURL:model.cmd.absoluteURL options:@{} completionHandler:^(BOOL success) {

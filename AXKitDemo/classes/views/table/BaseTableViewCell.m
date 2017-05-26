@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_detail;
 @property (weak, nonatomic) IBOutlet UILabel *lb_title_only;
 
+// @xaoxuu: icon
+@property (weak, nonatomic) IBOutlet UIImageView *img_icon;
 
 @end
 
@@ -22,10 +24,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _sw = [BaseSwitch new];
     self.img_icon.layer.cornerRadius = 5;
-//    self.img_icon.layer.ax_maskToCircle();
-    // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -56,7 +56,18 @@
         // @xaoxuu: 远程服务器有没有同名图片，如果有则优先显示
         [self.img_icon setImageWithURL:services.app.assetURLWithName(model.icon).absoluteURL placeholder:self.img_icon.image];
     }
-
+    
+    
+    // @xaoxuu: 样式
+    if (model.target.length) {
+        self.selectionStyle = UITableViewCellSelectionStyleDefault;
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    
 }
 
 

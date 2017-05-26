@@ -24,6 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self setupButtons];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BaseTableView *)setupTableView{
+- (BaseTableView *)installTableView{
     return [[CacheTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight)];
     
 }

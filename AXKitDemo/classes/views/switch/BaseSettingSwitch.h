@@ -1,5 +1,5 @@
 //
-//  SettingSwitch.h
+//  BaseSettingSwitch.h
 //  AXKit
 //
 //  Created by xaoxuu on 07/05/2017.
@@ -8,6 +8,6 @@
 
 #import "BaseSwitch.h"
 
-@interface SettingSwitch : BaseSwitch
+@interface BaseSettingSwitch : BaseSwitch
 
 @end

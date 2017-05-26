@@ -30,11 +30,8 @@
 
 
 
-- (void)setupTableView:(BaseTableView *)tableView{
-//    UIView *view = UIViewWithHeight(44);
-//    [view addSubview:self.searchBar];
-//    self.searchBar.centerY = 0.5*view.height;
-//    tableView.tableHeaderView = view;
+- (void)initTableView:(BaseTableView *)tableView{
+    
     
     tableView.tableHeaderView = self.searchBar;
 }
@@ -57,18 +54,10 @@
     }];
 }
 
-
-
--(void)tableViewCellDidSelected:(__kindof BaseTableModelRow *)model{
+- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
     HelpDetailVC *vc = [HelpDetailVC webVCWithTitle:model.title URLString:model.cmd];
     [self.controller.navigationController pushViewController:vc animated:YES];
 }
-
-
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row{
-    return NO;
-}
-
 
 
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseSwitch.h"
 #import "BaseTableViewCell.h"
+#import "BaseSettingSwitch.h"
 
 @class BaseTableView,BaseViewController;
 @protocol BaseTableViewDelegate <UITableViewDataSource,UITableViewDelegate>
@@ -16,7 +17,15 @@
 @optional
 
 /**
- 异步加载的数据源(使用本地同名json数据源可以不用实现此方法)
+ 初始化table view
+ 
+ @param tableView table view
+ */
+- (void)initTableView:(BaseTableView *)tableView;
+
+
+/**
+ 设置异步加载的数据源(使用本地同名json数据源可以不用实现此方法)
  
  @param dataSource 加载完成的回调
  */
@@ -24,79 +33,103 @@
 
 
 
-
 /**
- 自定义table view
+ 即将设置模型
 
- @param tableView table view
+ @param indexPath 索引
+ @param model 数据模型
  */
-- (void)setupTableView:(BaseTableView *)tableView;
-
-//- (void)setupTableViewHeader:(UIView *)header;
-//
-//- (void)setupTableViewFooter:(UIView *)footer;
-
-
-
-
-
-- (NSString *)tableViewCellDetailForSection:(NSUInteger)section row:(NSUInteger)row;
-
-- (UIImage *)tableViewCellIconForSection:(NSUInteger)section row:(NSUInteger)row;
-
-- (void)tableViewCellDidSelected:(__kindof BaseTableModelRow *)model;
-
-- (void)tableViewCellDidSelectedInSection:(NSUInteger)section row:(NSUInteger)row;
-
-- (BOOL)tableViewCellShouldPushToViewController:(__kindof BaseViewController *)targetVC withModel:(__kindof BaseTableModelRow *)model section:(NSUInteger)section row:(NSUInteger)row;
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model;
 
 /**
- 默认是显示">"
+ cell的icon
+
+ @param indexPath 索引
+ @param icon icon
+ */
+- (void)indexPath:(NSIndexPath *)indexPath icon:(void (^)(UIImage *icon))icon;
+
+
+/**
+ 选中了某一行(实现了此方法后点击cell将不会自动执行push操作，除非此方法内实现了push操作。)
+
+ @param indexPath 索引
+ @param model 数据模型
+ */
+- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model;
+
+
+/**
+ 将要push到某个控制器
+
+ @param indexPath 索引
+ @param targetVC 目标控制器
+ @return 是否可以push
+ */
+- (BOOL)indexPath:(NSIndexPath *)indexPath shouldPush:(__kindof BaseViewController *)targetVC;
+
+
+/**
+ 将要push到某个控制器
  
- @return 是否显示
+ @param indexPath 索引
+ @param targetVC 目标控制器
  */
-- (BOOL)tableViewCellShowAccessoryDisclosureIndicatorForSection:(NSUInteger)section row:(NSUInteger)row;
-
-/**
- 是否显示开关，默认不显示
-
- @param sw 开关
- @param section section
- @param row row
- @return 是否显示开关
- */
-- (BOOL)tableViewCellShowSwitch:(BaseSwitch *)sw forSection:(NSUInteger)section row:(NSUInteger)row;
+- (void)indexPath:(NSIndexPath *)indexPath willPush:(__kindof BaseViewController *)targetVC;
 
 
 /**
- 开关状态改变了
+ accessory type 默认是">"
 
- @param sw 开关
- @param section section
- @param row row
+ @param indexPath 索引
+ @param accessoryType accessory type
  */
-- (void)tableViewCellDidSwitchStatusChanged:(BaseSwitch *)sw forSection:(NSUInteger)section row:(NSUInteger)row;
+- (void)indexPath:(NSIndexPath *)indexPath accessoryType:(void (^)(UITableViewCellAccessoryType accessoryType))accessoryType;
+
+/**
+ 是否显示开关、开关默认状态
+
+ @param indexPath 索引
+ @param showSwitch 是否显示开关、开关默认状态
+ */
+- (void)indexPath:(NSIndexPath *)indexPath showSwitch:(void (^)(BOOL show, BOOL open))showSwitch;
+
+/**
+ 开关状态改变事件
+
+ @param indexPath 索引
+ @param sender 开关
+ */
+- (void)indexPath:(NSIndexPath *)indexPath switchValueChanged:(BaseSettingSwitch *)sender;
 
 
 @end
 
 @interface BaseTableView : UITableView <BaseTableViewDelegate>
 
-// @xaoxuu: table view
-//@property (strong, nonatomic) UITableView *tableView;
 
+/**
+ 刷新tableView
+ */
 - (void)reloadTableView;
 
+/**
+ 重新获取数据源并刷新tableView
+ */
+- (void)reloadDataSourceAndTableView;
+
+/**
+ 根据指定的新数据源重新加载tableView
+
+ @param dataList data source
+ */
 - (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList;
 
-- (void)reloadDataSourceAndRefreshTableView;
 
-// @xaoxuu: list
-@property (strong, nonatomic) BaseTableModelListType dataList;
 
-- (BaseTableModelRow *)rowModelWithIndexPath:(NSIndexPath *)indexPath;
+- (BaseTableModelSection *)sectionModel:(NSInteger)section;
+
+- (BaseTableModelRow *)rowModel:(NSIndexPath *)indexPath;
 
 //- (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name;
 
