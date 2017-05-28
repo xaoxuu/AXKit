@@ -15,7 +15,7 @@
 @implementation FeedbackVC
 
 - (void)viewDidLoad {
-    self.urlStr = services.app.feedbackURL;
+    self.urlStr = services.app.model.feedbackURL;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
@@ -27,10 +27,6 @@
 }
 
 
-- (void)didLoadWebView{
-    if ([self.urlStr containsString:services.app.feedbackEmail]) {
-        [[UIApplication sharedApplication] openURL:self.urlStr.absoluteURL];
-    }
-}
+
 
 @end

@@ -10,9 +10,11 @@
 #import "BaseTabBarController.h"
 #import "BaseNavController.h"
 #import "DataAccessLayer.h"
+#import "MJExtension.h"
 
 #define daLayer [DataAccessLayer sharedInstance]
 
+static NSArray<NSString *> *footerRhesis;
 
 @interface AppServices ()
 
@@ -26,10 +28,7 @@
         
         _placeholderForSetting = daLayer.assets.setting.placeholder.image;
         
-        _homePageURL = daLayer.developer.homePageURL;
-        _blogURL = daLayer.developer.blogURL;
-        _feedbackURL = daLayer.developer.feedbackURL;
-        _feedbackEmail = daLayer.developer.feedbackEmail;
+        _model = [AppInfoModel mj_objectWithKeyValues:@"appinfo".json.mainBundlePath.readJson];
         
         _defaultVC = [DefaultViewController new];
         
@@ -150,7 +149,7 @@
     label.centerY = 0.5*footer.height;
     // @xaoxuu: left line
     CALayer *line_left = [CALayer layer];
-    line_left.backgroundColor = axColor.groupTableViewBackground.darkRatio(0.06).CGColor;
+    line_left.backgroundColor = axColor.separatorColor.lightRatio(0.1).CGColor;
     line_left.height = 0.5;
     line_left.width = 0.5 * (footer.width - label.width) - 4;
     line_left.centerY = 0.5*footer.height;
@@ -159,7 +158,7 @@
     
     // @xaoxuu: right line
     CALayer *line_right = [CALayer layer];
-    line_right.backgroundColor = axColor.groupTableViewBackground.darkRatio(0.06).CGColor;
+    line_right.backgroundColor = axColor.separatorColor.lightRatio(0.1).CGColor;
     line_right.height = 0.5;
     line_right.width = 0.5 * (footer.width - label.width) - 4;
     line_right.centerY = 0.5*footer.height;
@@ -173,33 +172,19 @@
 
 
 - (NSString *)randomTips{
-    int i = arc4random_uniform(150);
-    if (i < 20) {
-        return @"😏你还想看什么";
-    } else if (i < 40) {
-        return @"我可是有底线的";
-    } else if (i < 60) {
-        return @"😱没有更多了";
-    } else if (i < 80) {
-        return @"我可是有底线的😡";
-    } else if (i < 100) {
-        return @"⚠️高压危险";
-    } else if (i < 110) {
-        return @"🚫少儿不宜";
-    } else if (i < 120) {
-        return @"🙄";
-    } else if (i < 130) {
-        return @"👌加载完毕";
-    } else if (i < 140) {
-        return @"内有🐶恶犬";
-    } else if (i < 150) {
-        return @"😂";
+    if (!footerRhesis) {
+        NSMutableArray *arrM = [NSMutableArray arrayWithArray:@"footer_rhesis".json.mainBundlePath.readJson];
+        if (arrM) {
+            NSString *tmp = self.model.copyright;
+            [arrM addObject:tmp];
+            footerRhesis = arrM;
+        }   
     }
-    
-    
-    return @"";
-    
-    
+    if (footerRhesis.count) {
+        int i = arc4random_uniform(footerRhesis.count);
+        return footerRhesis[i];
+    }
+    return self.model.copyright;
 }
 
 @end

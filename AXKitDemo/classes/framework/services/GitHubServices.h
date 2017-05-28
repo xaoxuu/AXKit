@@ -9,10 +9,11 @@
 #import "BaseServices.h"
 #import "GitHubModels.h"
 #import "BlogModels.h"
+#import "GitHubInfoModel.h"
 
 @interface GitHubServices : BaseServices
 
-
+@property (strong, readonly, nonatomic) GitHubInfoModel *model;
 /**
  获取所有issues
 

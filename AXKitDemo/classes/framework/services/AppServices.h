@@ -9,27 +9,20 @@
 #import "BaseServices.h"
 #import "DefaultViewController.h"
 #import "ThemeColorModel.h"
+#import "AppInfoModel.h"
+
 
 FOUNDATION_EXTERN NSString *kBlogURL;
 
 
 @interface AppServices : BaseServices
 
+@property (strong, readonly, nonatomic) AppInfoModel *model;
 
 
 
 // @xaoxuu: setting icon placeholder
 @property (strong, readonly, nonatomic) UIImage *placeholderForSetting;
-
-// @xaoxuu: homePage url
-@property (copy, readonly, nonatomic) NSString *homePageURL;
-// @xaoxuu: blog url
-@property (copy, readonly, nonatomic) NSString *blogURL;
-// @xaoxuu: feedback
-@property (copy, readonly, nonatomic) NSString *feedbackURL;
-
-// @xaoxuu: feedback email
-@property (copy, readonly, nonatomic) NSString *feedbackEmail;
 
 // @xaoxuu: default vc
 @property (strong, readonly, nonatomic) DefaultViewController *defaultVC;

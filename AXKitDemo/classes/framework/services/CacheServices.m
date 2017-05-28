@@ -18,7 +18,7 @@ static NSString *key_projects = @"ProjectsTableView";
 static NSString *key_about = @"AboutTableView";
 
 
-@interface CacheServices ()
+@interface CacheServices () <ServicesPrivateMethod>
 
 // @xaoxuu: setting list
 @property (strong, nonatomic) BaseTableModelListType settingList;

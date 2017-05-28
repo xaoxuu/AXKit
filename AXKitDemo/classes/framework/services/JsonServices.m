@@ -14,7 +14,7 @@
 
 #define CACHE_COLORS @"ThemeColorTableView"
 
-#define BUNDLE_VC_TITLES @"view_controller_titles".mainBundlePath
+//#define BUNDLE_VC_TITLES @"view_controller_titles".mainBundlePath
 
 @interface JsonServices ()
 
@@ -50,7 +50,7 @@
 
 - (NSArray *(^)(NSString *))jsonInBundle{
     return ^(NSString *json){
-        NSDictionary *dict = json.json.mainBundlePath.readJson;
+        NSDictionary *dict = json.mainBundlePath.readJson;
         return dict[@"sections"];
     };
 }
@@ -71,17 +71,17 @@
 }
 
 
-- (NSString *((^)(NSString *)))titleForVC{
-    return ^(NSString *vcName){
-        NSDictionary *dict = BUNDLE_VC_TITLES.readJson;
-        NSString *title = NSLocalizedString(vcName, nil);
-        for (NSDictionary *tmp in dict[@"items"]) {
-            if ([tmp[@"vc"] isEqualToString:vcName]) {
-                title = tmp[@"title"];
-            }
-        }
-        return title;
-    };
-}
+//- (NSString *((^)(NSString *)))titleForVC{
+//    return ^(NSString *vcName){
+//        NSDictionary *dict = BUNDLE_VC_TITLES.readJson;
+//        NSString *title = NSLocalizedString(vcName, nil);
+//        for (NSDictionary *tmp in dict[@"items"]) {
+//            if ([tmp[@"vc"] isEqualToString:vcName]) {
+//                title = tmp[@"title"];
+//            }
+//        }
+//        return title;
+//    };
+//}
 
 @end

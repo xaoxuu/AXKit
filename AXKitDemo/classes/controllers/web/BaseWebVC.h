@@ -10,14 +10,22 @@
 #import <WebKit/WebKit.h>
 
 @class BaseWebVC;
-@protocol BaseWebVCDelegate <NSObject>
+@protocol BaseWebVC <NSObject>
 @optional
 
-- (void)setupFrame;
 
-- (void)setupWebView:(WKWebView *)webView;
+/**
+ 初始化webview
 
+ @param webView webview
+ */
+- (void)initWebView:(WKWebView *)webView;
 
+- (NSString *)URLStringForWebView;
+
+/**
+ webview加载完毕
+ */
 - (void)didLoadWebView;
 
 
@@ -26,12 +34,12 @@
 @end
 
 
-@interface BaseWebVC : BaseViewController <BaseWebVCDelegate>
-
+@interface BaseWebVC : BaseViewController <BaseWebVC>
 
 
 // @xaoxuu: url string
 @property (copy, nonatomic) NSString *urlStr;
+
 
 + (instancetype)webVCWithURLString:(NSString *)url;
 

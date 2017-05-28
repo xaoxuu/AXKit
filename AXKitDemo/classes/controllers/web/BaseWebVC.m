@@ -12,6 +12,7 @@
 
 @interface BaseWebVC ()<WKUIDelegate, WKNavigationDelegate>
 
+
 // @xaoxuu: wk
 @property (strong, nonatomic) WKWebView *webView;
 // @xaoxuu: progress
@@ -47,15 +48,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight);
-    if ([self respondsToSelector:@selector(setupFrame)]) {
-        [self setupFrame];
-    }
+    
     [self _base_setupWebView];
     [self reloadWebView];
     
+    __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
-        [self reloadWebView];
+        [weakSelf reloadWebView];
     }];
     
     
@@ -66,6 +65,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void)reloadWebView{
     [self loadWithURLString];
     if ([self respondsToSelector:@selector(didLoadWebView)]) {
@@ -75,6 +75,9 @@
 
 
 - (void)loadWithURLString{
+    if ([self respondsToSelector:@selector(URLStringForWebView)]) {
+        self.urlStr = [self URLStringForWebView];
+    }
     NSURL *url = [NSURL URLWithString:self.urlStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
@@ -92,8 +95,8 @@
     [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
     [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     
-    if ([self respondsToSelector:@selector(setupWebView:)]) {
-        [self setupWebView:self.webView];
+    if ([self respondsToSelector:@selector(initWebView:)]) {
+        [self initWebView:self.webView];
     }
 }
 
@@ -109,7 +112,7 @@
         config.preferences.javaScriptEnabled = YES;
         //不通过用户交互，是否可以打开窗口
         config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
-        _webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:config];
+        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         [self.view addSubview:_webView];
         
     }
@@ -165,5 +168,7 @@
     @catch (NSException *exception) {
     }
 }
+
+
 
 @end

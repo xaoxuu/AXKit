@@ -7,7 +7,7 @@
 //
 
 #import "UIControl+AXBlockWrapper.h"
-#import "Foundation+AXEventTarget.h"
+#import "_AXEventTarget.h"
 
 #define AXDefaultTargetFor(UIControlEvents) AXTargetWith(self, UIControlEvents ,handler)
 

@@ -21,7 +21,7 @@
 - (BaseTableModelListType)colors;
 
 
-- (NSString *((^)(NSString *)))titleForVC;
+//- (NSString *((^)(NSString *)))titleForVC;
 
 
 

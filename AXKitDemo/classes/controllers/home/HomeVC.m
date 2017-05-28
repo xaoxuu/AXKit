@@ -8,7 +8,7 @@
 
 #import "HomeVC.h"
 
-@interface HomeVC ()
+@interface HomeVC ()<CacheServiceDelegate>
 
 @end
 
@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view from its nib.
     self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
     
+    [services.alert registerDelegate:self];
     
     AXLogOBJ([NSBundle ax_appName]);
     AXLogOBJ([NSBundle ax_appVersion]);

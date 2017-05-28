@@ -8,8 +8,43 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BaseServices : NSObject
 
+@protocol BaseServicesDelegate <NSObject>
+@optional
+
+/**
+ 注册代理
+ 
+ @param delegate 代理
+ */
+- (void)registerDelegate:(id<BaseServicesDelegate>)delegate;
+
+/**
+ 取消注册代理
+ 
+ @param delegate 代理
+ */
+- (void)unRegisterDelegate:(id<BaseServicesDelegate>)delegate;
 
 
 @end
+
+@protocol ServicesPrivateMethod <NSObject>
+
+@optional
+
+/**
+ 所有代理执行
+ 
+ @param handler block
+ */
+- (void)allDelegates:(void (^)(id<BaseServicesDelegate> delegate))handler;
+
+
+@end
+
+@interface BaseServices : NSObject <BaseServicesDelegate>
+
+
+@end
+

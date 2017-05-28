@@ -6,7 +6,7 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "AXKitHelpServices.h"
+#import "_AXKitHelpServices.h"
 #import "NSError+AXExtension.h"
 #import "UIAlertController+AXWrapper.h"
 #import "UIResponder+AXExtension.h"

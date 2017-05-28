@@ -19,7 +19,7 @@
     }
 }
 
-- (BOOL)indexPath:(NSIndexPath *)indexPath shouldPushTo:(__kindof BaseViewController *)targetVC {
+- (BOOL)indexPath:(NSIndexPath *)indexPath shouldPush:(__kindof BaseViewController *)targetVC {
     BaseTableModelRow *model = [self rowModel:indexPath];
     if ([model.cmd containsString:@"apple.com"]) {
         [NSBlockOperation ax_delay:0.5 performInBackground:^{
@@ -29,8 +29,10 @@
         }];
         return NO;
     } else {
-        ProjectDetailVC *vc = targetVC;
-        vc.urlStr = model.cmd;
+        if ([targetVC isKindOfClass:[ProjectDetailVC class]]) {
+            ProjectDetailVC *vc = targetVC;
+            vc.urlStr = model.cmd;
+        }
         return YES;
     }
     

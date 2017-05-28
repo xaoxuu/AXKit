@@ -11,7 +11,7 @@
 //
 //  issues     https://github.com/xaoxuu/AXKit/issues/new (反馈BUG或意见)
 //
-//
+//  0.0.9
 
 #import <UIKit/UIKit.h>
 
@@ -115,5 +115,6 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 
 #import <AXKit/UIActivityIndicatorView+AXWrapper.h>
 
-#import <AXKit/UIActivityIndicatorView+AXWrapper.h>
+#import <AXKit/UIViewController+AXMailWrapper.h>
+
 

@@ -11,7 +11,7 @@
 //
 //  issues     https://github.com/xaoxuu/AXKit/issues/new (反馈BUG或意见)
 //
-//
+//  0.0.9
 
 #import <UIKit/UIKit.h>
 
@@ -37,8 +37,6 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/NSString+AXFileStreamChainedWrapper.h>
 // NSString类的扩展（随机字符串等）
 #import <AXKit/NSString+AXExtension.h>
-// 对NSObject的performSelector的block封装，基于<BlocksKit>改编
-#import <AXKit/NSObject+AXBlockWrapper.h>
 // 对NSOperation的扩展，基于<BlocksKit>改编
 #import <AXKit/NSOperation+AXExtension.h>
 // 对NSTimer的block封装，基于<BlocksKit>改编
@@ -62,11 +60,11 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/UIColor+AXExtension.h>
 // MaterialDesign配色方案，前缀为'md'例如[UIColor md_blue]
 #import <AXKit/UIColor+MDColorPack.h>
-// AT的配色方案，前缀为'at'例如[UIColor at_cyan]
+// AXKit的配色方案，前缀为'ax'例如[UIColor ax_cyan]
 #import <AXKit/UIColor+AXColorPack.h>
 
 // 事件响应的Target
-#import <AXKit/Foundation+AXEventTarget.h>
+//#import <AXKit/Foundation+AXEventTarget.h>
 // 对UIControl的block封装，基于<BlocksKit>改编（包含常用控件）
 #import <AXKit/UIControl+AXBlockWrapper.h>
 // UITextField的功能扩展
@@ -115,5 +113,4 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 
 #import <AXKit/UIActivityIndicatorView+AXWrapper.h>
 
-#import <AXKit/UIActivityIndicatorView+AXWrapper.h>
 

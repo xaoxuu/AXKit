@@ -21,14 +21,14 @@
 - (instancetype)init{
     if (self = [super init]) {
         
-        
+        _model = [GitHubInfoModel mj_objectWithKeyValues:@"ghinfo".mainBundlePath.readJson];
         
     }
     return self;
 }
 
 - (void)getAllIssuesList:(void (^)(GitHubIssueListModel *issues))completion{
-    daLayer.network.URLString = daLayer.network.gitIssuesURL;
+    daLayer.network.URLString = self.model.issuesURL;
     [daLayer.network getURLCompletion:^(id response) {
         NSArray *dataArr = response;
         NSMutableArray<GitHubIssueModel *> *list = [NSMutableArray array];
@@ -47,7 +47,7 @@
 
 
 - (void)getHelpIssuesList:(void (^)(GitHubIssueListModel *issues))completion{
-    daLayer.network.URLString = daLayer.network.gitIssueHelpURL;
+    daLayer.network.URLString = self.model.helpURL;
     [daLayer.network getURLCompletion:^(id response) {
         NSDictionary *dataDict = response;
         GitHubIssueListModel *list = [GitHubIssueListModel modelWithDictionary:dataDict];
@@ -76,8 +76,7 @@
 
 
 - (void)getBlogList:(void (^)(NSArray<BlogListModel *> *blogs))completion{
-    AXLogOBJ(daLayer.network.blogListURL);
-    daLayer.network.URLString = daLayer.network.blogListURL;
+    daLayer.network.URLString = self.model.blogURL;
     [daLayer.network getURLCompletion:^(id response) {
         NSArray *dataArr = response;
         NSMutableArray<BlogListModel *> *ret = [NSMutableArray array];
@@ -102,7 +101,7 @@
 
 - (NSString *)queryURLWithKeyword:(NSString *)keyword{
     NSString *key = [keyword stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
-    NSMutableString *queryURL = [NSMutableString stringWithString:daLayer.network.gitIssueHelpURL];
+    NSMutableString *queryURL = [NSMutableString stringWithString:self.model.helpURL];
     NSRange range = [queryURL rangeOfString:@"?q="];
     [queryURL insertString:key atIndex:range.location+range.length];
     return queryURL;

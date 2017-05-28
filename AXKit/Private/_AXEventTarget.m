@@ -6,7 +6,7 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "Foundation+AXEventTarget.h"
+#import "_AXEventTarget.h"
 #import "UIView+AXAnimatedWrapper.h"
 
 @implementation AXEventTarget

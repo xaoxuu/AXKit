@@ -30,7 +30,7 @@
     } background:^UIColor * _Nonnull{
         return [UIColor whiteColor];
     }];
-    axColor.groupTableViewBackground = axColor.groupTableViewBackground.light;
+    
     
     // @xaoxuu: 激活服务
     [ServicesLayer sharedInstance];

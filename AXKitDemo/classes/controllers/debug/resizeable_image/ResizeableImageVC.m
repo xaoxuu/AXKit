@@ -38,31 +38,31 @@
     image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(1.1*y, 1.2*x, 0.9*y, 0.8*x) resizingMode:UIImageResizingModeStretch];
     self.bgImageView.image = image;
     
-    
+    __weak typeof(self) weakSelf = self;
     [self.moveGestureView ax_addPanGesture:nil handler:^(UIPanGestureRecognizer * _Nonnull sender) {
-        CGPoint po = [sender translationInView:self.view];
-        self.targetView.left += po.x;
-        self.targetView.top += po.y;
-        [sender setTranslation:CGPointZero inView:self.view];
+        CGPoint po = [sender translationInView:weakSelf.view];
+        weakSelf.targetView.left += po.x;
+        weakSelf.targetView.top += po.y;
+        [sender setTranslation:CGPointZero inView:weakSelf.view];
     }];
     [self.resizeGestureView ax_addPanGesture:^(UIPanGestureRecognizer * _Nonnull sender) {
         
     } handler:^(UIPanGestureRecognizer * _Nonnull sender) {
-        CGPoint po = [sender translationInView:self.view];
-        CGFloat w = self.targetView.width + po.x;
-        CGFloat h = self.targetView.height + po.y;
-        self.targetView.width = w;
-        self.targetView.height = h;
-        self.resizeGestureView.right = w;
-        self.resizeGestureView.bottom = h;
-        self.bgImageView.width = w-16;
-        self.bgImageView.height = h-16;
+        CGPoint po = [sender translationInView:weakSelf.view];
+        CGFloat w = weakSelf.targetView.width + po.x;
+        CGFloat h = weakSelf.targetView.height + po.y;
+        weakSelf.targetView.width = w;
+        weakSelf.targetView.height = h;
+        weakSelf.resizeGestureView.right = w;
+        weakSelf.resizeGestureView.bottom = h;
+        weakSelf.bgImageView.width = w-16;
+        weakSelf.bgImageView.height = h-16;
         
         
-        self.textV.width = w-40;
-        self.textV.height = h-68;
+        weakSelf.textV.width = w-40;
+        weakSelf.textV.height = h-68;
         
-        [sender setTranslation:CGPointZero inView:self.view];
+        [sender setTranslation:CGPointZero inView:weakSelf.view];
     }];
     
     

@@ -9,7 +9,7 @@
 #import "UIView+AXGestureExtension.h"
 #import "NSString+AXExtension.h"
 #import "UIView+AXAnimatedWrapper.h"
-#import "Foundation+AXEventTarget.h"
+#import "_AXEventTarget.h"
 
 // create a new target
 #define AXDefaultTarget AXTargetWith(self, gesture, handler)

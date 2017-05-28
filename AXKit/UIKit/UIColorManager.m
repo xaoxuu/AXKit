@@ -148,8 +148,8 @@ UIColorManager *axColor = nil;
 //        return nil;
 //    }];
     
-    _groupTableViewBackground = [UIColor groupTableViewBackgroundColor];
-    _separatorColor = _groupTableViewBackground.darkRatio(0.07);
+    _groupTableViewBackground = [UIColor groupTableViewBackgroundColor].light;
+    _separatorColor = _groupTableViewBackground.darkRatio(0.08);
     
     return axColor;
     

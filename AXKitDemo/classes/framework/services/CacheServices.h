@@ -8,6 +8,11 @@
 
 #import "BaseServices.h"
 
+@protocol CacheServiceDelegate <BaseServicesDelegate>
+
+
+
+@end
 
 @interface CacheServices : BaseServices
 

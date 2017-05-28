@@ -15,16 +15,10 @@
 @implementation BlogVC
 
 - (void)viewDidLoad {
-    self.urlStr = services.app.blogURL;
+    self.urlStr = services.app.model.blogURL;
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-//    [self setupTopBar];
-    
-//    [self.tabBarController.tabBar ax_addDoubleTapGesture:nil duration:1 handler:^(UITapGestureRecognizer * _Nonnull sender) {
-//        [self reloadWeb];
-//    }];
     
 }
 
@@ -33,8 +27,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)didLoadWebView{
-    
-}
+
 
 @end

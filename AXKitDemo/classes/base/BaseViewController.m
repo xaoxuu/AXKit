@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     // @xaoxuu: 基类 初始化 顶部区域 NavigationBar
     [self baseInitNavBar];
     // @xaoxuu: 基类 初始化 内容区域
@@ -44,6 +43,10 @@
     
 }
 
+- (void)dealloc{
+    AXLogSuccess(@"%@ deallocated", NSStringFromClass([self class]));
+}
+
 - (BOOL)hidesBottomBarWhenPushed{
     if (self.navigationController.viewControllers.count == 1) {
         return NO;
@@ -58,7 +61,7 @@
 - (void)baseInitNavBar{
     // @xaoxuu: default title
     if (!self.title.length) {
-        self.title = services.json.titleForVC(NSStringFromClass([self class]));
+        self.title = NSStringFromClass([self class]);
     }
     
     // @xaoxuu: back bar item
@@ -127,10 +130,11 @@
 - (void)baseModuleKitNavBar{
     // @xaoxuu: refresh button
     if ([self respondsToSelector:@selector(installRightRefreshBarButton:)]) {
+        __weak typeof(self) weakSelf = self;
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem * _Nonnull sender) {
             sender.enabled = NO;
             [NSBlockOperation ax_delay:0 cooldown:reloadBtnCooldown token:reloadBtnToken performInMainQueue:^{
-                [self installRightRefreshBarButton:sender];
+                [weakSelf installRightRefreshBarButton:sender];
                 
                 [NSBlockOperation ax_delay:reloadBtnCooldown performInMainQueue:^{
                     sender.enabled = YES;

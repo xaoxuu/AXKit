@@ -34,15 +34,17 @@
 }
 
 - (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
-    self.seg_subject.tintColor = axColor.theme.darkRatio(0.3);
+    self.seg_subject.tintColor = axColor.theme.isLightColor?axColor.theme.darkRatio(0.3):axColor.theme;
+    
+    __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"send" action:^(id  _Nonnull sender) {
-        [self sendEmail:^(MFMailComposeViewController *mailCompose) {
+        [weakSelf sendEmail:^(MFMailComposeViewController *mailCompose) {
             // 设置邮件主题
-            NSString *title = [self.seg_subject titleForSegmentAtIndex:self.seg_subject.selectedSegmentIndex];
-            [mailCompose setSubject:[NSString stringWithFormat:@"[%@] - %@",title, self.tf_summary.text]];
+            NSString *title = [weakSelf.seg_subject titleForSegmentAtIndex:weakSelf.seg_subject.selectedSegmentIndex];
+            [mailCompose setSubject:[NSString stringWithFormat:@"[%@] - %@",title, weakSelf.tf_summary.text]];
             // 设置收件人
             [mailCompose setToRecipients:@[@"xaoxuu@gmail.com"]];
-            NSString *emailContent = self.tv_content.text;
+            NSString *emailContent = weakSelf.tv_content.text;
             [mailCompose setMessageBody:emailContent isHTML:NO];
         } completion:^(MFMailComposeResult result) {
             
@@ -51,12 +53,7 @@
             
         }];
     }];
-    [view ax_eachButtonInvokeAction:^(__kindof UIButton * _Nonnull button) {
-        [button ax_addTouchUpInsideHandler:^(__kindof UIButton * _Nonnull sender) {
-            
-
-        }];
-    }];
+    
 }
 
 

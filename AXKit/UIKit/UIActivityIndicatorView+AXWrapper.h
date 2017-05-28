@@ -18,14 +18,10 @@
  */
 - (UIActivityIndicatorView *(^)(UIView *view))layoutToView;
 
-
-
 /**
  纵坐标
  */
 - (UIActivityIndicatorView *(^)(CGFloat y))y;
-
-
 
 /**
  显示

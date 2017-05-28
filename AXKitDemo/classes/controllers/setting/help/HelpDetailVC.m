@@ -27,18 +27,17 @@ static CGFloat footer = 60;
     
 }
 
-
-- (void)setupFrame{
-    self.view.top -= header;
-    self.view.height += header + footer;
+- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
+    view.top -= header;
+    view.height += header + footer;
 }
 
-
-- (void)setupWebView:(WKWebView *)webView{
+- (void)initWebView:(WKWebView *)webView{
     webView.scrollView.bounces = NO;
     webView.scrollView.showsVerticalScrollIndicator = NO;
     webView.scrollView.showsHorizontalScrollIndicator = NO;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
