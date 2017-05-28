@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmailVC">
             <connections>
+                <outlet property="btn" destination="wHg-KR-hFb" id="fcD-zs-lzH"/>
+                <outlet property="seg_subject" destination="yTT-yO-dyf" id="RVB-Cv-2cB"/>
+                <outlet property="tf_summary" destination="vDx-fJ-zh2" id="Zxh-Ku-jXe"/>
+                <outlet property="tv_content" destination="leC-o3-g9B" id="WO2-B5-WCd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,43 +23,83 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPf-1B-3e6">
-                    <rect key="frame" x="29" y="70" width="35" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分类" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPf-1B-3e6">
+                    <rect key="frame" x="16" y="19.5" width="35" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="正文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-fw-1LZ">
-                    <rect key="frame" x="29" y="99" width="35" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-fw-1LZ">
+                    <rect key="frame" x="16" y="106" width="35" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="附件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85V-W9-rd5">
-                    <rect key="frame" x="29" y="136" width="35" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHg-KR-hFb">
+                    <rect key="frame" x="67" y="317.5" width="31" height="30"/>
+                    <state key="normal" title="相册"/>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-yO-dyf">
+                    <rect key="frame" x="67" y="16" width="292" height="29"/>
+                    <segments>
+                        <segment title="bug"/>
+                        <segment title="功能需求"/>
+                        <segment title="改版建议"/>
+                    </segments>
+                </segmentedControl>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="leC-o3-g9B">
+                    <rect key="frame" x="67" y="106" width="292" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="附件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85V-W9-rd5">
+                    <rect key="frame" x="16" y="322" width="35" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="提交" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntU-w4-JPr">
-                    <rect key="frame" x="29" y="201" width="35" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入简短的摘要" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-fJ-zh2">
+                    <rect key="frame" x="67" y="60" width="292" height="30"/>
                     <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bug、功能需求、改版建议" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFn-5q-juV">
-                    <rect key="frame" x="81" y="70" width="203" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Q-2y-6R1">
+                    <rect key="frame" x="16" y="64.5" width="35" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="y0Q-2y-6R1" firstAttribute="centerY" secondItem="vDx-fJ-zh2" secondAttribute="centerY" id="Cyv-qo-msu"/>
+                <constraint firstItem="bPf-1B-3e6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="EtW-h1-iKT"/>
+                <constraint firstItem="yTT-yO-dyf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="GvE-VZ-5Om"/>
+                <constraint firstItem="y0Q-2y-6R1" firstAttribute="leading" secondItem="bPf-1B-3e6" secondAttribute="leading" id="HaJ-lI-S1v"/>
+                <constraint firstItem="85V-W9-rd5" firstAttribute="leading" secondItem="aUm-fw-1LZ" secondAttribute="leading" id="IDG-Aq-lfs"/>
+                <constraint firstItem="yTT-yO-dyf" firstAttribute="leading" secondItem="bPf-1B-3e6" secondAttribute="trailing" constant="16" id="JCg-KQ-3XW"/>
+                <constraint firstItem="leC-o3-g9B" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="Lbo-Zb-aJP"/>
+                <constraint firstItem="leC-o3-g9B" firstAttribute="leading" secondItem="aUm-fw-1LZ" secondAttribute="trailing" constant="16" id="Oea-tN-mRe"/>
+                <constraint firstItem="wHg-KR-hFb" firstAttribute="leading" secondItem="leC-o3-g9B" secondAttribute="leading" id="PAW-MK-Mcl"/>
+                <constraint firstItem="vDx-fJ-zh2" firstAttribute="top" secondItem="yTT-yO-dyf" secondAttribute="bottom" constant="16" id="RSR-Dv-Cwh"/>
+                <constraint firstAttribute="trailing" secondItem="yTT-yO-dyf" secondAttribute="trailing" constant="16" id="YJj-9l-vHs"/>
+                <constraint firstItem="aUm-fw-1LZ" firstAttribute="top" secondItem="leC-o3-g9B" secondAttribute="top" id="YKA-rw-9Zs"/>
+                <constraint firstItem="bPf-1B-3e6" firstAttribute="centerY" secondItem="yTT-yO-dyf" secondAttribute="centerY" id="ZFt-br-3gr"/>
+                <constraint firstAttribute="trailing" secondItem="leC-o3-g9B" secondAttribute="trailing" constant="16" id="cxX-Gi-qew"/>
+                <constraint firstItem="leC-o3-g9B" firstAttribute="top" secondItem="vDx-fJ-zh2" secondAttribute="bottom" constant="16" id="dza-wC-gTO"/>
+                <constraint firstItem="85V-W9-rd5" firstAttribute="trailing" secondItem="aUm-fw-1LZ" secondAttribute="trailing" id="mcf-lD-zwh"/>
+                <constraint firstItem="85V-W9-rd5" firstAttribute="top" secondItem="leC-o3-g9B" secondAttribute="bottom" constant="16" id="oIU-VH-4d5"/>
+                <constraint firstItem="wHg-KR-hFb" firstAttribute="centerY" secondItem="85V-W9-rd5" secondAttribute="centerY" id="oMq-ka-bs0"/>
+                <constraint firstItem="vDx-fJ-zh2" firstAttribute="leading" secondItem="y0Q-2y-6R1" secondAttribute="trailing" constant="16" id="rCG-qb-7rh"/>
+                <constraint firstItem="aUm-fw-1LZ" firstAttribute="leading" secondItem="bPf-1B-3e6" secondAttribute="leading" id="tWm-94-1B6"/>
+                <constraint firstAttribute="trailing" secondItem="vDx-fJ-zh2" secondAttribute="trailing" constant="16" id="xDy-T8-SXn"/>
+                <constraint firstItem="aUm-fw-1LZ" firstAttribute="trailing" secondItem="bPf-1B-3e6" secondAttribute="trailing" id="zCk-Kn-6Cy"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
 </document>

@@ -20,7 +20,6 @@
 }
 
 
-
 - (void)indexPath:(NSIndexPath *)indexPath icon:(void (^)(UIImage *))icon{
     BaseTableModelRow *model = [self rowModel:indexPath];
     if ([model isKindOfClass:[ThemeColorModelRow class]]) {

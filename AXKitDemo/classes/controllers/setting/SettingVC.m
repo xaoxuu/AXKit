@@ -32,7 +32,7 @@
 }
 
 
-- (BaseTableView *)installTableView{
+- (UITableView<BaseTableView> *)installTableView{
     return [[SettingTableView alloc] initWithFrame:self.view.bounds];
 }
 

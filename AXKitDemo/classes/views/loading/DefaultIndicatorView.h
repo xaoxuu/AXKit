@@ -10,6 +10,9 @@
 
 @interface DefaultIndicatorView : UIActivityIndicatorView
 
+
 + (instancetype)defaultIndicatorAddToView:(UIView *)view;
+
+
 
 @end

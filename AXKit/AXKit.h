@@ -111,3 +111,9 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/UITabBar+AXExtension.h>
 // UIAlertController
 #import <AXKit/UIAlertController+AXWrapper.h>
+
+
+#import <AXKit/UIActivityIndicatorView+AXWrapper.h>
+
+
+

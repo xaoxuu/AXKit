@@ -82,9 +82,7 @@ UIColorManager *axColor = nil;
 - (UIColor *)clear{
     return [UIColor clearColor];
 }
-- (UIColor *)groupTableViewBackground{
-    return [UIColor groupTableViewBackgroundColor];
-}
+
 
 
 #pragma mark - life circle
@@ -149,6 +147,10 @@ UIColorManager *axColor = nil;
 //    } background:^UIColor * _Nonnull{
 //        return nil;
 //    }];
+    
+    _groupTableViewBackground = [UIColor groupTableViewBackgroundColor];
+    _separatorColor = _groupTableViewBackground.darkRatio(0.07);
+    
     return axColor;
     
 }

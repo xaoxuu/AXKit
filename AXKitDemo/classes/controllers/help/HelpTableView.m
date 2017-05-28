@@ -8,6 +8,7 @@
 
 #import "HelpTableView.h"
 #import "HelpDetailVC.h"
+#import "MJRefresh.h"
 
 @interface HelpTableView () <UISearchBarDelegate, UIScrollViewDelegate>
 
@@ -34,6 +35,9 @@
     
     
     tableView.tableHeaderView = self.searchBar;
+    tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self reloadDataSourceAndTableView];
+    }];
 }
 
 - (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{

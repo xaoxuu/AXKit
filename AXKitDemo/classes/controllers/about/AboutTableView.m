@@ -24,7 +24,7 @@ static CGFloat const iconSize = 64;
     // @xaoxuu: layer
     icon.backgroundColor = [UIColor whiteColor];
     icon.layer.masksToBounds = YES;
-    icon.layer.cornerRadius = icon.width/5.8;
+    icon.layer.cornerRadius = icon.width/4.2;
     // @xaoxuu: point
     icon.centerX = 0.5 * view.width;
     icon.centerY = 0.4 * view.height;
@@ -50,6 +50,10 @@ static CGFloat const iconSize = 64;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             model.desc = [NSBundle ax_appBuild];
+        } else if (indexPath.row == 1) {
+            NSString *buildTime = @"20".append([NSBundle ax_appBuild]);
+            NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMMddHHmm"];
+            model.desc = [date stringWithFormat:@"yyyy-MM-dd HH:mm EEEE"];
         }
     }
 }

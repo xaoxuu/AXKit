@@ -11,7 +11,7 @@
 
 //#define kURL_BLOG @"https://blog.xaoxuu.com"
 
-
+#define kNSStringFromSelfClass NSStringFromClass([self class])
 
 @class BaseTableModelSection;
 typedef NSMutableArray<__kindof BaseTableModelSection *> * BaseTableModelListType;

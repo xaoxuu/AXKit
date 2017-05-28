@@ -10,7 +10,31 @@
 #import "BaseTableModel.h"
 #import "BaseSwitch.h"
 
-@interface BaseTableViewCell : UITableViewCell
+@protocol BaseTableViewCell <NSObject>
+@required
+
+/**
+ cell必须要有数据模型
+
+ @param model 数据模型
+ */
+- (void)setModel:(__kindof BaseTableModelRow *)model;
+- (__kindof BaseTableModelRow *)model;
+
+@optional
+
+/**
+ cell icon
+
+ @param icon icon
+ */
+- (void)setIcon:(UIImage *)icon;
+- (UIImage *)icon;
+
+@end
+
+
+@interface BaseTableViewCell : UITableViewCell <BaseTableViewCell>
 
 // @xaoxuu: model
 @property (strong, readwrite, nonatomic) __kindof BaseTableModelRow *model;

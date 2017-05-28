@@ -26,7 +26,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self setupButtons];
-    
+    AXLogOBJ(@"".cachePath);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BaseTableView *)installTableView{
+- (UITableView<BaseTableView> *)installTableView{
     return [[CacheTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight)];
     
 }

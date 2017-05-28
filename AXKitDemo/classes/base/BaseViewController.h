@@ -49,7 +49,7 @@ typedef NS_ENUM(NSUInteger, ContentViewStyle) {
 
  @return table view
  */
-- (BaseTableView *)installTableView;
+- (UITableView<BaseTableView> *)installTableView;
 
 
 @end
@@ -57,6 +57,6 @@ typedef NS_ENUM(NSUInteger, ContentViewStyle) {
 @interface BaseViewController : UIViewController <BaseVC,AXModuleKit>
 
 // @xaoxuu: table view
-@property (strong, nonatomic) __kindof BaseTableView *tableView;
+@property (strong, nonatomic) UITableView<BaseTableView> *tableView;
 
 @end

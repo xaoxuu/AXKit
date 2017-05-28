@@ -34,6 +34,16 @@ extern UIColorManager *axColor;
 @property (strong, readwrite, nonatomic) UIColor *background;
 
 
+#pragma mark - 颜色配置
+
+
+/**
+ 组tableview背景色
+ */
+@property (strong, readwrite, nonatomic) UIColor *groupTableViewBackground;
+
+@property (strong, readwrite, nonatomic) UIColor *separatorColor;
+
 #pragma mark - 颜色工具
 
 
@@ -56,7 +66,7 @@ extern UIColorManager *axColor;
 - (UIColor *)lightGray;  // 0.667 white
 - (UIColor *)white;      // 1.0 white
 - (UIColor *)clear;      // 0.0 white, 0.0 alpha
-- (UIColor *)groupTableViewBackground;
+
 
 
 #pragma mark - life circle

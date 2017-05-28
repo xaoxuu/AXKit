@@ -31,9 +31,7 @@
 }
 
 
-
-
-- (BaseTableView *)installTableView{
+- (UITableView<BaseTableView> *)installTableView{
     return [[ThemeColorTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight)];
 }
 

@@ -29,7 +29,7 @@
 }
 
 
-- (BaseTableView *)installTableView{
+- (UITableView<BaseTableView> *)installTableView{
     self.tableView = [[HelpTableView alloc] initWithFrame:self.view.bounds];
     return self.tableView;
 }
@@ -39,17 +39,15 @@
 }
 
 
-
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.tableView searchBarEndEditing];
+    [(HelpTableView *)self.tableView searchBarEndEditing];
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    [self.tableView searchBarEndEditing];
+    [(HelpTableView *)self.tableView searchBarEndEditing];
 }
 
 @end

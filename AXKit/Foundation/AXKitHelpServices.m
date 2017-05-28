@@ -38,12 +38,15 @@ static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/iss
     if (reason) {
         msg = reason();
     }
-    
-    [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"Error", nil) message:msg cancelButtonTitle:NSLocalizedString(@"cancel", nil) okButtonTitle:NSLocalizedString(@"help", nil) okButtonHandler:^(UIAlertAction * _Nonnull action) {
-        [[UIApplication sharedApplication] openURL:[AXKitHelpServices errorURLWithCode:code] options:@{} completionHandler:^(BOOL success) {
-            
+    [UIAlertController ax_showAlertWithTitle:kStringError() message:msg action:^(UIAlertController * _Nonnull alert) {
+        [alert ax_addCancelAction];
+        [alert ax_addDefaultActionWithTitle:kStringHelp() handler:^(UIAlertAction * _Nonnull sender) {
+            [[UIApplication sharedApplication] openURL:[AXKitHelpServices errorURLWithCode:code] options:@{} completionHandler:^(BOOL success) {
+                
+            }];
         }];
     }];
+    
     return error;
 }
 

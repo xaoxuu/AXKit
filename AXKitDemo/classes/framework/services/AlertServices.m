@@ -36,22 +36,22 @@
 
 
 - (void)showTips:(NSString *)msg{
-    [SCLAlertView ax_showError:self.rootVC title:NSLocalizedString(@"提示", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"确定", nil) duration:0];
+    [SCLAlertView ax_showError:self.rootVC title:kStringTip() subTitle:msg closeButtonTitle:kStringOK() duration:0];
 }
 
 - (void)showWaiting:(NSString *)msg{
-    [SCLAlertView ax_showWaiting:self.rootVC title:NSLocalizedString(@"请稍等", nil) subTitle:msg closeButtonTitle:nil duration:0];
+    [SCLAlertView ax_showWaiting:self.rootVC title:kStringPleaseWait() subTitle:msg closeButtonTitle:nil duration:0];
 }
 
 
 - (void)alertForConfirmWithMessage:(NSString * (^)())msg completion:(void (^)())completion{
     SCLAlertView *alert = [SCLAlertView ax_SCLAlertViewWithDefaultColor];
-    [alert addButton:NSLocalizedString(@"确认", nil) actionBlock:^{
+    [alert addButton:kStringConfirm() actionBlock:^{
         if (completion) {
             completion();
         }
     }];
-    [alert showQuestion:self.rootVC title:NSLocalizedString(@"提示", nil) subTitle:msg?msg():@"" closeButtonTitle:NSLocalizedString(@"取消", nil) duration:0];
+    [alert showQuestion:self.rootVC title:kStringTip() subTitle:msg?msg():@"" closeButtonTitle:kStringCancel() duration:0];
     
 }
 
@@ -60,15 +60,15 @@
     SCLAlertView *alert = [SCLAlertView ax_SCLAlertViewWithDefaultColor];
     self.alert = alert;
     alert.customViewColor = color;
-    [alert addButton:NSLocalizedString(@"确认", nil) actionBlock:^{
+    [alert addButton:kStringConfirm() actionBlock:^{
         if (completion) {
             completion();
             [NSBlockOperation ax_delay:1 performInMainQueue:^{
-                [AXProgressHUD ax_target:self.rootVC.view showInfo:@"已应用主题" duration:3];
+                [AXProgressHUD ax_target:self.rootVC.view showInfo:NSLocalizedString(@"已应用主题", nil) duration:3];
             }];
         }
     }];
-    [alert showCustom:self.rootVC image:daLayer.assets.alert.theme.image color:axColor.theme title:NSLocalizedString(@"提示", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"取消", nil) duration:0];
+    [alert showCustom:self.rootVC image:daLayer.assets.alert.theme.image color:axColor.theme title:kStringTip() subTitle:msg closeButtonTitle:kStringCancel() duration:0];
 }
 
 - (void)alertForOptionDoneWithMessage:(NSString *)msg{

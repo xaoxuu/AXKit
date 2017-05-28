@@ -7,9 +7,9 @@
 //
 
 #import "DebugVC.h"
+#import "DebugTV.h"
 
 @interface DebugVC ()
-@property (weak, nonatomic) IBOutlet UIImageView *appIcon;
 
 @end
 
@@ -18,12 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
-    
-    
-    self.appIcon.image = [UIImage imageNamed:[NSBundle ax_appIcon]];
-    self.appIcon.layer.cornerRadius = self.appIcon.width/6;
-    self.appIcon.layer.masksToBounds = YES;
     
     
 }
@@ -38,22 +32,13 @@
     [self.view layoutSubviews];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-- (IBAction)hitTest:(UIButton *)sender {
-    [self.navigationController ax_pushViewControllerNamed:@"HitTestVC"];
+- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
+    style(ContentViewStyleNoTopAndBottomBar);
 }
 
-- (IBAction)resizeableImage:(UIButton *)sender {
-    [self.navigationController ax_pushViewControllerNamed:@"ResizeableImageVC"];
-    
+- (UITableView<BaseTableView> *)installTableView{
+    return [[DebugTV alloc] initWithFrame:self.view.bounds];
 }
 
 

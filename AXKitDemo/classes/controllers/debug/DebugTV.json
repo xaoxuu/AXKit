@@ -1,0 +1,33 @@
+{
+    "title":"",
+    "header_title":"this is table header",
+    "header_height":"32",
+    "footer_title":"this is table footer",
+    "footer_height":"32",
+    "sections":[
+        {
+            "header_title":"默认分组",
+            "header_height":"44",
+            "footer_title":"这是测试版，暂时没有更多了哦~",
+            "footer_height":"44",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"拉伸图片",
+                    "desc":"",
+                    "target":"ResizeableImageVC",
+                },
+                {
+                    "title":"pop",
+                    "desc":"",
+                    "target":"HitTestVC",
+                },
+                {
+                    "title":"Mail",
+                    "desc":"",
+                    "target":"EmailVC",
+                }
+            ]
+        }
+    ]
+}

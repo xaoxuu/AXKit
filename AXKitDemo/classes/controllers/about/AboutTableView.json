@@ -13,11 +13,18 @@
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"build",
+                    "title":"build版本",
                     "desc":"",
                     "icon":"",
                     "target":"",
                     "cmd":""
+                },
+                {
+                "title":"build日期",
+                "desc":"",
+                "icon":"",
+                "target":"",
+                "cmd":""
                 }
             ]
         },

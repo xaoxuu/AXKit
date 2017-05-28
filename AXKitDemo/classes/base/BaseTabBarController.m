@@ -33,7 +33,7 @@
     }
     
     self.tabBar.layer.ax_shadow(AXShadowUpLight);
-    [services.app applyTheme];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +44,7 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     [self.tabBar ax_hideSeparator];
+    [services.app applyTheme];
 }
 
 - (NSArray<NSDictionary *> *)controllers{

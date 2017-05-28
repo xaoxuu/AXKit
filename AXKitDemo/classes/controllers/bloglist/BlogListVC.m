@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BaseTableView *)installTableView{
+- (UITableView<BaseTableView> *)installTableView{
     return [[BlogListTableView alloc] initWithFrame:self.view.bounds];
 }
 

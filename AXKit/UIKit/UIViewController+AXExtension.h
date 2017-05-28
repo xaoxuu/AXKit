@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -26,4 +27,5 @@ CG_EXTERN UIViewController *UIViewControllerFromString(NSString *name);
 //- (void)ax_hidesBottomBarWhenPushed:(BOOL)pushed;
 
 @end
+
 NS_ASSUME_NONNULL_END

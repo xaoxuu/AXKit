@@ -57,7 +57,7 @@
 
 - (void)applyThemeWithColor:(ThemeColorModelRow *)color completion:(void (^)())completion{
     
-    NSString *msg = [NSString stringWithFormat:@"将应用此主题:%@",color.title];
+    NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"将应用此主题:%@", nil),color.title];
     UIColor *tmp = [UIColor colorWithHexString:color.hex];
     [services.alert alertForConfirmTheme:tmp message:msg completion:^{
         axColor.theme = tmp;
@@ -136,16 +136,11 @@
 
 - (UIView *)tableFooter{
     UIView *footer = UIViewWithHeight(64);
-    CALayer *line = [CALayer layer];
-    line.width = footer.width;
-    line.height = 0.5;
-    line.centerY = 0.5*footer.height;
-    line.backgroundColor = [UIColor groupTableViewBackgroundColor].darkRatio(0.1).CGColor;
-    [footer.layer addSublayer:line];
+    // @xaoxuu: label
     UILabel *label = [[UILabel alloc] initWithFrame:footer.bounds];
     [footer addSubview:label];
     label.textColor = [UIColor darkGrayColor];
-    label.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont systemFontOfSize:12];
     label.text = [self randomTips];
@@ -153,6 +148,26 @@
     label.width += kMarginNormal;
     label.centerX = 0.5*footer.width;
     label.centerY = 0.5*footer.height;
+    // @xaoxuu: left line
+    CALayer *line_left = [CALayer layer];
+    line_left.backgroundColor = axColor.groupTableViewBackground.darkRatio(0.06).CGColor;
+    line_left.height = 0.5;
+    line_left.width = 0.5 * (footer.width - label.width) - 4;
+    line_left.centerY = 0.5*footer.height;
+    [footer.layer addSublayer:line_left];
+    line_left.left = 0;
+    
+    // @xaoxuu: right line
+    CALayer *line_right = [CALayer layer];
+    line_right.backgroundColor = axColor.groupTableViewBackground.darkRatio(0.06).CGColor;
+    line_right.height = 0.5;
+    line_right.width = 0.5 * (footer.width - label.width) - 4;
+    line_right.centerY = 0.5*footer.height;
+    [footer.layer addSublayer:line_right];
+    line_right.right = footer.width;
+    
+    
+    
     return footer;
 }
 

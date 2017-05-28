@@ -12,16 +12,21 @@
 #import "BaseSettingSwitch.h"
 
 @class BaseTableView,BaseViewController;
-@protocol BaseTableViewDelegate <UITableViewDataSource,UITableViewDelegate>
+@protocol BaseTableView <UITableViewDataSource,UITableViewDelegate>
+
+
+
+
+#pragma mark - 数据源
 
 @optional
 
 /**
- 初始化table view
- 
- @param tableView table view
+ 设置自定义的cell
+
+ @return 自定义的cell
  */
-- (void)initTableView:(BaseTableView *)tableView;
+- (UITableViewCell<BaseTableViewCell> *)setupCustomTableViewCell;
 
 
 /**
@@ -31,7 +36,7 @@
  */
 - (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))dataSource;
 
-
+#pragma mark - 代理
 
 /**
  即将设置模型
@@ -103,10 +108,16 @@
 - (void)indexPath:(NSIndexPath *)indexPath switchValueChanged:(BaseSettingSwitch *)sender;
 
 
-@end
 
-@interface BaseTableView : UITableView <BaseTableViewDelegate>
-
+#pragma mark - 方法
+@optional
+/**
+ 初始化table view
+ 
+ @param tableView table view
+ */
+- (void)initTableView:(BaseTableView *)tableView;
+@required
 
 /**
  刷新tableView
@@ -120,25 +131,41 @@
 
 /**
  根据指定的新数据源重新加载tableView
-
+ 
  @param dataList data source
  */
 - (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList;
 
 
 
+/**
+ 根据索引获取组模型
+ 
+ @param section 组
+ @return 组模型
+ */
 - (BaseTableModelSection *)sectionModel:(NSInteger)section;
 
+/**
+ 根据索引获取row模型
+ 
+ @param indexPath 索引
+ @return row模型
+ */
 - (BaseTableModelRow *)rowModel:(NSIndexPath *)indexPath;
 
-//- (instancetype)initWithFrame:(CGRect)frame sourcePlistName:(NSString *)name;
 
-
-//- (void)switchStatusChanged:(void (^)(NSIndexPath *indexPath, BOOL on))changed;
-
-//- (void)deleteCellWithRowModel:(BaseTableModelRow *)rowModel;
+/**
+ 删除某一行
+ 
+ @param indexPath 索引
+ */
 - (void)deleteCellWithIndexPath:(NSIndexPath *)indexPath;
 
+
+@end
+
+@interface BaseTableView : UITableView <BaseTableView>
 
 
 @end

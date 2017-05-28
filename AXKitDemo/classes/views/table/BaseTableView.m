@@ -11,9 +11,9 @@
 #import "MJExtension.h"
 #import "BaseTableViewCell.h"
 #import "DefaultIndicatorView.h"
+#import "MJRefresh.h"
 
-
-static NSTimeInterval loadingTimeout = 5;
+static NSTimeInterval loadingTimeout = 20;
 
 @interface BaseTableView () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
@@ -24,12 +24,13 @@ static NSTimeInterval loadingTimeout = 5;
 
 
 // @xaoxuu: table view cell name
-@property (copy, nonatomic) NSString *cellNibName;
-// @xaoxuu: row height
-//@property (assign, nonatomic) CGFloat rowHeight;
+@property (copy, nonatomic) NSString *cellName;
+
 
 // @xaoxuu: indicator
-@property (strong, nonatomic) DefaultIndicatorView *indicator;
+@property (strong, nonatomic) UIActivityIndicatorView *indicator;
+
+
 
 @end
 
@@ -46,7 +47,13 @@ static NSTimeInterval loadingTimeout = 5;
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [self initWithFrame:frame style:UITableViewStyleGrouped]) {
-        _cellNibName = @"BaseTableViewCell";
+        if ([self respondsToSelector:@selector(setupCustomTableViewCell)]) {
+            _cellName = NSStringFromClass([self setupCustomTableViewCell].class);
+        } else {
+            _cellName = @"BaseTableViewCell";
+        }
+        
+        
         self.rowHeight = 44;
         [self _base_setupTableView];
         
@@ -59,11 +66,11 @@ static NSTimeInterval loadingTimeout = 5;
 
 - (void)_base_setupTableView{
     // @xaoxuu: 注册复用池
-    if (_cellNibName.length) {
-        [self registerNib:[UINib nibWithNibName:_cellNibName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:_cellNibName];
+    if (_cellName.length) {
+        [self registerNib:[UINib nibWithNibName:_cellName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:_cellName];
     }
-    // @xaoxuu: 背景透明
-    self.backgroundColor = [UIColor clearColor];
+    // @xaoxuu: 背景
+    self.backgroundColor = axColor.groupTableViewBackground;
     // @xaoxuu: 高度
     self.estimatedRowHeight = 44;
     self.estimatedSectionHeaderHeight = 0;
@@ -71,8 +78,10 @@ static NSTimeInterval loadingTimeout = 5;
     self.tableHeaderView = UIViewWithHeight(1);
     self.tableFooterView = services.app.tableFooter;
     // @xaoxuu: 指示器
-    self.indicator = [DefaultIndicatorView defaultIndicatorAddToView:self];
+    self.indicator = [UIActivityIndicatorView defaultIndicator].show(self);
     
+    // @xaoxuu: 分割线
+    self.separatorColor = axColor.separatorColor;
     
     
 }
@@ -102,10 +111,12 @@ static NSTimeInterval loadingTimeout = 5;
         if ([self respondsToSelector:@selector(setupTableViewDataSource:)]) {
             [self.indicator startAnimating];
             [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:reloadToken performInBackground:^{
-                __block BOOL loadDone = NO;
                 [self setupTableViewDataSource:^(BaseTableModelListType sections) {
-                    loadDone = YES;
+                    // @xaoxuu: 获取到数据
                     _dataList = sections;
+                    if (self.mj_header) {
+                        [self.mj_header endRefreshing];
+                    }
                     // @xaoxuu: 缓存列表
                     [services.cache cacheObj:_dataList forKey:NSStringFromClass([self class]) completion:^{
                         
@@ -115,17 +126,24 @@ static NSTimeInterval loadingTimeout = 5;
                     
                 }];
                 [NSBlockOperation ax_delay:loadingTimeout performInMainQueue:^{
-                    if (!loadDone && self.controller) {
-                        [self.indicator stopAnimating];
-                        [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"加载失败", nil) message:NSLocalizedString(@"请确认数据源是否正确", nil)];
+                    [self.indicator stopAnimating];
+                    if (self.controller && !_dataList.count) {
+                        // @xaoxuu: 加载失败，请确认数据源是否正确
+                        [UIAlertController ax_showAlertWithTitle:kStringLoadFail() message:kStringPleaseConfirmDataSourceCorrect() action:^(UIAlertController * _Nonnull alert) {
+                            [alert ax_addCancelAction];
+                            [alert ax_addDefaultActionWithTitle:kStringHelp() handler:^(UIAlertAction * _Nonnull sender) {
+                                
+                            }];
+                            
+                        }];
                     }
                 }];
             }];
         } else {
             if (!_dataList.count) {
-                NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"请在\"%@.m\"文件中实现数据源协议：\n\"- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))dataSource;\"", nil), NSStringFromClass([self class])];
-                [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"加载失败", nil) message:msg];
-                [self.indicator startAnimating];
+                [self.indicator stopAnimating];
+                // @xaoxuu: 加载失败，请实现数据源协议
+                [UIAlertController ax_showAlertWithTitle:kStringLoadFail() message:kStringPleaseImplementDataSource(kNSStringFromSelfClass) action:nil];
             }
         }
         
@@ -200,21 +218,24 @@ static NSTimeInterval loadingTimeout = 5;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSUInteger section = indexPath.section;
     NSUInteger row = indexPath.row;
-    BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellNibName];
+    
+    UITableViewCell<BaseTableViewCell> *cell = [tableView dequeueReusableCellWithIdentifier:self.cellName];
+    
     BaseTableModelRow *model = self.dataList[section].rows[row];
     // @xaoxuu: 即将设置模型
     if ([self respondsToSelector:@selector(indexPath:willSetModel:)]) {
         [self indexPath:indexPath willSetModel:model];
     }
-    cell.model = model;
-    
+    // @xaoxuu: 设置模型
+    if ([cell respondsToSelector:@selector(setModel:)]) {
+        cell.model = model;
+    }
     
     // @xaoxuu: 自定义icon
-    if ([self respondsToSelector:@selector(indexPath:icon:)]) {
+    if ([self respondsToSelector:@selector(indexPath:icon:)] && [cell respondsToSelector:@selector(setIcon:)]) {
         [self indexPath:indexPath icon:^(UIImage *icon) {
             cell.icon = icon;
         }];
-        
     }
     
     // @xaoxuu: 是否显示开关
@@ -319,6 +340,8 @@ static NSTimeInterval loadingTimeout = 5;
 #pragma mark - self delegate
 
 
-
+- (UITableViewCell<BaseTableViewCell> *)setupCustomTableViewCell{
+    return [BaseTableViewCell new];
+}
 
 @end

@@ -25,7 +25,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BaseTableView *)installTableView{
+- (UITableView<BaseTableView> *)installTableView{
     return [[AboutTableView alloc] initWithFrame:self.view.bounds];
 }
 

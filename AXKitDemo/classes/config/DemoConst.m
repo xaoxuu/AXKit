@@ -35,8 +35,8 @@ inline UIFont *kFontNormal(){
 // @xaoxuu: 重载冷却（1秒内最多加载一次数据）
 NSTimeInterval reloadCooldown = 1;
 NSString *reloadToken = @"reloadCooldown";
-// @xaoxuu: 刷新按钮的冷却（1秒内最多接受一次点击）
-NSTimeInterval reloadBtnCooldown = 1;
+// @xaoxuu: 刷新按钮的冷却（2秒内最多接受一次点击）
+NSTimeInterval reloadBtnCooldown = 2;
 NSString *reloadBtnToken = @"reloadBtnCooldown";
 
 

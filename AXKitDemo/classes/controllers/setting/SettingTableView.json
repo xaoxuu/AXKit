@@ -81,7 +81,7 @@
                     "title":"字体",
                     "desc":"app的字体",
                     "icon":"setting_font",
-                    "target":"default",
+                    "target":"FontVC",
                     "cmd":""
                 },
                 {
