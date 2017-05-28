@@ -43,8 +43,8 @@
                     <rect key="frame" x="67" y="16" width="292" height="29"/>
                     <segments>
                         <segment title="bug"/>
-                        <segment title="功能需求"/>
-                        <segment title="改版建议"/>
+                        <segment title="需求"/>
+                        <segment title="建议"/>
                     </segments>
                 </segmentedControl>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="leC-o3-g9B">

@@ -22,7 +22,7 @@ FOUNDATION_EXPORT double AXKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AXKit/PublicHeader.h>
-FOUNDATION_EXPORT NSString * _Nonnull AXKitErrorDomain;
+
 
 #pragma mark - Foundation
 // 取值范围扩展
@@ -104,4 +104,16 @@ FOUNDATION_EXPORT NSString * _Nonnull AXKitErrorDomain;
 
 // UINavigationController
 #import <AXKit/UINavigationController+AXExtension.h>
+
+// UINavigationBar
+#import <AXKit/UINavigationBar+AXExtension.h>
+// UITabBar
+#import <AXKit/UITabBar+AXExtension.h>
+// UIAlertController
+#import <AXKit/UIAlertController+AXWrapper.h>
+
+
+#import <AXKit/UIActivityIndicatorView+AXWrapper.h>
+
+#import <AXKit/UIActivityIndicatorView+AXWrapper.h>
 

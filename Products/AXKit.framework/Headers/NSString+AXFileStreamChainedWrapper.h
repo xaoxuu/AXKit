@@ -59,6 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable id)readArchivedFile;
 
+- (nullable id)readArchivedObject;
+
 #pragma mark - save
 
 /**
@@ -74,6 +76,13 @@ NS_ASSUME_NONNULL_BEGIN
  @return 成功与否
  */
 - (BOOL(^)(NSObject<NSCoding> *))saveArchivedPlist;
+
+/**
+ 归档一个实现NSCoding协议的文件
+ 
+ @return 成功与否
+ */
+- (BOOL(^)(NSObject<NSCoding> *))saveArchivedObject;
 
 /**
  归档一个文件

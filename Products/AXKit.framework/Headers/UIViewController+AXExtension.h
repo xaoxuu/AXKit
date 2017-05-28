@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- 根据view controller的类名创建实例
+ 根据view controller的类名创建实例(此类必须要有xib文件)
 
  @param name view controller的类名
  @return view controller实例对象
@@ -21,6 +22,10 @@ CG_EXTERN UIViewController *UIViewControllerFromString(NSString *name);
 @interface UIViewController (AXExtension)
 
 
+//- (void)ax_hidesNavBarInRootController:(BOOL)hidden animated:(BOOL)animated;
+//
+//- (void)ax_hidesBottomBarWhenPushed:(BOOL)pushed;
 
 @end
+
 NS_ASSUME_NONNULL_END

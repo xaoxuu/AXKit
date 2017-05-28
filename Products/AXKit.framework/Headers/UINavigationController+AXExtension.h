@@ -45,15 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
  pop到指定viewController
 
  @param index 从rootVC开始向后数的index，rootVC为0
+ @param animated 是否显示动画
  */
-- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index;
+- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index animated:(BOOL)animated;
 
 /**
  pop到指定viewController
 
  @param index 从当前viewController开始向前数的index，当前VC为0
+ @param animated 是否显示动画
  */
-- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index;
+- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index animated:(BOOL)animated;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -6,10 +6,9 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "BaseTableViewCell.h"
 
-@interface FontTableViewCell : UITableViewCell<BaseTableViewCell>
+@interface FontTableViewCell : BaseTableViewCell
 
 
 @end

@@ -34,7 +34,7 @@
 }
 
 - (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
-    self.seg_subject.tintColor = axColor.theme.dark;
+    self.seg_subject.tintColor = axColor.theme.darkRatio(0.3);
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"send" action:^(id  _Nonnull sender) {
         [self sendEmail:^(MFMailComposeViewController *mailCompose) {
             // 设置邮件主题
