@@ -5,6 +5,7 @@
     "helpURL":"https://api.github.com/search/issues?q=+user:xaoxuu+repo:AXKit+label:help",
     "releaseLogURL":"https://api.github.com/search/issues?q=+user:xaoxuu+repo:AXKit+label:releaselog",
     
+    "releaseURL":"https://api.github.com/repos/xaoxuu/AXKit/releases",
     
     "blogURL":"https://api.github.com/repos/xaoxuu/blog/contents/_posts?ref=master"
     

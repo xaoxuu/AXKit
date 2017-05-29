@@ -11,6 +11,7 @@
 #import "GitHubRepoModel.h"
 #import "GitHubLabelModel.h"
 #import "GitHubIssueModel.h"
+#import "GitHubReleaseModel.h"
 
 
 @interface GitHubModels : NSObject

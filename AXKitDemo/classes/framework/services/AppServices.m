@@ -15,7 +15,7 @@
 
 #define daLayer [DataAccessLayer sharedInstance]
 
-static NSArray<NSString *> *footerRhesis;
+static NSArray<NSString *> *footerArray;
 
 @interface AppServices ()
 
@@ -139,16 +139,25 @@ static NSArray<NSString *> *footerRhesis;
 }
 
 
-- (UIView *)tableFooter{
+- (UIView *)copyrightTableFooter{
+    return [self tableFooterWithText:self.model.copyright];
+}
+
+- (UIView *)randomTableFooter{
+    return [self tableFooterWithText:[self randomTips]];
+}
+
+- (UIView *)tableFooterWithText:(NSString *)text{
     UIView *footer = UIViewWithHeight(64);
     // @xaoxuu: label
     UILabel *label = [[UILabel alloc] initWithFrame:footer.bounds];
     [footer addSubview:label];
-    label.textColor = [UIColor darkGrayColor];
+    label.textColor = [UIColor lightGrayColor];
     label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont systemFontOfSize:12];
-    label.text = [self randomTips];
+    label.font = [UIFont systemFontOfSize:11];
+    label.text = text;
+    
     [label sizeToFit];
     label.width += kMarginNormal;
     label.centerX = 0.5*footer.width;
@@ -178,17 +187,17 @@ static NSArray<NSString *> *footerRhesis;
 
 
 - (NSString *)randomTips{
-    if (!footerRhesis) {
+    if (!footerArray) {
         NSMutableArray *arrM = [NSMutableArray arrayWithArray:@"footer_rhesis".json.mainBundlePath.readJson];
         if (arrM) {
             NSString *tmp = self.model.copyright;
             [arrM addObject:tmp];
-            footerRhesis = arrM;
+            footerArray = arrM;
         }   
     }
-    if (footerRhesis.count) {
-        int i = arc4random_uniform(footerRhesis.count);
-        return footerRhesis[i];
+    if (footerArray.count) {
+        int i = arc4random_uniform(footerArray.count);
+        return footerArray[i];
     }
     return self.model.copyright;
 }
@@ -199,21 +208,23 @@ static NSArray<NSString *> *footerRhesis;
     [daLayer.network getURLCompletion:^(id response) {
         NSDictionary *dataDict = response;
         GitHubIssueListModel *list = [GitHubIssueListModel modelWithDictionary:dataDict];
-        NSString *title = list.items.firstObject.title;
-        NSString *verStr = [title substringToIndex:[title rangeOfString:@" "].location];
+        _latestVersion = [AppVersionInfoModel versionWithModel:list.items.firstObject];
         
         NSArray<NSString *> *curVersion = [[NSBundle ax_appVersion] componentsSeparatedByString:@"."];
-        NSArray<NSString *> *remoteVersion = [verStr componentsSeparatedByString:@"."];
+        NSArray<NSString *> *remoteVersion = [_latestVersion.name componentsSeparatedByString:@"."];
         if (curVersion.count != 3 || remoteVersion.count != 3) {
             return;
         }
-        _latestVersion = [AppVersionInfoModel versionWithModel:list.items.firstObject];
+        
         for (NSUInteger i = 0; i < 3; i++) {
             if (remoteVersion[i].integerValue > curVersion[i].integerValue) {
                 // @xaoxuu: 有新版本
                 NSString *msg = [AppVersionInfoModel versionDescriptionWithModel:_latestVersion];
                 [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"发现新版本", nil) message:msg action:^(UIAlertController * _Nonnull alert) {
-                    
+                    [alert ax_addCancelAction];
+                    [alert ax_addDefaultActionWithTitle:@"Update" handler:^(UIAlertAction * _Nonnull sender) {
+                        [[UIApplication sharedApplication] openURL:self.model.updateURL.absoluteURL];
+                    }];
                 }];
                 if (completion) {
                     completion(VersionStateOld);

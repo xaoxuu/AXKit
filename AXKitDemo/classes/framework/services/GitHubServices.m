@@ -109,9 +109,47 @@
 }
 
 
+// @xaoxuu: 更新日志
+- (void)getReleaseList:(void (^)(NSMutableArray<GitHubReleaseModel *> *releaseList))completion{
+    daLayer.network.URLString = self.model.releaseURL;
+    [daLayer.network getURLCompletion:^(id response) {
+        NSMutableArray *dataArr = [NSMutableArray arrayWithArray:response];
+        for (NSInteger i=0; i<dataArr.count; i++) {
+            NSDictionary *dataDict = dataArr.firstObject;
+            NSString *pre = dataDict[@"prerelease"];
+            if (pre.boolValue) {
+                [dataArr removeFirstObject];
+                i--;
+            } else {
+                break;
+            }
+        }
+        
+        NSMutableArray<GitHubReleaseModel *> *list = [NSMutableArray arrayWithArray:[GitHubReleaseModel mj_objectArrayWithKeyValuesArray:dataArr]];
+        
+        if (completion) {
+            completion(list);
+        }
+    } fail:^(NSError *error) {
+        
+    }];
+}
+
+// @xaoxuu: 最新版本信息
+- (void)getLatestRelease:(void (^)(GitHubReleaseModel *releaseList))completion{
+    [self getReleaseList:^(NSMutableArray<GitHubReleaseModel *> *releaseList) {
+        if (completion) {
+            completion(releaseList.firstObject);
+        }
+    }];
+}
+
 
 
 #pragma mark - util
+
+
+
 
 - (NSString *)queryURLWithKeyword:(NSString *)keyword{
     NSString *key = [keyword stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];

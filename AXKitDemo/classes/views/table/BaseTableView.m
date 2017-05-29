@@ -76,7 +76,7 @@ static NSTimeInterval loadingTimeout = 20;
     self.estimatedSectionHeaderHeight = 0;
     
     self.tableHeaderView = UIViewWithHeight(1);
-    self.tableFooterView = services.app.tableFooter;
+    self.tableFooterView = services.app.randomTableFooter;
     // @xaoxuu: 指示器
     self.indicator = [UIActivityIndicatorView defaultIndicator].show(self);
     

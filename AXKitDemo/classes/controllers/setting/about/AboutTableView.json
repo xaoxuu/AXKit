@@ -13,14 +13,14 @@
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"build版本",
+                    "title":"当前版本",
                     "desc":"",
                     "icon":"",
                     "target":"",
                     "cmd":""
                 },
                 {
-                "title":"build日期",
+                "title":"发布日期",
                 "desc":"",
                 "icon":"",
                 "target":"",
@@ -44,21 +44,21 @@
             "rows":[
                 {
                     "title":"开发者网站",
-                    "desc":"",
+                    "desc":"xaoxuu.com",
                     "icon":"",
                     "target":"BaseWebVC",
                     "cmd":"https://xaoxuu.com"
                 },
                 {
                     "title":"项目源码",
-                    "desc":"",
+                    "desc":"github.com/xaoxuu/AXKit",
                     "icon":"",
                     "target":"BaseWebVC",
                     "cmd":"https://github.com/xaoxuu/AXKit"
                 },
                 {
                     "title":"邮件反馈",
-                    "desc":"",
+                    "desc":"xaoxuu@gmail.com",
                     "icon":"",
                     "target":"EmailVC",
                     "cmd":"mailto://stackxu@gmail.com"

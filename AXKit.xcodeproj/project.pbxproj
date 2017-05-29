@@ -150,6 +150,8 @@
 		CD5746151EDBFF030014E833 /* ReleaseLogTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5746141EDBFF030014E833 /* ReleaseLogTV.m */; };
 		CD5746181EDC188F0014E833 /* AppVersionInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5746171EDC188F0014E833 /* AppVersionInfoModel.m */; };
 		CD57461B1EDC28860014E833 /* FullWideButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57461A1EDC28860014E833 /* FullWideButton.m */; };
+		CD57461E1EDC526C0014E833 /* GitHubReleaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57461D1EDC526C0014E833 /* GitHubReleaseModel.m */; };
+		CD5746211EDC6DA10014E833 /* header.gif in Resources */ = {isa = PBXBuildFile; fileRef = CD5746201EDC6DA10014E833 /* header.gif */; };
 		CD77FE7D1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE7B1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD77FE7E1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE7C1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m */; };
 		CD77FE811EBEF8DF001A5787 /* Foundation+AXRangeExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE7F1EBEF8DF001A5787 /* Foundation+AXRangeExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -495,6 +497,9 @@
 		CD5746171EDC188F0014E833 /* AppVersionInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppVersionInfoModel.m; sourceTree = "<group>"; };
 		CD5746191EDC28860014E833 /* FullWideButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullWideButton.h; sourceTree = "<group>"; };
 		CD57461A1EDC28860014E833 /* FullWideButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullWideButton.m; sourceTree = "<group>"; };
+		CD57461C1EDC526C0014E833 /* GitHubReleaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubReleaseModel.h; sourceTree = "<group>"; };
+		CD57461D1EDC526C0014E833 /* GitHubReleaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubReleaseModel.m; sourceTree = "<group>"; };
+		CD5746201EDC6DA10014E833 /* header.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = header.gif; sourceTree = "<group>"; };
 		CD77FE7B1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXRandomExtension.h"; sourceTree = "<group>"; };
 		CD77FE7C1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXRandomExtension.m"; sourceTree = "<group>"; };
 		CD77FE7F1EBEF8DF001A5787 /* Foundation+AXRangeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXRangeExtension.h"; sourceTree = "<group>"; };
@@ -749,6 +754,7 @@
 		CD0645A81EB3AA78007FBF06 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				CD57461F1EDC6D7E0014E833 /* imgs */,
 				CD2386041EC0D25D007AB90B /* tabbar_controllers.json */,
 				CD0645A91EB3AA78007FBF06 /* footer_rhesis.json */,
 				CD2386021EC0CF0F007AB90B /* appinfo.json */,
@@ -1198,6 +1204,14 @@
 			path = releaselog;
 			sourceTree = "<group>";
 		};
+		CD57461F1EDC6D7E0014E833 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				CD5746201EDC6DA10014E833 /* header.gif */,
+			);
+			path = imgs;
+			sourceTree = "<group>";
+		};
 		CD77FE681EBEE62E001A5787 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
@@ -1514,6 +1528,8 @@
 				CDE94E901EC705C800596B93 /* GitHubRepoModel.m */,
 				CDE94E911EC705C800596B93 /* GitHubUserModel.h */,
 				CDE94E921EC705C800596B93 /* GitHubUserModel.m */,
+				CD57461C1EDC526C0014E833 /* GitHubReleaseModel.h */,
+				CD57461D1EDC526C0014E833 /* GitHubReleaseModel.m */,
 			);
 			path = GitHubModels;
 			sourceTree = "<group>";
@@ -1779,6 +1795,7 @@
 				CD5745A91EDADE510014E833 /* HelpVC.xib in Resources */,
 				CD5745871EDADE510014E833 /* HitTestVC.xib in Resources */,
 				CD5745901EDADE510014E833 /* AboutTableView.json in Resources */,
+				CD5746211EDC6DA10014E833 /* header.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1859,6 +1876,7 @@
 			files = (
 				CD5744FC1EDAAD710014E833 /* UIScrollView+MJExtension.m in Sources */,
 				CDBB3B271EB9E80F00E8ED25 /* MJFoundation.m in Sources */,
+				CD57461E1EDC526C0014E833 /* GitHubReleaseModel.m in Sources */,
 				CDE94E9A1EC7073100596B93 /* GitHubApiDataAccess.m in Sources */,
 				CD5744F31EDAAD710014E833 /* MJRefreshBackGifFooter.m in Sources */,
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,

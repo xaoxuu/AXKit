@@ -20,6 +20,8 @@
 // @xaoxuu: feedback email
 @property (copy, readonly, nonatomic) NSString *feedbackEmail;
 
+// @xaoxuu: update url
+@property (copy, readonly, nonatomic) NSString *updateURL;
 
 @property (copy, readonly, nonatomic) NSString *copyright;
 

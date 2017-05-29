@@ -45,6 +45,8 @@
  */
 - (void)getReleaseLogList:(void (^)(GitHubIssueListModel *issues))completion;
 
+- (void)getReleaseList:(void (^)(NSMutableArray<GitHubReleaseModel *> *releaseList))completion;
+
 /**
  获取博客列表
 

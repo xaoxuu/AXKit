@@ -10,11 +10,19 @@
 
 @implementation AppVersionInfoModel
 
+- (instancetype)init{
+    if (self = [super init]) {
+        _name = @"0.0.0";
+    }
+    return self;
+}
 
 + (AppVersionInfoModel *)versionWithModel:(GitHubIssueModel *)model{
     AppVersionInfoModel *version = [AppVersionInfoModel new];
     // @xaoxuu: 版本号
-    version.name = [model.title substringToIndex:[model.title rangeOfString:@" "].location];
+    if ([model.title containsString:@" "]) {
+        version.name = [model.title substringToIndex:[model.title rangeOfString:@" "].location];
+    }
     // @xaoxuu: build
     version.date = [model.updated_at substringToIndex:10];
     // @xaoxuu: log

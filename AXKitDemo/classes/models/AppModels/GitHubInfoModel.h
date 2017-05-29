@@ -24,7 +24,7 @@
 // @xaoxuu: 发布日志
 @property (copy, readonly, nonatomic) NSString *releaseLogURL;
 
-
+@property (copy, readonly, nonatomic) NSString *releaseURL;
 // @xaoxuu: blog list
 @property (copy, readonly, nonatomic) NSString *blogURL;
 

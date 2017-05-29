@@ -18,6 +18,17 @@ static CGFloat const iconSize = 64;
 
 - (void)initTableView:(BaseTableView *)tableView{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0.3*kScreenH)];
+    
+    // @xaoxuu: bg
+//    NSData *bgImgData = [NSData dataWithContentsOfFile:@"header.gif".mainBundlePath];
+//    UIWebView *webView = [[UIWebView alloc] initWithFrame:view.bounds];
+//    webView.scalesPageToFit = YES;
+//    [webView loadData:bgImgData MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+//    webView.backgroundColor = [UIColor clearColor];
+//    webView.opaque = NO;
+//    webView.scrollView.scrollEnabled = NO;
+//    [view addSubview:webView];
+    
     // @xaoxuu: icon
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconSize, iconSize)];
     icon.image = [UIImage imageNamed:[NSBundle ax_appIcon]];
@@ -28,7 +39,7 @@ static CGFloat const iconSize = 64;
     icon.layer.cornerRadius = icon.width/4.2;
     // @xaoxuu: point
     icon.centerX = 0.5 * view.width;
-    icon.centerY = 0.4 * view.height;
+    icon.centerY = 0.5 * view.height;
     [view addSubview:icon];
     
     // @xaoxuu: app name
@@ -38,19 +49,20 @@ static CGFloat const iconSize = 64;
     [view addSubview:appName];
     
     // @xaoxuu: app version
-    NormalLabel *appVersion = [NormalLabel labelWithTitle:[NSBundle ax_appVersion] fontSize:12];
-    appVersion.centerX = 0.5 * view.width;
-    appVersion.top = appName.bottom + 4;
-    [view addSubview:appVersion];
+//    NormalLabel *appVersion = [NormalLabel labelWithTitle:[NSBundle ax_appVersion] fontSize:12];
+//    appVersion.centerX = 0.5 * view.width;
+//    appVersion.top = appName.bottom + 4;
+//    [view addSubview:appVersion];
+    
     
     // @xaoxuu: header
     tableView.tableHeaderView = view;
-    
+    tableView.tableFooterView = services.app.copyrightTableFooter;
 }
 - (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            model.desc = [NSBundle ax_appBuild];
+            model.desc = [NSString stringWithFormat:@"%@ (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
         } else if (indexPath.row == 1) {
             NSString *buildTime = @"20".append([NSBundle ax_appBuild]);
             NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMMddHHmm"];
