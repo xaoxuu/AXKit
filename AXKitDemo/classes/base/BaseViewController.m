@@ -140,6 +140,12 @@
         self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [self.tableView setAutoresizesSubviews:NO];
         [self.view addSubview:self.tableView];
+        
+        // @xaoxuu: done
+        if ([self respondsToSelector:@selector(didTableViewInstalled:)]) {
+            [self didTableViewInstalled:self.tableView];
+        }
+        
     }
     
     

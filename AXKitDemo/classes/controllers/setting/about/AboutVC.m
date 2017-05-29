@@ -34,15 +34,21 @@
 }
 
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
+- (void)didTableViewInstalled:(UITableView<BaseTableView> *)tableView{
     [FullWideButton buttonWithTitle:NSLocalizedString(@"检查更新", nil) action:^(__kindof BaseButton *sender) {
+        sender.enabled = NO;
         [services.app checkVersionCompletion:^(VersionState state) {
+            [NSBlockOperation ax_delay:0.2 performInMainQueue:^{
+                sender.enabled = YES;
+            }];
             if (state == VersionStateLatest) {
                 [UIAlertController ax_showAlertWithTitle:nil message:NSLocalizedString(@"已经是最新版本", nil) action:nil];
             }
+            
         }];
     }].addToView(self.view).layoutToBottom();
 }
+
+
 
 @end

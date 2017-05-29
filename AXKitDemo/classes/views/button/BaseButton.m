@@ -78,5 +78,10 @@
     };
 }
 
+- (void)setEnabled:(BOOL)enabled{
+    [super setEnabled:enabled];
+    
+}
+
 
 @end

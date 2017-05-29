@@ -13,6 +13,8 @@
 
 + (instancetype)defaultIndicator;
 
++ (instancetype)defaultIndicatorWithLoading;
+
 /**
  放置到view
  */

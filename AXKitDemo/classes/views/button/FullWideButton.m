@@ -8,6 +8,8 @@
 
 #import "FullWideButton.h"
 
+static UIActivityIndicatorView *indicator;
+
 @implementation FullWideButton
 
 
@@ -25,8 +27,22 @@
     }
     [self setTitleColor:titleColor forState:UIControlStateNormal];
     
+    
+    [self setTitle:@"" forState:UIControlStateDisabled];
+    
+    indicator = [UIActivityIndicatorView defaultIndicator];
 }
 
+
+- (void)setEnabled:(BOOL)enabled{
+    [super setEnabled:enabled];
+    
+    if (enabled) {
+        indicator.hide();
+    } else {
+        indicator.show(self);
+    }
+}
 
 
 @end

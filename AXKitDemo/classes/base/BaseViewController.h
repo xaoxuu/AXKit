@@ -53,6 +53,11 @@ typedef NS_ENUM(NSUInteger, ContentViewStyle) {
 - (UITableView<BaseTableView> *)installTableView;
 
 
+/**
+ 安装完tableview
+ */
+- (void)didTableViewInstalled:(UITableView<BaseTableView> *)tableView;
+
 @end
 
 @interface BaseViewController : UIViewController <BaseVC,AXModuleKit>
