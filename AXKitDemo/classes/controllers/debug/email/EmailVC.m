@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,12 +34,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
+- (void)initContentView:(UIView *)view{
     self.seg_subject.tintColor = axColor.theme.isLightColor?axColor.theme.darkRatio(0.3):axColor.theme;
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"send" action:^(id  _Nonnull sender) {
         [weakSelf sendEmail:^(MFMailComposeViewController *mailCompose) {
+            
             // 设置邮件主题
             NSString *title = [weakSelf.seg_subject titleForSegmentAtIndex:weakSelf.seg_subject.selectedSegmentIndex];
             [mailCompose setSubject:[NSString stringWithFormat:@"[%@] - %@",title, weakSelf.tf_summary.text]];
@@ -46,6 +48,7 @@
             [mailCompose setToRecipients:@[@"xaoxuu@gmail.com"]];
             NSString *emailContent = weakSelf.tv_content.text;
             [mailCompose setMessageBody:emailContent isHTML:NO];
+            
         } completion:^(MFMailComposeResult result) {
             
             [UIAlertController ax_showAlertWithTitle:NSStringFromNSInteger(result) message:nil action:nil];

@@ -27,8 +27,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
-    style(ContentViewStyleNoTopAndBottomBar);
+
+- (CGRect)initContentFrame:(CGRect)frame{
+    frame.origin.y = kTopBarHeight;
+    frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
+    return frame;
 }
 
 

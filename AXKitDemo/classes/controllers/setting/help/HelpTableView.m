@@ -54,6 +54,7 @@
         self.source = [NSMutableArray arrayWithArray:@[sec]];
         if (completion) {
             completion(self.source);
+            [self.mj_header endRefreshing];
         }
     }];
 }

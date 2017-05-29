@@ -12,6 +12,7 @@
 #import "DataAccessLayer.h"
 #import "MJExtension.h"
 
+
 #define daLayer [DataAccessLayer sharedInstance]
 
 static NSArray<NSString *> *footerRhesis;
@@ -32,6 +33,11 @@ static NSArray<NSString *> *footerRhesis;
         
         _defaultVC = [DefaultViewController new];
         
+        [NSBlockOperation ax_delay:2 performInBackground:^{
+            [self checkVersionCompletion:^(VersionState state) {
+                
+            }];
+        }];
         
     }
     return self;
@@ -185,6 +191,47 @@ static NSArray<NSString *> *footerRhesis;
         return footerRhesis[i];
     }
     return self.model.copyright;
+}
+
+- (void)checkVersionCompletion:(void (^)(VersionState state))completion{
+    
+    daLayer.network.URLString = services.git.model.releaseLogURL;
+    [daLayer.network getURLCompletion:^(id response) {
+        NSDictionary *dataDict = response;
+        GitHubIssueListModel *list = [GitHubIssueListModel modelWithDictionary:dataDict];
+        NSString *title = list.items.firstObject.title;
+        NSString *verStr = [title substringToIndex:[title rangeOfString:@" "].location];
+        
+        NSArray<NSString *> *curVersion = [[NSBundle ax_appVersion] componentsSeparatedByString:@"."];
+        NSArray<NSString *> *remoteVersion = [verStr componentsSeparatedByString:@"."];
+        if (curVersion.count != 3 || remoteVersion.count != 3) {
+            return;
+        }
+        _latestVersion = [AppVersionInfoModel versionWithModel:list.items.firstObject];
+        for (NSUInteger i = 0; i < 3; i++) {
+            if (remoteVersion[i].integerValue > curVersion[i].integerValue) {
+                // @xaoxuu: 有新版本
+                NSString *msg = [AppVersionInfoModel versionDescriptionWithModel:_latestVersion];
+                [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"发现新版本", nil) message:msg action:^(UIAlertController * _Nonnull alert) {
+                    
+                }];
+                if (completion) {
+                    completion(VersionStateOld);
+                }
+                
+                return;
+            }
+        }
+        
+        if (completion) {
+            
+            completion(VersionStateLatest);
+        }
+        
+        
+    } fail:^(NSError *error) {
+        
+    }];
 }
 
 @end

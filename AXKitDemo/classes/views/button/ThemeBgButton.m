@@ -15,25 +15,15 @@
     
     self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     
+    [self _initButton];
     
-    self.backgroundColor = axColor.theme;
-    UIColor *titleColor = axColor.white;
-    if (axColor.theme.isLightColor) {
-        titleColor = axColor.theme.dark;
-    }
-    [self setTitleColor:titleColor forState:UIControlStateNormal];
     
 }
 
 - (void)setNeedsLayout{
     [super setNeedsLayout];
     
-    self.backgroundColor = axColor.theme;
-    UIColor *titleColor = axColor.white;
-    if (axColor.theme.isLightColor) {
-        titleColor = axColor.theme.dark;
-    }
-    [self setTitleColor:titleColor forState:UIControlStateNormal];
+    [self _initButton];
 }
 
 - (void)setEnabled:(BOOL)enabled{
@@ -44,6 +34,16 @@
     } else {
         self.alpha = 0.5;
     }
+}
+
+
+- (void)_initButton{
+    self.backgroundColor = axColor.theme;
+    UIColor *titleColor = axColor.white;
+    if (axColor.theme.isLightColor) {
+        titleColor = axColor.theme.dark;
+    }
+    [self setTitleColor:titleColor forState:UIControlStateNormal];
 }
 
 @end

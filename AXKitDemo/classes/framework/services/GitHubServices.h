@@ -37,6 +37,14 @@
 - (void)queryHelpIssuesListWithKeyword:(NSString *)keyword completion:(void (^)(GitHubIssueListModel *issues))completion;
 
 
+
+/**
+ 获取发布日志列表
+
+ @param completion 获取到的发布日志列表
+ */
+- (void)getReleaseLogList:(void (^)(GitHubIssueListModel *issues))completion;
+
 /**
  获取博客列表
 

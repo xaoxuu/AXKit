@@ -22,10 +22,11 @@ typedef NS_ENUM(NSUInteger, ContentViewStyle) {
 @optional
 
 
+- (CGRect)initContentFrame:(CGRect)frame;
 /**
  初始化内容区域
  */
-- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle style))style;
+- (void)initContentView:(UIView *)view;
 
 - (void)initSubview;
 

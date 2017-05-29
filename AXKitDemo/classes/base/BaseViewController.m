@@ -77,28 +77,12 @@
     self.view.backgroundColor = axColor.background;
     // @xaoxuu: frame
     self.view.frame = CGRectFromScreen();
-    if ([self respondsToSelector:@selector(initContentView:style:)]) {
-        [self initContentView:self.view style:^(ContentViewStyle style) {
-            switch (style) {
-                case ContentViewStyleNoTopBar:
-                    self.view.top = kTopBarHeight;
-                    self.view.height -= kTopBarHeight;
-                    break;
-                    
-                case ContentViewStyleNoBottomBar:
-                    self.view.height -= kTabBarHeight;
-                    break;
-                    
-                case ContentViewStyleNoTopAndBottomBar:
-                    self.view.top = kTopBarHeight;
-                    self.view.height -= kTopBarHeight + kTabBarHeight;
-                    break;
-                    
-                case ContentViewStyleFullScreen:
-                    
-                    break;
-            }
-        }];
+    if ([self respondsToSelector:@selector(initContentFrame:)]) {
+        self.view.frame = [self initContentFrame:self.view.frame];
+    }
+    
+    if ([self respondsToSelector:@selector(initContentView:)]) {
+        [self initContentView:self.view];
     }
     
     // @xaoxuu: subview
@@ -166,10 +150,10 @@
 
 #pragma mark - delegate
 
-- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
-    style(ContentViewStyleNoTopBar);
+- (CGRect)initContentFrame:(CGRect)frame{
+    frame.origin.y = kTopBarHeight;
+    frame.size.height = kScreenH - kTopBarHeight;
+    return frame;
 }
-
-
 
 @end

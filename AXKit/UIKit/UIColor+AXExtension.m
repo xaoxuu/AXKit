@@ -166,19 +166,24 @@ static CGFloat static_color_ratio = 0.6;
 }
 
 
-- (BOOL)isLightColor{
+- (CGFloat)grayLevel{
     CGFloat r = self.redValue;
     CGFloat g = self.greenValue;
     CGFloat b = self.blueValue;
-    CGFloat x = r*g*b;
-    CGFloat y = r+g+b;
-    if (2*x*y+x+y > 2) {
+    
+    return r * 0.299 + g * 0.587 + b * 0.114;
+}
+
+- (BOOL)isLightColor{
+    
+    if (self.grayLevel >= 192.0/255.0) {
         // @xaoxuu: light color
         return YES;
     } else {
         // @xaoxuu: dark color
         return NO;
     }
+    
 }
 
 

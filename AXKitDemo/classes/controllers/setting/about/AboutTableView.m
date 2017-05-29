@@ -8,6 +8,7 @@
 
 #import "AboutTableView.h"
 #import "NormalLabel.h"
+#import "BaseWebVC.h"
 
 static CGFloat const iconSize = 64;
 
@@ -37,14 +38,14 @@ static CGFloat const iconSize = 64;
     [view addSubview:appName];
     
     // @xaoxuu: app version
-    NormalLabel *appVersion = [NormalLabel labelWithTitle:@"v ".append([NSBundle ax_appVersion]) fontSize:12];
+    NormalLabel *appVersion = [NormalLabel labelWithTitle:[NSBundle ax_appVersion] fontSize:12];
     appVersion.centerX = 0.5 * view.width;
     appVersion.top = appName.bottom + 4;
     [view addSubview:appVersion];
     
     // @xaoxuu: header
     tableView.tableHeaderView = view;
-    tableView.tableFooterView = nil;
+    
 }
 - (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
     if (indexPath.section == 0) {
@@ -59,13 +60,19 @@ static CGFloat const iconSize = 64;
 }
 
 
-- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
-    NSString *urlStr = model.cmd;
-    if (urlStr.length) {
-        [[UIApplication sharedApplication] openURL:urlStr.absoluteURL options:@{} completionHandler:^(BOOL success) {
-            
-        }];
+
+- (BOOL)indexPath:(NSIndexPath *)indexPath shouldPush:(__kindof BaseViewController *)targetVC{
+    BaseTableModelRow *model = [self rowModel:indexPath];
+    if (indexPath.section == 0) {
+        
+    } else if (indexPath.section == 1) {
+        if ([targetVC isKindOfClass:[BaseWebVC class]]) {
+            BaseWebVC *vc = targetVC;
+            vc.urlStr = model.cmd;
+        }
+        
     }
+    return YES;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{

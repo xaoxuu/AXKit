@@ -32,10 +32,13 @@
     [self.view layoutSubviews];
 }
 
-
-- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
-    style(ContentViewStyleNoTopAndBottomBar);
+- (CGRect)initContentFrame:(CGRect)frame{
+    frame.origin.y = kTopBarHeight;
+    frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
+    return frame;
 }
+
+
 
 - (UITableView<BaseTableView> *)installTableView{
     return [[DebugTV alloc] initWithFrame:self.view.bounds];

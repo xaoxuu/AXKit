@@ -25,7 +25,14 @@
                 "icon":"",
                 "target":"",
                 "cmd":""
-                }
+                    },
+                    {
+                    "title":"更新日志",
+                    "desc":"",
+                    "icon":"",
+                    "target":"ReleaseLogVC",
+                    "cmd":""
+                    }
             ]
         },
         {
@@ -39,21 +46,21 @@
                     "title":"开发者网站",
                     "desc":"",
                     "icon":"",
-                    "target":"default",
+                    "target":"BaseWebVC",
                     "cmd":"https://xaoxuu.com"
                 },
                 {
                     "title":"项目源码",
                     "desc":"",
                     "icon":"",
-                    "target":"default",
+                    "target":"BaseWebVC",
                     "cmd":"https://github.com/xaoxuu/AXKit"
                 },
                 {
-                    "title":"反馈邮箱",
+                    "title":"邮件反馈",
                     "desc":"",
                     "icon":"",
-                    "target":"default",
+                    "target":"EmailVC",
                     "cmd":"mailto://stackxu@gmail.com"
                 }
             ]

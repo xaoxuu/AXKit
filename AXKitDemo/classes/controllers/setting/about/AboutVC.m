@@ -8,6 +8,7 @@
 
 #import "AboutVC.h"
 #import "AboutTableView.h"
+#import "FullWideButton.h"
 
 @interface AboutVC ()
 
@@ -26,8 +27,22 @@
 }
 
 - (UITableView<BaseTableView> *)installTableView{
-    return [[AboutTableView alloc] initWithFrame:self.view.bounds];
+    CGRect frame = self.view.bounds;
+    frame.size.height -= kTabBarHeight;
+    return [[AboutTableView alloc] initWithFrame:frame];
+    
 }
 
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [FullWideButton buttonWithTitle:NSLocalizedString(@"检查更新", nil) action:^(__kindof BaseButton *sender) {
+        [services.app checkVersionCompletion:^(VersionState state) {
+            if (state == VersionStateLatest) {
+                [UIAlertController ax_showAlertWithTitle:nil message:NSLocalizedString(@"已经是最新版本", nil) action:nil];
+            }
+        }];
+    }].addToView(self.view).layoutToBottom();
+}
 
 @end

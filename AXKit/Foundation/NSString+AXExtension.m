@@ -52,6 +52,8 @@ inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
 
 @implementation NSString (AXAppendExtension)
 
+
+
 - (NSString *(^)(NSString *string))append{
     return ^(NSString *string){
         if (string.length) {
@@ -83,12 +85,22 @@ inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
     };
 }
 
+- (NSString *(^)(NSString *string))prefix{
+    return ^(NSString *string){
+        if (string.length) {
+            return [string stringByAppendingString:self];;
+        } else{
+            return self;
+        }
+    };
+}
+
 @end
 
 
 @implementation NSString (AXExtension)
 
-- (NSURL *)absoluteURL{
+- (nullable NSURL *)absoluteURL{
     return [NSURL URLWithString:self].absoluteURL;
 }
 

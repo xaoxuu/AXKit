@@ -21,6 +21,10 @@
 // @xaoxuu: help
 @property (copy, readonly, nonatomic) NSString *helpURL;
 
+// @xaoxuu: 发布日志
+@property (copy, readonly, nonatomic) NSString *releaseLogURL;
+
+
 // @xaoxuu: blog list
 @property (copy, readonly, nonatomic) NSString *blogURL;
 

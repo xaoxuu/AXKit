@@ -10,7 +10,7 @@
 #import "DefaultViewController.h"
 #import "ThemeColorModel.h"
 #import "AppInfoModel.h"
-
+#import "AppVersionInfoModel.h"
 
 FOUNDATION_EXTERN NSString *kBlogURL;
 
@@ -19,7 +19,7 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 
 @property (strong, readonly, nonatomic) AppInfoModel *model;
 
-
+@property (strong, readonly, nonatomic) AppVersionInfoModel *latestVersion;
 
 // @xaoxuu: setting icon placeholder
 @property (strong, readonly, nonatomic) UIImage *placeholderForSetting;
@@ -38,5 +38,7 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 
 
 - (UIView *)tableFooter;
+
+- (void)checkVersionCompletion:(void (^)(VersionState state))completion;
 
 @end

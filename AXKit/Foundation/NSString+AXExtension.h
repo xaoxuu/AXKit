@@ -93,6 +93,8 @@ FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
 @interface NSString (AXAppendExtension)
 
+
+
 /**
  拼接字符串
  */
@@ -118,13 +120,18 @@ FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
  */
 - (NSString *(^)())appendReturn;
 
+/**
+ 添加前缀（在前面拼接字符串）
+ */
+- (NSString *(^)(NSString *string))prefix;
+
 
 @end
 
 
 @interface NSString (AXExtension)
 
-- (NSURL *)absoluteURL;
+- (nullable NSURL *)absoluteURL;
 
 - (BOOL)isURLString;
 

@@ -145,6 +145,11 @@
 		CD5746031EDAE9B80014E833 /* _AXKitHelpServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745FF1EDAE9B80014E833 /* _AXKitHelpServices.m */; };
 		CD5746091EDB2B300014E833 /* AppInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5746081EDB2B300014E833 /* AppInfoModel.m */; };
 		CD57460C1EDB2F650014E833 /* GitHubInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57460B1EDB2F650014E833 /* GitHubInfoModel.m */; };
+		CD5746111EDBFED40014E833 /* ReleaseLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57460F1EDBFED40014E833 /* ReleaseLogVC.m */; };
+		CD5746121EDBFED40014E833 /* ReleaseLogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5746101EDBFED40014E833 /* ReleaseLogVC.xib */; };
+		CD5746151EDBFF030014E833 /* ReleaseLogTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5746141EDBFF030014E833 /* ReleaseLogTV.m */; };
+		CD5746181EDC188F0014E833 /* AppVersionInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5746171EDC188F0014E833 /* AppVersionInfoModel.m */; };
+		CD57461B1EDC28860014E833 /* FullWideButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57461A1EDC28860014E833 /* FullWideButton.m */; };
 		CD77FE7D1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE7B1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD77FE7E1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE7C1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m */; };
 		CD77FE811EBEF8DF001A5787 /* Foundation+AXRangeExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE7F1EBEF8DF001A5787 /* Foundation+AXRangeExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -481,6 +486,15 @@
 		CD5746081EDB2B300014E833 /* AppInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoModel.m; sourceTree = "<group>"; };
 		CD57460A1EDB2F650014E833 /* GitHubInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubInfoModel.h; sourceTree = "<group>"; };
 		CD57460B1EDB2F650014E833 /* GitHubInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubInfoModel.m; sourceTree = "<group>"; };
+		CD57460E1EDBFED40014E833 /* ReleaseLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseLogVC.h; sourceTree = "<group>"; };
+		CD57460F1EDBFED40014E833 /* ReleaseLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseLogVC.m; sourceTree = "<group>"; };
+		CD5746101EDBFED40014E833 /* ReleaseLogVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReleaseLogVC.xib; sourceTree = "<group>"; };
+		CD5746131EDBFF030014E833 /* ReleaseLogTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseLogTV.h; sourceTree = "<group>"; };
+		CD5746141EDBFF030014E833 /* ReleaseLogTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseLogTV.m; sourceTree = "<group>"; };
+		CD5746161EDC188F0014E833 /* AppVersionInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppVersionInfoModel.h; sourceTree = "<group>"; };
+		CD5746171EDC188F0014E833 /* AppVersionInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppVersionInfoModel.m; sourceTree = "<group>"; };
+		CD5746191EDC28860014E833 /* FullWideButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullWideButton.h; sourceTree = "<group>"; };
+		CD57461A1EDC28860014E833 /* FullWideButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullWideButton.m; sourceTree = "<group>"; };
 		CD77FE7B1EBEF7EC001A5787 /* Foundation+AXRandomExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXRandomExtension.h"; sourceTree = "<group>"; };
 		CD77FE7C1EBEF7EC001A5787 /* Foundation+AXRandomExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXRandomExtension.m"; sourceTree = "<group>"; };
 		CD77FE7F1EBEF8DF001A5787 /* Foundation+AXRangeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXRangeExtension.h"; sourceTree = "<group>"; };
@@ -749,6 +763,8 @@
 			children = (
 				CD0B62EF1EC45E100024F25E /* BaseButton.h */,
 				CD0B62F01EC45E100024F25E /* BaseButton.m */,
+				CD5746191EDC28860014E833 /* FullWideButton.h */,
+				CD57461A1EDC28860014E833 /* FullWideButton.m */,
 				CD0B62F81EC45E790024F25E /* ThemeBgButton.h */,
 				CD0B62F91EC45E790024F25E /* ThemeBgButton.m */,
 				CD0B62F51EC45E650024F25E /* AccentBgButton.h */,
@@ -956,6 +972,7 @@
 		CD57452D1EDADE510014E833 /* about */ = {
 			isa = PBXGroup;
 			children = (
+				CD57460D1EDBFEC60014E833 /* releaselog */,
 				CD57452E1EDADE510014E833 /* AboutTableView.h */,
 				CD57452F1EDADE510014E833 /* AboutTableView.json */,
 				CD5745301EDADE510014E833 /* AboutTableView.m */,
@@ -1163,8 +1180,22 @@
 				CD5746081EDB2B300014E833 /* AppInfoModel.m */,
 				CD57460A1EDB2F650014E833 /* GitHubInfoModel.h */,
 				CD57460B1EDB2F650014E833 /* GitHubInfoModel.m */,
+				CD5746161EDC188F0014E833 /* AppVersionInfoModel.h */,
+				CD5746171EDC188F0014E833 /* AppVersionInfoModel.m */,
 			);
 			path = AppModels;
+			sourceTree = "<group>";
+		};
+		CD57460D1EDBFEC60014E833 /* releaselog */ = {
+			isa = PBXGroup;
+			children = (
+				CD57460E1EDBFED40014E833 /* ReleaseLogVC.h */,
+				CD57460F1EDBFED40014E833 /* ReleaseLogVC.m */,
+				CD5746101EDBFED40014E833 /* ReleaseLogVC.xib */,
+				CD5746131EDBFF030014E833 /* ReleaseLogTV.h */,
+				CD5746141EDBFF030014E833 /* ReleaseLogTV.m */,
+			);
+			path = releaselog;
 			sourceTree = "<group>";
 		};
 		CD77FE681EBEE62E001A5787 /* NSString */ = {
@@ -1725,6 +1756,7 @@
 				CD5745B31EDADE510014E833 /* SettingTableView.json in Resources */,
 				CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
+				CD5746121EDBFED40014E833 /* ReleaseLogVC.xib in Resources */,
 				CD5745981EDADE510014E833 /* BlogListVC.xib in Resources */,
 				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
 				CD5745B81EDADE510014E833 /* ThemeColorTableView.json in Resources */,
@@ -1847,6 +1879,7 @@
 				CD5744F51EDAAD710014E833 /* MJRefreshBackStateFooter.m in Sources */,
 				CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */,
 				CD5745861EDADE510014E833 /* HitTestVC.m in Sources */,
+				CD57461B1EDC28860014E833 /* FullWideButton.m in Sources */,
 				CDBB3B291EB9E80F00E8ED25 /* MJPropertyKey.m in Sources */,
 				CD5746091EDB2B300014E833 /* AppInfoModel.m in Sources */,
 				CD57458C1EDADE510014E833 /* AXLogVC.m in Sources */,
@@ -1909,12 +1942,14 @@
 				CD57459A1EDADE510014E833 /* RemoveCacheVC.m in Sources */,
 				CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */,
 				CD77FEA71EBF5DF3001A5787 /* DataAccessLayer.m in Sources */,
+				CD5746181EDC188F0014E833 /* AppVersionInfoModel.m in Sources */,
 				CDE94E6F1EC6FDB300596B93 /* GitHubServices.m in Sources */,
 				CD5745AA1EDADE510014E833 /* CustomIconTableView.m in Sources */,
 				CD5745A71EDADE510014E833 /* HelpTableView.m in Sources */,
 				CD5744FA1EDAAD710014E833 /* MJRefreshConst.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */,
+				CD5746151EDBFF030014E833 /* ReleaseLogTV.m in Sources */,
 				CD77FE9C1EBF5D8B001A5787 /* BaseServices.m in Sources */,
 				CD77FEA41EBF5DE7001A5787 /* ServicesLayer.m in Sources */,
 				CD23DCD91EC35F35006E331B /* AlertServices.m in Sources */,
@@ -1932,6 +1967,7 @@
 				CD5745AB1EDADE510014E833 /* CustomIconVC.m in Sources */,
 				CD5745921EDADE510014E833 /* AboutVC.m in Sources */,
 				CD5744EF1EDAAD710014E833 /* MJRefreshHeader.m in Sources */,
+				CD5746111EDBFED40014E833 /* ReleaseLogVC.m in Sources */,
 				CD5744FD1EDAAD710014E833 /* UIScrollView+MJRefresh.m in Sources */,
 				CD5744F81EDAAD710014E833 /* MJRefreshStateHeader.m in Sources */,
 				CD5745821EDADE510014E833 /* DebugVC.m in Sources */,

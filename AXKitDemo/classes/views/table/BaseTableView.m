@@ -104,21 +104,18 @@ static NSTimeInterval loadingTimeout = 20;
             // @xaoxuu: 注意：如果使用本地数据源，如果json文件和tableview文件名一致，则无需实现"setupTableViewDataSource"方法即可自动加载数据源。
             _dataList = [services.cache loadObjWithKey:NSStringFromClass([self class])];
             if (_dataList.count) {
-                [self.indicator stopAnimating];
+                // @xaoxuu: 重载界面
+                [self reloadTableView];
             }
+            
         }
         // @xaoxuu: 加载数据源
         if ([self respondsToSelector:@selector(setupTableViewDataSource:)]) {
             [self.indicator startAnimating];
             [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:reloadToken performInBackground:^{
                 [self setupTableViewDataSource:^(BaseTableModelListType sections) {
-                    // @xaoxuu: 获取到数据
-                    _dataList = sections;
-                    if (self.mj_header) {
-                        [self.mj_header endRefreshing];
-                    }
                     // @xaoxuu: 缓存列表
-                    [services.cache cacheObj:_dataList forKey:NSStringFromClass([self class]) completion:^{
+                    [services.cache cacheObj:sections forKey:NSStringFromClass([self class]) completion:^{
                         
                     }];
                     // @xaoxuu: 重载界面

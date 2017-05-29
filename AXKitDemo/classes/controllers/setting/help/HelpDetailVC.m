@@ -26,8 +26,8 @@ static CGFloat footer = 60;
     
     
 }
-
-- (void)initContentView:(UIView *)view style:(void (^)(ContentViewStyle))style{
+#warning 123
+- (void)initContentView:(UIView *)view{
     view.top -= header;
     view.height += header + footer;
 }

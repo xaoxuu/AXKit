@@ -93,6 +93,20 @@
 }
 
 
+// @xaoxuu: 更新日志
+- (void)getReleaseLogList:(void (^)(GitHubIssueListModel *issues))completion{
+    daLayer.network.URLString = self.model.releaseLogURL;
+    [daLayer.network getURLCompletion:^(id response) {
+        NSDictionary *dataDict = response;
+        GitHubIssueListModel *list = [GitHubIssueListModel modelWithDictionary:dataDict];
+        
+        if (completion) {
+            completion(list);
+        }
+    } fail:^(NSError *error) {
+        
+    }];
+}
 
 
 

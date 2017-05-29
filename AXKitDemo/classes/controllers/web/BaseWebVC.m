@@ -83,9 +83,19 @@
     [self.webView loadRequest:request];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.progressView.alpha = 1;
+}
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.progressView setProgress:0.0f animated:NO];
+    self.progressView.alpha = 0;
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.progressView removeFromSuperview];
 }
 
 - (void)_base_setupWebView{
