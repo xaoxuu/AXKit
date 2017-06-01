@@ -40,7 +40,6 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
         imps = [NSMutableDictionary dictionary];
         objc_setAssociatedObject(self, UINavigationControllerAXExtensionKey, imps, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    
     BOOL isExchanged = [imps[[NSString stringWithFormat:@"%p",method_origin]] boolValue];
     if (hide^isExchanged) {
         // @xaoxuu: new method

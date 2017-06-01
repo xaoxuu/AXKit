@@ -8,9 +8,9 @@
 
 #import "UIViewController+AXExtension.h"
 
-// @xaoxuu: 此类必须要有xib文件
+
 inline UIViewController *UIViewControllerFromString(NSString *name){
-    return [[NSClassFromString(name) class] new];
+    return [[[NSClassFromString(name) class] alloc] init];
 }
 
 

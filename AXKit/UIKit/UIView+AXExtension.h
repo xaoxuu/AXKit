@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Foundation+AXRangeExtension.h"
+#import "CoreGraphics+AXExtension.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- 根据view controller的类名创建实例(此类必须要有xib文件)
+ 根据view controller的类名创建实例
 
  @param name view controller的类名
  @return view controller实例对象

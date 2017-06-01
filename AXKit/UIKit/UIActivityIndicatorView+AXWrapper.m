@@ -11,12 +11,19 @@
 #import "UIView+AXFrameWrapper.h"
 #import "NSOperation+AXExtension.h"
 
+@interface UIActivityIndicatorView ()
+
+// @xaoxuu: 是否带loading
+@property (assign, nonatomic) BOOL withLoading;
+
+@end
 
 @implementation UIActivityIndicatorView (AXWrapper)
 
 + (instancetype)defaultIndicator{
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     indicator.hidesWhenStopped = YES;
+    indicator.withLoading = NO;
     return indicator;
 }
 
@@ -33,6 +40,7 @@
     lb.top = indicator.height + 4;
     lb.centerX = 0.5*indicator.width;
     [indicator addSubview:lb];
+    indicator.withLoading = YES;
     return indicator;
 }
 
@@ -47,7 +55,12 @@
 
 - (UIActivityIndicatorView *(^)(UIView *view))layoutToView{
     return ^(UIView *view){
-        self.center = CGPointMake(0.5*view.width, 0.5*view.height);
+        if (self.withLoading) {
+            self.center = CGPointMake(0.5*view.width, 0.5*view.height - 8);
+        } else {
+            self.center = CGPointMake(0.5*view.width, 0.5*view.height);
+        }
+        
         [view addSubview:self];
         return self;
     };
@@ -56,7 +69,12 @@
 
 - (UIActivityIndicatorView *(^)(UIView *view))show{
     return ^(UIView *view){
-        self.center = CGPointMake(0.5*view.width, 0.5*view.height);
+        
+        if (self.withLoading) {
+            self.center = CGPointMake(0.5*view.width, 0.5*view.height - 8);
+        } else {
+            self.center = CGPointMake(0.5*view.width, 0.5*view.height);
+        }
         [view addSubview:self];
         [self startAnimating];
         [NSBlockOperation ax_delay:20 performInMainQueue:^{
