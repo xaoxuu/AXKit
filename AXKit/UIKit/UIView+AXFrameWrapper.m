@@ -11,6 +11,12 @@
 
 @implementation UIView (AXFrameWrapper)
 
+- (void)ax_frame:(CGRect (^)(CGRect))frame{
+    if (frame) {
+        self.frame = frame(self.frame);
+    }
+}
+
 #pragma mark - property
 
 - (CGPoint)origin{

@@ -16,6 +16,14 @@
 
 @interface UIView (AXFrameWrapper)
 
+
+/**
+ 对frame进行若干操作
+
+ @param frame frame
+ */
+- (void)ax_frame:(CGRect (^)(CGRect frame))frame;
+
 #pragma mark - property
 
 @property (nonatomic, assign) CGPoint origin;
