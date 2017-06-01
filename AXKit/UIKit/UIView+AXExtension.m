@@ -21,6 +21,13 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
 
 @implementation UIView (AXExtension)
 
+
+- (void)ax_layer:(void (^)(CALayer *layer))layer{
+    if (layer) {
+        layer(self.layer);
+    }
+}
+
 // find view's super controller
 - (UIViewController *)controller{
     UIResponder *responder = self;

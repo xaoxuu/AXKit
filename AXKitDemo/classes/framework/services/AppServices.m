@@ -196,7 +196,7 @@ static NSArray<NSString *> *footerArray;
         }   
     }
     if (footerArray.count) {
-        int i = arc4random_uniform(footerArray.count);
+        int i = arc4random_uniform((uint32_t)footerArray.count);
         return footerArray[i];
     }
     return self.model.copyright;

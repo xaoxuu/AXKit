@@ -57,7 +57,6 @@
         [weakSelf reloadWebView];
     }];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -29,8 +29,6 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/Foundation+AXRangeExtension.h>
 // 随机数、随机字符串
 #import <AXKit/Foundation+AXRandomExtension.h>
-// 对layer的链式封装，便于快速设置图层样式
-#import <AXKit/CALayer+AXChainedWrapper.h>
 // NSLog的宏以及Log字典、数组内容的扩展
 #import <AXKit/Foundation+AXLogExtension.h>
 // 沙盒文件流的链式封装，一行代码搞定沙盒文件操作
@@ -70,8 +68,10 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 // UITextField的功能扩展
 #import <AXKit/UITextField+AXExtension.h>
 
-// CIImage的功能扩展
-#import <AXKit/CIImage+AXScaleExtension.h>
+
+// 对layer的封装，便于快速设置图层样式
+#import <AXKit/CALayer+AXWrapper.h>
+
 // 从UIImageView指定位置获取颜色
 #import <AXKit/UIImageView+AXGetColor.h>
 // UIImageView的功能扩展

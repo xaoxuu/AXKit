@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Foundation+AXLogExtension.h"
+
 
 // @xaoxuu: log字典
 @implementation NSDictionary (AXLogExtension)
+
+//- (void)dsfsdf:(format)
 
 - (NSString *)descriptionWithLocale:(id)locale{
     NSMutableString *str = [NSMutableString string];

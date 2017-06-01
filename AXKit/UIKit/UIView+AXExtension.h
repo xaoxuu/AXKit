@@ -31,6 +31,14 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 
 @interface UIView (AXExtension)
 
+
+/**
+ 对view的layer进行若干操作
+
+ @param layer layer
+ */
+- (void)ax_layer:(void (^)(CALayer *layer))layer;
+
 /**
  当前view所在的控制器controller
 

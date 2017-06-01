@@ -102,6 +102,8 @@ FOUNDATION_EXTERN void AXLocalizeAllSubviewsInView(UIView *view);
 + (NSDictionary *)ax_infoDictionary;
 
 
-+ (NSString *)ax_appIcon;
++ (NSString *)ax_appIconPath;
+
++ (UIImage *)ax_appIcon;
 
 @end

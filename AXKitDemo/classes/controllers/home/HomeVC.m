@@ -21,9 +21,14 @@
     
     [services.alert registerDelegate:self];
     
-    AXLogOBJ([NSBundle ax_appName]);
-    AXLogOBJ([NSBundle ax_appVersion]);
-    AXLogOBJ([NSBundle ax_appBuild]);
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor = [UIColor yellowColor];
+
+    [view.layer ax_cornerRadius:30 shadow:LayerShadowDownFloat];
+    
+    [self.view addSubview:view];
+    
     /*
     UIImage *image;
     UIImageView *avatar;

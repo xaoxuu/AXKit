@@ -55,8 +55,7 @@ static UIView *maskView;
     popView.backgroundColor = [UIColor whiteColor];
     popView.transform = CGAffineTransformMakeScale(0.8, 0.8);
     popView.layer.cornerRadius = 12;
-    popView.layer.ax_shadow(AXShadowDownFloat);
-    
+    [popView.layer ax_shadow:LayerShadowDownFloat];
     popView.height = sLabel.top + sLabel.height + 16;
     popView.height = popView.width;
     popView.centerX = kScreenCenterX;
@@ -152,7 +151,8 @@ static UIView *maskView;
     sPopView.layer.masksToBounds = YES;
     
     sPopView.layer.cornerRadius = 10;
-    sPopView.layer.ax_shadow(AXShadowDownFloat);
+    [sPopView.layer ax_shadow:LayerShadowDownFloat];
+    
     
     
 //    sPopView.height = sLabel.top + sLabel.height + 16;
@@ -236,7 +236,7 @@ static UIView *maskView;
 + (void)_initMaskView{
     sMaskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, 8)];
     sMaskView.backgroundColor = [UIColor whiteColor];
-    sMaskView.layer.ax_maskToCircle();
+    [sMaskView.layer ax_maskToCircle];
     sMaskView.centerX = 0.5 * sPopView.width;
     sMaskView.centerY = 0.5 * sPopView.height;
     sPopView.maskView = sMaskView;

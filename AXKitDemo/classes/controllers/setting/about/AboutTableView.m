@@ -31,7 +31,7 @@ static CGFloat const iconSize = 64;
     
     // @xaoxuu: icon
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconSize, iconSize)];
-    icon.image = [UIImage imageNamed:[NSBundle ax_appIcon]];
+    icon.image = [NSBundle ax_appIcon];
     icon.contentMode = UIViewContentModeScaleAspectFit;
     // @xaoxuu: layer
     icon.backgroundColor = [UIColor whiteColor];

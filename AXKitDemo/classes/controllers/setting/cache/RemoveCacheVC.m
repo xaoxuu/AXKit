@@ -42,7 +42,7 @@
 
 
 - (void)setupButtons{
-    self.btn_remove.layer.ax_shadow(AXShadowUpLight);
+    [self.btn_remove.layer ax_shadow:LayerShadowUpLight];
     [self.btn_remove ax_addTouchUpInsideHandler:^(__kindof UIButton * _Nonnull sender) {
         [services.cache removeAllCacheCompletion:^{
             [sender setEnabled:NO];

@@ -32,7 +32,8 @@
         [self setupChlidController:vc title:dict[@"title"] image:dict[@"icon"] selectedImage:dict[@"icon_sel"]];
     }
     
-    self.tabBar.layer.ax_shadow(AXShadowUpLight);
+    [self.tabBar.layer ax_shadow:LayerShadowUpLight];
+    
     
 }
 
