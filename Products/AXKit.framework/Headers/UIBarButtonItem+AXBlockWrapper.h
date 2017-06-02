@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return baritem实例
  */
-+ (instancetype)ax_itemWithImageName:(NSString *)image action:(void (^)(id sender))action;
++ (instancetype)ax_itemWithImageName:(NSString *)image action:(void (^)(UIBarButtonItem *sender))action;
 
 /**
  快速创建一个baritem
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return baritem实例
  */
-+ (instancetype)ax_itemWithTitle:(NSString *)title action:(void (^)(id sender))action;
++ (instancetype)ax_itemWithTitle:(NSString *)title action:(void (^)(UIBarButtonItem *sender))action;
 
 /**
  快速创建一个baritem
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return baritem实例
  */
-+ (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(id sender))action;
++ (instancetype)ax_itemWithCustomView:(UIView *)view action:(void (^)(UIBarButtonItem *sender))action;
 
 
 #pragma mark 普通
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-+ (instancetype)ax_itemWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(id sender))action;
++ (instancetype)ax_itemWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action;
 
 
 
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-+ (instancetype)ax_itemWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void (^)(id sender))action;
++ (instancetype)ax_itemWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action;
 
 /**
  创建一个自定义baritem
@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-+ (instancetype)ax_itemWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style action:(void (^)(id sender))action;
++ (instancetype)ax_itemWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action;
 
 
 /**
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-+ (instancetype)ax_itemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void (^)(id sender))action;
++ (instancetype)ax_itemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action;
 
 #pragma mark - 实例构造方法
 
@@ -100,7 +100,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-- (instancetype)ax_initWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(id sender))action AX_INITIALIZER;
+- (instancetype)ax_initWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER;
 
 
 /**
@@ -111,7 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-- (instancetype)ax_initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void (^)(id sender))action AX_INITIALIZER;
+- (instancetype)ax_initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER;
 
 /**
  创建一个自定义baritem
@@ -122,7 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-- (instancetype)ax_initWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style action:(void (^)(id sender))action AX_INITIALIZER;
+- (instancetype)ax_initWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER;
 
 /**
  创建一个文字baritem
@@ -132,7 +132,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-- (instancetype)ax_initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void (^)(id sender))action AX_INITIALIZER;
+- (instancetype)ax_initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER;
 
 /**
  快速创建一个baritem
@@ -141,7 +141,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return baritem实例
  */
-- (instancetype)ax_initWithCustomView:(UIView *)view action:(void (^)(id sender))action AX_INITIALIZER;
+- (instancetype)ax_initWithCustomView:(UIView *)view action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER;
 
 @end
 

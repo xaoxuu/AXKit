@@ -15,26 +15,40 @@ NS_ASSUME_NONNULL_BEGIN
 #define ERROR_DEFAULT_SUGGESTION @"You'd better check your code."
 
 
-
+@class NSErrorMaker;
 @interface NSError (AXExtension)
 
 
 /**
- 创建一个error实例
- 
- @param domain 域
- @param code 错误码
- @param description 描述
- @param reason 原因
- @param suggestion 建议
- @return error实例
- */
-+ (instancetype)ax_errorWithDomain:(NSErrorDomain (^)())domain
-                              code:(NSInteger)code
-                       description:(nullable NSString *(^)())description
-                            reason:(nullable NSString *(^)())reason
-                        suggestion:(nullable NSString *(^)())suggestion;
+ 快速创建一个error
 
+ @param maker error构造器
+ @return error
+ */
++ (instancetype)ax_errorWithMaker:(void (^)(NSErrorMaker *error))maker;
+
+
+
+
+@end
+
+@interface NSErrorMaker : NSObject
+
+
+// @xaoxuu: NSErrorDomain
+@property (copy, nonatomic) NSErrorDomain domain;
+// @xaoxuu: error code
+@property (assign, nonatomic) NSInteger code;
+
+
+// @xaoxuu: description
+@property (copy, nonatomic) NSString *localizedDescription;
+// @xaoxuu: reason
+@property (copy, nonatomic) NSString *localizedFailureReason;
+// @xaoxuu: LocalizedRecoverySuggestion
+@property (copy, nonatomic) NSString *localizedRecoverySuggestion;
+// @xaoxuu: localizedRecoveryOptions
+@property (copy, nonatomic) NSMutableArray<NSString *> *localizedRecoveryOptions;
 
 @end
 

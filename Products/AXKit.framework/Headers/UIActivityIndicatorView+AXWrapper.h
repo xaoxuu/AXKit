@@ -11,34 +11,37 @@
 
 @interface UIActivityIndicatorView (AXWrapper)
 
+
+/**
+ 创建一个活动指示器
+
+ @return 活动指示器
+ */
 + (instancetype)defaultIndicator;
 
-/**
- 放置到view
- */
-- (UIActivityIndicatorView *(^)(UIView *view))layoutToView;
-
-
 
 /**
- 纵坐标
- */
-- (UIActivityIndicatorView *(^)(CGFloat y))y;
+ 创建一个带"LOADING"字样的活动指示器
 
+ @return 一个带"LOADING"字样的活动指示器
+ */
++ (instancetype)defaultIndicatorWithLoading;
 
 
 /**
- 显示
+ 显示到某个view
+
+ @param view view
  */
-- (UIActivityIndicatorView *(^)(UIView *view))show;
+- (void)addToView:(UIView *)view;
 
 /**
- 隐藏
+ 显示到某个view (带"LOADING"字样的活动指示器)
+
+ @param view view
+ @param loading "LOADING"标签
  */
-- (UIActivityIndicatorView *(^)())hide;
-
-
-
+- (void)addToView:(UIView *)view withLoading:(BOOL)loading;
 
 
 @end
