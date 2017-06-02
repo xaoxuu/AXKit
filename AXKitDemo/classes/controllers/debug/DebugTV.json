@@ -26,6 +26,11 @@
                     "title":"Mail",
                     "desc":"",
                     "target":"EmailVC",
+                },
+                {
+                    "title":"TestFrame",
+                    "desc":"",
+                    "target":"TestFrameVC",
                 }
             ]
         }

@@ -43,6 +43,11 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+}
+
 - (void)dealloc{
     AXLogSuccess(@"%@ deallocated", NSStringFromClass([self class]));
 }

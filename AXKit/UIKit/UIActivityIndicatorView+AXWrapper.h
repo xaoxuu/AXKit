@@ -27,28 +27,21 @@
  */
 + (instancetype)defaultIndicatorWithLoading;
 
-/**
- 放置到view（居中）
- */
-- (UIActivityIndicatorView *(^)(UIView *view))layoutToView;
 
 /**
- 纵坐标
+ 显示到某个view
+
+ @param view view
  */
-- (UIActivityIndicatorView *(^)(CGFloat y))y;
+- (void)addToView:(UIView *)view;
 
 /**
- 显示（居中）
+ 显示到某个view (带"LOADING"字样的活动指示器)
+
+ @param view view
+ @param loading "LOADING"标签
  */
-- (UIActivityIndicatorView *(^)(UIView *view))show;
-
-/**
- 隐藏
- */
-- (UIActivityIndicatorView *(^)())hide;
-
-
-
+- (void)addToView:(UIView *)view withLoading:(BOOL)loading;
 
 
 @end

@@ -11,7 +11,7 @@
 #import "UIView+AXFrameExtension.h"
 #import "NSOperation+AXExtension.h"
 
-static NSTimeInterval indicatorTimeout = 20;
+static NSTimeInterval indicatorTimeout = 30;
 
 @implementation UIActivityIndicatorView (AXWrapper)
 
@@ -31,48 +31,28 @@ static NSTimeInterval indicatorTimeout = 20;
     lb.text = NSLocalizedString(@"LOADING", nil);
     lb.textAlignment = NSTextAlignmentCenter;
     lb.top = indicator.height + 4;
-    lb.frameCenterX = indicator.boundsCenterX;
+    lb.centerX = indicator.boundsCenterX;
     [indicator addSubview:lb];
     return indicator;
 }
 
 
-- (UIActivityIndicatorView *(^)(CGFloat y))y{
-    return ^(CGFloat y){
-        UIView *su = self.superview;
-        self.frameCenterY = su.boundsCenterY;
-        return self;
-    };
+- (void)addToView:(UIView *)view{
+    [self addToView:view withLoading:NO];
 }
 
-- (UIActivityIndicatorView *(^)(UIView *view))layoutToView{
-    return ^(UIView *view){
-        self.center = CGPointWithCenterOfView(view);
-        [view addSubview:self];
-        return self;
-    };
-}
-
-
-- (UIActivityIndicatorView *(^)(UIView *view))show{
-    return ^(UIView *view){
-        self.center = CGPointWithCenterOfView(view);
-        [view addSubview:self];
-        [self startAnimating];
-        [NSBlockOperation ax_delay:indicatorTimeout performInMainQueue:^{
-            [self stopAnimating];
-        }];
-        return self;
-    };
-}
-
-- (UIActivityIndicatorView *(^)())hide{
-    return ^{
-        if (self.isAnimating) {
-            [self stopAnimating];
-        }
-        return self;
-    };
+- (void)addToView:(UIView *)view withLoading:(BOOL)loading{
+    self.centerX = view.boundsCenterX;
+    if (loading) {
+        self.centerY = view.boundsCenterY - 8;
+    } else {
+        self.centerY = view.boundsCenterY;
+    }
+    [view addSubview:self];
+    [self startAnimating];
+    [NSBlockOperation ax_delay:indicatorTimeout performInMainQueue:^{
+        [self stopAnimating];
+    }];
 }
 
 

@@ -107,13 +107,6 @@ inline NSUInteger AXRandomUIntegerFrom(AXUIntegerRange length){
 
 
 
-#pragma mark CGPoint
-
-inline CGPoint CGPointWithCenterOfView(UIView *view){
-    return CGPointMake(0.5*view.frame.size.width, 0.5*view.frame.size.height);
-}
-
-
 #pragma mark - CGRect
 
 

@@ -18,8 +18,6 @@
     tableView.estimatedSectionFooterHeight = 0;
     tableView.sectionFooterHeight = 0;
     
-    
-    
 }
 
 - (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{
@@ -28,7 +26,7 @@
     }
 }
 
-- (void)indexPath:(NSIndexPath *)indexPath willPushTo:(__kindof BaseViewController *)targetVC {
+- (void)indexPath:(NSIndexPath *)indexPath willPush:(__kindof BaseViewController *)targetVC {
     BaseTableModelRow *model = [self rowModel:indexPath];
     if ([targetVC isKindOfClass:[FeedbackVC class]]) {
         FeedbackVC *vc = targetVC;

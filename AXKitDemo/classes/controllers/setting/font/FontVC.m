@@ -31,7 +31,7 @@ static AXOperationToken token;
                 
                 [alert.view addSubview:view];
                 UIActivityIndicatorView *indicator = [UIActivityIndicatorView defaultIndicatorWithLoading];
-                indicator.show(view);
+                [indicator addToView:view withLoading:YES];
             }];
         }
     }];

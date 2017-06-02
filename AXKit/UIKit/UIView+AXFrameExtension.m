@@ -92,29 +92,18 @@
 
 #pragma mark frame center
 
-- (CGPoint)frameCenter{
-    return self.center;
-}
-- (void)setFrameCenter:(CGPoint)frameCenter{
-    self.center = frameCenter;
-}
-
-- (CGFloat)frameCenterX{
+- (CGFloat)centerX{
     return self.center.x;
 }
-- (void)setFrameCenterX:(CGFloat)frameCenterX{
-    CGPoint center = self.center;
-    center.x = frameCenterX;
-    self.center = center;
+- (void)setCenterX:(CGFloat)centerX{
+    self.center = CGPointMake(centerX, self.center.y);
 }
 
-- (CGFloat)frameCenterY{
+- (CGFloat)centerY{
     return self.center.y;
 }
-- (void)setFrameCenterY:(CGFloat)frameCenterY{
-    CGPoint center = self.center;
-    center.y = frameCenterY;
-    self.center = center;
+- (void)setCenterY:(CGFloat)centerY{
+    self.center = CGPointMake(self.center.x, centerY);
 }
 
 #pragma mark bounds center

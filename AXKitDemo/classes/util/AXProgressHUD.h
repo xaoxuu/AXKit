@@ -17,8 +17,6 @@
 @interface AXProgressHUD : UIView
 
 
-- (void)ax_showInfo:(NSString *)info duration:(NSTimeInterval)duration;
-
 + (void)ax_target:(UIView *)target showInfo:(NSString *)info duration:(NSTimeInterval)duration;
 
 + (void)ax_target:(UIView *)target point:(CGPoint)point showInfo:(NSString *)info duration:(NSTimeInterval)duration;

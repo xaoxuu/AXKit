@@ -27,72 +27,6 @@ static UIView *maskView;
 @implementation AXProgressHUD
 
 
-- (void)ax_showInfo:(NSString *)info duration:(NSTimeInterval)duration{
-    popView = [[UIView alloc] initWithFrame:CGRectMake(16, 28, 0.6*kScreenW, kNavBarHeight)];
-    maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, 8)];
-    
-    popView.backgroundColor = axColor.white;
-    maskView.backgroundColor = [UIColor whiteColor];
-//    maskView.layer.ax_maskToCircle();
-    maskView.layer.cornerRadius = 1;
-    popView.maskView = maskView;
-    
-    
-    
-    // label
-    sLabel = [[UILabel alloc] init];
-    [popView addSubview:sLabel];
-    sLabel.numberOfLines = 0;
-    sLabel.text = info;
-//    sLabel.font = [UIFont systemFontOfSize:13];
-    sLabel.textColor = axColor.theme;
-    sLabel.width = popView.width - 32;
-    sLabel.centerX = popView.centerX;
-    [sLabel sizeToFit];
-    sLabel.centerY = popView.centerY;
-    sLabel.textAlignment = NSTextAlignmentCenter;
-    // view
-    popView.backgroundColor = [UIColor whiteColor];
-    popView.transform = CGAffineTransformMakeScale(0.8, 0.8);
-    popView.layer.cornerRadius = 12;
-    [popView.layer ax_shadow:LayerShadowDownFloat];
-    popView.height = sLabel.top + sLabel.height + 16;
-    popView.height = popView.width;
-    popView.centerX = kScreenCenterX;
-    popView.centerY = kScreenCenterY;
-    maskView.centerX = 0.5 * popView.width;
-    maskView.centerY = 0.4 * popView.height;
-    
-//    [self _hideTips];
-    
-    [self.rootVC.view addSubview:popView];
-    
-    
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.rootVC.view.layer.cornerRadius = 12;
-            popView.alpha = 1;
-            popView.backgroundColor = [UIColor whiteColor];
-            popView.transform = CGAffineTransformIdentity;
-            maskView.transform = CGAffineTransformMakeScale(120, 120);
-        } completion:^(BOOL finished) {
-            
-            [NSBlockOperation ax_delay:duration performInMainQueue:^{
-                [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    self.rootVC.view.layer.cornerRadius = 0;
-                    popView.alpha = 0;
-                    popView.backgroundColor = [UIColor lightGrayColor];
-                    popView.transform = CGAffineTransformMakeScale(0.8, 0.8);
-                    maskView.transform = CGAffineTransformIdentity;
-                } completion:^(BOOL finished) {
-                    
-                    [popView removeFromSuperview];
-                }];
-            }];
-        }];
-    
-    
-}
-
 
 + (void)ax_target:(UIView *)target showInfo:(NSString *)info duration:(NSTimeInterval)duration {
 //    if (!isShowing) {
@@ -142,7 +76,7 @@ static UIView *maskView;
     sLabel.width = sPopView.width - 32;
     [sLabel sizeToFit];
     if (sLabel.width < sPopView.width - 32) {
-        sLabel.centerX = sPopView.centerX;
+        sLabel.centerX = sPopView.boundsCenterX;
     }
     
     
@@ -157,9 +91,8 @@ static UIView *maskView;
     
 //    sPopView.height = sLabel.top + sLabel.height + 16;
     sPopView.height = sLabel.height + 32;
-    sPopView.centerX = kScreenCenterX;
-    sPopView.centerY = kScreenCenterY;
-    sMaskView.centerY = sPopView.centerY;
+    sPopView.center = AXRootViewController().view.boundsCenter;
+    sMaskView.centerY = sPopView.boundsCenterY;
     
     
     if (axColor.theme.isLightColor) {
@@ -220,10 +153,6 @@ static UIView *maskView;
     popView.backgroundColor = [UIColor lightGrayColor];
     popView.transform = CGAffineTransformMakeScale(0.8, 0.8);
     sMaskView.transform = CGAffineTransformIdentity;
-//    sPopView.alpha = 0;
-//    sPopView.backgroundColor = [UIColor lightGrayColor];
-//    sPopView.transform = CGAffineTransformMakeScale(0.8, 0.8);
-//    sMaskView.transform = CGAffineTransformIdentity;
 }
 
 + (void)_showTips{
@@ -237,8 +166,7 @@ static UIView *maskView;
     sMaskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, 8)];
     sMaskView.backgroundColor = [UIColor whiteColor];
     [sMaskView.layer ax_maskToCircle];
-    sMaskView.centerX = 0.5 * sPopView.width;
-    sMaskView.centerY = 0.5 * sPopView.height;
+    sMaskView.center = sPopView.boundsCenter;
     sPopView.maskView = sMaskView;
 }
 

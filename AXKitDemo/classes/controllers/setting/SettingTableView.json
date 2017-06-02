@@ -53,14 +53,21 @@
                     "icon":"setting_feedback_email",
                     "target":"FeedbackVC",
                     "cmd":"feedbackEmail"
-                    },
-                    {
+                },
+                {
                     "title":"帮助",
                     "desc":"",
                     "icon":"setting_help",
                     "target":"HelpVC",
                     "cmd":""
-                    }
+                },
+                {
+                    "title":"编码规范",
+                    "desc":"",
+                    "icon":"setting_coding",
+                    "target":"CodingGuideVC",
+                    "cmd":""
+                }
             ]
         },
         {

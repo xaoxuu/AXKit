@@ -78,8 +78,8 @@ static NSTimeInterval loadingTimeout = 20;
     self.tableHeaderView = UIViewWithHeight(1);
     self.tableFooterView = services.app.randomTableFooter;
     // @xaoxuu: 指示器
-    self.indicator = [UIActivityIndicatorView defaultIndicatorWithLoading].show(self);
-    
+    self.indicator = [UIActivityIndicatorView defaultIndicatorWithLoading];
+    [self.indicator addToView:self withLoading:YES];
     // @xaoxuu: 分割线
     self.separatorColor = axColor.separatorColor;
     

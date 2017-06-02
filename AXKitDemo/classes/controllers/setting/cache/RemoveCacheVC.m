@@ -8,14 +8,12 @@
 
 #import "RemoveCacheVC.h"
 #import "CacheTableView.h"
-#import "ThemeBgButton.h"
+#import "FullWideButton.h"
 
 @interface RemoveCacheVC ()
 
 // @xaoxuu: cache table view
 @property (strong, nonatomic) CacheTableView *cacheTable;
-
-@property (weak, nonatomic) IBOutlet ThemeBgButton *btn_remove;
 
 @end
 
@@ -25,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self setupButtons];
+    
     AXLogOBJ(@"".cachePath);
 }
 
@@ -39,20 +37,20 @@
     
 }
 
-
-
-- (void)setupButtons{
-    [self.btn_remove.layer ax_shadow:LayerShadowUpLight];
-    [self.btn_remove ax_addTouchUpInsideHandler:^(__kindof UIButton * _Nonnull sender) {
+- (void)didTableViewInstalled:(UITableView<BaseTableView> *)tableView{
+    [FullWideButton buttonWithTitle:NSLocalizedString(@"清除缓存", nil) action:^(__kindof BaseButton *sender) {
+        sender.enabled = NO;
         [services.cache removeAllCacheCompletion:^{
-            [sender setEnabled:NO];
+            // @xaoxuu: 太快视觉上看不出来
+            [NSBlockOperation ax_delay:0.3 performInMainQueue:^{
+                sender.enabled = YES;
+            }];
+            [tableView reloadDataSourceAndTableView];
         }];
-    }];
+    }].addToView(self.view).layoutToBottom();
+    
 }
 
-- (void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-    [self.view addSubview:self.btn_remove];
-}
+
 
 @end

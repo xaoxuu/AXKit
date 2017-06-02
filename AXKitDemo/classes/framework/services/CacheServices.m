@@ -153,6 +153,7 @@ static NSString *key_about = @"AboutTableView";
             NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
             NSInteger size = [dict[@"NSFileSize"] integerValue];
             row.cmd = NSStringFromNSInteger(size);
+            row.target = nil;
             if (size > 10) {
                 row.desc = [NSString stringWithFormat:@"%.2fKB",size/1000.0f];
             } else {

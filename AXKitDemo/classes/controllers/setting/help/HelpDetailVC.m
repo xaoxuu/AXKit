@@ -26,13 +26,11 @@ static CGFloat footer = 60;
     
     
 }
-#warning 123
-- (void)initContentView:(UIView *)view{
-    view.top -= header;
-    view.height += header + footer;
-}
+
 
 - (void)initWebView:(WKWebView *)webView{
+    webView.top -= header;
+    webView.height += header + footer;
     webView.scrollView.bounces = NO;
     webView.scrollView.showsVerticalScrollIndicator = NO;
     webView.scrollView.showsHorizontalScrollIndicator = NO;

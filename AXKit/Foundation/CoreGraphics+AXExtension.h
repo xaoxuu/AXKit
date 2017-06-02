@@ -209,12 +209,6 @@ CG_EXTERN NSInteger AXRandomIntegerFrom(AXIntegerRange range);
 CG_EXTERN NSUInteger AXRandomUIntegerFrom(AXUIntegerRange range);
 
 
-
-#pragma mark CGPoint
-
-CG_EXTERN CGPoint CGPointWithCenterOfView(UIView *view);
-
-
 #pragma mark CGSize
 
 

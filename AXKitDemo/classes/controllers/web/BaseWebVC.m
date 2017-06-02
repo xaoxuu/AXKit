@@ -17,6 +17,7 @@
 @property (strong, nonatomic) WKWebView *webView;
 // @xaoxuu: progress
 @property (strong, nonatomic) UIProgressView *progressView;
+@property (strong, nonatomic) UIActivityIndicatorView *indicator;
 
 @end
 
@@ -107,6 +108,10 @@
     if ([self respondsToSelector:@selector(initWebView:)]) {
         [self initWebView:self.webView];
     }
+    
+    self.indicator = [UIActivityIndicatorView defaultIndicatorWithLoading];
+    [self.indicator addToView:self.view withLoading:YES];
+    
 }
 
 - (WKWebView *)webView{

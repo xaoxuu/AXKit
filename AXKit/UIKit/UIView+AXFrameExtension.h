@@ -31,12 +31,10 @@
 @property (nonatomic, readwrite, assign) CGFloat bottom;
 
 #pragma mark frame center
-// center
-@property (nonatomic, readwrite, assign) CGPoint frameCenter;
 // frame.origin.x + 0.5 * frame.size.width
-@property (nonatomic, readwrite, assign) CGFloat frameCenterX;
+@property (nonatomic, readwrite, assign) CGFloat centerX;
 // frame.origin.y + 0.5 * frame.size.height
-@property (nonatomic, readwrite, assign) CGFloat frameCenterY;
+@property (nonatomic, readwrite, assign) CGFloat centerY;
 
 
 #pragma mark bounds center

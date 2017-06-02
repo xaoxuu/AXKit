@@ -29,6 +29,7 @@
 }
 
 
+
 - (UITableView<BaseTableView> *)installTableView{
     self.tableView = [[HelpTableView alloc] initWithFrame:self.view.bounds];
     return self.tableView;

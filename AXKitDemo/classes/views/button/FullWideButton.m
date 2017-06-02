@@ -38,9 +38,9 @@ static UIActivityIndicatorView *indicator;
     [super setEnabled:enabled];
     
     if (enabled) {
-        indicator.hide();
+        [indicator stopAnimating];
     } else {
-        indicator.show(self);
+        [indicator addToView:self];
     }
 }
 
