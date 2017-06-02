@@ -116,6 +116,13 @@ inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
     return [UIImage imageNamed:self];
 }
 
+
+- (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width{
+    NSDictionary *dict = @{NSFontAttributeName:font};
+    return [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dict context:nil].size.height;
+}
+
+
 @end
 
 

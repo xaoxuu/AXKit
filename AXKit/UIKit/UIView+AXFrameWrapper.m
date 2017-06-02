@@ -9,6 +9,8 @@
 #import "UIView+AXFrameWrapper.h"
 #import "CoreGraphics+AXExtension.h"
 
+
+
 @implementation UIView (AXFrameWrapper)
 
 - (void)ax_frame:(CGRect (^)(CGRect))frame{
@@ -78,22 +80,6 @@
     self.frame = frame;
 }
 
-- (CGFloat)centerX{
-    return 0.5 * self.width;
-}
-
-- (void)setCenterX:(CGFloat)centerX{
-    self.left = centerX - 0.5 * self.width;
-}
-
-- (CGFloat)centerY{
-    return 0.5 * self.height;
-}
-
-- (void)setCenterY:(CGFloat)centerY{
-    self.top = centerY - 0.5 * self.height;
-}
-
 - (CGFloat)right{
     return CGRectGetMaxX(self.frame);
 }
@@ -110,64 +96,44 @@
     self.top = bottom - self.height;
 }
 
-#pragma mark - chain
+#pragma mark frame center
 
-- (UIView *(^)(CGFloat))widthEqual{
-    return ^(CGFloat width){
-        self.width = (CGFloat)width;
-        return self;
-    };
+- (CGPoint)frameCenter{
+    return self.center;
+}
+- (void)setFrameCenter:(CGPoint)frameCenter{
+    self.center = frameCenter;
 }
 
-- (UIView *(^)(CGFloat))heightEqual{
-    return ^(CGFloat height){
-        self.height = height;
-        return self;
-    };
+- (CGFloat)frameCenterX{
+    return self.center.x;
+}
+- (void)setFrameCenterX:(CGFloat)frameCenterX{
+    CGPoint center = self.center;
+    center.x = frameCenterX;
+    self.center = center;
 }
 
-- (UIView *(^)(CGFloat))widthAndHeightEqual{
-    return ^(CGFloat length){
-        self.width = length;
-        self.height = length;
-        return self;
-    };
+- (CGFloat)frameCenterY{
+    return self.center.y;
+}
+- (void)setFrameCenterY:(CGFloat)frameCenterY{
+    CGPoint center = self.center;
+    center.y = frameCenterY;
+    self.center = center;
 }
 
-- (UIView *(^)(UIView *))centerEqual{
-    return ^(UIView *view){
-        self.centerX = view.width / 2;
-        self.centerY = view.height / 2;
-        self.center = view.center;
-        return self;
-    };
-}
+#pragma mark bounds center
 
-- (UIView *(^)(CGFloat))leftAndRightMargin{
-    return ^(CGFloat margin){
-        self.left = margin;
-        self.width -= 2*margin;
-        if (self.superview) {
-            self.width = self.superview.width - 2*margin;
-        } else{
-            self.width = kScreenW - 2*margin;
-        }
-        return self;
-    };
+- (CGPoint)boundsCenter{
+    return CGPointMake(self.boundsCenterX, self.boundsCenterY);
 }
-
-- (UIView *(^)(CGFloat))topAndBottomMargin{
-    return ^(CGFloat margin){
-        self.top = margin;
-        if (self.superview) {
-            self.height = self.superview.height - 2*margin;
-        } else{
-            self.height = kScreenH - 2*margin;
-        }
-        return self;
-    };
+- (CGFloat)boundsCenterX{
+    return 0.5*self.bounds.size.width;
 }
-
+- (CGFloat)boundsCenterY{
+    return 0.5*self.bounds.size.height;
+}
 
 
 

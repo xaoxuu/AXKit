@@ -130,11 +130,39 @@ FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
 @interface NSString (AXExtension)
 
+
+/**
+ 以当前字符串为路径的URL
+
+ @return 以当前字符串为路径的URL
+ */
 - (nullable NSURL *)absoluteURL;
 
+/**
+ 是不是URL字符串
+
+ @return 是不是URL字符串
+ */
 - (BOOL)isURLString;
 
+
+/**
+ 以当前字符串为名的图片
+
+ @return 图片
+ */
 - (nullable UIImage *)image;
+
+
+/**
+ 文本在指定字体、宽度时候需要的高度
+
+ @param font 字体
+ @param width 文本框宽度
+ @return 文本框高度
+ */
+- (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width;
+
 
 @end
 

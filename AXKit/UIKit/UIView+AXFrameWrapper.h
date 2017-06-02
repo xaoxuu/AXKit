@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#pragma mark - inline function
+
+
+
 
 #pragma mark UIView
 
@@ -26,37 +28,29 @@
 
 #pragma mark - property
 
-@property (nonatomic, assign) CGPoint origin;
-@property (nonatomic, assign) CGSize  size;
+@property (nonatomic, readwrite, assign) CGPoint origin;
+@property (nonatomic, readwrite, assign) CGSize  size;
 
-@property (nonatomic, assign) CGFloat width;
-@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, readwrite, assign) CGFloat width;
+@property (nonatomic, readwrite, assign) CGFloat height;
 
-@property (nonatomic, assign) CGFloat left;
-@property (nonatomic, assign) CGFloat right;
-@property (nonatomic, assign) CGFloat top;
-@property (nonatomic, assign) CGFloat bottom;
+@property (nonatomic, readwrite, assign) CGFloat left;
+@property (nonatomic, readwrite, assign) CGFloat right;
+@property (nonatomic, readwrite, assign) CGFloat top;
+@property (nonatomic, readwrite, assign) CGFloat bottom;
 
-@property (nonatomic, assign) CGFloat centerX;
-@property (nonatomic, assign) CGFloat centerY;
+#pragma mark frame center
+
+@property (nonatomic, readwrite, assign) CGPoint frameCenter;
+@property (nonatomic, readwrite, assign) CGFloat frameCenterX;
+@property (nonatomic, readwrite, assign) CGFloat frameCenterY;
 
 
-#pragma mark - chain
+#pragma mark bounds center
+@property (nonatomic, readonly, assign) CGPoint boundsCenter;
+@property (nonatomic, readonly, assign) CGFloat boundsCenterX;
+@property (nonatomic, readonly, assign) CGFloat boundsCenterY;
 
-
-// width
-- (UIView *(^)(CGFloat))widthEqual;
-// height
-- (UIView *(^)(CGFloat))heightEqual;
-// width and height
-- (UIView *(^)(CGFloat))widthAndHeightEqual;
-// center
-- (UIView *(^)(UIView *))centerEqual;
-
-// left and right
-- (UIView *(^)(CGFloat))leftAndRightMargin;
-// top and bottom
-- (UIView *(^)(CGFloat))topAndBottomMargin;
 
 
 @end

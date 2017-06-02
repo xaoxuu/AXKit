@@ -11,7 +11,7 @@
 //
 //  issues     https://github.com/xaoxuu/AXKit/issues/new (反馈BUG或意见)
 //
-//  0.0.9
+// 
 
 #import <UIKit/UIKit.h>
 
@@ -24,6 +24,7 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <AXKit/PublicHeader.h>
 
 
+// ======== ======== ======== ======== ======== ======== ======== ========
 #pragma mark - Foundation
 
 #pragma mark log
@@ -63,8 +64,7 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 
 
 
-//////////////////////////////////////////////////////////////////////////////
-
+// ======== ======== ======== ======== ======== ======== ======== ========
 #pragma mark - UIKit
 
 #pragma mark layer
@@ -80,7 +80,7 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/UINavigationBar+AXExtension.h>
 
 #pragma mark color
-// 颜色管理器，在AppDelegate中设置全局的主题色，然后所有代码中使用'atColor.xx'来调用颜色
+// 颜色管理器，在AppDelegate中设置默认主题色，然后所有代码中使用'atColor.xx'来调用颜色
 #import <AXKit/UIColorManager.h>
 // 颜色增强工具
 #import <AXKit/UIColor+AXExtension.h>
@@ -127,9 +127,5 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 // UIImage的功能扩展
 #import <AXKit/UIImage+AXExtension.h>
 
-
-#pragma mark others
-// UIFont的封装
-#import <AXKit/UIFont+AXWrapper.h>
 
 

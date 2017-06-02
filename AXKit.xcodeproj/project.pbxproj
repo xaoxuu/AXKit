@@ -179,8 +179,6 @@
 		CDAB59141E6BF9FE0017CA1E /* UIColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB59121E6BF9FE0017CA1E /* UIColorManager.m */; };
 		CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59151E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB59161E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m */; };
-		CDAB591B1E6BFB9A0017CA1E /* UIFont+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59191E6BFB9A0017CA1E /* UIFont+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDAB591C1E6BFB9A0017CA1E /* UIFont+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB591A1E6BFB9A0017CA1E /* UIFont+AXWrapper.m */; };
 		CDAB591F1E6BFBCE0017CA1E /* UIImage+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB591D1E6BFBCE0017CA1E /* UIImage+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59201E6BFBCE0017CA1E /* UIImage+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB591E1E6BFBCE0017CA1E /* UIImage+AXExtension.m */; };
 		CDAB59231E6BFC2F0017CA1E /* UIImageView+AXGetColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59211E6BFC2F0017CA1E /* UIImageView+AXGetColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -519,8 +517,6 @@
 		CDAB59121E6BF9FE0017CA1E /* UIColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorManager.m; sourceTree = "<group>"; };
 		CDAB59151E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+AXBlockWrapper.h"; sourceTree = "<group>"; };
 		CDAB59161E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+AXBlockWrapper.m"; sourceTree = "<group>"; };
-		CDAB59191E6BFB9A0017CA1E /* UIFont+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+AXWrapper.h"; sourceTree = "<group>"; };
-		CDAB591A1E6BFB9A0017CA1E /* UIFont+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AXWrapper.m"; sourceTree = "<group>"; };
 		CDAB591D1E6BFBCE0017CA1E /* UIImage+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AXExtension.h"; sourceTree = "<group>"; };
 		CDAB591E1E6BFBCE0017CA1E /* UIImage+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AXExtension.m"; sourceTree = "<group>"; };
 		CDAB59211E6BFC2F0017CA1E /* UIImageView+AXGetColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AXGetColor.h"; sourceTree = "<group>"; };
@@ -1352,8 +1348,6 @@
 				CD77FE6B1EBEE690001A5787 /* UIImage */,
 				CD77FE691EBEE66C001A5787 /* UIView */,
 				CD77FE6C1EBEE8F1001A5787 /* Controllers */,
-				CDAB59191E6BFB9A0017CA1E /* UIFont+AXWrapper.h */,
-				CDAB591A1E6BFB9A0017CA1E /* UIFont+AXWrapper.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1559,7 +1553,6 @@
 			files = (
 				CDAB58F71E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h in Headers */,
 				CDAB590B1E6BF96B0017CA1E /* UIColor+AXExtension.h in Headers */,
-				CDAB591B1E6BFB9A0017CA1E /* UIFont+AXWrapper.h in Headers */,
 				CDAB58EF1E6BF5A20017CA1E /* NSString+AXExtension.h in Headers */,
 				CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */,
 				CDAB59371E6BFE170017CA1E /* UIView+AXExtension.h in Headers */,
@@ -1935,7 +1928,6 @@
 				CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */,
 				CDAB59041E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.m in Sources */,
 				CD5745021EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.m in Sources */,
-				CDAB591C1E6BFB9A0017CA1E /* UIFont+AXWrapper.m in Sources */,
 				CD23DCAA1EC1DDD5006E331B /* UITabBar+AXExtension.m in Sources */,
 				CDAB59201E6BFBCE0017CA1E /* UIImage+AXExtension.m in Sources */,
 				CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */,
