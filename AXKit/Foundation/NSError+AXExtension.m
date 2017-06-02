@@ -8,51 +8,63 @@
 
 #import "NSError+AXExtension.h"
 
-static NSErrorDomain userErrorDomain = @"unknown";
-
 @implementation NSError (AXExtension)
 
-+ (void)configErrorDomain:(NSErrorDomain)domain{
-    userErrorDomain = domain;
-}
 
-+ (instancetype)ax_errorWithDomain:(NSErrorDomain (^)())domain
-                              code:(NSInteger)code
-                       description:(nullable NSString *(^)())description
-                            reason:(nullable NSString *(^)())reason
-                        suggestion:(nullable NSString *(^)())suggestion{
-    return [[self alloc] ax_initWithDomain:domain code:code description:description reason:reason suggestion:suggestion];
-}
-
-
-- (instancetype)ax_initWithDomain:(NSErrorDomain (^)())domain
-                             code:(NSInteger)code
-                      description:(nullable NSString *(^)())description
-                           reason:(nullable NSString *(^)())reason
-                       suggestion:(nullable NSString *(^)())suggestion{
-    NSString *desc = nil;
-    NSString *reas = nil;
-    NSString *sugg = nil;
++ (instancetype)ax_errorWithMaker:(void (^)(NSErrorMaker * _Nonnull))maker{
+    NSErrorMaker *make = [NSErrorMaker new];
+    if (maker) {
+        maker(make);
+    }
     
-    if (description) {
-        desc = description();
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    if (make.localizedDescription) {
+        userInfo[NSLocalizedDescriptionKey] = make.localizedDescription;
     }
-    if (reason) {
-        reas = reason();
+    if (make.localizedFailureReason) {
+        userInfo[NSLocalizedFailureReasonErrorKey] = make.localizedFailureReason;
     }
-    if (suggestion) {
-        sugg = suggestion();
+    if (make.localizedRecoverySuggestion) {
+        userInfo[NSLocalizedRecoverySuggestionErrorKey] = make.localizedRecoverySuggestion;
     }
-    desc = desc ? : ERROR_DEFAULT_DESCRIPTION;
-    reas = reas.length?reas:ERROR_DEFAULT_REASON;
-    sugg  = sugg  ? : ERROR_DEFAULT_SUGGESTION;
-    NSDictionary *userInfo = @{
-                               NSLocalizedDescriptionKey:NSLocalizedString(desc, nil),
-                               NSLocalizedFailureReasonErrorKey:NSLocalizedString(reas, nil),
-                               NSLocalizedRecoverySuggestionErrorKey:NSLocalizedString(sugg, nil),
-                               };
-    NSError *error = [NSError errorWithDomain:domain()?:@"unknown" code:code userInfo:userInfo];
+    if (make.localizedRecoveryOptions.count) {
+        userInfo[NSLocalizedRecoveryOptionsErrorKey] = make.localizedRecoveryOptions;
+    }
+    
+    NSError *error = [NSError errorWithDomain:make.domain?:@"unknown" code:make.code userInfo:userInfo];
     return error;
+}
+
+
+- (NSString *)description{
+    NSMutableString *desc = [NSMutableString string];
+    [desc appendFormat:@"domain:      %@", self.domain];
+    [desc appendFormat:@"\ncode:        %ld",self.code];
+    if (self.localizedDescription) {
+        [desc appendFormat:@"\ndescription: %@",self.localizedDescription];
+    }
+    if (self.localizedFailureReason) {
+        [desc appendFormat:@"\nreason:      %@",self.localizedFailureReason];
+    }
+    if (self.localizedRecoverySuggestion) {
+        [desc appendFormat:@"\nsuggestion:  %@",self.localizedRecoverySuggestion];
+    }
+    if (self.localizedRecoveryOptions.count) {
+        [desc appendFormat:@"\noptions:     %@",self.localizedRecoveryOptions];
+    }
+    return desc;
+}
+
+@end
+
+
+@implementation NSErrorMaker
+
+- (instancetype)init{
+    if (self = [super init]) {
+        _localizedRecoveryOptions = [NSMutableArray array];
+    }
+    return self;
 }
 
 @end

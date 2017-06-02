@@ -17,11 +17,11 @@ static inline NSUserDefaults *DefaultUser(){
 @implementation NSError (AXUserDefaults)
 
 + (instancetype)ax_errorWithReason:(NSString *(^)())reason{
-    return [NSError ax_errorWithDomain:^NSErrorDomain _Nonnull{
-        return AXKitErrorDomain;
-    } code:AXKitErrorCodeObjectForKeyNotFound description:nil reason:^NSString * _Nonnull{
-        return reason();
-    } suggestion:nil];
+    return [self ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
+        error.domain = AXKitErrorDomain;
+        error.code = AXKitErrorCodeObjectForKeyNotFound;
+        error.localizedFailureReason = reason?reason():nil;
+    }];
 }
 
 @end

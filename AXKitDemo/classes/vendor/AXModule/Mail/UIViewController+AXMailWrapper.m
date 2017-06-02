@@ -16,11 +16,10 @@ static void (^block_callback)(MFMailComposeResult result);
 - (void)sendEmail:(void (^)(MFMailComposeViewController *mailCompose))email completion:(void (^)(MFMailComposeResult result))completion fail:(void (^)(NSError *error))fail{
     if (![MFMailComposeViewController canSendMail]) {
         if (fail) {
-            NSError *error = [NSError ax_errorWithDomain:^NSErrorDomain _Nonnull{
-                return @"com.MFMailComposeViewController.error";
-            } code:400 description:^NSString * _Nonnull{
-                return @"your device not support";
-            } reason:nil suggestion:nil];
+            NSError *error = [NSError ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
+                error.domain = @"com.MFMailComposeViewController.error";
+                error.localizedFailureReason = @"your device not support";
+            }];
             fail(error);
         }
     } else {

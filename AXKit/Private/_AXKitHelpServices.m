@@ -30,10 +30,11 @@ static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/iss
 
 
 + (instancetype)axkit_errorWithCode:(NSInteger)code reason:(nullable NSString *(^)())reason{
-    NSError *error = [self ax_errorWithDomain:^NSErrorDomain _Nonnull{
-        return AXKitErrorDomain;
-    } code:code description:nil reason:reason suggestion:nil];
-    
+    NSError *error = [self ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
+        error.domain = AXKitErrorDomain;
+        error.code = code;
+        error.localizedFailureReason = reason?reason():@"";
+    }];
     NSString *msg = nil;
     if (reason) {
         msg = reason();

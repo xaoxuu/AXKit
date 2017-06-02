@@ -56,6 +56,10 @@
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
 		CD3DE85E1ED715C4004C1492 /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3DE85D1ED715C4004C1492 /* tmp.xcassets */; };
+		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
+		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */; };
 		CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5744A41ED9DD5C0014E833 /* DemoString.m */; };
 		CD5744EB1EDAAD710014E833 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5744BF1EDAAD710014E833 /* MJRefreshAutoFooter.m */; };
 		CD5744EC1EDAAD710014E833 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5744C11EDAAD710014E833 /* MJRefreshBackFooter.m */; };
@@ -317,6 +321,10 @@
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
 		CD3DE85D1ED715C4004C1492 /* tmp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = tmp.xcassets; sourceTree = "<group>"; };
+		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
+		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
+		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
+		CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitFoundationHeader.m; sourceTree = "<group>"; };
 		CD5744A31ED9DD5C0014E833 /* DemoString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoString.h; sourceTree = "<group>"; };
 		CD5744A41ED9DD5C0014E833 /* DemoString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoString.m; sourceTree = "<group>"; };
 		CD5744BE1EDAAD710014E833 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -1316,6 +1324,8 @@
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */,
+				CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */,
 				CD77FE681EBEE62E001A5787 /* NSString */,
 				CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */,
 				CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */,
@@ -1341,6 +1351,8 @@
 		CDAB58DC1E6BF1810017CA1E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CD5498161EE15E1300748C22 /* AXKitUIHeader.h */,
+				CD5498171EE15E1300748C22 /* AXKitUIHeader.m */,
 				CD09FCC11EE0599600F3D928 /* Layer */,
 				CD5746041EDAEA7A0014E833 /* Bar */,
 				CD77FE6A1EBEE685001A5787 /* UIColor */,
@@ -1584,7 +1596,9 @@
 				CD23DCA51EC1DD76006E331B /* UINavigationBar+AXExtension.h in Headers */,
 				CD09FCBB1EE03C9500F3D928 /* CALayer+AXWrapper.h in Headers */,
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
+				CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */,
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
+				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
 				CDC8CDF51ECC92B7009F855E /* UIAlertController+AXWrapper.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
@@ -1918,9 +1932,11 @@
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,
 				CDCF31131EBB11A4005AC6CD /* NSURL+AXExtension.m in Sources */,
+				CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */,
 				CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */,
 				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,
 				CDAB58F41E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m in Sources */,
+				CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */,
 				CDAB59141E6BF9FE0017CA1E /* UIColorManager.m in Sources */,
 				CD5746011EDAE9B80014E833 /* _AXEventTarget.m in Sources */,
 				CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */,
