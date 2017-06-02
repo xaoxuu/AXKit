@@ -39,7 +39,7 @@
 - (NSString *)description{
     NSMutableString *desc = [NSMutableString string];
     [desc appendFormat:@"domain:      %@", self.domain];
-    [desc appendFormat:@"\ncode:        %ld",self.code];
+    [desc appendFormat:@"\ncode:        %@",@(self.code)];
     if (self.localizedDescription) {
         [desc appendFormat:@"\ndescription: %@",self.localizedDescription];
     }
