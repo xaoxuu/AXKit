@@ -21,7 +21,7 @@ static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/iss
 @implementation AXKitHelpServices
 
 + (NSURL *)errorURLWithCode:(AXKitErrorCode)code{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",AXKitIssuesURLStr,[NSNumber numberWithUnsignedInteger:code]]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",AXKitIssuesURLStr,@(code)]];
 }
 
 @end

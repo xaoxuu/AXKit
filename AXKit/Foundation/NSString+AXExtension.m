@@ -12,27 +12,27 @@
 #import "_AXKitHelpServices.h"
 
 inline NSString *NSStringFromBool(BOOL x){
-    return [NSNumber numberWithBool:x].stringValue;
+    return @(x).stringValue;
 }
 
 inline NSString *NSStringFromFloat(float x){
-    return [NSNumber numberWithFloat:x].stringValue;
+    return @(x).stringValue;
 }
 
 inline NSString *NSStringFromCGFloat(CGFloat x){
-    return [NSNumber numberWithDouble:x].stringValue;
+    return @(x).stringValue;
 }
 
 inline NSString *NSStringFromInt(int x){
-    return [NSNumber numberWithInt:x].stringValue;
+    return @(x).stringValue;
 }
 
 inline NSString *NSStringFromNSInteger(NSInteger x){
-    return [NSNumber numberWithInteger:x].stringValue;
+    return @(x).stringValue;
 }
 
 inline NSString *NSStringFromNSUInteger(NSUInteger x){
-    return [NSNumber numberWithUnsignedInteger:x].stringValue;
+    return @(x).stringValue;
 }
 
 
@@ -43,8 +43,7 @@ inline NSString *NSStringFromPointer(id x){
 
 inline NSString *NSStringFromPercent(CGFloat x){
     x = AXMakeFloatInRange(x, AXFloatRangeMake(0, 1));
-    NSNumber *num = [NSNumber numberWithFloat:x * 100];
-    return [NSString stringWithFormat:@"%@%%",num];
+    return [NSString stringWithFormat:@"%@%%",@(100 * x)];
 }
 
 inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){

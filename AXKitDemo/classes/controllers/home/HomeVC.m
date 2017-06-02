@@ -29,13 +29,11 @@
     
     [self.view addSubview:view];
     
-    
-    
-NSError *error = [NSError ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
-    error.localizedDescription = @"发生了未知错误";
-}];
-
-AXLogError(error);
+    AXLogInt(123);
+    AXLogFloat(1.1);
+    AXLogCGFloat(M_PI);
+    AXLogNSInteger(11);
+    AXLogNSUInteger(22);
     
     
     /*
