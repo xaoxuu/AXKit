@@ -35,7 +35,7 @@
             if (info.length && [info containsString:@"\r"]) {
                 info = [info substringToIndex:[info rangeOfString:@"\r"].location];
             }
-            [log appendFormat:@"%d. %@\n",i++, info];
+            [log appendFormat:@"\n%d. %@",i++, info];
         }
     }];
     version.log = log;
