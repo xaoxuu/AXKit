@@ -191,8 +191,8 @@
 		CDAB59341E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB59321E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.m */; };
 		CDAB59371E6BFE170017CA1E /* UIView+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59351E6BFE170017CA1E /* UIView+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB59361E6BFE170017CA1E /* UIView+AXExtension.m */; };
-		CDAB593B1E6BFE700017CA1E /* UIView+AXFrameWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59391E6BFE700017CA1E /* UIView+AXFrameWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDAB593C1E6BFE700017CA1E /* UIView+AXFrameWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593A1E6BFE700017CA1E /* UIView+AXFrameWrapper.m */; };
+		CDAB593B1E6BFE700017CA1E /* UIView+AXFrameExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59391E6BFE700017CA1E /* UIView+AXFrameExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDAB593C1E6BFE700017CA1E /* UIView+AXFrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593A1E6BFE700017CA1E /* UIView+AXFrameExtension.m */; };
 		CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */; };
 		CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -529,8 +529,8 @@
 		CDAB59321E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXAnimatedWrapper.m"; sourceTree = "<group>"; };
 		CDAB59351E6BFE170017CA1E /* UIView+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXExtension.h"; sourceTree = "<group>"; };
 		CDAB59361E6BFE170017CA1E /* UIView+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXExtension.m"; sourceTree = "<group>"; };
-		CDAB59391E6BFE700017CA1E /* UIView+AXFrameWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXFrameWrapper.h"; sourceTree = "<group>"; };
-		CDAB593A1E6BFE700017CA1E /* UIView+AXFrameWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXFrameWrapper.m"; sourceTree = "<group>"; };
+		CDAB59391E6BFE700017CA1E /* UIView+AXFrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXFrameExtension.h"; sourceTree = "<group>"; };
+		CDAB593A1E6BFE700017CA1E /* UIView+AXFrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXFrameExtension.m"; sourceTree = "<group>"; };
 		CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXGestureExtension.h"; sourceTree = "<group>"; };
 		CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXGestureExtension.m"; sourceTree = "<group>"; };
 		CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXMacros.h"; sourceTree = "<group>"; };
@@ -1179,8 +1179,8 @@
 				CDAB59321E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.m */,
 				CDAB59351E6BFE170017CA1E /* UIView+AXExtension.h */,
 				CDAB59361E6BFE170017CA1E /* UIView+AXExtension.m */,
-				CDAB59391E6BFE700017CA1E /* UIView+AXFrameWrapper.h */,
-				CDAB593A1E6BFE700017CA1E /* UIView+AXFrameWrapper.m */,
+				CDAB59391E6BFE700017CA1E /* UIView+AXFrameExtension.h */,
+				CDAB593A1E6BFE700017CA1E /* UIView+AXFrameExtension.m */,
 				CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */,
 				CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */,
 			);
@@ -1563,7 +1563,7 @@
 				8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */,
 				CDAB59071E6BF92F0017CA1E /* UIColor+AXColorPack.h in Headers */,
 				CDAB59131E6BF9FE0017CA1E /* UIColorManager.h in Headers */,
-				CDAB593B1E6BFE700017CA1E /* UIView+AXFrameWrapper.h in Headers */,
+				CDAB593B1E6BFE700017CA1E /* UIView+AXFrameExtension.h in Headers */,
 				CDAB58E71E6BF37E0017CA1E /* CoreGraphics+AXExtension.h in Headers */,
 				CDAB59031E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.h in Headers */,
 				CDAB590F1E6BF9B90017CA1E /* UIColor+MDColorPack.h in Headers */,
@@ -1924,7 +1924,7 @@
 				CDAB59141E6BF9FE0017CA1E /* UIColorManager.m in Sources */,
 				CD5746011EDAE9B80014E833 /* _AXEventTarget.m in Sources */,
 				CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */,
-				CDAB593C1E6BFE700017CA1E /* UIView+AXFrameWrapper.m in Sources */,
+				CDAB593C1E6BFE700017CA1E /* UIView+AXFrameExtension.m in Sources */,
 				CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */,
 				CDAB59041E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.m in Sources */,
 				CD5745021EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.m in Sources */,

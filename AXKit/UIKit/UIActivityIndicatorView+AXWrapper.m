@@ -8,7 +8,7 @@
 
 #import "UIActivityIndicatorView+AXWrapper.h"
 #import "CoreGraphics+AXExtension.h"
-#import "UIView+AXFrameWrapper.h"
+#import "UIView+AXFrameExtension.h"
 #import "NSOperation+AXExtension.h"
 
 static NSTimeInterval indicatorTimeout = 20;

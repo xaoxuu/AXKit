@@ -1,12 +1,12 @@
 //
-//  UIView+AXFrameWrapper.m
+//  UIView+AXFrameExtension.m
 //  AXKit
 //
 //  Created by xaoxuu on 05/03/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "UIView+AXFrameWrapper.h"
+#import "UIView+AXFrameExtension.h"
 #import "CoreGraphics+AXExtension.h"
 
 

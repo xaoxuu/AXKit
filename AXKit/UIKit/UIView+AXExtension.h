@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreGraphics+AXExtension.h"
+#import "UIView+AXFrameExtension.h"
+#import "UIView+AXAnimatedWrapper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

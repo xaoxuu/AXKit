@@ -1,5 +1,5 @@
 //
-//  UIView+AXFrameWrapper.h
+//  UIView+AXFrameExtension.h
 //  AXKit
 //
 //  Created by xaoxuu on 05/03/2017.

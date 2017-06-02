@@ -115,7 +115,7 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 // UIView的动画效果封装，便于调用
 #import <AXKit/UIView+AXAnimatedWrapper.h>
 // UIView的Frame封装，便于快速设定一个view的frame
-#import <AXKit/UIView+AXFrameWrapper.h>
+#import <AXKit/UIView+AXFrameExtension.h>
 // UIView的手势封装，便于快速给一个view添加手势
 #import <AXKit/UIView+AXGestureExtension.h>
 
