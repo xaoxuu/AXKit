@@ -17,7 +17,7 @@
 
 static NSArray<NSString *> *footerArray;
 
-@interface AppServices ()
+@interface AppServices () <ServicesPrivateMethod>
 
 
 @end
@@ -35,7 +35,9 @@ static NSArray<NSString *> *footerArray;
         
         [NSBlockOperation ax_delay:2 performInBackground:^{
             [self checkVersionCompletion:^(VersionState state) {
-                
+                [self allDelegates:^(id<AppServicesDelegate> delegate) {
+                    [delegate didDiscoverRemoteVersion:self.remoteVersion];
+                }];
             }];
         }];
         
@@ -203,46 +205,39 @@ static NSArray<NSString *> *footerArray;
 }
 
 - (void)checkVersionCompletion:(void (^)(VersionState state))completion{
-    
+    if (!completion) {
+        return;
+    }
     daLayer.network.URLString = services.git.model.releaseLogURL;
     [daLayer.network getURLCompletion:^(id response) {
         NSDictionary *dataDict = response;
         GitHubIssueListModel *list = [GitHubIssueListModel modelWithDictionary:dataDict];
-        _latestVersion = [AppVersionInfoModel versionWithModel:list.items.firstObject];
+        _remoteVersion = [AppVersionInfoModel versionWithModel:list.items.firstObject];
         
-        NSArray<NSString *> *curVersion = [[NSBundle ax_appVersion] componentsSeparatedByString:@"."];
-        NSArray<NSString *> *remoteVersion = [_latestVersion.name componentsSeparatedByString:@"."];
-        if (curVersion.count != 3 || remoteVersion.count != 3) {
-            return;
-        }
-        
-        for (NSUInteger i = 0; i < 3; i++) {
-            if (remoteVersion[i].integerValue > curVersion[i].integerValue) {
+        VersionLaterThanVersion(_remoteVersion.name, [NSBundle ax_appVersion], ^(BOOL later) {
+            if (later) {
                 // @xaoxuu: 有新版本
-                NSString *msg = [AppVersionInfoModel versionDescriptionWithModel:_latestVersion];
+                NSString *msg = [AppVersionInfoModel versionDescriptionWithModel:_remoteVersion];
                 [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"发现新版本", nil) message:msg action:^(UIAlertController * _Nonnull alert) {
                     [alert ax_addCancelAction];
                     [alert ax_addDefaultActionWithTitle:@"Update" handler:^(UIAlertAction * _Nonnull sender) {
                         [[UIApplication sharedApplication] openURL:self.model.updateURL.absoluteURL];
                     }];
                 }];
-                if (completion) {
-                    completion(VersionStateOld);
-                }
-                
-                return;
+                completion(VersionStateOld);
+            } else {
+                completion(VersionStateLatest);
             }
-        }
-        
-        if (completion) {
-            
-            completion(VersionStateLatest);
-        }
+        }, ^(NSError * _Nonnull error) {
+            AXLogError(error);
+        });
         
         
     } fail:^(NSError *error) {
         
     }];
 }
+
+
 
 @end

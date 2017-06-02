@@ -14,12 +14,17 @@
 
 FOUNDATION_EXTERN NSString *kBlogURL;
 
+@protocol AppServicesDelegate <BaseServicesDelegate>
+
+- (void)didDiscoverRemoteVersion:(AppVersionInfoModel *)version;
+
+@end
 
 @interface AppServices : BaseServices
 
 @property (strong, readonly, nonatomic) AppInfoModel *model;
 
-@property (strong, readonly, nonatomic) AppVersionInfoModel *latestVersion;
+@property (strong, readonly, nonatomic) AppVersionInfoModel *remoteVersion;
 
 // @xaoxuu: setting icon placeholder
 @property (strong, readonly, nonatomic) UIImage *placeholderForSetting;

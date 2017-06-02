@@ -8,7 +8,8 @@
 
 
 #import "NSString+AXExtension.h"
-
+#import "NSError+AXExtension.h"
+#import "_AXKitHelpServices.h"
 
 inline NSString *NSStringFromBool(BOOL x){
     return [NSNumber numberWithBool:x].stringValue;
@@ -49,6 +50,37 @@ inline NSString *NSStringFromPercent(CGFloat x){
 inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
     return [NSString stringWithFormat:@"%c",ASCIIValue];
 }
+
+
+
+
+inline void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^fail)(NSError *error)){
+    if (!completion) {
+        return;
+    }
+    NSArray<NSString *> *thisVersionArr = [thisVersion componentsSeparatedByString:@"."];
+    NSArray<NSString *> *anotherVersionArr = [anotherVersion componentsSeparatedByString:@"."];
+    if (thisVersionArr.count != anotherVersionArr.count) {
+        if (fail) {
+            NSError *error = [NSError ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
+                error.domain = AXKitErrorDomain;
+                error.code = 0;
+                error.localizedDescription = @"invalid version string.";
+            }];
+            fail(error);
+        }
+        return;
+    }
+    
+    for (NSUInteger i = 0; i < thisVersionArr.count; i++) {
+        if (thisVersionArr[i].integerValue > anotherVersionArr[i].integerValue) {
+            completion(YES);
+            return;
+        }
+    }
+    completion(NO);
+}
+
 
 @implementation NSString (AXAppendExtension)
 

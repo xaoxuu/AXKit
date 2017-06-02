@@ -10,13 +10,25 @@
 #import "NormalLabel.h"
 #import "BaseWebVC.h"
 
-static CGFloat const iconSize = 64;
 
+#define CACHE_VERSION @"CACHE_VERSION"
+
+
+static CGFloat const iconSize = 64;
+@interface AboutTableView () <AppServicesDelegate>
+
+
+
+@end
 
 @implementation AboutTableView
 
+- (void)dealloc{
+    [services.app unRegisterDelegate:self];
+}
 
 - (void)initTableView:(BaseTableView *)tableView{
+    [services.app registerDelegate:self];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0.3*kScreenH)];
     
     // @xaoxuu: bg
@@ -59,10 +71,21 @@ static CGFloat const iconSize = 64;
     tableView.tableHeaderView = view;
     tableView.tableFooterView = services.app.copyrightTableFooter;
 }
+
+
 - (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            model.desc = [NSString stringWithFormat:@"%@ (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
+            model.desc = [NSUserDefaults ax_readStringForKey:CACHE_VERSION];
+            VersionLaterThanVersion([NSBundle ax_appVersion], services.app.remoteVersion.name, ^(BOOL later) {
+                if (later) {
+                    model.desc = [NSString stringWithFormat:@"%@ beta (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
+                } else {
+                    model.desc = [NSString stringWithFormat:@"%@ (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
+                }
+                [NSUserDefaults ax_setString:model.desc forKey:CACHE_VERSION];
+            }, nil);
+            AXLogOBJ(model.desc);
         } else if (indexPath.row == 1) {
             NSString *buildTime = @"20".append([NSBundle ax_appBuild]);
             NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMMddHHmm"];
@@ -89,6 +112,12 @@ static CGFloat const iconSize = 64;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return [self sectionModel:section].footer_height.floatValue;
+}
+
+
+
+- (void)didDiscoverRemoteVersion:(AppVersionInfoModel *)version{
+    [self reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end

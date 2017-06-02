@@ -151,7 +151,11 @@
         if (object == self.webView) {
             [self.progressView setAlpha:1.0f];
             [self.progressView setProgress:self.webView.estimatedProgress animated:YES];
-            if(self.webView.estimatedProgress >= 1.0f) {
+            if (self.webView.estimatedProgress > 0.2) {
+                self.indicator.alpha = 1.4 - 2*self.webView.estimatedProgress;
+            }
+            if (self.webView.estimatedProgress >= 1.0f) {
+                [self.indicator stopAnimating];
                 [UIView animateWithDuration:0.2 delay:0.2 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.progressView setAlpha:0.0f];
                 } completion:^(BOOL finished) {

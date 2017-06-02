@@ -90,6 +90,12 @@ FOUNDATION_EXTERN NSString *NSStringFromPercent(CGFloat x);
  */
 FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
+
+
+
+FOUNDATION_EXTERN void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^ _Nullable fail)(NSError *error));
+
+
 @interface NSString (AXAppendExtension)
 
 
