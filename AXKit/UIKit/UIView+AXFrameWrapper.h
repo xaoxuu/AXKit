@@ -9,46 +9,42 @@
 #import <UIKit/UIKit.h>
 
 
-
-
-
-#pragma mark UIView
-
-
-
 @interface UIView (AXFrameWrapper)
 
 
-/**
- 对frame进行若干操作
-
- @param frame frame
- */
-- (void)ax_frame:(CGRect (^)(CGRect frame))frame;
-
 #pragma mark - property
-
+// frame.origin
 @property (nonatomic, readwrite, assign) CGPoint origin;
+// frame.size
 @property (nonatomic, readwrite, assign) CGSize  size;
-
+// frame.size.width
 @property (nonatomic, readwrite, assign) CGFloat width;
+// frame.size.height
 @property (nonatomic, readwrite, assign) CGFloat height;
-
+// frame.origin.x
 @property (nonatomic, readwrite, assign) CGFloat left;
+// frame.origin.x + frame.size.width
 @property (nonatomic, readwrite, assign) CGFloat right;
+// frame.origin.y
 @property (nonatomic, readwrite, assign) CGFloat top;
+// frame.origin.y + frame.size.height
 @property (nonatomic, readwrite, assign) CGFloat bottom;
 
 #pragma mark frame center
-
+// center
 @property (nonatomic, readwrite, assign) CGPoint frameCenter;
+// frame.origin.x + 0.5 * frame.size.width
 @property (nonatomic, readwrite, assign) CGFloat frameCenterX;
+// frame.origin.y + 0.5 * frame.size.height
 @property (nonatomic, readwrite, assign) CGFloat frameCenterY;
 
 
 #pragma mark bounds center
+// bounds.center
 @property (nonatomic, readonly, assign) CGPoint boundsCenter;
+// 0.5 * frame.size.width
 @property (nonatomic, readonly, assign) CGFloat boundsCenterX;
+// 0.5 * frame.size.height
 @property (nonatomic, readonly, assign) CGFloat boundsCenterY;
 
 
