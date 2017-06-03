@@ -29,11 +29,6 @@
     
     [self.view addSubview:view];
     
-    AXLogInt(123);
-    AXLogFloat(1.1);
-    AXLogCGFloat(M_PI);
-    AXLogNSInteger(11);
-    AXLogNSUInteger(22);
     
     
     /*
@@ -88,10 +83,6 @@
     [super viewDidAppear:animated];
     
     
-    AXLogCGPoint(CGPointMake(22, 22));
-    
-    AXLogCGSize(CGSizeMake(12, 12));
-    AXLogCGRect(self.view.frame);
     
 //    AXLogOBJ(@(CGSizeMake(120, 120)));
 //    
