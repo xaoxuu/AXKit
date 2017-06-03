@@ -44,10 +44,10 @@
 
 #define AXLogFloat(float) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, @(float))
 #define AXLogCGFloat(CGFloat) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, @(CGFloat))
-#define AXLogCGPoint(CGPoint) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGPoint(CGPoint))
+#define AXLogCGPoint(CGPoint) NSLog((@"\n➤ func:%s " "line:%d" "\n💬CGPoint: %@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGPoint(CGPoint))
 
-#define AXLogCGSize(CGSize) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGSize(CGSize))
-#define AXLogCGRect(CGRect) NSLog((@"\n➤ func:%s " "line:%d" "\n💬%@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGRect(CGRect))
+#define AXLogCGSize(CGSize) NSLog((@"\n➤ func:%s " "line:%d" "\n💬CGSize: %@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGSize(CGSize))
+#define AXLogCGRect(CGRect) NSLog((@"\n➤ func:%s " "line:%d" "\n💬CGRect: %@" "\n\n"), __FUNCTION__, __LINE__, NSStringFromCGRect(CGRect))
 
 
 #else

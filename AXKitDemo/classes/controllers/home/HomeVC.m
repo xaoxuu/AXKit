@@ -86,6 +86,17 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    
+    AXLogCGPoint(CGPointMake(22, 22));
+    
+    AXLogCGSize(CGSizeMake(12, 12));
+    AXLogCGRect(self.view.frame);
+    
+//    AXLogOBJ(@(CGSizeMake(120, 120)));
+//    
+//    AXLogOBJ(@(CGRectMake(123, 123, 234, 234)));
+    
     /*
     // @xaoxuu: 一行代码的消息弹窗
     [UIAlertController ax_showAlertWithTitle:@"Hello Alert" message:@"这是用一行代码弹出来的只有一个按钮的窗口" action:nil];
