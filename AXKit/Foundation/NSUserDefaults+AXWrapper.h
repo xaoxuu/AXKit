@@ -367,6 +367,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_removeObjectForKey:(NSString *)key;
 
 
+/**
+ 移除默认的[NSUserDefaults standardUserDefaults]的所有配置
+ */
++ (void)ax_removeDefaultPersistentDomain;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

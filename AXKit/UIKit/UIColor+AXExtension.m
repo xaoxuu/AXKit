@@ -8,6 +8,16 @@
 
 #import "UIColor+AXExtension.h"
 
+
+inline void AppSetStatusBarBackgroundColor(UIColor *color){
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]){
+        statusBar.backgroundColor = color;
+    }
+}
+
+
+
 static CGFloat static_color_ratio = 0.6;
 
 @implementation UIColor (AXExtension)

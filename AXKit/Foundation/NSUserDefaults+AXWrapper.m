@@ -325,7 +325,9 @@ static inline NSUserDefaults *DefaultUser(){
     }];
 }
 
-
++ (void)ax_removeDefaultPersistentDomain{
+    [DefaultUser() removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+}
 
 #pragma mark - private 
 
