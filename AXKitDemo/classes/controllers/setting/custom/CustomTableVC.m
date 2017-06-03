@@ -11,7 +11,7 @@
 @interface CustomTableVC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *lb_title;
-@property (weak, nonatomic) IBOutlet UITextField *lb_detail;
+@property (weak, nonatomic) IBOutlet UITextField *tf_detail;
 
 
 @end
@@ -35,14 +35,14 @@
     // Do any additional setup after loading the view from its nib.
     
     self.lb_title.text = self.title;
-    self.lb_detail.text = self.detail;
+    self.tf_detail.text = self.detail;
     
     if ([self.cmd isEqualToString:@"margin"]) {
-        [self.lb_detail ax_addEditingEndHandler:^(__kindof UITextField * _Nonnull sender) {
+        [self.tf_detail ax_addEditingEndHandler:^(__kindof UITextField * _Nonnull sender) {
             
-            CGFloat height = self.lb_detail.text.floatValue;
+            CGFloat height = self.tf_detail.text.floatValue;
             height = AXMakeFloatInRange(height, AXFloatRangeMake(32, 1000));
-            self.lb_detail.text = NSStringFromCGFloat(height);
+            self.tf_detail.text = NSStringFromCGFloat(height);
             
             [services.cache updateSetting:^(BaseTableModelListType setting) {
                 for (BaseTableModelSection *sec in setting) {
@@ -58,11 +58,11 @@
         }];
 
     } else if ([self.cmd isEqualToString:@"rowHeight"]) {
-        [self.lb_detail ax_addEditingEndHandler:^(__kindof UITextField * _Nonnull sender) {
+        [self.tf_detail ax_addEditingEndHandler:^(__kindof UITextField * _Nonnull sender) {
             
-            CGFloat height = self.lb_detail.text.floatValue;
+            CGFloat height = self.tf_detail.text.floatValue;
             height = AXMakeFloatInRange(height, AXFloatRangeMake(32, 80));
-            self.lb_detail.text = NSStringFromCGFloat(height);
+            self.tf_detail.text = NSStringFromCGFloat(height);
             [services.cache updateSetting:^(BaseTableModelListType setting) {
                 for (BaseTableModelSection *sec in setting) {
                     sec.rowHeight = NSStringFromCGFloat(height);
@@ -89,12 +89,12 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    [self.lb_detail resignFirstResponder];
+    [self.tf_detail resignFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.lb_detail resignFirstResponder];
+    [self.tf_detail resignFirstResponder];
 }
 
 

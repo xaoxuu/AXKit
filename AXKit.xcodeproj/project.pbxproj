@@ -51,6 +51,8 @@
 		CD23DCD91EC35F35006E331B /* AlertServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCD81EC35F35006E331B /* AlertServices.m */; };
 		CD23DCDF1EC36017006E331B /* SCLAlertView+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCDE1EC36017006E331B /* SCLAlertView+AXWrapper.m */; };
 		CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCE11EC36DE7006E331B /* AXProgressHUD.m */; };
+		CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD242F481EE29DF300C954EC /* NSArray+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD242F4B1EE29DF300C954EC /* NSArray+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */; };
 		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -318,6 +320,8 @@
 		CD23DCDE1EC36017006E331B /* SCLAlertView+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView+AXWrapper.m"; sourceTree = "<group>"; };
 		CD23DCE01EC36DE7006E331B /* AXProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXProgressHUD.h; sourceTree = "<group>"; };
 		CD23DCE11EC36DE7006E331B /* AXProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXProgressHUD.m; sourceTree = "<group>"; };
+		CD242F481EE29DF300C954EC /* NSArray+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AXExtension.h"; sourceTree = "<group>"; };
+		CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AXExtension.m"; sourceTree = "<group>"; };
 		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
@@ -1370,6 +1374,8 @@
 				CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */,
 				CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */,
 				CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */,
+				CD242F481EE29DF300C954EC /* NSArray+AXExtension.h */,
+				CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1624,6 +1630,7 @@
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
 				CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */,
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
+				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
 				CDC8CDF51ECC92B7009F855E /* UIAlertController+AXWrapper.h in Headers */,
@@ -1980,6 +1987,7 @@
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
 				CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */,
 				CD004D1B1EB2128C00ACC0B8 /* UIImageView+AXExtension.m in Sources */,
+				CD242F4B1EE29DF300C954EC /* NSArray+AXExtension.m in Sources */,
 				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CD09FCBC1EE03C9500F3D928 /* CALayer+AXWrapper.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
