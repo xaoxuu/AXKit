@@ -113,6 +113,26 @@ inline void AXLocalizeAllSubviewsInView(UIView *view){
     return [UIImage imageNamed:[self ax_appIconPath]];
 }
 
++ (NSString *)ax_appLaunchImagePath{
+    CGSize viewSize = [UIScreen mainScreen].bounds.size;
+    NSString *viewOrientation = @"Portrait";
+    NSString *launchImageNamePath = nil;
+    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary* dict in imagesDict) {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]]) {
+            launchImageNamePath = dict[@"UILaunchImageName"];
+        }
+    }
+    return launchImageNamePath;
+}
+
++ (UIImage *)ax_appLaunchImage{
+    return [UIImage imageNamed:[self ax_appLaunchImagePath]];
+}
+
+
+
 + (NSDictionary *)ax_localizedInfoDictionary{
     return [[NSBundle mainBundle] localizedInfoDictionary];
 }

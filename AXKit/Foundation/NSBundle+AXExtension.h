@@ -117,4 +117,19 @@ FOUNDATION_EXTERN void AXLocalizeAllSubviewsInView(UIView *view);
  */
 + (UIImage *)ax_appIcon;
 
+
+/**
+ 启动图片路径
+
+ @return 启动图片路径
+ */
++ (NSString *)ax_appLaunchImagePath;
+
+/**
+ 启动图片
+
+ @return 启动图片
+ */
++ (UIImage *)ax_appLaunchImage;
+
 @end
