@@ -59,21 +59,26 @@ inline void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVers
     }
     NSArray<NSString *> *thisVersionArr = [thisVersion componentsSeparatedByString:@"."];
     NSArray<NSString *> *anotherVersionArr = [anotherVersion componentsSeparatedByString:@"."];
-    if (thisVersionArr.count != anotherVersionArr.count) {
+    NSUInteger maxCount = MAX(thisVersionArr.count, anotherVersionArr.count);
+    
+    if (!thisVersionArr.count || !anotherVersionArr.count) {
         if (fail) {
-            NSError *error = [NSError ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
-                error.domain = AXKitErrorDomain;
-                error.code = 0;
-                error.localizedDescription = @"invalid version string.";
+            NSError *error = [NSError axkit_errorWithCode:0 reason:^NSString * _Nonnull{
+                return @"invalid version string.";
             }];
             fail(error);
         }
         return;
     }
     
-    for (NSUInteger i = 0; i < thisVersionArr.count; i++) {
-        if (thisVersionArr[i].integerValue > anotherVersionArr[i].integerValue) {
+    for (NSUInteger i = 0; i < maxCount; i++) {
+        NSInteger this = i<thisVersionArr.count ? thisVersionArr[i].integerValue : 0;
+        NSInteger another = i<anotherVersionArr.count ? anotherVersionArr[i].integerValue : 0;
+        if (this > another) {
             completion(YES);
+            return;
+        } else if (this < another) {
+            completion(NO);
             return;
         }
     }

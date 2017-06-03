@@ -50,8 +50,7 @@ static CGFloat const iconSize = 64;
     icon.layer.masksToBounds = YES;
     icon.layer.cornerRadius = icon.width/4.2;
     // @xaoxuu: point
-    icon.centerX = 0.5 * view.width;
-    icon.centerY = 0.5 * view.height;
+    icon.center = view.boundsCenter;
     [view addSubview:icon];
     
     // @xaoxuu: app name
