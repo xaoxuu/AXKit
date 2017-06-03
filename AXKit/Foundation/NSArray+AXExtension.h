@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+
+FOUNDATION_EXTERN NSArray *NSClassGetAllSubclasses(Class cls);
+
+
 @interface NSArray (AXExtension)
 
 
