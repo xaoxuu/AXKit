@@ -25,6 +25,14 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
 
 @implementation UITextField (AXExtension)
 
+- (UIColor *)placeholderColor{
+    return [self valueForKeyPath:@"placeholderLabel.textColor"];
+}
+
+- (void)setPlaceholderColor:(UIColor *)placeholderColor{
+    [self setValue:placeholderColor forKeyPath:@"placeholderLabel.textColor"];
+}
+
 
 - (void)ax_clearText {
     self.text = @"";
