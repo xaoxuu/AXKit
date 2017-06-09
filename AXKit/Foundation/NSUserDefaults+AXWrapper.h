@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 读取object值
+ 读取object值（不推荐）
 
  @param key 键
  @return 值
@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 读取NSData值
+ 读取NSData值（不推荐）
  
  @param key 键
  @return 值
@@ -90,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion fail:(void (^)(NSError *error))fail;
 
 /**
- 读取NSString值
+ 读取NSString值（不推荐）
  
  @param key 键
  @return 值
@@ -107,7 +107,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion fail:(void (^)(NSError *error))fail;
 
 /**
- 读取字符串数组
+ 读取字符串数组（不推荐）
  
  @param key 键
  @return 值
@@ -124,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *array))completion fail:(void (^)(NSError *error))fail;
 
 /**
- 读取NSArray值
+ 读取NSArray值（不推荐）
  
  @param key 键
  @return 值
@@ -141,7 +141,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion fail:(void (^)(NSError *error))fail;
 
 /**
- 读取NSDictionary值
+ 读取NSDictionary值（不推荐）
  
  @param key 键
  @return 值
@@ -166,7 +166,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary<NSString *, id> *)ax_readDictionaryWithValuesForKeys:(NSArray<NSString *> *)keys;
 
 /**
- 读取URL值
+ 读取URL值（不推荐）
  
  @param key 键
  @return 值
@@ -183,6 +183,22 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion fail:(void (^)(NSError *error))fail;
 
 
+/**
+ 读取图片（不推荐）
+
+ @param key 键
+ @return 值
+ */
++ (nullable UIImage *)ax_readImageForKey:(NSString *)key;
+
+/**
+ 读取图片（推荐）
+ 
+ @param key 键
+ @param completion 读取成功
+ @param fail 读取失败（没有值）
+ */
++ (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage *image))completion fail:(void (^)(NSError *error))fail;
 
 #pragma mark - write
 
@@ -295,6 +311,15 @@ NS_ASSUME_NONNULL_BEGIN
  @param key 键
  */
 + (void)ax_setURL:(NSURL *)url forKey:(NSString *)key;
+
+
+/**
+ 保存图片，自带synchronize
+ 
+ @param image 图片
+ @param key 键
+ */
++ (void)ax_setImage:(UIImage *)image forKey:(NSString *)key;
 
 
 /**
