@@ -220,8 +220,8 @@ static NSTimeInterval loadingTimeout = 20;
     
     BaseTableModelRow *model = self.dataList[section].rows[row];
     // @xaoxuu: 即将设置模型
-    if ([self respondsToSelector:@selector(indexPath:willSetModel:)]) {
-        [self indexPath:indexPath willSetModel:model];
+    if ([self respondsToSelector:@selector(indexPath:cell:willSetModel:)]) {
+        [self indexPath:indexPath cell:cell willSetModel:model];
     }
     // @xaoxuu: 设置模型
     if ([cell respondsToSelector:@selector(setModel:)]) {

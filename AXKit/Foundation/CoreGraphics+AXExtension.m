@@ -20,7 +20,10 @@ const CGFloat kMarginNarrow = 4;
 const CGFloat kMarginNormal = 8;
 const CGFloat kMarginWide = 16;
 
-
+// @xaoxuu: 系统弹窗的宽度
+const CGFloat kAlertWidth = 270.0f;
+// @xaoxuu: 系统操作表的宽度
+const CGFloat kActionSheetWidth = 300.0f;
 
 
 #pragma mark 取值范围创建

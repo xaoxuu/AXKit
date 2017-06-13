@@ -35,7 +35,7 @@
 }
 
 
-- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
+- (void)indexPath:(NSIndexPath *)indexPath cell:(UITableViewCell<BaseTableViewCell> *)cell willSetModel:(BaseTableModelRow *)model{
     ThemeColorModelRow *colorStr = services.json.colors[indexPath.section].rows[indexPath.row];
     model.desc = [NSString stringWithFormat:@"%@",colorStr.hex];
 }

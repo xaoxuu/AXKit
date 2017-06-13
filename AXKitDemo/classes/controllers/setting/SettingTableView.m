@@ -41,7 +41,7 @@
 }
 
 
-- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
+- (void)indexPath:(NSIndexPath *)indexPath cell:(UITableViewCell<BaseTableViewCell> *)cell willSetModel:(BaseTableModelRow *)model{
     if (indexPath.section == 3) {
         if (indexPath.row == 0) {
             model.desc = services.cache.cachedFileSize;

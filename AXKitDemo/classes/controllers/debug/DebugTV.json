@@ -41,6 +41,11 @@
                     "title":"阴影",
                     "desc":"",
                     "target":"ShadowVC",
+                },
+                {
+                    "title":"系统弹窗",
+                    "desc":"",
+                    "target":"AlertVC",
                 }
             ]
         }

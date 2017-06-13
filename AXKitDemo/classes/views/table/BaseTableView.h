@@ -42,9 +42,10 @@
  即将设置模型
 
  @param indexPath 索引
+ @param cell cell
  @param model 数据模型
  */
-- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model;
+- (void)indexPath:(NSIndexPath *)indexPath cell:(UITableViewCell<BaseTableViewCell> *)cell willSetModel:(BaseTableModelRow *)model;
 
 /**
  cell的icon

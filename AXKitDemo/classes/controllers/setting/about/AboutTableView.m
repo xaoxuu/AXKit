@@ -72,7 +72,7 @@ static CGFloat const iconSize = 64;
 }
 
 
-- (void)indexPath:(NSIndexPath *)indexPath willSetModel:(BaseTableModelRow *)model{
+- (void)indexPath:(NSIndexPath *)indexPath cell:(UITableViewCell<BaseTableViewCell> *)cell willSetModel:(BaseTableModelRow *)model{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             model.desc = [NSUserDefaults ax_readStringForKey:CACHE_VERSION];

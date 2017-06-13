@@ -164,6 +164,9 @@
 		CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF931EEF806900408BAD /* KeyboardVC.m */; };
 		CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF971EEF900400408BAD /* ShadowVC.m */; };
 		CD79DF9A1EEF900400408BAD /* ShadowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD79DF981EEF900400408BAD /* ShadowVC.xib */; };
+		CD79DF9E1EEF911900408BAD /* AlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF9D1EEF911900408BAD /* AlertVC.m */; };
+		CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DFA01EEF912800408BAD /* AlertTV.m */; };
+		CD79DFA31EEF918000408BAD /* AlertTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CD79DFA21EEF918000408BAD /* AlertTV.json */; };
 		CD7AA7281EC85F6000865FC9 /* CacheDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7AA7271EC85F6000865FC9 /* CacheDataAccess.m */; };
 		CD88D1A71ECF30AD004FC692 /* BlogListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A61ECF30AD004FC692 /* BlogListModel.m */; };
 		CD88D1AA1ECF30B6004FC692 /* BlogContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A91ECF30B6004FC692 /* BlogContentModel.m */; };
@@ -513,6 +516,11 @@
 		CD79DF961EEF900400408BAD /* ShadowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowVC.h; sourceTree = "<group>"; };
 		CD79DF971EEF900400408BAD /* ShadowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowVC.m; sourceTree = "<group>"; };
 		CD79DF981EEF900400408BAD /* ShadowVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShadowVC.xib; sourceTree = "<group>"; };
+		CD79DF9C1EEF911900408BAD /* AlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertVC.h; sourceTree = "<group>"; };
+		CD79DF9D1EEF911900408BAD /* AlertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertVC.m; sourceTree = "<group>"; };
+		CD79DF9F1EEF912800408BAD /* AlertTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTV.h; sourceTree = "<group>"; };
+		CD79DFA01EEF912800408BAD /* AlertTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTV.m; sourceTree = "<group>"; };
+		CD79DFA21EEF918000408BAD /* AlertTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AlertTV.json; sourceTree = "<group>"; };
 		CD7AA7261EC85F6000865FC9 /* CacheDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheDataAccess.h; sourceTree = "<group>"; };
 		CD7AA7271EC85F6000865FC9 /* CacheDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheDataAccess.m; sourceTree = "<group>"; };
 		CD88D1A51ECF30AD004FC692 /* BlogListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogListModel.h; sourceTree = "<group>"; };
@@ -888,6 +896,7 @@
 				CD5745101EDADE510014E833 /* DebugTV.m */,
 				CD5745111EDADE510014E833 /* DebugVC.h */,
 				CD5745121EDADE510014E833 /* DebugVC.m */,
+				CD79DF9B1EEF910000408BAD /* alert */,
 				CD79DF951EEF8FE900408BAD /* shadow */,
 				CD79DF911EEF805E00408BAD /* keyboard */,
 				CD54981E1EE1964500748C22 /* testFrame */,
@@ -1367,6 +1376,18 @@
 			path = shadow;
 			sourceTree = "<group>";
 		};
+		CD79DF9B1EEF910000408BAD /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				CD79DF9C1EEF911900408BAD /* AlertVC.h */,
+				CD79DF9D1EEF911900408BAD /* AlertVC.m */,
+				CD79DF9F1EEF912800408BAD /* AlertTV.h */,
+				CD79DFA01EEF912800408BAD /* AlertTV.m */,
+				CD79DFA21EEF918000408BAD /* AlertTV.json */,
+			);
+			path = alert;
+			sourceTree = "<group>";
+		};
 		CD88D1A11ECF3065004FC692 /* BlogModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1771,6 +1792,7 @@
 				CD57459D1EDADE510014E833 /* CustomTableVC.xib in Resources */,
 				CD57458B1EDADE510014E833 /* DefaultViewController.xib in Resources */,
 				CD5745B31EDADE510014E833 /* SettingTableView.json in Resources */,
+				CD79DFA31EEF918000408BAD /* AlertTV.json in Resources */,
 				CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
 				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
@@ -1879,6 +1901,7 @@
 				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
 				CD77FEA11EBF5DD5001A5787 /* BaseDataAccess.m in Sources */,
 				CD5498221EE1965900748C22 /* TestFrameVC.m in Sources */,
+				CD79DF9E1EEF911900408BAD /* AlertVC.m in Sources */,
 				CD5744F61EDAAD710014E833 /* MJRefreshGifHeader.m in Sources */,
 				CDE94E751EC6FFDA00596B93 /* AppDataAccess.m in Sources */,
 				CD23DCDF1EC36017006E331B /* SCLAlertView+AXWrapper.m in Sources */,
@@ -1972,6 +1995,7 @@
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
 				CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */,
+				CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */,
 				CD57459E1EDADE510014E833 /* FeedbackVC.m in Sources */,
 				CD5744EE1EDAAD710014E833 /* MJRefreshFooter.m in Sources */,
 				CD5745B11EDADE510014E833 /* ProjectsVC.m in Sources */,
