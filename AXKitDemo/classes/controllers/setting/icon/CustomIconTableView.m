@@ -10,7 +10,7 @@
 
 @implementation CustomIconTableView
 
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))dataSource{
+- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))dataSource{
     
 }
 

@@ -44,7 +44,7 @@
             height = AXMakeFloatInRange(height, AXFloatRangeMake(32, 1000));
             self.tf_detail.text = NSStringFromCGFloat(height);
             
-            [services.cache updateSetting:^(BaseTableModelListType setting) {
+            [services.cache updateSetting:^(NSMutableArray<BaseTableModelSection *> *setting) {
                 for (BaseTableModelSection *sec in setting) {
                     sec.header_height = NSStringFromCGFloat(height);
                     for (BaseTableModelRow *row in sec.rows) {
@@ -63,7 +63,7 @@
             CGFloat height = self.tf_detail.text.floatValue;
             height = AXMakeFloatInRange(height, AXFloatRangeMake(32, 80));
             self.tf_detail.text = NSStringFromCGFloat(height);
-            [services.cache updateSetting:^(BaseTableModelListType setting) {
+            [services.cache updateSetting:^(NSMutableArray<BaseTableModelSection *> *setting) {
                 for (BaseTableModelSection *sec in setting) {
                     sec.rowHeight = NSStringFromCGFloat(height);
                     for (BaseTableModelRow *row in sec.rows) {

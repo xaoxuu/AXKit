@@ -22,7 +22,7 @@ inline NSString *kStringPleaseConfirmDataSourceCorrect(){
     return NSLocalizedString(@"请确认数据源是否正确", nil);
 }
 inline NSString *kStringPleaseImplementDataSource(NSString *cls){
-    return [NSString stringWithFormat:NSLocalizedString(@"请在\"%@.m\"文件中实现数据源协议：\n\"- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))dataSource;\"", nil), cls];
+    return [NSString stringWithFormat:NSLocalizedString(@"请在\"%@.m\"文件中实现数据源协议：\n\"- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *sections))dataSource;\"", nil), cls];
 }
 
 

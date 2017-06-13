@@ -12,7 +12,7 @@
 @implementation BlogListTableView
 
 
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))dataSource{
+- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))dataSource{
     [services.git getBlogList:^(NSArray<BlogListModel *> *blogs) {
         BaseTableModelSection *sec = [BaseTableModelSection new];
         for (BlogListModel *blog in blogs) {

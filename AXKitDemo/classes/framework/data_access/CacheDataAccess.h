@@ -13,11 +13,11 @@
 
 
 
-//- (BaseTableModelListType (^)(NSString *json))modelList;
+//- (NSMutableArray<BaseTableModelSection *> * (^)(NSString *json))modelList;
 
-- (BaseTableModelListType)loadObjWithKey:(NSString *)key;
+- (NSMutableArray<BaseTableModelSection *> *)loadObjWithKey:(NSString *)key;
 
-- (void)cacheObj:(BaseTableModelListType)obj forKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail;
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail;
 
 - (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail;
 

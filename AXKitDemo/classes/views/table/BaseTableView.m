@@ -20,7 +20,7 @@ static NSTimeInterval loadingTimeout = 20;
 
 
 // @xaoxuu: list
-@property (strong, nonatomic) BaseTableModelListType dataList;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *dataList;
 
 
 // @xaoxuu: table view cell name
@@ -97,7 +97,7 @@ static NSTimeInterval loadingTimeout = 20;
 
 
 
-- (BaseTableModelListType)dataList{
+- (NSMutableArray<BaseTableModelSection *> *)dataList{
     if (!_dataList.count) {
         // @xaoxuu: 先用上次的缓存填充界面
         if (!_dataList.count) {
@@ -113,7 +113,7 @@ static NSTimeInterval loadingTimeout = 20;
         if ([self respondsToSelector:@selector(setupTableViewDataSource:)]) {
             [self.indicator startAnimating];
             [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:reloadToken performInBackground:^{
-                [self setupTableViewDataSource:^(BaseTableModelListType sections) {
+                [self setupTableViewDataSource:^(NSMutableArray<BaseTableModelSection *> *sections) {
                     // @xaoxuu: 缓存列表
                     [services.cache cacheObj:sections forKey:NSStringFromClass([self class]) completion:^{
                         
@@ -181,7 +181,7 @@ static NSTimeInterval loadingTimeout = 20;
 }
 
 // @xaoxuu: 根据指定的新数据源重新加载tableView
-- (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList{
+- (void)reloadTableViewWithDataSource:(NSMutableArray<BaseTableModelSection *> *)dataList{
     self.dataList = dataList;
     [self reloadTableView];
 }

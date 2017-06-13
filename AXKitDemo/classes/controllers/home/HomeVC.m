@@ -73,6 +73,11 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -82,7 +87,14 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    
+    for (int i = 0; i < 10; i++) {
+        UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(16, 16+i*100, kScreenW-32, 50)];
+        [tf ax_adjustViewFrameWithKeyboard:self.view];
+        [self.view addSubview:tf];
+        tf.placeholder = @"123";
+        tf.backgroundColor = axColor.lightGray.light;
+        AXLogCGRect(tf.frame);
+    }
     
 //    AXLogOBJ(@(CGSizeMake(120, 120)));
 //    

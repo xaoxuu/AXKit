@@ -7,6 +7,7 @@
 //
 
 #import "UITextField+AXExtension.h"
+#import "UIView+AXExtension.h"
 @import ObjectiveC.runtime;
 
 static const void *UITextFieldAXExtensionKey_ContentEdgeInsets = &UITextFieldAXExtensionKey_ContentEdgeInsets;
@@ -46,26 +47,27 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
 }
 
 // 弹出键盘
-- (void)_keyBoardWillShow:(NSNotification *) note {
+- (void)_keyBoardWillShow:(NSNotification *)note {
+    if (!self.isFirstResponder) {
+        return;
+    }
     // 获取用户信息
     NSDictionary *userInfo = [NSDictionary dictionaryWithDictionary:note.userInfo];
     // 获取键盘高度
     CGRect keyBoardBounds  = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyBoardHeight = keyBoardBounds.size.height;
     // @xaoxuu: 获取view距离底部的高度
-    CGFloat superH = self.ax_superview.frame.size.height;
-    CGFloat superF = self.ax_superview.frame.origin.y;
-    CGFloat heightToBottom = kScreenH - superF - superH;
+    CGFloat heightToBottom = kScreenH - self.frameInScreen.origin.y - self.frameInScreen.size.height;
     // @xaoxuu: 被遮挡的高度
     CGFloat offset = keyBoardHeight - heightToBottom;
     if (offset < 0) {
-        offset = 0;
+        return;
     }
     // 获取键盘动画时间
     CGFloat animationTime  = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     // 定义好动作
-    void (^animation)(void) = ^void(void) {
+    void (^animation)() = ^{
         self.ax_superview.transform = CGAffineTransformMakeTranslation(0, - offset);
     };
     
@@ -86,7 +88,7 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
     CGFloat animationTime  = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     // 定义好动作
-    void (^animation)(void) = ^void(void) {
+    void (^animation)() = ^{
         self.ax_superview.transform = CGAffineTransformIdentity;
     };
     

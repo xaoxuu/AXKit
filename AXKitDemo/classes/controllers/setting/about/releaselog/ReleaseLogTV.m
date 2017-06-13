@@ -12,7 +12,7 @@
 @implementation ReleaseLogTV
 
 
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))dataSource{
+- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))dataSource{
     
     [services.git getReleaseLogList:^(GitHubIssueListModel *issues) {
         NSMutableArray<BaseTableModelSection *> *sections = [NSMutableArray array];

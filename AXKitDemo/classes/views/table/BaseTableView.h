@@ -34,7 +34,7 @@
  
  @param dataSource 加载完成的回调
  */
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType sections))dataSource;
+- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *sections))dataSource;
 
 #pragma mark - 代理
 
@@ -134,7 +134,7 @@
  
  @param dataList data source
  */
-- (void)reloadTableViewWithDataSource:(BaseTableModelListType)dataList;
+- (void)reloadTableViewWithDataSource:(NSMutableArray<BaseTableModelSection *> *)dataList;
 
 
 

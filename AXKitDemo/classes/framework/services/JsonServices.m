@@ -19,7 +19,7 @@
 @interface JsonServices ()
 
 // @xaoxuu: colors
-@property (strong, nonatomic) BaseTableModelListType colors;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *colors;
 
 @end
 
@@ -35,9 +35,9 @@
 
 
 
-- (BaseTableModelListType (^)(NSString *json))modelList{
+- (NSMutableArray<BaseTableModelSection *> *(^)(NSString *json))modelList{
     return ^(NSString *json){
-        BaseTableModelListType list = json.json.cachePath.readArchivedObject;
+        NSMutableArray<BaseTableModelSection *> *list = json.json.cachePath.readArchivedObject;
         if (!list) {
             list = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:self.jsonInBundle(json)];
             if (!list) {
@@ -58,7 +58,7 @@
 
 
 
-- (BaseTableModelListType)colors{
+- (NSMutableArray<BaseTableModelSection *> *)colors{
     if (!_colors) {
         NSDictionary *jsonFile = CACHE_COLORS.mainBundlePath.readJson;
         NSArray *sections = jsonFile[@"sections"];

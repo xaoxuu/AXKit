@@ -21,16 +21,16 @@ static NSString *key_about = @"AboutTableView";
 @interface CacheServices () <ServicesPrivateMethod>
 
 // @xaoxuu: setting list
-@property (strong, nonatomic) BaseTableModelListType settingList;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *settingList;
 
 // @xaoxuu: cache list
-@property (strong, nonatomic) BaseTableModelListType cacheList;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *cacheList;
 
 // @xaoxuu: proj list
-@property (strong, nonatomic) BaseTableModelListType projectList;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *projectList;
 
 // @xaoxuu: about list
-@property (strong, nonatomic) BaseTableModelListType aboutList;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *aboutList;
 
 @end
 
@@ -53,7 +53,7 @@ static NSString *key_about = @"AboutTableView";
 
 #pragma mark - 指定文件
 
-- (void)cacheObj:(BaseTableModelListType)obj forKey:(NSString *)key completion:(void (^)())completion{
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion{
     [daLayer.cache cacheObj:obj forKey:key completion:^{
         // @xaoxuu: async calculate cache
         [NSBlockOperation ax_delay:0 cooldown:1 token:@"async calculate cache" performInBackground:^{
@@ -75,7 +75,7 @@ static NSString *key_about = @"AboutTableView";
     }];
 }
 
-- (BaseTableModelListType)loadObjWithKey:(NSString *)key{
+- (NSMutableArray<BaseTableModelSection *> *)loadObjWithKey:(NSString *)key{
     return [daLayer.cache loadObjWithKey:key];
 }
 
@@ -83,7 +83,7 @@ static NSString *key_about = @"AboutTableView";
 
 #pragma mark - 更新
 
-- (void)updateSetting:(void (^)(BaseTableModelListType setting))update{
+- (void)updateSetting:(void (^)(NSMutableArray<BaseTableModelSection *> *setting))update{
     if (update) {
         update(self.settingList);
         [self cacheObj:self.settingList forKey:key_setting completion:^{
@@ -102,7 +102,7 @@ static NSString *key_about = @"AboutTableView";
 
 #pragma mark - overwrite
 
-- (BaseTableModelListType)settingList{
+- (NSMutableArray<BaseTableModelSection *> *)settingList{
     if (!_settingList.count) {
         // @xaoxuu: 取出模型
         _settingList = [self loadObjWithKey:key_setting];
@@ -115,7 +115,7 @@ static NSString *key_about = @"AboutTableView";
 
 
 // @xaoxuu: 项目列表
-- (BaseTableModelListType)projectList{
+- (NSMutableArray<BaseTableModelSection *> *)projectList{
     if (!_projectList.count) {
         // @xaoxuu: 取出模型
         _projectList = [self loadObjWithKey:key_projects];
@@ -127,7 +127,7 @@ static NSString *key_about = @"AboutTableView";
 }
 
 // @xaoxuu: 关于
-- (BaseTableModelListType)aboutList{
+- (NSMutableArray<BaseTableModelSection *> *)aboutList{
     if (!_aboutList.count) {
         // @xaoxuu: 取出模型
         _aboutList = [self loadObjWithKey:key_about];
@@ -141,7 +141,7 @@ static NSString *key_about = @"AboutTableView";
 
 
 // @xaoxuu: 缓存列表
-- (BaseTableModelListType)cacheList{
+- (NSMutableArray<BaseTableModelSection *> *)cacheList{
     if (!_cacheList.count) {
         // @xaoxuu: cache
         BaseTableModelSection *section1 = [BaseTableModelSection new];

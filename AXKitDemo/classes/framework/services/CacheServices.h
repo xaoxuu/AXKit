@@ -28,39 +28,39 @@
 //
 // @param list 列表模型
 // */
-//- (void)saveDefaultModelList:(BaseTableModelListType)list forKey:(NSString *)key;
+//- (void)saveDefaultModelList:(NSMutableArray<BaseTableModelSection *> *)list forKey:(NSString *)key;
 //
 ///**
 // 读取默认的列表模型（用于加载列表时先填充缓存数据）
 //
 // @return 列表模型
 // */
-//- (BaseTableModelListType)readDefaultModelListWithKey:(NSString *)key;
+//- (NSMutableArray<BaseTableModelSection *> *)readDefaultModelListWithKey:(NSString *)key;
 //
 
 #pragma mark - 指定文件
 
-- (void)cacheObj:(BaseTableModelListType)obj forKey:(NSString *)key completion:(void (^)())completion;
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion;
 
-- (BaseTableModelListType)loadObjWithKey:(NSString *)key;
+- (NSMutableArray<BaseTableModelSection *> *)loadObjWithKey:(NSString *)key;
 
 - (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion;
 
 
 #pragma mark - 更新
 
-- (void)updateSetting:(void (^)(BaseTableModelListType))update;
+- (void)updateSetting:(void (^)(NSMutableArray<BaseTableModelSection *> *))update;
 
 #pragma mark - 设置列表
 
-- (BaseTableModelListType)settingList;
+- (NSMutableArray<BaseTableModelSection *> *)settingList;
 
-- (BaseTableModelListType)cacheList;
+- (NSMutableArray<BaseTableModelSection *> *)cacheList;
 
 
-- (BaseTableModelListType)projectList;
+- (NSMutableArray<BaseTableModelSection *> *)projectList;
 
-- (BaseTableModelListType)aboutList;
+- (NSMutableArray<BaseTableModelSection *> *)aboutList;
 
 #pragma mark - 清空
 

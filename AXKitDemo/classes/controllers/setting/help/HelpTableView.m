@@ -16,10 +16,10 @@
 @property (strong, nonatomic) UISearchBar *searchBar;
 
 // @xaoxuu: results
-@property (strong, nonatomic) BaseTableModelListType source;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *source;
 
 // @xaoxuu: results
-@property (strong, nonatomic) BaseTableModelListType results;
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *results;
 
 // @xaoxuu: keyword
 @property (copy, nonatomic) NSString *keyword;
@@ -40,7 +40,7 @@
     }];
 }
 
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{
+- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))completion{
     [services.git getHelpIssuesList:^(GitHubIssueListModel *issues) {
         BaseTableModelSection *sec = [BaseTableModelSection new];
         for (GitHubIssueModel *issue in issues.items) {

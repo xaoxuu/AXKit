@@ -94,7 +94,14 @@ inline void AXLocalizeAllSubviewsInView(UIView *view){
 
 
 + (NSString *)ax_appName{
-    return [self.ax_localizedInfoDictionary objectForKey:@"CFBundleDisplayName"] ?: [self.ax_infoDictionary objectForKey:@"CFBundleDisplayName"];
+    NSString *appName = [self.ax_localizedInfoDictionary objectForKey:@"CFBundleDisplayName"];
+    if (!appName) {
+        appName = [self.ax_infoDictionary objectForKey:@"CFBundleDisplayName"];
+    }
+    if (!appName) {
+        appName = [self.ax_infoDictionary objectForKey:@"CFBundleName"];
+    }
+    return appName;
 }
 
 + (NSString *)ax_appVersion{
@@ -106,7 +113,7 @@ inline void AXLocalizeAllSubviewsInView(UIView *view){
 }
 
 + (NSString *)ax_appIconPath{
-    return [[self.ax_infoDictionary valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"]lastObject];
+    return [[self.ax_infoDictionary valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject];
 }
 
 + (UIImage *)ax_appIcon{

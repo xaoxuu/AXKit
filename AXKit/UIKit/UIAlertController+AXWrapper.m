@@ -78,6 +78,51 @@ inline NSString *kStringError(){
 }
 
 
+#pragma mark - 操作表
+
+/**
+ 弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）
+ 
+ @param title 标题
+ @param message 消息
+ @param action action
+ */
++ (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action{
+    if (!title && message.length) {
+        // @xaoxuu: title为nil的话，系统会把message当做title。
+        title = @"";
+    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+    if (action) {
+        action(alert);
+    }
+    if (!alert.actions.count) {
+        [alert ax_addCancelActionWithTitle:kStringOK() handler:nil];
+    }
+    [AXRootViewController() presentViewController:alert animated:YES completion:nil];
+}
+
+
+/**
+ 弹出一个【取消+确定】两个按钮的弹窗（如果action为nil，则只有一个确定按钮）
+ 
+ @param title 标题
+ @param message 消息内容
+ @param ok 确定按钮事件
+ */
++ (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message ok:(void (^ __nullable)(UIAlertAction *sender))ok{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+    if (ok) {
+        [alert ax_addCancelActionWithTitle:kStringCancel() handler:nil];
+        [alert ax_addDefaultActionWithTitle:kStringOK() handler:ok];
+    }
+    if (!alert.actions.count) {
+        [alert ax_addCancelActionWithTitle:kStringOK() handler:nil];
+    }
+    [AXRootViewController() presentViewController:alert animated:YES completion:nil];
+}
+
+
 #pragma mark - 添加按钮
 
 // @xaoxuu: 添加一个按钮

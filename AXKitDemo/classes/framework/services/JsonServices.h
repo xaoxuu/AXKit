@@ -14,11 +14,11 @@
 
 
 
-- (BaseTableModelListType (^)(NSString *json))modelList;
+- (NSMutableArray<BaseTableModelSection *> *(^)(NSString *json))modelList;
 
 
 
-- (BaseTableModelListType)colors;
+- (NSMutableArray<BaseTableModelSection *> *)colors;
 
 
 //- (NSString *((^)(NSString *)))titleForVC;

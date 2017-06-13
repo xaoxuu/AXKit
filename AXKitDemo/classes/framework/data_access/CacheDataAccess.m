@@ -35,7 +35,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 #pragma mark - 指定文件
 
-- (void)cacheObj:(BaseTableModelListType)obj forKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail{
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail{
     BOOL ret = key.ax_cacheObj(obj);
     [NSBlockOperation ax_delay:0 performInMainQueue:^{
         if (ret) {
@@ -65,9 +65,9 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
     }];
 }
 
-- (BaseTableModelListType)loadObjWithKey:(NSString *)key{
+- (NSMutableArray<BaseTableModelSection *> *)loadObjWithKey:(NSString *)key{
     @try {
-        BaseTableModelListType list = key.ax_readObj;
+        NSMutableArray<BaseTableModelSection *> * list = key.ax_readObj;
         if (!list.count) {
             list = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:self.jsonInBundle(key)];
             if (!list.count) {
@@ -86,9 +86,9 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 #pragma mark - util
 //
-//- (BaseTableModelListType (^)(NSString *json))modelList{
+//- (NSMutableArray<BaseTableModelSection *> * (^)(NSString *json))modelList{
 //    return ^(NSString *json){
-//        BaseTableModelListType list = json.json.cachePath.readArchivedObject;
+//        NSMutableArray<BaseTableModelSection *> *list = json.json.cachePath.readArchivedObject;
 //        if (!list) {
 //            list = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:self.jsonInBundle(json)];
 //            if (!list) {

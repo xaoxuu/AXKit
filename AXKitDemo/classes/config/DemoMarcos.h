@@ -13,8 +13,8 @@
 
 #define kNSStringFromSelfClass NSStringFromClass([self class])
 
-@class BaseTableModelSection;
-typedef NSMutableArray<__kindof BaseTableModelSection *> * BaseTableModelListType;
+//@class BaseTableModelSection;
+//typedef NSMutableArray<__kindof BaseTableModelSection *> * BaseTableModelListType;
 
 
 @interface DemoMarcos : NSObject

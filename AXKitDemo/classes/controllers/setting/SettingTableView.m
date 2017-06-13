@@ -20,7 +20,7 @@
     
 }
 
-- (void)setupTableViewDataSource:(void (^)(BaseTableModelListType))completion{
+- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))completion{
     if (completion) {
         completion(services.cache.settingList);
     }
