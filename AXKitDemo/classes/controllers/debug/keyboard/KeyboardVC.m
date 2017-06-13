@@ -8,7 +8,7 @@
 
 #import "KeyboardVC.h"
 
-@interface KeyboardVC ()
+@interface KeyboardVC () <UIScrollViewDelegate>
 
 @end
 
@@ -18,14 +18,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    for (int i = 0; i < 10; i++) {
-        UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(16, 16+i*80, kScreenW-32, 40)];
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    scroll.delegate = self;
+    [self.view addSubview:scroll];
+    for (int i = 0; i < 20; i++) {
+        UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(kMarginNormal, kMarginNormal+i*80, kScreenW-kMarginWide, 40)];
         [tf ax_adjustViewFrameWithKeyboard:self.view];
-        [self.view addSubview:tf];
+        [scroll addSubview:tf];
+        tf.tag = i;
         tf.placeholder = NSStringFromInt(i);
         tf.backgroundColor = axColor.lightGray.light;
+        tf.returnKeyType = UIReturnKeyNext;
+        scroll.contentSize = CGSizeMake(0, tf.bottom + kMarginWide);
+        
+        [tf ax_addEditingEndOnExitHandler:^(__kindof UITextField * _Nonnull sender) {
+            UITextField *tf2 = [scroll viewWithTag:sender.tag+1];
+            if (tf2) {
+                [tf2 becomeFirstResponder];
+            }
+        }];
     }
     
+    [scroll ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+        [self.view endEditing:YES];
+    }];
     
 }
 
@@ -39,5 +55,9 @@
     [self.view endEditing:YES];
 }
 
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.view endEditing:YES];
+}
 
 @end

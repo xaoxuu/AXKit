@@ -36,6 +36,11 @@
                     "title":"处理键盘遮挡",
                     "desc":"",
                     "target":"KeyboardVC",
+                },
+                {
+                    "title":"阴影",
+                    "desc":"",
+                    "target":"ShadowVC",
                 }
             ]
         }

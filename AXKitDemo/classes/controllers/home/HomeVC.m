@@ -8,7 +8,7 @@
 
 #import "HomeVC.h"
 
-@interface HomeVC ()<CacheServiceDelegate>
+@interface HomeVC ()
 
 @end
 
@@ -17,57 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.frame = CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight-kTabBarHeight);
-    
-    [services.alert registerDelegate:self];
-    
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    view.backgroundColor = [UIColor yellowColor];
-
-    [view.layer ax_cornerRadius:30 shadow:LayerShadowDownFloat];
-    
-    [self.view addSubview:view];
-    
-    
-    
-    /*
-    UIImage *image;
-    UIImageView *avatar;
-    
-    
-    // @xaoxuu: 将用户头像缓存到userdefault
-    [NSUserDefaults ax_setData:UIImagePNGRepresentation(image) forKey:@"avatar"];
-    // @xaoxuu: 从userdefault读取图片
-    [NSUserDefaults ax_readDataForKey:@"avatar" completion:^(NSData * _Nonnull data) {
-        // @xaoxuu: 读取到值
-        UIImage *image = [UIImage imageWithData:data];
-        avatar.image = image;
-    } fail:^(NSError * _Nonnull error) {
-        // @xaoxuu: 读取不到值
-        AXLogError(error);
-    }];
-    */
-    /*
-    UIView *view;
-    UILabel *lb;
-    
-    
-    view.backgroundColor = axColor.theme;
-    if (axColor.theme.isLightColor) {
-        lb.textColor = axColor.theme.dark;
-    } else {
-        lb.textColor = axColor.white;
-    }
-     */
-    /*
-    UIActivityIndicatorView *indicator = [UIActivityIndicatorView defaultIndicator];
-    // @xaoxuu: 显示到self.view中心
-    indicator.show(self.view);
-    // @xaoxuu: 隐藏
-    indicator.hide();
-    */
-    
     
     
     

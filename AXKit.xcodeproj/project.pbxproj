@@ -162,6 +162,8 @@
 		CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */; };
 		CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEC91EC0C041001A5787 /* Setting.xcassets */; };
 		CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF931EEF806900408BAD /* KeyboardVC.m */; };
+		CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF971EEF900400408BAD /* ShadowVC.m */; };
+		CD79DF9A1EEF900400408BAD /* ShadowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD79DF981EEF900400408BAD /* ShadowVC.xib */; };
 		CD7AA7281EC85F6000865FC9 /* CacheDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7AA7271EC85F6000865FC9 /* CacheDataAccess.m */; };
 		CD88D1A71ECF30AD004FC692 /* BlogListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A61ECF30AD004FC692 /* BlogListModel.m */; };
 		CD88D1AA1ECF30B6004FC692 /* BlogContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A91ECF30B6004FC692 /* BlogContentModel.m */; };
@@ -508,6 +510,9 @@
 		CD77FEC91EC0C041001A5787 /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
 		CD79DF921EEF806900408BAD /* KeyboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardVC.h; sourceTree = "<group>"; };
 		CD79DF931EEF806900408BAD /* KeyboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardVC.m; sourceTree = "<group>"; };
+		CD79DF961EEF900400408BAD /* ShadowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowVC.h; sourceTree = "<group>"; };
+		CD79DF971EEF900400408BAD /* ShadowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowVC.m; sourceTree = "<group>"; };
+		CD79DF981EEF900400408BAD /* ShadowVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShadowVC.xib; sourceTree = "<group>"; };
 		CD7AA7261EC85F6000865FC9 /* CacheDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheDataAccess.h; sourceTree = "<group>"; };
 		CD7AA7271EC85F6000865FC9 /* CacheDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheDataAccess.m; sourceTree = "<group>"; };
 		CD88D1A51ECF30AD004FC692 /* BlogListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogListModel.h; sourceTree = "<group>"; };
@@ -883,6 +888,7 @@
 				CD5745101EDADE510014E833 /* DebugTV.m */,
 				CD5745111EDADE510014E833 /* DebugVC.h */,
 				CD5745121EDADE510014E833 /* DebugVC.m */,
+				CD79DF951EEF8FE900408BAD /* shadow */,
 				CD79DF911EEF805E00408BAD /* keyboard */,
 				CD54981E1EE1964500748C22 /* testFrame */,
 				CD5745141EDADE510014E833 /* email */,
@@ -1351,6 +1357,16 @@
 			path = keyboard;
 			sourceTree = "<group>";
 		};
+		CD79DF951EEF8FE900408BAD /* shadow */ = {
+			isa = PBXGroup;
+			children = (
+				CD79DF961EEF900400408BAD /* ShadowVC.h */,
+				CD79DF971EEF900400408BAD /* ShadowVC.m */,
+				CD79DF981EEF900400408BAD /* ShadowVC.xib */,
+			);
+			path = shadow;
+			sourceTree = "<group>";
+		};
 		CD88D1A11ECF3065004FC692 /* BlogModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1772,6 +1788,7 @@
 				CD5745901EDADE510014E833 /* AboutTableView.json in Resources */,
 				CD5746211EDC6DA10014E833 /* header.gif in Resources */,
 				CD5498231EE1965900748C22 /* TestFrameVC.xib in Resources */,
+				CD79DF9A1EEF900400408BAD /* ShadowVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1902,6 +1919,7 @@
 				CD2385F81EC0C5BA007AB90B /* AppServices.m in Sources */,
 				CD0B62ED1EC454DF0024F25E /* AssetsDataAccess.m in Sources */,
 				CD5744F41EDAAD710014E833 /* MJRefreshBackNormalFooter.m in Sources */,
+				CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */,
 				CD5745B71EDADE510014E833 /* ThemeColorModel.m in Sources */,
 				CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */,
 				CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */,
