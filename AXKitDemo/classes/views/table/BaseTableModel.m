@@ -17,7 +17,7 @@
         _title = @"";
         _desc = @"";
         _icon = @"";
-        _target = @"default";
+        _target = @"";
         self.cmd = @"";
     }
     return self;
