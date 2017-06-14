@@ -84,9 +84,9 @@ static NSString *txt   = @"txt";
     NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:self];
     if (!path.length) {
         if ([self containsString:@"."]) {
-            AXLogFail(@"path not found.");
+            AXLogFailure(@"path not found.");
         } else{
-            AXLogFail(@"path not found, please append the file's extension.");
+            AXLogFailure(@"path not found, please append the file's extension.");
         }
     }
     return path;
@@ -190,7 +190,7 @@ static NSString *txt   = @"txt";
        completion:(void (^)())completion{
     BOOL result = (BOOL)file;
     if (!result) {
-        AXLogFail(@"nothing to save.");
+        AXLogFailure(@"nothing to save.");
         return NO;
     }
     
@@ -201,14 +201,14 @@ static NSString *txt   = @"txt";
     NSString *dir = path.stringByDeletingLastPathComponent;
     result = [fm createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
     if (!result) {
-        AXLogFail(@"can not create the directory at path %@",dir);
+        AXLogFailure(@"can not create the directory at path %@",dir);
         return NO;
     }
     
     // create file if not exist
     result = [fm createFileAtPath:path contents:nil attributes:nil];
     if (!result) {
-        AXLogFail(@"can not create the file at path %@",path);
+        AXLogFailure(@"can not create the file at path %@",path);
         return NO;
     }
     
@@ -218,7 +218,7 @@ static NSString *txt   = @"txt";
         NSString *strFile = (NSString *)file;
         result = [strFile writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
         if (!result) {
-            AXLogFail(@"save string fail, path:[%@]",path);
+            AXLogFailure(@"save string fail, path:[%@]",path);
             return NO;
         }
     }
@@ -227,7 +227,7 @@ static NSString *txt   = @"txt";
         NSArray *arrFile = (NSArray *)file;
         result = [arrFile writeToFile:path atomically:YES];
         if (!result) {
-            AXLogFail(@"save array fail, path:[%@]",path);
+            AXLogFailure(@"save array fail, path:[%@]",path);
             return NO;
         }
     }
@@ -236,7 +236,7 @@ static NSString *txt   = @"txt";
         NSDictionary *dictFile = (NSDictionary *)file;
         result = [dictFile writeToFile:path atomically:YES];
         if (!result) {
-            AXLogFail(@"save dictionary fail, path:[%@]",path);
+            AXLogFailure(@"save dictionary fail, path:[%@]",path);
             return NO;
         }
     }
@@ -245,7 +245,7 @@ static NSString *txt   = @"txt";
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:file];
         result = [data writeToFile:path atomically:YES];
         if (!result) {
-            AXLogFail(@"save archived file fail, path:[%@]",path);
+            AXLogFailure(@"save archived file fail, path:[%@]",path);
             return NO;
         }
     }
@@ -262,7 +262,7 @@ static NSString *txt   = @"txt";
                completion:(void (^)())completion{
     BOOL result = (BOOL)file;
     if (!result) {
-        AXLogFail(@"nothing to save.");
+        AXLogFailure(@"nothing to save.");
         return NO;
     }
     
@@ -273,14 +273,14 @@ static NSString *txt   = @"txt";
     NSString *dir = path.stringByDeletingLastPathComponent;
     result = [fm createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
     if (!result) {
-        AXLogFail(@"can not create the directory at path %@",dir);
+        AXLogFailure(@"can not create the directory at path %@",dir);
         return NO;
     }
     
     // create file if not exist
     result = [fm createFileAtPath:path contents:nil attributes:nil];
     if (!result) {
-        AXLogFail(@"can not create the file at path %@",path);
+        AXLogFailure(@"can not create the file at path %@",path);
         return NO;
     }
     
@@ -288,7 +288,7 @@ static NSString *txt   = @"txt";
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:file];
     result = [data writeToFile:path atomically:YES];
     if (!result) {
-        AXLogFail(@"save archived file fail, path:[%@]",path);
+        AXLogFailure(@"save archived file failure, path:[%@]",path);
         return NO;
     }
     
@@ -304,7 +304,7 @@ static NSString *txt   = @"txt";
                      completion:(void (^)())completion{
     NSFileManager *fm = [NSFileManager defaultManager];
     BOOL result = [fm removeItemAtPath:self.extension(extension) error:nil];
-    if (!result) AXLogFail(@"remove fail.");
+    if (!result) AXLogFailure(@"remove failure.");
     if (completion) {
         completion();
     }

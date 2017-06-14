@@ -30,7 +30,7 @@
 // 警告信息
 #define AXLogWarning(format, ...) NSLog((@"\n➤ func:%s" " line:%d" "\n⚠️warning: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 // 失败信息
-#define AXLogFail(format, ...) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define AXLogFailure(format, ...) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: " format "\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
 // error详情
 #define AXLogError(NSError) NSLog((@"\n➤ func:%s " "line:%d" "\n🔴error: \n%@" "\n\n"), __FUNCTION__, __LINE__, NSError.description)
 
@@ -77,7 +77,7 @@
 #define AXLogBOOL(BOOL)
 #define AXLogSuccess(format, ...)
 #define AXLogWarning(format, ...)
-#define AXLogFail(format, ...)
+#define AXLogFailure(format, ...)
 #define AXLogError(NSError)
 // ======== ======== 对象和指针 ======== ========
 // obj macro

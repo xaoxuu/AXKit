@@ -69,6 +69,7 @@ static NSArray<NSString *> *footerArray;
     [services.alert alertForConfirmTheme:tmp message:msg completion:^{
         axColor.theme = tmp;
         [services.app applyTheme];
+        [axColor saveCurrentTheme];
         if (completion) {
             completion();
         }

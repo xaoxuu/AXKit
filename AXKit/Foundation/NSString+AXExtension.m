@@ -53,7 +53,7 @@ inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
 
 
 
-inline void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^fail)(NSError *error)){
+inline void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^failure)(NSError *error)){
     if (!completion) {
         return;
     }
@@ -62,11 +62,11 @@ inline void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVers
     NSUInteger maxCount = MAX(thisVersionArr.count, anotherVersionArr.count);
     
     if (!thisVersionArr.count || !anotherVersionArr.count) {
-        if (fail) {
+        if (failure) {
             NSError *error = [NSError axkit_errorWithCode:0 reason:^NSString * _Nonnull{
                 return @"invalid version string.";
             }];
-            fail(error);
+            failure(error);
         }
         return;
     }

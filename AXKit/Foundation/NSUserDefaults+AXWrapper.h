@@ -27,9 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取BOOL值
@@ -85,9 +85,9 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取NSString值（不推荐）
@@ -102,9 +102,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取字符串数组（不推荐）
@@ -119,9 +119,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *array))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *array))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取NSArray值（不推荐）
@@ -136,9 +136,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取NSDictionary值（不推荐）
@@ -153,9 +153,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取若干字符串值，并组装成NSDictionary
@@ -178,9 +178,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion failure:(void (^)(NSError *error))failure;
 
 
 /**
@@ -196,9 +196,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage *image))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage *image))completion failure:(void (^)(NSError *error))failure;
 
 #pragma mark - write
 

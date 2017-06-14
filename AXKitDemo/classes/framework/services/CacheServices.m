@@ -62,7 +62,7 @@ static NSString *key_about = @"AboutTableView";
             [self cacheList];
         }];
     } fail:^{
-        AXLogFail(@"%@ 缓存失败",key);
+        AXLogFailure(@"%@ 缓存失败",key);
     }];
 }
 
@@ -71,7 +71,7 @@ static NSString *key_about = @"AboutTableView";
         AXLogSuccess(@"%@ 已清除缓存",key);
         [self asyncCalculateCache];
     } fail:^{
-        AXLogFail(@"%@ 清除缓存失败",key);
+        AXLogFailure(@"%@ 清除缓存失败",key);
     }];
 }
 

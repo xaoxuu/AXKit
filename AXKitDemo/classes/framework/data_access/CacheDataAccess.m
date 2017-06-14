@@ -126,7 +126,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
             if (path.remove) {
                 // @xaoxuu: 已清除缓存
             } else {
-                AXLogFail(@"缓存清除失败:<%@>",path.lastPathComponent);
+                AXLogFailure(@"缓存清除失败:<%@>",path.lastPathComponent);
             }
         }
         [NSBlockOperation ax_delay:0 performInMainQueue:^{

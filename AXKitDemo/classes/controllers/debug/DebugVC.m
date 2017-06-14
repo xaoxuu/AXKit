@@ -19,7 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+//    [[UIThemeManager new] configTheme:^(UIThemeColorModel *color) {
+//        color.background = nil;
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

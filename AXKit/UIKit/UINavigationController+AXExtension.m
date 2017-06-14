@@ -57,13 +57,13 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
 - (void)ax_pushViewControllerNamed:(NSString *)vcName{
     [self ax_pushViewControllerNamed:vcName animated:YES completion:^(UIViewController * _Nonnull targetVC) {
         // @xaoxuu: do nothing.
-    } fail:^(NSError * _Nonnull error) {
+    } failure:^(NSError * _Nonnull error) {
         // @xaoxuu: do nothing.
     }];
 }
 
 
-- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion fail:(void (^)(NSError *error))fail{
+- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion failure:(void (^)(NSError *error))failure{
     UIViewController *vc = [[NSClassFromString(vcName) class] new];
     if (vc) {
         [self pushViewController:vc animated:animated];
@@ -75,8 +75,8 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
             return [NSString stringWithFormat:@"The targetVC named: \'%@\' not found.\n",vcName];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }

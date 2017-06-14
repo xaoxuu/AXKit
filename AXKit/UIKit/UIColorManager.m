@@ -17,50 +17,18 @@ UIColorManager *axColor = nil;
 #define CACHE_COLOR_ACCENT @"CACHE_COLOR_ACCENT"
 #define CACHE_COLOR_BG @"CACHE_COLOR_BG"
 
-@implementation UIColorManager
 
-#pragma mark - color tool
+@implementation UIThemeColorModel
 
-
-- (void)setupDefaultColorConfigurationTheme:(UIColor *(^)())theme accent:(UIColor *(^)())accent background:(UIColor *(^)())background{
-    if (theme) {
-        [NSUserDefaults ax_readStringForKey:CACHE_COLOR_THEME completion:^(NSString * _Nonnull string) {
-            self.theme = [UIColor colorWithHexString:string];
-        } fail:^(NSError * _Nonnull error) {
-            self.theme = theme() ?: [UIColor md_blue];
-        }];
+- (instancetype)init{
+    if (self = [super init]) {
+        _groupTableViewBackground = [UIColor groupTableViewBackgroundColor].light;
+        _separatorColor = _groupTableViewBackground.darkRatio(0.08);
+        
     }
-    if (accent) {
-        [NSUserDefaults ax_readStringForKey:CACHE_COLOR_ACCENT completion:^(NSString * _Nonnull string) {
-            self.accent = [UIColor colorWithHexString:string];
-        } fail:^(NSError * _Nonnull error) {
-            self.accent = accent() ?: [UIColor md_orange];
-        }];
-    }
-    if (background) {
-        [NSUserDefaults ax_readStringForKey:CACHE_COLOR_BG completion:^(NSString * _Nonnull string) {
-            self.background = [UIColor colorWithHexString:string];
-        } fail:^(NSError * _Nonnull error) {
-            self.background = background() ?: [UIColor whiteColor];
-        }];
-    }
+    return self;
 }
 
-
-- (void)setTheme:(UIColor *)theme{
-    _theme = theme;
-    [NSUserDefaults ax_setString:self.theme.hexString forKey:CACHE_COLOR_THEME];
-}
-
-- (void)setAccent:(UIColor *)accent{
-    _accent = accent;
-    [NSUserDefaults ax_setString:self.accent.hexString forKey:CACHE_COLOR_ACCENT];
-}
-
-- (void)setBackground:(UIColor *)background{
-    _background = background;
-    [NSUserDefaults ax_setString:self.background.hexString forKey:CACHE_COLOR_BG];
-}
 
 #pragma mark - system color
 
@@ -83,6 +51,43 @@ UIColorManager *axColor = nil;
     return [UIColor clearColor];
 }
 
+
+@end
+
+
+
+@implementation UIColorManager
+
+#pragma mark - color tool
+
+- (void)configDefaultTheme:(void (^)(UIThemeColorModel * _Nonnull))defaultTheme{
+    if (defaultTheme) {
+        defaultTheme(self);
+    }
+    [NSUserDefaults ax_readStringForKey:CACHE_COLOR_THEME completion:^(NSString * _Nonnull string) {
+        self.theme = [UIColor colorWithHexString:string];
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+    [NSUserDefaults ax_readStringForKey:CACHE_COLOR_ACCENT completion:^(NSString * _Nonnull string) {
+        self.accent = [UIColor colorWithHexString:string];
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+    [NSUserDefaults ax_readStringForKey:CACHE_COLOR_BG completion:^(NSString * _Nonnull string) {
+        self.background = [UIColor colorWithHexString:string];
+    } failure:^(NSError * _Nonnull error) {
+        
+    }];
+    
+}
+
+
+- (void)saveCurrentTheme{
+    [NSUserDefaults ax_setString:self.theme.hexString forKey:CACHE_COLOR_THEME];
+    [NSUserDefaults ax_setString:self.accent.hexString forKey:CACHE_COLOR_ACCENT];
+    [NSUserDefaults ax_setString:self.background.hexString forKey:CACHE_COLOR_BG];
+}
 
 
 #pragma mark - life circle
@@ -107,7 +112,7 @@ UIColorManager *axColor = nil;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             if (!axColor) {
-                axColor = [[UIColorManager alloc]init];
+                axColor = [[self alloc] init];
             }
         });
     }
@@ -129,27 +134,12 @@ UIColorManager *axColor = nil;
 
 // init
 - (instancetype)init{
-    if (!axColor){
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            if (!axColor){
-                axColor = [[UIColorManager alloc] init];
-            }
-        });
+    if (self = [super init]) {
+        
     }
     
     // init
-//    [self setupDefaultColorConfigurationTheme:nil accent:nil background:nil];
-//    [self setupDefaultColorConfigurationTheme:^UIColor * _Nonnull{
-//        return nil;
-//    } accent:^UIColor * _Nonnull{
-//        return nil;
-//    } background:^UIColor * _Nonnull{
-//        return nil;
-//    }];
     
-    _groupTableViewBackground = [UIColor groupTableViewBackgroundColor].light;
-    _separatorColor = _groupTableViewBackground.darkRatio(0.08);
     
     return axColor;
     
@@ -181,8 +171,4 @@ UIColorManager *axColor = nil;
 }
 
 @end
-
-
-
-
 

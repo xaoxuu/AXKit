@@ -33,7 +33,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() objectForKey:key];
 }
 
-+ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion fail:(void (^)(NSError *error))fail{
++ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion failure:(void (^)(NSError *error))failure{
     id obj = [self ax_readObjectForKey:key];
     if (obj) {
         if (completion) {
@@ -44,8 +44,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The object for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
@@ -74,7 +74,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() dataForKey:key];
 }
 
-+ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion fail:(void (^)(NSError *error))fail{
++ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion failure:(void (^)(NSError *error))failure{
     NSData *data = [self ax_readDataForKey:key];
     if (data) {
         if (completion) {
@@ -85,8 +85,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The data for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
@@ -95,7 +95,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() stringForKey:key];
 }
 
-+ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion fail:(void (^)(NSError *error))fail{
++ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion failure:(void (^)(NSError *error))failure{
     NSString *string = [self ax_readStringForKey:key];
     if (string) {
         if (completion) {
@@ -106,8 +106,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The string for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
@@ -116,7 +116,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() stringArrayForKey:key];
 }
 
-+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *string))completion fail:(void (^)(NSError *error))fail{
++ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *string))completion failure:(void (^)(NSError *error))failure{
     NSArray<NSString *> *stringArray = [self ax_readStringArrayForKey:key];
     if (stringArray) {
         if (completion) {
@@ -127,8 +127,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The array for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
@@ -137,7 +137,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() arrayForKey:key];
 }
 
-+ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion fail:(void (^)(NSError *error))fail{
++ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion failure:(void (^)(NSError *error))failure{
     NSArray *array = [self ax_readArrayForKey:key];
     if (array) {
         if (completion) {
@@ -148,8 +148,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The array for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
@@ -158,7 +158,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [DefaultUser() dictionaryForKey:key];
 }
 
-+ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion fail:(void (^)(NSError *error))fail{
++ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion failure:(void (^)(NSError *error))failure{
     NSDictionary *dictionary = [self ax_readDictionaryForKey:key];
     if (dictionary) {
         if (completion) {
@@ -169,8 +169,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The dictionary for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
@@ -184,7 +184,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 
-+ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion fail:(void (^)(NSError *error))fail{
++ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion failure:(void (^)(NSError *error))failure{
     NSURL *url = [self ax_readURLForKey:key];
     if (url) {
         if (completion) {
@@ -195,8 +195,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The url for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
@@ -206,7 +206,7 @@ static inline NSUserDefaults *DefaultUser(){
     return [UIImage imageWithData:data];
 }
 
-+ (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage * _Nonnull))completion fail:(void (^)(NSError * _Nonnull))fail{
++ (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage * _Nonnull))completion failure:(void (^)(NSError * _Nonnull))failure{
     NSData *data = [self ax_readDataForKey:key];
     if (data) {
         if (completion) {
@@ -217,8 +217,8 @@ static inline NSUserDefaults *DefaultUser(){
             return [NSString stringWithFormat:@"The image for key: \'%@\' not found.\n",key];
         }];
         AXLogError(error);
-        if (fail && error) {
-            fail(error);
+        if (failure && error) {
+            failure(error);
         }
     }
 }
