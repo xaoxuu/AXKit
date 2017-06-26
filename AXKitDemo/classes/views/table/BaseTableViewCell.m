@@ -65,7 +65,7 @@
     } else {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.accessoryType = UITableViewCellAccessoryNone;
-        self.lb_detail.right -= 8;
+        self.lb_detail.right = self.width - 16;
     }
     
     
