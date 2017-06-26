@@ -10,6 +10,7 @@
 #import "CoreGraphics+AXExtension.h"
 #import "UIView+AXFrameExtension.h"
 #import "NSOperation+AXExtension.h"
+#import "_AXKitBundle.h"
 
 static NSTimeInterval indicatorTimeout = 30;
 
@@ -28,7 +29,7 @@ static NSTimeInterval indicatorTimeout = 30;
     UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0.5*kScreenW, 16)];
     lb.font = [UIFont systemFontOfSize:11];
     lb.textColor = [UIColor lightGrayColor];
-    lb.text = NSLocalizedString(@"LOADING", nil);
+    lb.text = NSLocalizedStringFromAXKit(@"LOADING");
     lb.textAlignment = NSTextAlignmentCenter;
     lb.top = indicator.height + 4;
     lb.centerX = indicator.boundsCenterX;

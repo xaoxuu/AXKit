@@ -8,26 +8,27 @@
 
 #import "UIAlertController+AXWrapper.h"
 #import "UIResponder+AXExtension.h"
+#import "_AXKitBundle.h"
 
 // @xaoxuu: Cancel
 inline NSString *kStringCancel(){
-    return NSLocalizedString(@"Cancel", nil);
+    return NSLocalizedStringFromAXKit(@"Cancel");
 }
 // @xaoxuu: OK
 inline NSString *kStringOK(){
-    return NSLocalizedString(@"OK", nil);
+    return NSLocalizedStringFromAXKit(@"OK");
 }
 // @xaoxuu: Confirm
 inline NSString *kStringConfirm(){
-    return NSLocalizedString(@"Confirm", nil);
+    return NSLocalizedStringFromAXKit(@"Confirm");
 }
 // @xaoxuu: Help
 inline NSString *kStringHelp(){
-    return NSLocalizedString(@"Help", nil);
+    return NSLocalizedStringFromAXKit(@"Help");
 }
 
 inline NSString *kStringError(){
-    return NSLocalizedString(@"Error", nil);
+    return NSLocalizedStringFromAXKit(@"Error");
 }
 
 @implementation UIAlertController (AXWrapper)

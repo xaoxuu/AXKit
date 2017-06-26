@@ -24,7 +24,6 @@
 		16DA2697365C05CC1F4CC264 /* libPods-AXKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D36335E66790626BD9FC9F58 /* libPods-AXKitDemo.a */; };
 		8579EEFF1E6BEDF900C33881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8579EEFE1E6BEDF900C33881 /* main.m */; };
 		8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8579EF011E6BEDF900C33881 /* AppDelegate.m */; };
-		8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8579EF091E6BEDF900C33881 /* Assets.xcassets */; };
 		8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */; };
 		8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8579EF1B1E6BEE4F00C33881 /* AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8579EF201E6BEE4F00C33881 /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
@@ -40,6 +39,12 @@
 		CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F01EC45E100024F25E /* BaseButton.m */; };
 		CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F61EC45E650024F25E /* AccentBgButton.m */; };
 		CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F91EC45E790024F25E /* ThemeBgButton.m */; };
+		CD149E251F0105D4007051CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E221F0105D4007051CE /* Assets.xcassets */; };
+		CD149E261F0105D4007051CE /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E231F0105D4007051CE /* Setting.xcassets */; };
+		CD149E271F0105D4007051CE /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E241F0105D4007051CE /* tmp.xcassets */; };
+		CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = CD149E281F01080A007051CE /* _AXKitBundle.h */; };
+		CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD149E291F01080A007051CE /* _AXKitBundle.m */; };
+		CD149E2D1F010AD8007051CE /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
 		CD2385F81EC0C5BA007AB90B /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2385F71EC0C5BA007AB90B /* AppServices.m */; };
 		CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386021EC0CF0F007AB90B /* appinfo.json */; };
 		CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386041EC0D25D007AB90B /* tabbar_controllers.json */; };
@@ -57,7 +62,6 @@
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
-		CD3DE85E1ED715C4004C1492 /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3DE85D1ED715C4004C1492 /* tmp.xcassets */; };
 		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
 		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -160,7 +164,6 @@
 		CD77FEBB1EBF6805001A5787 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEBA1EBF6805001A5787 /* BaseTableView.m */; };
 		CD77FEBF1EBF681E001A5787 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */; };
 		CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */; };
-		CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD77FEC91EC0C041001A5787 /* Setting.xcassets */; };
 		CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF931EEF806900408BAD /* KeyboardVC.m */; };
 		CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF971EEF900400408BAD /* ShadowVC.m */; };
 		CD79DF9A1EEF900400408BAD /* ShadowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD79DF981EEF900400408BAD /* ShadowVC.xib */; };
@@ -288,7 +291,6 @@
 		8579EEFE1E6BEDF900C33881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8579EF001E6BEDF900C33881 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8579EF011E6BEDF900C33881 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8579EF091E6BEDF900C33881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8579EF0C1E6BEDF900C33881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8579EF0E1E6BEDF900C33881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8579EF191E6BEE4F00C33881 /* AXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +315,12 @@
 		CD0B62F61EC45E650024F25E /* AccentBgButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccentBgButton.m; sourceTree = "<group>"; };
 		CD0B62F81EC45E790024F25E /* ThemeBgButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeBgButton.h; sourceTree = "<group>"; };
 		CD0B62F91EC45E790024F25E /* ThemeBgButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeBgButton.m; sourceTree = "<group>"; };
+		CD149E221F0105D4007051CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD149E231F0105D4007051CE /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
+		CD149E241F0105D4007051CE /* tmp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = tmp.xcassets; sourceTree = "<group>"; };
+		CD149E281F01080A007051CE /* _AXKitBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AXKitBundle.h; sourceTree = "<group>"; };
+		CD149E291F01080A007051CE /* _AXKitBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AXKitBundle.m; sourceTree = "<group>"; };
+		CD149E2C1F010AD8007051CE /* AXKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXKit.bundle; sourceTree = "<group>"; };
 		CD2385F61EC0C5BA007AB90B /* AppServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServices.h; sourceTree = "<group>"; };
 		CD2385F71EC0C5BA007AB90B /* AppServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServices.m; sourceTree = "<group>"; };
 		CD2386021EC0CF0F007AB90B /* appinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appinfo.json; sourceTree = "<group>"; };
@@ -335,7 +343,6 @@
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
-		CD3DE85D1ED715C4004C1492 /* tmp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = tmp.xcassets; sourceTree = "<group>"; };
 		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
 		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
 		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
@@ -513,7 +520,6 @@
 		CD77FEBC1EBF681E001A5787 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		CD77FEBD1EBF681E001A5787 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		CD77FEBE1EBF681E001A5787 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
-		CD77FEC91EC0C041001A5787 /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
 		CD79DF921EEF806900408BAD /* KeyboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardVC.h; sourceTree = "<group>"; };
 		CD79DF931EEF806900408BAD /* KeyboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardVC.m; sourceTree = "<group>"; };
 		CD79DF961EEF900400408BAD /* ShadowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowVC.h; sourceTree = "<group>"; };
@@ -714,10 +720,10 @@
 				8579EF001E6BEDF900C33881 /* AppDelegate.h */,
 				8579EF011E6BEDF900C33881 /* AppDelegate.m */,
 				CD0645C71EB3AC96007FBF06 /* PrefixHeader.pch */,
+				CD149E221F0105D4007051CE /* Assets.xcassets */,
+				CD149E231F0105D4007051CE /* Setting.xcassets */,
+				CD149E241F0105D4007051CE /* tmp.xcassets */,
 				CD0645A51EB3A3DF007FBF06 /* Localizable.strings */,
-				8579EF091E6BEDF900C33881 /* Assets.xcassets */,
-				CD3DE85D1ED715C4004C1492 /* tmp.xcassets */,
-				CD77FEC91EC0C041001A5787 /* Setting.xcassets */,
 				8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */,
 				8579EF0E1E6BEDF900C33881 /* Info.plist */,
 				8579EEFD1E6BEDF900C33881 /* Supporting Files */,
@@ -741,6 +747,7 @@
 				CDAB58DB1E6BF1810017CA1E /* Foundation */,
 				CDAB58DC1E6BF1810017CA1E /* UIKit */,
 				8579EF1C1E6BEE4F00C33881 /* Info.plist */,
+				CD149E2C1F010AD8007051CE /* AXKit.bundle */,
 			);
 			path = AXKit;
 			sourceTree = "<group>";
@@ -1161,6 +1168,8 @@
 				CD5745FD1EDAE9B80014E833 /* _AXEventTarget.m */,
 				CD5745FE1EDAE9B80014E833 /* _AXKitHelpServices.h */,
 				CD5745FF1EDAE9B80014E833 /* _AXKitHelpServices.m */,
+				CD149E281F01080A007051CE /* _AXKitBundle.h */,
+				CD149E291F01080A007051CE /* _AXKitBundle.m */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -1669,6 +1678,7 @@
 				CDAB58F71E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h in Headers */,
 				CDAB590B1E6BF96B0017CA1E /* UIColor+AXExtension.h in Headers */,
 				CDAB58EF1E6BF5A20017CA1E /* NSString+AXExtension.h in Headers */,
+				CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */,
 				CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */,
 				CDAB59371E6BFE170017CA1E /* UIView+AXExtension.h in Headers */,
 				CDAB592B1E6BFD050017CA1E /* UITextView+AXExtension.h in Headers */,
@@ -1808,19 +1818,17 @@
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* footer_rhesis.json in Resources */,
 				CD5745A21EDADE510014E833 /* FontTableViewCell.xib in Resources */,
-				8579EF0A1E6BEDF900C33881 /* Assets.xcassets in Resources */,
 				CDE94E9C1EC709D700596B93 /* ghinfo.json in Resources */,
 				CD57459D1EDADE510014E833 /* CustomTableVC.xib in Resources */,
 				CD57458B1EDADE510014E833 /* DefaultViewController.xib in Resources */,
 				CD5745B31EDADE510014E833 /* SettingTableView.json in Resources */,
 				CD79DFA31EEF918000408BAD /* AlertTV.json in Resources */,
-				CD77FECA1EC0C041001A5787 /* Setting.xcassets in Resources */,
+				CD149E261F0105D4007051CE /* Setting.xcassets in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
 				CD79DFAC1EEFA20200408BAD /* TestTV.json in Resources */,
 				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
 				CD5745B81EDADE510014E833 /* ThemeColorTableView.json in Resources */,
 				CD5745891EDADE510014E833 /* ResizeableImageVC.xib in Resources */,
-				CD3DE85E1ED715C4004C1492 /* tmp.xcassets in Resources */,
 				CD5745801EDADE510014E833 /* DebugTV.json in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */,
@@ -1828,8 +1836,10 @@
 				CD5745AF1EDADE510014E833 /* ProjectsTableView.json in Resources */,
 				CD5744F91EDAAD710014E833 /* MJRefresh.bundle in Resources */,
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
+				CD149E251F0105D4007051CE /* Assets.xcassets in Resources */,
 				CD5745871EDADE510014E833 /* HitTestVC.xib in Resources */,
 				CD5745901EDADE510014E833 /* AboutTableView.json in Resources */,
+				CD149E271F0105D4007051CE /* tmp.xcassets in Resources */,
 				CD5746211EDC6DA10014E833 /* header.gif in Resources */,
 				CD5498231EE1965900748C22 /* TestFrameVC.xib in Resources */,
 				CD79DF9A1EEF900400408BAD /* ShadowVC.xib in Resources */,
@@ -1840,6 +1850,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD149E2D1F010AD8007051CE /* AXKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2065,6 +2076,7 @@
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
 				CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
+				CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */,
 				CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */,
 				CD004D1B1EB2128C00ACC0B8 /* UIImageView+AXExtension.m in Sources */,
 				CD242F4B1EE29DF300C954EC /* NSArray+AXExtension.m in Sources */,
