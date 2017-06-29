@@ -1,6 +1,6 @@
-platform :ios, ‘9.0’
+platform :ios, '9.0'
 
-target ‘AXKitDemo’ do
+target 'AXKitDemo' do
 
 pod 'YYKit'                             
 
