@@ -21,7 +21,6 @@
             row.cmd = blog.html_url;
             [sec.rows addObject:row];
         }
-        sec.header_title = @"test blog";
         dataSource([NSMutableArray arrayWithArray:@[sec]]);
     }];
 }

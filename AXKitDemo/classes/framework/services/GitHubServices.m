@@ -34,7 +34,9 @@
         NSMutableArray<GitHubIssueModel *> *list = [NSMutableArray array];
         for (NSDictionary *dict in dataArr) {
             GitHubIssueModel *model = [GitHubIssueModel modelWithDictionary:dict];
-            [list addObject:model];
+            if (model) {
+                [list addObject:model];
+            }
         }
         if (completion) {
             completion([GitHubIssueListModel modelWithModelItems:list]);
@@ -82,7 +84,10 @@
         NSMutableArray<BlogListModel *> *ret = [NSMutableArray array];
         for (NSDictionary *dataDict in dataArr) {
             BlogListModel *blogs = [BlogListModel modelWithDictionary:dataDict];
-            [ret addObject:blogs];
+            if (blogs) {
+                [ret addObject:blogs];
+            }
+            
         }
         if (completion) {
             completion(ret);
