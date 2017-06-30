@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+/**
+ 更改状态栏背景色
+
+ @param color 颜色
+ */
+CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
+
+
+
 @interface UIColor (AXExtension)
 
 

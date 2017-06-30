@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 读取object值
+ 读取object值（不推荐）
 
  @param key 键
  @return 值
@@ -27,9 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取BOOL值
@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 读取NSData值
+ 读取NSData值（不推荐）
  
  @param key 键
  @return 值
@@ -85,12 +85,12 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion failure:(void (^)(NSError *error))failure;
 
 /**
- 读取NSString值
+ 读取NSString值（不推荐）
  
  @param key 键
  @return 值
@@ -102,12 +102,12 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion failure:(void (^)(NSError *error))failure;
 
 /**
- 读取字符串数组
+ 读取字符串数组（不推荐）
  
  @param key 键
  @return 值
@@ -119,12 +119,12 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *array))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *array))completion failure:(void (^)(NSError *error))failure;
 
 /**
- 读取NSArray值
+ 读取NSArray值（不推荐）
  
  @param key 键
  @return 值
@@ -136,12 +136,12 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion failure:(void (^)(NSError *error))failure;
 
 /**
- 读取NSDictionary值
+ 读取NSDictionary值（不推荐）
  
  @param key 键
  @return 值
@@ -153,9 +153,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion failure:(void (^)(NSError *error))failure;
 
 /**
  读取若干字符串值，并组装成NSDictionary
@@ -166,7 +166,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary<NSString *, id> *)ax_readDictionaryWithValuesForKeys:(NSArray<NSString *> *)keys;
 
 /**
- 读取URL值
+ 读取URL值（不推荐）
  
  @param key 键
  @return 值
@@ -178,11 +178,27 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param key 键
  @param completion 读取成功
- @param fail 读取失败（没有值）
+ @param failure 读取失败（没有值）
  */
-+ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion fail:(void (^)(NSError *error))fail;
++ (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion failure:(void (^)(NSError *error))failure;
 
 
+/**
+ 读取图片（不推荐）
+
+ @param key 键
+ @return 值
+ */
++ (nullable UIImage *)ax_readImageForKey:(NSString *)key;
+
+/**
+ 读取图片（推荐）
+ 
+ @param key 键
+ @param completion 读取成功
+ @param failure 读取失败（没有值）
+ */
++ (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage *image))completion failure:(void (^)(NSError *error))failure;
 
 #pragma mark - write
 
@@ -298,6 +314,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ 保存图片，自带synchronize
+ 
+ @param image 图片
+ @param key 键
+ */
++ (void)ax_setImage:(UIImage *)image forKey:(NSString *)key;
+
+
+/**
  批量保存用户设置，自带synchronize
 
  @param action 批量保存用户设置的block
@@ -365,6 +390,12 @@ NS_ASSUME_NONNULL_BEGIN
  @param key 键
  */
 + (void)ax_removeObjectForKey:(NSString *)key;
+
+
+/**
+ 移除默认的[NSUserDefaults standardUserDefaults]的所有配置
+ */
++ (void)ax_removeDefaultPersistentDomain;
 
 
 @end

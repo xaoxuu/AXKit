@@ -11,52 +11,33 @@ NS_ASSUME_NONNULL_BEGIN
 @class UIColorManager;
 extern UIColorManager *axColor;
 
-@interface UIColorManager : NSObject
-
-#pragma mark - 主题色
-
+#pragma mark - 主题模型
+@interface UIThemeColorModel : NSObject
 
 /**
- 当前app的主题色，set方法会做本地缓存
+ 当前app的主题色
  */
-@property (strong, readwrite, nonatomic) UIColor *theme;
-
+@property (strong, nonatomic) UIColor *theme;
 
 /**
- 当前app的强调色，set方法会做本地缓存
+ 当前app的强调色
  */
-@property (strong, readwrite, nonatomic) UIColor *accent;
-
+@property (strong, nonatomic) UIColor *accent;
 
 /**
- 当前app的背景色，set方法会做本地缓存（一般为白色或很浅的灰色）
+ 当前app的背景色（一般为白色或很浅的灰色）
  */
-@property (strong, readwrite, nonatomic) UIColor *background;
-
-
-#pragma mark - 颜色配置
-
+@property (strong, nonatomic) UIColor *background;
 
 /**
  组tableview背景色
  */
-@property (strong, readwrite, nonatomic) UIColor *groupTableViewBackground;
-
-@property (strong, readwrite, nonatomic) UIColor *separatorColor;
-
-#pragma mark - 颜色工具
-
-
+@property (strong, nonatomic) UIColor *groupTableViewBackground;
 
 /**
- 设置默认的颜色配置（会被新的更改覆盖，一般用在appDelegate中）
-
- @param theme 主题色
- @param accent 强调色
- @param background 背景色
+ 分割线颜色
  */
-- (void)setupDefaultColorConfigurationTheme:(nullable UIColor *(^)())theme accent:(nullable UIColor *(^)())accent background:(nullable UIColor *(^)())background;
-
+@property (strong, nonatomic) UIColor *separatorColor;
 
 #pragma mark - 系统颜色
 
@@ -68,6 +49,25 @@ extern UIColorManager *axColor;
 - (UIColor *)clear;      // 0.0 white, 0.0 alpha
 
 
+@end
+
+#pragma mark - 主题管理
+@interface UIColorManager : UIThemeColorModel
+
+
+/**
+ 设置默认的颜色配置（会被新的更改覆盖，一般用在appDelegate中）
+
+ @param defaultTheme 默认的颜色配置
+ */
+- (void)configDefaultTheme:(void (^)(UIThemeColorModel *color))defaultTheme;
+
+/**
+ 保存当前主题
+ */
+- (void)saveCurrentTheme;
+
+
 
 #pragma mark - life circle
 
@@ -76,5 +76,7 @@ extern UIColorManager *axColor;
 + (instancetype)sharedInstance;
 
 @end
+
+
 
 NS_ASSUME_NONNULL_END

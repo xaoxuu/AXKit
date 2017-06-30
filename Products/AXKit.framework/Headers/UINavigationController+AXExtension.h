@@ -36,9 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param vcName VC的name
  @param animated 是否显示动画
  @param completion 完成后的回调
- @param fail 失败时的错误信息（不存在或者self不属于NavController）
+ @param failure 失败时的错误信息（不存在或者self不属于NavController）
  */
-- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion fail:(void (^)(NSError *error))fail;
+- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion failure:(void (^)(NSError *error))failure;
 
 
 /**

@@ -93,7 +93,17 @@ FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
 
 
-FOUNDATION_EXTERN void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^ _Nullable fail)(NSError *error));
+FOUNDATION_EXTERN void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^ _Nullable failure)(NSError *error));
+
+
+/**
+ 汉字转拼音
+
+ @param chinese 汉字
+ @return 拼音
+ */
+FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
+
 
 
 @interface NSString (AXAppendExtension)

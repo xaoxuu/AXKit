@@ -35,8 +35,8 @@
 
 // @xaoxuu: bundle
 #import "NSBundle+AXExtension.h"
-
-
+// @xaoxuu: array
+#import "NSArray+AXExtension.h"
 
 @interface AXKitFoundationHeader : NSObject
 

@@ -12,6 +12,9 @@
 @interface UITextField (AXExtension)
 
 
+@property (strong, readwrite, nonatomic) UIColor *placeholderColor;
+
+
 /**
  清空文本内容
  */

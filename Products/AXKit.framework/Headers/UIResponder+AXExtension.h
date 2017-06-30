@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  根控制器
 
  @return 根控制器
  */
-FOUNDATION_EXTERN UIViewController *AXRootViewController();
+FOUNDATION_EXTERN UIViewController * _Nullable AXRootViewController();
 
 
 @interface UIResponder (AXExtension)
@@ -25,6 +25,7 @@ FOUNDATION_EXTERN UIViewController *AXRootViewController();
  
  @return 根控制器rootVC
  */
-- (UIViewController *)rootVC;
+- (nullable UIViewController *)rootVC;
 
 @end
+NS_ASSUME_NONNULL_END

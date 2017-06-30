@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define ERROR_DEFAULT_DESCRIPTION @"Operation fail"
+#define ERROR_DEFAULT_DESCRIPTION @"Operation failure"
 #define ERROR_DEFAULT_REASON @"Unknown reason"
 #define ERROR_DEFAULT_SUGGESTION @"You'd better check your code."
 
