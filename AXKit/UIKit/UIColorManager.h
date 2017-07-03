@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 @class UIColorManager;
 extern UIColorManager *axColor;
+
 
 #pragma mark - 主题模型
 @interface UIThemeColorModel : NSObject
@@ -39,6 +41,11 @@ extern UIColorManager *axColor;
  */
 @property (strong, nonatomic) UIColor *separatorColor;
 
+
+@property (strong, nonatomic) UIColor *title;
+@property (strong, nonatomic) UIColor *subTitle;
+
+
 #pragma mark - 系统颜色
 
 - (UIColor *)black;      // 0.0 white
@@ -58,9 +65,9 @@ extern UIColorManager *axColor;
 /**
  设置默认的颜色配置（会被新的更改覆盖，一般用在appDelegate中）
 
- @param defaultTheme 默认的颜色配置
+ @param colorManager 默认的颜色配置
  */
-- (void)configDefaultTheme:(void (^)(UIThemeColorModel *color))defaultTheme;
+- (void)configColorManager:(void (^)(UIColorManager *manager))colorManager;
 
 /**
  保存当前主题
@@ -77,6 +84,16 @@ extern UIColorManager *axColor;
 
 @end
 
+@interface UIColor (UIAdaptiveColor)
 
+
+/**
+ 自适应颜色（取决于主题色的深浅）
+
+ @return 当主题色比较浅时自动加深，用于主题色上的文字显示
+ */
+- (UIColor *)adaptive;
+
+@end
 
 NS_ASSUME_NONNULL_END

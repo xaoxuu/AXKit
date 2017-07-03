@@ -122,7 +122,9 @@ CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
  */
 - (BOOL)isLightColor;
 
+
+
+
+
+
 @end
-
-
-

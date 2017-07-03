@@ -17,16 +17,28 @@ UIColorManager *axColor = nil;
 #define CACHE_COLOR_ACCENT @"CACHE_COLOR_ACCENT"
 #define CACHE_COLOR_BG @"CACHE_COLOR_BG"
 
+static UIColor *static_themeColor;
+
+
 
 @implementation UIThemeColorModel
 
 - (instancetype)init{
     if (self = [super init]) {
+        self.background = [UIColor whiteColor];
+        self.theme = [UIColor md_blue];
+        self.accent = [UIColor md_yellow];
+        
         _groupTableViewBackground = [UIColor groupTableViewBackgroundColor].light;
         _separatorColor = _groupTableViewBackground.darkRatio(0.08);
         
     }
     return self;
+}
+
+- (void)setTheme:(UIColor *)theme{
+    _theme = theme;
+    static_themeColor = theme;
 }
 
 
@@ -60,9 +72,9 @@ UIColorManager *axColor = nil;
 
 #pragma mark - color tool
 
-- (void)configDefaultTheme:(void (^)(UIThemeColorModel * _Nonnull))defaultTheme{
-    if (defaultTheme) {
-        defaultTheme(self);
+- (void)configColorManager:(void (^)(UIColorManager *manager))colorManager{
+    if (colorManager) {
+        colorManager(self);
     }
     [NSUserDefaults ax_readStringForKey:CACHE_COLOR_THEME completion:^(NSString * _Nonnull string) {
         self.theme = [UIColor colorWithHexString:string];
@@ -94,10 +106,10 @@ UIColorManager *axColor = nil;
 
 #pragma mark init
 
-+ (void)load{
-    [super load];
-    [self defaultManager];
-}
+//+ (void)load{
+//    [super load];
+//    [self defaultManager];
+//}
 
 #pragma mark creator
 
@@ -172,3 +184,15 @@ UIColorManager *axColor = nil;
 
 @end
 
+
+@implementation UIColor (UIAdaptiveColor)
+
+- (UIColor *)adaptive{
+    if (static_themeColor.isLightColor) {
+        return self.dark;
+    } else {
+        return self;
+    }
+}
+
+@end
