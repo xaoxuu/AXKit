@@ -37,15 +37,14 @@
 
 # Documentation
 
-**Click here to [read Documentation of AXKit on GitBook](https://docs.axkit.xaoxuu.com)**.
+Click here to [read Documentation of AXKit on GitHub Wiki](https://github.com/xaoxuu/AXKit/wiki).
 
-Or go to author [**@xaoxuu**](http://www.jianshu.com/users/8a50e44f862a/latest_articles) 's  [**AXKit开源框架**](http://www.jianshu.com/notebooks/6236581/latest) subject。
+Or go to author [xaoxuu 's blog](https://blog.xaoxuu.com) 's  [AXKit](https://blog.xaoxuu.com/tags/#AXKit) subject.
 
 
-- [**FileStream chained wrapper, more elegantly access sandbox files**](http://www.jianshu.com/p/6e9f562d81d2)
-
-- [**Get Color from UIImageView**](http://www.jianshu.com/p/829624b5ffe1)
-
+- [FileStream chained wrapper, more elegantly access sandbox files](https://blog.xaoxuu.com/2016/09/12/axkit/)
+- [Get Color from UIImageView](https://blog.xaoxuu.com/2016/09/14/axkit/)
+- [Runtime simple usage: AXKit gesture category implementation](https://blog.xaoxuu.com/2017/04/07/axkit/)
 
 
 
@@ -85,7 +84,6 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 4. 导入头文件 `<AXKit/AXKit.h>` 。
 
 
-
 ### 手动导入
 
 1. 下载所有源码。
@@ -98,16 +96,14 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 
 # 详细使用文档
 
+AXKit的文档发布在 [GitHub Wiki](https://github.com/xaoxuu/AXKit/wiki)。
 
-**AXKit的文档发布在[GitBook](https://docs.axkit.xaoxuu.com)**.
-
-或者去作者[**@xaoxuu**](http://www.jianshu.com/users/8a50e44f862a/latest_articles)的简书[**AXKit开源框架**](http://www.jianshu.com/notebooks/6236581/latest)专题查看。
+或者去作者 [xaoxuu 's blog](https://blog.xaoxuu.com) 的  [AXKit](https://blog.xaoxuu.com/tags/#AXKit) 专题查看。
 
 
-- [**FileStream链式封装，更优雅地存取沙盒文件**](http://www.jianshu.com/p/6e9f562d81d2)
-
-- [**从UIImageView中指定点取色**](http://www.jianshu.com/p/829624b5ffe1)
-
+- [FileStream链式封装，更优雅地存取沙盒文件](https://blog.xaoxuu.com/2016/09/12/axkit/)
+- [从UIImageView中指定点取色](https://blog.xaoxuu.com/2016/09/14/axkit/)
+- [Runtime简单应用：AXKit手势分类实现原理](https://blog.xaoxuu.com/2017/04/07/axkit/)
 
 
 # 许可证
