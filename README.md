@@ -4,7 +4,7 @@
 
 
 
-## Installation
+# Installation
 
 #### CocoaPods
 
@@ -13,7 +13,7 @@
 3. Import `<AXKit/AXKit.h>` .
 
 
-#### Framework
+### Framework
 
 1. Download all the files in the `AXKit` subdirectory.
 2. Add the `AXKit/Products/AXKit.framework` to your Xcode project.
@@ -54,7 +54,7 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 
 
 
-
+<br>
 
 ------
 
