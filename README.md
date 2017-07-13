@@ -21,7 +21,7 @@
 4. Import `<AXKit/AXKit.h>` .
 
 
-#### Manually
+### Manually
 
 1. Download all the files in the `AXKit` subdirectory.
 2. Delete `AXKit/Info.plist` and add the `AXKit/*` to your Xcode project.
@@ -32,7 +32,7 @@
 
 
 
-## Documentation
+# Documentation
 
 Click here to [read Documentation of AXKit on GitHub Wiki](https://github.com/xaoxuu/AXKit/wiki).
 
@@ -46,7 +46,7 @@ Or go to author [xaoxuu 's blog](https://blog.xaoxuu.com) 's  [AXKit](https://bl
 
 
 
-## License
+# License
 
 AXKit is available under the MIT license. See the LICENSE file for more info.
 
@@ -54,20 +54,20 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 
 
 
-<br>
+<br><br><br><br>
 
 ------
 
-## 安装
+# 安装
 
-#### CocoaPods 方式
+### CocoaPods 方式
 
 1. 在Podfile中添加 `pod 'AXKit'` 。
 2. 执行 `pod install` 或者 `pod update` 。
 3. 导入头文件 `<AXKit/AXKit.h>` 。
 
 
-#### 静态库方式
+### 静态库方式
 
 1. 下载所有源码。
 
@@ -80,7 +80,7 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 4. 导入头文件 `<AXKit/AXKit.h>` 。
 
 
-#### 手动导入
+### 手动导入
 
 1. 下载所有源码。
 2. 删除 `AXKit` 文件夹下的 `Info.plist` 文件，并把  `AXKit` 文件夹所有源码拖入项目中。
@@ -89,7 +89,7 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 
 
 
-## 文档
+# 文档
 
 AXKit的文档发布在 [GitHub Wiki](https://github.com/xaoxuu/AXKit/wiki)。
 
@@ -101,7 +101,7 @@ AXKit的文档发布在 [GitHub Wiki](https://github.com/xaoxuu/AXKit/wiki)。
 - [Runtime简单应用：AXKit手势分类实现原理](https://blog.xaoxuu.com/2017/04/07/axkit/)
 
 
-## 许可证
+# 许可证
 
 AXKit 使用 MIT 许可证，详情见 LICENSE 文件。
 
