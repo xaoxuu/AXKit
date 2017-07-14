@@ -10,7 +10,7 @@
 
 @implementation UINavigationItem (AXExtension)
 
-- (void)ax_hideBackBarButtonItem{
+- (void)ax_hideBackBarButtonTitle{
     self.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 

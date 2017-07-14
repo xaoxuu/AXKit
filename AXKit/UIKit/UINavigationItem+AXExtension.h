@@ -10,6 +10,10 @@
 
 @interface UINavigationItem (AXExtension)
 
-- (void)ax_hideBackBarButtonItem;
+
+/**
+ 隐藏返回按钮的标题
+ */
+- (void)ax_hideBackBarButtonTitle;
 
 @end
