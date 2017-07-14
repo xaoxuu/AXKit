@@ -7,11 +7,24 @@
 //
 
 #import "UINavigationItem+AXExtension.h"
+#import "UIBarButtonItem+AXBlockWrapper.h"
 
 @implementation UINavigationItem (AXExtension)
 
+/**
+ 隐藏返回按钮的标题
+ */
 - (void)ax_hideBackBarButtonTitle{
     self.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
+
+
+/**
+ 隐藏返回按钮
+ */
+- (void)ax_hideBackBarButton{
+    self.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
 
 @end

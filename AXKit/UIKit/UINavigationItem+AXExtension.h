@@ -16,4 +16,11 @@
  */
 - (void)ax_hideBackBarButtonTitle;
 
+
+/**
+ 隐藏返回按钮
+ */
+- (void)ax_hideBackBarButton;
+
+
 @end

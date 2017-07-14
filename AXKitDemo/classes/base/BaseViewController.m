@@ -69,8 +69,6 @@
     }
     
     // @xaoxuu: back bar item
-//    self.navigationItem.backBarButtonItem = [UIBarButtonItem ax_itemWithTitle:NSLocalizedString(@"", nil) action:^(id  _Nonnull sender) {
-//    }];
     [self.navigationItem ax_hideBackBarButtonTitle];
     // @xaoxuu: ...
     
