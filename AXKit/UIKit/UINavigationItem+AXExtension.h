@@ -18,7 +18,7 @@
 
 
 /**
- 隐藏返回按钮
+ 隐藏返回按钮（同时也不能右划返回）
  */
 - (void)ax_hideBackBarButton;
 
