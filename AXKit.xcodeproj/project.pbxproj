@@ -228,6 +228,8 @@
 		CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B211EB9E80F00E8ED25 /* NSObject+MJKeyValue.m */; };
 		CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B231EB9E80F00E8ED25 /* NSObject+MJProperty.m */; };
 		CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */; };
+		CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBCEE1E1F18B14500FBB3C7 /* UINavigationItem+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDBCEE211F18B14500FBB3C7 /* UINavigationItem+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBCEE1F1F18B14500FBB3C7 /* UINavigationItem+AXExtension.m */; };
 		CDC1A7851ECFDC63003AAA63 /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7841ECFDC63003AAA63 /* BaseLabel.m */; };
 		CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */; };
 		CDC8CDF51ECC92B7009F855E /* UIAlertController+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC8CDF31ECC92B7009F855E /* UIAlertController+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -607,6 +609,8 @@
 		CDBB3B231EB9E80F00E8ED25 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		CDBB3B241EB9E80F00E8ED25 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		CDBCEE1E1F18B14500FBB3C7 /* UINavigationItem+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+AXExtension.h"; sourceTree = "<group>"; };
+		CDBCEE1F1F18B14500FBB3C7 /* UINavigationItem+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+AXExtension.m"; sourceTree = "<group>"; };
 		CDC1A7831ECFDC63003AAA63 /* BaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
 		CDC1A7841ECFDC63003AAA63 /* BaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
 		CDC1A7861ECFDC98003AAA63 /* NormalLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalLabel.h; sourceTree = "<group>"; };
@@ -1183,6 +1187,8 @@
 				CD23DCA41EC1DD76006E331B /* UINavigationBar+AXExtension.m */,
 				CD23DCA71EC1DDD5006E331B /* UITabBar+AXExtension.h */,
 				CD23DCA81EC1DDD5006E331B /* UITabBar+AXExtension.m */,
+				CDBCEE1E1F18B14500FBB3C7 /* UINavigationItem+AXExtension.h */,
+				CDBCEE1F1F18B14500FBB3C7 /* UINavigationItem+AXExtension.m */,
 			);
 			name = Bar;
 			sourceTree = "<group>";
@@ -1711,6 +1717,7 @@
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
 				CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */,
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
+				CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
@@ -2094,6 +2101,7 @@
 				CDC8CDF61ECC92B7009F855E /* UIAlertController+AXWrapper.m in Sources */,
 				CDAB59081E6BF92F0017CA1E /* UIColor+AXColorPack.m in Sources */,
 				CDAB58E81E6BF37E0017CA1E /* CoreGraphics+AXExtension.m in Sources */,
+				CDBCEE211F18B14500FBB3C7 /* UINavigationItem+AXExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
