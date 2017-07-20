@@ -4,12 +4,9 @@ Pod::Spec.new do |s|
 
   s.name         = "AXKit"
   s.version      = "0.0.12"
-  s.summary      = "系统类的功能扩展和一些常用的控件封装，综合型开发工具包。"
-  s.description  = <<-DESC
-                   系统类的功能扩展和一些常用的控件封装，综合型开发工具包。详情请访问官方主页：http://xaoxuu.com/axkit。
-                   DESC
-  s.homepage     = "http://xaoxuu.com/axkit"
-  s.license      = "MIT"
+  s.summary      = "这是一个综合型开发工具包，包含对系统类的功能扩展和一些常用控件的封装。"
+  s.homepage     = "http://xaoxuu.com"
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "xaoxuu" => "xaoxuu@gmail.com" }
   s.platform     = :ios, "8.0"
   s.ios.deployment_target = '8.0'
