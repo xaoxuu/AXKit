@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.version      = "0.0.12"
   s.summary      = "系统类的功能扩展和一些常用的控件封装，综合型开发工具包。"
   s.description  = <<-DESC
-                   系统类的功能扩展和一些常用的控件封装，综合型开发工具包。详情请访问官方主页：https://axkit.xaoxuu.com。
+                   系统类的功能扩展和一些常用的控件封装，综合型开发工具包。详情请访问官方主页：http://xaoxuu.com/axkit。
                    DESC
   s.homepage     = "http://xaoxuu.com/axkit"
   s.license      = "MIT"
