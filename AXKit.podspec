@@ -3,12 +3,12 @@ Pod::Spec.new do |s|
 # pod trunk push AXKit.podspec
 
   s.name         = "AXKit"
-  s.version      = "0.0.11"
+  s.version      = "0.0.12"
   s.summary      = "系统类的功能扩展和一些常用的控件封装，综合型开发工具包。"
   s.description  = <<-DESC
                    系统类的功能扩展和一些常用的控件封装，综合型开发工具包。详情请访问官方主页：https://axkit.xaoxuu.com。
                    DESC
-  s.homepage     = "https://axkit.xaoxuu.com"
+  s.homepage     = "http://xaoxuu.com/axkit"
   s.license      = "MIT"
   s.author       = { "xaoxuu" => "xaoxuu@gmail.com" }
   s.platform     = :ios, "8.0"
@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
+  s.resources = "AXKit/*.{bundle}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
