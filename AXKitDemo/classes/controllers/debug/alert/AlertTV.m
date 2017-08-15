@@ -23,8 +23,11 @@
         if (row == 0) {
             [UIAlertController ax_showAlertWithTitle:model.title message:nil action:nil];
         } else if (row == 1) {
-            [UIAlertController ax_showAlertWithTitle:model.title message:nil ok:^(UIAlertAction * _Nonnull sender) {
-                AXLogOBJ(sender);
+            [UIAlertController ax_showAlertWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+                [alert ax_addCancelAction];
+                [alert ax_addDefaultActionWithTitle:nil handler:^(UIAlertAction * _Nonnull sender) {
+                    AXLogOBJ(sender);
+                }];
             }];
         } else if (row == 2) {
             [UIAlertController ax_showAlertWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
@@ -65,8 +68,11 @@
         if (row == 0) {
             [UIAlertController ax_showActionSheetWithTitle:model.title message:nil action:nil];
         } else if (row == 1) {
-            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil ok:^(UIAlertAction * _Nonnull sender) {
-                AXLogOBJ(sender);
+            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+                [alert ax_addCancelAction];
+                [alert ax_addDefaultActionWithTitle:nil handler:^(UIAlertAction * _Nonnull sender) {
+                    AXLogOBJ(sender);
+                }];
             }];
         } else if (row == 2) {
             [UIAlertController ax_showActionSheetWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
@@ -91,7 +97,7 @@
             }];
         } else if (row == 4) {
             [UIAlertController ax_showActionSheetWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" action:^(UIAlertController * _Nonnull alert) {
-                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kActionSheetWidth-16, 242-16)];
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kScreenW - 20 -16, 242-16)];
                 view.backgroundColor = [UIColor md_yellow];
                 view.layer.masksToBounds = YES;
                 view.layer.cornerRadius = 8;
