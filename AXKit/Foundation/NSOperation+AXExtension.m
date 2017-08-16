@@ -123,9 +123,9 @@ static AXOperationToken AXDispatchCancellableBlock(dispatch_queue_t queue, NSTim
     BOOL cooling = isCooling(token);
     if (!cooling) {
         setIsCooling(YES, token);
-        [self ax_delay:cooldown performInMainQueue:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(cooldown * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             setIsCooling(NO, token);
-        }];
+        });
         return [self ax_delay:delay queue:queue perform:block];
     }
     return nil;
@@ -135,9 +135,9 @@ static AXOperationToken AXDispatchCancellableBlock(dispatch_queue_t queue, NSTim
     BOOL cooling = isCooling(token);
     if (!cooling) {
         setIsCooling(YES, token);
-        [self ax_delay:cooldown performInMainQueue:^(id  _Nonnull obj) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(cooldown * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             setIsCooling(NO, token);
-        }];
+        });
         return [self ax_delay:delay queue:queue perform:block];
     }
     return nil;

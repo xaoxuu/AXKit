@@ -62,6 +62,8 @@
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
+		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */; };
 		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
 		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -345,6 +347,8 @@
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
+		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
+		CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugHelper.m; sourceTree = "<group>"; };
 		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
 		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
 		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
@@ -1440,6 +1444,8 @@
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */,
+				CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */,
 				CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */,
 				CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */,
 				CD77FE681EBEE62E001A5787 /* NSString */,
@@ -1718,6 +1724,7 @@
 				CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */,
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
 				CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */,
+				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
@@ -2063,6 +2070,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
+				CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,
 				CDCF31131EBB11A4005AC6CD /* NSURL+AXExtension.m in Sources */,
 				CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */,
