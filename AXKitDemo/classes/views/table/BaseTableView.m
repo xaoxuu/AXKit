@@ -126,7 +126,7 @@ static NSTimeInterval loadingTimeout = 20;
                     [self.indicator stopAnimating];
                     if (self.controller && !_dataList.count) {
                         // @xaoxuu: 加载失败，请确认数据源是否正确
-                        [UIAlertController ax_showAlertWithTitle:kStringLoadFail() message:kStringPleaseConfirmDataSourceCorrect() action:^(UIAlertController * _Nonnull alert) {
+                        [UIAlertController ax_showAlertWithTitle:kStringLoadFail() message:kStringPleaseConfirmDataSourceCorrect() actions:^(UIAlertController * _Nonnull alert) {
                             [alert ax_addCancelAction];
                             [alert ax_addDefaultActionWithTitle:kStringHelp() handler:^(UIAlertAction * _Nonnull sender) {
                                 
@@ -140,7 +140,7 @@ static NSTimeInterval loadingTimeout = 20;
             if (!_dataList.count) {
                 [self.indicator stopAnimating];
                 // @xaoxuu: 加载失败，请实现数据源协议
-                [UIAlertController ax_showAlertWithTitle:kStringLoadFail() message:kStringPleaseImplementDataSource(kNSStringFromSelfClass) action:nil];
+                [UIAlertController ax_showAlertWithTitle:kStringLoadFail() message:kStringPleaseImplementDataSource(kNSStringFromSelfClass) actions:nil];
             }
         }
         

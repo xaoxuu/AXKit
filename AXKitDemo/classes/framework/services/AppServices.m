@@ -219,7 +219,7 @@ static NSArray<NSString *> *footerArray;
             if (later) {
                 // @xaoxuu: 有新版本
                 NSString *msg = [AppVersionInfoModel versionDescriptionWithModel:_remoteVersion];
-                [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"发现新版本", nil) message:msg action:^(UIAlertController * _Nonnull alert) {
+                [UIAlertController ax_showAlertWithTitle:NSLocalizedString(@"发现新版本", nil) message:msg actions:^(UIAlertController * _Nonnull alert) {
                     [alert ax_addCancelAction];
                     [alert ax_addDefaultActionWithTitle:@"Update" handler:^(UIAlertAction * _Nonnull sender) {
                         [[UIApplication sharedApplication] openURL:self.model.updateURL.absoluteURL];

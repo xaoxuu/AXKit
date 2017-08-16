@@ -23,7 +23,7 @@ static AXOperationToken token;
     
     token = [NSBlockOperation ax_delay:2 performInMainQueue:^{
         if (self) {
-            [UIAlertController ax_showAlertWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showAlertWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" actions:^(UIAlertController * _Nonnull alert) {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, 270-16, 222.3-16)];
                 view.backgroundColor = axColor.theme;
                 view.layer.masksToBounds = YES;

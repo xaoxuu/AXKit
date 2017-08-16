@@ -41,22 +41,22 @@ inline NSString *kStringError(){
  
  @param title 标题
  @param message 消息
- @param action action
+ @param actions 按钮
  */
-+ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action{
-    UIAlertController *alert = [[self alloc] initAlertWithTitle:title message:message action:action];
++ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
+    UIAlertController *alert = [[self alloc] initAlertWithTitle:title message:message actions:actions];
     [AXRootViewController() presentViewController:alert animated:YES completion:nil];
     return alert;
 }
 
-- (instancetype)initAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action{
+- (instancetype)initAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
     if (!title && message.length) {
         // @xaoxuu: title为nil的话，系统会把message当做title。
         title = @"";
     }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    if (action) {
-        action(alert);
+    if (actions) {
+        actions(alert);
     }
     if (!alert.actions.count) {
         [alert ax_addCancelActionWithTitle:kStringOK() handler:nil];
@@ -71,22 +71,22 @@ inline NSString *kStringError(){
  
  @param title 标题
  @param message 消息
- @param action action
+ @param actions 按钮
  */
-+ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action{
-    UIAlertController *alert = [[self alloc] initActionSheetWithTitle:title message:message action:action];
++ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
+    UIAlertController *alert = [[self alloc] initActionSheetWithTitle:title message:message actions:actions];
     [AXRootViewController() presentViewController:alert animated:YES completion:nil];
     return alert;
 }
 
-- (instancetype)initActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action{
+- (instancetype)initActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
     if (!title && message.length) {
         // @xaoxuu: title为nil的话，系统会把message当做title。
         title = @"";
     }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
-    if (action) {
-        action(alert);
+    if (actions) {
+        actions(alert);
     }
     if (!alert.actions.count) {
         [alert ax_addCancelActionWithTitle:kStringOK() handler:nil];

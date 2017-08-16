@@ -39,7 +39,7 @@ static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/iss
     if (reason) {
         msg = reason();
     }
-    [UIAlertController ax_showAlertWithTitle:kStringError() message:msg action:^(UIAlertController * _Nonnull alert) {
+    [UIAlertController ax_showAlertWithTitle:kStringError() message:msg actions:^(UIAlertController * _Nonnull alert) {
         [alert ax_addCancelAction];
         [alert ax_addDefaultActionWithTitle:kStringHelp() handler:^(UIAlertAction * _Nonnull sender) {
             [[UIApplication sharedApplication] openURL:[AXKitHelpServices errorURLWithCode:code] options:@{} completionHandler:^(BOOL success) {

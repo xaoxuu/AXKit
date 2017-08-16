@@ -34,9 +34,9 @@ FOUNDATION_EXTERN NSString *kStringError();
 
  @param title 标题
  @param message 消息
- @param action action
+ @param actions 按钮
  */
-+ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action;
++ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
 
 
 #pragma mark - 操作表
@@ -46,9 +46,9 @@ FOUNDATION_EXTERN NSString *kStringError();
  
  @param title 标题
  @param message 消息
- @param action action
+ @param actions 按钮
  */
-+ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action;
++ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
 
 
 #pragma mark - 添加按钮

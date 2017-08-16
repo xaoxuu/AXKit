@@ -76,7 +76,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
         }
         return list;
     } @catch (NSException *exception) {
-        [UIAlertController ax_showAlertWithTitle:kStringError() message:exception.description action:nil];
+        [UIAlertController ax_showAlertWithTitle:kStringError() message:exception.description actions:nil];
         return [NSMutableArray array];
     } @finally {
         

@@ -21,16 +21,16 @@
     NSInteger row = indexPath.row;
     if (section == 0) {
         if (row == 0) {
-            [UIAlertController ax_showAlertWithTitle:model.title message:nil action:nil];
+            [UIAlertController ax_showAlertWithTitle:model.title message:nil actions:nil];
         } else if (row == 1) {
-            [UIAlertController ax_showAlertWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showAlertWithTitle:model.title message:nil actions:^(UIAlertController * _Nonnull alert) {
                 [alert ax_addCancelAction];
                 [alert ax_addDefaultActionWithTitle:nil handler:^(UIAlertAction * _Nonnull sender) {
                     AXLogOBJ(sender);
                 }];
             }];
         } else if (row == 2) {
-            [UIAlertController ax_showAlertWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showAlertWithTitle:model.title message:nil actions:^(UIAlertController * _Nonnull alert) {
                 [alert ax_addCancelActionWithTitle:@"取消按钮" handler:^(UIAlertAction * _Nonnull sender) {
                     AXLogOBJ(sender);
                 }];
@@ -39,7 +39,7 @@
                 }];
             }];
         } else if (row == 3) {
-            [UIAlertController ax_showAlertWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showAlertWithTitle:model.title message:nil actions:^(UIAlertController * _Nonnull alert) {
                 [alert ax_addCancelActionWithTitle:@"取消按钮" handler:^(UIAlertAction * _Nonnull sender) {
                     AXLogOBJ(sender);
                 }];
@@ -51,7 +51,7 @@
                 }];
             }];
         } else if (row == 4) {
-            [UIAlertController ax_showAlertWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showAlertWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" actions:^(UIAlertController * _Nonnull alert) {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kAlertWidth-16, 222.3-16)];
                 view.backgroundColor = [UIColor md_yellow];
                 view.layer.masksToBounds = YES;
@@ -66,16 +66,16 @@
         }
     } else if (section == 1) {
         if (row == 0) {
-            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil action:nil];
+            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil actions:nil];
         } else if (row == 1) {
-            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil actions:^(UIAlertController * _Nonnull alert) {
                 [alert ax_addCancelAction];
                 [alert ax_addDefaultActionWithTitle:nil handler:^(UIAlertAction * _Nonnull sender) {
                     AXLogOBJ(sender);
                 }];
             }];
         } else if (row == 2) {
-            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil actions:^(UIAlertController * _Nonnull alert) {
                 [alert ax_addCancelActionWithTitle:@"取消按钮" handler:^(UIAlertAction * _Nonnull sender) {
                     AXLogOBJ(sender);
                 }];
@@ -84,7 +84,7 @@
                 }];
             }];
         } else if (row == 3) {
-            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showActionSheetWithTitle:model.title message:nil actions:^(UIAlertController * _Nonnull alert) {
                 [alert ax_addCancelActionWithTitle:@"取消按钮" handler:^(UIAlertAction * _Nonnull sender) {
                     AXLogOBJ(sender);
                 }];
@@ -96,7 +96,7 @@
                 }];
             }];
         } else if (row == 4) {
-            [UIAlertController ax_showActionSheetWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" action:^(UIAlertController * _Nonnull alert) {
+            [UIAlertController ax_showActionSheetWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" actions:^(UIAlertController * _Nonnull alert) {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kScreenW - 20 -16, 242-16)];
                 view.backgroundColor = [UIColor md_yellow];
                 view.layer.masksToBounds = YES;

@@ -42,7 +42,7 @@
                 sender.enabled = YES;
             }];
             if (state == VersionStateLatest) {
-                [UIAlertController ax_showAlertWithTitle:nil message:NSLocalizedString(@"已经是最新版本", nil) action:nil];
+                [UIAlertController ax_showAlertWithTitle:nil message:NSLocalizedString(@"已经是最新版本", nil) actions:nil];
             }
             
         }];

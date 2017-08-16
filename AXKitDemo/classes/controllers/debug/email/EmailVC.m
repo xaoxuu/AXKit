@@ -51,7 +51,7 @@
             
         } completion:^(MFMailComposeResult result) {
             
-            [UIAlertController ax_showAlertWithTitle:NSStringFromNSInteger(result) message:nil action:nil];
+            [UIAlertController ax_showAlertWithTitle:NSStringFromNSInteger(result) message:nil actions:nil];
         } fail:^(NSError *error) {
             
         }];
