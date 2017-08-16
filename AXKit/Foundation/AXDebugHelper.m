@@ -18,9 +18,7 @@ inline void ax_debug_only(void (^debug)()){
 #ifdef DEBUG
     if (debug) {
         debug();
-    }
-#else
-    
+    } 
 #endif
 }
 
