@@ -5,7 +5,7 @@
 //  Created by xaoxuu on 05/03/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
-//  Homepage   https://xaoxuu.com (主页)
+//  Homepage   http://xaoxuu.com (主页)
 //
 //  GitHub     https://github.com/xaoxuu/AXKit (喜欢请Star或Fork)
 //

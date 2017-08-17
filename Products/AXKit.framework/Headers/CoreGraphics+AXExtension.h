@@ -39,8 +39,7 @@ CG_EXTERN const CGFloat kMarginWide;
 
 // @xaoxuu: 系统弹窗的宽度
 CG_EXTERN const CGFloat kAlertWidth;
-// @xaoxuu: 系统操作表的宽度
-CG_EXTERN const CGFloat kActionSheetWidth;
+
 
 CG_EXTERN CGRect CGRectFromScreen();
 

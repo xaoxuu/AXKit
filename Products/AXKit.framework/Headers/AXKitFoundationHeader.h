@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+#import "AXDebugHelper.h"
 // @xaoxuu: NSString类的扩展（随机字符串等）
 #import "NSString+AXExtension.h"
 // @xaoxuu: 沙盒文件流的链式封装，一行代码搞定沙盒文件操作

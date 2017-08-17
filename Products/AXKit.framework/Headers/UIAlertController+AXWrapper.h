@@ -34,19 +34,10 @@ FOUNDATION_EXTERN NSString *kStringError();
 
  @param title 标题
  @param message 消息
- @param action action
+ @param actions 按钮
  */
-+ (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action;
++ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
 
-
-/**
- 弹出一个【取消+确定】两个按钮的弹窗（如果action为nil，则只有一个确定按钮）
-
- @param title 标题
- @param message 消息内容
- @param ok 确定按钮事件
- */
-+ (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message ok:(void (^ __nullable)(UIAlertAction *sender))ok;
 
 #pragma mark - 操作表
 
@@ -55,19 +46,10 @@ FOUNDATION_EXTERN NSString *kStringError();
  
  @param title 标题
  @param message 消息
- @param action action
+ @param actions 按钮
  */
-+ (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message action:(void (^ __nullable)(UIAlertController *alert))action;
++ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
 
-
-/**
- 弹出一个【取消+确定】两个按钮的弹窗（如果action为nil，则只有一个确定按钮）
- 
- @param title 标题
- @param message 消息内容
- @param ok 确定按钮事件
- */
-+ (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message ok:(void (^ __nullable)(UIAlertAction *sender))ok;
 
 #pragma mark - 添加按钮
 
