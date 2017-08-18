@@ -7,11 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
-
+NS_ASSUME_NONNULL_BEGIN
 /**
  只在debug模式下运行的函数
  
- @param debug debug操作
+ @param debug debug模式下执行的代码
  */
-FOUNDATION_EXTERN void ax_debug_only(void (^debug)());
+FOUNDATION_EXTERN void ax_debug_only(void (^ _Nullable debug)());
 
+
+/**
+ debug和release模式的宏
+
+ @param debug debug模式下执行的代码
+ @param release release模式下执行的代码
+ */
+FOUNDATION_EXTERN void ax_debug_release(void (^ _Nullable debug)(), void (^ _Nullable release)());
+
+/**
+ 判断当前是不是debug模式
+ 
+ @return YES:debug模式；NO:release模式
+ */
+FOUNDATION_EXTERN BOOL ax_is_debug();
+
+NS_ASSUME_NONNULL_END
