@@ -64,6 +64,13 @@ CG_EXTERN NSArray<UIImage *> * _Nullable UIImagesWithBundleImageNames(NSString *
 #pragma mark 剪裁
 
 /**
+ 把图片剪裁为正方形
+ 
+ @return 图片
+ */
+CG_EXTERN UIImage *UIImageGetSquareImage(UIImage *image);
+
+/**
  把图片剪裁为圆形
  
  @return 图片
@@ -172,6 +179,13 @@ CG_EXTERN UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize 
 + (NSArray<UIImage *> *)ax_imageWithBundleImageName:(NSString *)name count:(NSUInteger)count;
 
 #pragma mark - 加工
+
+/**
+ 把图片剪裁为正方形
+ 
+ @return 图片
+ */
+- (UIImage *)ax_squareImage;
 
 /**
  把图片剪裁为圆形

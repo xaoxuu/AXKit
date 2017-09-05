@@ -91,16 +91,18 @@ inline NSArray<UIImage *> *UIImagesWithBundleImageNames(NSString *name, NSUInteg
 
 #pragma mark - 加工
 
-
-inline UIImage *UIImageGetRoundedImage(UIImage *image){
+static inline UIImage *UIImageGetSquareImageAndOption(UIImage *image, void(^op)(CGContextRef ctx, CGRect rect)){
     // begin context
     UIGraphicsBeginImageContext(image.size);
     // context ref
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     // add a circle
-    CGFloat min = fmin(image.size.width, image.size.height);
-    CGRect rect = CGRectMake(0.5*(image.size.width-min), 0.5*(image.size.height-min), min, min);
-    CGContextAddEllipseInRect(ctx, rect);
+    CGFloat max = fmax(image.size.width, image.size.height);
+    CGRect rect = CGRectMake(0.5*(image.size.width-max), 0.5*(image.size.height-max), max, max);
+    // other option
+    if (op) {
+        op(ctx, rect);
+    }
     // clip
     CGContextClip(ctx);
     // draw
@@ -111,6 +113,15 @@ inline UIImage *UIImageGetRoundedImage(UIImage *image){
     UIGraphicsEndImageContext();
     return roundedImage;
 }
+inline UIImage *UIImageGetSquareImage(UIImage *image){
+    return UIImageGetSquareImageAndOption(image, nil);
+}
+inline UIImage *UIImageGetRoundedImage(UIImage *image){
+    return UIImageGetSquareImageAndOption(image, ^(CGContextRef ctx, CGRect rect) {
+        CGContextAddEllipseInRect(ctx, rect);
+    });
+}
+
 
 inline UIImage *UIImageGetBlurredImage(UIImage *image, CGFloat ratio){
     CIImage * ciImage = [[CIImage alloc]initWithImage:image];
@@ -205,6 +216,10 @@ inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize siz
 
 
 #pragma mark - 加工
+
+- (UIImage *)ax_squareImage{
+    return UIImageGetSquareImage(self);
+}
 
 - (UIImage *)ax_roundedImage{
     return UIImageGetRoundedImage(self);
