@@ -24,3 +24,6 @@ DerivedData
 
 #AppCode
 .idea/
+
+#appledoc文档
+appledoc/
