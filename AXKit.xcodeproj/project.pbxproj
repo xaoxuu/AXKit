@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		CD67AF301F63F8F700F9B336 /* Docs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CD67AF311F63F8F700F9B336 /* Build configuration list for PBXAggregateTarget "Docs" */;
+			buildPhases = (
+				CD67AF341F63F8FD00F9B336 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Docs;
+			productName = Docs;
+		};
 		CDAB59451E6C0F270017CA1E /* Framework */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = CDAB59461E6C0F270017CA1E /* Build configuration list for PBXAggregateTarget "Framework" */;
@@ -1747,6 +1758,7 @@
 				8579EF251E6BEE4F00C33881 /* Embed Frameworks */,
 				9C16A437EF91B6CDFD708BCA /* [CP] Embed Pods Frameworks */,
 				A988828DDB1F2347FD055152 /* [CP] Copy Pods Resources */,
+				CD67AF2E1F63F53E00F9B336 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1766,6 +1778,7 @@
 				8579EF151E6BEE4F00C33881 /* Frameworks */,
 				8579EF161E6BEE4F00C33881 /* Headers */,
 				8579EF171E6BEE4F00C33881 /* Resources */,
+				CD67AF2F1F63F59A00F9B336 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1795,6 +1808,11 @@
 						DevelopmentTeam = 6C36HX8DP4;
 						ProvisioningStyle = Automatic;
 					};
+					CD67AF301F63F8F700F9B336 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 6C36HX8DP4;
+						ProvisioningStyle = Automatic;
+					};
 					CDAB59451E6C0F270017CA1E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 6C36HX8DP4;
@@ -1819,6 +1837,7 @@
 				8579EEF91E6BEDF900C33881 /* AXKitDemo */,
 				8579EF181E6BEE4F00C33881 /* AXKit */,
 				CDAB59451E6C0F270017CA1E /* Framework */,
+				CD67AF301F63F8F700F9B336 /* Docs */,
 			);
 		};
 /* End PBXProject section */
@@ -1916,6 +1935,45 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CD67AF2E1F63F53E00F9B336 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		CD67AF2F1F63F59A00F9B336 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		CD67AF341F63F8FD00F9B336 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"Titan Studio\";\ncompanyID=\"com.xaoxuu\";\ncompanyURL=\"http://xaoxuu.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"${SRCROOT}/Docs\";\n# End constants\n/usr/local/bin/appledoc --project-name \"${PROJECT_NAME}\" --project-company \"${company}\" --company-id \"${companyID}\" --docset-atom-filename \"${company}.atom\" --docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" --docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" --docset-fallback-url \"${companyURL}/${company}\" --output \"${outputPath}\" --publish-docset --docset-platform-family \"${target}\" --logformat xcode --keep-intermediate-files --no-repeat-first-par --no-warn-invalid-crossref --exit-threshold 2 \"${PROJECT_DIR}/AXKit\"\n\nopen \"${SRCROOT}/Docs/html/index.html\"";
+		};
 		CDAB59491E6C0F3B0017CA1E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1927,7 +1985,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${ACTION}\" = \"build\" ]\nthen\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}.framework\n\nDEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\n\nSIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\n\n\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n#ditto \"${DEVICE_DIR}/Headers\" \"${INSTALL_DIR}/Headers\"\n\nlipo -create \"${DEVICE_DIR}/${PROJECT_NAME}\" \"${SIMULATOR_DIR}/${PROJECT_NAME}\" -output \"${INSTALL_DIR}/${PROJECT_NAME}\"\n\n#open \"${DEVICE_DIR}\"\nopen \"${SRCROOT}/Products\"\nfi\n\n";
+			shellScript = "if [ \"${ACTION}\" = \"build\" ]\nthen\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}.framework\n\nDEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\n\nSIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\n\n\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n#ditto \"${DEVICE_DIR}/Headers\" \"${INSTALL_DIR}/Headers\"\n\nlipo -create \"${DEVICE_DIR}/${PROJECT_NAME}\" \"${SIMULATOR_DIR}/${PROJECT_NAME}\" -output \"${INSTALL_DIR}/${PROJECT_NAME}\"\n\n#open \"${DEVICE_DIR}\"\nopen \"${SRCROOT}/Products\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2326,6 +2384,22 @@
 			};
 			name = Release;
 		};
+		CD67AF321F63F8F700F9B336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 6C36HX8DP4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CD67AF331F63F8F700F9B336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 6C36HX8DP4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CDAB59471E6C0F270017CA1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2371,6 +2445,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CD67AF311F63F8F700F9B336 /* Build configuration list for PBXAggregateTarget "Docs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD67AF321F63F8F700F9B336 /* Debug */,
+				CD67AF331F63F8F700F9B336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		CDAB59461E6C0F270017CA1E /* Build configuration list for PBXAggregateTarget "Framework" */ = {
 			isa = XCConfigurationList;

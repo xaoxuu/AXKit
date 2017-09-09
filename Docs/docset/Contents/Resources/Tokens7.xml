@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSError+AXExtension.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSError(AXExtension)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSError+AXExtension.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/ax_errorWithMaker:</TokenIdentifier>
+			<Abstract type="html">快速创建一个error</Abstract>
+			<DeclaredIn>NSError+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)ax_errorWithMaker:(void ( ^ ) ( NSErrorMaker *error ))maker</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>maker</Name>
+					<Abstract type="html">error构造器</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">error</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_errorWithMaker:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/UIColorManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/UIColorManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIColorManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColorManager/configColorManager:</TokenIdentifier>
+			<Abstract type="html">设置默认的颜色配置（会被新的更改覆盖，一般用在appDelegate中）</Abstract>
+			<DeclaredIn>UIColorManager.h</DeclaredIn>
+			
+			<Declaration>- (void)configColorManager:(void ( ^ ) ( UIColorManager *manager ))colorManager</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>colorManager</Name>
+					<Abstract type="html">默认的颜色配置</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/configColorManager:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColorManager/saveCurrentTheme</TokenIdentifier>
+			<Abstract type="html">保存当前主题</Abstract>
+			<DeclaredIn>UIColorManager.h</DeclaredIn>
+			
+			<Declaration>- (void)saveCurrentTheme</Declaration>
+			
+			
+			<Anchor>//api/name/saveCurrentTheme</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
