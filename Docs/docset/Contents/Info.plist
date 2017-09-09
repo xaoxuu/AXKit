@@ -16,11 +16,11 @@
 	
 	
 	<key>DocSetFallbackURL</key>
-	<string>http://xaoxuu.com/Titan Studio</string>
+	<string>http://xaoxuu.com/xaoxuu</string>
 	<key>DocSetFeedName</key>
 	<string>AXKit Documentation</string>
 	<key>DocSetFeedURL</key>
-	<string>http://xaoxuu.com/Titan Studio/Titan Studio.atom</string>
+	<string>http://xaoxuu.com/xaoxuu/xaoxuu.atom</string>
 	<key>DocSetMinimumXcodeVersion</key>
 	<string>3.0</string>
 	<key>DocSetPlatformFamily</key>
@@ -30,8 +30,8 @@
 	<key>DocSetPublisherIdentifier</key>
 	<string>com.xaoxuu.documentation</string>
 	<key>DocSetPublisherName</key>
-	<string>Titan Studio</string>
+	<string>xaoxuu</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2017 Titan Studio. All rights reserved.</string>
+	<string>Copyright © 2017 xaoxuu. All rights reserved.</string>
 </dict>
 </plist>
