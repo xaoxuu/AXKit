@@ -24,4 +24,11 @@ FOUNDATION_EXTERN void ax_debug_only(void (^ _Nullable debug)());
  */
 FOUNDATION_EXTERN void ax_debug_release(void (^ _Nullable debug)(), void (^ _Nullable release)());
 
+/**
+ 判断当前是不是debug模式
+ 
+ @return YES:debug模式；NO:release模式
+ */
+FOUNDATION_EXTERN BOOL ax_is_debug();
+
 NS_ASSUME_NONNULL_END
