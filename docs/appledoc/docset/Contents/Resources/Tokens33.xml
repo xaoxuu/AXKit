@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UITabBar+AXExtension.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UITabBar(AXExtension)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UITabBar+AXExtension.h</DeclaredIn>
+            
+			
+			<NodeRef refid="33"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UITabBar/ax_hideSeparator</TokenIdentifier>
+			<Abstract type="html">隐藏系统自带的分割线</Abstract>
+			<DeclaredIn>UITabBar+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_hideSeparator</Declaration>
+			
+			
+			<Anchor>//api/name/ax_hideSeparator</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

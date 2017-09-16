@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/xaoxuu/Library/Developer/Shared/Documentation/DocSets/com.xaoxuu.AXKit.docset
+Time: 2017-09-09 10:36:15 +0000

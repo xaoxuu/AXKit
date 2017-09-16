@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AXKitHelpServices.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AXKitHelpServices</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AXKitHelpServices/errorURLWithCode:</TokenIdentifier>
+			<Abstract type="html">AXKit错误信息网址</Abstract>
+			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
+			
+			<Declaration>+ (NSURL *)errorURLWithCode:(AXKitErrorCode)code</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>code</Name>
+					<Abstract type="html">AXKit错误代码</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">AXKit错误信息网址</Abstract></ReturnValue>
+			<Anchor>//api/name/errorURLWithCode:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

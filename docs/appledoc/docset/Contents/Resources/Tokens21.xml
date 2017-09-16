@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIColor+UIAdaptiveColor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIColor(UIAdaptiveColor)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIColorManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/adaptive</TokenIdentifier>
+			<Abstract type="html">自适应颜色（取决于主题色的深浅）</Abstract>
+			<DeclaredIn>UIColorManager.h</DeclaredIn>
+			
+			<Declaration>- (UIColor *)adaptive</Declaration>
+			
+			<ReturnValue><Abstract type="html">当主题色比较浅时自动加深，用于主题色上的文字显示</Abstract></ReturnValue>
+			<Anchor>//api/name/adaptive</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
