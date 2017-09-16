@@ -1,8 +1,4 @@
-[![](https://github.com/xaoxuu/AXKit/raw/master/resources/icons/header.png)](https://axkit.xaoxuu.com)
-
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/xaoxuu/AXKit/master/LICENSE) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](http://img.shields.io/cocoapods/v/AXKit.svg?style=flat)](http://cocoapods.org/?q=AXKit) [![CocoaPods](http://img.shields.io/cocoapods/p/AXKit.svg?style=flat)](http://cocoapods.org/?q=AXKit) [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/) 
-[![](https://img.shields.io/cocoapods/dt/AXKit.svg)](https://codeload.github.com/xaoxuu/AXKit/zip/master)
-[![](https://img.shields.io/cocoapods/at/AXKit.svg)](https://cocoapods.org/pods/AXKit)
+# Usage
 
 ## Installation
 
