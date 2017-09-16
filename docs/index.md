@@ -9,7 +9,7 @@ By using AXKit, you can largely simplify some system method calls, such as using
 通过使用AXKit，你可以很大程度上简化一些系统方法的调用，例如使用block的方式创建一个按钮，虽然这一点和BlocksKit的功能相同，但是AXKit不只有对系统方法的block封装， 还有例如字符串的扩展，你可以通过文件名去创建图片、创建VC、创建View；手势扩展，可以用一个block给视图添加手势； 又如沙盒文件的链式封装，让你仅用一行代码保存或读取一个沙盒文件；还有NSUserDefault的完善、代码冷却机制（一段时间内不会重复执行的代码）；还内置了简化版的颜色主题框架；万能控制器跳转（push/pop到任意层级的VC、跳转到指定文件名的VC）等等。
 
 
-
+<br><br>
 
 
 ## Installation
@@ -36,7 +36,7 @@ By using AXKit, you can largely simplify some system method calls, such as using
 3. Import `"AXKit.h"` .
 
 
-<br><br><br><br>
+<br><br>
 
 
 ## 安装
