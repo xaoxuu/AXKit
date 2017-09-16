@@ -1,0 +1,19 @@
+title: AXKit
+description: 这是一个综合型的开发工具包，包含对系统类的功能扩展和一些常用控件的封装。
+show_downloads: true
+comments: true
+logo_url: https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png
+google_analytics:
+git_branch: gh-pages
+theme:
+use_github_wiki: false
+use_prose_io: true
+google_cse_token:
+  #006145086949868944067:mzhezcab_cw
+custom_sidebar: true
+gems:
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jemoji
+  - jekyll-redirect-from
+  - jekyll-feed
