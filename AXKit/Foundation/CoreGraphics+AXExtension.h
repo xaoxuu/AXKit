@@ -150,7 +150,14 @@ CG_EXTERN NSInteger AXMakeIntegerInRange(NSInteger value, AXIntegerRange range);
  */
 CG_EXTERN NSUInteger AXMakeUIntegerInRange(NSUInteger value, AXUIntegerRange range);
 
+/**
+ 确保索引在数组内
 
+ @param index 索引
+ @param array 数组
+ @return 安全的索引
+ */
+CG_EXTERN NSInteger AXSafeIndexForArray(NSInteger index, NSArray * array);
 
 #pragma mark 判断值是否在范围内
 

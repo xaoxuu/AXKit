@@ -61,6 +61,11 @@ inline NSUInteger AXMakeUIntegerInRange(NSUInteger value, AXUIntegerRange range)
     return value;
 }
 
+inline NSInteger AXSafeIndexForArray(NSInteger index, NSArray *array){
+    index = MAX(0, index);
+    index = MIN(index, array.count-1);
+    return index;
+}
 
 #pragma mark 判断值是否在范围内
 
