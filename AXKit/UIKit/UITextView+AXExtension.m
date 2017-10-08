@@ -55,7 +55,7 @@ static const void *UITextViewAXExtensionKey_SuperView = &UITextViewAXExtensionKe
     CGFloat animationTime  = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     // 定义好动作
-    void (^animation)() = ^{
+    void (^animation)(void) = ^{
         self.ax_superview.transform = CGAffineTransformMakeTranslation(0, - offset);
     };
     
@@ -75,7 +75,7 @@ static const void *UITextViewAXExtensionKey_SuperView = &UITextViewAXExtensionKe
     CGFloat animationTime  = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     // 定义好动作
-    void (^animation)() = ^{
+    void (^animation)(void) = ^{
         self.ax_superview.transform = CGAffineTransformIdentity;
     };
     
