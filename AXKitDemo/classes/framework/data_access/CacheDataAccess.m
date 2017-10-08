@@ -35,7 +35,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 #pragma mark - 指定文件
 
-- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail{
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)(void))completion fail:(void (^)(void))fail{
     BOOL ret = key.ax_cacheObj(obj);
     [NSBlockOperation ax_delay:0 performInMainQueue:^{
         if (ret) {
@@ -50,7 +50,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
     }];
 }
 
-- (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail{
+- (void)removeObjWithKey:(NSString *)key completion:(void (^)(void))completion fail:(void (^)(void))fail{
     BOOL ret = key.ax_removeObj;
     [NSBlockOperation ax_delay:0 performInMainQueue:^{
         if (ret) {
@@ -120,7 +120,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 #pragma mark - 清空
 
-- (void)removeAllCacheCompletion:(void (^)())completion{
+- (void)removeAllCacheCompletion:(void (^)(void))completion{
     [NSBlockOperation ax_delay:0 performInBackground:^{
         for (NSString *path in self.allCachePaths) {
             if (path.remove) {

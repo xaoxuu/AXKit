@@ -62,7 +62,7 @@ static NSArray<NSString *> *footerArray;
 }
 
 
-- (void)applyThemeWithColor:(ThemeColorModelRow *)color completion:(void (^)())completion{
+- (void)applyThemeWithColor:(ThemeColorModelRow *)color completion:(void (^)(void))completion{
     
     NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"将应用此主题:%@", nil),color.title];
     UIColor *tmp = [UIColor colorWithHexString:color.hex];

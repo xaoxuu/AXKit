@@ -29,7 +29,7 @@ static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/iss
 @implementation NSError (AXKitHelpExtension)
 
 
-+ (instancetype)axkit_errorWithCode:(NSInteger)code reason:(nullable NSString *(^)())reason{
++ (instancetype)axkit_errorWithCode:(NSInteger)code reason:(nullable NSString *(^)(void))reason{
     NSError *error = [self ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
         error.domain = AXKitErrorDomain;
         error.code = code;

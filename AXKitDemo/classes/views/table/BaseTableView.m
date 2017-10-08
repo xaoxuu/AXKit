@@ -318,7 +318,7 @@ static NSTimeInterval loadingTimeout = 20;
 #pragma mark - util
 
 - (void)_indexPath:(NSIndexPath *)indexPath tryPush:(__kindof BaseViewController *)targetVC withModel:(BaseTableModelRow *)model{
-    void (^block_push)() = ^{
+    void (^block_push)(void) = ^{
         if ([self respondsToSelector:@selector(indexPath:willPush:)]) {
             [self indexPath:indexPath willPush:targetVC];
         }

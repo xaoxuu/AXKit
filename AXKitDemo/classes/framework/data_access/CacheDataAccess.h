@@ -17,16 +17,16 @@
 
 - (NSMutableArray<BaseTableModelSection *> *)loadObjWithKey:(NSString *)key;
 
-- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail;
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)(void))completion fail:(void (^)(void))fail;
 
-- (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion fail:(void (^)())fail;
+- (void)removeObjWithKey:(NSString *)key completion:(void (^)(void))completion fail:(void (^)(void))fail;
 
 
 #pragma mark - util
 
 - (NSMutableArray<NSString *> *)allCachePaths;
 
-- (void)removeAllCacheCompletion:(void (^)())completion;
+- (void)removeAllCacheCompletion:(void (^)(void))completion;
 
 @end
 

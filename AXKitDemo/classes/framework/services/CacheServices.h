@@ -40,11 +40,11 @@
 
 #pragma mark - 指定文件
 
-- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion;
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)(void))completion;
 
 - (NSMutableArray<BaseTableModelSection *> *)loadObjWithKey:(NSString *)key;
 
-- (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion;
+- (void)removeObjWithKey:(NSString *)key completion:(void (^)(void))completion;
 
 
 #pragma mark - 更新
@@ -64,7 +64,7 @@
 
 #pragma mark - 清空
 
-- (void)removeAllCacheCompletion:(void (^)())completion;
+- (void)removeAllCacheCompletion:(void (^)(void))completion;
 
 
 @end

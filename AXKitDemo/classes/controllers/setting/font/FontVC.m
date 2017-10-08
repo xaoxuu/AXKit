@@ -9,7 +9,7 @@
 #import "FontVC.h"
 #import "FontTableView.h"
 
-static AXOperationToken token;
+static ax_dispatch_operation_t token;
 
 @interface FontVC ()
 

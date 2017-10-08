@@ -187,7 +187,7 @@ static NSString *txt   = @"txt";
 
 - (BOOL)writeFile:(__kindof NSObject *)file
         extension:(NSString *)extension
-       completion:(void (^)())completion{
+       completion:(void (^)(void))completion{
     BOOL result = (BOOL)file;
     if (!result) {
         AXLogFailure(@"nothing to save.");
@@ -259,7 +259,7 @@ static NSString *txt   = @"txt";
 
 - (BOOL)writeArchivedFile:(__kindof NSObject *)file
                 extension:(NSString *)extension
-               completion:(void (^)())completion{
+               completion:(void (^)(void))completion{
     BOOL result = (BOOL)file;
     if (!result) {
         AXLogFailure(@"nothing to save.");
@@ -301,7 +301,7 @@ static NSString *txt   = @"txt";
 #pragma mark remove file
 
 - (BOOL)removeFileWithExtension:(NSString *)extension
-                     completion:(void (^)())completion{
+                     completion:(void (^)(void))completion{
     NSFileManager *fm = [NSFileManager defaultManager];
     BOOL result = [fm removeItemAtPath:self.extension(extension) error:nil];
     if (!result) AXLogFailure(@"remove failure.");

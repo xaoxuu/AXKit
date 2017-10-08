@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, AXKitErrorCode) {
  @param reason 原因
  @return Error实例
  */
-+ (instancetype)axkit_errorWithCode:(NSInteger)code reason:(nullable NSString *(^)())reason;
++ (instancetype)axkit_errorWithCode:(NSInteger)code reason:(nullable NSString *(^)(void))reason;
 
 
 @end

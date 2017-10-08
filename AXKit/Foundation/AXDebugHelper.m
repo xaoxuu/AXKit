@@ -14,7 +14,7 @@
 
  @param debug debug操作
  */
-inline void ax_debug_only(void (^ _Nullable debug)()){
+inline void ax_debug_only(void (^ _Nullable debug)(void)){
     ax_debug_release(debug, nil);
 }
 
@@ -24,7 +24,7 @@ inline void ax_debug_only(void (^ _Nullable debug)()){
  @param debug debug模式下执行的代码
  @param release release模式下执行的代码
  */
-inline void ax_debug_release(void (^ _Nullable debug)(), void (^ _Nullable release)()){
+inline void ax_debug_release(void (^ _Nullable debug)(void), void (^ _Nullable release)(void)){
     if (ax_is_debug()) {
         if (debug) {
             debug();

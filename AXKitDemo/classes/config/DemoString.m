@@ -9,16 +9,16 @@
 #import "DemoString.h"
 
 
-inline NSString *kStringTip(){
+inline NSString *kStringTip(void){
     return NSLocalizedString(@"提示", nil);
 }
-inline NSString *kStringPleaseWait(){
+inline NSString *kStringPleaseWait(void){
     return NSLocalizedString(@"请稍等", nil);
 }
-inline NSString *kStringLoadFail(){
+inline NSString *kStringLoadFail(void){
     return NSLocalizedString(@"加载失败", nil);
 }
-inline NSString *kStringPleaseConfirmDataSourceCorrect(){
+inline NSString *kStringPleaseConfirmDataSourceCorrect(void){
     return NSLocalizedString(@"请确认数据源是否正确", nil);
 }
 inline NSString *kStringPleaseImplementDataSource(NSString *cls){

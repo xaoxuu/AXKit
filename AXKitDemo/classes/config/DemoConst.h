@@ -31,7 +31,7 @@ CG_EXTERN const CGFloat kMargin16;
 CG_EXTERN const CGFloat kButtonHeight;
 
 
-CG_EXTERN UIFont *kFontNormal();
+CG_EXTERN UIFont *kFontNormal(void);
 
 // @xaoxuu: 重载冷却（1秒内最多加载一次数据）
 CG_EXTERN NSTimeInterval reloadCooldown;

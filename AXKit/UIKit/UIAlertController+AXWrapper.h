@@ -11,18 +11,18 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // @xaoxuu: Cancel
-FOUNDATION_EXTERN NSString *kStringCancel();
+FOUNDATION_EXTERN NSString *kStringCancel(void);
 
 // @xaoxuu: OK
-FOUNDATION_EXTERN NSString *kStringOK();
+FOUNDATION_EXTERN NSString *kStringOK(void);
 // @xaoxuu: Confirm
-FOUNDATION_EXTERN NSString *kStringConfirm();
+FOUNDATION_EXTERN NSString *kStringConfirm(void);
 
 // @xaoxuu: Help
-FOUNDATION_EXTERN NSString *kStringHelp();
+FOUNDATION_EXTERN NSString *kStringHelp(void);
 
 // @xaoxuu: Error
-FOUNDATION_EXTERN NSString *kStringError();
+FOUNDATION_EXTERN NSString *kStringError(void);
 
 @interface UIAlertController (AXWrapper)
 

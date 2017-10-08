@@ -41,7 +41,7 @@ CG_EXTERN const CGFloat kMarginWide;
 CG_EXTERN const CGFloat kAlertWidth;
 
 
-CG_EXTERN CGRect CGRectFromScreen();
+CG_EXTERN CGRect CGRectFromScreen(void);
 
 
 

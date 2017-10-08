@@ -11,23 +11,23 @@
 #import "_AXKitBundle.h"
 
 // @xaoxuu: Cancel
-inline NSString *kStringCancel(){
+inline NSString *kStringCancel(void){
     return NSLocalizedStringFromAXKit(@"Cancel");
 }
 // @xaoxuu: OK
-inline NSString *kStringOK(){
+inline NSString *kStringOK(void){
     return NSLocalizedStringFromAXKit(@"OK");
 }
 // @xaoxuu: Confirm
-inline NSString *kStringConfirm(){
+inline NSString *kStringConfirm(void){
     return NSLocalizedStringFromAXKit(@"Confirm");
 }
 // @xaoxuu: Help
-inline NSString *kStringHelp(){
+inline NSString *kStringHelp(void){
     return NSLocalizedStringFromAXKit(@"Help");
 }
 
-inline NSString *kStringError(){
+inline NSString *kStringError(void){
     return NSLocalizedStringFromAXKit(@"Error");
 }
 

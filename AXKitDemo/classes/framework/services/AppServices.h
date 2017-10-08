@@ -33,7 +33,7 @@ FOUNDATION_EXTERN NSString *kBlogURL;
 @property (strong, readonly, nonatomic) DefaultViewController *defaultVC;
 
 
-- (void)applyThemeWithColor:(ThemeColorModelRow *)color completion:(void (^)())completion;
+- (void)applyThemeWithColor:(ThemeColorModelRow *)color completion:(void (^)(void))completion;
 
 - (void)applyTheme;
 

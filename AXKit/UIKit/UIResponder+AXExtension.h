@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 根控制器
  */
-FOUNDATION_EXTERN UIViewController * _Nullable AXRootViewController();
+FOUNDATION_EXTERN UIViewController * _Nullable AXRootViewController(void);
 
 
 @interface UIResponder (AXExtension)

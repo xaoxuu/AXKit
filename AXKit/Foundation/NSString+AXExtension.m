@@ -124,7 +124,7 @@ inline NSString *SpellForChinese(NSString *chinese){
         return [self stringByAppendingString:NSStringFromCGFloat(x)];;
     };
 }
-- (NSString *(^)())appendReturn{
+- (NSString *(^)(void))appendReturn{
     return ^{
         return [self stringByAppendingString:@"\n"];;
     };

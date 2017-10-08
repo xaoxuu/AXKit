@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param debug debug模式下执行的代码
  */
-FOUNDATION_EXTERN void ax_debug_only(void (^ _Nullable debug)());
+FOUNDATION_EXTERN void ax_debug_only(void (^ _Nullable debug)(void));
 
 
 /**
@@ -22,13 +22,13 @@ FOUNDATION_EXTERN void ax_debug_only(void (^ _Nullable debug)());
  @param debug debug模式下执行的代码
  @param release release模式下执行的代码
  */
-FOUNDATION_EXTERN void ax_debug_release(void (^ _Nullable debug)(), void (^ _Nullable release)());
+FOUNDATION_EXTERN void ax_debug_release(void (^ _Nullable debug)(void), void (^ _Nullable release)(void));
 
 /**
  判断当前是不是debug模式
  
  @return YES:debug模式；NO:release模式
  */
-FOUNDATION_EXTERN BOOL ax_is_debug();
+FOUNDATION_EXTERN BOOL ax_is_debug(void);
 
 NS_ASSUME_NONNULL_END

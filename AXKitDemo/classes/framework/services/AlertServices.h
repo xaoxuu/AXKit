@@ -10,9 +10,9 @@
 
 @interface AlertServices : BaseServices
 
-- (void)alertForConfirmWithMessage:(NSString * (^)())msg completion:(void (^)())completion;
+- (void)alertForConfirmWithMessage:(NSString * (^)(void))msg completion:(void (^)(void))completion;
 
-- (void)alertForConfirmTheme:(UIColor *)color message:(NSString *)msg completion:(void (^)())completion;
+- (void)alertForConfirmTheme:(UIColor *)color message:(NSString *)msg completion:(void (^)(void))completion;
 
 - (void)alertForOptionDoneWithMessage:(NSString *)msg;
 

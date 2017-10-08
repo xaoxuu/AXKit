@@ -44,7 +44,7 @@
 }
 
 
-- (void)alertForConfirmWithMessage:(NSString * (^)())msg completion:(void (^)())completion{
+- (void)alertForConfirmWithMessage:(NSString * (^)(void))msg completion:(void (^)(void))completion{
     SCLAlertView *alert = [SCLAlertView ax_SCLAlertViewWithDefaultColor];
     [alert addButton:kStringConfirm() actionBlock:^{
         if (completion) {
@@ -56,7 +56,7 @@
 }
 
 
-- (void)alertForConfirmTheme:(UIColor *)color message:(NSString *)msg completion:(void (^)())completion{
+- (void)alertForConfirmTheme:(UIColor *)color message:(NSString *)msg completion:(void (^)(void))completion{
     SCLAlertView *alert = [SCLAlertView ax_SCLAlertViewWithDefaultColor];
     self.alert = alert;
     alert.customViewColor = color;

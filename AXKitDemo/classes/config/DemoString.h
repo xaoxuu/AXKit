@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 
-FOUNDATION_EXTERN NSString *kStringTip();
-FOUNDATION_EXTERN NSString *kStringPleaseWait();
+FOUNDATION_EXTERN NSString *kStringTip(void);
+FOUNDATION_EXTERN NSString *kStringPleaseWait(void);
 
-FOUNDATION_EXTERN NSString *kStringLoadFail();
+FOUNDATION_EXTERN NSString *kStringLoadFail(void);
 
 
-FOUNDATION_EXTERN NSString *kStringPleaseConfirmDataSourceCorrect();
+FOUNDATION_EXTERN NSString *kStringPleaseConfirmDataSourceCorrect(void);
 
 FOUNDATION_EXTERN NSString *kStringPleaseImplementDataSource(NSString *cls);
 

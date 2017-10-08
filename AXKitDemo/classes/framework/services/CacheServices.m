@@ -53,7 +53,7 @@ static NSString *key_about = @"AboutTableView";
 
 #pragma mark - 指定文件
 
-- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)())completion{
+- (void)cacheObj:(NSMutableArray<BaseTableModelSection *> *)obj forKey:(NSString *)key completion:(void (^)(void))completion{
     [daLayer.cache cacheObj:obj forKey:key completion:^{
         // @xaoxuu: async calculate cache
         [NSBlockOperation ax_delay:0 cooldown:1 token:@"async calculate cache" performInBackground:^{
@@ -66,7 +66,7 @@ static NSString *key_about = @"AboutTableView";
     }];
 }
 
-- (void)removeObjWithKey:(NSString *)key completion:(void (^)())completion{
+- (void)removeObjWithKey:(NSString *)key completion:(void (^)(void))completion{
     [daLayer.cache removeObjWithKey:key completion:^{
         AXLogSuccess(@"%@ 已清除缓存",key);
         [self asyncCalculateCache];
@@ -95,7 +95,7 @@ static NSString *key_about = @"AboutTableView";
 
 #pragma mark - 清空
 
-- (void)removeAllCacheCompletion:(void (^)())completion{
+- (void)removeAllCacheCompletion:(void (^)(void))completion{
     [daLayer.cache removeAllCacheCompletion:completion];
 }
 

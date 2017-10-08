@@ -133,7 +133,7 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 /**
  拼接换行符
  */
-- (NSString *(^)())appendReturn;
+- (NSString *(^)(void))appendReturn;
 
 /**
  添加前缀（在前面拼接字符串）

@@ -62,7 +62,7 @@
     };
 }
 
-- (__kindof BaseButton *(^)())layoutToTop{
+- (__kindof BaseButton *(^)(void))layoutToTop{
     return ^{
         self.top = 16;
         return self;
@@ -70,7 +70,7 @@
     
 }
 
-- (__kindof BaseButton *(^)())layoutToBottom{
+- (__kindof BaseButton *(^)(void))layoutToBottom{
     return ^{
         self.bottom = self.superview.height;
         [self.layer ax_shadow:LayerShadowUpLight];

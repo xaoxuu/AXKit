@@ -16,7 +16,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 @implementation NSError (AXUserDefaults)
 
-+ (instancetype)axkit_errorWithReason:(NSString *(^)())reason{
++ (instancetype)axkit_errorWithReason:(NSString *(^)(void))reason{
     return [self axkit_errorWithCode:AXKitErrorCodeObjectForKeyNotFound reason:^NSString * _Nonnull{
         return reason?reason():nil;
     }];

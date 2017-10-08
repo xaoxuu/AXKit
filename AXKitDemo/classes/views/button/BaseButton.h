@@ -23,9 +23,9 @@
 
 - (__kindof BaseButton *(^)(UIView *view))addToView;
 
-- (__kindof BaseButton *(^)())layoutToTop;
+- (__kindof BaseButton *(^)(void))layoutToTop;
 
-- (__kindof BaseButton *(^)())layoutToBottom;
+- (__kindof BaseButton *(^)(void))layoutToBottom;
 
 
 @end
