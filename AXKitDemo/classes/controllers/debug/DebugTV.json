@@ -51,6 +51,11 @@
                     "title":"测试",
                     "desc":"",
                     "target":"TestTableViewVC",
+                },
+                {
+                    "title":"错误信息",
+                    "desc":"",
+                    "target":"",
                 }
             ]
         }
