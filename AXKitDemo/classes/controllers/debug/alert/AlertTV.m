@@ -53,7 +53,7 @@
         } else if (row == 4) {
             [UIAlertController ax_showAlertWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" actions:^(UIAlertController * _Nonnull alert) {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kAlertWidth-16, 222.3-16)];
-                view.backgroundColor = [UIColor md_yellow];
+                view.backgroundColor = axColor.lightGray.light;
                 view.layer.masksToBounds = YES;
                 view.layer.cornerRadius = 8;
                 
@@ -98,7 +98,7 @@
         } else if (row == 4) {
             [UIAlertController ax_showActionSheetWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" actions:^(UIAlertController * _Nonnull alert) {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kScreenW - 20 -16, 242-16)];
-                view.backgroundColor = [UIColor md_yellow];
+                view.backgroundColor = axColor.lightGray.light;
                 view.layer.masksToBounds = YES;
                 view.layer.cornerRadius = 8;
                 
