@@ -930,6 +930,7 @@
 				CD5745101EDADE510014E833 /* DebugTV.m */,
 				CD5745111EDADE510014E833 /* DebugVC.h */,
 				CD5745121EDADE510014E833 /* DebugVC.m */,
+				CD9B8C781F8B1FBE00A3A84B /* error */,
 				CD79DFA41EEFA18900408BAD /* testTableView */,
 				CD79DF9B1EEF910000408BAD /* alert */,
 				CD79DF951EEF8FE900408BAD /* shadow */,
@@ -1450,6 +1451,13 @@
 				CD88D1A91ECF30B6004FC692 /* BlogContentModel.m */,
 			);
 			path = BlogModels;
+			sourceTree = "<group>";
+		};
+		CD9B8C781F8B1FBE00A3A84B /* error */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = error;
 			sourceTree = "<group>";
 		};
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {

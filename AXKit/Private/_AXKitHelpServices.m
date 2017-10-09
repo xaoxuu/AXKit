@@ -42,9 +42,16 @@ static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/iss
     [UIAlertController ax_showAlertWithTitle:kStringError() message:msg actions:^(UIAlertController * _Nonnull alert) {
         [alert ax_addCancelAction];
         [alert ax_addDefaultActionWithTitle:kStringHelp() handler:^(UIAlertAction * _Nonnull sender) {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+            // iOS SDK 10.0 以后版本的处理
             [[UIApplication sharedApplication] openURL:[AXKitHelpServices errorURLWithCode:code] options:@{} completionHandler:^(BOOL success) {
                 
             }];
+#else
+            // iOS SDK 10.0 之前版本的处理
+            [[UIApplication sharedApplication] openURL:[AXKitHelpServices errorURLWithCode:code]];
+#endif
+            
         }];
     }];
     
