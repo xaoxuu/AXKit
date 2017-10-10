@@ -182,30 +182,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *(^)(NSString *))extension;
 
 
-/**
- 追加.plist
-
- @return 追加.plist后的路径
- */
-- (NSString *)plist;
-
-
-/**
- 追加.json
-
- @return 追加.json后的路径
- */
-- (NSString *)json;
-
-
-
-/**
- 追加.txt
-
- @return 追加.txt后的路径
- */
-- (NSString *)txt;
-
 #pragma mark - subpath
 
 

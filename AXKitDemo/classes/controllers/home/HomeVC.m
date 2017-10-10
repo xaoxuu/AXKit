@@ -91,6 +91,7 @@
 //    }];
     
     
+    @"123".tmpPath.extension(@".txt").save(@"haha");
 }
 
 

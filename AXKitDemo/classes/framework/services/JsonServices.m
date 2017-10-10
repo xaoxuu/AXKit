@@ -37,7 +37,7 @@
 
 - (NSMutableArray<BaseTableModelSection *> *(^)(NSString *json))modelList{
     return ^(NSString *json){
-        NSMutableArray<BaseTableModelSection *> *list = json.json.cachePath.readArchivedObject;
+        NSMutableArray<BaseTableModelSection *> *list = json.extension(@"json").cachePath.readArchivedObject;
         if (!list) {
             list = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:self.jsonInBundle(json)];
             if (!list) {

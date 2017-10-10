@@ -146,24 +146,17 @@ static NSString *txt   = @"txt";
 
 - (NSString *(^)(NSString *))extension{
     return ^(NSString *extension){
+        // @xaoxuu: 以.开头
         if (extension.length && ![self.lastPathComponent containsString:[@"."stringByAppendingString:extension]]) {
+            NSString *first = [extension substringToIndex:1];
+            if ([first containsString:@"."]) {
+                extension = [extension substringFromIndex:1];
+            }
             return [self stringByAppendingPathExtension:extension];
         } else{
             return self;
         }
     };
-}
-
-- (NSString *)plist{
-    return self.extension(@"plist");;
-}
-
-- (NSString *)json{
-    return self.extension(@"json");;
-}
-
-- (NSString *)txt{
-    return self.extension(@"txt");;
 }
 
 

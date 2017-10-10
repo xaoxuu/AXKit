@@ -101,7 +101,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 - (NSArray *(^)(NSString *))jsonInBundle{
     return ^(NSString *json){
-        NSDictionary *dict = json.json.mainBundlePath.readJson;
+        NSDictionary *dict = json.extension(@"json").mainBundlePath.readJson;
         return dict[@"sections"];
     };
 }
@@ -224,7 +224,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 
 - (NSString *)cachedFilePath{
-    return @"com.xaoxuu.cache/".append(self).json.cachePath;
+    return @"com.xaoxuu.cache/".append(self).extension(@"json").cachePath;
 }
 
 - (BOOL(^)(NSObject<NSCoding> *))ax_cacheObj{
