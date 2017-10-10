@@ -163,6 +163,10 @@
 		CD57461B1EDC28860014E833 /* FullWideButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57461A1EDC28860014E833 /* FullWideButton.m */; };
 		CD57461E1EDC526C0014E833 /* GitHubReleaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57461D1EDC526C0014E833 /* GitHubReleaseModel.m */; };
 		CD5746211EDC6DA10014E833 /* header.gif in Resources */ = {isa = PBXBuildFile; fileRef = CD5746201EDC6DA10014E833 /* header.gif */; };
+		CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD60001D1F8D08C100771DE6 /* UIApplication+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */; };
+		CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */; };
+		CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */; };
 		CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */; };
 		CD77FE901EBF592D001A5787 /* BaseSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE8F1EBF592D001A5787 /* BaseSwitch.m */; };
@@ -513,6 +517,13 @@
 		CD57461C1EDC526C0014E833 /* GitHubReleaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubReleaseModel.h; sourceTree = "<group>"; };
 		CD57461D1EDC526C0014E833 /* GitHubReleaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubReleaseModel.m; sourceTree = "<group>"; };
 		CD5746201EDC6DA10014E833 /* header.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = header.gif; sourceTree = "<group>"; };
+		CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+AXExtension.h"; sourceTree = "<group>"; };
+		CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+AXExtension.m"; sourceTree = "<group>"; };
+		CD60001F1F8D0A8B00771DE6 /* CustomStatusBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomStatusBarVC.h; sourceTree = "<group>"; };
+		CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBarVC.m; sourceTree = "<group>"; };
+		CD6000221F8D0AAC00771DE6 /* CustomStatusBarTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomStatusBarTV.h; sourceTree = "<group>"; };
+		CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBarTV.m; sourceTree = "<group>"; };
+		CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CustomStatusBarTV.json; sourceTree = "<group>"; };
 		CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperation+AXExtension.h"; sourceTree = "<group>"; };
 		CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperation+AXExtension.m"; sourceTree = "<group>"; };
 		CD77FE8E1EBF592D001A5787 /* BaseSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSwitch.h; sourceTree = "<group>"; };
@@ -1005,6 +1016,7 @@
 		CD57452C1EDADE510014E833 /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				CD60001E1F8D0A5A00771DE6 /* CustomStatusBar */,
 				CD54984A1EE19C1D00748C22 /* coding */,
 				CD57452D1EDADE510014E833 /* about */,
 				CD5745341EDADE510014E833 /* blog */,
@@ -1258,6 +1270,18 @@
 			path = imgs;
 			sourceTree = "<group>";
 		};
+		CD60001E1F8D0A5A00771DE6 /* CustomStatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				CD60001F1F8D0A8B00771DE6 /* CustomStatusBarVC.h */,
+				CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */,
+				CD6000221F8D0AAC00771DE6 /* CustomStatusBarTV.h */,
+				CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */,
+				CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */,
+			);
+			path = CustomStatusBar;
+			sourceTree = "<group>";
+		};
 		CD77FE681EBEE62E001A5787 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
@@ -1496,6 +1520,8 @@
 			children = (
 				CD5498161EE15E1300748C22 /* AXKitUIHeader.h */,
 				CD5498171EE15E1300748C22 /* AXKitUIHeader.m */,
+				CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */,
+				CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */,
 				CD09FCC11EE0599600F3D928 /* Layer */,
 				CD5746041EDAEA7A0014E833 /* Bar */,
 				CD77FE6A1EBEE685001A5787 /* UIColor */,
@@ -1744,6 +1770,7 @@
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
 				CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */,
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
+				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
@@ -2058,6 +2085,7 @@
 				CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */,
 				CD5745B71EDADE510014E833 /* ThemeColorModel.m in Sources */,
 				CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */,
+				CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */,
 				CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */,
 				CD79DFAA1EEFA1E000408BAD /* TestTV.m in Sources */,
 				CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */,
@@ -2109,6 +2137,7 @@
 				CD5745B01EDADE510014E833 /* ProjectsTableView.m in Sources */,
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
+				CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */,
 				CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */,
 				CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */,
 				CD57459E1EDADE510014E833 /* FeedbackVC.m in Sources */,
@@ -2154,6 +2183,7 @@
 				CD23DCAA1EC1DDD5006E331B /* UITabBar+AXExtension.m in Sources */,
 				CDAB59201E6BFBCE0017CA1E /* UIImage+AXExtension.m in Sources */,
 				CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */,
+				CD60001D1F8D08C100771DE6 /* UIApplication+AXExtension.m in Sources */,
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
 				CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,

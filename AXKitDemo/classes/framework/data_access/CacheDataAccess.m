@@ -109,10 +109,13 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 - (NSMutableArray<NSString *> *)allCachePaths{
     if (!_allCachePaths.count) {
-        _allCachePaths = [NSMutableArray arrayWithArray:key_cache_domain.cachePath.subpaths(@"")];
-        [NSBlockOperation ax_delay:2 performInMainQueue:^{
-            [_allCachePaths removeAllObjects];
-        }];
+        NSArray *arr = key_cache_domain.cachePath.subpaths(@"");
+        if (arr.count) {
+            _allCachePaths = [NSMutableArray arrayWithArray:arr];
+            [NSBlockOperation ax_delay:2 performInMainQueue:^{
+                [_allCachePaths removeAllObjects];
+            }];
+        }
     }
     return _allCachePaths;
 }

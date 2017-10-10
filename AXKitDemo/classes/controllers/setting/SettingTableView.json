@@ -97,6 +97,13 @@
                     "icon":"setting_icon",
                     "target":"CustomIconVC",
                     "cmd":""
+                },
+                {
+                    "title":"自定义状态栏",
+                    "desc":"",
+                    "icon":"setting_icon",
+                    "target":"CustomStatusBarVC",
+                    "cmd":""
                 }
             ]
         },

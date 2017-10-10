@@ -55,6 +55,8 @@
 
 - (NSMutableArray<BaseTableModelSection *> *)settingList;
 
+- (NSMutableArray<BaseTableModelSection *> *)customStatusBarList;
+
 - (NSMutableArray<BaseTableModelSection *> *)cacheList;
 
 

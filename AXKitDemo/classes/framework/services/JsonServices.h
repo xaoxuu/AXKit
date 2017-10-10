@@ -20,7 +20,7 @@
 
 - (NSMutableArray<BaseTableModelSection *> *)colors;
 
-
+- (NSMutableArray<BaseTableModelSection *> *)customStatusBarList;
 //- (NSString *((^)(NSString *)))titleForVC;
 
 

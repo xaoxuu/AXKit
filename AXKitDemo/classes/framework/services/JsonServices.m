@@ -13,13 +13,15 @@
 #define daLayer [DataAccessLayer sharedInstance]
 
 #define CACHE_COLORS @"ThemeColorTableView"
-
+#define CACHE_CUSTOM_STATUS_BAR @"CustomStatusBarTV"
 //#define BUNDLE_VC_TITLES @"view_controller_titles".mainBundlePath
 
 @interface JsonServices ()
 
 // @xaoxuu: colors
 @property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *colors;
+// @xaoxuu: custom status bar list
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *customStatusBarList;
 
 @end
 
@@ -70,6 +72,17 @@
     return _colors;
 }
 
+- (NSMutableArray<BaseTableModelSection *> *)customStatusBarList{
+    if (!_customStatusBarList.count) {
+        NSDictionary *jsonFile = CACHE_CUSTOM_STATUS_BAR.mainBundlePath.readJson();
+        NSArray *sections = jsonFile[@"sections"];
+        _customStatusBarList = [ThemeColorModelSection mj_objectArrayWithKeyValuesArray:sections];
+        if (!_customStatusBarList) {
+            _customStatusBarList = [NSMutableArray array];
+        }
+    }
+    return _customStatusBarList;
+}
 
 //- (NSString *((^)(NSString *)))titleForVC{
 //    return ^(NSString *vcName){

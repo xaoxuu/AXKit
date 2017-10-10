@@ -16,7 +16,7 @@
 static NSString *key_setting = @"SettingTableView";
 static NSString *key_projects = @"ProjectsTableView";
 static NSString *key_about = @"AboutTableView";
-
+static NSString *key_custom_status_bar = @"CustomStatusBarTV";
 
 @interface CacheServices () <ServicesPrivateMethod>
 
@@ -31,6 +31,9 @@ static NSString *key_about = @"AboutTableView";
 
 // @xaoxuu: about list
 @property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *aboutList;
+
+// @xaoxuu: custom status bar list
+@property (strong, nonatomic) NSMutableArray<BaseTableModelSection *> *customStatusBarList;
 
 @end
 
@@ -112,7 +115,15 @@ static NSString *key_about = @"AboutTableView";
     }
     return _settingList;
 }
-
+- (NSMutableArray<BaseTableModelSection *> *)customStatusBarList{
+    if (!_customStatusBarList) {
+        // @xaoxuu: 取出模型
+        _customStatusBarList = [self loadObjWithKey:key_custom_status_bar];
+        // @xaoxuu: cache缓存
+        [self cacheObj:_customStatusBarList forKey:key_custom_status_bar completion:nil];
+    }
+    return _customStatusBarList;
+}
 
 // @xaoxuu: 项目列表
 - (NSMutableArray<BaseTableModelSection *> *)projectList{
