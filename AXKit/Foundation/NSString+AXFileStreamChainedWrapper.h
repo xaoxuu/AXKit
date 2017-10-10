@@ -155,7 +155,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return ‘self’在tmp中的完整路径
  */
-- (NSString *)tempPath;
+- (NSString *)tmpPath;
 
 
 /**
@@ -164,6 +164,14 @@ NS_ASSUME_NONNULL_BEGIN
  @return ‘self’在NSSearchPathDirectory中的完整路径
  */
 - (NSString *(^)(NSSearchPathDirectory))path;
+
+
+/**
+ 获取路径（如果不存在就创建）
+
+ @return 路径存在或者不存在
+ */
+- (BOOL )directory;
 
 #pragma mark - extension
 

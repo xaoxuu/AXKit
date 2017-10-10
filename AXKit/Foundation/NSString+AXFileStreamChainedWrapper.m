@@ -98,7 +98,7 @@ static NSString *txt   = @"txt";
 - (NSString *)cachePath{
     return self.path(NSCachesDirectory);
 }
-- (NSString *)tempPath{
+- (NSString *)tmpPath{
     return [NSTemporaryDirectory() stringByAppendingPathComponent:self];
 }
 
@@ -136,6 +136,12 @@ static NSString *txt   = @"txt";
         NSString *path = NSSearchPathForDirectoriesInDomains(searchPathDirectory, NSUserDomainMask, YES)[0];
         return [path stringByAppendingPathComponent:self];
     };
+}
+
+- (BOOL)directory{
+    // create dir if not exist
+    NSFileManager *fm = [NSFileManager defaultManager];
+    return [fm createDirectoryAtPath:self withIntermediateDirectories:YES attributes:nil error:nil];
 }
 
 - (NSString *(^)(NSString *))extension{
