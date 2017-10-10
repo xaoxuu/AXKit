@@ -90,8 +90,10 @@
 //        
 //    }];
     
+//    NSString *content = [NSString ax_stringWithRandomCapitalizeStringWithLength:AXUIntegerRangeMake(3, 5)];
+//    NSString *path = @"com.xaoxuu/1234".tmpPath.extension(@".txt");
+//    path.saveStringByAppendingToEndOfFile(content);
     
-    @"123".tmpPath.extension(@".txt").save(@"haha");
 }
 
 

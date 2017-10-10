@@ -85,6 +85,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL(^)(NSObject<NSCoding> *))saveArchivedObject;
 
 /**
+ 拼接文本到沙盒文件
+ */
+- (BOOL (^)(NSString *))saveStringByAppendingToEndOfFile;
+
+/**
  归档一个文件
  
  @return 成功与否
@@ -169,9 +174,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  获取路径（如果不存在就创建）
 
- @return 路径存在或者不存在
+ @return 路径
  */
-- (BOOL )directory;
+- (NSString *)createDirectory;
 
 #pragma mark - extension
 

@@ -63,6 +63,25 @@ static NSString *txt   = @"txt";
     };
 }
 
+- (BOOL (^)(NSString *))saveStringByAppendingToEndOfFile{
+    return ^(NSString *content){
+        NSFileHandle *handle = [NSFileHandle fileHandleForWritingAtPath:self];
+        if (!handle) {
+            self.save(content);
+            handle = [NSFileHandle fileHandleForWritingAtPath:self];
+            return YES;
+        }
+        if (handle) {
+            [handle seekToEndOfFile];
+            NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+            [handle writeData:data];
+            [handle closeFile];
+            return YES;
+        }
+        return NO;
+    };
+}
+
 #pragma mark - remove
 
 - (BOOL)removePlist{
@@ -138,10 +157,14 @@ static NSString *txt   = @"txt";
     };
 }
 
-- (BOOL)directory{
+- (NSString *)createDirectory{
     // create dir if not exist
     NSFileManager *fm = [NSFileManager defaultManager];
-    return [fm createDirectoryAtPath:self withIntermediateDirectories:YES attributes:nil error:nil];
+    BOOL result = [fm createDirectoryAtPath:self withIntermediateDirectories:YES attributes:nil error:nil];
+    if (!result) {
+        AXLogFailure(@"can not create the file at path %@", self);
+    }
+    return self;
 }
 
 - (NSString *(^)(NSString *))extension{
