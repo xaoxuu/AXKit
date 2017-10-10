@@ -32,20 +32,23 @@ inline NSArray *NSClassGetAllSubclasses(Class cls){
 
 
 - (CGFloat)ax_sum{
-    return [[self valueForKeyPath:@"@sum.floatValue"] floatValue];
+    return [[self valueForKeyPath:@"@sum.doubleValue"] doubleValue];
 }
 
 - (CGFloat)ax_avg{
-    return [[self valueForKeyPath:@"@avg.floatValue"] floatValue];
+    return [[self valueForKeyPath:@"@avg.doubleValue"] doubleValue];
 }
 
 - (CGFloat)ax_max{
-    return [[self valueForKeyPath:@"@max.floatValue"] floatValue];
+    return [[self valueForKeyPath:@"@max.doubleValue"] doubleValue];
 }
 
 - (CGFloat)ax_min{
-    return [[self valueForKeyPath:@"@min.floatValue"] floatValue];
+    return [[self valueForKeyPath:@"@min.doubleValue"] doubleValue];
 }
 
+- (instancetype)distinctUnionOfObjects{
+    return [self valueForKeyPath:@"@distinctUnionOfObjects.self"];
+}
 
 @end

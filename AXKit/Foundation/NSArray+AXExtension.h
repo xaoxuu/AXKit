@@ -46,6 +46,12 @@ FOUNDATION_EXTERN NSArray *NSClassGetAllSubclasses(Class cls);
  */
 - (CGFloat)ax_min;
 
+/**
+ 去重后的数组
+
+ @return 去重后的数组
+ */
+- (instancetype)distinctUnionOfObjects;
 
 @end
 

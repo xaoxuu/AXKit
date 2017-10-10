@@ -30,7 +30,6 @@ static ax_dispatch_operation_t token = nil;
         AXLogSuccess();
     });
     
-    
 }
 
 - (void)didReceiveMemoryWarning {
