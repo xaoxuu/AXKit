@@ -29,7 +29,7 @@ static NSArray<NSString *> *footerArray;
         
         _placeholderForSetting = daLayer.assets.setting.placeholder.image;
         
-        _model = [AppInfoModel mj_objectWithKeyValues:@"appinfo.json".mainBundlePath.readJson];
+        _model = [AppInfoModel mj_objectWithKeyValues:@"appinfo.json".mainBundlePath.readJson()];
         
         _defaultVC = [DefaultViewController new];
         
@@ -191,7 +191,7 @@ static NSArray<NSString *> *footerArray;
 
 - (NSString *)randomTips{
     if (!footerArray) {
-        NSMutableArray *arrM = [NSMutableArray arrayWithArray:@"footer_rhesis.json".mainBundlePath.readJson];
+        NSMutableArray *arrM = [NSMutableArray arrayWithArray:@"footer_rhesis.json".mainBundlePath.readJson()];
         if (arrM) {
             NSString *tmp = self.model.copyright;
             [arrM addObject:tmp];

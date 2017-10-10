@@ -19,118 +19,70 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 数组
  */
-- (nullable __kindof NSArray *)readArray;
+- (nullable __kindof NSArray *(^)(void))readArray;
 
 /**
  读取一个字典或可变字典(自动追加.plist)
 
  @return 字典
  */
-- (nullable __kindof NSDictionary *)readDictionary;
-
-/**
- 解档一个已归档的plist文件(自动追加.plist)
-
- @return 一个已归档的plist文件
- */
-- (nullable id)readArchivedPlist;
+- (nullable __kindof NSDictionary *(^)(void))readDictionary;
 
 /**
  读取一个json文件(自动追加.json)
 
  @return 数组或字典
  */
-- (nullable id)readJson;
+- (nullable id (^)(void))readJson;
 
 /**
  读取一个纯文本文件(自动追加.txt)
 
  @return txt文件
  */
-- (nullable NSString *)readTxt;
+- (nullable NSString *(^)(void))readTxt;
 
-/*!
- *	@author Aesir Titan
- *
- *	@brief read file
- *  解档一个已归档的文件
- *
- *	@return a file
+/**
+ 解档一个已归档的文件
+ 
+ @return 文件
  */
-- (nullable id)readArchivedFile;
-
-- (nullable id)readArchivedObject;
+- (nullable id (^)(void))readArchivedFile;
 
 #pragma mark - save
 
 /**
- 保存一个plist文件（自动追加.plist）
+ 保存一个文件
  
  @return 成功与否
  */
-- (BOOL(^)(id))savePlist;
-
-/**
- 归档一个实现NSCoding协议的plist文件（自动追加.plist）
- 
- @return 成功与否
- */
-- (BOOL(^)(NSObject<NSCoding> *))saveArchivedPlist;
+- (BOOL(^)(id))saveFile;
 
 /**
  归档一个实现NSCoding协议的文件
  
  @return 成功与否
  */
-- (BOOL(^)(NSObject<NSCoding> *))saveArchivedObject;
+- (BOOL(^)(NSObject<NSCoding> *))saveArchivedFile;
 
 /**
  拼接文本到沙盒文件
- */
-- (BOOL (^)(NSString *))saveStringByAppendingToEndOfFile;
-
-/**
- 归档一个文件
  
  @return 成功与否
  */
-- (BOOL(^)(id <NSCoding>))save;
+- (BOOL (^)(NSString *))saveStringByAppendingToEndOfFile;
+
 
 #pragma mark - remove
-
-
-/**
- 删除一个plist文件（自动追加.plist）
-
- @return 成功与否
- */
-- (BOOL)removePlist;
-
-
-/**
- 删除一个json文件（自动追加.json）
-
- @return 成功与否
- */
-- (BOOL)removeJson;
-
-
-/**
- 删除一个txt文件（自动追加.txt）
-
- @return 成功与否
- */
-- (BOOL)removeTxt;
-
 
 /**
  删除一个文件
 
  @return 成功与否
  */
-- (BOOL)remove;
+- (BOOL (^)(void))removeFile;
 
-#pragma mark path
+#pragma mark - path
 
 /**
  ‘self’在mainBundle中的完整路径
@@ -146,14 +98,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)docPath;
 
-
 /**
  ‘self’在cache中的完整路径
 
  @return ‘self’在cache中的完整路径
  */
 - (NSString *)cachePath;
-
 
 /**
  ‘self’在tmp中的完整路径
@@ -162,7 +112,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)tmpPath;
 
-
 /**
  ‘self’在NSSearchPathDirectory中的完整路径
  
@@ -170,30 +119,29 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *(^)(NSSearchPathDirectory))path;
 
-
 /**
- 获取路径（如果不存在就创建）
-
- @return 路径
+ ‘self’路径下的所有文件路径
  */
-- (NSString *)createDirectory;
-
-#pragma mark - extension
-
+- (nullable NSArray<NSString *> *(^)(NSString *__nullable))subpaths;
 
 /**
  追加一个扩展名
  */
 - (NSString *(^)(NSString *))extension;
 
-
-#pragma mark - subpath
-
+/**
+ 创建路径是否存在
+ 
+ @return 创建路径是否存在
+ */
+- (BOOL (^)(void))isDirectoryExist;
 
 /**
- ‘self’路径下的所有文件路径
+ 如果不存在创建路径
+ 
+ @return 路径
  */
-- (nullable NSArray<NSString *> *(^)(NSString *__nullable))subpaths;
+- (BOOL (^)(void))createDirectory;
 
 
 @end

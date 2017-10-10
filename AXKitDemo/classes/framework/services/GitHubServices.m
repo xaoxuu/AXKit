@@ -21,7 +21,7 @@
 - (instancetype)init{
     if (self = [super init]) {
         
-        _model = [GitHubInfoModel mj_objectWithKeyValues:@"ghinfo".mainBundlePath.readJson];
+        _model = [GitHubInfoModel mj_objectWithKeyValues:@"ghinfo".mainBundlePath.readJson()];
         
     }
     return self;

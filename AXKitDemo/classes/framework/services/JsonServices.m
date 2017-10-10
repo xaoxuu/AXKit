@@ -37,7 +37,7 @@
 
 - (NSMutableArray<BaseTableModelSection *> *(^)(NSString *json))modelList{
     return ^(NSString *json){
-        NSMutableArray<BaseTableModelSection *> *list = json.extension(@"json").cachePath.readArchivedObject;
+        NSMutableArray<BaseTableModelSection *> *list = json.extension(@"json").cachePath.readArchivedFile();
         if (!list) {
             list = [BaseTableModelSection mj_objectArrayWithKeyValuesArray:self.jsonInBundle(json)];
             if (!list) {
@@ -50,7 +50,7 @@
 
 - (NSArray *(^)(NSString *))jsonInBundle{
     return ^(NSString *json){
-        NSDictionary *dict = json.mainBundlePath.readJson;
+        NSDictionary *dict = json.mainBundlePath.readJson();
         return dict[@"sections"];
     };
 }
@@ -60,7 +60,7 @@
 
 - (NSMutableArray<BaseTableModelSection *> *)colors{
     if (!_colors) {
-        NSDictionary *jsonFile = CACHE_COLORS.mainBundlePath.readJson;
+        NSDictionary *jsonFile = CACHE_COLORS.mainBundlePath.readJson();
         NSArray *sections = jsonFile[@"sections"];
         _colors = [ThemeColorModelSection mj_objectArrayWithKeyValuesArray:sections];
         if (!_colors) {
@@ -73,7 +73,7 @@
 
 //- (NSString *((^)(NSString *)))titleForVC{
 //    return ^(NSString *vcName){
-//        NSDictionary *dict = BUNDLE_VC_TITLES.readJson;
+//        NSDictionary *dict = BUNDLE_VC_TITLES.readJson();
 //        NSString *title = NSLocalizedString(vcName, nil);
 //        for (NSDictionary *tmp in dict[@"items"]) {
 //            if ([tmp[@"vc"] isEqualToString:vcName]) {

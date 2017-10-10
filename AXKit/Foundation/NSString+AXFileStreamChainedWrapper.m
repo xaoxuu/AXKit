@@ -18,46 +18,52 @@ static NSString *txt   = @"txt";
 
 #pragma mark - read
 
-- (NSArray *)readArray{
-    return [self readArrayWithExtension:plist];
+- (nullable __kindof NSArray *(^)(void))readArray{
+    return ^{
+        return [self readArrayWithExtension:plist];
+    };
 }
 
-- (NSDictionary *)readDictionary{
-    return [self readDictionaryWithExtension:plist];
+- (nullable __kindof NSDictionary *(^)(void))readDictionary{
+    return ^{
+        return [self readDictionaryWithExtension:plist];
+    };
 }
 
-- (id)readArchivedPlist{
-    return [self readArchivedFileWithExtension:plist];
+
+- (nullable id (^)(void))readJson{
+    return ^{
+        id result = nil;
+        NSString *jsonStr = [NSString stringWithContentsOfFile:self.extension(json) encoding:NSUTF8StringEncoding error:nil];
+        if (jsonStr.length) {
+            result = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding] options:0 error:NULL];
+        }
+        return result;
+    };
 }
 
-- (id)readJson{
-    NSString *jsonStr = [NSString stringWithContentsOfFile:self.extension(json) encoding:NSUTF8StringEncoding error:nil];
-    if (jsonStr.length) {
-        return [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding] options:0 error:NULL];
-    } else {
-        return nil;
-    }
+- (nullable NSString *(^)(void))readTxt{
+    return ^{
+        return [NSString stringWithContentsOfFile:self.extension(txt) encoding:NSUTF8StringEncoding error:nil];
+    };
 }
 
-- (NSString *)readTxt{
-    return [NSString stringWithContentsOfFile:self.extension(txt) encoding:NSUTF8StringEncoding error:nil];
+- (nullable id (^)(void))readArchivedFile{
+    return ^{
+        return [self readArchivedFileWithExtension:nil];
+    };
 }
+
 
 #pragma mark - save
 
-- (BOOL(^)(id))savePlist{
+- (BOOL(^)(id))saveFile{
     return ^(id file){
-        return [self writeFile:file extension:plist completion:nil];
+        return [self writeFile:file extension:nil completion:nil];
     };
 }
 
-- (BOOL(^)(NSObject<NSCoding> *))saveArchivedPlist{
-    return ^(id file){
-        return [self writeArchivedFile:file extension:plist completion:nil];
-    };
-}
-
-- (BOOL(^)(NSObject<NSCoding> *))saveArchivedObject{
+- (BOOL(^)(NSObject<NSCoding> *))saveArchivedFile{
     return ^(id file){
         return [self writeArchivedFile:file extension:nil completion:nil];
     };
@@ -67,7 +73,7 @@ static NSString *txt   = @"txt";
     return ^(NSString *content){
         NSFileHandle *handle = [NSFileHandle fileHandleForWritingAtPath:self];
         if (!handle) {
-            self.save(content);
+            self.saveFile(content);
             handle = [NSFileHandle fileHandleForWritingAtPath:self];
             return YES;
         }
@@ -84,17 +90,10 @@ static NSString *txt   = @"txt";
 
 #pragma mark - remove
 
-- (BOOL)removePlist{
-    return [self removeFileWithExtension:plist completion:nil];
-}
-- (BOOL)removeJson{
-    return [self removeFileWithExtension:json completion:nil];
-}
-- (BOOL)removeTxt{
-    return [self removeFileWithExtension:txt completion:nil];
-}
-- (BOOL)remove{
-    return [self removeFileWithExtension:nil completion:nil];
+- (BOOL (^)(void))removeFile{
+    return ^{
+        return [self removeFileWithExtension:nil completion:nil];
+    };
 }
 
 #pragma mark - path
@@ -102,7 +101,7 @@ static NSString *txt   = @"txt";
 - (NSString *)mainBundlePath{
     NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:self];
     if (!path.length) {
-        if ([self containsString:@"."]) {
+        if ([self.lastPathComponent containsString:@"."]) {
             AXLogFailure(@"path not found.");
         } else{
             AXLogFailure(@"path not found, please append the file's extension.");
@@ -114,40 +113,13 @@ static NSString *txt   = @"txt";
 - (NSString *)docPath{
     return self.path(NSDocumentDirectory);
 }
+
 - (NSString *)cachePath{
     return self.path(NSCachesDirectory);
 }
+
 - (NSString *)tmpPath{
     return [NSTemporaryDirectory() stringByAppendingPathComponent:self];
-}
-
-- (NSArray<NSString *> *(^)(NSString *))subpaths{
-    return ^(NSString *extension){
-        NSFileManager *fm = [NSFileManager defaultManager];
-        NSMutableArray *allPlist = [NSMutableArray array];
-        NSDirectoryEnumerator *dirEnum = [fm enumeratorAtPath:self];
-        NSString *path;
-        while ((path = dirEnum.nextObject) != nil) {
-            if (!extension.length || [path.lastPathComponent containsString:extension]) {
-                [allPlist addObject:[self stringByAppendingPathComponent:path]];
-            }
-        }
-        return allPlist;
-    };
-}
-
-#pragma mark - all
-- (id)readArchivedObject{
-    return [self readArchivedFileWithExtension:nil];
-}
-- (id)readArchivedFile{
-    return [self readArchivedFileWithExtension:nil];
-}
-
-- (BOOL(^)(id <NSCoding>))save{
-    return ^(id file){
-        return [self writeFile:file extension:nil completion:nil];
-    };
 }
 
 - (NSString *(^)(NSSearchPathDirectory))path{
@@ -157,14 +129,18 @@ static NSString *txt   = @"txt";
     };
 }
 
-- (NSString *)createDirectory{
-    // create dir if not exist
-    NSFileManager *fm = [NSFileManager defaultManager];
-    BOOL result = [fm createDirectoryAtPath:self withIntermediateDirectories:YES attributes:nil error:nil];
-    if (!result) {
-        AXLogFailure(@"can not create the file at path %@", self);
-    }
-    return self;
+- (NSArray<NSString *> *(^)(NSString *))subpaths{
+    return ^(NSString *extension){
+        NSMutableArray *allPlist = [NSMutableArray array];
+        NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:self];
+        NSString *path;
+        while ((path = dirEnum.nextObject) != nil) {
+            if (!extension.length || [path.lastPathComponent containsString:extension]) {
+                [allPlist addObject:[self stringByAppendingPathComponent:path]];
+            }
+        }
+        return allPlist;
+    };
 }
 
 - (NSString *(^)(NSString *))extension{
@@ -182,22 +158,41 @@ static NSString *txt   = @"txt";
     };
 }
 
+- (BOOL (^)(void))isDirectoryExist{
+    return ^{
+        BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:self];
+        if (!result) {
+            AXLogFailure(@"directory is not exist at path %@", self);
+        }
+        return result;
+    };
+}
+
+- (BOOL (^)(void))createDirectory{
+    return ^{
+        // create dir if not exist
+        BOOL result = [[NSFileManager defaultManager] createDirectoryAtPath:self withIntermediateDirectories:YES attributes:nil error:nil];
+        if (!result) {
+            AXLogFailure(@"can not create the file at path %@", self);
+        }
+        return result;
+    };
+}
 
 #pragma mark - private methods
 
 #pragma mark read file
 
-- (NSArray *)readArrayWithExtension:(NSString *)extension{
+- (nullable NSArray *)readArrayWithExtension:(NSString *)extension{
     return [NSArray arrayWithContentsOfFile:self.extension(extension)];
 }
 
-- (NSDictionary *)readDictionaryWithExtension:(NSString *)extension{
+- (nullable NSDictionary *)readDictionaryWithExtension:(NSString *)extension{
     return [NSDictionary dictionaryWithContentsOfFile:self.extension(extension)];
 }
 
-- (id)readArchivedFileWithExtension:(NSString *)extension{
-    NSFileManager *fm = [NSFileManager defaultManager];
-    if ([fm fileExistsAtPath:self.extension(extension)]) {
+- (nullable id)readArchivedFileWithExtension:(NSString *)extension{
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.extension(extension)]) {
         NSData *data = [NSData dataWithContentsOfFile:self.extension(extension)];
         return [NSKeyedUnarchiver unarchiveObjectWithData:data];
     } else{
@@ -324,8 +319,7 @@ static NSString *txt   = @"txt";
 
 - (BOOL)removeFileWithExtension:(NSString *)extension
                      completion:(void (^)(void))completion{
-    NSFileManager *fm = [NSFileManager defaultManager];
-    BOOL result = [fm removeItemAtPath:self.extension(extension) error:nil];
+    BOOL result = [[NSFileManager defaultManager] removeItemAtPath:self.extension(extension) error:nil];
     if (!result) AXLogFailure(@"remove failure.");
     if (completion) {
         completion();

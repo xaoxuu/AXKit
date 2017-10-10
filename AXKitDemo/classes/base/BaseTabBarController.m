@@ -50,7 +50,7 @@
 
 - (NSArray<NSDictionary *> *)controllers{
     if (!_controllers) {
-        _controllers = @"tabbar_controllers".mainBundlePath.readJson;
+        _controllers = @"tabbar_controllers".mainBundlePath.readJson();
     }
     return _controllers;
 }

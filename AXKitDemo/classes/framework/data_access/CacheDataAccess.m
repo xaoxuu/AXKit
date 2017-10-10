@@ -101,7 +101,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 - (NSArray *(^)(NSString *))jsonInBundle{
     return ^(NSString *json){
-        NSDictionary *dict = json.extension(@"json").mainBundlePath.readJson;
+        NSDictionary *dict = json.extension(@"json").mainBundlePath.readJson();
         return dict[@"sections"];
     };
 }
@@ -123,7 +123,7 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 - (void)removeAllCacheCompletion:(void (^)(void))completion{
     [NSBlockOperation ax_delay:0 performInBackground:^{
         for (NSString *path in self.allCachePaths) {
-            if (path.remove) {
+            if (path.removeFile()) {
                 // @xaoxuu: 已清除缓存
             } else {
                 AXLogFailure(@"缓存清除失败:<%@>",path.lastPathComponent);
@@ -229,16 +229,16 @@ static NSString *key_cache_domain = @"com.xaoxuu.cache/";
 
 - (BOOL(^)(NSObject<NSCoding> *))ax_cacheObj{
     return ^(id obj){
-        return self.cachedFilePath.saveArchivedObject(obj);
+        return self.cachedFilePath.saveArchivedFile(obj);
     };
 }
 
 - (id)ax_readObj{
-    return self.cachedFilePath.readArchivedObject;
+    return self.cachedFilePath.readArchivedFile();
 }
 
 - (BOOL)ax_removeObj{
-    return self.cachedFilePath.remove;
+    return self.cachedFilePath.removeFile();
 }
 
 @end
