@@ -8,6 +8,7 @@
 
 #import "HomeVC.h"
 
+static ax_dispatch_operation_t token = nil;
 @interface HomeVC ()
 
 @end
@@ -23,6 +24,13 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
+    
+    ax_dispatch_cancel_operation(token);
+    token = ax_dispatch_cancellable(1, dispatch_get_main_queue(), ^{
+        AXLogSuccess();
+    });
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,13 +102,6 @@
 //    NSString *path = @"com.xaoxuu/1234".tmpPath.extension(@".txt");
 //    path.saveStringByAppendingToEndOfFile(content);
     
-    NSString *path = @"arr.plist".tmpPath;
-    NSArray *arr = [NSArray array];
-    
-    path.saveFile(arr);
-    
-    arr = path.readArray();
-    AXLogOBJ(arr);
     
     
 }
@@ -112,6 +113,7 @@
     frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
     return frame;
 }
+
 
 
 @end

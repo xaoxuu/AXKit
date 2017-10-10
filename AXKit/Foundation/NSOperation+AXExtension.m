@@ -34,7 +34,7 @@ NS_INLINE BOOL supports_dispatch_cancellation(void) {
 #endif
 }
 
-static inline ax_dispatch_operation_t ax_dispatch_cancellable(NSTimeInterval delay, dispatch_queue_t queue, void (^block)(void)){
+inline ax_dispatch_operation_t ax_dispatch_cancellable(NSTimeInterval delay, dispatch_queue_t queue, void (^block)(void)){
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (uint64_t)(NSEC_PER_SEC * delay));
     
 #if DISPATCH_CANCELLATION_SUPPORTED

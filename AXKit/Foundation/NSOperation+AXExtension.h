@@ -17,7 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 typedef __nonnull id <NSObject, NSCopying> ax_dispatch_operation_t;
 
 /**
- 拥有冷却机制的dispatch
+ 可取消的延迟函数
+ 
+ @param delay 延迟时间
+ @param queue 线程
+ @param block 要执行的block
+ @return 操作口令（用于取消此操作）
+ */
+FOUNDATION_EXTERN ax_dispatch_operation_t ax_dispatch_cancellable(NSTimeInterval delay, dispatch_queue_t queue, void (^block)(void));
+
+/**
+ 拥有冷却机制的dispatch（可取消）
  
  @param delay 延迟时间
  @param cooldown 冷却时间
@@ -28,7 +38,6 @@ typedef __nonnull id <NSObject, NSCopying> ax_dispatch_operation_t;
  @return 操作口令（用于取消此操作）
  */
 FOUNDATION_EXTERN ax_dispatch_operation_t ax_dispatch_cooldown(NSTimeInterval delay, NSTimeInterval cooldown,id token, dispatch_queue_t queue, void (^block)(void), void (^ __nullable block_cooling)(void));
-
 
 /**
  取消操作
