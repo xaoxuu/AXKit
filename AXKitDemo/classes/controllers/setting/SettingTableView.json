@@ -101,7 +101,7 @@
                 {
                     "title":"自定义状态栏",
                     "desc":"",
-                    "icon":"setting_icon",
+                    "icon":"setting_custom_status_bar",
                     "target":"CustomStatusBarVC",
                     "cmd":""
                 }

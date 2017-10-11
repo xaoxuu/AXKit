@@ -122,6 +122,21 @@
                     "hex":"#FF5722"
                 }
             ]
+        },
+        {
+            "header_title":"状态栏通知",
+            "header_height":"44",
+            "footer_title":"",
+            "footer_height":"0",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"警告"
+                },
+                {
+                    "title":"错误"
+                }
+            ]
         }
     ]
 }

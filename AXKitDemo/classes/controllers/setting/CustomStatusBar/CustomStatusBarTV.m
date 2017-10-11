@@ -110,7 +110,38 @@ static UIView *customView;
                 ThemeColorModelRow *tmp = (ThemeColorModelRow *)model;
                 statusBar.backgroundColor = [UIColor colorWithHexString:tmp.hex];
             }
+        } else if (section == 4) {
+            // @xaoxuu: 状态栏通知
+            CGRect frame = customView.bounds;
+            frame.origin.x = 8;
+            frame.size.width = kScreenW - 2*8;
+            UILabel *label = [[UILabel alloc] initWithFrame:frame];
+            label.textAlignment = NSTextAlignmentLeft;
+            label.font = [UIFont systemFontOfSize:12];
+            [customView removeAllSubviews];
+            [customView addSubview:label];
+            customView.alpha = 0;
+            
+            [statusBar addSubview:customView];
+            if (row == 0) {
+                customView.backgroundColor = [UIColor md_yellow];
+                label.text = @"警告：这是一条警告消息";
+            } else {
+                customView.backgroundColor = [UIColor md_red];
+                label.text = @"错误：这是一条错误提示";
+            }
+            [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                customView.alpha = 1;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.5f delay:5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                    customView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    customView.alpha = 0;
+                }];
+            }];
+            
         }
+        
     });
     
     
