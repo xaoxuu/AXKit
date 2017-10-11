@@ -233,6 +233,7 @@
 		CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */; };
 		CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */; };
 		CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39B41EB9D74E00E8ED25 /* DemoConst.m */; };
 		CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39B61EB9D74E00E8ED25 /* DemoMarcos.m */; };
 		CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B131EB9E80F00E8ED25 /* MJExtensionConst.m */; };
@@ -1882,6 +1883,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* footer_rhesis.json in Resources */,

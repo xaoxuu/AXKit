@@ -6,6 +6,18 @@
     "footer_height":"0",
     "sections":[
         {
+            "header_title":"还原",
+            "header_height":"44",
+            "footer_title":"",
+            "footer_height":"0",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"清除所有自定义设置"
+                }
+            ]
+        },
+        {
             "header_title":"渐变",
             "header_height":"44",
             "footer_title":"",
@@ -13,13 +25,16 @@
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"透明度渐变"
-                },
-                {
                     "title":"明暗渐变"
                 },
                 {
-                    "title":"彩色渐变"
+                    "title":"闪烁红色"
+                },
+                {
+                    "title":"闪烁黄色"
+                },
+                {
+                    "title":"闪烁蓝色"
                 }
             ]
         },
@@ -34,7 +49,13 @@
                     "title":"去除阴影"
                 },
                 {
-                    "title":"添加阴影"
+                    "title":"阴影 - light"
+                },
+                {
+                    "title":"阴影 - normal"
+                },
+                {
+                    "title":"阴影 - float"
                 }
             ]
         },
@@ -46,58 +67,59 @@
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"透明",
-                },{
+                    "title":"透明"
+                },
+                {
                     "title":"md_red",
-                    "hex":"#F44336",
+                    "hex":"#F44336"
                 },
                 {
                     "title":"md_pink",
-                    "hex":"#E91E63",
+                    "hex":"#E91E63"
                 },
                 {
                     "title":"md_indigo",
-                    "hex":"#3F51B5",
+                    "hex":"#3F51B5"
                 },
                 {
                     "title":"md_blue",
-                    "hex":"#2196F3",
+                    "hex":"#2196F3"
                 },
                 {
                     "title":"md_lightBlue",
-                    "hex":"#03A9F4",
+                    "hex":"#03A9F4"
                 },
                 {
                     "title":"md_cyan",
-                    "hex":"#00BCD4",
+                    "hex":"#00BCD4"
                 },
                 {
                     "title":"md_green",
-                    "hex":"#4CAF50",
+                    "hex":"#4CAF50"
                 },
                 {
                     "title":"md_lightGreen",
-                    "hex":"#8BC34A",
+                    "hex":"#8BC34A"
                 },
                 {
                     "title":"md_lime",
-                    "hex":"#CDDC39",
+                    "hex":"#CDDC39"
                 },
                 {
                     "title":"md_yellow",
-                    "hex":"#FFEB3B",
+                    "hex":"#FFEB3B"
                 },
                 {
                     "title":"md_amber",
-                    "hex":"#FFC107",
+                    "hex":"#FFC107"
                 },
                 {
                     "title":"md_orange",
-                    "hex":"#FF9800",
+                    "hex":"#FF9800"
                 },
                 {
                     "title":"md_deepOrange",
-                    "hex":"#FF5722",
+                    "hex":"#FF5722"
                 }
             ]
         }

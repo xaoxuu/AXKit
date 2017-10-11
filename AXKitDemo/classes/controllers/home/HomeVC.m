@@ -18,22 +18,9 @@ static ax_dispatch_operation_t token = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setStatusBarBackgroundColor:[UIColor md_red]];
-    [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
-        [self setStatusBarBackgroundColor:[UIColor md_green]];
-    } completion:nil];
+    
 }
-- (void)setStatusBarBackgroundColor:(UIColor *)color
-{
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    [statusBar ax_layer:^(CALayer * _Nonnull layer) {
-        [layer ax_shadow:LayerShadowDownNormal];
-    }];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)])
-    {
-        statusBar.backgroundColor = color;
-    }
-}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];

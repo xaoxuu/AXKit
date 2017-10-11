@@ -10,6 +10,6 @@
 
 @interface UIApplication (AXExtension)
 
-- (UIView *)ax_getStatusBar;
++ (UIView *)ax_getStatusBar;
 
 @end

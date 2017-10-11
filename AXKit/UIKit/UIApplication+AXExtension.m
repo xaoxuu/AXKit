@@ -10,7 +10,7 @@
 
 @implementation UIApplication (AXExtension)
 
-- (UIView *)ax_getStatusBar{
++ (UIView *)ax_getStatusBar{
     return [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
 }
 
