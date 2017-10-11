@@ -135,7 +135,13 @@
 - (void)baseModuleKitContentView{
     // @xaoxuu: table view
     if ([self respondsToSelector:@selector(installTableView)]) {
-        [self.view addSubview:UIViewWithHeight(1)];
+        if (@available(iOS 11.0, *)) {
+            // on newer versions
+            
+        } else {
+            // Fallback on earlier versions
+            [self.view addSubview:UIViewWithHeight(1)];
+        }
         self.tableView = [self installTableView];
         // init and add to superview
         self.tableView.dataSource = self.tableView;
