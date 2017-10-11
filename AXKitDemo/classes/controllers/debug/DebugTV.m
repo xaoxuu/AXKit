@@ -7,11 +7,28 @@
 //
 
 #import "DebugTV.h"
+#import "UIViewController+CameraExtension.h"
 
 @implementation DebugTV
 
 
-- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
+//- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
+//    NSInteger section = indexPath.section;
+//    NSInteger row = indexPath.row;
+//    if (section == 0) {
+//        if (row == 8) {
+//            [NSUserDefaults ax_readStringForKey:@"123" completion:^(NSString * _Nonnull string) {
+//                AXLogSuccess();
+//            } failure:^(NSError * _Nonnull error) {
+//                AXLogFailure();
+//            }];
+//        } else {
+//            
+//        }
+//    }
+//}
+
+- (void)indexPath:(NSIndexPath *)indexPath willPush:(__kindof BaseViewController *)targetVC{
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     if (section == 0) {
@@ -21,6 +38,8 @@
             } failure:^(NSError * _Nonnull error) {
                 AXLogFailure();
             }];
+        } else if (row == 9) {
+            [self.controller showImagePicker];
         }
     }
 }
