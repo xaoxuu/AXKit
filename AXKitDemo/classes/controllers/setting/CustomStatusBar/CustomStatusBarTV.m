@@ -59,25 +59,25 @@ static UIView *customView;
         } else if (section == 1) {
             if (row == 0) {
                 statusBar.alpha = 1;
-                [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    statusBar.alpha = 0;
+                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
+                    statusBar.backgroundColor = axColor.theme.dark;
                 } completion:^(BOOL finished) {
-                    statusBar.alpha = 1;
+                    statusBar.backgroundColor = axColor.theme;
                 }];
             } else if (row == 1) {
-                [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
+                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
                     statusBar.backgroundColor = [UIColor md_red];
                 } completion:^(BOOL finished) {
                     statusBar.backgroundColor = axColor.theme;
                 }];
             } else if (row == 2) {
-                [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
+                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
                     statusBar.backgroundColor = [UIColor md_yellow];
                 } completion:^(BOOL finished) {
                     statusBar.backgroundColor = axColor.theme;
                 }];
             } else if (row == 3) {
-                [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
+                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
                     statusBar.backgroundColor = [UIColor md_blue];
                 } completion:^(BOOL finished) {
                     statusBar.backgroundColor = axColor.theme;
