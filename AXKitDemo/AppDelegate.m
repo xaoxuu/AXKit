@@ -28,6 +28,7 @@
 //        color.accent = [UIColor md_lime];
 //        color.background = [UIColor whiteColor];
 //    }];
+    axkit_active();
     [[UIColorManager sharedInstance] configColorManager:^(UIColorManager * _Nonnull manager) {
         manager.theme = [UIColor md_amber];
         manager.accent = [UIColor md_lime];

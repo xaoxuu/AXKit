@@ -26,6 +26,11 @@
     [super awakeFromNib];
     self.img_icon.layer.cornerRadius = 5;
     
+    self.lb_title.font = axFont.customNormal;
+    self.lb_title_only.font = axFont.customNormal;
+    self.lb_detail.font = axFont.customSmall;
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

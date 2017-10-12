@@ -38,6 +38,11 @@
 // @xaoxuu: array
 #import "NSArray+AXExtension.h"
 
+
+
+FOUNDATION_EXTERN void axkit_active();
+
+
 @interface AXKitFoundationHeader : NSObject
 
 @end

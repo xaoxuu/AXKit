@@ -21,7 +21,8 @@
 
 #import "UITabBar+AXExtension.h"
 
-
+#import "UIThemeManager.h"
+#import "UIFontManager.h"
 #import "UIColorManager.h"
 #import "UIColor+AXColorPack.h"
 #import "UIColor+MDColorPack.h"

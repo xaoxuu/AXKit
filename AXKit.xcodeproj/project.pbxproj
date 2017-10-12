@@ -239,6 +239,10 @@
 		CDB7164D1F8E47AD0025E8D7 /* CameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB7164A1F8E44BB0025E8D7 /* CameraView.xib */; };
 		CDB716501F8E48D00025E8D7 /* UIViewController+CameraExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB7164F1F8E48D00025E8D7 /* UIViewController+CameraExtension.m */; };
 		CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB716511F8E4A190025E8D7 /* Debug.xcassets */; };
+		CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CDB716531F8E6EC80025E8D7 /* UIThemeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDB716561F8E6EC80025E8D7 /* UIThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB716541F8E6EC80025E8D7 /* UIThemeManager.m */; };
+		CDB716591F8E6F5A0025E8D7 /* UIFontManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CDB716571F8E6F5A0025E8D7 /* UIFontManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDB7165A1F8E6F5A0025E8D7 /* UIFontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB716581F8E6F5A0025E8D7 /* UIFontManager.m */; };
 		CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39B41EB9D74E00E8ED25 /* DemoConst.m */; };
 		CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39B61EB9D74E00E8ED25 /* DemoMarcos.m */; };
 		CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B131EB9E80F00E8ED25 /* MJExtensionConst.m */; };
@@ -624,6 +628,10 @@
 		CDB7164E1F8E48D00025E8D7 /* UIViewController+CameraExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CameraExtension.h"; sourceTree = "<group>"; };
 		CDB7164F1F8E48D00025E8D7 /* UIViewController+CameraExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CameraExtension.m"; sourceTree = "<group>"; };
 		CDB716511F8E4A190025E8D7 /* Debug.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Debug.xcassets; sourceTree = "<group>"; };
+		CDB716531F8E6EC80025E8D7 /* UIThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIThemeManager.h; sourceTree = "<group>"; };
+		CDB716541F8E6EC80025E8D7 /* UIThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIThemeManager.m; sourceTree = "<group>"; };
+		CDB716571F8E6F5A0025E8D7 /* UIFontManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontManager.h; sourceTree = "<group>"; };
+		CDB716581F8E6F5A0025E8D7 /* UIFontManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIFontManager.m; sourceTree = "<group>"; };
 		CDBB39B31EB9D74E00E8ED25 /* DemoConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoConst.h; sourceTree = "<group>"; };
 		CDBB39B41EB9D74E00E8ED25 /* DemoConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoConst.m; sourceTree = "<group>"; };
 		CDBB39B51EB9D74E00E8ED25 /* DemoMarcos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMarcos.h; sourceTree = "<group>"; };
@@ -1538,6 +1546,10 @@
 				CD5498171EE15E1300748C22 /* AXKitUIHeader.m */,
 				CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */,
 				CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */,
+				CDB716531F8E6EC80025E8D7 /* UIThemeManager.h */,
+				CDB716541F8E6EC80025E8D7 /* UIThemeManager.m */,
+				CDB716571F8E6F5A0025E8D7 /* UIFontManager.h */,
+				CDB716581F8E6F5A0025E8D7 /* UIFontManager.m */,
 				CD09FCC11EE0599600F3D928 /* Layer */,
 				CD5746041EDAEA7A0014E833 /* Bar */,
 				CD77FE6A1EBEE685001A5787 /* UIColor */,
@@ -1800,6 +1812,8 @@
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
 				CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */,
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
+				CDB716591F8E6F5A0025E8D7 /* UIFontManager.h in Headers */,
+				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
@@ -2214,12 +2228,14 @@
 				CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */,
 				CDAB593C1E6BFE700017CA1E /* UIView+AXFrameExtension.m in Sources */,
 				CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */,
+				CDB7165A1F8E6F5A0025E8D7 /* UIFontManager.m in Sources */,
 				CDAB59041E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.m in Sources */,
 				CD5745021EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.m in Sources */,
 				CD23DCAA1EC1DDD5006E331B /* UITabBar+AXExtension.m in Sources */,
 				CDAB59201E6BFBCE0017CA1E /* UIImage+AXExtension.m in Sources */,
 				CDAB59381E6BFE170017CA1E /* UIView+AXExtension.m in Sources */,
 				CD60001D1F8D08C100771DE6 /* UIApplication+AXExtension.m in Sources */,
+				CDB716561F8E6EC80025E8D7 /* UIThemeManager.m in Sources */,
 				CDAB58F01E6BF5A20017CA1E /* NSString+AXExtension.m in Sources */,
 				CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
