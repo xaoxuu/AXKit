@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern UIFontManager *axFont;
 
 
+#define NOTI_FONT_SIZE_CHANGED @"NOTI_FONT_SIZE_CHANGED"
 
 @interface UIFontManager : NSObject
 
@@ -42,6 +43,8 @@ extern UIFontManager *axFont;
 @property (strong, readonly, nonatomic) UIFont *customBoldLarge;
 
 
+- (UIFont *)fontWithCustomPrefersFontSize:(CGFloat)size;
+- (UIFont *)boldFontWithCustomPrefersFontSize:(CGFloat)size;
 
 #pragma mark - life circle
 

@@ -18,6 +18,7 @@
     tableView.estimatedSectionFooterHeight = 0;
     tableView.sectionFooterHeight = 0;
     
+    
 }
 
 - (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))completion{

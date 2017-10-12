@@ -9,8 +9,6 @@
 #import "FontVC.h"
 #import "FontTableView.h"
 
-static ax_dispatch_operation_t token;
-
 @interface FontVC ()
 
 @end
@@ -20,21 +18,6 @@ static ax_dispatch_operation_t token;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    token = [NSBlockOperation ax_delay:2 performInMainQueue:^{
-        if (self) {
-            [UIAlertController ax_showAlertWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" actions:^(UIAlertController * _Nonnull alert) {
-                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, 270-16, 222.3-16)];
-                view.backgroundColor = axColor.theme;
-                view.layer.masksToBounds = YES;
-                view.layer.cornerRadius = 8;
-                
-                [alert.view addSubview:view];
-                UIActivityIndicatorView *indicator = [UIActivityIndicatorView defaultIndicatorWithLoading];
-                [indicator addToView:view withLoading:YES];
-            }];
-        }
-    }];
     
 }
 
@@ -46,8 +29,7 @@ static ax_dispatch_operation_t token;
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [NSBlockOperation ax_cancelOperation:token];
-    token = nil;
+    
 }
 
 

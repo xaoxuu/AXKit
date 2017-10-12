@@ -10,24 +10,37 @@
 
 UIFontManager *axFont = nil;
 
+static CGFloat standardSize = 14.0f;
+static CGFloat smallSize = 12.0f;
+
 @implementation UIFontManager
 
 
 - (void)setPrefersFontSize:(CGFloat)prefersFontSize{
     _prefersFontSize = prefersFontSize;
-    CGFloat standard = [UIFont systemFontSize]; //14
-    CGFloat small = [UIFont smallSystemFontSize]; //12
     
-    CGFloat ratio = prefersFontSize / standard;
+    CGFloat ratio = prefersFontSize / standardSize;
     
-    _customSmall = [UIFont systemFontOfSize:small * ratio];
-    _customBoldSmall = [UIFont boldSystemFontOfSize:small * ratio];
-    _customNormal = [UIFont systemFontOfSize:standard * ratio];
-    _customBoldNormal = [UIFont boldSystemFontOfSize:standard * ratio];
-    _customLarge = [UIFont systemFontOfSize:standard * 1.2 * ratio];
-    _customBoldLarge = [UIFont boldSystemFontOfSize:standard * 1.2 * ratio];
+    _customSmall = [UIFont systemFontOfSize:smallSize * ratio];
+    _customBoldSmall = [UIFont boldSystemFontOfSize:smallSize * ratio];
+    _customNormal = [UIFont systemFontOfSize:standardSize * ratio];
+    _customBoldNormal = [UIFont boldSystemFontOfSize:standardSize * ratio];
+    _customLarge = [UIFont systemFontOfSize:standardSize * 1.2 * ratio];
+    _customBoldLarge = [UIFont boldSystemFontOfSize:standardSize * 1.2 * ratio];
     
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_FONT_SIZE_CHANGED object:@YES];
+    
+}
+
+
+- (UIFont *)fontWithCustomPrefersFontSize:(CGFloat)size{
+    CGFloat ratio = size / standardSize;
+    return [UIFont systemFontOfSize:standardSize * ratio];
+}
+- (UIFont *)boldFontWithCustomPrefersFontSize:(CGFloat)size{
+    CGFloat ratio = size / standardSize;
+    return [UIFont boldSystemFontOfSize:standardSize * ratio];
 }
 
 #pragma mark - life circle

@@ -93,7 +93,10 @@
         [self initSubview];
     }
     
-    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTI_FONT_SIZE_CHANGED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [self.view layoutSubviews];
+        
+    }];
     // @xaoxuu: ...
     
 }
