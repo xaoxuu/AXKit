@@ -11,9 +11,9 @@
 #import "UIFontManager.h"
 #import "UIThemeManager.h"
 
-inline void axkit_active(){
-    NSString *key = [NSBundle mainBundle].bundleIdentifier;
-    AXLogFormat(@"bundle id: %@", key);
+inline void axkit_active(void){
+//    NSString *key = [NSBundle mainBundle].bundleIdentifier;
+//    AXLogFormat(@"bundle id: %@", key);
     [UIColorManager sharedInstance];
     [UIFontManager sharedInstance];
     

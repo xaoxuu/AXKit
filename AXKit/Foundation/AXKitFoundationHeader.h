@@ -40,7 +40,7 @@
 
 
 
-FOUNDATION_EXTERN void axkit_active();
+FOUNDATION_EXTERN void axkit_active(void);
 
 
 @interface AXKitFoundationHeader : NSObject
