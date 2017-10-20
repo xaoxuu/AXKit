@@ -13,9 +13,14 @@
 #import "CameraView.h"
 
 static UIImagePickerController *picker;
+static UIColor *staticThemeColor;
 
 @implementation UIViewController (CameraExtension)
 
+
+- (void)configImagePickerWithThemeColor:(UIColor *)themeColor{
+    staticThemeColor = themeColor;
+}
 
 - (void)showImagePicker{
     picker = [[UIImagePickerController alloc] init];
@@ -39,6 +44,13 @@ static UIImagePickerController *picker;
     
     CameraView *view = UIViewFromNibNamed(@"CameraView");
     picker.cameraOverlayView = view;
+    if (!staticThemeColor) {
+        staticThemeColor = axColor.theme;
+        if (!staticThemeColor) {
+            staticThemeColor = [UIColor md_blue];
+        }
+    }
+    view.themeColor = staticThemeColor;
     [view.cancelButton ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
         [self dismiss];
     }];

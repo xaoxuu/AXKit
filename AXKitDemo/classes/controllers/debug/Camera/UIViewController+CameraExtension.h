@@ -10,6 +10,8 @@
 
 @interface UIViewController (CameraExtension)<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+- (void)configImagePickerWithThemeColor:(UIColor *)themeColor;
+
 - (void)showImagePicker;
 
 - (void)takePhoto;

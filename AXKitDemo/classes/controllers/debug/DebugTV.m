@@ -7,9 +7,10 @@
 //
 
 #import "DebugTV.h"
-#import "UIViewController+CameraExtension.h"
+#import <AXCameraKit/AXCameraKit.h>
 
 @implementation DebugTV
+
 
 
 - (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
@@ -23,7 +24,7 @@
                 AXLogFailure();
             }];
         } else if (row == 9) {
-            [self.controller showImagePicker];
+            [self.controller presentCameraVC:nil];
         } else {
             [self.controller.navigationController ax_pushViewControllerNamed:model.target];
         }

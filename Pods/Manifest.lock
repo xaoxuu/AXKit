@@ -1,17 +1,20 @@
 PODS:
+  - AXCameraKit (0.0.5)
   - SCLAlertView-Objective-C (1.1.2)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - AXCameraKit
   - SCLAlertView-Objective-C
   - YYKit
 
 SPEC CHECKSUMS:
+  AXCameraKit: 3bfe5749d4f92d16a8f0a6a2a6f8d6d26eb4c4d0
   SCLAlertView-Objective-C: 0e54351fa4f98a5c7c6ad3727e6dbb46784534e5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 820e45f723682237f60d53ada6ca52951d0bd075
+PODFILE CHECKSUM: 850f941def3b743d75af3b4df03c48f584651be9
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1

@@ -27,9 +27,9 @@
     self.frame = CGRectMake(0, 0, kScreenW, kScreenH);
     
 //    UIColor *tint = [UIColor colorWithHexString:@"#9AD8DE"];
-    UIColor *tint = axColor.theme;
-    if (axColor.theme.isLightColor) {
-        tint = axColor.theme.darkRatio(0.3);
+    UIColor *tint = self.themeColor;
+    if (self.themeColor.isLightColor) {
+        tint = self.themeColor.darkRatio(0.3);
     }
     self.takePhotoButton.backgroundColor = tint;
     [self.takePhotoButton ax_layer:^(CALayer * _Nonnull layer) {

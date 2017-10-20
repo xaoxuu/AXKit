@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view.
     
     FullWideButton *btn = [FullWideButton buttonWithTitle:@"样式1" action:^(__kindof BaseButton *sender) {
+        [self configImagePickerWithThemeColor:axColor.theme];
         [self showImagePicker];
     }];
     [btn addToView:self.view withBottom:0];

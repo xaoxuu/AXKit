@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraView : UIView
+
+// @xaoxuu: theme color
+@property (strong, nonatomic) UIColor *themeColor;
+
 @property (weak, nonatomic) IBOutlet UIView *cancelButton;
 @property (weak, nonatomic) IBOutlet UIView *takePhotoButton;
 @property (weak, nonatomic) IBOutlet UIView *swapButton;
