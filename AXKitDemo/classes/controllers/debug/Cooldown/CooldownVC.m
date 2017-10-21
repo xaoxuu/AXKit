@@ -35,9 +35,11 @@ static NSTimeInterval timeout = 2;
     self.label.textAlignment = NSTextAlignmentCenter;
     self.label.font = [UIFont boldSystemFontOfSize:180];
     [self.label adjustsFontSizeToFitWidth];
-    
-    [self.view addSubview:self.label];
     self.label.textColor = axColor.theme.adaptive;
+    [self.view addSubview:self.label];
+    
+    [self reset];
+    
     
     NSString *title = [NSString stringWithFormat:@"将事件向后拖延%.0f秒", timeout];
     __weak typeof(self) weakSelf = self;
@@ -48,8 +50,7 @@ static NSTimeInterval timeout = 2;
             NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
             [UIAlertController ax_showAlertWithTitle:@"超时测试" message:msg actions:^(UIAlertController * _Nonnull alert) {
                 [alert ax_addCancelActionWithTitle:nil handler:^(UIAlertAction * _Nonnull sender) {
-                    i = 0;
-                    weakSelf.label.text = @"0";
+                    [weakSelf reset];
                 }];
             }];
         });
@@ -65,12 +66,16 @@ static NSTimeInterval timeout = 2;
 }
 
 - (void)dealloc{
-    
+    [self reset];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)reset{
+    i = 0;
+    self.label.text = NSStringFromInt(i);
+}
 
 @end

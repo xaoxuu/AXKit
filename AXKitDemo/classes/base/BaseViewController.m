@@ -48,6 +48,7 @@
 }
 
 - (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     AXLogSuccess(@"%@ deallocated", NSStringFromClass([self class]));
 }
 
@@ -93,8 +94,10 @@
         [self initSubview];
     }
     
+    // @xaoxuu: 通知中心的block中也要用弱引用
+    __weak typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:NOTI_FONT_SIZE_CHANGED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-        [self.view layoutSubviews];
+        [weakSelf.view layoutSubviews];
         
     }];
     // @xaoxuu: ...
