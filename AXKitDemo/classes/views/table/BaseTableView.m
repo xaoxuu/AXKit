@@ -112,19 +112,20 @@ static NSTimeInterval loadingTimeout = 20;
         // @xaoxuu: 加载数据源
         if ([self respondsToSelector:@selector(setupTableViewDataSource:)]) {
             [self.indicator startAnimating];
-            [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:reloadToken performInBackground:^{
-                [self setupTableViewDataSource:^(NSMutableArray<BaseTableModelSection *> *sections) {
+            __weak typeof(self) weakSelf = self;
+            ax_dispatch_cooldown(0, reloadCooldown, reloadToken, dispatch_get_global_queue(0, 0), ^{
+                [weakSelf setupTableViewDataSource:^(NSMutableArray<BaseTableModelSection *> *sections) {
                     // @xaoxuu: 缓存列表
-                    [services.cache cacheObj:sections forKey:NSStringFromClass([self class]) completion:^{
+                    [services.cache cacheObj:sections forKey:NSStringFromClass([weakSelf class]) completion:^{
                         
                     }];
                     // @xaoxuu: 重载界面
-                    [self reloadTableViewWithDataSource:sections];
+                    [weakSelf reloadTableViewWithDataSource:sections];
                     
                 }];
-                [NSBlockOperation ax_delay:loadingTimeout performInMainQueue:^{
-                    [self.indicator stopAnimating];
-                    if (self.controller && !_dataList.count) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(loadingTimeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakSelf.indicator stopAnimating];
+                    if (weakSelf.controller && !_dataList.count) {
                         // @xaoxuu: 加载失败，请确认数据源是否正确
                         [UIAlertController ax_showAlertWithTitle:kStringLoadFail() message:kStringPleaseConfirmDataSourceCorrect() actions:^(UIAlertController * _Nonnull alert) {
                             [alert ax_addCancelAction];
@@ -134,8 +135,10 @@ static NSTimeInterval loadingTimeout = 20;
                             
                         }];
                     }
-                }];
-            }];
+                });
+            }, ^{
+                
+            });
         } else {
             if (!_dataList.count) {
                 [self.indicator stopAnimating];
@@ -174,10 +177,13 @@ static NSTimeInterval loadingTimeout = 20;
 
 // @xaoxuu: 重新获取数据源并刷新tableView
 - (void)reloadDataSourceAndTableView{
-    [NSBlockOperation ax_delay:0 cooldown:reloadCooldown token:@"reload data source and refresh table view" performInMainQueue:^{
-        [self.dataList removeAllObjects];
-        [self reloadTableView];
-    }];
+    __weak typeof(self) weakSelf = self;
+    ax_dispatch_cooldown(0, reloadCooldown, @"reload data source and refresh table view", dispatch_get_main_queue(), ^{
+        [weakSelf.dataList removeAllObjects];
+        [weakSelf reloadTableView];
+    }, ^{
+        
+    });
 }
 
 // @xaoxuu: 根据指定的新数据源重新加载tableView

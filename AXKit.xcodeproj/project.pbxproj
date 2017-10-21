@@ -71,6 +71,7 @@
 		CD242F4B1EE29DF300C954EC /* NSArray+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */; };
 		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
+		CD3543931F9AEFEC009317A6 /* EmptyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3543921F9AEFEC009317A6 /* EmptyVC.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
 		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -167,6 +168,7 @@
 		CD60001D1F8D08C100771DE6 /* UIApplication+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */; };
 		CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */; };
 		CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */; };
+		CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */; };
 		CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */; };
 		CD77FE901EBF592D001A5787 /* BaseSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE8F1EBF592D001A5787 /* BaseSwitch.m */; };
@@ -370,6 +372,8 @@
 		CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AXExtension.m"; sourceTree = "<group>"; };
 		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
+		CD3543911F9AEFEC009317A6 /* EmptyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyVC.h; sourceTree = "<group>"; };
+		CD3543921F9AEFEC009317A6 /* EmptyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyVC.m; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
 		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
@@ -534,6 +538,8 @@
 		CD6000221F8D0AAC00771DE6 /* CustomStatusBarTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomStatusBarTV.h; sourceTree = "<group>"; };
 		CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBarTV.m; sourceTree = "<group>"; };
 		CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CustomStatusBarTV.json; sourceTree = "<group>"; };
+		CD74F9F11F9ADEB000EBD3B5 /* CooldownVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CooldownVC.h; sourceTree = "<group>"; };
+		CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CooldownVC.m; sourceTree = "<group>"; };
 		CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperation+AXExtension.h"; sourceTree = "<group>"; };
 		CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperation+AXExtension.m"; sourceTree = "<group>"; };
 		CD77FE8E1EBF592D001A5787 /* BaseSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSwitch.h; sourceTree = "<group>"; };
@@ -842,6 +848,15 @@
 			path = button;
 			sourceTree = "<group>";
 		};
+		CD3543901F9AEFE2009317A6 /* EmptyVC */ = {
+			isa = PBXGroup;
+			children = (
+				CD3543911F9AEFEC009317A6 /* EmptyVC.h */,
+				CD3543921F9AEFEC009317A6 /* EmptyVC.m */,
+			);
+			path = EmptyVC;
+			sourceTree = "<group>";
+		};
 		CD54981E1EE1964500748C22 /* testFrame */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +979,8 @@
 				CD5745101EDADE510014E833 /* DebugTV.m */,
 				CD5745111EDADE510014E833 /* DebugVC.h */,
 				CD5745121EDADE510014E833 /* DebugVC.m */,
+				CD3543901F9AEFE2009317A6 /* EmptyVC */,
+				CD74F9F01F9ADE9A00EBD3B5 /* Cooldown */,
 				CDB716421F8E436C0025E8D7 /* Camera */,
 				CD9B8C781F8B1FBE00A3A84B /* error */,
 				CD79DFA41EEFA18900408BAD /* testTableView */,
@@ -1304,6 +1321,15 @@
 				CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */,
 			);
 			path = CustomStatusBar;
+			sourceTree = "<group>";
+		};
+		CD74F9F01F9ADE9A00EBD3B5 /* Cooldown */ = {
+			isa = PBXGroup;
+			children = (
+				CD74F9F11F9ADEB000EBD3B5 /* CooldownVC.h */,
+				CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */,
+			);
+			path = Cooldown;
 			sourceTree = "<group>";
 		};
 		CD77FE681EBEE62E001A5787 /* NSString */ = {
@@ -2113,6 +2139,7 @@
 				CDBB3B291EB9E80F00E8ED25 /* MJPropertyKey.m in Sources */,
 				CD5746091EDB2B300014E833 /* AppInfoModel.m in Sources */,
 				CD57458C1EDADE510014E833 /* AXLogVC.m in Sources */,
+				CD3543931F9AEFEC009317A6 /* EmptyVC.m in Sources */,
 				CD5745A01EDADE510014E833 /* FontTableView.m in Sources */,
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
 				CDE94E721EC6FE1D00596B93 /* DeveloperDataAccess.m in Sources */,
@@ -2147,6 +2174,7 @@
 				CD57458E1EDADE510014E833 /* HomeVC.m in Sources */,
 				CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */,
 				CD77FEBB1EBF6805001A5787 /* BaseTableView.m in Sources */,
+				CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */,
 				CD5745B51EDADE510014E833 /* SettingVC.m in Sources */,
 				CDE94E971EC705C800596B93 /* GitHubUserModel.m in Sources */,
 				CD79DFA71EEFA19F00408BAD /* TestTableViewVC.m in Sources */,

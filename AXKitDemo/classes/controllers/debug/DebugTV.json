@@ -61,6 +61,16 @@
                     "title":"自定义相机",
                     "desc":"",
                     "target":"",
+                },
+                {
+                    "title":"冷却机制",
+                    "desc":"",
+                    "target":"CooldownVC",
+                },
+                {
+                    "title":"空白页面",
+                    "desc":"",
+                    "target":"EmptyVC",
                 }
             ]
         }

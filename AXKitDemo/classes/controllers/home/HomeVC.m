@@ -8,12 +8,10 @@
 
 #import "HomeVC.h"
 
-static ax_dispatch_operation_t token = nil;
-static int i;
 
 @interface HomeVC ()
 
-@property (strong, nonatomic) UILabel *lb;
+
 
 
 
@@ -24,23 +22,9 @@ static int i;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.lb = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
-    [self.view addSubview:self.lb];
+    
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    [self.view endEditing:YES];
-    
-    self.lb.text = NSStringFromInt(++i);
-    ax_dispatch_cancel_operation(token);
-    token = ax_dispatch_cancellable(2, dispatch_get_main_queue(), ^{
-        [UIAlertController ax_showAlertWithTitle:@"超时测试" message:@"最近2秒内没有点击事件" actions:^(UIAlertController * _Nonnull alert) {
-            [alert ax_addCancelAction];
-        }];
-    });
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

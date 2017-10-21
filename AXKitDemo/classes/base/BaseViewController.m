@@ -123,13 +123,14 @@
         __weak typeof(self) weakSelf = self;
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(UIBarButtonItem * _Nonnull sender) {
             sender.enabled = NO;
-            [NSBlockOperation ax_delay:0 cooldown:reloadBtnCooldown token:reloadBtnToken performInMainQueue:^{
+            ax_dispatch_cooldown(0, reloadBtnCooldown, reloadBtnToken, dispatch_get_main_queue(), ^{
                 [weakSelf installRightRefreshBarButton:sender];
-                
-                [NSBlockOperation ax_delay:reloadBtnCooldown performInMainQueue:^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(reloadBtnCooldown * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     sender.enabled = YES;
-                }];
-            }];
+                });
+            }, ^{
+                
+            });
         }];
     }
 }
