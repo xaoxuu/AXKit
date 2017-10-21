@@ -12,7 +12,7 @@
 static ax_dispatch_operation_t token = nil;
 static int i;
 static NSTimeInterval timeout = 2;
-
+static UIView *customView;
 
 @interface CooldownVC ()
 
@@ -41,16 +41,40 @@ static NSTimeInterval timeout = 2;
     [self reset];
     
     
-    NSString *title = [NSString stringWithFormat:@"将事件向后拖延%.0f秒", timeout];
+    NSString *title = [NSString stringWithFormat:@"%.0f秒后，数字归零", timeout];
     __weak typeof(self) weakSelf = self;
     weakSelf.delayButton = [FullWideButton buttonWithTitle:title action:^(__kindof BaseButton *sender) {
         weakSelf.label.text = NSStringFromInt(++i);
         ax_dispatch_cancel_operation(token);
         token = ax_dispatch_cancellable(timeout, dispatch_get_main_queue(), ^{
             NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
-            [UIAlertController ax_showAlertWithTitle:@"超时测试" message:msg actions:^(UIAlertController * _Nonnull alert) {
-                [alert ax_addCancelActionWithTitle:nil handler:^(UIAlertAction * _Nonnull sender) {
-                    [weakSelf reset];
+            [weakSelf reset];
+            
+            UIView *statusBar = [UIApplication ax_getStatusBar];
+            if (!customView) {
+                customView = UIViewWithHeight(kStatusBarHeight);
+            }
+            // @xaoxuu: 状态栏通知
+            CGRect frame = customView.bounds;
+            frame.origin.x = 8;
+            frame.size.width = kScreenW - 2*8;
+            UILabel *label = [[UILabel alloc] initWithFrame:frame];
+            label.textAlignment = NSTextAlignmentLeft;
+            label.font = [UIFont systemFontOfSize:12];
+            [customView removeAllSubviews];
+            [customView addSubview:label];
+            customView.alpha = 0;
+            
+            [statusBar addSubview:customView];
+            customView.backgroundColor = [UIColor md_yellow];
+            label.text = msg;
+            [UIView animateWithDuration:0.38f delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                customView.alpha = 1;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.38f delay:2 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                    customView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    customView.alpha = 0;
                 }];
             }];
         });
