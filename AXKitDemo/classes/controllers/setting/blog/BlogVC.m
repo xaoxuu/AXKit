@@ -8,6 +8,9 @@
 
 #import "BlogVC.h"
 
+static UIView *statusBar;
+static UIView *customView;
+
 @interface BlogVC ()
 
 @end
@@ -20,6 +23,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    statusBar = [UIApplication ax_getStatusBar];
+    if (!customView) {
+        customView = UIViewWithHeight(kStatusBarHeight);
+    }
+    customView.backgroundColor = [UIColor ax_blue];
+    [statusBar insertSubview:customView atIndex:0];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +37,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.alpha = 0;
+    [statusBar insertSubview:customView atIndex:0];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.navigationBar.alpha = 0;
+    [statusBar insertSubview:customView atIndex:0];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.alpha = 1;
+    [customView removeFromSuperview];
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.navigationController.navigationBar.alpha = 1;
+    [customView removeFromSuperview];
+}
 
+- (CGRect)initContentFrame:(CGRect)frame{
+    return CGRectFromScreen();
+}
 
 @end
