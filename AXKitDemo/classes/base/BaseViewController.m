@@ -28,7 +28,7 @@
     
     // @xaoxuu: 基类 初始化 ModuleKit组件库
     [self baseInitModuleKitLibrary];
-    AXLogToCachePath(self.title);
+    
         
 }
 
