@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Foundation+AXLogExtension.h"
+#import "_AXKitHelpServices.h"
 #import "NSBundle+AXExtension.h"
 #import "NSString+AXFileStreamChainedWrapper.h"
 
@@ -33,10 +34,8 @@ static NSString *getLogPath(){
         return logPath;
     }
     NSDate *today = [NSDate date];
-    NSBundle *bundle = [NSBundle bundleForClass:[AXLog class]];
     NSString *fileName = [NSString stringWithFormat:@"%@.%@", [getDateFormatter() stringFromDate:today], logFileExtension];
-    NSString * bundleId = [bundle bundleIdentifier];
-    logPath = [[bundleId stringByAppendingPathComponent:logFileDir] stringByAppendingPathComponent:fileName].cachePath;
+    logPath = [[@"com.xaoxuu.AXKit" stringByAppendingPathComponent:logFileDir] stringByAppendingPathComponent:fileName].cachePath;
     
     // 写入第一行，文件标题
     logPath.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"## %@\n", fileName.stringByDeletingPathExtension]);
@@ -127,3 +126,4 @@ static NSString *getLogPath(){
     return str;
 }
 @end
+
