@@ -93,23 +93,46 @@ inline void AXLocalizeAllSubviewsInView(UIView *view){
 @implementation NSBundle (AXExtension)
 
 
+- (NSString *)ax_bundleDisplayName{
+    NSString *bundleName = [self.localizedInfoDictionary objectForKey:@"CFBundleDisplayName"];
+    if (!bundleName) {
+        bundleName = [self.infoDictionary objectForKey:@"CFBundleDisplayName"];
+    }
+    if (!bundleName) {
+        bundleName = [self ax_bundleName];
+    }
+    return bundleName;
+}
+- (NSString *)ax_bundleName{
+    return [self.infoDictionary objectForKey:@"CFBundleName"];
+}
+
+- (NSString *)ax_bundleShortVersionString{
+    return [self.infoDictionary objectForKey:@"CFBundleShortVersionString"];;
+}
+
+- (NSString *)ax_bundleVersion{
+    return [self.infoDictionary objectForKey:@"CFBundleVersion"];;
+}
+
++ (NSString *)ax_mainBundleId{
+    return [[self mainBundle] bundleIdentifier];
+}
+
++ (NSString *)ax_appDisplayName{
+    return [[self mainBundle] ax_bundleDisplayName];
+}
+
 + (NSString *)ax_appName{
-    NSString *appName = [self.ax_localizedInfoDictionary objectForKey:@"CFBundleDisplayName"];
-    if (!appName) {
-        appName = [self.ax_infoDictionary objectForKey:@"CFBundleDisplayName"];
-    }
-    if (!appName) {
-        appName = [self.ax_infoDictionary objectForKey:@"CFBundleName"];
-    }
-    return appName;
+    return [[self mainBundle] ax_bundleName];
 }
 
 + (NSString *)ax_appVersion{
-    return [self.ax_infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    return [[self mainBundle] ax_bundleShortVersionString];
 }
 
 + (NSString *)ax_appBuild{
-    return [self.ax_infoDictionary objectForKey:@"CFBundleVersion"];
+    return [[self mainBundle] ax_bundleVersion];
 }
 
 + (NSString *)ax_appIconPath{
@@ -147,6 +170,8 @@ inline void AXLocalizeAllSubviewsInView(UIView *view){
 + (NSDictionary *)ax_infoDictionary{
     return [[NSBundle mainBundle] infoDictionary];
 }
+
+
 
 
 @end

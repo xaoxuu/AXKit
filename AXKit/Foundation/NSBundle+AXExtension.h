@@ -63,14 +63,56 @@ FOUNDATION_EXTERN void AXLocalizeAllSubviewsInView(UIView *view);
 
 @interface NSBundle (AXExtension)
 
+/**
+ bundle display name
+ 
+ @return bundle display name
+ */
+- (NSString *)ax_bundleDisplayName;
+
+/**
+ bundle name
+
+ @return bundle name
+ */
+- (NSString *)ax_bundleName;
+
+
+/**
+ bundle short version string
+
+ @return bundle short version string
+ */
+- (NSString *)ax_bundleShortVersionString;
+
+/**
+ bundle build version string
+
+ @return bundle build version string
+ */
+- (NSString *)ax_bundleVersion;
+
+
+/**
+ main bundle id
+
+ @return main bundle id
+ */
++ (NSString *)ax_mainBundleId;
 
 /**
  app name (CFBundleDisplayName)
 
  @return app name
  */
-+ (NSString *)ax_appName;
++ (NSString *)ax_appDisplayName;
 
+/**
+ app name (CFBundleDisplayName)
+ 
+ @return app name
+ */
++ (NSString *)ax_appName;
 
 /**
  app version (CFBundleShortVersionString)
