@@ -6,12 +6,8 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Foundation+AXLogExtension.h"
-#import "_AXKitHelpServices.h"
-#import "NSBundle+AXExtension.h"
 #import "NSString+AXFileStreamChainedWrapper.h"
-#import "CoreGraphics+AXExtension.h"
 
 // 日志存放的文件夹名
 static NSString *logFileDir = @"log";
