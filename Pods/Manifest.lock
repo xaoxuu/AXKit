@@ -1,5 +1,5 @@
 PODS:
-  - AXCameraKit (0.0.5)
+  - AXCameraKit (0.0.8)
   - SCLAlertView-Objective-C (1.1.2)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -11,7 +11,7 @@ DEPENDENCIES:
   - YYKit
 
 SPEC CHECKSUMS:
-  AXCameraKit: 3bfe5749d4f92d16a8f0a6a2a6f8d6d26eb4c4d0
+  AXCameraKit: 55468a305aa6c1c2ff5d790e705779d13a2ca58c
   SCLAlertView-Objective-C: 0e54351fa4f98a5c7c6ad3727e6dbb46784534e5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 

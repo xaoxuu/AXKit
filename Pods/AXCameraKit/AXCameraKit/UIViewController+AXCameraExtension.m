@@ -17,13 +17,15 @@ static BOOL isActive = NO;
 
 static const void *AXCameraExtensionImagePickerKey = &AXCameraExtensionImagePickerKey;
 static const void *AXCameraExtensionOverlayViewKey = &AXCameraExtensionOverlayViewKey;
+static const void *AXCameraExtensionCapturedImagesKey = &AXCameraExtensionCapturedImagesKey;
 
 @interface UIViewController() <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+
 /**
- image picker
+ captured images
  */
-@property (strong, nonatomic) UIImagePickerController *imagePicker;
+//@property (strong, nonatomic) NSMutableArray<UIImage *> *capturedImages;
 
 @end
 
@@ -45,10 +47,18 @@ static const void *AXCameraExtensionOverlayViewKey = &AXCameraExtensionOverlayVi
     objc_setAssociatedObject(self, AXCameraExtensionOverlayViewKey, overlayView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+//- (NSMutableArray<UIImage *> *)capturedImages{
+//    return objc_getAssociatedObject(self, AXCameraExtensionCapturedImagesKey);
+//}
+//
+//- (void)setCapturedImages:(NSMutableArray<UIImage *> *)capturedImages{
+//    objc_setAssociatedObject(self, AXCameraExtensionCapturedImagesKey, capturedImages, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//}
+
 /**
  加载相机，可以提前异步加载
  */
-- (void)loadCameraVC{
+- (void)loadCameraKit{
     // @xaoxuu: 已经初始化
     if (self.imagePicker) {
         return;
@@ -57,6 +67,8 @@ static const void *AXCameraExtensionOverlayViewKey = &AXCameraExtensionOverlayVi
     if (![UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
         return;
     }
+//    self.capturedImages = [NSMutableArray array];
+    
     self.overlayView = [self setupOverlayView];
     
     self.imagePicker = [[UIImagePickerController alloc] init];
@@ -82,30 +94,32 @@ static const void *AXCameraExtensionOverlayViewKey = &AXCameraExtensionOverlayVi
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIDeviceOrientationDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
+        CGAffineTransform transform;
         if (deviceOrientation == UIDeviceOrientationLandscapeLeft) {
-            [UIView animateWithDuration:0.38f animations:^{
-                self.overlayView.switchCamera.transform = CGAffineTransformMakeRotation(M_PI_2);
-            }];
+            transform = CGAffineTransformMakeRotation(M_PI_2);
         } else if (deviceOrientation == UIDeviceOrientationLandscapeRight) {
-            [UIView animateWithDuration:0.38f animations:^{
-                self.overlayView.switchCamera.transform = CGAffineTransformMakeRotation(-M_PI_2);
-            }];
+            transform = CGAffineTransformMakeRotation(-M_PI_2);
         } else if (deviceOrientation == UIDeviceOrientationPortraitUpsideDown) {
-            [UIView animateWithDuration:0.38f animations:^{
-                self.overlayView.switchCamera.transform = CGAffineTransformMakeRotation(M_PI);
-            }];
+            transform = CGAffineTransformMakeRotation(M_PI);
         } else {
-            [UIView animateWithDuration:0.38f animations:^{
-                self.overlayView.switchCamera.transform = CGAffineTransformIdentity;
-            }];
+            transform = CGAffineTransformIdentity;
         }
+        
+        [UIView animateWithDuration:0.5f delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.72f options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
+            self.overlayView.switchButton.transform = transform;
+        } completion:^(BOOL finished) {
+            
+        }];
         
     }];
     
 }
 
-- (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+/**
+ 移除对屏幕方向的监听
+ */
+- (void)removeObserverForOrientation{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 #pragma mark - control
@@ -175,7 +189,9 @@ static const void *AXCameraExtensionOverlayViewKey = &AXCameraExtensionOverlayVi
         //        [self uploadImageWithData:fileData];
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-        
+        if (self.overlayView.isEnablePreview) {
+            self.overlayView.previewImage = image;
+        }
         if ([self respondsToSelector:@selector(cameraDidTakePicture:)]) {
             [self cameraDidTakePicture:image];
         }
@@ -237,30 +253,14 @@ static const void *AXCameraExtensionOverlayViewKey = &AXCameraExtensionOverlayVi
 #pragma mark - priv
 
 - (AXCameraOverlayView *)setupOverlayView{
-    CGRect bounds = [UIScreen mainScreen].bounds;
-    CGFloat width = bounds.size.width;
-    CGFloat height = bounds.size.height - width * 4 / 3;
-    CGFloat originY = bounds.size.height - height;
-    
-    AXCameraOverlayView *overlayView = [[AXCameraOverlayView alloc] initWithFrame:CGRectMake(0, originY, width, height)];
-    [overlayView.dismiss addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [overlayView.shutter addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [overlayView.switchCamera addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    // @xaoxuu: 有前置摄像头
-    if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
-        overlayView.switchCamera.userInteractionEnabled = YES;
-        overlayView.switchCamera.alpha = 1;
-    } else {
-        overlayView.switchCamera.userInteractionEnabled = NO;
-        overlayView.switchCamera.alpha = 0.5;
-    }
-    
-    CGFloat margin = 16;
-    overlayView.dismiss.imageEdgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
-    margin = 18;
-    overlayView.switchCamera.imageEdgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
+    CGRect frame = [UIScreen mainScreen].bounds;
+    AXCameraOverlayView *overlayView = [[AXCameraOverlayView alloc] initWithFrame:frame];
+    [overlayView.dismissButton addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [overlayView.shutterButton addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [overlayView.switchButton addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     return overlayView;
 }
+
 
 
 

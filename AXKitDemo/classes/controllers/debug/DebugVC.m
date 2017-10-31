@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self loadCameraVC];
+    [self loadCameraKit];
 //    [[UIThemeManager new] configTheme:^(UIThemeColorModel *color) {
 //        color.background = nil;
 //    }];

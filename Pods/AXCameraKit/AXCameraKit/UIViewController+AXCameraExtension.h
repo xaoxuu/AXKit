@@ -49,11 +49,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic) AXCameraOverlayView *overlayView;
 
+/**
+ image picker
+ */
+@property (strong, readonly, nonatomic) UIImagePickerController *imagePicker;
+
+
+
 
 /**
  加载相机，可以根据需要提前异步加载
  */
-- (void)loadCameraVC;
+- (void)loadCameraKit;
 
 /**
  弹出相机页面
@@ -74,6 +81,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)takePicture;
 
+
+/**
+ 移除对屏幕方向的监听
+ */
+- (void)removeObserverForOrientation;
 
 @end
 NS_ASSUME_NONNULL_END
