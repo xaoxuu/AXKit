@@ -10,7 +10,7 @@
 
 typedef void(^ __nullable BlockType)(BOOL success);
 
-static NSString *urlStringWithKey(NSString *key){
+static inline NSString *urlStringWithKey(NSString *key){
     if (@available(iOS 10.0, *)) {
         // on newer versions
         return [NSString stringWithFormat:@"App-Prefs:root=%@", key];
@@ -20,7 +20,7 @@ static NSString *urlStringWithKey(NSString *key){
     }
 }
 
-static void openSettingURLWithString(NSString *urlString, BlockType completionHandler){
+static inline void openSettingURLWithString(NSString *urlString, BlockType completionHandler){
     NSURL *url = [NSURL URLWithString:urlString];
     if (@available(iOS 10.0, *)) {
         // on newer versions

@@ -11,6 +11,7 @@
 #import "_AXKitHelpServices.h"
 #import "NSBundle+AXExtension.h"
 #import "NSString+AXFileStreamChainedWrapper.h"
+#import "CoreGraphics+AXExtension.h"
 
 // 日志存放的文件夹名
 static NSString *logFileDir = @"log";
@@ -18,7 +19,7 @@ static NSString *logFileDir = @"log";
 static NSString *logFileExtension = @"md";
 
 
-static dispatch_queue_t logQueue(){
+static inline dispatch_queue_t logQueue(){
     static dispatch_queue_t queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -28,7 +29,7 @@ static dispatch_queue_t logQueue(){
     return queue;
 }
 
-static NSDateFormatter *dateFormatter(){
+static inline NSDateFormatter *dateFormatter(){
     static NSDateFormatter *formatter;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -38,7 +39,7 @@ static NSDateFormatter *dateFormatter(){
     return formatter;
 }
 
-static NSString *logPath(){
+static inline NSString *logPath(){
     static NSString *path;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -93,7 +94,8 @@ static NSString *logPath(){
 + (NSArray<NSString *> *)getLatestCachedLogPathWithCount:(NSUInteger)count{
     NSArray *result = [self getAllCachedLogPath];
     if (result.count > count) {
-        result = [result subarrayWithRange:NSMakeRange(result.count - count, count)];
+        NSRange range = NSMakeRange(result.count - count, count);
+        result = [result subarrayWithRange:range];
     }
     return result;
 }
@@ -105,7 +107,7 @@ static NSString *logPath(){
  @return 日志内容
  */
 + (NSString *)getLogStringWithPath:(NSString *)path{
-    return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];;
+    return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 }
 
 /**

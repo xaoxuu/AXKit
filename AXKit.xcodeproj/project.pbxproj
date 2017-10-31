@@ -1537,6 +1537,7 @@
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */,
 				CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */,
 				CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */,
 				CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */,
@@ -1554,7 +1555,6 @@
 				CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */,
 				CDAB58F51E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h */,
 				CDAB58F61E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m */,
-				CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */,
 				CDE91F9E1EAEE6E000FC5A88 /* NSError+AXExtension.h */,
 				CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */,
 				CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */,
