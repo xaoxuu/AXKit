@@ -50,7 +50,7 @@ static UIView *customView;
             NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
             [weakSelf reset];
             
-            UIView *statusBar = [UIApplication ax_getStatusBar];
+            UIView *statusBar = [UIApplication ax_getSystemStatusBar];
             if (!customView) {
                 customView = UIViewWithHeight(kStatusBarHeight);
             }

@@ -9,7 +9,7 @@
 #import "CustomStatusBarTV.h"
 #import "MJExtension.h"
 
-static UIView *customView;
+
 
 @implementation CustomStatusBarTV
 
@@ -34,111 +34,96 @@ static UIView *customView;
 - (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
-    
+    static UIView *customStatusBar;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        customStatusBar = [UIApplication ax_getCustomStatusBar];
+    });
     dispatch_async(dispatch_get_main_queue(), ^{
         // @xaoxuu: in main queue
-        UIView *statusBar = [UIApplication ax_getStatusBar];
-        if (!customView) {
-            customView = UIViewWithHeight(kStatusBarHeight);
-        }
-//        if (section != 2) {
-//            [statusBar insertSubview:customView atIndex:0];
-//            [customView removeFromSuperview];
-//            customView = nil;
-//        }
         
         if (section == 0) {
             if (row == 0) {
-                
-                [statusBar ax_layer:^(CALayer * _Nonnull layer) {
+                [customStatusBar removeAllSubviews];
+                customStatusBar.hidden = YES;
+                customStatusBar.backgroundColor = [UIColor clearColor];
+                [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
                     layer.shadowOpacity = 0;
                     layer.shadowRadius = 0;
                     layer.shadowOffset = CGSizeZero;
                 }];
             }
         } else if (section == 1) {
+            customStatusBar.hidden = NO;
+            customStatusBar.alpha = 1;
+            customStatusBar.backgroundColor = axColor.theme;
             if (row == 0) {
-                statusBar.alpha = 1;
                 [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    statusBar.backgroundColor = axColor.theme.dark;
+                    customStatusBar.backgroundColor = axColor.theme.dark;
                 } completion:^(BOOL finished) {
-                    statusBar.backgroundColor = axColor.theme;
+                    customStatusBar.alpha = 0;
                 }];
             } else if (row == 1) {
                 [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    statusBar.backgroundColor = [UIColor md_red];
+                    customStatusBar.backgroundColor = [UIColor md_red];
                 } completion:^(BOOL finished) {
-                    statusBar.backgroundColor = axColor.theme;
+                    customStatusBar.alpha = 0;
                 }];
             } else if (row == 2) {
                 [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    statusBar.backgroundColor = [UIColor md_yellow];
+                    customStatusBar.backgroundColor = [UIColor md_yellow];
                 } completion:^(BOOL finished) {
-                    statusBar.backgroundColor = axColor.theme;
+                    customStatusBar.alpha = 0;
                 }];
             } else if (row == 3) {
                 [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    statusBar.backgroundColor = [UIColor md_blue];
+                    customStatusBar.backgroundColor = [UIColor md_blue];
                 } completion:^(BOOL finished) {
-                    statusBar.backgroundColor = axColor.theme;
+                    customStatusBar.alpha = 0;
                 }];
             }
         } else if (section == 2) {
+            customStatusBar.hidden = NO;
+            customStatusBar.alpha = 1;
             if (row == 0) {
-                [statusBar ax_layer:^(CALayer * _Nonnull layer) {
+                [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
                     layer.shadowOpacity = 0;
                     layer.shadowRadius = 0;
                     layer.shadowOffset = CGSizeZero;
                 }];
             } else if (row == 1) {
-                [statusBar ax_layer:^(CALayer * _Nonnull layer) {
+                [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
                     [layer ax_shadow:LayerShadowDownLight];
                 }];
             } else if (row == 2) {
-                [statusBar ax_layer:^(CALayer * _Nonnull layer) {
+                [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
                     [layer ax_shadow:LayerShadowDownNormal];
                 }];
             } else if (row == 3) {
-                [statusBar ax_layer:^(CALayer * _Nonnull layer) {
+                [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
                     [layer ax_shadow:LayerShadowDownFloat];
                 }];
             }
         } else if (section == 3) {
+            customStatusBar.hidden = NO;
+            customStatusBar.alpha = 1;
             if (row == 0) {
-                statusBar.backgroundColor = axColor.theme;
+                customStatusBar.backgroundColor = axColor.clear;
             } else {
                 ThemeColorModelRow *tmp = (ThemeColorModelRow *)model;
-                statusBar.backgroundColor = [UIColor colorWithHexString:tmp.hex];
+                customStatusBar.backgroundColor = [UIColor colorWithHexString:tmp.hex];
             }
         } else if (section == 4) {
             // @xaoxuu: 状态栏通知
-            CGRect frame = customView.bounds;
-            frame.origin.x = 8;
-            frame.size.width = kScreenW - 2*8;
-            UILabel *label = [[UILabel alloc] initWithFrame:frame];
-            label.textAlignment = NSTextAlignmentLeft;
-            label.font = [UIFont systemFontOfSize:12];
-            [customView removeAllSubviews];
-            [customView addSubview:label];
-            customView.alpha = 0;
-            
-            [statusBar addSubview:customView];
             if (row == 0) {
-                customView.backgroundColor = [UIColor md_yellow];
-                label.text = @"警告：这是一条警告消息";
-            } else {
-                customView.backgroundColor = [UIColor md_red];
-                label.text = @"错误：这是一条错误提示";
+                [UIApplication ax_showStatusBarMessage:@"警告：这是一条警告消息" textColor:nil backgroundColor:[UIColor md_yellow] duration:3];
+            } else if (row == 1) {
+                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:5];
+            } else if (row == 2) {
+                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefnflkwsdf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:8];
+            } else if (row == 3) {
+                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefneklnfkewlnqkwefkewfkeewfkewf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:15];
             }
-            [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                customView.alpha = 1;
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.5f delay:5 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                    customView.alpha = 0;
-                } completion:^(BOOL finished) {
-                    customView.alpha = 0;
-                }];
-            }];
             
         }
         

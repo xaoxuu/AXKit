@@ -23,7 +23,7 @@ static UIView *customView;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    statusBar = [UIApplication ax_getStatusBar];
+    statusBar = [UIApplication ax_getSystemStatusBar];
     if (!customView) {
         customView = UIViewWithHeight(kStatusBarHeight);
     }

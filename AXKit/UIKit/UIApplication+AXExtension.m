@@ -7,9 +7,131 @@
 //
 
 #import "UIApplication+AXExtension.h"
+#import "NSOperation+AXExtension.h"
+
 
 typedef void(^ __nullable BlockType)(BOOL success);
 
+/**
+ 获取状态栏（如果要自定义状态栏，建议使用+[ax_getCustomStatusBar]）
+ 
+ @return 系统状态栏
+ */
+static inline UIView *getSystemStatusBar(){
+    return [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+}
+
+/**
+ 获取可自定义的状态栏
+ 
+ @return 自定义状态栏
+ */
+static inline UIView *getCustomStatusBar(){
+    static UIView *view;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        view = [[UIView alloc] initWithFrame:getSystemStatusBar().bounds];
+        [getSystemStatusBar() insertSubview:view atIndex:0];
+    });
+    return view;
+}
+
+/**
+ 获取状态栏消息视图
+
+ @return 状态栏消息视图
+ */
+static inline UIView *getStatusBarMessageContentView(){
+    static UIView *view;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        view = [[UIView alloc] initWithFrame:getSystemStatusBar().bounds];
+        [getSystemStatusBar() addSubview:view];
+    });
+    return view;
+}
+
+/**
+ 显示状态栏消息
+
+ @param duration 持续时间
+ */
+static inline void showStatusBarMessageView(NSTimeInterval duration){
+    // 显示
+    static BOOL isShow;
+    if (!isShow) {
+        getStatusBarMessageContentView().alpha = 0;
+        [getSystemStatusBar() addSubview:getStatusBarMessageContentView()];
+        [UIView animateWithDuration:0.38f animations:^{
+            isShow = YES;
+            getStatusBarMessageContentView().alpha = 1;
+        }];
+    }
+    // 超时自动消失
+    static ax_dispatch_operation_t timeoutToken;
+    ax_dispatch_cancel_operation(timeoutToken);
+    timeoutToken = ax_dispatch_cancellable(duration, dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.38f animations:^{
+            getStatusBarMessageContentView().alpha = 0;
+        } completion:^(BOOL finished) {
+            isShow = NO;
+            [getStatusBarMessageContentView() removeFromSuperview];
+        }];
+    });
+}
+
+/**
+ 获取状态栏消息label
+
+ @param text 消息文本
+ @return 状态栏消息label
+ */
+static inline UILabel *getStatusBarMessageLabel(NSString *text){
+    static UILabel *label;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        label = [[UILabel alloc] initWithFrame:getSystemStatusBar().bounds];
+        label.textAlignment = NSTextAlignmentLeft;
+        label.font = [UIFont systemFontOfSize:12];
+        [getStatusBarMessageContentView() addSubview:label];
+    });
+    label.text = text;
+    [label sizeToFit];
+    CGRect frame = label.frame;
+    frame.size.height = getSystemStatusBar().bounds.size.height;
+    frame.origin.x = 8;
+    label.frame = frame;
+    CGFloat offset = 2 * frame.origin.x + frame.size.width - getSystemStatusBar().bounds.size.width;
+    
+    // label滚动动画
+    [label.layer removeAllAnimations];
+    if (offset > 0) {
+        // 需要滚动显示
+        static CABasicAnimation *animation;
+        animation = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+        animation.repeatDuration = HUGE_VALF;
+        animation.toValue = @(-offset);
+        animation.autoreverses = YES;
+        animation.duration = offset/40.0f;
+        
+        static ax_dispatch_operation_t animationToken;
+        ax_dispatch_cancel_operation(animationToken);
+        animationToken = ax_dispatch_cancellable(0.38f, dispatch_get_main_queue(), ^{
+            [label.layer addAnimation:animation forKey:nil];
+        });
+        
+    }
+    
+    return label;
+}
+
+
+/**
+ 获取跳转的URLString
+
+ @param key key
+ @return 跳转的URLString
+ */
 static inline NSString *urlStringWithKey(NSString *key){
     if (@available(iOS 10.0, *)) {
         // on newer versions
@@ -20,6 +142,12 @@ static inline NSString *urlStringWithKey(NSString *key){
     }
 }
 
+/**
+ 跳转到指定URLString
+
+ @param urlString URLString
+ @param completionHandler 完成回调（只有iOS10及其之后的版本可用）
+ */
 static inline void openSettingURLWithString(NSString *urlString, BlockType completionHandler){
     NSURL *url = [NSURL URLWithString:urlString];
     if (@available(iOS 10.0, *)) {
@@ -33,9 +161,43 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
 
 @implementation UIApplication (AXExtension)
 
-+ (UIView *)ax_getStatusBar{
-    return [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+
+#pragma mark - 状态栏
+
+/**
+ 获取状态栏（如果要自定义状态栏，建议使用+[ax_getCustomStatusBar]）
+ 
+ @return 系统状态栏
+ */
++ (UIView *)ax_getSystemStatusBar{
+    return getSystemStatusBar();
 }
+
+/**
+ 获取可自定义的状态栏
+ 
+ @return 自定义状态栏
+ */
++ (UIView *)ax_getCustomStatusBar{
+    return getCustomStatusBar();
+}
+
+/**
+ 显示状态栏消息
+ 
+ @param message 消息内容
+ @param textColor 文本颜色
+ @param backgroundColor 背景颜色
+ @param duration 持续时间
+ */
++ (void)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
+    getStatusBarMessageContentView().backgroundColor = backgroundColor;
+    getStatusBarMessageLabel(message).textColor = textColor;
+    showStatusBarMessageView(duration);
+}
+
+
+#pragma mark - 跳转
 
 /**
  打开蓝牙设置

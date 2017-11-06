@@ -10,14 +10,34 @@
 
 @interface UIApplication (AXExtension)
 
+#pragma mark - 状态栏
 
 /**
- 获取状态栏
+ 获取状态栏（如果要自定义状态栏，建议使用+[ax_getCustomStatusBar]）
 
- @return 状态栏
+ @return 系统状态栏
  */
-+ (UIView *)ax_getStatusBar;
++ (UIView *)ax_getSystemStatusBar;
 
+/**
+ 获取可自定义的状态栏
+
+ @return 自定义状态栏
+ */
++ (UIView *)ax_getCustomStatusBar;
+
+/**
+ 显示状态栏消息
+
+ @param message 消息内容
+ @param textColor 文本颜色
+ @param backgroundColor 背景颜色
+ @param duration 持续时间
+ */
++ (void)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
+
+
+#pragma mark - 跳转
 
 /**
  打开蓝牙设置
