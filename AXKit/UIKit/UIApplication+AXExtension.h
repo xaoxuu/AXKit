@@ -33,8 +33,10 @@
  @param textColor 文本颜色
  @param backgroundColor 背景颜色
  @param duration 持续时间
+ 
+ @return 消息标签
  */
-+ (void)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
++ (UILabel *)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
 
 
 #pragma mark - 跳转

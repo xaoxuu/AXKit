@@ -99,7 +99,7 @@ static inline UILabel *getStatusBarMessageLabel(NSString *text){
     [label sizeToFit];
     CGRect frame = label.frame;
     frame.size.height = getSystemStatusBar().bounds.size.height;
-    frame.origin.x = 8;
+    frame.origin.x = 6;
     label.frame = frame;
     CGFloat offset = 2 * frame.origin.x + frame.size.width - getSystemStatusBar().bounds.size.width;
     
@@ -190,7 +190,7 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
  @param backgroundColor 背景颜色
  @param duration 持续时间
  */
-+ (void)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
++ (UILabel *)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
     getStatusBarMessageContentView().backgroundColor = backgroundColor;
     getStatusBarMessageLabel(message).textColor = textColor;
     showStatusBarMessageView(duration);
