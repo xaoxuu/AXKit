@@ -8,8 +8,6 @@
 
 #import "BlogVC.h"
 
-static UIView *statusBar;
-static UIView *customView;
 
 @interface BlogVC ()
 
@@ -23,12 +21,7 @@ static UIView *customView;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    statusBar = [UIApplication ax_getSystemStatusBar];
-    if (!customView) {
-        customView = UIViewWithHeight(kStatusBarHeight);
-    }
-    customView.backgroundColor = [UIColor ax_blue];
-    [statusBar insertSubview:customView atIndex:0];
+    
     
 }
 
@@ -40,22 +33,22 @@ static UIView *customView;
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.alpha = 0;
-    [statusBar insertSubview:customView atIndex:0];
+    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor ax_blue];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.navigationController.navigationBar.alpha = 0;
-    [statusBar insertSubview:customView atIndex:0];
+    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor ax_blue];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.alpha = 1;
-    [customView removeFromSuperview];
+    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor clearColor];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     self.navigationController.navigationBar.alpha = 1;
-    [customView removeFromSuperview];
+    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor clearColor];
 }
 
 - (CGRect)initContentFrame:(CGRect)frame{

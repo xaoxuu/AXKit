@@ -116,13 +116,15 @@
         } else if (section == 4) {
             // @xaoxuu: 状态栏通知
             if (row == 0) {
-                [UIApplication ax_showStatusBarMessage:@"警告：这是一条警告消息" textColor:nil backgroundColor:[UIColor md_yellow] duration:3];
+                [UIApplication ax_hideStatusBarMessage];
             } else if (row == 1) {
-                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:5];
+                [UIApplication ax_showStatusBarMessage:@"警告：这是一条警告消息" textColor:nil backgroundColor:[UIColor md_yellow] duration:3];
             } else if (row == 2) {
-                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefnflkwsdf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:8];
+                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:5];
             } else if (row == 3) {
-                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefneklnfkewlnqkwefkewfkeewfkewf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:15];
+                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefnflkwsdfefnek。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:8];
+            } else if (row == 4) {
+                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefneklnfkewlnqkwefefnekkewfkeewfkewf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:15];
             }
             
         }

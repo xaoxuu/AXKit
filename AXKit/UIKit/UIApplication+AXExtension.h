@@ -38,6 +38,10 @@
  */
 + (UILabel *)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
 
+/**
+ 隐藏状态栏消息
+ */
++ (void)ax_hideStatusBarMessage;
 
 #pragma mark - 跳转
 

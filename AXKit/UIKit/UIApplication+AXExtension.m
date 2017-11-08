@@ -12,9 +12,9 @@
 
 typedef void(^ __nullable BlockType)(BOOL success);
 
-static inline BOOL isIphoneX(){
-    return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO);
-}
+// 是否正在展示状态栏消息
+static BOOL isStatusMessageShowing;
+
 /**
  获取状态栏（如果要自定义状态栏，建议使用+[ax_getCustomStatusBar]）
  
@@ -49,7 +49,7 @@ static inline UIView *getStatusBarMessageContentView(){
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         CGRect frame = getSystemStatusBar().bounds;
-        if (isIphoneX()) {
+        if (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)) {
             frame.size.height += 6;
         }
         view = [[UIView alloc] initWithFrame:frame];
@@ -60,18 +60,29 @@ static inline UIView *getStatusBarMessageContentView(){
 }
 
 /**
+ 隐藏状态栏消息
+ */
+static inline void hideStatusBarMessage(){
+    [UIView animateWithDuration:0.38f animations:^{
+        getStatusBarMessageContentView().alpha = 0;
+    } completion:^(BOOL finished) {
+        isStatusMessageShowing = NO;
+        [getStatusBarMessageContentView() removeFromSuperview];
+    }];
+}
+
+/**
  显示状态栏消息
 
  @param duration 持续时间
  */
 static inline void showStatusBarMessageView(NSTimeInterval duration){
     // 显示
-    static BOOL isShow;
-    if (!isShow) {
+    if (!isStatusMessageShowing) {
         getStatusBarMessageContentView().alpha = 0;
         [getSystemStatusBar() addSubview:getStatusBarMessageContentView()];
         [UIView animateWithDuration:0.38f animations:^{
-            isShow = YES;
+            isStatusMessageShowing = YES;
             getStatusBarMessageContentView().alpha = 1;
         }];
     }
@@ -79,14 +90,10 @@ static inline void showStatusBarMessageView(NSTimeInterval duration){
     static ax_dispatch_operation_t timeoutToken;
     ax_dispatch_cancel_operation(timeoutToken);
     timeoutToken = ax_dispatch_cancellable(duration, dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.38f animations:^{
-            getStatusBarMessageContentView().alpha = 0;
-        } completion:^(BOOL finished) {
-            isShow = NO;
-            [getStatusBarMessageContentView() removeFromSuperview];
-        }];
+        hideStatusBarMessage();
     });
 }
+
 
 /**
  获取状态栏消息label
@@ -208,6 +215,9 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
     return label;
 }
 
++ (void)ax_hideStatusBarMessage{
+    hideStatusBarMessage();
+}
 
 #pragma mark - 跳转
 

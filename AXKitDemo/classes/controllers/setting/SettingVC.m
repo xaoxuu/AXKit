@@ -43,6 +43,21 @@
     [self.tableView reloadTableView];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+}
+
 - (void)installRightRefreshBarButton:(UIBarButtonItem *)sender{
     [self.tableView reloadDataSourceAndTableView];
 }
