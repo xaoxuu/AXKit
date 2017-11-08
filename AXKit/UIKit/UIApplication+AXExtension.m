@@ -8,10 +8,13 @@
 
 #import "UIApplication+AXExtension.h"
 #import "NSOperation+AXExtension.h"
-
+#import "sys/utsname.h"
 
 typedef void(^ __nullable BlockType)(BOOL success);
 
+static inline BOOL isIphoneX(){
+    return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO);
+}
 /**
  获取状态栏（如果要自定义状态栏，建议使用+[ax_getCustomStatusBar]）
  
@@ -45,8 +48,13 @@ static inline UIView *getStatusBarMessageContentView(){
     static UIView *view;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        view = [[UIView alloc] initWithFrame:getSystemStatusBar().bounds];
+        CGRect frame = getSystemStatusBar().bounds;
+        if (isIphoneX()) {
+            frame.size.height += 6;
+        }
+        view = [[UIView alloc] initWithFrame:frame];
         [getSystemStatusBar() addSubview:view];
+        
     });
     return view;
 }
@@ -98,8 +106,9 @@ static inline UILabel *getStatusBarMessageLabel(NSString *text){
     label.text = text;
     [label sizeToFit];
     CGRect frame = label.frame;
-    frame.size.height = getSystemStatusBar().bounds.size.height;
+    frame.size.height = 20;
     frame.origin.x = 6;
+    frame.origin.y = getStatusBarMessageContentView().bounds.size.height - 20;
     label.frame = frame;
     CGFloat offset = 2 * frame.origin.x + frame.size.width - getSystemStatusBar().bounds.size.width;
     
@@ -191,9 +200,12 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
  @param duration 持续时间
  */
 + (UILabel *)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
-    getStatusBarMessageContentView().backgroundColor = backgroundColor;
-    getStatusBarMessageLabel(message).textColor = textColor;
+    UIView *contentView = getStatusBarMessageContentView();
+    contentView.backgroundColor = backgroundColor;
+    UILabel *label = getStatusBarMessageLabel(message);
+    label.textColor = textColor;
     showStatusBarMessageView(duration);
+    return label;
 }
 
 

@@ -22,13 +22,15 @@ static BOOL isShowing = NO;
 static UIView *popView;
 static UIView *maskView;
 
-
+static dispatch_block_t block_hide;
+static NSTimeInterval static_duration;
 
 @implementation AXProgressHUD
 
 
 
 + (void)ax_target:(UIView *)target showInfo:(NSString *)info duration:(NSTimeInterval)duration {
+    static_duration = duration;
 //    if (!isShowing) {
     if (isShowing) {
         [self _hideTips];
@@ -44,7 +46,7 @@ static UIView *maskView;
 }
 
 + (void)ax_target:(UIView *)target point:(CGPoint)point showInfo:(NSString *)info duration:(NSTimeInterval)duration {
-//    if (!isShowing) {
+    static_duration = duration;
     if (isShowing) {
         [self _hideTips];
     }
@@ -53,10 +55,7 @@ static UIView *maskView;
         [self setupLabelWithContent:info];
         [self moveToView:target point:point];
         [self pushTo:target duration:duration];
-//    } else {
-//        [self _hideTips];
-//        
-//    }
+
 }
 
 // setup label
@@ -120,30 +119,34 @@ static UIView *maskView;
 
 
 + (void)pushTo:(UIView *)view duration:(NSTimeInterval)duration{
+    static_duration = duration;
+    if (block_hide) {
+        dispatch_block_cancel(block_hide);
+    }
     [self _hideTips];
     
     [view addSubview:sPopView];
-//    if (!isShowing) {
-        isShowing = YES;
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            [self _showTips];
-        } completion:^(BOOL finished) {
-            [self performSelector:@selector(_dismissAnimation) withObject:nil afterDelay:duration];
-        }];
-//    } else {
-//        
-//    }
+
+    isShowing = YES;
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [self _showTips];
+    } completion:^(BOOL finished) {
+        block_hide = dispatch_block_create(DISPATCH_BLOCK_BARRIER, ^{
+            [self _dismissAnimation];
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), block_hide);
+    }];
+    
+    
 }
 
 + (void)_dismissAnimation{
-    if (isShowing) {
-        [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            [self _hideTips];
-        } completion:^(BOOL finished) {
-            isShowing = NO;
-            [sPopView removeFromSuperview];
-        }];
-    }
+    [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [self _hideTips];
+    } completion:^(BOOL finished) {
+        isShowing = NO;
+        [sPopView removeFromSuperview];
+    }];
 }
 
 + (void)_hideTips{
