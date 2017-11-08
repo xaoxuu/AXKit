@@ -8,12 +8,13 @@
 
 #import "UIApplication+AXExtension.h"
 #import "NSOperation+AXExtension.h"
-#import "sys/utsname.h"
+#import "CALayer+AXWrapper.h"
 
 typedef void(^ __nullable BlockType)(BOOL success);
 
 // 是否正在展示状态栏消息
 static BOOL isStatusMessageShowing;
+static BOOL isStatusProgressMessageShowing;
 
 /**
  获取状态栏（如果要自定义状态栏，建议使用+[ax_getCustomStatusBar]）
@@ -58,6 +59,28 @@ static inline UIView *getStatusBarMessageContentView(){
     });
     return view;
 }
+static inline UIView *getStatusBarProgressMessageContentView(){
+    static UIView *view;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        view = [[UIView alloc] init];
+        CGSize statusBarSize = getSystemStatusBar().bounds.size;
+        static CGFloat width = 100;
+        CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, statusBarSize.height);
+        if (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)) {
+            static CGFloat moreWidth = 20;
+            frame.size.width += 2*moreWidth;
+            frame.origin.x = -moreWidth;
+            frame.size.height -= 14;
+        } else {
+            [view.layer ax_cornerRadius:5 shadow:LayerShadowNone];
+        }
+        view.frame = frame;
+        [getSystemStatusBar() addSubview:view];
+        
+    });
+    return view;
+}
 
 /**
  隐藏状态栏消息
@@ -70,7 +93,14 @@ static inline void hideStatusBarMessage(){
         [getStatusBarMessageContentView() removeFromSuperview];
     }];
 }
-
+static inline void hideStatusBarProgressMessage(){
+    [UIView animateWithDuration:0.38f animations:^{
+        getStatusBarProgressMessageContentView().alpha = 0;
+    } completion:^(BOOL finished) {
+        isStatusProgressMessageShowing = NO;
+        [getStatusBarProgressMessageContentView() removeFromSuperview];
+    }];
+}
 /**
  显示状态栏消息
 
@@ -84,6 +114,23 @@ static inline void showStatusBarMessageView(NSTimeInterval duration){
         [UIView animateWithDuration:0.38f animations:^{
             isStatusMessageShowing = YES;
             getStatusBarMessageContentView().alpha = 1;
+        }];
+    }
+    // 超时自动消失
+    static ax_dispatch_operation_t timeoutToken;
+    ax_dispatch_cancel_operation(timeoutToken);
+    timeoutToken = ax_dispatch_cancellable(duration, dispatch_get_main_queue(), ^{
+        hideStatusBarMessage();
+    });
+}
+static inline void showStatusBarProgressMessageView(NSTimeInterval duration){
+    // 显示
+    if (!isStatusProgressMessageShowing) {
+        getStatusBarProgressMessageContentView().alpha = 0;
+        [getSystemStatusBar() addSubview:getStatusBarProgressMessageContentView()];
+        [UIView animateWithDuration:0.38f animations:^{
+            isStatusProgressMessageShowing = YES;
+            getStatusBarProgressMessageContentView().alpha = 1;
         }];
     }
     // 超时自动消失
@@ -140,24 +187,32 @@ static inline UILabel *getStatusBarMessageLabel(NSString *text){
     
     return label;
 }
-
-static inline void showStatusBarAlert(UIColor *color, void (^callback)(CABasicAnimation *animation)){
-    static CABasicAnimation *animation;
-    animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    animation.autoreverses = YES;
-    animation.removedOnCompletion = YES;
-    animation.toValue = (id)color.CGColor;
-    if (callback) {
-//        callback(animation);
-    }
-    animation.duration = 1000;
-    [getCustomStatusBar().layer addAnimation:animation forKey:@"backgroundColor"];
+static inline UILabel *getStatusBarProgressMessageLabel(NSString *text){
+    static UILabel *label;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        label = [[UILabel alloc] init];
+        CGRect contentBounds = getStatusBarProgressMessageContentView().bounds;
+        CGRect frame = contentBounds;
+        
+        if (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)) {
+            frame.size.height = 14;
+            frame.origin.y = contentBounds.size.height - frame.size.height;
+            label.font = [UIFont boldSystemFontOfSize:15];
+        } else {
+            frame.size.height = 20;
+            label.font = [UIFont boldSystemFontOfSize:12];
+        }
+        label.textAlignment = NSTextAlignmentCenter;
+        label.frame = frame;
+        [getStatusBarProgressMessageContentView() addSubview:label];
+    });
+    label.text = text;
+    
+    return label;
 }
 
-
-static inline void hideStatusBarAlert(){
-    [getCustomStatusBar().layer removeAnimationForKey:@"backgroundColor"];
-}
 
 
 
@@ -234,24 +289,21 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
     return label;
 }
 
++ (UILabel *)ax_showStatusBarProgressMessage:(CGFloat)progress textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
+    UIView *contentView = getStatusBarProgressMessageContentView();
+    contentView.backgroundColor = backgroundColor;
+    NSString *message = [NSString stringWithFormat:@"%.02f%%", 100 * progress];
+    UILabel *label = getStatusBarProgressMessageLabel(message);
+    label.textColor = textColor;
+    showStatusBarProgressMessageView(duration);
+    return label;
+}
+
 + (void)ax_hideStatusBarMessage{
     hideStatusBarMessage();
 }
-
-
-+ (void)ax_showStatusBarAlertWithColor:(UIColor *)color duration:(NSTimeInterval)duration{
-    showStatusBarAlert(color, ^(CABasicAnimation *animation) {
-        animation.duration = duration;
-    });
-}
-+ (void)ax_showStatusBarAlertWithColor:(UIColor *)color repeatCount:(NSUInteger)repeatCount{
-    showStatusBarAlert(color, ^(CABasicAnimation *animation) {
-        animation.repeatCount = repeatCount;
-    });
-}
-
-+ (void)ax_hideStatusBarAlert{
-    hideStatusBarAlert();
++ (void)ax_hideStatusBarProgressMessage{
+    hideStatusBarProgressMessage();
 }
 
 #pragma mark - 跳转

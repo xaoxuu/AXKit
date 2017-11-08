@@ -127,7 +127,7 @@
             ]
         },
         {
-            "header_title":"状态栏通知",
+            "header_title":"状态栏消息",
             "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
@@ -147,6 +147,33 @@
                 },
                 {
                     "title":"很长的错误信息"
+                }
+            ]
+        },
+        {
+            "header_title":"状态栏进度通知",
+            "header_height":"44",
+            "footer_title":"",
+            "footer_height":"0",
+            "rowHeight":"44",
+            "rows":[
+                {
+                    "title":"隐藏消息"
+                },
+                {
+                    "title":"0%"
+                },
+                {
+                    "title":"11%"
+                },
+                {
+                    "title":"50.97%"
+                },
+                {
+                    "title":"100%"
+                },
+                {
+                    "title":"自动"
                 }
             ]
         }

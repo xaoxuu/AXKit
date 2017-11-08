@@ -9,11 +9,14 @@
 #import "CustomStatusBarTV.h"
 #import "MJExtension.h"
 
-
+static NSTimer *timer;
 
 @implementation CustomStatusBarTV
 
-
+- (void)dealloc{
+    [timer ax_pause];
+    timer = nil;
+}
 
 - (void)initTableView:(BaseTableView *)tableView{
     tableView.estimatedSectionFooterHeight = 0;
@@ -58,15 +61,7 @@
             customStatusBar.hidden = NO;
             customStatusBar.alpha = 1;
             customStatusBar.backgroundColor = axColor.theme;
-//            CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-//            animation.duration = 1;
-//            animation.autoreverses = YES;
-//            animation.removedOnCompletion = YES;
-//            animation.repeatCount = HUGE_VALF;
             if (row == 0) {
-//                [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
-//                    [layer removeAllAnimations];
-//                }];
                 [customStatusBar.layer ax_hideColorAnimation];
             } else if (row == 1) {
                 [customStatusBar.layer ax_showAnimatedColor:axColor.theme.dark duration:1 repeatCount:HUGE_VALF];
@@ -111,7 +106,7 @@
                 customStatusBar.backgroundColor = [UIColor colorWithHexString:tmp.hex];
             }
         } else if (section == 4) {
-            // @xaoxuu: 状态栏通知
+            // @xaoxuu: 状态栏消息
             if (row == 0) {
                 [UIApplication ax_hideStatusBarMessage];
             } else if (row == 1) {
@@ -122,6 +117,33 @@
                 [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefnflkwsdfefnek。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:8];
             } else if (row == 4) {
                 [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefneklnfkewlnqkwefefnekkewfkeewfkewf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:15];
+            }
+            
+        } else if (section == 5) {
+            // @xaoxuu: 状态栏进度
+            if (row == 0) {
+                [timer ax_pause];
+                [UIApplication ax_hideStatusBarProgressMessage];
+            } else if (row == 1) {
+                [UIApplication ax_showStatusBarProgressMessage:0 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:3];
+            } else if (row == 2) {
+                [UIApplication ax_showStatusBarProgressMessage:0.11 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:5];
+            } else if (row == 3) {
+                [UIApplication ax_showStatusBarProgressMessage:0.5097 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:8];
+            } else if (row == 4) {
+                [UIApplication ax_showStatusBarProgressMessage:1 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:15];
+            } else if (row == 5) {
+                __block CGFloat x = 0;
+                [timer ax_pause];
+                timer = nil;
+                timer = [NSTimer ax_scheduledTimerWithTimeInterval:0.01 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
+                    [UIApplication ax_showStatusBarProgressMessage:x textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:2];
+                    x += 0.0005;
+                    if (x >= 1) {
+                        [timer ax_pause];
+                    }
+                }];
+                [timer ax_restart];
             }
             
         }
