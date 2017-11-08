@@ -136,4 +136,13 @@
 }
 
 
+
+- (void)indexPath:(NSIndexPath *)indexPath icon:(void (^)(UIImage *))icon{
+    if (indexPath.section == 3 && indexPath.row != 0) {
+        ThemeColorModelRow *color = (ThemeColorModelRow *)[self rowModel:indexPath];
+        icon([UIImage imageWithColor:[UIColor colorWithHexString:color.hex]]);
+    }
+    
+}
+
 @end

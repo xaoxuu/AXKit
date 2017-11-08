@@ -18,7 +18,7 @@
             ]
         },
         {
-            "header_title":"渐变",
+            "header_title":"渐变效果",
             "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
@@ -39,35 +39,35 @@
             ]
         },
         {
-            "header_title":"阴影",
+            "header_title":"阴影效果",
             "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"去除阴影"
+                    "title":"清除阴影效果"
                 },
                 {
-                    "title":"阴影 - light"
+                    "title":"纸张"
                 },
                 {
-                    "title":"阴影 - normal"
+                    "title":"卡片"
                 },
                 {
-                    "title":"阴影 - float"
+                    "title":"漂浮"
                 }
             ]
         },
         {
-            "header_title":"单色模式",
+            "header_title":"纯色模式",
             "header_height":"44",
             "footer_title":"",
             "footer_height":"0",
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"透明"
+                    "title":"还原"
                 },
                 {
                     "title":"md_red",
