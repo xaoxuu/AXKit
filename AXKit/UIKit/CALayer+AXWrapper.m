@@ -65,6 +65,30 @@ static inline void setLayerShadow(CALayer *layer, LayerShadow shadow){
     }
 }
 
+
+
+static inline void showColorAnimation(CALayer *layer, UIColor *color, void (^callback)(CABasicAnimation *animation)){
+    static CABasicAnimation *animation;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+        animation.autoreverses = YES;
+        animation.removedOnCompletion = YES;
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    });
+    animation.toValue = (id)color.CGColor;
+    if (callback) {
+        callback(animation);
+    }
+    [layer addAnimation:animation forKey:@"backgroundColor"];
+}
+
+
+static inline void hideColorAnimation(CALayer *layer){
+    [layer removeAnimationForKey:@"backgroundColor"];
+}
+
+
 @implementation CALayer (AXWrapper)
 
 
@@ -112,6 +136,26 @@ static inline void setLayerShadow(CALayer *layer, LayerShadow shadow){
 - (void)ax_borderWidth:(CGFloat)width color:(UIColor *)color{
     self.borderColor = color.CGColor;
     self.borderWidth = width;
+}
+
+#pragma mark - animation
+
+- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatDuration:(CFTimeInterval)repeatDuration{
+    showColorAnimation(self, color, ^(CABasicAnimation *animation) {
+        animation.duration = duration;
+        animation.repeatDuration = repeatDuration;
+    });
+}
+
+- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatCount:(float)repeatCount{
+    showColorAnimation(self, color, ^(CABasicAnimation *animation) {
+        animation.duration = duration;
+        animation.repeatCount = repeatCount;
+    });
+}
+
+- (void)ax_hideColorAnimation{
+    hideColorAnimation(self);
 }
 
 

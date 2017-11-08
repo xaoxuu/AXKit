@@ -51,37 +51,34 @@
                     layer.shadowOpacity = 0;
                     layer.shadowRadius = 0;
                     layer.shadowOffset = CGSizeZero;
+                    [layer removeAllAnimations];
                 }];
             }
         } else if (section == 1) {
             customStatusBar.hidden = NO;
             customStatusBar.alpha = 1;
             customStatusBar.backgroundColor = axColor.theme;
+//            CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+//            animation.duration = 1;
+//            animation.autoreverses = YES;
+//            animation.removedOnCompletion = YES;
+//            animation.repeatCount = HUGE_VALF;
             if (row == 0) {
-                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    customStatusBar.backgroundColor = axColor.theme.dark;
-                } completion:^(BOOL finished) {
-                    customStatusBar.alpha = 0;
-                }];
+//                [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
+//                    [layer removeAllAnimations];
+//                }];
+                [customStatusBar.layer ax_hideColorAnimation];
             } else if (row == 1) {
-                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    customStatusBar.backgroundColor = [UIColor md_red];
-                } completion:^(BOOL finished) {
-                    customStatusBar.alpha = 0;
-                }];
+                [customStatusBar.layer ax_showAnimatedColor:axColor.theme.dark duration:1 repeatCount:HUGE_VALF];
             } else if (row == 2) {
-                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    customStatusBar.backgroundColor = [UIColor md_yellow];
-                } completion:^(BOOL finished) {
-                    customStatusBar.alpha = 0;
-                }];
+                [customStatusBar.layer ax_showAnimatedColor:UIColor.md_red duration:1 repeatCount:HUGE_VALF];
             } else if (row == 3) {
-                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionAutoreverse animations:^{
-                    customStatusBar.backgroundColor = [UIColor md_blue];
-                } completion:^(BOOL finished) {
-                    customStatusBar.alpha = 0;
-                }];
+                [customStatusBar.layer ax_showAnimatedColor:UIColor.md_yellow duration:1.5 repeatCount:HUGE_VALF];
+            } else if (row == 4) {
+                [customStatusBar.layer ax_showAnimatedColor:UIColor.md_blue duration:2 repeatCount:HUGE_VALF];
+                
             }
+            
         } else if (section == 2) {
             customStatusBar.hidden = NO;
             customStatusBar.alpha = 1;

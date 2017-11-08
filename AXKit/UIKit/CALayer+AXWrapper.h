@@ -96,5 +96,16 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
  */
 - (void)ax_borderWidth:(CGFloat)width color:(UIColor *)color;
 
+
+
+#pragma mark - animation
+
+- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatDuration:(CFTimeInterval)repeatDuration;
+
+- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatCount:(float)repeatCount;
+
+- (void)ax_hideColorAnimation;
+
+
 @end
 

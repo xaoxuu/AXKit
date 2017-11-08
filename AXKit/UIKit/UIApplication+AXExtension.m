@@ -141,6 +141,25 @@ static inline UILabel *getStatusBarMessageLabel(NSString *text){
     return label;
 }
 
+static inline void showStatusBarAlert(UIColor *color, void (^callback)(CABasicAnimation *animation)){
+    static CABasicAnimation *animation;
+    animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    animation.autoreverses = YES;
+    animation.removedOnCompletion = YES;
+    animation.toValue = (id)color.CGColor;
+    if (callback) {
+//        callback(animation);
+    }
+    animation.duration = 1000;
+    [getCustomStatusBar().layer addAnimation:animation forKey:@"backgroundColor"];
+}
+
+
+static inline void hideStatusBarAlert(){
+    [getCustomStatusBar().layer removeAnimationForKey:@"backgroundColor"];
+}
+
+
 
 /**
  获取跳转的URLString
@@ -217,6 +236,22 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
 
 + (void)ax_hideStatusBarMessage{
     hideStatusBarMessage();
+}
+
+
++ (void)ax_showStatusBarAlertWithColor:(UIColor *)color duration:(NSTimeInterval)duration{
+    showStatusBarAlert(color, ^(CABasicAnimation *animation) {
+        animation.duration = duration;
+    });
+}
++ (void)ax_showStatusBarAlertWithColor:(UIColor *)color repeatCount:(NSUInteger)repeatCount{
+    showStatusBarAlert(color, ^(CABasicAnimation *animation) {
+        animation.repeatCount = repeatCount;
+    });
+}
+
++ (void)ax_hideStatusBarAlert{
+    hideStatusBarAlert();
 }
 
 #pragma mark - 跳转
