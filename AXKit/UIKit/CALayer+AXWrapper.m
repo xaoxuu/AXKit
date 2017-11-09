@@ -75,6 +75,8 @@ static inline void showColorAnimation(CALayer *layer, UIColor *color, void (^cal
         animation.autoreverses = YES;
         animation.removedOnCompletion = YES;
         animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        animation.duration = 1;
+        animation.repeatCount = 1;
     });
     animation.toValue = (id)color.CGColor;
     if (callback) {
