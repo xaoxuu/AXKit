@@ -37,7 +37,8 @@
  @return 消息标签
  */
 + (UILabel *)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
-+ (UILabel *)ax_showStatusBarProgressMessage:(CGFloat)progress textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
+
++ (UILabel *)ax_showStatusBarProgressMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
 /**
  隐藏状态栏消息
  */

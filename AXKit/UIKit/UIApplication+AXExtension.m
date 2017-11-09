@@ -289,10 +289,23 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
     return label;
 }
 
-+ (UILabel *)ax_showStatusBarProgressMessage:(CGFloat)progress textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
++ (UILabel *)ax_showStatusBarProgressMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
+    if (message.length > 6) {
+        return [self ax_showStatusBarMessage:message textColor:textColor backgroundColor:backgroundColor duration:duration];
+    }
     UIView *contentView = getStatusBarProgressMessageContentView();
     contentView.backgroundColor = backgroundColor;
-    NSString *message = [NSString stringWithFormat:@"%.02f%%", 100 * progress];
+//    NSString *message;
+//    int tmp = (int)(progress * 10000);
+//    if (tmp % 100 == 0) {
+//        message = [NSString stringWithFormat:@"%.0f%%", 100 * progress];
+//    } else {
+//        if (tmp % 10 == 0) {
+//            message = [NSString stringWithFormat:@"%.1f%%", 100 * progress];
+//        } else {
+//            message = [NSString stringWithFormat:@"%.2f%%", 100 * progress];
+//        }
+//    }
     UILabel *label = getStatusBarProgressMessageLabel(message);
     label.textColor = textColor;
     showStatusBarProgressMessageView(duration);
