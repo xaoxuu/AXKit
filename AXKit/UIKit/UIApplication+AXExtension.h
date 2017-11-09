@@ -38,7 +38,17 @@
  */
 + (UILabel *)ax_showStatusBarMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
 
+/**
+ 显示状态栏进度通知
+
+ @param message 进度消息（6个字符以内）
+ @param textColor 文本颜色
+ @param backgroundColor 背景颜色
+ @param duration 持续时间
+ @return 消息标签
+ */
 + (UILabel *)ax_showStatusBarProgressMessage:(NSString *)message textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration;
+
 /**
  隐藏状态栏消息
  */
