@@ -10,6 +10,12 @@
 
 static inline void setLayerShadow(CALayer *layer, LayerShadow shadow){
     switch (shadow) {
+        case LayerShadowNone: {
+            layer.shadowOpacity = 0;
+            layer.shadowRadius = 0;
+            layer.shadowOffset = CGSizeZero;
+            break;
+        }
             // for top bar
         case LayerShadowDownLight: {
             layer.shadowOpacity = 0.2;
