@@ -17,7 +17,6 @@
 - (void)initTableView:(BaseTableView *)tableView{
     tableView.estimatedSectionFooterHeight = 0;
     tableView.sectionFooterHeight = 0;
-    [@"" ax_textHeightWithFont:nil width:0]
     
 }
 
