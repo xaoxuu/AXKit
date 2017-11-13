@@ -1,0 +1,21 @@
+ [
+  {
+  "vc":"HomeVC",
+  "title":"主页",
+  "icon":"tabbar_home",
+  "icon_sel":""
+  },
+  {
+  "vc":"DebugVC",
+  "title":"调试",
+  "icon":"tabbar_debug",
+  "icon_sel":""
+  },
+  {
+  "vc":"SettingVC",
+  "title":"设置",
+  "icon":"tabbar_setting",
+  "icon_sel":""
+  }
+  ]
+

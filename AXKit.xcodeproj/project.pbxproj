@@ -168,6 +168,9 @@
 		CD60001D1F8D08C100771DE6 /* UIApplication+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */; };
 		CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */; };
 		CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */; };
+		CD616C971FB99F8A00E38244 /* AXTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD616C951FB99F8A00E38244 /* AXTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD616C981FB99F8A00E38244 /* AXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD616C961FB99F8A00E38244 /* AXTabBarController.m */; };
+		CD616C9C1FB9A9D700E38244 /* BaseTabBarController.json in Resources */ = {isa = PBXBuildFile; fileRef = CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */; };
 		CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */; };
 		CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD77FE841EBF2971001A5787 /* NSOperation+AXExtension.m */; };
@@ -538,6 +541,9 @@
 		CD6000221F8D0AAC00771DE6 /* CustomStatusBarTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomStatusBarTV.h; sourceTree = "<group>"; };
 		CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBarTV.m; sourceTree = "<group>"; };
 		CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CustomStatusBarTV.json; sourceTree = "<group>"; };
+		CD616C951FB99F8A00E38244 /* AXTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXTabBarController.h; sourceTree = "<group>"; };
+		CD616C961FB99F8A00E38244 /* AXTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTabBarController.m; sourceTree = "<group>"; };
+		CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BaseTabBarController.json; sourceTree = "<group>"; };
 		CD74F9F11F9ADEB000EBD3B5 /* CooldownVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CooldownVC.h; sourceTree = "<group>"; };
 		CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CooldownVC.m; sourceTree = "<group>"; };
 		CD77FE831EBF2971001A5787 /* NSOperation+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperation+AXExtension.h"; sourceTree = "<group>"; };
@@ -1389,6 +1395,8 @@
 		CD77FE6C1EBEE8F1001A5787 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD616C951FB99F8A00E38244 /* AXTabBarController.h */,
+				CD616C961FB99F8A00E38244 /* AXTabBarController.m */,
 				CDC8CDF31ECC92B7009F855E /* UIAlertController+AXWrapper.h */,
 				CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */,
 				CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */,
@@ -1752,6 +1760,7 @@
 				CDF18CC01EB884F1004B4794 /* RootViewController.m */,
 				CDF18CBB1EB884F1004B4794 /* BaseTabBarController.h */,
 				CDF18CBC1EB884F1004B4794 /* BaseTabBarController.m */,
+				CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */,
 				CDF18CB91EB884F1004B4794 /* BaseNavController.h */,
 				CDF18CBA1EB884F1004B4794 /* BaseNavController.m */,
 				CDF18CBD1EB884F1004B4794 /* BaseViewController.h */,
@@ -1837,6 +1846,7 @@
 				CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */,
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
 				CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */,
+				CD616C971FB99F8A00E38244 /* AXTabBarController.h in Headers */,
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
 				CDB716591F8E6F5A0025E8D7 /* UIFontManager.h in Headers */,
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
@@ -1966,6 +1976,7 @@
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
 				CD79DFAC1EEFA20200408BAD /* TestTV.json in Resources */,
 				CD77FEC01EBF681E001A5787 /* BaseTableViewCell.xib in Resources */,
+				CD616C9C1FB9A9D700E38244 /* BaseTabBarController.json in Resources */,
 				CD5745B81EDADE510014E833 /* ThemeColorTableView.json in Resources */,
 				CD5745891EDADE510014E833 /* ResizeableImageVC.xib in Resources */,
 				CD5745801EDADE510014E833 /* DebugTV.json in Resources */,
@@ -2255,6 +2266,7 @@
 				CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */,
 				CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */,
 				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,
+				CD616C981FB99F8A00E38244 /* AXTabBarController.m in Sources */,
 				CDAB58F41E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m in Sources */,
 				CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */,
 				CDAB59141E6BF9FE0017CA1E /* UIColorManager.m in Sources */,

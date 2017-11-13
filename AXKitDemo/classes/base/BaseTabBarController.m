@@ -8,12 +8,8 @@
 
 #import "BaseTabBarController.h"
 #import "BaseNavController.h"
-#import "DefaultViewController.h"
 
 @interface BaseTabBarController ()
-
-// @xaoxuu: child controllers
-@property (strong, nonatomic) NSArray<NSDictionary *> *controllers;
 
 @end
 
@@ -24,16 +20,7 @@
     // Do any additional setup after loading the view.
     
     
-    for (NSDictionary *dict in self.controllers) {
-        
-        UIViewController *vc = UIViewControllerFromString(dict[@"vc"]) ?: services.app.defaultVC;
-        BaseNavController *nav = [[BaseNavController alloc] initWithRootViewController:vc];
-        [self addChildViewController:nav];
-        [self setupChlidController:vc title:dict[@"title"] image:dict[@"icon"] selectedImage:dict[@"icon_sel"]];
-    }
-    
     [self.tabBar.layer ax_shadow:LayerShadowUpLight];
-    
     
 }
 
@@ -48,45 +35,9 @@
     [services.app applyTheme];
 }
 
-- (NSArray<NSDictionary *> *)controllers{
-    if (!_controllers) {
-        _controllers = @"tabbar_controllers".mainBundlePath.readJson();
-    }
-    return _controllers;
+- (NSString *)classNameForBaseNavigationController{
+    return @"BaseNavController";
 }
-
-
-// setup child controllers
-- (void)setupChlidController:(UIViewController * __nonnull)vc title:(NSString * __nullable)title image:(NSString * __nonnull)image selectedImage:(NSString * __nullable)selectedImage {
-    if (vc) {
-        vc.title = NSLocalizedString(title, nil);
-        if (image.length) {
-            if (image.isURLString) {
-                // @xaoxuu: 网络图片
-                [[[UIImageView alloc] init] setImageWithURL:image.absoluteURL placeholder:nil options:YYWebImageOptionProgressiveBlur completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                    vc.tabBarItem.image = image;
-                }];
-                
-            } else {
-                // @xaoxuu: 本地图片
-                vc.tabBarItem.image = [UIImage imageNamed:image];
-            }
-            if (selectedImage) {
-                if (image.isURLString) {
-                    // @xaoxuu: 网络图片
-                    [[[UIImageView alloc] init] setImageWithURL:selectedImage.absoluteURL placeholder:nil options:YYWebImageOptionProgressiveBlur completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                        vc.tabBarItem.selectedImage = image;
-                    }];
-                    
-                } else {
-                    // @xaoxuu: 本地图片
-                    vc.tabBarItem.selectedImage = selectedImage.image;
-                }
-            }
-        }
-    }
-}
-
 
 
 @end

@@ -11,21 +11,27 @@
 static NSBundle *bundle = nil;
 
 inline NSString *NSLocalizedStringFromAXKit(NSString *key){
-    // @xaoxuu: in main bundle
-    if (!bundle) {
-        bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"AXKit" ofType:@"bundle"]];
-    }
-    
-    // @xaoxuu: in AXKit.framework/AXKit.bundle
-    if (!bundle) {
-        NSString *path_frameworks = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Frameworks"];
-        bundle = [NSBundle bundleWithPath:[path_frameworks stringByAppendingPathComponent:@"AXKit.framework"]];
-        bundle = [NSBundle bundleWithPath:[bundle pathForResource:@"AXKit" ofType:@"bundle"]];
-    }
-    
-    return NSLocalizedStringFromTableInBundle(key, nil, bundle, nil) ?: key;
+    return NSLocalizedStringFromTableInBundle(key, nil, [_AXKitBundle axkitBundle], nil) ?: key;
 }
 
 @implementation _AXKitBundle
+
++ (instancetype)axkitBundle{
+    static _AXKitBundle *bundle;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        // @xaoxuu: in main bundle/AXKit.bundle（直接将AXKit源码导入项目中）
+        if (!bundle) {
+            bundle = [_AXKitBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"AXKit" ofType:@"bundle"]];
+        }
+        // @xaoxuu: in main bundle/AXKit.framework/AXKit.bundle（使用Cocoapods或者静态库方式导入）
+        if (!bundle) {
+            NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Frameworks/AXKit.framework"];
+            bundle = [_AXKitBundle bundleWithPath:path];
+            bundle = [_AXKitBundle bundleWithPath:[bundle pathForResource:@"AXKit" ofType:@"bundle"]];
+        }
+    });
+    return bundle;
+}
 
 @end

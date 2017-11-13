@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseTabBarController : UITabBarController
+@interface BaseTabBarController : AXTabBarController
 
 @end
