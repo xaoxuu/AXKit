@@ -7,7 +7,6 @@
 //
 
 #import "BaseTabBarController.h"
-#import "BaseNavController.h"
 
 @interface BaseTabBarController ()
 
