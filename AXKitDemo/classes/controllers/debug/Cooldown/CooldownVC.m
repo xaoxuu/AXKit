@@ -16,7 +16,7 @@ static UIView *customView;
 
 @interface CooldownVC ()
 
-@property (strong, nonatomic) FullWideButton *delayButton;
+//@property (strong, nonatomic) FullWideButton *delayButton;
 
 @property (strong, nonatomic) UILabel *label;
 
@@ -27,6 +27,7 @@ static UIView *customView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"延迟函数";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = axColor.groupTableViewBackground;
     self.label = [[UILabel alloc] initWithFrame:self.view.bounds];
@@ -40,53 +41,45 @@ static UIView *customView;
     
     [self reset];
     
+    CGFloat width = self.view.frame.size.width - 40;
+    UILabel *tips = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, width, 100)];
+    [self.view addSubview:tips];
+    tips.numberOfLines = 0;
+    tips.font = [UIFont systemFontOfSize:14];
+    tips.text = @"点击屏幕任意地方，计数会增加。某次点击结束后2秒内没有再次收到点击事件，就触发了事件A。（也就是说，每次点击都会延迟事件A的执行）\n\n事件A：计数器归0，状态栏弹出警告。";
+    CGFloat height = [tips.text ax_textHeightWithFont:tips.font width:width];
+    tips.frame = CGRectMake(20, 20, width, height);
+    [tips sizeToFit];
+    tips.textColor = [UIColor darkGrayColor];
     
-    NSString *title = [NSString stringWithFormat:@"%.0f秒后，数字归零", timeout];
-    __weak typeof(self) weakSelf = self;
-    weakSelf.delayButton = [FullWideButton buttonWithTitle:title action:^(__kindof BaseButton *sender) {
-        weakSelf.label.text = NSStringFromInt(++i);
-        ax_dispatch_cancel_operation(token);
-        token = ax_dispatch_cancellable(timeout, dispatch_get_main_queue(), ^{
-            NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
-            [weakSelf reset];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"icon_help" action:^(UIBarButtonItem * _Nonnull sender) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://blog.xaoxuu.com/ios/2017-11-09-gcd-delay"] options:@{} completionHandler:^(BOOL success) {
             
-            UIView *statusBar = [UIApplication ax_getSystemStatusBar];
-            if (!customView) {
-                customView = UIViewWithHeight(kStatusBarHeight);
-            }
-            // @xaoxuu: 状态栏通知
-            CGRect frame = customView.bounds;
-            frame.origin.x = 8;
-            frame.size.width = kScreenW - 2*8;
-            UILabel *label = [[UILabel alloc] initWithFrame:frame];
-            label.textAlignment = NSTextAlignmentLeft;
-            label.font = [UIFont systemFontOfSize:12];
-            [customView removeAllSubviews];
-            [customView addSubview:label];
-            customView.alpha = 0;
-            
-            [statusBar addSubview:customView];
-            customView.backgroundColor = [UIColor md_yellow];
-            label.text = msg;
-            [UIView animateWithDuration:0.38f delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                customView.alpha = 1;
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.38f delay:2 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                    customView.alpha = 0;
-                } completion:^(BOOL finished) {
-                    customView.alpha = 0;
-                }];
-            }];
-        });
+        }];
     }];
-    [self.delayButton.layer ax_shadow:LayerShadowUpLight];
-    [self.delayButton addToView:self.view withBottom:0];
+    
+}
+
+- (void)delayTest{
     
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     ax_dispatch_cancel_operation(token);
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    
+    self.label.text = NSStringFromInt(++i);
+    ax_dispatch_cancel_operation(token);
+    token = ax_dispatch_cancellable(timeout, dispatch_get_main_queue(), ^{
+        NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
+        [self reset];
+        [UIApplication ax_showStatusBarMessage:msg textColor:[UIColor blackColor] backgroundColor:[UIColor md_yellow] duration:2];
+    });
 }
 
 - (void)dealloc{

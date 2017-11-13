@@ -63,7 +63,7 @@
                     "target":"",
                 },
                 {
-                    "title":"冷却机制",
+                    "title":"延迟函数",
                     "desc":"",
                     "target":"CooldownVC",
                 },
