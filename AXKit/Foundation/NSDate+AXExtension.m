@@ -41,7 +41,7 @@ static inline NSDateFormatter *dateFormatter(NSString *format){
  @return 日期
  */
 + (nullable NSDate *)dateWithDateInteger:(NSInteger)dateInteger{
-    NSString *dateString = [NSString stringWithFormat:@"%08d", dateInteger];
+    NSString *dateString = [NSString stringWithFormat:@"%08d", (int)dateInteger];
     return [dateFormatter(yyyyMMdd) dateFromString:dateString];
 }
 
