@@ -8,6 +8,8 @@
 
 #import "Foundation+AXLogExtension.h"
 #import "NSString+AXFileStreamChainedWrapper.h"
+#import "NSDate+AXExtension.h"
+
 
 // 日志存放的文件夹名
 static NSString *logFileDir = @"log";

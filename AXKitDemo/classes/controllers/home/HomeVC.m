@@ -53,6 +53,12 @@
     }];
     [btn6 addToView:self.view withTop:208];
     
+    
+    NSDate *date = [NSDate date];
+    
+    int x = 1;
+    [NSDate dateWithDateInteger:x];
+    
 }
 
 

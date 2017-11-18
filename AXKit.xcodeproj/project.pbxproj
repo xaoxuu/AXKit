@@ -199,6 +199,8 @@
 		CD88D1A71ECF30AD004FC692 /* BlogListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A61ECF30AD004FC692 /* BlogListModel.m */; };
 		CD88D1AA1ECF30B6004FC692 /* BlogContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A91ECF30B6004FC692 /* BlogContentModel.m */; };
 		CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1AC1ECF30C2004FC692 /* BlogModels.m */; };
+		CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB58E41E6BF3220017CA1E /* Foundation+AXLogExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */; };
 		CDAB58E71E6BF37E0017CA1E /* CoreGraphics+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E51E6BF37E0017CA1E /* CoreGraphics+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -593,6 +595,8 @@
 		CD88D1A91ECF30B6004FC692 /* BlogContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogContentModel.m; sourceTree = "<group>"; };
 		CD88D1AB1ECF30C2004FC692 /* BlogModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogModels.h; sourceTree = "<group>"; };
 		CD88D1AC1ECF30C2004FC692 /* BlogModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogModels.m; sourceTree = "<group>"; };
+		CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+AXExtension.h"; sourceTree = "<group>"; };
+		CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AXExtension.m"; sourceTree = "<group>"; };
 		CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXLogExtension.h"; sourceTree = "<group>"; };
 		CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXLogExtension.m"; sourceTree = "<group>"; };
 		CDAB58E51E6BF37E0017CA1E /* CoreGraphics+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreGraphics+AXExtension.h"; sourceTree = "<group>"; };
@@ -1569,6 +1573,8 @@
 				CDE91FC01EAF478700FC5A88 /* NSBundle+AXExtension.m */,
 				CD242F481EE29DF300C954EC /* NSArray+AXExtension.h */,
 				CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */,
+				CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */,
+				CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1850,6 +1856,7 @@
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
 				CDB716591F8E6F5A0025E8D7 /* UIFontManager.h in Headers */,
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
+				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
@@ -2292,6 +2299,7 @@
 				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CD09FCBC1EE03C9500F3D928 /* CALayer+AXWrapper.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
+				CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */,
 				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
 				CD23DCA61EC1DD76006E331B /* UINavigationBar+AXExtension.m in Sources */,
 				CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */,
