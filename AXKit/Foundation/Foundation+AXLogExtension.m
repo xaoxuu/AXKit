@@ -13,7 +13,7 @@
 static NSString *logFileDir = @"log";
 // 日志文件扩展名
 static NSString *logFileExtension = @"md";
-
+static NSDateFormatter *formatter;
 
 static inline dispatch_queue_t logQueue(){
     static dispatch_queue_t queue;
@@ -25,13 +25,11 @@ static inline dispatch_queue_t logQueue(){
     return queue;
 }
 
-static inline NSDateFormatter *dateFormatter(){
-    static NSDateFormatter *formatter;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+static inline NSDateFormatter *dateFormatter(NSString *format){
+    if (!formatter) {
         formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd-HH-mm-ss"];
-    });
+    }
+    formatter.dateFormat = format;
     return formatter;
 }
 
@@ -40,10 +38,10 @@ static inline NSString *logPath(){
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSDate *today = [NSDate date];
-        NSString *fileName = [NSString stringWithFormat:@"%@.%@", [dateFormatter() stringFromDate:today], logFileExtension];
+        NSString *fileName = [NSString stringWithFormat:@"%@.%@", [dateFormatter(@"yyyy-MM-dd") stringFromDate:today], logFileExtension];
         path = [[@"com.xaoxuu.AXKit" stringByAppendingPathComponent:logFileDir] stringByAppendingPathComponent:fileName].cachePath;
         // 写入第一行，文件标题
-        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"## %@\n", fileName.stringByDeletingPathExtension]);
+        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"## %@\n", [dateFormatter(@"yyyy-MM-dd HH:mm:ss") stringFromDate:today]]);
     });
     return path;
 }
@@ -71,7 +69,7 @@ static inline NSString *logPath(){
     for (int i = 0; i < result.count; i++) {
         NSString *obj = result[i];
         NSString *dateString = obj.lastPathComponent.stringByDeletingPathExtension;
-        NSDate *targetDate = [dateFormatter() dateFromString:dateString];
+        NSDate *targetDate = [dateFormatter(@"yyyy-MM-dd") dateFromString:dateString];
         NSTimeInterval targetTimestamp = [targetDate timeIntervalSince1970];
         if (targetTimestamp < [date timeIntervalSince1970]) {
             [result removeObjectAtIndex:i];
