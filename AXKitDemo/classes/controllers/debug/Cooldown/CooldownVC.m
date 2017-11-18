@@ -8,6 +8,8 @@
 
 #import "CooldownVC.h"
 #import "FullWideButton.h"
+#import "StatusKit.h"
+
 
 static ax_dispatch_operation_t token = nil;
 static int i;
@@ -78,7 +80,7 @@ static UIView *customView;
     token = ax_dispatch_cancellable(timeout, dispatch_get_main_queue(), ^{
         NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
         [self reset];
-        [UIApplication ax_showStatusBarMessage:msg textColor:[UIColor blackColor] backgroundColor:[UIColor md_yellow] duration:2];
+        [AXStatusBar showStatusBarMessage:msg textColor:[UIColor blackColor] backgroundColor:[UIColor md_yellow] duration:2];
     });
 }
 

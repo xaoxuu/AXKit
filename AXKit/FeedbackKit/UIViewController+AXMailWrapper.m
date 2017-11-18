@@ -1,12 +1,12 @@
 //
-//  FeedbackKit.m
+//  UIViewController+AXMailWrapper.m
 //  AXKit
 //
 //  Created by xaoxuu on 18/11/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "FeedbackKit.h"
+#import "UIViewController+AXMailWrapper.h"
 #import "NSError+AXExtension.h"
 
 static void (^block_callback)(MFMailComposeResult result);

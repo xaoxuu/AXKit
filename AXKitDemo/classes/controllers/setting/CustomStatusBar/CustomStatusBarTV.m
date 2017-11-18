@@ -8,6 +8,8 @@
 
 #import "CustomStatusBarTV.h"
 #import "MJExtension.h"
+#import "StatusKit.h"
+
 
 static NSTimer *timer;
 
@@ -40,7 +42,7 @@ static NSTimer *timer;
     static UIView *customStatusBar;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        customStatusBar = [UIApplication ax_getCustomStatusBar];
+        customStatusBar = [AXStatusBar getCustomStatusBar];
     });
     dispatch_async(dispatch_get_main_queue(), ^{
         // @xaoxuu: in main queue
@@ -108,38 +110,38 @@ static NSTimer *timer;
         } else if (section == 4) {
             // @xaoxuu: 状态栏消息
             if (row == 0) {
-                [UIApplication ax_hideStatusBarMessage];
+                [AXStatusBar hideStatusBarMessage];
             } else if (row == 1) {
-                [UIApplication ax_showStatusBarMessage:@"警告：这是一条警告消息" textColor:nil backgroundColor:[UIColor md_yellow] duration:3];
+                [AXStatusBar showStatusBarMessage:@"警告：这是一条警告消息" textColor:nil backgroundColor:[UIColor md_yellow] duration:3];
             } else if (row == 2) {
-                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:5];
+                [AXStatusBar showStatusBarMessage:@"错误：这是一条错误提示" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:5];
             } else if (row == 3) {
-                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefnflkwsdfefnek。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:8];
+                [AXStatusBar showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefnflkwsdfefnek。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:8];
             } else if (row == 4) {
-                [UIApplication ax_showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefneklnfkewlnqkwefefnekkewfkeewfkewf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:15];
+                [AXStatusBar showStatusBarMessage:@"错误：这是一条错误提示，错误原因：klajqkewnflkwefneklnfkewlnqkwefefnekkewfkeewfkewf。" textColor:[UIColor whiteColor] backgroundColor:[UIColor md_red] duration:15];
             }
             
         } else if (section == 5) {
             // @xaoxuu: 状态栏进度
             if (row == 0) {
                 [timer ax_pause];
-                [UIApplication ax_hideStatusBarProgressMessage];
+                [AXStatusBar hideStatusBarProgressMessage];
             } else if (row == 1) {
-                [UIApplication ax_showStatusBarProgressMessage:@"0%" textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:3];
+                [AXStatusBar showStatusBarProgress:0 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:3];
             } else if (row == 2) {
-                [UIApplication ax_showStatusBarProgressMessage:@"11%" textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:5];
+                [AXStatusBar showStatusBarProgress:0.11 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:5];
             } else if (row == 3) {
-                [UIApplication ax_showStatusBarProgressMessage:@"50.97%" textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:8];
+                [AXStatusBar showStatusBarProgress:0.5097 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:8];
             } else if (row == 4) {
-                [UIApplication ax_showStatusBarProgressMessage:@"75.7%" textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:8];
+                [AXStatusBar showStatusBarProgress:0.757 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:8];
             } else if (row == 5) {
-                [UIApplication ax_showStatusBarProgressMessage:@"100%" textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:15];
+                [AXStatusBar showStatusBarProgress:1 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:15];
             } else if (row == 6) {
                 __block CGFloat x = 0;
                 [timer ax_pause];
                 timer = nil;
                 timer = [NSTimer ax_scheduledTimerWithTimeInterval:0.01 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
-                    [UIApplication ax_showStatusBarProgressMessage:[NSString stringWithFormat:@"%.2f%%", 100*x] textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:2];
+                    [AXStatusBar showStatusBarProgress:x textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:2];
                     x += 0.00075;
                     if (x >= 1) {
                         [timer ax_pause];

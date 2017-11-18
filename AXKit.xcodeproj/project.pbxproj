@@ -76,8 +76,13 @@
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
 		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */; };
-		CD4154251FC01F8F00D4ED2C /* FeedbackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154231FC01F8F00D4ED2C /* FeedbackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD4154261FC01F8F00D4ED2C /* FeedbackKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154241FC01F8F00D4ED2C /* FeedbackKit.m */; };
+		CD4154251FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD4154261FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154241FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m */; };
+		CD4154281FC0213A00D4ED2C /* TabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154271FC0213300D4ED2C /* TabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD41542A1FC0218600D4ED2C /* FeedbackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154291FC0218600D4ED2C /* FeedbackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD41542F1FC0226400D4ED2C /* StatusKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD41542D1FC0226400D4ED2C /* StatusKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD4154331FC023BD00D4ED2C /* AXStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154311FC023BD00D4ED2C /* AXStatusBar.h */; };
+		CD4154341FC023BD00D4ED2C /* AXStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154321FC023BD00D4ED2C /* AXStatusBar.m */; };
 		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
 		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -384,8 +389,13 @@
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
 		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
 		CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugHelper.m; sourceTree = "<group>"; };
-		CD4154231FC01F8F00D4ED2C /* FeedbackKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackKit.h; sourceTree = "<group>"; };
-		CD4154241FC01F8F00D4ED2C /* FeedbackKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackKit.m; sourceTree = "<group>"; };
+		CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXMailWrapper.h"; sourceTree = "<group>"; };
+		CD4154241FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXMailWrapper.m"; sourceTree = "<group>"; };
+		CD4154271FC0213300D4ED2C /* TabKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabKit.h; sourceTree = "<group>"; };
+		CD4154291FC0218600D4ED2C /* FeedbackKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackKit.h; sourceTree = "<group>"; };
+		CD41542D1FC0226400D4ED2C /* StatusKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusKit.h; sourceTree = "<group>"; };
+		CD4154311FC023BD00D4ED2C /* AXStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXStatusBar.h; sourceTree = "<group>"; };
+		CD4154321FC023BD00D4ED2C /* AXStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXStatusBar.m; sourceTree = "<group>"; };
 		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
 		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
 		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
@@ -876,6 +886,9 @@
 		CD41541E1FC01F3000D4ED2C /* TabKit */ = {
 			isa = PBXGroup;
 			children = (
+				CD4154271FC0213300D4ED2C /* TabKit.h */,
+				CD616C951FB99F8A00E38244 /* AXTabBarController.h */,
+				CD616C961FB99F8A00E38244 /* AXTabBarController.m */,
 			);
 			path = TabKit;
 			sourceTree = "<group>";
@@ -883,8 +896,9 @@
 		CD41541F1FC01F3100D4ED2C /* FeedbackKit */ = {
 			isa = PBXGroup;
 			children = (
-				CD4154231FC01F8F00D4ED2C /* FeedbackKit.h */,
-				CD4154241FC01F8F00D4ED2C /* FeedbackKit.m */,
+				CD4154291FC0218600D4ED2C /* FeedbackKit.h */,
+				CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */,
+				CD4154241FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m */,
 			);
 			path = FeedbackKit;
 			sourceTree = "<group>";
@@ -906,6 +920,9 @@
 		CD4154221FC01F3100D4ED2C /* StatusKit */ = {
 			isa = PBXGroup;
 			children = (
+				CD41542D1FC0226400D4ED2C /* StatusKit.h */,
+				CD4154311FC023BD00D4ED2C /* AXStatusBar.h */,
+				CD4154321FC023BD00D4ED2C /* AXStatusBar.m */,
 			);
 			path = StatusKit;
 			sourceTree = "<group>";
@@ -1425,8 +1442,6 @@
 		CD77FE6C1EBEE8F1001A5787 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD616C951FB99F8A00E38244 /* AXTabBarController.h */,
-				CD616C961FB99F8A00E38244 /* AXTabBarController.m */,
 				CDC8CDF31ECC92B7009F855E /* UIAlertController+AXWrapper.h */,
 				CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */,
 				CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */,
@@ -1849,6 +1864,8 @@
 				CDAB59271E6BFC730017CA1E /* UITextField+AXExtension.h in Headers */,
 				CDAB591F1E6BFBCE0017CA1E /* UIImage+AXExtension.h in Headers */,
 				CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */,
+				CD4154331FC023BD00D4ED2C /* AXStatusBar.h in Headers */,
+				CD4154281FC0213A00D4ED2C /* TabKit.h in Headers */,
 				8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */,
 				CDAB59071E6BF92F0017CA1E /* UIColor+AXColorPack.h in Headers */,
 				CDAB59131E6BF9FE0017CA1E /* UIColorManager.h in Headers */,
@@ -1880,10 +1897,12 @@
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
 				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
-				CD4154251FC01F8F00D4ED2C /* FeedbackKit.h in Headers */,
+				CD4154251FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */,
+				CD41542F1FC0226400D4ED2C /* StatusKit.h in Headers */,
+				CD41542A1FC0218600D4ED2C /* FeedbackKit.h in Headers */,
 				CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */,
 				CD5746021EDAE9B80014E833 /* _AXKitHelpServices.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
@@ -2305,6 +2324,7 @@
 				CD5746011EDAE9B80014E833 /* _AXEventTarget.m in Sources */,
 				CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */,
 				CDAB593C1E6BFE700017CA1E /* UIView+AXFrameExtension.m in Sources */,
+				CD4154341FC023BD00D4ED2C /* AXStatusBar.m in Sources */,
 				CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */,
 				CDB7165A1F8E6F5A0025E8D7 /* UIFontManager.m in Sources */,
 				CDAB59041E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.m in Sources */,
@@ -2327,7 +2347,7 @@
 				CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */,
 				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
 				CD23DCA61EC1DD76006E331B /* UINavigationBar+AXExtension.m in Sources */,
-				CD4154261FC01F8F00D4ED2C /* FeedbackKit.m in Sources */,
+				CD4154261FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m in Sources */,
 				CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */,
 				CD5746031EDAE9B80014E833 /* _AXKitHelpServices.m in Sources */,
 				CDAB59101E6BF9B90017CA1E /* UIColor+MDColorPack.m in Sources */,

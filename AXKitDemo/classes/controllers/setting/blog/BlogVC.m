@@ -7,7 +7,7 @@
 //
 
 #import "BlogVC.h"
-
+#import "StatusKit.h"
 
 @interface BlogVC ()
 
@@ -33,22 +33,22 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.alpha = 0;
-    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor ax_blue];
+    [AXStatusBar getCustomStatusBar].backgroundColor = [UIColor ax_blue];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.navigationController.navigationBar.alpha = 0;
-    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor ax_blue];
+    [AXStatusBar getCustomStatusBar].backgroundColor = [UIColor ax_blue];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.alpha = 1;
-    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor clearColor];
+    [AXStatusBar getCustomStatusBar].backgroundColor = [UIColor clearColor];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     self.navigationController.navigationBar.alpha = 1;
-    [UIApplication ax_getCustomStatusBar].backgroundColor = [UIColor clearColor];
+    [AXStatusBar getCustomStatusBar].backgroundColor = [UIColor clearColor];
 }
 
 - (CGRect)initContentFrame:(CGRect)frame{
