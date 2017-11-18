@@ -1,12 +1,12 @@
 //
-//  UIViewController+AXMailWrapper.m
+//  MailKit.m
 //  AXKit
 //
 //  Created by xaoxuu on 28/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "UIViewController+AXMailWrapper.h"
+#import "MailKit.h"
 #import "NSError+AXExtension.h"
 
 static void (^block_callback)(MFMailComposeResult result);

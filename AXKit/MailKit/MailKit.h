@@ -1,5 +1,5 @@
 //
-//  UIViewController+AXMailWrapper.h
+//  MailKit.h
 //  AXKit
 //
 //  Created by xaoxuu on 28/05/2017.
