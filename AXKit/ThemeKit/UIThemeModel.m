@@ -173,21 +173,34 @@ static CGFloat smallSize = 12.0f;
 
 - (void)setPrefersFontSize:(CGFloat)prefersFontSize{
     _prefersFontSize = prefersFontSize;
-    
-    CGFloat ratio = prefersFontSize / standardSize;
-    
-    _customSmall = [UIFont systemFontOfSize:smallSize * ratio];
-    _customBoldSmall = [UIFont boldSystemFontOfSize:smallSize * ratio];
-    _customNormal = [UIFont systemFontOfSize:standardSize * ratio];
-    _customBoldNormal = [UIFont boldSystemFontOfSize:standardSize * ratio];
-    _customLarge = [UIFont systemFontOfSize:standardSize * 1.2 * ratio];
-    _customBoldLarge = [UIFont boldSystemFontOfSize:standardSize * 1.2 * ratio];
-    
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontSizeChanged object:@YES];
-    
+    [self updateFont];
 }
 
+- (void)setName:(NSString *)name{
+    _name = name;
+    [self updateFont];
+}
+
+- (void)updateFont{
+    CGFloat ratio = self.prefersFontSize / standardSize;
+    
+    if (self.name.length) {
+        _customSmall = [UIFont fontWithName:self.name size:smallSize * ratio];
+        _customBoldSmall = [UIFont fontWithName:self.name size:smallSize * ratio];
+        _customNormal = [UIFont fontWithName:self.name size:standardSize * ratio];
+        _customBoldNormal = [UIFont fontWithName:self.name size:standardSize * ratio];
+        _customLarge = [UIFont fontWithName:self.name size:standardSize * 1.2 * ratio];
+        _customBoldLarge = [UIFont fontWithName:self.name size:standardSize * 1.2 * ratio];
+    } else {
+        _customSmall = [UIFont systemFontOfSize:smallSize * ratio];
+        _customBoldSmall = [UIFont boldSystemFontOfSize:smallSize * ratio];
+        _customNormal = [UIFont systemFontOfSize:standardSize * ratio];
+        _customBoldNormal = [UIFont boldSystemFontOfSize:standardSize * ratio];
+        _customLarge = [UIFont systemFontOfSize:standardSize * 1.2 * ratio];
+        _customBoldLarge = [UIFont boldSystemFontOfSize:standardSize * 1.2 * ratio];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontSizeChanged object:@YES];
+}
 
 - (UIFont *)fontWithCustomPrefersFontSize:(CGFloat)size{
     CGFloat ratio = size / standardSize;
@@ -204,6 +217,7 @@ static CGFloat smallSize = 12.0f;
 }
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [self init]) {
+        self.name = [dictionary stringValueForKey:@"name"];
         CGFloat prefersFontSize = [dictionary doubleValueForKey:@"prefersFontSize"];
         if (prefersFontSize) {
             self.prefersFontSize = prefersFontSize;

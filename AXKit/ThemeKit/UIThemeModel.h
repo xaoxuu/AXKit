@@ -109,6 +109,10 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 @property (assign, nonatomic) CGFloat prefersFontSize;
 
 
+/**
+ 字体名（为空时是系统字体）
+ */
+@property (copy, nonatomic) NSString *name;
 
 // @xaoxuu: system small = 12
 @property (strong, readonly, nonatomic) UIFont *systemSmall;
