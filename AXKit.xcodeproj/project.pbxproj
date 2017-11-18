@@ -53,7 +53,7 @@
 		CD149E251F0105D4007051CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E221F0105D4007051CE /* Assets.xcassets */; };
 		CD149E261F0105D4007051CE /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E231F0105D4007051CE /* Setting.xcassets */; };
 		CD149E271F0105D4007051CE /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E241F0105D4007051CE /* tmp.xcassets */; };
-		CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = CD149E281F01080A007051CE /* _AXKitBundle.h */; };
+		CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = CD149E281F01080A007051CE /* _AXKitBundle.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD149E291F01080A007051CE /* _AXKitBundle.m */; };
 		CD149E2D1F010AD8007051CE /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
 		CD2385F81EC0C5BA007AB90B /* AppServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2385F71EC0C5BA007AB90B /* AppServices.m */; };
@@ -76,8 +76,8 @@
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
 		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */; };
-		CD41541B1FBFEB2400D4ED2C /* MailKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154191FBFEB2400D4ED2C /* MailKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD41541C1FBFEB2400D4ED2C /* MailKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41541A1FBFEB2400D4ED2C /* MailKit.m */; };
+		CD4154251FC01F8F00D4ED2C /* FeedbackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154231FC01F8F00D4ED2C /* FeedbackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD4154261FC01F8F00D4ED2C /* FeedbackKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154241FC01F8F00D4ED2C /* FeedbackKit.m */; };
 		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
 		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -153,9 +153,9 @@
 		CD5745B91EDADE510014E833 /* ThemeColorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745791EDADE510014E833 /* ThemeColorTableView.m */; };
 		CD5745BA1EDADE510014E833 /* ThemeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57457B1EDADE510014E833 /* ThemeColorVC.m */; };
 		CD5745BC1EDADE510014E833 /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57457F1EDADE510014E833 /* BaseWebVC.m */; };
-		CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5745FC1EDAE9B80014E833 /* _AXEventTarget.h */; };
+		CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5745FC1EDAE9B80014E833 /* _AXEventTarget.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CD5746011EDAE9B80014E833 /* _AXEventTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745FD1EDAE9B80014E833 /* _AXEventTarget.m */; };
-		CD5746021EDAE9B80014E833 /* _AXKitHelpServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5745FE1EDAE9B80014E833 /* _AXKitHelpServices.h */; };
+		CD5746021EDAE9B80014E833 /* _AXKitHelpServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5745FE1EDAE9B80014E833 /* _AXKitHelpServices.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CD5746031EDAE9B80014E833 /* _AXKitHelpServices.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745FF1EDAE9B80014E833 /* _AXKitHelpServices.m */; };
 		CD5746091EDB2B300014E833 /* AppInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5746081EDB2B300014E833 /* AppInfoModel.m */; };
 		CD57460C1EDB2F650014E833 /* GitHubInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57460B1EDB2F650014E833 /* GitHubInfoModel.m */; };
@@ -384,8 +384,8 @@
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
 		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
 		CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugHelper.m; sourceTree = "<group>"; };
-		CD4154191FBFEB2400D4ED2C /* MailKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailKit.h; sourceTree = "<group>"; };
-		CD41541A1FBFEB2400D4ED2C /* MailKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailKit.m; sourceTree = "<group>"; };
+		CD4154231FC01F8F00D4ED2C /* FeedbackKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackKit.h; sourceTree = "<group>"; };
+		CD4154241FC01F8F00D4ED2C /* FeedbackKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackKit.m; sourceTree = "<group>"; };
 		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
 		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
 		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
@@ -813,11 +813,15 @@
 			isa = PBXGroup;
 			children = (
 				8579EF1B1E6BEE4F00C33881 /* AXKit.h */,
+				8579EF1C1E6BEE4F00C33881 /* Info.plist */,
 				CD5745FB1EDAE9B80014E833 /* Private */,
 				CDAB58DB1E6BF1810017CA1E /* Foundation */,
 				CDAB58DC1E6BF1810017CA1E /* UIKit */,
-				8579EF1C1E6BEE4F00C33881 /* Info.plist */,
-				CD41541D1FBFEC7F00D4ED2C /* MailKit */,
+				CD41541F1FC01F3100D4ED2C /* FeedbackKit */,
+				CD4154221FC01F3100D4ED2C /* StatusKit */,
+				CD41541E1FC01F3000D4ED2C /* TabKit */,
+				CD4154201FC01F3100D4ED2C /* TableKit */,
+				CD4154211FC01F3100D4ED2C /* ThemeKit */,
 				CD149E2C1F010AD8007051CE /* AXKit.bundle */,
 			);
 			path = AXKit;
@@ -869,13 +873,41 @@
 			path = EmptyVC;
 			sourceTree = "<group>";
 		};
-		CD41541D1FBFEC7F00D4ED2C /* MailKit */ = {
+		CD41541E1FC01F3000D4ED2C /* TabKit */ = {
 			isa = PBXGroup;
 			children = (
-				CD4154191FBFEB2400D4ED2C /* MailKit.h */,
-				CD41541A1FBFEB2400D4ED2C /* MailKit.m */,
 			);
-			path = MailKit;
+			path = TabKit;
+			sourceTree = "<group>";
+		};
+		CD41541F1FC01F3100D4ED2C /* FeedbackKit */ = {
+			isa = PBXGroup;
+			children = (
+				CD4154231FC01F8F00D4ED2C /* FeedbackKit.h */,
+				CD4154241FC01F8F00D4ED2C /* FeedbackKit.m */,
+			);
+			path = FeedbackKit;
+			sourceTree = "<group>";
+		};
+		CD4154201FC01F3100D4ED2C /* TableKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableKit;
+			sourceTree = "<group>";
+		};
+		CD4154211FC01F3100D4ED2C /* ThemeKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThemeKit;
+			sourceTree = "<group>";
+		};
+		CD4154221FC01F3100D4ED2C /* StatusKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatusKit;
 			sourceTree = "<group>";
 		};
 		CD54981E1EE1964500748C22 /* testFrame */ = {
@@ -1236,13 +1268,6 @@
 				CD57457F1EDADE510014E833 /* BaseWebVC.m */,
 			);
 			path = web;
-			sourceTree = "<group>";
-		};
-		CD5745E41EDAE8760014E833 /* AXModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AXModule;
 			sourceTree = "<group>";
 		};
 		CD5745FB1EDAE9B80014E833 /* Private */ = {
@@ -1655,7 +1680,6 @@
 		CDBB39D81EB9DD6600E8ED25 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				CD5745E41EDAE8760014E833 /* AXModule */,
 				CD5744BC1EDAAD710014E833 /* MJRefresh */,
 				CDBB3B101EB9E80F00E8ED25 /* MJExtension */,
 			);
@@ -1819,7 +1843,6 @@
 				CDAB58F71E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h in Headers */,
 				CDAB590B1E6BF96B0017CA1E /* UIColor+AXExtension.h in Headers */,
 				CDAB58EF1E6BF5A20017CA1E /* NSString+AXExtension.h in Headers */,
-				CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */,
 				CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */,
 				CDAB59371E6BFE170017CA1E /* UIView+AXExtension.h in Headers */,
 				CDAB592B1E6BFD050017CA1E /* UITextView+AXExtension.h in Headers */,
@@ -1837,12 +1860,10 @@
 				CDAB59331E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.h in Headers */,
 				CDAB59231E6BFC2F0017CA1E /* UIImageView+AXGetColor.h in Headers */,
 				CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */,
-				CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */,
 				CDAB58F31E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.h in Headers */,
 				CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */,
 				CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */,
 				CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */,
-				CD5746021EDAE9B80014E833 /* _AXKitHelpServices.h in Headers */,
 				CD004D1A1EB2128C00ACC0B8 /* UIImageView+AXExtension.h in Headers */,
 				CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */,
 				CDCF31121EBB11A4005AC6CD /* NSURL+AXExtension.h in Headers */,
@@ -1859,9 +1880,12 @@
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
 				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
+				CD4154251FC01F8F00D4ED2C /* FeedbackKit.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
-				CD41541B1FBFEB2400D4ED2C /* MailKit.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
+				CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */,
+				CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */,
+				CD5746021EDAE9B80014E833 /* _AXKitHelpServices.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
 				CDC8CDF51ECC92B7009F855E /* UIAlertController+AXWrapper.h in Headers */,
 				CDAB59171E6BFAA90017CA1E /* UIControl+AXBlockWrapper.h in Headers */,
@@ -2300,10 +2324,10 @@
 				CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */,
 				CD09FCBC1EE03C9500F3D928 /* CALayer+AXWrapper.m in Sources */,
 				CDAB59281E6BFC730017CA1E /* UITextField+AXExtension.m in Sources */,
-				CD41541C1FBFEB2400D4ED2C /* MailKit.m in Sources */,
 				CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */,
 				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
 				CD23DCA61EC1DD76006E331B /* UINavigationBar+AXExtension.m in Sources */,
+				CD4154261FC01F8F00D4ED2C /* FeedbackKit.m in Sources */,
 				CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */,
 				CD5746031EDAE9B80014E833 /* _AXKitHelpServices.m in Sources */,
 				CDAB59101E6BF9B90017CA1E /* UIColor+MDColorPack.m in Sources */,

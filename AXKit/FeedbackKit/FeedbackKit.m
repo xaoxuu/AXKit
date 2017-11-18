@@ -1,12 +1,12 @@
 //
-//  MailKit.m
+//  FeedbackKit.m
 //  AXKit
 //
-//  Created by xaoxuu on 28/05/2017.
+//  Created by xaoxuu on 18/11/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "MailKit.h"
+#import "FeedbackKit.h"
 #import "NSError+AXExtension.h"
 
 static void (^block_callback)(MFMailComposeResult result);
@@ -62,3 +62,4 @@ static void (^block_callback)(MFMailComposeResult result);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
+
