@@ -142,6 +142,56 @@ inline NSString *SpellForChinese(NSString *chinese){
 
 @end
 
+@interface NSVersionString ()
+
+@end
+
+@implementation NSVersionString : NSString
+
++ (instancetype)versionStringFromString:(NSString *)string{
+    return [[self alloc] initWithString:string];
+}
+
+- (instancetype)initWithString:(NSString *)string{
+    if (self = [super initWithString:string]) {
+        NSArray<NSString *> *components = [string componentsSeparatedByString:@"."];
+        [components enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (idx == 0) {
+                _majorVersionNumber = obj.integerValue;
+            } else if (idx == 1) {
+                _minorVersionNumber = obj.integerValue;
+            } else if (idx == 2) {
+                _revisionVersionNumber = obj.integerValue;
+            }
+        }];
+    }
+    return self;
+}
+
+
+- (NSVersionString *)laterVersion:(NSVersionString *)version{
+    if (self.majorVersionNumber > version.majorVersionNumber) {
+        return self;
+    } else if (self.majorVersionNumber < version.majorVersionNumber) {
+        return version;
+    } else {
+        if (self.minorVersionNumber > version.minorVersionNumber) {
+            return self;
+        } else if (self.minorVersionNumber < version.minorVersionNumber) {
+            return version;
+        } else {
+            if (self.revisionVersionNumber > version.revisionVersionNumber) {
+                return self;
+            } else if (self.revisionVersionNumber < version.revisionVersionNumber) {
+                return version;
+            } else {
+                return self;
+            }
+        }
+    }
+}
+
+@end
 
 @implementation NSString (AXExtension)
 
@@ -167,6 +217,11 @@ inline NSString *SpellForChinese(NSString *chinese){
     return [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dict context:nil].size.height;
 }
 
+- (NSString *)laterVersion:(NSString *)version{
+    NSVersionString *current = [NSVersionString versionStringFromString:self];
+    NSVersionString *target = [NSVersionString versionStringFromString:version];
+    return [current laterVersion:target];
+}
 
 @end
 
@@ -331,4 +386,8 @@ inline NSString *AXRandomHexStringWithLength(NSUInteger length){
 }
 
 @end
+
+
+
+
 
