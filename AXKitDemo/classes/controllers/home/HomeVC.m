@@ -59,6 +59,11 @@
     int x = 1;
     [NSDate dateWithDateInteger:x];
     
+    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationThemeColorChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+//        UIView *view = AXRootViewController().view;
+//        [view removeFromSuperview];
+    }];
+    
 }
 
 
@@ -69,6 +74,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{

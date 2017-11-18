@@ -16,10 +16,10 @@
     self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     
     
-    self.backgroundColor = axColor.accent;
-    UIColor *titleColor = axColor.white;
-    if (axColor.theme.isLightColor) {
-        titleColor = axColor.accent.dark;
+    self.backgroundColor = axThemeManager.color.accent;
+    UIColor *titleColor = [UIColor whiteColor];
+    if (axThemeManager.color.theme.isLightColor) {
+        titleColor = axThemeManager.color.accent.dark;
     }
     [self setTitleColor:titleColor forState:UIControlStateNormal];
     
@@ -28,10 +28,10 @@
 
 - (void)setNeedsLayout{
     [super setNeedsLayout];
-    self.backgroundColor = axColor.accent;
-    UIColor *titleColor = axColor.white;
-    if (axColor.accent.isLightColor) {
-        titleColor = axColor.accent.dark;
+    self.backgroundColor = axThemeManager.color.accent;
+    UIColor *titleColor = [UIColor whiteColor];
+    if (axThemeManager.color.accent.isLightColor) {
+        titleColor = axThemeManager.color.accent.dark;
     }
     [self setTitleColor:titleColor forState:UIControlStateNormal];
 

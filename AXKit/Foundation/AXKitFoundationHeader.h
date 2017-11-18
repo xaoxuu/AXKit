@@ -40,7 +40,7 @@
 
 #import "NSDate+AXExtension.h"
 
-FOUNDATION_EXTERN void axkit_active(void);
+#import "NSDictionary+AXExtension.h"
 
 
 @interface AXKitFoundationHeader : NSObject

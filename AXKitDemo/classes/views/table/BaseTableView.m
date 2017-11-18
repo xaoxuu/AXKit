@@ -70,7 +70,7 @@ static NSTimeInterval loadingTimeout = 20;
         [self registerNib:[UINib nibWithNibName:_cellName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:_cellName];
     }
     // @xaoxuu: 背景
-    self.backgroundColor = axColor.groupTableViewBackground;
+    self.backgroundColor = axThemeManager.color.groupTableViewBackground;
     // @xaoxuu: 高度
     self.estimatedRowHeight = 44;
     self.estimatedSectionHeaderHeight = 0;
@@ -81,8 +81,12 @@ static NSTimeInterval loadingTimeout = 20;
     self.indicator = [UIActivityIndicatorView defaultIndicatorWithLoading];
     [self.indicator addToView:self withLoading:YES];
     // @xaoxuu: 分割线
-    self.separatorColor = axColor.separatorColor;
+    self.separatorColor = axThemeManager.color.separatorColor;
     
+    static id observer;
+    observer = [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontSizeChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [self reloadData];
+    }];
     
 }
 

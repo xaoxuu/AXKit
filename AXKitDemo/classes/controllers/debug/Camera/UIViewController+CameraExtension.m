@@ -45,7 +45,7 @@ static UIColor *staticThemeColor;
     CameraView *view = UIViewFromNibNamed(@"CameraView");
     picker.cameraOverlayView = view;
     if (!staticThemeColor) {
-        staticThemeColor = axColor.theme;
+        staticThemeColor = axThemeManager.color.theme;
         if (!staticThemeColor) {
             staticThemeColor = [UIColor md_blue];
         }

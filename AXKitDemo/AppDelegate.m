@@ -22,17 +22,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // @xaoxuu: 配置主题色
-//    [[UIColorManager sharedInstance] configDefaultTheme:^(UIThemeColorModel * _Nonnull color) {
-//        color.theme = [UIColor md_amber];
-//        color.accent = [UIColor md_lime];
-//        color.background = [UIColor whiteColor];
-//    }];
-    axkit_active();
-    [[UIColorManager sharedInstance] configColorManager:^(UIColorManager * _Nonnull manager) {
-        manager.theme = [UIColor md_amber];
-        manager.accent = [UIColor md_lime];
-//        self.inputView.backgroundColor = axColor.accent.adaptive;
+    // @xaoxuu: 配置主题
+    [[UIThemeManager sharedInstance] configDefaultTheme:^(UIThemeManager *theme) {
+        theme.color.theme = [UIColor ax_blue];
+        theme.color.accent = [UIColor md_lime];
     }];
     // @xaoxuu: 激活服务
     [ServicesLayer sharedInstance];

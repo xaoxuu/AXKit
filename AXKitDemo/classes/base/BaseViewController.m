@@ -78,7 +78,7 @@
 // @xaoxuu: 基类 初始化 内容区域
 - (void)baseInitContentView{
     // @xaoxuu: color
-    self.view.backgroundColor = axColor.background;
+    self.view.backgroundColor = axThemeManager.color.background;
     // @xaoxuu: frame
     self.view.frame = CGRectFromScreen();
     if ([self respondsToSelector:@selector(initContentFrame:)]) {
@@ -96,7 +96,7 @@
     
     // @xaoxuu: 通知中心的block中也要用弱引用
     __weak typeof(self) weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:NOTI_FONT_SIZE_CHANGED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontSizeChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.view layoutSubviews];
         
     }];

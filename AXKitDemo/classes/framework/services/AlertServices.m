@@ -68,13 +68,13 @@
             }];
         }
     }];
-    [alert showCustom:self.rootVC image:daLayer.assets.alert.theme.image color:axColor.theme title:kStringTip() subTitle:msg closeButtonTitle:kStringCancel() duration:0];
+    [alert showCustom:self.rootVC image:daLayer.assets.alert.theme.image color:axThemeManager.color.theme title:kStringTip() subTitle:msg closeButtonTitle:kStringCancel() duration:0];
 }
 
 - (void)alertForOptionDoneWithMessage:(NSString *)msg{
 //    SCLAlertView *alert = [SCLAlertView ax_SCLAlertViewWithDefaultColor];
 //    self.alert = alert;
-//    [alert showCustom:self.rootVC image:[UIImage imageNamed:@"alert_theme"] color:axColor.theme title:NSLocalizedString(@"完成", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"确定", nil) duration:1];
+//    [alert showCustom:self.rootVC image:[UIImage imageNamed:@"alert_theme"] color:axThemeManager.color.theme title:NSLocalizedString(@"完成", nil) subTitle:msg closeButtonTitle:NSLocalizedString(@"确定", nil) duration:1];
     [AXProgressHUD ax_target:self.rootVC.view showInfo:msg duration:1];
 }
 

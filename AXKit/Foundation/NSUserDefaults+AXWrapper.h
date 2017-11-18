@@ -271,7 +271,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param data 值
  @param key 键
  */
-+ (void)ax_setData:(NSData *)data forKey:(NSString *)key;
++ (void)ax_setData:(nullable NSData *)data forKey:(NSString *)key;
 
 /**
  保存字符串，自带synchronize
@@ -279,7 +279,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param string 值
  @param key 键
  */
-+ (void)ax_setString:(NSString *)string forKey:(NSString *)key;
++ (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key;
 
 /**
  保存字符串数组，自带synchronize
@@ -295,7 +295,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 值
  @param key 键
  */
-+ (void)ax_setArray:(NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key;
++ (void)ax_setArray:(nullable NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key;
 
 /**
  保存字典，自带synchronize
@@ -310,7 +310,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param url 值
  @param key 键
  */
-+ (void)ax_setURL:(NSURL *)url forKey:(NSString *)key;
++ (void)ax_setURL:(nullable NSURL *)url forKey:(NSString *)key;
 
 
 /**
@@ -319,7 +319,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param image 图片
  @param key 键
  */
-+ (void)ax_setImage:(UIImage *)image forKey:(NSString *)key;
++ (void)ax_setImage:(nullable UIImage *)image forKey:(NSString *)key;
 
 
 /**
@@ -335,7 +335,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param data 值
  @param key 键
  */
-- (void)ax_setData:(NSData *)data forKey:(NSString *)key;
+- (void)ax_setData:(nullable NSData *)data forKey:(NSString *)key;
 
 /**
  保存字符串，不带synchronize
@@ -343,7 +343,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param string 值
  @param key 键
  */
-- (void)ax_setString:(NSString *)string forKey:(NSString *)key;
+- (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key;
 
 /**
  保存字符串数组，不带synchronize
@@ -359,7 +359,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 值
  @param key 键
  */
-- (void)ax_setArray:(NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key;
+- (void)ax_setArray:(nullable NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key;
 
 /**
  保存字典，不带synchronize
@@ -368,7 +368,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param key 键
  */
 - (void)ax_setDictionary:(NSDictionary *(^)(NSMutableDictionary <NSString *, id> * dict))block forKey:(NSString *)key;
-//- (void)ax_setDictionary:(NSDictionary<NSString *, id> *)dictionary forKey:(NSString *)key;
 
 /**
  保存NSURL，不带synchronize
@@ -376,7 +375,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param url 值
  @param key 键
  */
-- (void)ax_setURL:(NSURL *)url forKey:(NSString *)key;
+- (void)ax_setURL:(nullable NSURL *)url forKey:(NSString *)key;
 
 
 

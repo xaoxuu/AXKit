@@ -19,11 +19,11 @@ static UIActivityIndicatorView *indicator;
     
     self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     
-    self.backgroundColor = axColor.white;
+    self.backgroundColor = [UIColor whiteColor];
     
-    UIColor *titleColor = axColor.theme;
-    if (axColor.theme.isLightColor) {
-        titleColor = axColor.theme.dark;
+    UIColor *titleColor = axThemeManager.color.theme;
+    if (axThemeManager.color.theme.isLightColor) {
+        titleColor = axThemeManager.color.theme.dark;
     }
     [self setTitleColor:titleColor forState:UIControlStateNormal];
     

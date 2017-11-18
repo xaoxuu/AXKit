@@ -130,6 +130,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *(^)(NSString *))extension;
 
 /**
+ 路径
+ */
+- (NSString *(^)(NSString *))appendPathComponent;
+
+/**
  创建路径是否存在
  
  @return 创建路径是否存在

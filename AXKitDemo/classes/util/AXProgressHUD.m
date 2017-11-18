@@ -67,7 +67,7 @@ static NSTimeInterval static_duration;
     sLabel.text = content;
     sLabel.font = [UIFont boldSystemFontOfSize:14];
     sLabel.textAlignment = NSTextAlignmentCenter;
-    sLabel.textColor = axColor.theme;
+    sLabel.textColor = axThemeManager.color.theme;
     
     sLabel.top = 16;
     //    sLabel.height = sPopView.height - 32;
@@ -94,8 +94,8 @@ static NSTimeInterval static_duration;
     sMaskView.centerY = sPopView.boundsCenterY;
     
     
-    if (axColor.theme.isLightColor) {
-        sLabel.textColor = axColor.theme.darkRatio(0.3);
+    if (axThemeManager.color.theme.isLightColor) {
+        sLabel.textColor = axThemeManager.color.theme.darkRatio(0.3);
     }
     
     

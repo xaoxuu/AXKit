@@ -27,7 +27,7 @@
         [scroll addSubview:tf];
         tf.tag = i;
         tf.placeholder = NSStringFromInt(i);
-        tf.backgroundColor = axColor.lightGray.light;
+        tf.backgroundColor = UIColor.lightGrayColor.light;
         tf.returnKeyType = UIReturnKeyNext;
         scroll.contentSize = CGSizeMake(0, tf.bottom + kMarginWide);
         

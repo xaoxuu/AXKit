@@ -1,0 +1,16 @@
+{
+    "name":"default",
+    "author":"xaoxuu",
+    "email":"xaoxuu@gmail.com",
+    "color": {
+        "background":"ffffff",
+        "theme":"",
+        "accent":"",
+    },
+    "font": {
+        "prefersFontSize":14,
+    },
+    "icon": {
+        
+    }
+}

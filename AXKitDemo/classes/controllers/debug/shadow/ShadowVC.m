@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.v1.backgroundColor = axColor.theme;
+    self.v1.backgroundColor = axThemeManager.color.theme;
     [self.v1.layer ax_cornerRadius:20 shadow:LayerShadowDownFloat];
     
 }

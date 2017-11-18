@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = axColor.background;
+    self.view.backgroundColor = axThemeManager.color.background;
     self.mainTabBarVC = [[BaseTabBarController alloc] init];
     [self addChildViewController:self.mainTabBarVC];
     [self.view addSubview:self.mainTabBarVC.view];

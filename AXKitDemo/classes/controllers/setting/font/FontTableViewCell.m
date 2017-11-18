@@ -25,7 +25,7 @@
     // Initialization code
     
     
-    [self updateUIWithFontSize:axFont.prefersFontSize];
+    [self updateUIWithFontSize:axThemeManager.font.prefersFontSize];
     
     __weak typeof(self) weakSelf = self;
     [self.slider ax_addValueChangedHandler:^(__kindof UISlider * _Nonnull sender) {
@@ -33,7 +33,9 @@
         [weakSelf updateUIWithFontSize:size];
     }];
     [self.slider ax_addTouchUpHandler:^(__kindof UISlider * _Nonnull sender) {
-        axFont.prefersFontSize = sender.value;
+        [axThemeManager updateCurrentTheme:^(UIThemeManager *theme) {
+            theme.font.prefersFontSize = sender.value;
+        }];
     }];
     
 }
@@ -46,7 +48,7 @@
 
 
 - (void)updateUIWithFontSize:(CGFloat)size{
-    self.lb_preview.font = [axFont fontWithCustomPrefersFontSize:size];
+    self.lb_preview.font = [axThemeManager.font fontWithCustomPrefersFontSize:size];
     self.lb.text = [NSString stringWithFormat:@"%.1f", size];
     self.slider.value = size;
 }

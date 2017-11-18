@@ -158,6 +158,12 @@ static NSString *txt   = @"txt";
     };
 }
 
+- (NSString *(^)(NSString *))appendPathComponent{
+    return ^(NSString *component){
+        return [self stringByAppendingPathComponent:component];
+    };
+}
+
 - (BOOL (^)(void))isDirectoryExist{
     return ^{
         BOOL result = [[NSFileManager defaultManager] fileExistsAtPath:self];

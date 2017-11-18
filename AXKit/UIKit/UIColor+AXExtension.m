@@ -197,18 +197,12 @@ static CGFloat static_color_ratio = 0.6;
 }
 
 
-
-
-//- (UIColor *)alwaysdark{
-//    
-//}
-//- (UIColor *)alwayslight{
-//    
-//}
-//- (UIColor *)adaptive{
-//    if () {
-//        <#statements#>
-//    }
-//}
+- (UIColor *)adaptive{
+    if (self.isLightColor) {
+        return self.dark;
+    } else {
+        return self;
+    }
+}
 
 @end

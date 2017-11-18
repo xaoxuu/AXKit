@@ -62,11 +62,11 @@ static NSTimer *timer;
         } else if (section == 1) {
             customStatusBar.hidden = NO;
             customStatusBar.alpha = 1;
-            customStatusBar.backgroundColor = axColor.theme;
+            customStatusBar.backgroundColor = axThemeManager.color.theme;
             if (row == 0) {
                 [customStatusBar.layer ax_hideColorAnimation];
             } else if (row == 1) {
-                [customStatusBar.layer ax_showAnimatedColor:axColor.theme.dark duration:1 repeatCount:HUGE_VALF];
+                [customStatusBar.layer ax_showAnimatedColor:axThemeManager.color.theme.dark duration:1 repeatCount:HUGE_VALF];
             } else if (row == 2) {
                 [customStatusBar.layer ax_showAnimatedColor:UIColor.md_red duration:1 repeatCount:HUGE_VALF];
             } else if (row == 3) {
@@ -102,7 +102,7 @@ static NSTimer *timer;
             customStatusBar.hidden = NO;
             customStatusBar.alpha = 1;
             if (row == 0) {
-                customStatusBar.backgroundColor = axColor.clear;
+                customStatusBar.backgroundColor = UIColor.clearColor;
             } else {
                 ThemeColorModelRow *tmp = (ThemeColorModelRow *)model;
                 customStatusBar.backgroundColor = [UIColor colorWithHexString:tmp.hex];
@@ -127,21 +127,21 @@ static NSTimer *timer;
                 [timer ax_pause];
                 [AXStatusBar hideStatusBarProgressMessage];
             } else if (row == 1) {
-                [AXStatusBar showStatusBarProgress:0 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:3];
+                [AXStatusBar showStatusBarProgress:0 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:3];
             } else if (row == 2) {
-                [AXStatusBar showStatusBarProgress:0.11 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:5];
+                [AXStatusBar showStatusBarProgress:0.11 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:5];
             } else if (row == 3) {
-                [AXStatusBar showStatusBarProgress:0.5097 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:8];
+                [AXStatusBar showStatusBarProgress:0.5097 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:8];
             } else if (row == 4) {
-                [AXStatusBar showStatusBarProgress:0.757 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:8];
+                [AXStatusBar showStatusBarProgress:0.757 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:8];
             } else if (row == 5) {
-                [AXStatusBar showStatusBarProgress:1 textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:15];
+                [AXStatusBar showStatusBarProgress:1 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:15];
             } else if (row == 6) {
                 __block CGFloat x = 0;
                 [timer ax_pause];
                 timer = nil;
                 timer = [NSTimer ax_scheduledTimerWithTimeInterval:0.01 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
-                    [AXStatusBar showStatusBarProgress:x textColor:[UIColor blackColor] backgroundColor:axColor.theme duration:2];
+                    [AXStatusBar showStatusBarProgress:x textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:2];
                     x += 0.00075;
                     if (x >= 1) {
                         [timer ax_pause];

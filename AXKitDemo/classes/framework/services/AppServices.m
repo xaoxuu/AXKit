@@ -67,9 +67,11 @@ static NSArray<NSString *> *footerArray;
     NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"将应用此主题:%@", nil),color.title];
     UIColor *tmp = [UIColor colorWithHexString:color.hex];
     [services.alert alertForConfirmTheme:tmp message:msg completion:^{
-        axColor.theme = tmp;
         [services.app applyTheme];
-        [axColor saveCurrentTheme];
+        
+        [axThemeManager updateCurrentTheme:^(UIThemeManager *theme) {
+            theme.color.theme = tmp;
+        }];
         if (completion) {
             completion();
         }
@@ -79,27 +81,27 @@ static NSArray<NSString *> *footerArray;
 
 - (void)applyTheme{
 
-    if (axColor.theme.isLightColor) {
-        [UINavigationBar appearance].tintColor = axColor.theme.darkRatio(0.6);
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.theme.darkRatio(0.6)}];
-        [UITabBar appearance].tintColor = axColor.theme.darkRatio(0.3);
+    if (axThemeManager.color.theme.isLightColor) {
+        [UINavigationBar appearance].tintColor = axThemeManager.color.theme.darkRatio(0.6);
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
+        [UITabBar appearance].tintColor = axThemeManager.color.theme.darkRatio(0.3);
     } else {
-        [UINavigationBar appearance].tintColor = axColor.white;
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.white}];
-        [UITabBar appearance].tintColor = axColor.theme;
+        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        [UITabBar appearance].tintColor = axThemeManager.color.theme;
     }
     
     [UINavigationBar appearance].barStyle = UIBarStyleDefault;
     [UINavigationBar appearance].translucent = NO;
     [UINavigationBar appearance].opaque = YES;
-    [UINavigationBar appearance].barTintColor = axColor.theme;
+    [UINavigationBar appearance].barTintColor = axThemeManager.color.theme;
     
     
     [UITabBar appearance].barStyle = UIBarStyleDefault;
     [UITabBar appearance].translucent = NO;
     [UITabBar appearance].opaque = YES;
-    [UITabBar appearance].barTintColor = axColor.white;
-    [UITabBar appearance].tintColor = axColor.theme;
+    [UITabBar appearance].barTintColor = [UIColor whiteColor];
+    [UITabBar appearance].tintColor = axThemeManager.color.theme;
 
     
     UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -109,23 +111,23 @@ static NSArray<NSString *> *footerArray;
             [tabbarVC.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([obj isKindOfClass:[BaseNavController class]]) {
                     BaseNavController *navVC = obj;
-                    navVC.navigationBar.barTintColor = axColor.theme;
-                    if (axColor.theme.isLightColor) {
-                        navVC.navigationBar.tintColor = axColor.theme.darkRatio(0.6);
-                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.theme.darkRatio(0.6)}];
+                    navVC.navigationBar.barTintColor = axThemeManager.color.theme;
+                    if (axThemeManager.color.theme.isLightColor) {
+                        navVC.navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.6);
+                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
                         
                     } else {
-                        navVC.navigationBar.tintColor = axColor.white;
-                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axColor.white}];
+                        navVC.navigationBar.tintColor = [UIColor whiteColor];
+                        [navVC.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
                         
                     }
                 }
             }];
-//            tabbarVC.tabBar.tintColor = axColor.theme;
-            if (axColor.theme.isLightColor) {
-                tabbarVC.tabBar.tintColor = axColor.theme.darkRatio(0.3);
+//            tabbarVC.tabBar.tintColor = axThemeManager.color.theme;
+            if (axThemeManager.color.theme.isLightColor) {
+                tabbarVC.tabBar.tintColor = axThemeManager.color.theme.darkRatio(0.3);
             } else {
-                tabbarVC.tabBar.tintColor = axColor.theme;
+                tabbarVC.tabBar.tintColor = axThemeManager.color.theme;
             }
         }
     }];
@@ -167,7 +169,7 @@ static NSArray<NSString *> *footerArray;
     label.centerY = 0.5*footer.height;
     // @xaoxuu: left line
     CALayer *line_left = [CALayer layer];
-    line_left.backgroundColor = axColor.separatorColor.lightRatio(0.1).CGColor;
+    line_left.backgroundColor = axThemeManager.color.separatorColor.lightRatio(0.1).CGColor;
     line_left.height = 0.5;
     line_left.width = 0.5 * (footer.width - label.width) - 4;
     line_left.centerY = 0.5*footer.height;
@@ -176,7 +178,7 @@ static NSArray<NSString *> *footerArray;
     
     // @xaoxuu: right line
     CALayer *line_right = [CALayer layer];
-    line_right.backgroundColor = axColor.separatorColor.lightRatio(0.1).CGColor;
+    line_right.backgroundColor = axThemeManager.color.separatorColor.lightRatio(0.1).CGColor;
     line_right.height = 0.5;
     line_right.width = 0.5 * (footer.width - label.width) - 4;
     line_right.centerY = 0.5*footer.height;

@@ -274,13 +274,13 @@ static inline NSUserDefaults *DefaultUser(){
     }];
 }
 
-+ (void)ax_setData:(NSData *)data forKey:(NSString *)key{
++ (void)ax_setData:(nullable NSData *)data forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
         [defaultUser setObject:data forKey:key];
     }];
 }
 
-+ (void)ax_setString:(NSString *)string forKey:(NSString *)key{
++ (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
         [defaultUser setObject:string forKey:key];
     }];
@@ -292,7 +292,7 @@ static inline NSUserDefaults *DefaultUser(){
     }];
 }
 
-+ (void)ax_setArray:(NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key{
++ (void)ax_setArray:(nullable NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
         [defaultUser ax_setArray:block forKey:key];
     }];
@@ -305,13 +305,13 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 
-+ (void)ax_setURL:(NSURL *)url forKey:(NSString *)key{
++ (void)ax_setURL:(nullable NSURL *)url forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
         [defaultUser setObject:url forKey:key];
     }];
 }
 
-+ (void)ax_setImage:(UIImage *)image forKey:(NSString *)key{
++ (void)ax_setImage:(nullable UIImage *)image forKey:(NSString *)key{
     [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
         NSData *data = UIImagePNGRepresentation(image);
         [defaultUser setObject:data forKey:key];
@@ -323,11 +323,11 @@ static inline NSUserDefaults *DefaultUser(){
     [self synchronize];
 }
 
-- (void)ax_setData:(NSData *)data forKey:(NSString *)key{
+- (void)ax_setData:(nullable NSData *)data forKey:(NSString *)key{
     [self setObject:data forKey:key];
 }
 
-- (void)ax_setString:(NSString *)string forKey:(NSString *)key{
+- (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key{
     [self setObject:string forKey:key];
 }
 
@@ -351,7 +351,7 @@ static inline NSUserDefaults *DefaultUser(){
         [self setObject:dict ?: dictM forKey:key];
     }
 }
-- (void)ax_setURL:(NSURL *)url forKey:(NSString *)key{
+- (void)ax_setURL:(nullable NSURL *)url forKey:(NSString *)key{
     [self setObject:url forKey:key];
 }
 

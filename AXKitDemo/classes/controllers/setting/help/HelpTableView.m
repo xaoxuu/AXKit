@@ -73,12 +73,12 @@
         _searchBar.delegate = self;
         // style
         _searchBar.searchBarStyle = UISearchBarStyleMinimal;
-        if (axColor.theme.isLightColor) {
-            _searchBar.tintColor = axColor.theme.dark;
-            _searchBar.barTintColor = axColor.theme.dark;
+        if (axThemeManager.color.theme.isLightColor) {
+            _searchBar.tintColor = axThemeManager.color.theme.dark;
+            _searchBar.barTintColor = axThemeManager.color.theme.dark;
         } else {
-            _searchBar.tintColor = axColor.theme;
-            _searchBar.barTintColor = axColor.theme;
+            _searchBar.tintColor = axThemeManager.color.theme;
+            _searchBar.barTintColor = axThemeManager.color.theme;
         }
         
         _searchBar.placeholder = @"请输入关键词";

@@ -75,7 +75,7 @@ static SCLAlertView *instance = nil;
         [instance hideView];
     }
     SCLAlertView *alert = [[SCLAlertView alloc] init];
-    alert.customViewColor = axColor.theme;
+    alert.customViewColor = axThemeManager.color.theme;
     alert.showAnimationType = SCLAlertViewShowAnimationFadeIn;
     alert.hideAnimationType = SCLAlertViewHideAnimationFadeOut;
     alert.backgroundType = SCLAlertViewBackgroundBlur;

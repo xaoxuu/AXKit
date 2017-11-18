@@ -26,9 +26,7 @@
     [super awakeFromNib];
     self.img_icon.layer.cornerRadius = 5;
     
-    self.lb_title.font = axFont.customNormal;
-    self.lb_title_only.font = axFont.customNormal;
-    self.lb_detail.font = axFont.customSmall;
+    
     
     
 }
@@ -41,6 +39,10 @@
 
 - (void)setModel:(BaseTableModelRow *)model{
     _model = model;
+    self.lb_title.font = axThemeManager.font.customNormal;
+    self.lb_title_only.font = axThemeManager.font.customNormal;
+    self.lb_detail.font = axThemeManager.font.customSmall;
+    
     if (model.icon.length) {
         self.lb_title_only.text = @"";
         self.lb_title.text = NSLocalizedString(model.title, nil);

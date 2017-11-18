@@ -31,14 +31,14 @@ static UIView *customView;
     [super viewDidLoad];
     self.title = @"延迟函数";
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = axColor.groupTableViewBackground;
+    self.view.backgroundColor = axThemeManager.color.groupTableViewBackground;
     self.label = [[UILabel alloc] initWithFrame:self.view.bounds];
     self.label.text = @"0";
     self.label.height -= kTabBarHeight;
     self.label.textAlignment = NSTextAlignmentCenter;
     self.label.font = [UIFont boldSystemFontOfSize:180];
     [self.label adjustsFontSizeToFitWidth];
-    self.label.textColor = axColor.theme.adaptive;
+    self.label.textColor = axThemeManager.color.theme.adaptive;
     [self.view addSubview:self.label];
     
     [self reset];

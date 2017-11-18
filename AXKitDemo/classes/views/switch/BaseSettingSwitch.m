@@ -27,7 +27,7 @@
 - (void)setupUI{
     
     
-    [self setOnTintColor:axColor.theme];
+    [self setOnTintColor:axThemeManager.color.theme];
     [self setOffImage:[UIImage imageNamed:@"watch_close"]];
     [self setOnImage:[UIImage imageNamed:@"watch_open"]];
     

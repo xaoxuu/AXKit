@@ -38,10 +38,10 @@
 
 
 - (void)_initButton{
-    self.backgroundColor = axColor.theme;
-    UIColor *titleColor = axColor.white;
-    if (axColor.theme.isLightColor) {
-        titleColor = axColor.theme.dark;
+    self.backgroundColor = axThemeManager.color.theme;
+    UIColor *titleColor = [UIColor whiteColor];
+    if (axThemeManager.color.theme.isLightColor) {
+        titleColor = axThemeManager.color.theme.dark;
     }
     [self setTitleColor:titleColor forState:UIControlStateNormal];
 }

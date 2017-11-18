@@ -37,7 +37,7 @@
 }
 
 - (void)initContentView:(UIView *)view{
-    self.seg_subject.tintColor = axColor.theme.isLightColor?axColor.theme.darkRatio(0.3):axColor.theme;
+    self.seg_subject.tintColor = axThemeManager.color.theme.isLightColor?axThemeManager.color.theme.darkRatio(0.3):axThemeManager.color.theme;
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"send" action:^(id  _Nonnull sender) {

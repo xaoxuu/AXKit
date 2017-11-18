@@ -124,6 +124,7 @@ CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
 
 
 
+- (UIColor *)adaptive;
 
 
 
