@@ -55,6 +55,9 @@
 		CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = CD149E281F01080A007051CE /* _AXKitBundle.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD149E291F01080A007051CE /* _AXKitBundle.m */; };
 		CD149E2D1F010AD8007051CE /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
+		CD2096E61FC171710049739A /* ServiceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096E31FC171700049739A /* ServiceLayer.m */; };
+		CD2096E91FC1718E0049739A /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096E81FC1718E0049739A /* BaseService.m */; };
+		CD2096EC1FC171CC0049739A /* CacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096EB1FC171CC0049739A /* CacheService.m */; };
 		CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386021EC0CF0F007AB90B /* appinfo.json */; };
 		CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */ = {isa = PBXBuildFile; fileRef = CD2386041EC0D25D007AB90B /* tabbar_controllers.json */; };
 		CD23DCA51EC1DD76006E331B /* UINavigationBar+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD23DCA31EC1DD76006E331B /* UINavigationBar+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -191,6 +194,8 @@
 		CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1AC1ECF30C2004FC692 /* BlogModels.m */; };
 		CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */; };
+		CDA614D21FC17219001FB0BE /* DataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D11FC17219001FB0BE /* DataAccessLayer.m */; };
+		CDA614D51FC1724B001FB0BE /* NetworkDA.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D41FC1724B001FB0BE /* NetworkDA.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB58E41E6BF3220017CA1E /* Foundation+AXLogExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */; };
 		CDAB58E71E6BF37E0017CA1E /* CoreGraphics+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E51E6BF37E0017CA1E /* CoreGraphics+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -333,6 +338,12 @@
 		CD149E281F01080A007051CE /* _AXKitBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AXKitBundle.h; sourceTree = "<group>"; };
 		CD149E291F01080A007051CE /* _AXKitBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AXKitBundle.m; sourceTree = "<group>"; };
 		CD149E2C1F010AD8007051CE /* AXKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXKit.bundle; sourceTree = "<group>"; };
+		CD2096E21FC171700049739A /* ServiceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceLayer.h; sourceTree = "<group>"; };
+		CD2096E31FC171700049739A /* ServiceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceLayer.m; sourceTree = "<group>"; };
+		CD2096E71FC1718E0049739A /* BaseService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
+		CD2096E81FC1718E0049739A /* BaseService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
+		CD2096EA1FC171CC0049739A /* CacheService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheService.h; sourceTree = "<group>"; };
+		CD2096EB1FC171CC0049739A /* CacheService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheService.m; sourceTree = "<group>"; };
 		CD2386021EC0CF0F007AB90B /* appinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appinfo.json; sourceTree = "<group>"; };
 		CD2386041EC0D25D007AB90B /* tabbar_controllers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tabbar_controllers.json; sourceTree = "<group>"; };
 		CD23DCA31EC1DD76006E331B /* UINavigationBar+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+AXExtension.h"; sourceTree = "<group>"; };
@@ -539,6 +550,10 @@
 		CD88D1AC1ECF30C2004FC692 /* BlogModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogModels.m; sourceTree = "<group>"; };
 		CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+AXExtension.h"; sourceTree = "<group>"; };
 		CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AXExtension.m"; sourceTree = "<group>"; };
+		CDA614D01FC17219001FB0BE /* DataAccessLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataAccessLayer.h; sourceTree = "<group>"; };
+		CDA614D11FC17219001FB0BE /* DataAccessLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataAccessLayer.m; sourceTree = "<group>"; };
+		CDA614D31FC1724B001FB0BE /* NetworkDA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkDA.h; sourceTree = "<group>"; };
+		CDA614D41FC1724B001FB0BE /* NetworkDA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkDA.m; sourceTree = "<group>"; };
 		CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXLogExtension.h"; sourceTree = "<group>"; };
 		CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXLogExtension.m"; sourceTree = "<group>"; };
 		CDAB58E51E6BF37E0017CA1E /* CoreGraphics+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreGraphics+AXExtension.h"; sourceTree = "<group>"; };
@@ -784,6 +799,37 @@
 				CD0B62F61EC45E650024F25E /* AccentBgButton.m */,
 			);
 			path = button;
+			sourceTree = "<group>";
+		};
+		CD2096E11FC171700049739A /* BaseLayers */ = {
+			isa = PBXGroup;
+			children = (
+				CD2096E71FC1718E0049739A /* BaseService.h */,
+				CD2096E81FC1718E0049739A /* BaseService.m */,
+			);
+			path = BaseLayers;
+			sourceTree = "<group>";
+		};
+		CD2096E41FC171710049739A /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				CDA614D01FC17219001FB0BE /* DataAccessLayer.h */,
+				CDA614D11FC17219001FB0BE /* DataAccessLayer.m */,
+				CDA614D31FC1724B001FB0BE /* NetworkDA.h */,
+				CDA614D41FC1724B001FB0BE /* NetworkDA.m */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		CD2096E51FC171710049739A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CD2096E21FC171700049739A /* ServiceLayer.h */,
+				CD2096E31FC171700049739A /* ServiceLayer.m */,
+				CD2096EA1FC171CC0049739A /* CacheService.h */,
+				CD2096EB1FC171CC0049739A /* CacheService.m */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CD3543901F9AEFE2009317A6 /* EmptyVC */ = {
@@ -1315,6 +1361,9 @@
 		CD77FE941EBF5D20001A5787 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				CD2096E11FC171700049739A /* BaseLayers */,
+				CD2096E41FC171710049739A /* DataAccess */,
+				CD2096E51FC171710049739A /* Services */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -1957,6 +2006,7 @@
 				CD5498221EE1965900748C22 /* TestFrameVC.m in Sources */,
 				CD79DF9E1EEF911900408BAD /* AlertVC.m in Sources */,
 				CD5744F61EDAAD710014E833 /* MJRefreshGifHeader.m in Sources */,
+				CDA614D21FC17219001FB0BE /* DataAccessLayer.m in Sources */,
 				CD23DCDF1EC36017006E331B /* SCLAlertView+AXWrapper.m in Sources */,
 				CDF18CCD1EB884F1004B4794 /* BaseViewController.m in Sources */,
 				CD88D1AA1ECF30B6004FC692 /* BlogContentModel.m in Sources */,
@@ -1971,6 +2021,7 @@
 				CD5745A01EDADE510014E833 /* FontTableView.m in Sources */,
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
 				CDE94EA91EC72C2E00596B93 /* BaseLoadingView.m in Sources */,
+				CDA614D51FC1724B001FB0BE /* NetworkDA.m in Sources */,
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
 				CD5744FE1EDAAD710014E833 /* UIView+MJExtension.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
@@ -2007,6 +2058,7 @@
 				CD5744ED1EDAAD710014E833 /* MJRefreshComponent.m in Sources */,
 				CD5745A81EDADE510014E833 /* HelpVC.m in Sources */,
 				CDE94EAC1EC72DDD00596B93 /* DefaultIndicatorView.m in Sources */,
+				CD2096E61FC171710049739A /* ServiceLayer.m in Sources */,
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
 				CD5745841EDADE510014E833 /* EmailVC.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
@@ -2017,6 +2069,7 @@
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CD57459C1EDADE510014E833 /* CustomTableVC.m in Sources */,
 				CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */,
+				CD2096E91FC1718E0049739A /* BaseService.m in Sources */,
 				CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */,
 				CD5745911EDADE510014E833 /* AboutTableView.m in Sources */,
 				CD57460C1EDB2F650014E833 /* GitHubInfoModel.m in Sources */,
@@ -2025,6 +2078,7 @@
 				CD5746181EDC188F0014E833 /* AppVersionInfoModel.m in Sources */,
 				CD5745A71EDADE510014E833 /* HelpTableView.m in Sources */,
 				CD5744FA1EDAAD710014E833 /* MJRefreshConst.m in Sources */,
+				CD2096EC1FC171CC0049739A /* CacheService.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CD5746151EDBFF030014E833 /* ReleaseLogTV.m in Sources */,
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,

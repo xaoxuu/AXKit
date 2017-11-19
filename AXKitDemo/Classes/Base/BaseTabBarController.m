@@ -18,7 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     [self.tabBar.layer ax_shadow:LayerShadowUpLight];
     
 }
@@ -32,6 +31,14 @@
     [super viewDidLayoutSubviews];
     [self.tabBar ax_hideSeparator];
 //    [services.app applyTheme];
+}
+
+- (NSString *)configurationFilePath{
+    NSString *path;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        path = [[NSBundle mainBundle] pathForResource:NSStringFromClass([self class]) ofType:@"json"];
+    }
+    return path;
 }
 
 - (NSString *)classNameForBaseNavigationController{
