@@ -10,4 +10,6 @@
 
 @interface CacheService : NSObject
 
+- (NSString *)cacheForClassWithName:(NSString *)name;
+
 @end

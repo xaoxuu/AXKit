@@ -7,10 +7,19 @@
 //
 
 #import "BaseService.h"
+#import "CacheService.h"
 
-
-
+@class ServiceLayer;
+extern ServiceLayer *service;
 
 @interface ServiceLayer : BaseService
+
+
+// @xaoxuu: cache
+@property (strong, nonatomic) CacheService *cache;
+
+
++ (instancetype)sharedInstance;
+
 
 @end

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
+
+
 @interface AppDelegate ()
 
 // @xaoxuu: root vc
@@ -28,7 +30,7 @@
         theme.color.accent = [UIColor md_lime];
     }];
     // @xaoxuu: 激活服务
-//    [ServicesLayer sharedInstance];
+    [ServiceLayer sharedInstance];
     
     // 创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

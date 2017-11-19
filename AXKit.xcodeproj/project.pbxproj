@@ -174,6 +174,7 @@
 		CD616C971FB99F8A00E38244 /* AXTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD616C951FB99F8A00E38244 /* AXTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD616C981FB99F8A00E38244 /* AXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD616C961FB99F8A00E38244 /* AXTabBarController.m */; };
 		CD616C9C1FB9A9D700E38244 /* BaseTabBarController.json in Resources */ = {isa = PBXBuildFile; fileRef = CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */; };
+		CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */; };
 		CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD6476D31FC03D0A00B1E68A /* NSDictionary+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */; };
 		CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */; };
@@ -520,6 +521,8 @@
 		CD616C951FB99F8A00E38244 /* AXTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXTabBarController.h; sourceTree = "<group>"; };
 		CD616C961FB99F8A00E38244 /* AXTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTabBarController.m; sourceTree = "<group>"; };
 		CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BaseTabBarController.json; sourceTree = "<group>"; };
+		CD63A3F91FC174DB00581AF6 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AXExtension.h"; sourceTree = "<group>"; };
 		CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AXExtension.m"; sourceTree = "<group>"; };
 		CD74F9F11F9ADEB000EBD3B5 /* CooldownVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CooldownVC.h; sourceTree = "<group>"; };
@@ -1657,6 +1660,8 @@
 				CD23DCDE1EC36017006E331B /* SCLAlertView+AXWrapper.m */,
 				CD23DCE01EC36DE7006E331B /* AXProgressHUD.h */,
 				CD23DCE11EC36DE7006E331B /* AXProgressHUD.m */,
+				CD63A3F91FC174DB00581AF6 /* NetworkManager.h */,
+				CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2063,6 +2068,7 @@
 				CD5745841EDADE510014E833 /* EmailVC.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
 				CD5744F11EDAAD710014E833 /* MJRefreshAutoNormalFooter.m in Sources */,
+				CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */,
 				CD5744F21EDAAD710014E833 /* MJRefreshAutoStateFooter.m in Sources */,
 				CD5745B41EDADE510014E833 /* SettingTableView.m in Sources */,
 				CDBB3B2B1EB9E80F00E8ED25 /* NSObject+MJClass.m in Sources */,

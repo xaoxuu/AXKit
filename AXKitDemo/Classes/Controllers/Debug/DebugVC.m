@@ -12,6 +12,8 @@
 
 @interface DebugVC ()
 
+
+
 @end
 
 @implementation DebugVC
@@ -42,10 +44,11 @@
 
 
 
-//- (UITableView<BaseTableView> *)installTableView{
-//    return [[DebugTV alloc] initWithFrame:self.view.bounds];
-//}
-
+- (AXTableViewType *)installTableView{
+    CGRect frame = self.view.bounds;
+    frame.size.height += kTopBarHeight;
+    return [[DebugTV alloc] initWithFrame:frame];
+}
 
 
 

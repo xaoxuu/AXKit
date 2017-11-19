@@ -10,4 +10,10 @@
 
 @interface NetworkDA : NSObject
 
+// @xaoxuu: request url string
+@property (copy, nonatomic) NSString *URLString;
+
+
+- (void)getURLCompletion:(void (^)(id response))completion fail:(void (^)(NSError * error))fail;
+
 @end

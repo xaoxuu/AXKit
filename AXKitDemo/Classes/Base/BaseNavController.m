@@ -23,6 +23,9 @@
     [self.navigationBar.layer ax_shadow:LayerShadowDownNormal];
     
 //    [services.app applyTheme];
+    
+    
+    
     if (@available(iOS 11.0, *)) {
         // on newer versions
         self.navigationBar.prefersLargeTitles = NO;

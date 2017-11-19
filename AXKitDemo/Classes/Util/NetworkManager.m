@@ -1,29 +1,18 @@
 //
-//  NetworkDA.m
+//  NetworkManager.m
 //  AXKitDemo
 //
 //  Created by xaoxuu on 19/11/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "NetworkDA.h"
+#import "NetworkManager.h"
 
-@implementation NetworkDA
-
-- (instancetype)init{
-    if (self = [super init]) {
-        
-        
-        
-        
-    }
-    return self;
-}
+@implementation NetworkManager
 
 
-
-- (void)getURLCompletion:(void (^)(id response))completion fail:(void (^)(NSError * error))fail{
-    NSURL *url = [NSURL URLWithString:self.URLString];
++ (void)getURLString:(NSString *)urlString completion:(void (^)(NSData * _Nullable data, id response))completion fail:(void (^)(NSError * error))fail{
+    NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -36,10 +25,11 @@
         } else {
             if (completion) {
                 id ret = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                completion(ret);
+                completion(data, ret);
             }
         }
     }];
     [dataTask resume];
 }
+
 @end

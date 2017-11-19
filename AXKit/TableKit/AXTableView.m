@@ -63,10 +63,10 @@ static CGFloat defaultRowHeight = 44;
     self.reuseIdentifier = NSStringFromClass([AXTableViewCell class]);
     self.modelClassName = NSStringFromClass(AXTableModel.class);
     
-    if ([self.delegate respondsToSelector:@selector(ax_tableViewRegisterReuseableCell)]) {
+    if ([self respondsToSelector:@selector(ax_tableViewRegisterReuseableCell)]) {
         self.reuseIdentifier = NSStringFromClass([self ax_tableViewRegisterReuseableCell].class);
     }
-    if ([self.delegate respondsToSelector:@selector(ax_tableViewRegisterTableModel)]) {
+    if ([self respondsToSelector:@selector(ax_tableViewRegisterTableModel)]) {
         self.modelClassName = NSStringFromClass([self ax_tableViewRegisterTableModel].class);
     }
 }

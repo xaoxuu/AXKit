@@ -15,22 +15,16 @@
     AXTableModel *model = [[AXTableModel alloc] init];
     [model addSection:^(AXTableSectionModel *section) {
         section.headerTitle = @"字号";
-        section.rowHeight = 200;
         [section addRow:^(AXTableRowModel *row) {
-            
+            row.rowHeight = 200;
         }];
     }];
     return model;
 }
 
-
-//- (UITableViewCell<BaseTableViewCell> *)setupCustomTableViewCell{
-//    return [FontTableViewCell new];
-//}
-//
-//- (void)indexPath:(NSIndexPath *)indexPath cell:(UITableViewCell<BaseTableViewCell> *)cell willSetModel:(BaseTableModelRow *)model{
-//    
-//}
+- (AXTableViewCellType *)ax_tableViewRegisterReuseableCell{
+    return [[FontTableViewCell alloc] init];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FontTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FontTableViewCell" forIndexPath:indexPath];

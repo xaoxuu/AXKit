@@ -34,10 +34,6 @@
     return frame;
 }
 
-//- (UITableView<BaseTableView> *)installTableView{
-//    return [[SettingTableView alloc] initWithFrame:self.view.bounds];
-//}
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 //    [self.tableView reloadTableView];
@@ -62,6 +58,13 @@
 //    [self.tableView reloadDataSourceAndTableView];
 }
 
+
+
+- (AXTableViewType *)installTableView{
+    CGRect frame = self.view.bounds;
+    frame.size.height += kTopBarHeight;
+    return [[SettingTableView alloc] initWithFrame:frame];
+}
 
 
 @end

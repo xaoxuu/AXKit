@@ -34,11 +34,7 @@
 }
 
 - (NSString *)configurationFilePath{
-    NSString *path;
-    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        path = [[NSBundle mainBundle] pathForResource:NSStringFromClass([self class]) ofType:@"json"];
-    }
-    return path;
+    return [service.cache cacheForClassWithName:NSStringFromClass(self.class)];
 }
 
 - (NSString *)classNameForBaseNavigationController{
