@@ -8,7 +8,6 @@
 
 #import "CameraVC.h"
 #import "FullWideButton.h"
-#import "UIViewController+CameraExtension.h"
 
 @interface CameraVC ()
 
@@ -24,8 +23,7 @@
     // Do any additional setup after loading the view.
     
     FullWideButton *btn = [FullWideButton buttonWithTitle:@"样式1" action:^(__kindof BaseButton *sender) {
-        [self configImagePickerWithThemeColor:axThemeManager.color.theme];
-        [self showImagePicker];
+        
     }];
     [btn addToView:self.view withBottom:0];
     

@@ -25,8 +25,4 @@
 }
 
 
-- (void)dealloc{
-    AXLogSuccess(@"%@ deallocated", NSStringFromClass([self class]));
-}
-
 @end

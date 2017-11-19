@@ -1,74 +1,74 @@
 {
     "title":"",
-    "header_title":"this is table header",
-    "header_height":"32",
-    "footer_title":"this is table footer",
-    "footer_height":"32",
+    "headerTitle":"this is table header",
+    "headerHeight":"32",
+    "footerTitle":"this is table footer",
+    "footerHeight":"32",
     "sections":[
         {
-            "header_title":"Alert",
-            "header_height":"44",
-            "footer_title":"",
-            "footer_height":"0",
+            "headerTitle":"Alert",
+            "headerHeight":"44",
+            "footerTitle":"",
+            "footerHeight":"0",
             "rowHeight":"44",
             "rows":[
                 {
                     "title":"只有一个OK按钮",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"Cancel+OK",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"自定义取消+自定义确定",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"若干按钮",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"自定义视图",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 }
             ]
         },
         {
-            "header_title":"ActionSheet",
-            "header_height":"44",
-            "footer_title":"",
-            "footer_height":"0",
+            "headerTitle":"ActionSheet",
+            "headerHeight":"44",
+            "footerTitle":"",
+            "footerHeight":"0",
             "rowHeight":"44",
             "rows":[
                 {
                     "title":"只有一个OK按钮",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"Cancel+OK",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"自定义取消+自定义确定",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"若干按钮",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"自定义视图",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 }
             ]

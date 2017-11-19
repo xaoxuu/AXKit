@@ -11,9 +11,8 @@
 
 @implementation DebugTV
 
-
-
-- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
+- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     if (section == 0) {
@@ -32,6 +31,8 @@
         [self.controller.navigationController ax_pushViewControllerNamed:model.target];
     }
 }
+
+
 
 
 

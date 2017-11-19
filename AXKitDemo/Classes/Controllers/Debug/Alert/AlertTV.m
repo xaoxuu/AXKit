@@ -11,12 +11,8 @@
 @implementation AlertTV
 
 
-- (void)indexPath:(NSIndexPath *)indexPath cell:(UITableViewCell<BaseTableViewCell> *)cell willSetModel:(BaseTableModelRow *)model{
-    
-}
-
-
-- (void)indexPath:(NSIndexPath *)indexPath didSelected:(__kindof BaseTableModelRow *)model{
+- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     if (section == 0) {
@@ -62,7 +58,7 @@
                 [alert.view addSubview:view];
                 
             }];
-
+            
         }
     } else if (section == 1) {
         if (row == 0) {
@@ -111,5 +107,8 @@
         }
     }
 }
+
+
+
 
 @end

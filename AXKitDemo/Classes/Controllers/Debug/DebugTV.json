@@ -1,75 +1,75 @@
 {
     "title":"",
-    "header_title":"this is table header",
-    "header_height":"32",
-    "footer_title":"this is table footer",
-    "footer_height":"32",
+    "headerTitle":"this is table header",
+    "headerHeight":"32",
+    "footerTitle":"this is table footer",
+    "footerHeight":"32",
     "sections":[
         {
-            "header_title":"默认分组",
-            "header_height":"44",
-            "footer_title":"这是测试版，暂时没有更多了哦~",
-            "footer_height":"44",
+            "headerTitle":"默认分组",
+            "headerHeight":"44",
+            "footerTitle":"这是测试版，暂时没有更多了哦~",
+            "footerHeight":"44",
             "rowHeight":"44",
             "rows":[
                 {
                     "title":"拉伸图片",
-                    "desc":"",
+                    "detail":"",
                     "target":"ResizeableImageVC",
                 },
                 {
                     "title":"pop",
-                    "desc":"",
+                    "detail":"",
                     "target":"HitTestVC",
                 },
                 {
                     "title":"Mail",
-                    "desc":"",
+                    "detail":"",
                     "target":"EmailVC",
                 },
                 {
                     "title":"TestFrame",
-                    "desc":"",
+                    "detail":"",
                     "target":"TestFrameVC",
                 },
                 {
                     "title":"处理键盘遮挡",
-                    "desc":"",
+                    "detail":"",
                     "target":"KeyboardVC",
                 },
                 {
                     "title":"阴影",
-                    "desc":"",
+                    "detail":"",
                     "target":"ShadowVC",
                 },
                 {
                     "title":"系统弹窗",
-                    "desc":"",
+                    "detail":"",
                     "target":"AlertVC",
                 },
                 {
                     "title":"测试",
-                    "desc":"",
+                    "detail":"",
                     "target":"TestTableViewVC",
                 },
                 {
                     "title":"错误信息",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"自定义相机",
-                    "desc":"",
+                    "detail":"",
                     "target":"",
                 },
                 {
                     "title":"延迟函数",
-                    "desc":"",
+                    "detail":"",
                     "target":"CooldownVC",
                 },
                 {
                     "title":"空白页面",
-                    "desc":"",
+                    "detail":"",
                     "target":"EmptyVC",
                 }
             ]

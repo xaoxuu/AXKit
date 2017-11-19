@@ -6,8 +6,8 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "BaseTableView.h"
+#import "TableKit.h"
 
-@interface DebugTV : BaseTableView
+@interface DebugTV : AXTableView
 
 @end
