@@ -20,9 +20,6 @@
 #import "DemoMarcos.h"
 #import "DemoString.h"
 
-// @xaoxuu: services
-#import "ServicesLayer.h"
-
 
 #import "AXProgressHUD.h"
 

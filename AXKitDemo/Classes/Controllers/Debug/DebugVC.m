@@ -9,6 +9,7 @@
 #import "DebugVC.h"
 #import "DebugTV.h"
 #import <AXCameraKit/AXCameraKit.h>
+
 @interface DebugVC ()
 
 @end
@@ -20,9 +21,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self loadCameraKit];
-//    [[UIThemeManager new] configTheme:^(UIThemeColorModel *color) {
-//        color.background = nil;
-//    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

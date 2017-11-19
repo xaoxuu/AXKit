@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseTableView.h"
 
 
 typedef NS_ENUM(NSUInteger, ContentViewStyle) {
@@ -44,25 +43,9 @@ typedef NS_ENUM(NSUInteger, ContentViewStyle) {
  */
 - (void)installRightRefreshBarButton:(UIBarButtonItem *)sender;
 
-
-/**
- 安装table view
-
- @return table view
- */
-- (UITableView<BaseTableView> *)installTableView;
-
-
-/**
- 安装完tableview
- */
-- (void)didTableViewInstalled:(UITableView<BaseTableView> *)tableView;
-
 @end
 
 @interface BaseViewController : UIViewController <BaseVC,AXModuleKit>
 
-// @xaoxuu: table view
-@property (strong, nonatomic) UITableView<BaseTableView> *tableView;
 
 @end
