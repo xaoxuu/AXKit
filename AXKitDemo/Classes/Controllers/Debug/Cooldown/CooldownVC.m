@@ -43,14 +43,14 @@ static UIView *customView;
     
     [self reset];
     
-    CGFloat width = self.view.frame.size.width - 40;
-    UILabel *tips = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, width, 100)];
+    CGFloat width = self.view.frame.size.width - 32;
+    UILabel *tips = [[UILabel alloc] initWithFrame:CGRectMake(16, 80, width, 100)];
     [self.view addSubview:tips];
     tips.numberOfLines = 0;
     tips.font = [UIFont systemFontOfSize:14];
     tips.text = @"点击屏幕任意地方，计数会增加。某次点击结束后2秒内没有再次收到点击事件，就触发了事件A。（也就是说，每次点击都会延迟事件A的执行）\n\n事件A：计数器归0，状态栏弹出警告。";
     CGFloat height = [tips.text ax_textHeightWithFont:tips.font width:width];
-    tips.frame = CGRectMake(20, 20, width, height);
+    tips.frame = CGRectMake(16, 80, width, height);
     [tips sizeToFit];
     tips.textColor = [UIColor darkGrayColor];
     

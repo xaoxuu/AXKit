@@ -172,7 +172,7 @@
 
 - (CGRect)initContentFrame:(CGRect)frame{
     frame.origin.y = kTopBarHeight;
-    frame.size.height = kScreenH - kTopBarHeight;
+//    frame.size.height = kScreenH - kTopBarHeight;
     return frame;
 }
 

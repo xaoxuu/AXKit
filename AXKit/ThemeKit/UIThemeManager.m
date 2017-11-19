@@ -10,7 +10,7 @@
 #import "_AXKitBundle.h"
 #import "NSUserDefaults+AXWrapper.h"
 #import "NSString+AXFileStreamChainedWrapper.h"
-
+#import "UIColor+AXExtension.h"
 
 UIThemeManager *axThemeManager = nil;
 
@@ -30,6 +30,37 @@ UIThemeManager *axThemeManager = nil;
     axThemeManager = [UIThemeManager modelWithPath:path];
     
     [self saveCurrentTheme];
+    
+}
+
+
+- (void)saveCurrentTheme{
+    [super saveCurrentTheme];
+    
+    if (axThemeManager.color.theme.isLightColor) {
+        [UINavigationBar appearance].tintColor = axThemeManager.color.theme.darkRatio(0.6);
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
+        [UITabBar appearance].tintColor = axThemeManager.color.theme.darkRatio(0.3);
+    } else {
+        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        [UITabBar appearance].tintColor = axThemeManager.color.theme;
+    }
+    
+    [UINavigationBar appearance].barStyle = UIBarStyleDefault;
+    [UINavigationBar appearance].translucent = NO;
+    [UINavigationBar appearance].opaque = YES;
+    [UINavigationBar appearance].barTintColor = axThemeManager.color.theme;
+    
+    
+    [UITabBar appearance].barStyle = UIBarStyleDefault;
+    [UITabBar appearance].translucent = NO;
+    [UITabBar appearance].opaque = YES;
+    [UITabBar appearance].barTintColor = [UIColor whiteColor];
+    [UITabBar appearance].tintColor = axThemeManager.color.theme;
+    
+    
+    
     
 }
 

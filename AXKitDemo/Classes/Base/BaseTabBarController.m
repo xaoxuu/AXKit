@@ -20,6 +20,8 @@
     
     [self.tabBar.layer ax_shadow:LayerShadowUpLight];
     
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,7 +32,15 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     [self.tabBar ax_hideSeparator];
-//    [services.app applyTheme];
+
+    
+    
+    if (axThemeManager.color.theme.isLightColor) {
+        self.tabBar.tintColor = axThemeManager.color.theme.darkRatio(0.3);
+    } else {
+        self.tabBar.tintColor = axThemeManager.color.theme;
+    }
+    
 }
 
 - (NSString *)configurationFilePath{

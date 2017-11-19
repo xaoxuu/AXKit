@@ -48,11 +48,6 @@
                     "target":"AlertVC",
                 },
                 {
-                    "title":"测试",
-                    "detail":"",
-                    "target":"TestTableViewVC",
-                },
-                {
                     "title":"错误信息",
                     "detail":"",
                     "target":"",

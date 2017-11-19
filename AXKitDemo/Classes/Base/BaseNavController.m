@@ -22,8 +22,17 @@
     [self.navigationBar ax_hideSeparator];
     [self.navigationBar.layer ax_shadow:LayerShadowDownNormal];
     
-//    [services.app applyTheme];
-    
+
+    self.navigationBar.barTintColor = axThemeManager.color.theme;
+    if (axThemeManager.color.theme.isLightColor) {
+        self.navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.6);
+        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
+        
+    } else {
+        self.navigationBar.tintColor = [UIColor whiteColor];
+        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
     
     
     if (@available(iOS 11.0, *)) {

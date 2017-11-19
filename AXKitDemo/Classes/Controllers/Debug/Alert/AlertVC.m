@@ -25,10 +25,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-//- (UITableView<BaseTableView> *)installTableView{
-//    return [[AlertTV alloc] initWithFrame:self.view.bounds];
-//}
+- (AXTableViewType *)installTableView{
+    return [[AlertTV alloc] initWithFrame:self.view.bounds];
+}
 
 
 @end

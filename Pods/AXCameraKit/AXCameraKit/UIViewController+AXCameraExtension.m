@@ -129,7 +129,7 @@ static const void *AXCameraExtensionCapturedImagesKey = &AXCameraExtensionCaptur
  
  @param completion 完成回调
  */
-- (void)presentCameraVC:(void (^)(void))completion{
+- (void)presentCameraVC:(nullable void (^)(void))completion failure:(void (^)(NSError *error))failure{
     if (!isActive && self.imagePicker) {
         isActive = YES;
         [self presentViewController:self.imagePicker animated:YES completion:^{
@@ -140,6 +140,16 @@ static const void *AXCameraExtensionCapturedImagesKey = &AXCameraExtensionCaptur
                 [self cameraDidPresented];
             }
         }];
+    } else if (!self.imagePicker && failure) {
+        NSMutableDictionary *info = [NSMutableDictionary dictionary];
+        info[NSLocalizedDescriptionKey] = @"无法打开相机";
+        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            info[NSLocalizedFailureReasonErrorKey] = @"设备不支持相机";
+        } else if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+            info[NSLocalizedFailureReasonErrorKey] = @"设备没有后置相机";
+        }
+        NSError *error = [NSError errorWithDomain:@"com.xaoxuu.CameraKit" code:400 userInfo:info];
+        failure(error);
     }
 }
 

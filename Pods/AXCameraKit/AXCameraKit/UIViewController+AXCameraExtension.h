@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param completion 完成回调
  */
-- (void)presentCameraVC:(void (^ _Nullable)(void))completion;
+- (void)presentCameraVC:(nullable void (^)(void))completion failure:(void (^)(NSError *error))failure;
 
 /**
  退出相机页面
