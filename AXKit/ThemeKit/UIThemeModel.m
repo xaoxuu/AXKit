@@ -70,6 +70,7 @@ static CGFloat smallSize = 12.0f;
     
     NSMutableDictionary *fontDict = [NSMutableDictionary dictionary];
     fontDict[@"prefersFontSize"] = @(self.font.prefersFontSize);
+    fontDict[@"name"] = self.font.name;
     jsonFile[@"font"] = fontDict;
     
     NSMutableDictionary *iconDict = [NSMutableDictionary dictionary];
