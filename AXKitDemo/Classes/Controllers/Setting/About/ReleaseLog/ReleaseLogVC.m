@@ -1,23 +1,23 @@
 //
-//  TestTableViewVC.m
+//  ReleaseLogVC.m
 //  AXKit
 //
-//  Created by xaoxuu on 13/06/2017.
+//  Created by xaoxuu on 29/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "TestTableViewVC.h"
-#import "TestTV.h"
+#import "ReleaseLogVC.h"
+#import "ReleaseLogTV.h"
 
-@interface TestTableViewVC ()
+@interface ReleaseLogVC ()
 
 @end
 
-@implementation TestTableViewVC
+@implementation ReleaseLogVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,8 +25,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 //- (UITableView<BaseTableView> *)installTableView{
-//    return [[TestTV alloc] initWithFrame:self.view.bounds];
+//    return [[ReleaseLogTV alloc] initWithFrame:self.view.bounds];
 //}
 
 @end

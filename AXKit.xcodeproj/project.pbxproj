@@ -94,7 +94,6 @@
 		CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */; };
 		CD5498221EE1965900748C22 /* TestFrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498201EE1965900748C22 /* TestFrameVC.m */; };
 		CD5498231EE1965900748C22 /* TestFrameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5498211EE1965900748C22 /* TestFrameVC.xib */; };
-		CD54984D1EE19C5200748C22 /* CodingGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54984C1EE19C5200748C22 /* CodingGuideVC.m */; };
 		CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5744A41ED9DD5C0014E833 /* DemoString.m */; };
 		CD5744EB1EDAAD710014E833 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5744BF1EDAAD710014E833 /* MJRefreshAutoFooter.m */; };
 		CD5744EC1EDAAD710014E833 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5744C11EDAAD710014E833 /* MJRefreshBackFooter.m */; };
@@ -134,8 +133,6 @@
 		CD5745911EDADE510014E833 /* AboutTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745301EDADE510014E833 /* AboutTableView.m */; };
 		CD5745921EDADE510014E833 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745321EDADE510014E833 /* AboutVC.m */; };
 		CD5745941EDADE510014E833 /* BlogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745361EDADE510014E833 /* BlogVC.m */; };
-		CD5745961EDADE510014E833 /* BlogListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57453A1EDADE510014E833 /* BlogListTableView.m */; };
-		CD5745971EDADE510014E833 /* BlogListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57453C1EDADE510014E833 /* BlogListVC.m */; };
 		CD5745991EDADE510014E833 /* CacheTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745401EDADE510014E833 /* CacheTableView.m */; };
 		CD57459A1EDADE510014E833 /* RemoveCacheVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745421EDADE510014E833 /* RemoveCacheVC.m */; };
 		CD57459C1EDADE510014E833 /* CustomTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745461EDADE510014E833 /* CustomTableVC.m */; };
@@ -148,16 +145,9 @@
 		CD5745A51EDADE510014E833 /* HelpDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745571EDADE510014E833 /* HelpDetailVC.m */; };
 		CD5745A71EDADE510014E833 /* HelpTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57455A1EDADE510014E833 /* HelpTableView.m */; };
 		CD5745A81EDADE510014E833 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57455C1EDADE510014E833 /* HelpVC.m */; };
-		CD5745AA1EDADE510014E833 /* CustomIconTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745601EDADE510014E833 /* CustomIconTableView.m */; };
-		CD5745AB1EDADE510014E833 /* CustomIconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745621EDADE510014E833 /* CustomIconVC.m */; };
-		CD5745AD1EDADE510014E833 /* ProjectDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745661EDADE510014E833 /* ProjectDetailVC.m */; };
-		CD5745AF1EDADE510014E833 /* ProjectsTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5745691EDADE510014E833 /* ProjectsTableView.json */; };
-		CD5745B01EDADE510014E833 /* ProjectsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57456A1EDADE510014E833 /* ProjectsTableView.m */; };
-		CD5745B11EDADE510014E833 /* ProjectsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57456C1EDADE510014E833 /* ProjectsVC.m */; };
 		CD5745B31EDADE510014E833 /* SettingTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CD57456F1EDADE510014E833 /* SettingTableView.json */; };
 		CD5745B41EDADE510014E833 /* SettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745701EDADE510014E833 /* SettingTableView.m */; };
 		CD5745B51EDADE510014E833 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745721EDADE510014E833 /* SettingVC.m */; };
-		CD5745B71EDADE510014E833 /* ThemeColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745761EDADE510014E833 /* ThemeColorModel.m */; };
 		CD5745B81EDADE510014E833 /* ThemeColorTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5745781EDADE510014E833 /* ThemeColorTableView.json */; };
 		CD5745B91EDADE510014E833 /* ThemeColorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745791EDADE510014E833 /* ThemeColorTableView.m */; };
 		CD5745BA1EDADE510014E833 /* ThemeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57457B1EDADE510014E833 /* ThemeColorVC.m */; };
@@ -386,8 +376,6 @@
 		CD54981F1EE1965900748C22 /* TestFrameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFrameVC.h; sourceTree = "<group>"; };
 		CD5498201EE1965900748C22 /* TestFrameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFrameVC.m; sourceTree = "<group>"; };
 		CD5498211EE1965900748C22 /* TestFrameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestFrameVC.xib; sourceTree = "<group>"; };
-		CD54984B1EE19C5200748C22 /* CodingGuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodingGuideVC.h; sourceTree = "<group>"; };
-		CD54984C1EE19C5200748C22 /* CodingGuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodingGuideVC.m; sourceTree = "<group>"; };
 		CD5744A31ED9DD5C0014E833 /* DemoString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoString.h; sourceTree = "<group>"; };
 		CD5744A41ED9DD5C0014E833 /* DemoString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoString.m; sourceTree = "<group>"; };
 		CD5744BE1EDAAD710014E833 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -458,10 +446,6 @@
 		CD5745321EDADE510014E833 /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		CD5745351EDADE510014E833 /* BlogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogVC.h; sourceTree = "<group>"; };
 		CD5745361EDADE510014E833 /* BlogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogVC.m; sourceTree = "<group>"; };
-		CD5745391EDADE510014E833 /* BlogListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogListTableView.h; sourceTree = "<group>"; };
-		CD57453A1EDADE510014E833 /* BlogListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogListTableView.m; sourceTree = "<group>"; };
-		CD57453B1EDADE510014E833 /* BlogListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogListVC.h; sourceTree = "<group>"; };
-		CD57453C1EDADE510014E833 /* BlogListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogListVC.m; sourceTree = "<group>"; };
 		CD57453F1EDADE510014E833 /* CacheTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheTableView.h; sourceTree = "<group>"; };
 		CD5745401EDADE510014E833 /* CacheTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheTableView.m; sourceTree = "<group>"; };
 		CD5745411EDADE510014E833 /* RemoveCacheVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoveCacheVC.h; sourceTree = "<group>"; };
@@ -484,24 +468,11 @@
 		CD57455A1EDADE510014E833 /* HelpTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpTableView.m; sourceTree = "<group>"; };
 		CD57455B1EDADE510014E833 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
 		CD57455C1EDADE510014E833 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
-		CD57455F1EDADE510014E833 /* CustomIconTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIconTableView.h; sourceTree = "<group>"; };
-		CD5745601EDADE510014E833 /* CustomIconTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIconTableView.m; sourceTree = "<group>"; };
-		CD5745611EDADE510014E833 /* CustomIconVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIconVC.h; sourceTree = "<group>"; };
-		CD5745621EDADE510014E833 /* CustomIconVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIconVC.m; sourceTree = "<group>"; };
-		CD5745651EDADE510014E833 /* ProjectDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailVC.h; sourceTree = "<group>"; };
-		CD5745661EDADE510014E833 /* ProjectDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailVC.m; sourceTree = "<group>"; };
-		CD5745681EDADE510014E833 /* ProjectsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsTableView.h; sourceTree = "<group>"; };
-		CD5745691EDADE510014E833 /* ProjectsTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProjectsTableView.json; sourceTree = "<group>"; };
-		CD57456A1EDADE510014E833 /* ProjectsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsTableView.m; sourceTree = "<group>"; };
-		CD57456B1EDADE510014E833 /* ProjectsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsVC.h; sourceTree = "<group>"; };
-		CD57456C1EDADE510014E833 /* ProjectsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsVC.m; sourceTree = "<group>"; };
 		CD57456E1EDADE510014E833 /* SettingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableView.h; sourceTree = "<group>"; };
 		CD57456F1EDADE510014E833 /* SettingTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SettingTableView.json; sourceTree = "<group>"; };
 		CD5745701EDADE510014E833 /* SettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableView.m; sourceTree = "<group>"; };
 		CD5745711EDADE510014E833 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		CD5745721EDADE510014E833 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
-		CD5745751EDADE510014E833 /* ThemeColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorModel.h; sourceTree = "<group>"; };
-		CD5745761EDADE510014E833 /* ThemeColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorModel.m; sourceTree = "<group>"; };
 		CD5745771EDADE510014E833 /* ThemeColorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColorTableView.h; sourceTree = "<group>"; };
 		CD5745781EDADE510014E833 /* ThemeColorTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ThemeColorTableView.json; sourceTree = "<group>"; };
 		CD5745791EDADE510014E833 /* ThemeColorTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColorTableView.m; sourceTree = "<group>"; };
@@ -889,15 +860,6 @@
 			path = TestFrame;
 			sourceTree = "<group>";
 		};
-		CD54984A1EE19C1D00748C22 /* coding */ = {
-			isa = PBXGroup;
-			children = (
-				CD54984B1EE19C5200748C22 /* CodingGuideVC.h */,
-				CD54984C1EE19C5200748C22 /* CodingGuideVC.m */,
-			);
-			path = coding;
-			sourceTree = "<group>";
-		};
 		CD5744BC1EDAAD710014E833 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,158 +1028,116 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CD57452C1EDADE510014E833 /* setting */ = {
+		CD57452C1EDADE510014E833 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				CD60001E1F8D0A5A00771DE6 /* CustomStatusBar */,
-				CD54984A1EE19C1D00748C22 /* coding */,
-				CD57452D1EDADE510014E833 /* about */,
-				CD5745341EDADE510014E833 /* blog */,
-				CD5745381EDADE510014E833 /* bloglist */,
-				CD57453E1EDADE510014E833 /* cache */,
-				CD5745441EDADE510014E833 /* custom */,
-				CD5745481EDADE510014E833 /* feedback */,
-				CD57454C1EDADE510014E833 /* font */,
-				CD5745551EDADE510014E833 /* help */,
-				CD57455E1EDADE510014E833 /* icon */,
-				CD5745641EDADE510014E833 /* projects */,
-				CD57456E1EDADE510014E833 /* SettingTableView.h */,
-				CD57456F1EDADE510014E833 /* SettingTableView.json */,
-				CD5745701EDADE510014E833 /* SettingTableView.m */,
 				CD5745711EDADE510014E833 /* SettingVC.h */,
 				CD5745721EDADE510014E833 /* SettingVC.m */,
-				CD5745741EDADE510014E833 /* theme */,
+				CD57456E1EDADE510014E833 /* SettingTableView.h */,
+				CD5745701EDADE510014E833 /* SettingTableView.m */,
+				CD57456F1EDADE510014E833 /* SettingTableView.json */,
+				CD60001E1F8D0A5A00771DE6 /* CustomStatusBar */,
+				CD57452D1EDADE510014E833 /* About */,
+				CD5745341EDADE510014E833 /* Blog */,
+				CD57453E1EDADE510014E833 /* Cache */,
+				CD5745441EDADE510014E833 /* Custom */,
+				CD5745481EDADE510014E833 /* Feedback */,
+				CD57454C1EDADE510014E833 /* Font */,
+				CD5745551EDADE510014E833 /* Help */,
+				CD5745741EDADE510014E833 /* Theme */,
 			);
-			path = setting;
+			path = Setting;
 			sourceTree = "<group>";
 		};
-		CD57452D1EDADE510014E833 /* about */ = {
+		CD57452D1EDADE510014E833 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				CD57460D1EDBFEC60014E833 /* releaselog */,
-				CD57452E1EDADE510014E833 /* AboutTableView.h */,
-				CD57452F1EDADE510014E833 /* AboutTableView.json */,
-				CD5745301EDADE510014E833 /* AboutTableView.m */,
+				CD57460D1EDBFEC60014E833 /* ReleaseLog */,
 				CD5745311EDADE510014E833 /* AboutVC.h */,
 				CD5745321EDADE510014E833 /* AboutVC.m */,
+				CD57452E1EDADE510014E833 /* AboutTableView.h */,
+				CD5745301EDADE510014E833 /* AboutTableView.m */,
+				CD57452F1EDADE510014E833 /* AboutTableView.json */,
 			);
-			path = about;
+			path = About;
 			sourceTree = "<group>";
 		};
-		CD5745341EDADE510014E833 /* blog */ = {
+		CD5745341EDADE510014E833 /* Blog */ = {
 			isa = PBXGroup;
 			children = (
 				CD5745351EDADE510014E833 /* BlogVC.h */,
 				CD5745361EDADE510014E833 /* BlogVC.m */,
 			);
-			path = blog;
+			path = Blog;
 			sourceTree = "<group>";
 		};
-		CD5745381EDADE510014E833 /* bloglist */ = {
+		CD57453E1EDADE510014E833 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				CD5745391EDADE510014E833 /* BlogListTableView.h */,
-				CD57453A1EDADE510014E833 /* BlogListTableView.m */,
-				CD57453B1EDADE510014E833 /* BlogListVC.h */,
-				CD57453C1EDADE510014E833 /* BlogListVC.m */,
-			);
-			path = bloglist;
-			sourceTree = "<group>";
-		};
-		CD57453E1EDADE510014E833 /* cache */ = {
-			isa = PBXGroup;
-			children = (
-				CD57453F1EDADE510014E833 /* CacheTableView.h */,
-				CD5745401EDADE510014E833 /* CacheTableView.m */,
 				CD5745411EDADE510014E833 /* RemoveCacheVC.h */,
 				CD5745421EDADE510014E833 /* RemoveCacheVC.m */,
+				CD57453F1EDADE510014E833 /* CacheTableView.h */,
+				CD5745401EDADE510014E833 /* CacheTableView.m */,
 			);
-			path = cache;
+			path = Cache;
 			sourceTree = "<group>";
 		};
-		CD5745441EDADE510014E833 /* custom */ = {
+		CD5745441EDADE510014E833 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
 				CD5745451EDADE510014E833 /* CustomTableVC.h */,
 				CD5745461EDADE510014E833 /* CustomTableVC.m */,
 				CD5745471EDADE510014E833 /* CustomTableVC.xib */,
 			);
-			path = custom;
+			path = Custom;
 			sourceTree = "<group>";
 		};
-		CD5745481EDADE510014E833 /* feedback */ = {
+		CD5745481EDADE510014E833 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
 				CD5745491EDADE510014E833 /* FeedbackVC.h */,
 				CD57454A1EDADE510014E833 /* FeedbackVC.m */,
 			);
-			path = feedback;
+			path = Feedback;
 			sourceTree = "<group>";
 		};
-		CD57454C1EDADE510014E833 /* font */ = {
+		CD57454C1EDADE510014E833 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				CD5745521EDADE510014E833 /* FontVC.h */,
+				CD5745531EDADE510014E833 /* FontVC.m */,
 				CD57454D1EDADE510014E833 /* FontTableView.h */,
 				CD57454E1EDADE510014E833 /* FontTableView.m */,
 				CD57454F1EDADE510014E833 /* FontTableViewCell.h */,
 				CD5745501EDADE510014E833 /* FontTableViewCell.m */,
 				CD5745511EDADE510014E833 /* FontTableViewCell.xib */,
-				CD5745521EDADE510014E833 /* FontVC.h */,
-				CD5745531EDADE510014E833 /* FontVC.m */,
 			);
-			path = font;
+			path = Font;
 			sourceTree = "<group>";
 		};
-		CD5745551EDADE510014E833 /* help */ = {
+		CD5745551EDADE510014E833 /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				CD57455B1EDADE510014E833 /* HelpVC.h */,
+				CD57455C1EDADE510014E833 /* HelpVC.m */,
 				CD5745561EDADE510014E833 /* HelpDetailVC.h */,
 				CD5745571EDADE510014E833 /* HelpDetailVC.m */,
 				CD5745591EDADE510014E833 /* HelpTableView.h */,
 				CD57455A1EDADE510014E833 /* HelpTableView.m */,
-				CD57455B1EDADE510014E833 /* HelpVC.h */,
-				CD57455C1EDADE510014E833 /* HelpVC.m */,
 			);
-			path = help;
+			path = Help;
 			sourceTree = "<group>";
 		};
-		CD57455E1EDADE510014E833 /* icon */ = {
+		CD5745741EDADE510014E833 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				CD57455F1EDADE510014E833 /* CustomIconTableView.h */,
-				CD5745601EDADE510014E833 /* CustomIconTableView.m */,
-				CD5745611EDADE510014E833 /* CustomIconVC.h */,
-				CD5745621EDADE510014E833 /* CustomIconVC.m */,
-			);
-			path = icon;
-			sourceTree = "<group>";
-		};
-		CD5745641EDADE510014E833 /* projects */ = {
-			isa = PBXGroup;
-			children = (
-				CD5745651EDADE510014E833 /* ProjectDetailVC.h */,
-				CD5745661EDADE510014E833 /* ProjectDetailVC.m */,
-				CD5745681EDADE510014E833 /* ProjectsTableView.h */,
-				CD57456A1EDADE510014E833 /* ProjectsTableView.m */,
-				CD5745691EDADE510014E833 /* ProjectsTableView.json */,
-				CD57456B1EDADE510014E833 /* ProjectsVC.h */,
-				CD57456C1EDADE510014E833 /* ProjectsVC.m */,
-			);
-			path = projects;
-			sourceTree = "<group>";
-		};
-		CD5745741EDADE510014E833 /* theme */ = {
-			isa = PBXGroup;
-			children = (
-				CD5745751EDADE510014E833 /* ThemeColorModel.h */,
-				CD5745761EDADE510014E833 /* ThemeColorModel.m */,
+				CD57457A1EDADE510014E833 /* ThemeColorVC.h */,
+				CD57457B1EDADE510014E833 /* ThemeColorVC.m */,
 				CD5745771EDADE510014E833 /* ThemeColorTableView.h */,
 				CD5745781EDADE510014E833 /* ThemeColorTableView.json */,
 				CD5745791EDADE510014E833 /* ThemeColorTableView.m */,
-				CD57457A1EDADE510014E833 /* ThemeColorVC.h */,
-				CD57457B1EDADE510014E833 /* ThemeColorVC.m */,
 			);
-			path = theme;
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		CD57457D1EDADE510014E833 /* WebVC */ = {
@@ -1287,7 +1207,7 @@
 			path = AppModels;
 			sourceTree = "<group>";
 		};
-		CD57460D1EDBFEC60014E833 /* releaselog */ = {
+		CD57460D1EDBFEC60014E833 /* ReleaseLog */ = {
 			isa = PBXGroup;
 			children = (
 				CD57460E1EDBFED40014E833 /* ReleaseLogVC.h */,
@@ -1295,7 +1215,7 @@
 				CD5746131EDBFF030014E833 /* ReleaseLogTV.h */,
 				CD5746141EDBFF030014E833 /* ReleaseLogTV.m */,
 			);
-			path = releaselog;
+			path = ReleaseLog;
 			sourceTree = "<group>";
 		};
 		CD57461F1EDC6D7E0014E833 /* imgs */ = {
@@ -1542,7 +1462,7 @@
 			children = (
 				CD5745241EDADE510014E833 /* Home */,
 				CD57450D1EDADE510014E833 /* Debug */,
-				CD57452C1EDADE510014E833 /* setting */,
+				CD57452C1EDADE510014E833 /* Setting */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1891,7 +1811,6 @@
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */,
 				CD5745851EDADE510014E833 /* EmailVC.xib in Resources */,
-				CD5745AF1EDADE510014E833 /* ProjectsTableView.json in Resources */,
 				CD5744F91EDAAD710014E833 /* MJRefresh.bundle in Resources */,
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
 				CD149E251F0105D4007051CE /* Assets.xcassets in Resources */,
@@ -2064,12 +1983,10 @@
 				CD5745BA1EDADE510014E833 /* ThemeColorVC.m in Sources */,
 				CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */,
 				CDE94E941EC705C800596B93 /* GitHubLabelModel.m in Sources */,
-				CD54984D1EE19C5200748C22 /* CodingGuideVC.m in Sources */,
 				CD5744F71EDAAD710014E833 /* MJRefreshNormalHeader.m in Sources */,
 				CD88D1A71ECF30AD004FC692 /* BlogListModel.m in Sources */,
 				CD5744F41EDAAD710014E833 /* MJRefreshBackNormalFooter.m in Sources */,
 				CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */,
-				CD5745B71EDADE510014E833 /* ThemeColorModel.m in Sources */,
 				CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */,
 				CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */,
 				CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */,
@@ -2084,7 +2001,6 @@
 				CD5745A11EDADE510014E833 /* FontTableViewCell.m in Sources */,
 				CD5745B91EDADE510014E833 /* ThemeColorTableView.m in Sources */,
 				CD5745A31EDADE510014E833 /* FontVC.m in Sources */,
-				CD5745961EDADE510014E833 /* BlogListTableView.m in Sources */,
 				CD5745811EDADE510014E833 /* DebugTV.m in Sources */,
 				CD5745A51EDADE510014E833 /* HelpDetailVC.m in Sources */,
 				CDBB3B281EB9E80F00E8ED25 /* MJProperty.m in Sources */,
@@ -2099,7 +2015,6 @@
 				CD5745B41EDADE510014E833 /* SettingTableView.m in Sources */,
 				CDBB3B2B1EB9E80F00E8ED25 /* NSObject+MJClass.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
-				CD5745AD1EDADE510014E833 /* ProjectDetailVC.m in Sources */,
 				CD57459C1EDADE510014E833 /* CustomTableVC.m in Sources */,
 				CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */,
 				CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */,
@@ -2108,12 +2023,10 @@
 				CD57459A1EDADE510014E833 /* RemoveCacheVC.m in Sources */,
 				CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */,
 				CD5746181EDC188F0014E833 /* AppVersionInfoModel.m in Sources */,
-				CD5745AA1EDADE510014E833 /* CustomIconTableView.m in Sources */,
 				CD5745A71EDADE510014E833 /* HelpTableView.m in Sources */,
 				CD5744FA1EDAAD710014E833 /* MJRefreshConst.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CD5746151EDBFF030014E833 /* ReleaseLogTV.m in Sources */,
-				CD5745B01EDADE510014E833 /* ProjectsTableView.m in Sources */,
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
 				CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */,
@@ -2121,12 +2034,9 @@
 				CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */,
 				CD57459E1EDADE510014E833 /* FeedbackVC.m in Sources */,
 				CD5744EE1EDAAD710014E833 /* MJRefreshFooter.m in Sources */,
-				CD5745B11EDADE510014E833 /* ProjectsVC.m in Sources */,
-				CD5745971EDADE510014E833 /* BlogListVC.m in Sources */,
 				CD57458A1EDADE510014E833 /* DefaultViewController.m in Sources */,
 				CD5745991EDADE510014E833 /* CacheTableView.m in Sources */,
 				CD5745941EDADE510014E833 /* BlogVC.m in Sources */,
-				CD5745AB1EDADE510014E833 /* CustomIconVC.m in Sources */,
 				CD5745921EDADE510014E833 /* AboutVC.m in Sources */,
 				CD5744EF1EDAAD710014E833 /* MJRefreshHeader.m in Sources */,
 				CD5746111EDBFED40014E833 /* ReleaseLogVC.m in Sources */,

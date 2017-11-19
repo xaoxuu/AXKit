@@ -28,7 +28,7 @@
         theme.color.accent = [UIColor md_lime];
     }];
     // @xaoxuu: 激活服务
-    [ServicesLayer sharedInstance];
+//    [ServicesLayer sharedInstance];
     
     // 创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

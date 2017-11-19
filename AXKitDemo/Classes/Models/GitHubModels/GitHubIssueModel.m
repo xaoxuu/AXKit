@@ -7,6 +7,8 @@
 //
 
 #import "GitHubIssueModel.h"
+#import "GitHubLabelModel.h"
+
 
 @implementation GitHubIssueListModel
 

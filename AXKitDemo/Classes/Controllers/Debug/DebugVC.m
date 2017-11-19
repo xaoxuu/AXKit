@@ -42,9 +42,9 @@
 
 
 
-- (UITableView<BaseTableView> *)installTableView{
-    return [[DebugTV alloc] initWithFrame:self.view.bounds];
-}
+//- (UITableView<BaseTableView> *)installTableView{
+//    return [[DebugTV alloc] initWithFrame:self.view.bounds];
+//}
 
 
 

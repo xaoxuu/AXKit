@@ -141,28 +141,28 @@
 // @xaoxuu: module kit for content view
 - (void)baseModuleKitContentView{
     // @xaoxuu: table view
-    if ([self respondsToSelector:@selector(installTableView)]) {
-        if (@available(iOS 11.0, *)) {
-            // on newer versions
-            
-        } else {
-            // Fallback on earlier versions
-            [self.view addSubview:UIViewWithHeight(1)];
-        }
-        self.tableView = [self installTableView];
-        // init and add to superview
-        self.tableView.dataSource = self.tableView;
-        self.tableView.delegate = self.tableView;
-        self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        [self.tableView setAutoresizesSubviews:NO];
-        [self.view addSubview:self.tableView];
-        
-        // @xaoxuu: done
-        if ([self respondsToSelector:@selector(didTableViewInstalled:)]) {
-            [self didTableViewInstalled:self.tableView];
-        }
-        
-    }
+//    if ([self respondsToSelector:@selector(installTableView)]) {
+//        if (@available(iOS 11.0, *)) {
+//            // on newer versions
+//            
+//        } else {
+//            // Fallback on earlier versions
+//            [self.view addSubview:UIViewWithHeight(1)];
+//        }
+//        self.tableView = [self installTableView];
+//        // init and add to superview
+//        self.tableView.dataSource = self.tableView;
+//        self.tableView.delegate = self.tableView;
+//        self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//        [self.tableView setAutoresizesSubviews:NO];
+//        [self.view addSubview:self.tableView];
+//        
+//        // @xaoxuu: done
+//        if ([self respondsToSelector:@selector(didTableViewInstalled:)]) {
+//            [self didTableViewInstalled:self.tableView];
+//        }
+//        
+//    }
     
     
 }

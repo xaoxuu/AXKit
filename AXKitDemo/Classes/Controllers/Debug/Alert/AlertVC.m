@@ -26,9 +26,9 @@
 }
 
 
-- (UITableView<BaseTableView> *)installTableView{
-    return [[AlertTV alloc] initWithFrame:self.view.bounds];
-}
+//- (UITableView<BaseTableView> *)installTableView{
+//    return [[AlertTV alloc] initWithFrame:self.view.bounds];
+//}
 
 
 @end

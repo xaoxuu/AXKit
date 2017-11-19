@@ -1,13 +1,13 @@
 //
-//  TestTV.h
+//  SettingTableView.h
 //  AXKit
 //
-//  Created by xaoxuu on 13/06/2017.
+//  Created by xaoxuu on 03/05/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
 #import "TableKit.h"
 
-@interface TestTV : AXTableView
+@interface SettingTableView : AXTableView
 
 @end
