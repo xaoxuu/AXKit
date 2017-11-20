@@ -32,9 +32,12 @@ static UIView *customView;
     self.title = @"延迟函数";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = axThemeManager.color.groupTableViewBackground;
-    self.label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    CGRect frame = self.view.bounds;
+//    frame.origin.y += kTopBarHeight();
+    frame.size.height += kTopBarHeight();
+    self.label = [[UILabel alloc] initWithFrame:frame];
     self.label.text = @"0";
-    self.label.height -= kTabBarHeight;
+    self.label.height -= kTabBarHeight();
     self.label.textAlignment = NSTextAlignmentCenter;
     self.label.font = [UIFont boldSystemFontOfSize:180];
     [self.label adjustsFontSizeToFitWidth];
@@ -50,7 +53,7 @@ static UIView *customView;
     tips.font = [UIFont systemFontOfSize:14];
     tips.text = @"点击屏幕任意地方，计数会增加。某次点击结束后2秒内没有再次收到点击事件，就触发了事件A。（也就是说，每次点击都会延迟事件A的执行）\n\n事件A：计数器归0，状态栏弹出警告。";
     CGFloat height = [tips.text ax_textHeightWithFont:tips.font width:width];
-    tips.frame = CGRectMake(16, 80, width, height);
+    tips.frame = CGRectMake(16, 16, width, height);
     [tips sizeToFit];
     tips.textColor = [UIColor darkGrayColor];
     
@@ -63,9 +66,7 @@ static UIView *customView;
     
 }
 
-- (void)delayTest{
-    
-}
+
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
@@ -96,5 +97,7 @@ static UIView *customView;
     i = 0;
     self.label.text = NSStringFromInt(i);
 }
+
+
 
 @end

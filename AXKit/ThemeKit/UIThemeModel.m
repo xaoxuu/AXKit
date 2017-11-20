@@ -26,21 +26,35 @@ static CGFloat standardSize = 14.0f;
 static CGFloat smallSize = 12.0f;
 
 
+
 @implementation UIThemeModel
+
++ (instancetype)modelWithEmail:(NSString *)email name:(NSString *)name{
+    NSString *path = [self filePathWithEmail:email name:name];
+    return [self modelWithPath:path];
+}
 
 + (instancetype)modelWithPath:(NSString *)path{
     return [[self alloc] initWithPath:path];
 }
 
 - (instancetype)initWithPath:(NSString *)path{
-    if (self = [self init]) {
-        
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSAssert(data != nil, @"The theme file is missing.");
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSAssert(data != nil, @"The theme file is missing.");
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    return [self initWithDictionary:dictionary];
+}
+
++ (instancetype)modelWithDictionary:(NSDictionary *)dictionary{
+    return [[self alloc] initWithDictionary:dictionary];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary{
+    if (self = [super init]) {
         self.name = [dictionary stringValueForKey:@"name"];
         self.author = [dictionary stringValueForKey:@"author"];
         self.email = [dictionary stringValueForKey:@"email"];
+        self.price = [dictionary doubleValueForKey:@"price"];
         
         NSDictionary *color = [dictionary dictionaryValueForKey:@"color"];
         self.color = [UIThemeColorModel modelWithDictionary:color];
@@ -48,17 +62,16 @@ static CGFloat smallSize = 12.0f;
         self.font = [UIThemeFontModel modelWithDictionary:font];
         NSDictionary *icon = [dictionary dictionaryValueForKey:@"icon"];
         self.icon = [UIThemeIconModel modelWithDictionary:icon];
-        
     }
     return self;
 }
 
-- (void)saveCurrentTheme{
-    
+- (NSMutableDictionary *)dictionaryWithModel{
     NSMutableDictionary *jsonFile = [NSMutableDictionary dictionary];
     jsonFile[@"name"] = self.name;
     jsonFile[@"author"] = self.author;
     jsonFile[@"email"] = self.email;
+    jsonFile[@"price"] = @(self.price);
     
     NSMutableDictionary *colorDict = [NSMutableDictionary dictionary];
     colorDict[@"background"] = self.color.background.hexStringWithAlpha;
@@ -75,29 +88,44 @@ static CGFloat smallSize = 12.0f;
     
     NSMutableDictionary *iconDict = [NSMutableDictionary dictionary];
     jsonFile[@"icon"] = iconDict;
+    return jsonFile;
+}
+
+- (void)saveCurrentTheme{
     
-    NSData *data = [NSJSONSerialization dataWithJSONObject:jsonFile options:NSJSONWritingPrettyPrinted error:nil];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:[self dictionaryWithModel] options:NSJSONWritingPrettyPrinted error:nil];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    [UIThemeModel filePathWithKey:self.key].saveFile(jsonString);
+    [UIThemeModel filePathWithEmail:self.email name:self.name].saveFile(jsonString);
     
-    [NSUserDefaults ax_setString:self.key forKey:ThemeKitBundleIdentify];
+    [NSUserDefaults ax_setString:[UIThemeModel identifierWithEmail:self.email name:self.name] forKey:ThemeKitBundleIdentify];
     [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationThemeColorChanged object:nil];
 }
 
 - (void)deleteThemeFile{
-    [UIThemeModel filePathWithKey:self.key].removeFile();
+    [UIThemeModel filePathWithEmail:self.email name:self.name].removeFile();
 }
 
-+ (void)clearAllThemes{
-    [UIThemeModel filePathWithKey:@""].removeFile();
++ (void)deleteAllThemes{
+    [UIThemeModel filePathWithIdentifier:@""].removeFile();
 }
 
-- (NSString *)key{
-    return [NSString stringWithFormat:@"%@/%@.json", self.email, self.name];
++ (NSString *)identifierWithEmail:(NSString *)email name:(NSString *)name{
+    return [NSString stringWithFormat:@"%@/%@.json", email, name];
 }
-+ (NSString *)filePathWithKey:(NSString *)key{
-    return ThemeKitBundleIdentify.appendPathComponent(key).docPath;
++ (NSString *)filePathWithIdentifier:(NSString *)identifier{
+    return ThemeKitBundleIdentify.appendPathComponent(identifier).docPath;
+}
++ (NSString *)filePathWithEmail:(NSString *)email name:(NSString *)name{
+    return [self filePathWithIdentifier:[self identifierWithEmail:email name:name]];
+}
++ (NSArray<UIThemeModel *> *)getAllDownloadedThemes{
+    NSMutableArray<UIThemeModel *> *models = [NSMutableArray array];
+    [ThemeKitBundleIdentify.docPath.subpaths(@"json") enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIThemeModel *model = [UIThemeModel modelWithPath:obj];
+        [models addObject:model];
+    }];
+    return models;
 }
 
 @end
@@ -251,8 +279,7 @@ static CGFloat smallSize = 12.0f;
 }
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [self init]) {
-        
-        
+        self.dict = dictionary;
     }
     return self;
 }

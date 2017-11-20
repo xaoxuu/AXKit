@@ -22,7 +22,7 @@
 
 @optional
 - (UIImageView *)icon;
-
+- (void)updateIcon:(void (^)(UIImageView *imageView))icon;
 
 @end
 typedef UITableViewCell<AXTableViewCell> AXTableViewCellType;
@@ -34,5 +34,7 @@ typedef UITableViewCell<AXTableViewCell> AXTableViewCellType;
 
 // @xaoxuu: image
 @property (strong, readonly, nonatomic) UIImageView *icon;
+
+- (void)updateIcon:(void (^)(UIImageView *imageView))icon;
 
 @end

@@ -156,10 +156,10 @@
         [self.view addSubview:tableView];
         
         // @xaoxuu: done
-//        if ([self respondsToSelector:@selector(didTableViewInstalled:)]) {
-//            [self didTableViewInstalled:self.tableView];
-//        }
-//        
+        if ([self respondsToSelector:@selector(didTableViewInstalled:)]) {
+            [self didTableViewInstalled:tableView];
+        }
+        
     }
     
     
@@ -171,8 +171,8 @@
 #pragma mark - delegate
 
 - (CGRect)initContentFrame:(CGRect)frame{
-    frame.origin.y = kTopBarHeight;
-//    frame.size.height = kScreenH - kTopBarHeight;
+    frame.origin.y += kTopBarHeight();
+    frame.size.height = kScreenH - kTopBarHeight();
     return frame;
 }
 

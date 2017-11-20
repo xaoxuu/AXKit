@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "UIApplication+AXExtension.h"
+
 // @xaoxuu: layer
 #import "CALayer+AXWrapper.h"
 

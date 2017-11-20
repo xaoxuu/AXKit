@@ -85,12 +85,5 @@
 
 
 
-- (CGRect)initContentFrame:(CGRect)frame{
-    frame.origin.y = kTopBarHeight;
-    frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
-    return frame;
-}
-
-
 
 @end

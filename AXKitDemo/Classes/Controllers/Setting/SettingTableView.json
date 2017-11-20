@@ -16,29 +16,19 @@
                     "title":"关于",
                     "detail":"about axkit",
                     "icon":"setting_about",
-                    "target":"AboutVC",
-                    "cmd":""
+                    "target":"AboutVC"
                 },
                 {
                     "title":"博客",
                     "detail":"xaoxuu's blog",
                     "icon":"https://xaoxuu.com/images/avatar.png",
-                    "target":"BlogVC",
-                    "cmd":""
-                },
-                {
-                    "title":"博客2",
-                    "detail":"xaoxuu's blog",
-                    "icon":"https://xaoxuu.com/images/avatar.png",
-                    "target":"BlogListVC",
-                    "cmd":""
+                    "target":"BlogVC"
                 },
                 {
                     "title":"项目",
                     "detail":"xaoxuu's proj",
                     "icon":"setting_projects",
-                    "target":"ProjectsVC",
-                    "cmd":""
+                    "target":"ProjectsVC"
                 },
                 {
                     "title":"GitHub反馈",
@@ -58,15 +48,7 @@
                     "title":"帮助",
                     "detail":"",
                     "icon":"settingHelp",
-                    "target":"HelpVC",
-                    "cmd":""
-                },
-                {
-                    "title":"编码规范",
-                    "detail":"",
-                    "icon":"setting_coding",
-                    "target":"https://cocoa.xaoxuu.com",
-                    "cmd":""
+                    "target":"HelpVC"
                 }
             ]
         },
@@ -78,32 +60,34 @@
             "rowHeight":"44",
             "rows":[
                 {
-                    "title":"主题色",
-                    "detail":"app的主题色",
-                    "icon":"settingTheme",
-                    "target":"ThemeColorVC",
-                    "cmd":""
+                    "title":"主题商店",
+                    "detail":"获取在线主题",
+                    "icon":"setting_theme",
+                    "target":"ThemeStoreVC"
                 },
                 {
-                    "title":"字体",
-                    "detail":"app的字体",
+                    "title":"更改主题色",
+                    "detail":"",
+                    "icon":"alert_theme",
+                    "target":"ThemeColorVC"
+                },
+                {
+                    "title":"更改字体",
+                    "detail":"",
                     "icon":"setting_font",
-                    "target":"FontVC",
-                    "cmd":""
+                    "target":"FontVC"
                 },
                 {
-                    "title":"图标",
-                    "detail":"app的图标",
+                    "title":"更改图标",
+                    "detail":"",
                     "icon":"setting_icon",
-                    "target":"CustomIconVC",
-                    "cmd":""
+                    "target":"CustomIconVC"
                 },
                 {
                     "title":"自定义状态栏",
                     "detail":"",
                     "icon":"setting_custom_status_bar",
-                    "target":"CustomStatusBarVC",
-                    "cmd":""
+                    "target":"CustomStatusBarVC"
                 }
             ]
         },
@@ -140,7 +124,7 @@
                 {
                     "title":"清除缓存",
                     "detail":"",
-                    "icon":"settingTrash",
+                    "icon":"setting_trash",
                     "target":"RemoveCacheVC",
                     "cmd":"setting"
                 }

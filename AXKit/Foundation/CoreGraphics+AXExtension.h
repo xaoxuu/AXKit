@@ -20,15 +20,16 @@
 
 
 
-// @xaoxuu: 状态栏高度 = 20
-CG_EXTERN const CGFloat kStatusBarHeight;
+// @xaoxuu: 状态栏高度 = 20 or 44
+CG_EXTERN CGFloat kStatusBarHeight(void);
 // @xaoxuu: 导航栏高度 = 44
-CG_EXTERN const CGFloat kNavBarHeight;
-// @xaoxuu: 状态栏和导航栏总高度 = 64
-CG_EXTERN const CGFloat kTopBarHeight;
+CG_EXTERN CGFloat kNavBarHeight(void);
+// @xaoxuu: 状态栏和导航栏总高度 = 64 or 88
+CG_EXTERN CGFloat kTopBarHeight(void);
 // @xaoxuu: tabbar高度
-CG_EXTERN const CGFloat kTabBarHeight;
+CG_EXTERN CGFloat kTabBarHeight(void);
 
+CG_EXTERN CGFloat kSafeAreaBottomHeight(void);
 
 // @xaoxuu: 窄 margin = 4
 CG_EXTERN const CGFloat kMarginNarrow;

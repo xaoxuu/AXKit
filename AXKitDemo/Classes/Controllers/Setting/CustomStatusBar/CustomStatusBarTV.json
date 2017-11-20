@@ -74,55 +74,55 @@
                 },
                 {
                     "title":"md_red",
-                    "hex":"#F44336"
+                    "target":"#F44336"
                 },
                 {
                     "title":"md_pink",
-                    "hex":"#E91E63"
+                    "target":"#E91E63"
                 },
                 {
                     "title":"md_indigo",
-                    "hex":"#3F51B5"
+                    "target":"#3F51B5"
                 },
                 {
                     "title":"md_blue",
-                    "hex":"#2196F3"
+                    "target":"#2196F3"
                 },
                 {
                     "title":"md_lightBlue",
-                    "hex":"#03A9F4"
+                    "target":"#03A9F4"
                 },
                 {
                     "title":"md_cyan",
-                    "hex":"#00BCD4"
+                    "target":"#00BCD4"
                 },
                 {
                     "title":"md_green",
-                    "hex":"#4CAF50"
+                    "target":"#4CAF50"
                 },
                 {
                     "title":"md_lightGreen",
-                    "hex":"#8BC34A"
+                    "target":"#8BC34A"
                 },
                 {
                     "title":"md_lime",
-                    "hex":"#CDDC39"
+                    "target":"#CDDC39"
                 },
                 {
                     "title":"md_yellow",
-                    "hex":"#FFEB3B"
+                    "target":"#FFEB3B"
                 },
                 {
                     "title":"md_amber",
-                    "hex":"#FFC107"
+                    "target":"#FFC107"
                 },
                 {
                     "title":"md_orange",
-                    "hex":"#FF9800"
+                    "target":"#FF9800"
                 },
                 {
                     "title":"md_deepOrange",
-                    "hex":"#FF5722"
+                    "target":"#FF5722"
                 }
             ]
         },

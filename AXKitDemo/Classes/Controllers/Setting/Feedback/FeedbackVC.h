@@ -6,8 +6,8 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "BaseWebVC.h"
+#import "BaseViewController.h"
 
-@interface FeedbackVC : BaseWebVC
+@interface FeedbackVC : BaseViewController
 
 @end

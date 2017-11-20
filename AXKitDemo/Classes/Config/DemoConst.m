@@ -9,12 +9,19 @@
 #import "DemoConst.h"
 
 
+//CGFloat kStatusBarHeight(){
+//    static CGFloat height;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        UIView *bar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+//        height = bar.frame.size.height;
+//    });
+//    return height;
+//}
 
-const CGFloat kStatusBarHeight = 20;
-
-const CGFloat kNavBarHeight = 44;
-
-const CGFloat kTabBarHeight = 49;
+//const CGFloat kNavBarHeight = 44;
+//
+//const CGFloat kTabBarHeight = 49;
 
 const CGFloat kMargin4 = 4;
 
@@ -24,7 +31,7 @@ const CGFloat kMargin12 = 12;
 
 const CGFloat kMargin16 = 16;
 
-const CGFloat kButtonHeight = 46;
+const CGFloat kButtonHeight = 49;
 
 
 inline UIFont *kFontNormal(){

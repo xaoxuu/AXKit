@@ -11,7 +11,20 @@
 
 @implementation ThemeColorTableView
 
+- (void)ax_tableViewCellIcon:(void (^)(UIImage *))icon forRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+    
+    if ([model.target containsString:@"#"]) {
+        icon([UIImage imageWithColor:[UIColor colorWithHexString:model.target]]);
+    }
+}
 
+- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+    [axThemeManager updateCurrentTheme:^(UIThemeManager *theme) {
+        theme.color.theme = [UIColor colorWithHexString:model.target];
+    }];
+}
 
 //- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))completion{
 //    if (completion) {

@@ -213,7 +213,9 @@ static CGFloat defaultRowHeight = 44;
     // @xaoxuu: 自定义icon
     if ([self respondsToSelector:@selector(ax_tableViewCellIcon:forRowAtIndexPath:)] && [cell respondsToSelector:@selector(icon)]) {
         [self ax_tableViewCellIcon:^(UIImage *icon) {
-            cell.icon.image = icon;
+            [cell updateIcon:^(UIImageView *imageView) {
+                imageView.image = icon;
+            }];
         } forRowAtIndexPath:indexPath];
     }
     

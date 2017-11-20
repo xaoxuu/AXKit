@@ -150,11 +150,11 @@ static NSTimer *timer;
 
 - (void)ax_tableViewCellIcon:(void (^)(UIImage *))icon forRowAtIndexPath:(NSIndexPath *)indexPath{
     AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
-    if (indexPath.section == 3 && indexPath.row != 0) {
+    
+    if ([model.target containsString:@"#"]) {
         icon([UIImage imageWithColor:[UIColor colorWithHexString:model.target]]);
     }
 }
-
 
 
 

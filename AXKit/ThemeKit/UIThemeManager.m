@@ -28,12 +28,21 @@ UIThemeManager *axThemeManager = nil;
 
 - (void)applyThemeWithPath:(NSString *)path{
     axThemeManager = [UIThemeManager modelWithPath:path];
-    
     [self saveCurrentTheme];
-    
 }
-
-
+- (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name{
+    UIThemeModel *theme = [UIThemeModel modelWithEmail:email name:name];
+    [self applyTheme:theme];
+}
+- (void)applyTheme:(UIThemeModel *)theme{
+    axThemeManager.name = theme.name;
+    axThemeManager.author = theme.author;
+    axThemeManager.email = theme.email;
+    axThemeManager.color = theme.color;
+    axThemeManager.font = theme.font;
+    axThemeManager.icon = theme.icon;
+    [self saveCurrentTheme];
+}
 - (void)saveCurrentTheme{
     [super saveCurrentTheme];
     
@@ -92,7 +101,7 @@ UIThemeManager *axThemeManager = nil;
             if (!axThemeManager) {
                 NSString *path = [NSUserDefaults ax_readStringForKey:ThemeKitBundleIdentify];
                 if (path.length) {
-                    path = [UIThemeModel filePathWithKey:path];
+                    path = [UIThemeModel filePathWithIdentifier:path];
                 }
                 if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
                     [NSUserDefaults ax_removeObjectForKey:ThemeKitBundleIdentify];

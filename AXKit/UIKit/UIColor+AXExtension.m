@@ -17,6 +17,45 @@ inline void AppSetStatusBarBackgroundColor(UIColor *color){
 }
 
 
+static inline NSUInteger hexStrToInt(NSString *str) {
+    uint32_t result = 0;
+    sscanf([str UTF8String], "%X", &result);
+    return result;
+}
+
+static BOOL hexStrToRGBA(NSString *str,
+                         CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a) {
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    str = [[str stringByTrimmingCharactersInSet:set] lowercaseString];
+    if ([str hasPrefix:@"#"]) {
+        str = [str substringFromIndex:1];
+    } else if ([str hasPrefix:@"0x"]) {
+        str = [str substringFromIndex:2];
+    }
+    
+    NSUInteger length = [str length];
+    //         RGB            RGBA          RRGGBB        RRGGBBAA
+    if (length != 3 && length != 4 && length != 6 && length != 8) {
+        return NO;
+    }
+    
+    //RGB,RGBA,RRGGBB,RRGGBBAA
+    if (length < 5) {
+        *r = hexStrToInt([str substringWithRange:NSMakeRange(0, 1)]) / 255.0f;
+        *g = hexStrToInt([str substringWithRange:NSMakeRange(1, 1)]) / 255.0f;
+        *b = hexStrToInt([str substringWithRange:NSMakeRange(2, 1)]) / 255.0f;
+        if (length == 4)  *a = hexStrToInt([str substringWithRange:NSMakeRange(3, 1)]) / 255.0f;
+        else *a = 1;
+    } else {
+        *r = hexStrToInt([str substringWithRange:NSMakeRange(0, 2)]) / 255.0f;
+        *g = hexStrToInt([str substringWithRange:NSMakeRange(2, 2)]) / 255.0f;
+        *b = hexStrToInt([str substringWithRange:NSMakeRange(4, 2)]) / 255.0f;
+        if (length == 8) *a = hexStrToInt([str substringWithRange:NSMakeRange(6, 2)]) / 255.0f;
+        else *a = 1;
+    }
+    return YES;
+}
+
 
 static CGFloat static_color_ratio = 0.6;
 
@@ -75,52 +114,59 @@ static CGFloat static_color_ratio = 0.6;
             alpha:1.0];
 }
 // color with hex string
-+ (UIColor *)colorWithHexString:(NSString *)hexStr{
-    float red = 0.0,green = 0.0,blue = 0.0,alpha = 1.0;
-    if ([hexStr hasPrefix:@"#"]) {
-        hexStr = [hexStr substringFromIndex:1];
-        NSScanner *scanner = [NSScanner scannerWithString:hexStr];
-        unsigned long long hexValue = 0;
-        if ([scanner scanHexLongLong:&hexValue]) {
-            switch (hexStr.length) {
-                case 3:
-                    red = ((hexValue & 0xF00) >> 8) / 15.0;
-                    green = ((hexValue & 0x0F0) >> 4) / 15.0;
-                    blue = (hexValue & 0x00F) / 15.0;
-                    break;
-                case 4:
-                    red = ((hexValue & 0xF000) >> 12) / 15.0;
-                    green = ((hexValue & 0x0F00) >> 8) / 15.0;
-                    blue = ((hexValue & 0x00F0) >> 4) / 15.0;
-                    alpha = (hexValue & 0x000F) / 15.0;
-                    break;
-                case 6:
-                    red = ((hexValue & 0xFF0000) >> 16) / 255.0;
-                    green = ((hexValue & 0x00FF00) >> 8) / 255.0;
-                    blue = (hexValue & 0x0000FF) / 255.0;
-                    break;
-                case 8:
-                    red = ((hexValue & 0xFF000000) >> 24) / 255.0;
-                    green = ((hexValue & 0x00FF0000) >> 16) / 255.0;
-                    blue = ((hexValue & 0x0000FF00) >> 8) / 255.0;
-                    alpha = (hexValue & 0x000000FF) / 255.0;
-                    break;
-                default:
-                    NSLog(
-                          @"🔴func:%s :Invalid RGB string: '%@', number of characters after '#' should "@"be " @"either 3, 4, 6 or 8", __func__ ,
-                          hexStr);
-            }
-        } else {
-            NSLog(@"🔴func:%s Scan hex error", __func__);
-        }
-    } else {
-//        NSLog(@"🔴func:%s Invalid RGB string: '%@', missing '#' as prefix", __func__, hexStr);
-        return [self colorWithHexString:[NSString stringWithFormat:@"#%@",hexStr]];
-    }
-    
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-}
+//+ (UIColor *)colorWithHexString:(NSString *)hexStr{
+//    float red = 0.0,green = 0.0,blue = 0.0,alpha = 1.0;
+//    if ([hexStr hasPrefix:@"#"]) {
+//        hexStr = [hexStr substringFromIndex:1];
+//        NSScanner *scanner = [NSScanner scannerWithString:hexStr];
+//        unsigned long long hexValue = 0;
+//        if ([scanner scanHexLongLong:&hexValue]) {
+//            switch (hexStr.length) {
+//                case 3:
+//                    red = ((hexValue & 0xF00) >> 8) / 15.0;
+//                    green = ((hexValue & 0x0F0) >> 4) / 15.0;
+//                    blue = (hexValue & 0x00F) / 15.0;
+//                    break;
+//                case 4:
+//                    red = ((hexValue & 0xF000) >> 12) / 15.0;
+//                    green = ((hexValue & 0x0F00) >> 8) / 15.0;
+//                    blue = ((hexValue & 0x00F0) >> 4) / 15.0;
+//                    alpha = (hexValue & 0x000F) / 15.0;
+//                    break;
+//                case 6:
+//                    red = ((hexValue & 0xFF0000) >> 16) / 255.0;
+//                    green = ((hexValue & 0x00FF00) >> 8) / 255.0;
+//                    blue = (hexValue & 0x0000FF) / 255.0;
+//                    break;
+//                case 8:
+//                    red = ((hexValue & 0xFF000000) >> 24) / 255.0;
+//                    green = ((hexValue & 0x00FF0000) >> 16) / 255.0;
+//                    blue = ((hexValue & 0x0000FF00) >> 8) / 255.0;
+//                    alpha = (hexValue & 0x000000FF) / 255.0;
+//                    break;
+//                default:
+//                    NSLog(
+//                          @"🔴func:%s :Invalid RGB string: '%@', number of characters after '#' should "@"be " @"either 3, 4, 6 or 8", __func__ ,
+//                          hexStr);
+//            }
+//        } else {
+//            NSLog(@"🔴func:%s Scan hex error", __func__);
+//        }
+//    } else {
+////        NSLog(@"🔴func:%s Invalid RGB string: '%@', missing '#' as prefix", __func__, hexStr);
+//        return [self colorWithHexString:[NSString stringWithFormat:@"#%@",hexStr]];
+//    }
+//
+//    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+//}
 
++ (instancetype)colorWithHexString:(NSString *)hexStr {
+    CGFloat r, g, b, a;
+    if (hexStrToRGBA(hexStr, &r, &g, &b, &a)) {
+        return [UIColor colorWithRed:r green:g blue:b alpha:a];
+    }
+    return nil;
+}
 
 - (CGFloat)redValue{
     CGFloat red;

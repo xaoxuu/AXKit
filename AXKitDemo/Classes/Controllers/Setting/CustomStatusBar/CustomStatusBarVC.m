@@ -26,10 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (UITableView<BaseTableView> *)installTableView{
-//    return [[CustomStatusBarTV alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight)];
-//}
-
+- (AXTableViewType *)installTableView{
+    return [[CustomStatusBarTV alloc] initWithFrame:self.view.bounds];
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

@@ -47,7 +47,6 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
 @implementation UIApplication (AXExtension)
 
 
-
 #pragma mark - 跳转
 
 /**

@@ -7,7 +7,7 @@
 //
 
 #import "AXTableViewCell.h"
-
+#import "UIThemeManager.h"
 
 static CGFloat margin = 8;
 static CGFloat cellHeight = 44;
@@ -68,16 +68,18 @@ static CGFloat getAccessoryWidth(UITableViewCellAccessoryType type){
     
     
     _icon = [[UIImageView alloc] initWithFrame:CGRectMake(2 * margin, margin, cellHeight - 2 * margin, cellHeight - 2 * margin)];
+    _icon.layer.masksToBounds = YES;
+    _icon.layer.cornerRadius = 8;
     [self.contentView addSubview:self.icon];
     
     self.title = [[UILabel alloc] initWithFrame:CGRectMake(cellHeight, 0, cellWidth - 2*cellHeight, cellHeight)];
     self.title.textAlignment = NSTextAlignmentLeft;
-    self.title.font = [UIFont systemFontOfSize:15];
+    self.title.font = [UIThemeManager sharedInstance].font.customNormal;
     [self.contentView addSubview:self.title];
     
     self.detail = [[UILabel alloc] initWithFrame:CGRectMake(cellWidth - cellHeight, 0, cellHeight, cellHeight)];
     self.detail.textAlignment = NSTextAlignmentRight;
-    self.detail.font = [UIFont systemFontOfSize:13];
+    self.detail.font = [UIThemeManager sharedInstance].font.customSmall;
     self.detail.textColor = [UIColor darkGrayColor];
     [self.contentView addSubview:self.detail];
     NSLog(@"{%f,%f}", self.frame.size.width, self.frame.size.height);
@@ -159,6 +161,11 @@ static CGFloat getAccessoryWidth(UITableViewCellAccessoryType type){
     return image;
 }
 
-
+- (void)updateIcon:(void (^)(UIImageView *))icon{
+    if (icon) {
+        icon(self.icon);
+    }
+    [self updateFrame];
+}
 
 @end

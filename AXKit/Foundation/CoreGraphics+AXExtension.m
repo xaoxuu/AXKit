@@ -7,14 +7,38 @@
 //
 
 #import "CoreGraphics+AXExtension.h"
-
+#import "UIDevice+AXExtension.h"
 
 #pragma mark - 常量
 
-const CGFloat kStatusBarHeight = 20;
-const CGFloat kNavBarHeight = 44;
-const CGFloat kTopBarHeight = 64;
-const CGFloat kTabBarHeight = 49;
+inline CGFloat kStatusBarHeight(void){
+    static CGFloat height;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UIView *bar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+        height = bar.frame.size.height;
+    });
+    return height;
+}
+inline CGFloat kNavBarHeight(void){
+    return 44;
+}
+inline CGFloat kTopBarHeight(void){
+    return kStatusBarHeight() + 44;
+}
+
+inline CGFloat kTabBarHeight(void){
+    return 49 + kSafeAreaBottomHeight();
+}
+
+
+inline CGFloat kSafeAreaBottomHeight(void){
+    if ([UIDevice currentDevice].isIphoneX) {
+        return 34;
+    } else {
+        return 0;
+    }
+}
 
 const CGFloat kMarginNarrow = 4;
 const CGFloat kMarginNormal = 8;

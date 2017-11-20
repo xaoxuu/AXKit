@@ -3,7 +3,7 @@ platform :ios, '8.0'
 target 'AXKitDemo' do
 
 pod 'YYKit'
-
+pod 'FMDB'
 pod 'AXCameraKit'
 
 pod 'SCLAlertView-Objective-C'

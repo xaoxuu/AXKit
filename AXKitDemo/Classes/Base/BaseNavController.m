@@ -22,17 +22,7 @@
     [self.navigationBar ax_hideSeparator];
     [self.navigationBar.layer ax_shadow:LayerShadowDownNormal];
     
-
-    self.navigationBar.barTintColor = axThemeManager.color.theme;
-    if (axThemeManager.color.theme.isLightColor) {
-        self.navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.6);
-        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
-        
-    } else {
-        self.navigationBar.tintColor = [UIColor whiteColor];
-        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        
-    }
+    [self updateTheme];
     
     
     if (@available(iOS 11.0, *)) {
@@ -42,6 +32,8 @@
         // Fallback on earlier versions
         
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationThemeColorChanged object:nil];
     
 }
 
@@ -60,6 +52,20 @@
 }
 */
 
+
+- (void)updateTheme{
+    self.navigationBar.translucent = NO;
+    self.navigationBar.barTintColor = axThemeManager.color.theme;
+    if (axThemeManager.color.theme.isLightColor) {
+        self.navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.6);
+        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
+        
+    } else {
+        self.navigationBar.tintColor = [UIColor whiteColor];
+        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+    }
+}
 
 
 

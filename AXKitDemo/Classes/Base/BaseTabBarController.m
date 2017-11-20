@@ -20,7 +20,7 @@
     
     [self.tabBar.layer ax_shadow:LayerShadowUpLight];
     
-    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationThemeColorChanged object:nil];
     
 }
 
@@ -34,13 +34,18 @@
     [self.tabBar ax_hideSeparator];
 
     
+    [self updateTheme];
+   
     
+}
+
+- (void)updateTheme{
+    self.tabBar.translucent = NO;
     if (axThemeManager.color.theme.isLightColor) {
         self.tabBar.tintColor = axThemeManager.color.theme.darkRatio(0.3);
     } else {
         self.tabBar.tintColor = axThemeManager.color.theme;
     }
-    
 }
 
 - (NSString *)configurationFilePath{

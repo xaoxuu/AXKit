@@ -27,6 +27,8 @@ extern UIThemeManager *axThemeManager;
  @param path 主题文件路径
  */
 - (void)applyThemeWithPath:(NSString *)path;
+- (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name;
+- (void)applyTheme:(UIThemeModel *)theme;
 
 - (void)updateCurrentTheme:(void (^)(UIThemeManager *theme))update;
 

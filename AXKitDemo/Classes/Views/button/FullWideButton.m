@@ -14,10 +14,10 @@ static UIActivityIndicatorView *indicator;
 
 
 - (void)setupButton{
-    self.frame = CGRectMake(0, 0, kScreenW, kTabBarHeight);
-    
-    
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    [super setupButton];
+    self.frame = CGRectMake(0, 0, kScreenW, kTabBarHeight());
+    self.contentEdgeInsets = UIEdgeInsetsMake(0, 0, kSafeAreaBottomHeight(), 0);
+//    self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     
     self.backgroundColor = [UIColor whiteColor];
     

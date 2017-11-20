@@ -29,8 +29,8 @@
 
 
 - (CGRect)initContentFrame:(CGRect)frame{
-    frame.origin.y = kTopBarHeight;
-    frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
+    frame.origin.y = kTopBarHeight();
+    frame.size.height = kScreenH - kTopBarHeight() - kTabBarHeight();
     return frame;
 }
 
@@ -62,7 +62,7 @@
 
 - (AXTableViewType *)installTableView{
     CGRect frame = self.view.bounds;
-    frame.size.height += kTopBarHeight;
+//    frame.size.height += kTopBarHeight();
     return [[SettingTableView alloc] initWithFrame:frame];
 }
 

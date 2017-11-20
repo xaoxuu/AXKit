@@ -38,6 +38,11 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 @property (copy, nonatomic) NSString *email;
 
 /**
+ theme's price
+ */
+@property (assign, nonatomic) CGFloat price;
+
+/**
  theme of color
  */
 @property (strong, nonatomic) UIThemeColorModel *color;
@@ -53,6 +58,8 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 @property (strong, nonatomic) UIThemeIconModel *icon;
 
 + (instancetype)modelWithPath:(NSString *)path;
++ (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
++ (instancetype)modelWithEmail:(NSString *)email name:(NSString *)name;
 
 
 /**
@@ -62,10 +69,13 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 
 
 - (void)deleteThemeFile;
-+ (void)clearAllThemes;
 
-- (NSString *)key;
-+ (NSString *)filePathWithKey:(NSString *)key;
+
++ (void)deleteAllThemes;
++ (NSString *)identifierWithEmail:(NSString *)email name:(NSString *)name;
++ (NSString *)filePathWithIdentifier:(NSString *)identifier;
++ (NSString *)filePathWithEmail:(NSString *)email name:(NSString *)name;
++ (NSArray<UIThemeModel *> *)getAllDownloadedThemes;
 
 @end
 
@@ -141,6 +151,8 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 
 @interface UIThemeIconModel : NSObject
 
+// @xaoxuu: json dictionary
+@property (strong, nonatomic) NSDictionary *dict;
 
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
 

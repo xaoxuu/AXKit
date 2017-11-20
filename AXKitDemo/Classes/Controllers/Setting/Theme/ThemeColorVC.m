@@ -30,9 +30,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-//- (UITableView<BaseTableView> *)installTableView{
-//    return [[ThemeColorTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-kTopBarHeight)];
-//}
+- (AXTableViewType *)installTableView{
+    return [[ThemeColorTableView alloc] initWithFrame:self.view.bounds];
+}
 
 @end

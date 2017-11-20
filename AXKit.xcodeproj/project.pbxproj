@@ -124,7 +124,7 @@
 		CD5745811EDADE510014E833 /* DebugTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745101EDADE510014E833 /* DebugTV.m */; };
 		CD5745821EDADE510014E833 /* DebugVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745121EDADE510014E833 /* DebugVC.m */; };
 		CD5745841EDADE510014E833 /* EmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745161EDADE510014E833 /* EmailVC.m */; };
-		CD5745851EDADE510014E833 /* EmailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5745171EDADE510014E833 /* EmailVC.xib */; };
+		CD5745851EDADE510014E833 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5745171EDADE510014E833 /* FeedbackVC.xib */; };
 		CD5745861EDADE510014E833 /* HitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57451A1EDADE510014E833 /* HitTestVC.m */; };
 		CD5745871EDADE510014E833 /* HitTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD57451B1EDADE510014E833 /* HitTestVC.xib */; };
 		CD5745881EDADE510014E833 /* ResizeableImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57451E1EDADE510014E833 /* ResizeableImageVC.m */; };
@@ -175,6 +175,24 @@
 		CD616C981FB99F8A00E38244 /* AXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD616C961FB99F8A00E38244 /* AXTabBarController.m */; };
 		CD616C9C1FB9A9D700E38244 /* BaseTabBarController.json in Resources */ = {isa = PBXBuildFile; fileRef = CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */; };
 		CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */; };
+		CD63A4061FC1925D00581AF6 /* ThemeStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4041FC1925D00581AF6 /* ThemeStoreVC.m */; };
+		CD63A4071FC1925D00581AF6 /* ThemeStoreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD63A4051FC1925D00581AF6 /* ThemeStoreVC.xib */; };
+		CD63A40A1FC1944400581AF6 /* ThemeCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4091FC1944400581AF6 /* ThemeCollectionModel.m */; };
+		CD63A40E1FC1957A00581AF6 /* ThemeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A40C1FC1957A00581AF6 /* ThemeCollectionViewCell.m */; };
+		CD63A40F1FC1957A00581AF6 /* ThemeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD63A40D1FC1957A00581AF6 /* ThemeCollectionViewCell.xib */; };
+		CD63A4161FC1A53900581AF6 /* ThemeCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4141FC1A53900581AF6 /* ThemeCollectionReusableView.m */; };
+		CD63A4171FC1A53900581AF6 /* ThemeCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD63A4151FC1A53900581AF6 /* ThemeCollectionReusableView.xib */; };
+		CD63A41C1FC1AA3400581AF6 /* ThemeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A41A1FC1AA3400581AF6 /* ThemeDetailVC.m */; };
+		CD63A41D1FC1AA3400581AF6 /* ThemeDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD63A41B1FC1AA3400581AF6 /* ThemeDetailVC.xib */; };
+		CD63A4221FC1B80700581AF6 /* ThemeManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4201FC1B80700581AF6 /* ThemeManageVC.m */; };
+		CD63A4231FC1B80700581AF6 /* ThemeManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD63A4211FC1B80700581AF6 /* ThemeManageVC.xib */; };
+		CD63A4261FC2B9FB00581AF6 /* ThemeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4251FC2B9FB00581AF6 /* ThemeCollectionView.m */; };
+		CD63A42D1FC2BC4E00581AF6 /* FMDatabase+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A42B1FC2BC4D00581AF6 /* FMDatabase+AXExtension.m */; };
+		CD63A4311FC2CA0E00581AF6 /* ThemePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4301FC2CA0E00581AF6 /* ThemePreviewView.m */; };
+		CD63A4331FC2CA1700581AF6 /* ThemePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD63A4321FC2CA1700581AF6 /* ThemePreviewView.xib */; };
+		CD63A4361FC2CCDE00581AF6 /* ThemeDetailTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4351FC2CCDE00581AF6 /* ThemeDetailTV.m */; };
+		CD63A4391FC2ED5B00581AF6 /* UIDevice+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD63A43A1FC2ED5B00581AF6 /* UIDevice+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */; };
 		CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD6476D31FC03D0A00B1E68A /* NSDictionary+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */; };
 		CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */; };
@@ -436,7 +454,7 @@
 		CD5745121EDADE510014E833 /* DebugVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugVC.m; sourceTree = "<group>"; };
 		CD5745151EDADE510014E833 /* EmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailVC.h; sourceTree = "<group>"; };
 		CD5745161EDADE510014E833 /* EmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailVC.m; sourceTree = "<group>"; };
-		CD5745171EDADE510014E833 /* EmailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailVC.xib; sourceTree = "<group>"; };
+		CD5745171EDADE510014E833 /* FeedbackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
 		CD5745191EDADE510014E833 /* HitTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitTestVC.h; sourceTree = "<group>"; };
 		CD57451A1EDADE510014E833 /* HitTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HitTestVC.m; sourceTree = "<group>"; };
 		CD57451B1EDADE510014E833 /* HitTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HitTestVC.xib; sourceTree = "<group>"; };
@@ -520,6 +538,34 @@
 		CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BaseTabBarController.json; sourceTree = "<group>"; };
 		CD63A3F91FC174DB00581AF6 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		CD63A4031FC1925D00581AF6 /* ThemeStoreVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeStoreVC.h; sourceTree = "<group>"; };
+		CD63A4041FC1925D00581AF6 /* ThemeStoreVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeStoreVC.m; sourceTree = "<group>"; };
+		CD63A4051FC1925D00581AF6 /* ThemeStoreVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeStoreVC.xib; sourceTree = "<group>"; };
+		CD63A4081FC1944400581AF6 /* ThemeCollectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeCollectionModel.h; sourceTree = "<group>"; };
+		CD63A4091FC1944400581AF6 /* ThemeCollectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeCollectionModel.m; sourceTree = "<group>"; };
+		CD63A40B1FC1957A00581AF6 /* ThemeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeCollectionViewCell.h; sourceTree = "<group>"; };
+		CD63A40C1FC1957A00581AF6 /* ThemeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeCollectionViewCell.m; sourceTree = "<group>"; };
+		CD63A40D1FC1957A00581AF6 /* ThemeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCollectionViewCell.xib; sourceTree = "<group>"; };
+		CD63A4131FC1A53900581AF6 /* ThemeCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeCollectionReusableView.h; sourceTree = "<group>"; };
+		CD63A4141FC1A53900581AF6 /* ThemeCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeCollectionReusableView.m; sourceTree = "<group>"; };
+		CD63A4151FC1A53900581AF6 /* ThemeCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCollectionReusableView.xib; sourceTree = "<group>"; };
+		CD63A4191FC1AA3400581AF6 /* ThemeDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeDetailVC.h; sourceTree = "<group>"; };
+		CD63A41A1FC1AA3400581AF6 /* ThemeDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeDetailVC.m; sourceTree = "<group>"; };
+		CD63A41B1FC1AA3400581AF6 /* ThemeDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeDetailVC.xib; sourceTree = "<group>"; };
+		CD63A41F1FC1B80700581AF6 /* ThemeManageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeManageVC.h; sourceTree = "<group>"; };
+		CD63A4201FC1B80700581AF6 /* ThemeManageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeManageVC.m; sourceTree = "<group>"; };
+		CD63A4211FC1B80700581AF6 /* ThemeManageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeManageVC.xib; sourceTree = "<group>"; };
+		CD63A4241FC2B9FB00581AF6 /* ThemeCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeCollectionView.h; sourceTree = "<group>"; };
+		CD63A4251FC2B9FB00581AF6 /* ThemeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeCollectionView.m; sourceTree = "<group>"; };
+		CD63A42B1FC2BC4D00581AF6 /* FMDatabase+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+AXExtension.m"; sourceTree = "<group>"; };
+		CD63A42C1FC2BC4D00581AF6 /* FMDatabase+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+AXExtension.h"; sourceTree = "<group>"; };
+		CD63A42F1FC2CA0E00581AF6 /* ThemePreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemePreviewView.h; sourceTree = "<group>"; };
+		CD63A4301FC2CA0E00581AF6 /* ThemePreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemePreviewView.m; sourceTree = "<group>"; };
+		CD63A4321FC2CA1700581AF6 /* ThemePreviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePreviewView.xib; sourceTree = "<group>"; };
+		CD63A4341FC2CCDE00581AF6 /* ThemeDetailTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeDetailTV.h; sourceTree = "<group>"; };
+		CD63A4351FC2CCDE00581AF6 /* ThemeDetailTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeDetailTV.m; sourceTree = "<group>"; };
+		CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+AXExtension.h"; sourceTree = "<group>"; };
+		CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AXExtension.m"; sourceTree = "<group>"; };
 		CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AXExtension.h"; sourceTree = "<group>"; };
 		CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AXExtension.m"; sourceTree = "<group>"; };
 		CD74F9F11F9ADEB000EBD3B5 /* CooldownVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CooldownVC.h; sourceTree = "<group>"; };
@@ -1024,7 +1070,6 @@
 			children = (
 				CD5745151EDADE510014E833 /* EmailVC.h */,
 				CD5745161EDADE510014E833 /* EmailVC.m */,
-				CD5745171EDADE510014E833 /* EmailVC.xib */,
 			);
 			path = Email;
 			sourceTree = "<group>";
@@ -1076,6 +1121,7 @@
 				CD57456E1EDADE510014E833 /* SettingTableView.h */,
 				CD5745701EDADE510014E833 /* SettingTableView.m */,
 				CD57456F1EDADE510014E833 /* SettingTableView.json */,
+				CD63A3FC1FC18F9100581AF6 /* ThemeStore */,
 				CD60001E1F8D0A5A00771DE6 /* CustomStatusBar */,
 				CD57452D1EDADE510014E833 /* About */,
 				CD5745341EDADE510014E833 /* Blog */,
@@ -1137,6 +1183,7 @@
 			children = (
 				CD5745491EDADE510014E833 /* FeedbackVC.h */,
 				CD57454A1EDADE510014E833 /* FeedbackVC.m */,
+				CD5745171EDADE510014E833 /* FeedbackVC.xib */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -1276,6 +1323,61 @@
 				CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */,
 			);
 			path = CustomStatusBar;
+			sourceTree = "<group>";
+		};
+		CD63A3FC1FC18F9100581AF6 /* ThemeStore */ = {
+			isa = PBXGroup;
+			children = (
+				CD63A4031FC1925D00581AF6 /* ThemeStoreVC.h */,
+				CD63A4041FC1925D00581AF6 /* ThemeStoreVC.m */,
+				CD63A4051FC1925D00581AF6 /* ThemeStoreVC.xib */,
+				CD63A42E1FC2C78900581AF6 /* CollectionView */,
+				CD63A41E1FC1B7F400581AF6 /* ThemeManage */,
+				CD63A4181FC1A9E800581AF6 /* ThemeDetail */,
+			);
+			path = ThemeStore;
+			sourceTree = "<group>";
+		};
+		CD63A4181FC1A9E800581AF6 /* ThemeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CD63A4191FC1AA3400581AF6 /* ThemeDetailVC.h */,
+				CD63A41A1FC1AA3400581AF6 /* ThemeDetailVC.m */,
+				CD63A41B1FC1AA3400581AF6 /* ThemeDetailVC.xib */,
+				CD63A4341FC2CCDE00581AF6 /* ThemeDetailTV.h */,
+				CD63A4351FC2CCDE00581AF6 /* ThemeDetailTV.m */,
+				CD63A42F1FC2CA0E00581AF6 /* ThemePreviewView.h */,
+				CD63A4301FC2CA0E00581AF6 /* ThemePreviewView.m */,
+				CD63A4321FC2CA1700581AF6 /* ThemePreviewView.xib */,
+			);
+			path = ThemeDetail;
+			sourceTree = "<group>";
+		};
+		CD63A41E1FC1B7F400581AF6 /* ThemeManage */ = {
+			isa = PBXGroup;
+			children = (
+				CD63A41F1FC1B80700581AF6 /* ThemeManageVC.h */,
+				CD63A4201FC1B80700581AF6 /* ThemeManageVC.m */,
+				CD63A4211FC1B80700581AF6 /* ThemeManageVC.xib */,
+			);
+			path = ThemeManage;
+			sourceTree = "<group>";
+		};
+		CD63A42E1FC2C78900581AF6 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CD63A4241FC2B9FB00581AF6 /* ThemeCollectionView.h */,
+				CD63A4251FC2B9FB00581AF6 /* ThemeCollectionView.m */,
+				CD63A4081FC1944400581AF6 /* ThemeCollectionModel.h */,
+				CD63A4091FC1944400581AF6 /* ThemeCollectionModel.m */,
+				CD63A40B1FC1957A00581AF6 /* ThemeCollectionViewCell.h */,
+				CD63A40C1FC1957A00581AF6 /* ThemeCollectionViewCell.m */,
+				CD63A40D1FC1957A00581AF6 /* ThemeCollectionViewCell.xib */,
+				CD63A4131FC1A53900581AF6 /* ThemeCollectionReusableView.h */,
+				CD63A4141FC1A53900581AF6 /* ThemeCollectionReusableView.m */,
+				CD63A4151FC1A53900581AF6 /* ThemeCollectionReusableView.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		CD74F9F01F9ADE9A00EBD3B5 /* Cooldown */ = {
@@ -1444,6 +1546,10 @@
 				CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */,
 				CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */,
 				CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */,
+				CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */,
+				CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */,
+				CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */,
+				CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1453,8 +1559,6 @@
 			children = (
 				CD5498161EE15E1300748C22 /* AXKitUIHeader.h */,
 				CD5498171EE15E1300748C22 /* AXKitUIHeader.m */,
-				CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */,
-				CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */,
 				CD09FCC11EE0599600F3D928 /* Layer */,
 				CD5746041EDAEA7A0014E833 /* Bar */,
 				CD77FE6A1EBEE685001A5787 /* UIColor */,
@@ -1641,6 +1745,8 @@
 				CD23DCE11EC36DE7006E331B /* AXProgressHUD.m */,
 				CD63A3F91FC174DB00581AF6 /* NetworkManager.h */,
 				CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */,
+				CD63A42C1FC2BC4D00581AF6 /* FMDatabase+AXExtension.h */,
+				CD63A42B1FC2BC4D00581AF6 /* FMDatabase+AXExtension.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1712,6 +1818,7 @@
 				CD41542A1FC0218600D4ED2C /* FeedbackKit.h in Headers */,
 				CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */,
 				CD4154451FC0335C00D4ED2C /* UIThemeModel.h in Headers */,
+				CD63A4391FC2ED5B00581AF6 /* UIDevice+AXExtension.h in Headers */,
 				CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */,
 				CD5746021EDAE9B80014E833 /* _AXKitHelpServices.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
@@ -1828,21 +1935,26 @@
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* footer_rhesis.json in Resources */,
 				CD5745A21EDADE510014E833 /* FontTableViewCell.xib in Resources */,
+				CD63A40F1FC1957A00581AF6 /* ThemeCollectionViewCell.xib in Resources */,
 				CDE94E9C1EC709D700596B93 /* ghinfo.json in Resources */,
 				CD57459D1EDADE510014E833 /* CustomTableVC.xib in Resources */,
 				CD57458B1EDADE510014E833 /* DefaultViewController.xib in Resources */,
+				CD63A4331FC2CA1700581AF6 /* ThemePreviewView.xib in Resources */,
 				CD5745B31EDADE510014E833 /* SettingTableView.json in Resources */,
 				CD79DFA31EEF918000408BAD /* AlertTV.json in Resources */,
 				CD149E261F0105D4007051CE /* Setting.xcassets in Resources */,
 				CD0645AC1EB3AA78007FBF06 /* Localizable.xlsx in Resources */,
+				CD63A4071FC1925D00581AF6 /* ThemeStoreVC.xib in Resources */,
 				CD616C9C1FB9A9D700E38244 /* BaseTabBarController.json in Resources */,
+				CD63A4231FC1B80700581AF6 /* ThemeManageVC.xib in Resources */,
 				CD5745B81EDADE510014E833 /* ThemeColorTableView.json in Resources */,
+				CD63A41D1FC1AA3400581AF6 /* ThemeDetailVC.xib in Resources */,
 				CD5745891EDADE510014E833 /* ResizeableImageVC.xib in Resources */,
 				CD5745801EDADE510014E833 /* DebugTV.json in Resources */,
 				CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */,
-				CD5745851EDADE510014E833 /* EmailVC.xib in Resources */,
+				CD5745851EDADE510014E833 /* FeedbackVC.xib in Resources */,
 				CD5744F91EDAAD710014E833 /* MJRefresh.bundle in Resources */,
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
 				CD149E251F0105D4007051CE /* Assets.xcassets in Resources */,
@@ -1850,6 +1962,7 @@
 				CD5745901EDADE510014E833 /* AboutTableView.json in Resources */,
 				CD149E271F0105D4007051CE /* tmp.xcassets in Resources */,
 				CD5746211EDC6DA10014E833 /* header.gif in Resources */,
+				CD63A4171FC1A53900581AF6 /* ThemeCollectionReusableView.xib in Resources */,
 				CD5498231EE1965900748C22 /* TestFrameVC.xib in Resources */,
 				CD79DF9A1EEF900400408BAD /* ShadowVC.xib in Resources */,
 			);
@@ -1977,8 +2090,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5744FC1EDAAD710014E833 /* UIScrollView+MJExtension.m in Sources */,
+				CD63A4161FC1A53900581AF6 /* ThemeCollectionReusableView.m in Sources */,
 				CDBB3B271EB9E80F00E8ED25 /* MJFoundation.m in Sources */,
 				CD57461E1EDC526C0014E833 /* GitHubReleaseModel.m in Sources */,
+				CD63A4061FC1925D00581AF6 /* ThemeStoreVC.m in Sources */,
 				CD5744F31EDAAD710014E833 /* MJRefreshBackGifFooter.m in Sources */,
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */,
@@ -1986,6 +2101,7 @@
 				CD5745881EDADE510014E833 /* ResizeableImageVC.m in Sources */,
 				CDC1A7851ECFDC63003AAA63 /* BaseLabel.m in Sources */,
 				CDF18CCC1EB884F1004B4794 /* BaseTabBarController.m in Sources */,
+				CD63A42D1FC2BC4E00581AF6 /* FMDatabase+AXExtension.m in Sources */,
 				CD5498221EE1965900748C22 /* TestFrameVC.m in Sources */,
 				CD79DF9E1EEF911900408BAD /* AlertVC.m in Sources */,
 				CD5744F61EDAAD710014E833 /* MJRefreshGifHeader.m in Sources */,
@@ -1995,6 +2111,7 @@
 				CD88D1AA1ECF30B6004FC692 /* BlogContentModel.m in Sources */,
 				CD5744EB1EDAAD710014E833 /* MJRefreshAutoFooter.m in Sources */,
 				CD5744F51EDAAD710014E833 /* MJRefreshBackStateFooter.m in Sources */,
+				CD63A41C1FC1AA3400581AF6 /* ThemeDetailVC.m in Sources */,
 				CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */,
 				CD5745861EDADE510014E833 /* HitTestVC.m in Sources */,
 				CD57461B1EDC28860014E833 /* FullWideButton.m in Sources */,
@@ -2003,6 +2120,7 @@
 				CD3543931F9AEFEC009317A6 /* EmptyVC.m in Sources */,
 				CD5745A01EDADE510014E833 /* FontTableView.m in Sources */,
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
+				CD63A4261FC2B9FB00581AF6 /* ThemeCollectionView.m in Sources */,
 				CDE94EA91EC72C2E00596B93 /* BaseLoadingView.m in Sources */,
 				CDA614D51FC1724B001FB0BE /* NetworkDA.m in Sources */,
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
@@ -2039,10 +2157,12 @@
 				CD5744ED1EDAAD710014E833 /* MJRefreshComponent.m in Sources */,
 				CD5745A81EDADE510014E833 /* HelpVC.m in Sources */,
 				CDE94EAC1EC72DDD00596B93 /* DefaultIndicatorView.m in Sources */,
+				CD63A40E1FC1957A00581AF6 /* ThemeCollectionViewCell.m in Sources */,
 				CD2096E61FC171710049739A /* ServiceLayer.m in Sources */,
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
 				CD5745841EDADE510014E833 /* EmailVC.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
+				CD63A4221FC1B80700581AF6 /* ThemeManageVC.m in Sources */,
 				CD5744F11EDAAD710014E833 /* MJRefreshAutoNormalFooter.m in Sources */,
 				CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */,
 				CD5744F21EDAAD710014E833 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -2051,6 +2171,7 @@
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CD57459C1EDADE510014E833 /* CustomTableVC.m in Sources */,
 				CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */,
+				CD63A4361FC2CCDE00581AF6 /* ThemeDetailTV.m in Sources */,
 				CD2096E91FC1718E0049739A /* BaseService.m in Sources */,
 				CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */,
 				CD5745911EDADE510014E833 /* AboutTableView.m in Sources */,
@@ -2069,6 +2190,7 @@
 				CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */,
 				CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */,
 				CD57459E1EDADE510014E833 /* FeedbackVC.m in Sources */,
+				CD63A4311FC2CA0E00581AF6 /* ThemePreviewView.m in Sources */,
 				CD5744EE1EDAAD710014E833 /* MJRefreshFooter.m in Sources */,
 				CD57458A1EDADE510014E833 /* DefaultViewController.m in Sources */,
 				CD5745991EDADE510014E833 /* CacheTableView.m in Sources */,
@@ -2076,6 +2198,7 @@
 				CD5745921EDADE510014E833 /* AboutVC.m in Sources */,
 				CD5744EF1EDAAD710014E833 /* MJRefreshHeader.m in Sources */,
 				CD5746111EDBFED40014E833 /* ReleaseLogVC.m in Sources */,
+				CD63A40A1FC1944400581AF6 /* ThemeCollectionModel.m in Sources */,
 				CD5744FD1EDAAD710014E833 /* UIScrollView+MJRefresh.m in Sources */,
 				CD5744F81EDAAD710014E833 /* MJRefreshStateHeader.m in Sources */,
 				CD5745821EDADE510014E833 /* DebugVC.m in Sources */,
@@ -2087,6 +2210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD63A43A1FC2ED5B00581AF6 /* UIDevice+AXExtension.m in Sources */,
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
 				CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,

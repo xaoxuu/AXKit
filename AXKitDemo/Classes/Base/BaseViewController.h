@@ -45,6 +45,8 @@ typedef NS_ENUM(NSUInteger, ContentViewStyle) {
 
 - (AXTableViewType *)installTableView;
 
+- (void)didTableViewInstalled:(AXTableViewType *)tableView;
+
 
 @end
 

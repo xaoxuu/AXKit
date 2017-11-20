@@ -18,7 +18,7 @@
 }
 
 - (void)setupButton{
-    
+    self.titleLabel.font = axThemeManager.font.customBoldNormal;
 }
 
 
