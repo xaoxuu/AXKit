@@ -10,10 +10,9 @@
 
 FOUNDATION_EXTERN NSString *ThemeKitBundleIdentify;
 
-FOUNDATION_EXTERN NSString *ThemeKitNotificationThemeColorChanged;
+FOUNDATION_EXTERN NSString *ThemeKitNotificationColorChanged;
 
-FOUNDATION_EXTERN NSString *ThemeKitNotificationFontNameChanged;
-FOUNDATION_EXTERN NSString *ThemeKitNotificationFontSizeChanged;
+FOUNDATION_EXTERN NSString *ThemeKitNotificationFontChanged;
 
 FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 

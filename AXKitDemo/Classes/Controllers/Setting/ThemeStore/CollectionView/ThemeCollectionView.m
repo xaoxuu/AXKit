@@ -11,7 +11,7 @@
 #import "ThemeCollectionViewCell.h"
 #import "ThemeCollectionReusableView.h"
 #import "ThemeDetailVC.h"
-
+#import "MJRefresh.h"
 
 static NSString *headerReuseIdentifier = @"ThemeCollectionReusableView";
 static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
@@ -32,8 +32,8 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
     self.delegate = self;
     [self registerNib:[UINib nibWithNibName:reuseIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
     [self registerNib:[UINib nibWithNibName:headerReuseIdentifier bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier];
-    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    self.contentInset = UIEdgeInsetsMake(0, 4, 0, 4);
+//    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//    self.contentInset = UIEdgeInsetsMake(0, 4, 0, 4);
     
     UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc] init];
     
@@ -47,6 +47,7 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
     flowLayout.sectionInset = UIEdgeInsetsZero;
     self.collectionViewLayout = flowLayout;
     [self loadDataFromNetwork];
+    self.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFromNetwork)];
 }
 
 - (ThemeCollectionModel *)dataList{
@@ -62,6 +63,7 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
         dispatch_async(dispatch_get_main_queue(), ^{
             // @xaoxuu: in main queue
             [self reloadData];
+            [self.mj_header endRefreshing];
         });
     }];
 }

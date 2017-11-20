@@ -11,6 +11,8 @@
 #import "NSUserDefaults+AXWrapper.h"
 #import "NSString+AXFileStreamChainedWrapper.h"
 #import "UIColor+AXExtension.h"
+#import "UIResponder+AXExtension.h"
+
 
 UIThemeManager *axThemeManager = nil;
 
@@ -68,18 +70,33 @@ UIThemeManager *axThemeManager = nil;
     [UITabBar appearance].barTintColor = [UIColor whiteColor];
     [UITabBar appearance].tintColor = axThemeManager.color.theme;
     
-    
+    [AXRootViewController().view layoutSubviews];
     
     
 }
 
-- (void)updateCurrentTheme:(void (^)(UIThemeManager *))update{
+- (void)updateCurrentTheme:(void (^)(UIThemeManager *theme))update{
     if (update) {
         update(self);
     }
     [self saveCurrentTheme];
+    
 }
 
+- (void)updateCurrentColorTheme:(void (^)(UIThemeColorModel *color))update{
+    [self updateCurrentTheme:^(UIThemeManager *theme) {
+        if (update) {
+            update(theme.color);
+        }
+    }];
+}
+- (void)updateCurrentFontTheme:(void (^)(UIThemeFontModel *font))update{
+    [self updateCurrentTheme:^(UIThemeManager *theme) {
+        if (update) {
+            update(theme.font);
+        }
+    }];
+}
 
 #pragma mark - life circle
 

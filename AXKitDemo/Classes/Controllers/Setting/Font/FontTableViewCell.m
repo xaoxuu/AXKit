@@ -1,43 +1,18 @@
 //
 //  FontTableViewCell.m
-//  AXKit
+//  AXKitDemo
 //
-//  Created by xaoxuu on 28/05/2017.
+//  Created by xaoxuu on 20/11/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
 #import "FontTableViewCell.h"
-
-@interface FontTableViewCell()
-@property (weak, nonatomic) IBOutlet UILabel *lb;
-
-@property (weak, nonatomic) IBOutlet UISlider *slider;
-@property (weak, nonatomic) IBOutlet UILabel *lb_preview;
-
-@end
-
-
 
 @implementation FontTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    
-    [self updateUIWithFontSize:axThemeManager.font.prefersFontSize];
-    
-    __weak typeof(self) weakSelf = self;
-    [self.slider ax_addValueChangedHandler:^(__kindof UISlider * _Nonnull sender) {
-        CGFloat size = sender.value;
-        [weakSelf updateUIWithFontSize:size];
-    }];
-    [self.slider ax_addTouchUpHandler:^(__kindof UISlider * _Nonnull sender) {
-        [axThemeManager updateCurrentTheme:^(UIThemeManager *theme) {
-            theme.font.prefersFontSize = sender.value;
-        }];
-    }];
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -47,19 +22,11 @@
 }
 
 
-- (void)updateUIWithFontSize:(CGFloat)size{
-    self.lb_preview.font = [axThemeManager.font fontWithCustomPrefersFontSize:size];
-    self.lb.text = [NSString stringWithFormat:@"%.1f", size];
-    self.slider.value = size;
+- (UIFont *)fontForTitle{
+    return [UIFont fontWithName:self.model.title size:axThemeManager.font.prefersFontSize];
 }
-
-
-//- (void)setModel:(__kindof BaseTableModelRow *)model{
-//    AXLogFunc();
-//}
-
-- (void)setIcon:(UIImage *)icon{
-    AXLogFunc();
+- (UIFont *)fontForDetail{
+    return [UIFont fontWithName:self.model.title size:12 * axThemeManager.font.prefersFontSize / 14];
 }
 
 @end

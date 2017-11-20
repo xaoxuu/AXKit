@@ -21,8 +21,8 @@
 
 - (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
     AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
-    [axThemeManager updateCurrentTheme:^(UIThemeManager *theme) {
-        theme.color.theme = [UIColor colorWithHexString:model.target];
+    [axThemeManager updateCurrentColorTheme:^(UIThemeColorModel *color) {
+        color.theme = [UIColor colorWithHexString:model.target];
     }];
 }
 

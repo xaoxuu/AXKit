@@ -33,12 +33,6 @@
 }
 
 
-//- (UITableView<BaseTableView> *)installTableView{
-//    return [[FontTableView alloc] initWithFrame:self.view.bounds];
-//}
-
-
-
 - (AXTableViewType *)installTableView{
     CGRect frame = self.view.bounds;
     return [[FontTableView alloc] initWithFrame:frame];

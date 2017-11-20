@@ -67,7 +67,7 @@ static CGFloat const iconSize = 64;
         } else if (indexPath.row == 1) {
             NSString *buildTime = @"20".append([NSBundle ax_appBuild]);
             NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMMddHHmm"];
-            tmp.detail = [date stringWithFormat:@"yyyy-MM-dd HH:mm EEEE"];
+            tmp.detail = [date stringWithFormat:@"yyyy-MM-dd"];
         }
     }
 }

@@ -58,12 +58,14 @@
     
     int x = 1;
     [NSDate dateWithDateInteger:x];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationThemeColorChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-//        UIView *view = AXRootViewController().view;
-//        [view removeFromSuperview];
-    }];
-    
+//    __weak typeof(self) weakSelf = self;
+//    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationColorChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+//        [weakSelf.view layoutSubviews];
+//    }];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+//        [weakSelf.view layoutSubviews];
+//    }];
 }
 
 

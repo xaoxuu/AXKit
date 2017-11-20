@@ -74,12 +74,12 @@ static CGFloat getAccessoryWidth(UITableViewCellAccessoryType type){
     
     self.title = [[UILabel alloc] initWithFrame:CGRectMake(cellHeight, 0, cellWidth - 2*cellHeight, cellHeight)];
     self.title.textAlignment = NSTextAlignmentLeft;
-    self.title.font = [UIThemeManager sharedInstance].font.customNormal;
+    self.title.font = [self fontForTitle];
     [self.contentView addSubview:self.title];
     
     self.detail = [[UILabel alloc] initWithFrame:CGRectMake(cellWidth - cellHeight, 0, cellHeight, cellHeight)];
     self.detail.textAlignment = NSTextAlignmentRight;
-    self.detail.font = [UIThemeManager sharedInstance].font.customSmall;
+    self.detail.font = [self fontForDetail];
     self.detail.textColor = [UIColor darkGrayColor];
     [self.contentView addSubview:self.detail];
     NSLog(@"{%f,%f}", self.frame.size.width, self.frame.size.height);
@@ -94,6 +94,8 @@ static CGFloat getAccessoryWidth(UITableViewCellAccessoryType type){
 
 - (void)setModel:(NSObject<AXTableRowModel> *)model{
     _model = model;
+    self.title.font = [self fontForTitle];
+    self.detail.font = [self fontForDetail];
     if (self.frame.size.width) {
         cellWidth = self.contentView.frame.size.width;
     }
@@ -107,6 +109,13 @@ static CGFloat getAccessoryWidth(UITableViewCellAccessoryType type){
         self.accessoryType = model.accessoryType;
     }
     [self updateFrame];
+}
+
+- (UIFont *)fontForTitle{
+    return [UIThemeManager sharedInstance].font.customNormal;
+}
+- (UIFont *)fontForDetail{
+    return [UIThemeManager sharedInstance].font.customSmall;
 }
 
 - (void)updateFrame{
@@ -131,7 +140,7 @@ static CGFloat getAccessoryWidth(UITableViewCellAccessoryType type){
     }
     frame = self.detail.frame;
     NSDictionary *dict = @{NSFontAttributeName: self.detail.font};
-    detailWidth = [self.detail.text boundingRectWithSize:CGSizeMake(0.4*cellWidth - imageWidth, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dict context:nil].size.width;
+    detailWidth = [self.detail.text boundingRectWithSize:CGSizeMake(0.5*cellWidth - imageWidth, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dict context:nil].size.width;
     frame.size.width = detailWidth;
     frame.origin.x = cellWidth - detailWidth;
     

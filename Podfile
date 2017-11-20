@@ -4,6 +4,7 @@ target 'AXKitDemo' do
 
 pod 'YYKit'
 pod 'FMDB'
+pod 'SDWebImage'
 pod 'AXCameraKit'
 
 pod 'SCLAlertView-Objective-C'

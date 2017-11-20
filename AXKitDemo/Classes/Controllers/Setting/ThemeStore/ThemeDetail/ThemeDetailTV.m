@@ -9,7 +9,7 @@
 #import "ThemeDetailTV.h"
 #import "ThemePreviewView.h"
 #import "FeedbackKit.h"
-
+#import <UIImageView+WebCache.h>
 @interface ThemeDetailTV ()
 
 @property (strong, nonatomic) ThemePreviewView *header;
@@ -20,7 +20,7 @@
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
     self.header = UIViewFromNibNamed(@"ThemePreviewView");
-    self.header.model = self.theme;
+    [self.header.imgv sd_setImageWithURL:self.model.image.absoluteURL];
     tableView.tableHeaderView = self.header;
 }
 
@@ -62,8 +62,13 @@
 }
 
 - (void)updateWithTheme:(UIThemeModel *)theme{
-    self.header.model = theme;
     self.theme = theme;
+    [self reloadDataSourceAndRefreshTableView];
+}
+
+- (void)reloadDataSourceAndRefreshTableView{
+    [self.header.imgv sd_setImageWithURL:self.model.image.absoluteURL];
+    [super reloadDataSourceAndRefreshTableView];
 }
 
 - (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{

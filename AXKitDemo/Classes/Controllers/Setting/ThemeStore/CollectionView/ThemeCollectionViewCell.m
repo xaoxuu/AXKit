@@ -7,6 +7,7 @@
 //
 
 #import "ThemeCollectionViewCell.h"
+#import <UIImageView+WebCache.h>
 
 @interface ThemeCollectionViewCell ()
 
@@ -23,7 +24,6 @@
     [super awakeFromNib];
     // Initialization code
     
-//    self.backgroundColor = [UIColor randomColor];
     self.imgv.backgroundColor = [UIColor randomColor];
 }
 
@@ -37,7 +37,7 @@
     } else {
         self.fee.text = [NSString stringWithFormat:@"￥%.2f", model.price];
     }
-    
+    [self.imgv sd_setImageWithURL:model.image.absoluteURL];
 }
 
 - (void)dealloc{

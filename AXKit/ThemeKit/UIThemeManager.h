@@ -30,7 +30,9 @@ extern UIThemeManager *axThemeManager;
 - (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name;
 - (void)applyTheme:(UIThemeModel *)theme;
 
-- (void)updateCurrentTheme:(void (^)(UIThemeManager *theme))update;
+- (void)updateCurrentColorTheme:(void (^)(UIThemeColorModel *color))update;
+- (void)updateCurrentFontTheme:(void (^)(UIThemeFontModel *font))update;
+
 
 + (instancetype)sharedInstance;
 

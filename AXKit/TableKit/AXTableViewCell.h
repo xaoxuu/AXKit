@@ -37,4 +37,10 @@ typedef UITableViewCell<AXTableViewCell> AXTableViewCellType;
 
 - (void)updateIcon:(void (^)(UIImageView *imageView))icon;
 
+
+- (UIFont *)fontForTitle;
+- (UIFont *)fontForDetail;
+- (void)updateFrame;
+- (UIImage *)imageWithPath:(NSString *)path;
+
 @end

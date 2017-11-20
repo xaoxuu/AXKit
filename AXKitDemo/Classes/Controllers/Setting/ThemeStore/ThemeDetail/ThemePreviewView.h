@@ -12,8 +12,9 @@
 @interface ThemePreviewView : UIView
 
 // @xaoxuu: model
-@property (strong, nonatomic) UIThemeModel *model;
+//@property (strong, nonatomic) UIThemeModel *model;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgv;
 
 
 @end

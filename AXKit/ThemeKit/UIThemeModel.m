@@ -15,11 +15,8 @@
 
 NSString *ThemeKitBundleIdentify = @"com.xaoxuu.AXKit.theme";
 
-NSString *ThemeKitNotificationThemeColorChanged = @"com.xaoxuu.AXKit.theme.notification.ThemeColorChanged";
-
-NSString *ThemeKitNotificationFontNameChanged = @"com.xaoxuu.AXKit.theme.notification.FontNameChanged";
-NSString *ThemeKitNotificationFontSizeChanged = @"com.xaoxuu.AXKit.theme.notification.FontSizeChanged";
-
+NSString *ThemeKitNotificationColorChanged = @"com.xaoxuu.AXKit.theme.notification.ColorChanged";
+NSString *ThemeKitNotificationFontChanged = @"com.xaoxuu.AXKit.theme.notification.FontChanged";
 NSString *ThemeKitNotificationIconPackChanged = @"com.xaoxuu.AXKit.theme.notification.IconPackChanged";
 
 static CGFloat standardSize = 14.0f;
@@ -99,7 +96,7 @@ static CGFloat smallSize = 12.0f;
     [UIThemeModel filePathWithEmail:self.email name:self.name].saveFile(jsonString);
     
     [NSUserDefaults ax_setString:[UIThemeModel identifierWithEmail:self.email name:self.name] forKey:ThemeKitBundleIdentify];
-    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationThemeColorChanged object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationColorChanged object:nil];
 }
 
 - (void)deleteThemeFile{
@@ -228,7 +225,7 @@ static CGFloat smallSize = 12.0f;
         _customLarge = [UIFont systemFontOfSize:standardSize * 1.2 * ratio];
         _customBoldLarge = [UIFont boldSystemFontOfSize:standardSize * 1.2 * ratio];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontSizeChanged object:@YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontChanged object:@YES];
 }
 
 - (UIFont *)fontWithCustomPrefersFontSize:(CGFloat)size{

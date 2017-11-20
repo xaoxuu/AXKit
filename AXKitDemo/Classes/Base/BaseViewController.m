@@ -10,6 +10,8 @@
 
 @interface BaseViewController ()
 
+
+
 @end
 
 @implementation BaseViewController
@@ -95,11 +97,10 @@
     }
     
     // @xaoxuu: 通知中心的block中也要用弱引用
-    __weak typeof(self) weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontSizeChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-        [weakSelf.view layoutSubviews];
-        
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+//        [weakSelf.view layoutSubviews];
+//    }];
     // @xaoxuu: ...
     
 }

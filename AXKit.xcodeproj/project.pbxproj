@@ -142,8 +142,8 @@
 		CD57459D1EDADE510014E833 /* CustomTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5745471EDADE510014E833 /* CustomTableVC.xib */; };
 		CD57459E1EDADE510014E833 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57454A1EDADE510014E833 /* FeedbackVC.m */; };
 		CD5745A01EDADE510014E833 /* FontTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57454E1EDADE510014E833 /* FontTableView.m */; };
-		CD5745A11EDADE510014E833 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745501EDADE510014E833 /* FontTableViewCell.m */; };
-		CD5745A21EDADE510014E833 /* FontTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5745511EDADE510014E833 /* FontTableViewCell.xib */; };
+		CD5745A11EDADE510014E833 /* FontSizeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745501EDADE510014E833 /* FontSizeTableViewCell.m */; };
+		CD5745A21EDADE510014E833 /* FontSizeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5745511EDADE510014E833 /* FontSizeTableViewCell.xib */; };
 		CD5745A31EDADE510014E833 /* FontVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745531EDADE510014E833 /* FontVC.m */; };
 		CD5745A51EDADE510014E833 /* HelpDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745571EDADE510014E833 /* HelpDetailVC.m */; };
 		CD5745A71EDADE510014E833 /* HelpTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57455A1EDADE510014E833 /* HelpTableView.m */; };
@@ -193,6 +193,7 @@
 		CD63A4361FC2CCDE00581AF6 /* ThemeDetailTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4351FC2CCDE00581AF6 /* ThemeDetailTV.m */; };
 		CD63A4391FC2ED5B00581AF6 /* UIDevice+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD63A43A1FC2ED5B00581AF6 /* UIDevice+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */; };
+		CD63A43D1FC30FC400581AF6 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A43C1FC30FC400581AF6 /* FontTableViewCell.m */; };
 		CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD6476D31FC03D0A00B1E68A /* NSDictionary+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */; };
 		CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD74F9F21F9ADEB000EBD3B5 /* CooldownVC.m */; };
@@ -484,9 +485,9 @@
 		CD57454A1EDADE510014E833 /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
 		CD57454D1EDADE510014E833 /* FontTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableView.h; sourceTree = "<group>"; };
 		CD57454E1EDADE510014E833 /* FontTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableView.m; sourceTree = "<group>"; };
-		CD57454F1EDADE510014E833 /* FontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
-		CD5745501EDADE510014E833 /* FontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
-		CD5745511EDADE510014E833 /* FontTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontTableViewCell.xib; sourceTree = "<group>"; };
+		CD57454F1EDADE510014E833 /* FontSizeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizeTableViewCell.h; sourceTree = "<group>"; };
+		CD5745501EDADE510014E833 /* FontSizeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeTableViewCell.m; sourceTree = "<group>"; };
+		CD5745511EDADE510014E833 /* FontSizeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontSizeTableViewCell.xib; sourceTree = "<group>"; };
 		CD5745521EDADE510014E833 /* FontVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontVC.h; sourceTree = "<group>"; };
 		CD5745531EDADE510014E833 /* FontVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontVC.m; sourceTree = "<group>"; };
 		CD5745561EDADE510014E833 /* HelpDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDetailVC.h; sourceTree = "<group>"; };
@@ -566,6 +567,8 @@
 		CD63A4351FC2CCDE00581AF6 /* ThemeDetailTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeDetailTV.m; sourceTree = "<group>"; };
 		CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+AXExtension.h"; sourceTree = "<group>"; };
 		CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AXExtension.m"; sourceTree = "<group>"; };
+		CD63A43B1FC30FC400581AF6 /* FontTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
+		CD63A43C1FC30FC400581AF6 /* FontTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
 		CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AXExtension.h"; sourceTree = "<group>"; };
 		CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AXExtension.m"; sourceTree = "<group>"; };
 		CD74F9F11F9ADEB000EBD3B5 /* CooldownVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CooldownVC.h; sourceTree = "<group>"; };
@@ -1195,9 +1198,11 @@
 				CD5745531EDADE510014E833 /* FontVC.m */,
 				CD57454D1EDADE510014E833 /* FontTableView.h */,
 				CD57454E1EDADE510014E833 /* FontTableView.m */,
-				CD57454F1EDADE510014E833 /* FontTableViewCell.h */,
-				CD5745501EDADE510014E833 /* FontTableViewCell.m */,
-				CD5745511EDADE510014E833 /* FontTableViewCell.xib */,
+				CD57454F1EDADE510014E833 /* FontSizeTableViewCell.h */,
+				CD5745501EDADE510014E833 /* FontSizeTableViewCell.m */,
+				CD5745511EDADE510014E833 /* FontSizeTableViewCell.xib */,
+				CD63A43B1FC30FC400581AF6 /* FontTableViewCell.h */,
+				CD63A43C1FC30FC400581AF6 /* FontTableViewCell.m */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1934,7 +1939,7 @@
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* footer_rhesis.json in Resources */,
-				CD5745A21EDADE510014E833 /* FontTableViewCell.xib in Resources */,
+				CD5745A21EDADE510014E833 /* FontSizeTableViewCell.xib in Resources */,
 				CD63A40F1FC1957A00581AF6 /* ThemeCollectionViewCell.xib in Resources */,
 				CDE94E9C1EC709D700596B93 /* ghinfo.json in Resources */,
 				CD57459D1EDADE510014E833 /* CustomTableVC.xib in Resources */,
@@ -2148,7 +2153,7 @@
 				CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */,
 				CD5745B51EDADE510014E833 /* SettingVC.m in Sources */,
 				CDE94E971EC705C800596B93 /* GitHubUserModel.m in Sources */,
-				CD5745A11EDADE510014E833 /* FontTableViewCell.m in Sources */,
+				CD5745A11EDADE510014E833 /* FontSizeTableViewCell.m in Sources */,
 				CD5745B91EDADE510014E833 /* ThemeColorTableView.m in Sources */,
 				CD5745A31EDADE510014E833 /* FontVC.m in Sources */,
 				CD5745811EDADE510014E833 /* DebugTV.m in Sources */,
@@ -2184,6 +2189,7 @@
 				CD2096EC1FC171CC0049739A /* CacheService.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CD5746151EDBFF030014E833 /* ReleaseLogTV.m in Sources */,
+				CD63A43D1FC30FC400581AF6 /* FontTableViewCell.m in Sources */,
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
 				CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */,

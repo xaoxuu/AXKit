@@ -12,7 +12,12 @@
 @implementation SettingTableView
 
 
-
+- (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [weakSelf reloadData];
+    }];
+}
 
 //- (void)initTableView:(BaseTableView *)tableView{
 //    tableView.estimatedSectionFooterHeight = 0;
