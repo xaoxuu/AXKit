@@ -25,7 +25,6 @@ static void (^block_callback)(MFMailComposeResult result);
     } else {
         // 邮件服务器
         MFMailComposeViewController *mailCompose = [[MFMailComposeViewController alloc] init];
-        mailCompose.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
         // 设置邮件代理
         [mailCompose setMailComposeDelegate:self];
         if (email) {
