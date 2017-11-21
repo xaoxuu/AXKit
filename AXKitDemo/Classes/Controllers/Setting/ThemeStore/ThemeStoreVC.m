@@ -38,7 +38,7 @@
 //        [weakSelf.navigationController ax_pushViewControllerNamed:@"ThemeManageVC"];
         [UIThemeModel deleteAllThemes];
     }];
-    
+    self.view.backgroundColor = axThemeManager.color.background;
 //    [self setupCollectionView];
     
 }

@@ -17,7 +17,13 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf reloadData];
     }];
+    tableView.tableFooterView = UIViewWithHeight(44);
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
+}
+
 
 //- (void)initTableView:(BaseTableView *)tableView{
 //    tableView.estimatedSectionFooterHeight = 0;

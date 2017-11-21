@@ -68,6 +68,9 @@
 
 - (void)reloadDataSourceAndRefreshTableView{
     [self.header.imgv sd_setImageWithURL:self.model.image.absoluteURL];
+    if (self.theme.color.theme) {
+        self.backgroundColor = self.theme.color.theme.lightRatio(0.7);
+    }
     [super reloadDataSourceAndRefreshTableView];
 }
 
@@ -82,6 +85,12 @@
         } fail:^(NSError *error) {
             [UIAlertController ax_showAlertWithTitle:@"无法发送邮件" message:nil actions:nil];
         }];
+    }
+}
+
+- (void)ax_tableViewCell:(AXTableViewCellType *)cell willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.theme.color.theme) {
+        cell.backgroundColor = self.theme.color.theme.lightRatio(0.85);
     }
 }
 

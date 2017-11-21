@@ -1,15 +1,15 @@
 {
     "title":"设置",
     "headerTitle":"this is table header",
-    "headerHeight":"0",
+    "headerHeight":"20",
     "footerTitle":"this is table footer",
-    "footerHeight":"0",
+    "footerHeight":"44",
     "sections":[
         {
             "headerTitle":"基本信息",
             "headerHeight":"44",
             "footerTitle":"",
-            "footerHeight":"0",
+            "footerHeight":1,
             "rowHeight":"44",
             "rows":[
                 {
@@ -34,8 +34,7 @@
                     "title":"GitHub反馈",
                     "detail":"bug反馈、功能建议",
                     "icon":"setting_feedback_github",
-                    "target":"FeedbackVC",
-                    "cmd":"feedbackURL"
+                    "target":"https://github.com/xaoxuu/AXKit/issues"
                 },
                 {
                     "title":"邮件反馈",
@@ -47,7 +46,7 @@
                 {
                     "title":"帮助",
                     "detail":"",
-                    "icon":"settingHelp",
+                    "icon":"setting_help",
                     "target":"HelpVC"
                 }
             ]
@@ -56,7 +55,7 @@
             "headerTitle":"个性化设置",
             "headerHeight":"44",
             "footerTitle":"",
-            "footerHeight":"0",
+            "footerHeight":1,
             "rowHeight":"44",
             "rows":[
                 {
@@ -95,7 +94,7 @@
             "headerTitle":"高级设置",
             "headerHeight":"44",
             "footerTitle":"",
-            "footerHeight":"0",
+            "footerHeight":1,
             "rowHeight":"44",
             "rows":[
                 {
@@ -118,7 +117,7 @@
             "headerTitle":"缓存",
             "headerHeight":"44",
             "footerTitle":"",
-            "footerHeight":"0",
+            "footerHeight":1,
             "rowHeight":"44",
             "rows":[
                 {

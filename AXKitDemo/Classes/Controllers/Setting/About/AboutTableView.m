@@ -54,7 +54,8 @@ static CGFloat const iconSize = 64;
     AXTableRowModel *tmp = (AXTableRowModel *)model;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            tmp.detail = [NSUserDefaults ax_readStringForKey:CACHE_VERSION];
+            tmp.detail = [NSBundle ax_appVersion];
+//            tmp.detail = [NSUserDefaults ax_readStringForKey:CACHE_VERSION];
 //            VersionLaterThanVersion([NSBundle ax_appVersion], services.app.remoteVersion.name, ^(BOOL later) {
 //                if (later) {
 //                    model.detail = [NSString stringWithFormat:@"%@ beta (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];

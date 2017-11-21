@@ -37,6 +37,13 @@
 }
 
 
+- (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
+    tableView.tableFooterView = UIViewWithHeight(44);
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
+}
 
 
 

@@ -22,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = self.model.name;
+    
     NSString *btnTitle = @"下载";
     self.tableView.model = self.model;
     if ([service.cache isThemeDownloaded:self.model]) {
