@@ -27,17 +27,21 @@
     self.imgv.backgroundColor = [UIColor randomColor];
 }
 
-- (void)setModel:(ThemeCollectionRowModel *)model{
+- (void)setModel:(UIThemeModel *)model{
     _model = model;
     
     self.title.font = axThemeManager.font.customNormal;
-    self.title.text = model.name;
-    if (model.price <= 0) {
+    self.title.text = model.info.name;
+    if (model.info.price <= 0) {
         self.fee.text = @"免费";
     } else {
-        self.fee.text = [NSString stringWithFormat:@"￥%.2f", model.price];
+        self.fee.text = [NSString stringWithFormat:@"￥%.2f", model.info.price];
     }
-    [self.imgv sd_setImageWithURL:model.image.absoluteURL];
+    
+    if (model.info.preview.count) {
+        [self.imgv sd_setImageWithURL:model.info.preview.firstObject.absoluteURL];
+    }
+    
 }
 
 - (void)dealloc{

@@ -37,9 +37,7 @@ UIThemeManager *axThemeManager = nil;
     [self applyTheme:theme];
 }
 - (void)applyTheme:(UIThemeModel *)theme{
-    axThemeManager.name = theme.name;
-    axThemeManager.author = theme.author;
-    axThemeManager.email = theme.email;
+    axThemeManager.info = theme.info;
     axThemeManager.color = theme.color;
     axThemeManager.font = theme.font;
     axThemeManager.icon = theme.icon;

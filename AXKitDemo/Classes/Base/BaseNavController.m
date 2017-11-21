@@ -57,8 +57,8 @@
     self.navigationBar.translucent = NO;
     self.navigationBar.barTintColor = axThemeManager.color.theme;
     if (axThemeManager.color.theme.isLightColor) {
-        self.navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.6);
-        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
+        self.navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.7);
+        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7)}];
         
     } else {
         self.navigationBar.tintColor = [UIColor whiteColor];

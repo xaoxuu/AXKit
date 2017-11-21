@@ -16,30 +16,15 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationFontChanged;
 
 FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 
-@class UIThemeColorModel,UIThemeFontModel,UIThemeIconModel;
+@class UIThemeColorModel,UIThemeFontModel,UIThemeIconModel, UIThemeInfoModel;
 
 @interface UIThemeModel : NSObject
 
 
 /**
- theme name
+ theme info
  */
-@property (copy, nonatomic) NSString *name;
-
-/**
- theme author
- */
-@property (copy, nonatomic) NSString *author;
-
-/**
- theme author's email
- */
-@property (copy, nonatomic) NSString *email;
-
-/**
- theme's price
- */
-@property (assign, nonatomic) CGFloat price;
+@property (strong, nonatomic) UIThemeInfoModel *info;
 
 /**
  theme of color
@@ -68,6 +53,9 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 
 
 - (void)deleteThemeFile;
+- (NSString *)filePath;
+- (NSString *)identifier;
+
 
 
 + (void)deleteAllThemes;
@@ -152,6 +140,39 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 
 // @xaoxuu: json dictionary
 @property (strong, nonatomic) NSDictionary *dict;
+
++ (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
+
+@end
+
+@interface UIThemeInfoModel : NSObject
+
+
+/**
+ theme name
+ */
+@property (copy, nonatomic) NSString *name;
+
+/**
+ theme author
+ */
+@property (copy, nonatomic) NSString *author;
+
+/**
+ theme author's email
+ */
+@property (copy, nonatomic) NSString *email;
+
+/**
+ theme's price
+ */
+@property (assign, nonatomic) CGFloat price;
+
+
+/**
+ theme's preview image urls
+ */
+@property (copy, nonatomic) NSArray<NSString *> *preview;
 
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
 

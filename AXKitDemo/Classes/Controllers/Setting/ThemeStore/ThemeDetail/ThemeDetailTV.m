@@ -20,7 +20,7 @@
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
     self.header = UIViewFromNibNamed(@"ThemePreviewView");
-    [self.header.imgv sd_setImageWithURL:self.model.image.absoluteURL];
+    self.header.model = self.theme;
     tableView.tableHeaderView = self.header;
 }
 
@@ -30,7 +30,7 @@
         section.headerTitle = @"主题信息";
         [section addRow:^(AXTableRowModel *row) {
             row.title = @"主题";
-            row.detail = self.model.name;
+            row.detail = self.theme.info.name;
         }];
         [section addRow:^(AXTableRowModel *row) {
             row.title = @"主题色";
@@ -50,11 +50,11 @@
         section.headerTitle = @"作者信息";
         [section addRow:^(AXTableRowModel *row) {
             row.title = @"作者";
-            row.detail = self.model.author;
+            row.detail = self.theme.info.author;
         }];
         [section addRow:^(AXTableRowModel *row) {
             row.title = @"邮箱";
-            row.detail = self.model.email;
+            row.detail = self.theme.info.email;
         }];
         
     }];
@@ -62,12 +62,14 @@
 }
 
 - (void)updateWithTheme:(UIThemeModel *)theme{
-    self.theme = theme;
-    [self reloadDataSourceAndRefreshTableView];
+    if (theme) {
+        self.theme = theme;
+        [self reloadDataSourceAndRefreshTableView];
+    }
 }
 
 - (void)reloadDataSourceAndRefreshTableView{
-    [self.header.imgv sd_setImageWithURL:self.model.image.absoluteURL];
+    self.header.model = self.theme;
     if (self.theme.color.theme) {
         self.backgroundColor = self.theme.color.theme.lightRatio(0.7);
     }

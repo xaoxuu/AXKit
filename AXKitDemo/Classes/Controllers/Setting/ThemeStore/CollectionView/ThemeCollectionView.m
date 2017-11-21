@@ -18,6 +18,9 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
 
 @interface ThemeCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
+@property (strong, nonatomic) ThemeCollectionModel *dataList;
+
+
 @end
 @implementation ThemeCollectionView
 
@@ -35,24 +38,23 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
 //    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.contentInset = UIEdgeInsetsMake(0, 4, 0, 4);
     self.backgroundColor = [UIColor clearColor];
-    UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc] init];
     
     self.width = kScreenW;
+    UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc] init];
     flowLayout.headerReferenceSize = CGSizeMake(self.width, 64);
-    
     flowLayout.minimumLineSpacing = 0;
     flowLayout.minimumInteritemSpacing = 0;
     CGFloat width = (self.width-8)/3;
     flowLayout.itemSize = CGSizeMake(width, width * 4 / 3 + 50);
     flowLayout.sectionInset = UIEdgeInsetsZero;
-    
     self.collectionViewLayout = flowLayout;
+    
     [self loadDataFromNetwork];
     self.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFromNetwork)];
 }
 
 - (ThemeCollectionModel *)dataList{
-    if (!_dataList.sections) {
+    if (!_dataList) {
         _dataList = [service.cache cachedThemeList];
     }
     return _dataList;
@@ -70,7 +72,7 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
 }
 
 - (void)reloadData{
-    
+    self.dataList = nil;
     [super reloadData];
 }
 

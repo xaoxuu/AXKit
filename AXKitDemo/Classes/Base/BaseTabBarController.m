@@ -42,7 +42,7 @@
 - (void)updateTheme{
     self.tabBar.translucent = NO;
     if (axThemeManager.color.theme.isLightColor) {
-        self.tabBar.tintColor = axThemeManager.color.theme.darkRatio(0.3);
+        self.tabBar.tintColor = axThemeManager.color.theme.darkRatio(0.2);
     } else {
         self.tabBar.tintColor = axThemeManager.color.theme;
     }

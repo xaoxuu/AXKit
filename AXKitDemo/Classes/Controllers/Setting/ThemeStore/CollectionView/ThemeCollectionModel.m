@@ -30,28 +30,21 @@
 + (instancetype)modelWithDict:(NSDictionary *)dict{
     ThemeCollectionModel *model = [ThemeCollectionModel new];
     model.updateTime = [NSDate dateWithString:[dict stringValueForKey:@"update"] format:@"yyyy-MM-dd HH:mm:ss"];
-    NSMutableArray<ThemeCollectionSectionModel *> *sectionsArr = [NSMutableArray array];
     NSArray<NSDictionary *> *sections = [dict arrayValueForKey:@"sections"];
     [sections enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ThemeCollectionSectionModel *section = [ThemeCollectionSectionModel new];
         section.title = [obj stringValueForKey:@"title"];
-        NSMutableArray<ThemeCollectionRowModel *> *themesArr = [NSMutableArray array];
         NSArray<NSDictionary *> *themes = [obj arrayValueForKey:@"themes"];
         [themes enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            ThemeCollectionRowModel *theme = [ThemeCollectionRowModel new];
-            theme.name = [obj stringValueForKey:@"name"];
-            theme.author = [obj stringValueForKey:@"author"];
-            theme.email = [obj stringValueForKey:@"email"];
-            theme.image = [obj stringValueForKey:@"image"];
-            theme.price = [obj doubleValueForKey:@"price"];
-            [themesArr addObject:theme];
+            UIThemeModel *theme = [UIThemeModel modelWithDictionary:obj];
+            [section.themes addObject:theme];
         }];
-        section.themes = themesArr;
-        [sectionsArr addObject:section];
+        [model.sections addObject:section];
     }];
-    model.sections = sectionsArr;
     return model;
 }
+
+
 
 @end
 
@@ -64,8 +57,8 @@
     return self;
 }
 
-- (void)addRow:(void (^)(ThemeCollectionRowModel *))row{
-    ThemeCollectionRowModel *model = [[ThemeCollectionRowModel alloc] init];
+- (void)addRow:(void (^)(UIThemeModel *))row{
+    UIThemeModel *model = [[UIThemeModel alloc] init];
     if (row) {
         row(model);
     }
@@ -74,13 +67,3 @@
 
 @end
 
-@implementation ThemeCollectionRowModel
-
-- (instancetype)init{
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
-
-@end

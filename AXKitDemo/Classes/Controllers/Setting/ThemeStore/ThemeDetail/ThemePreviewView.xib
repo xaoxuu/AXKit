@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,21 +15,26 @@
             <rect key="frame" x="0.0" y="0.0" width="484" height="360"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-8w-sLk">
-                    <rect key="frame" x="131" y="32" width="222" height="296"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="UJk-8w-sLk" secondAttribute="height" multiplier="3:4" id="Ira-zI-5c6"/>
-                    </constraints>
-                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Zea-3m-lp4">
+                    <rect key="frame" x="0.0" y="0.0" width="484" height="360"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="wHW-nI-1jS">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="UJk-8w-sLk" secondAttribute="bottom" constant="32" id="LFd-ak-qfm"/>
-                <constraint firstItem="UJk-8w-sLk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ra8-ZG-owD"/>
-                <constraint firstItem="UJk-8w-sLk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="Ues-N4-MVu"/>
+                <constraint firstAttribute="bottom" secondItem="Zea-3m-lp4" secondAttribute="bottom" id="2oK-1s-Na8"/>
+                <constraint firstAttribute="trailing" secondItem="Zea-3m-lp4" secondAttribute="trailing" id="Ilj-vW-qds"/>
+                <constraint firstItem="Zea-3m-lp4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OVz-pC-Q3d"/>
+                <constraint firstItem="Zea-3m-lp4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TMG-gp-Xwt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="imgv" destination="UJk-8w-sLk" id="44w-cT-ffp"/>
+                <outlet property="collectionView" destination="Zea-3m-lp4" id="bm5-Et-1Pn"/>
             </connections>
             <point key="canvasLocation" x="89" y="-1.5"/>
         </view>

@@ -25,22 +25,10 @@
 
 @property (copy, nonatomic) NSString *title;
 
-@property (strong, nonatomic) NSMutableArray<ThemeCollectionRowModel *> *themes;
+@property (strong, nonatomic) NSMutableArray<UIThemeModel *> *themes;
 
-- (void)addRow:(void (^)(ThemeCollectionRowModel *row))row;
-
-@end
-
-@interface ThemeCollectionRowModel : NSObject
-
-@property (copy, nonatomic) NSString *name;
-
-@property (copy, nonatomic) NSString *author;
-
-@property (copy, nonatomic) NSString *email;
-
-@property (copy, nonatomic) NSString *image;
-
-@property (assign, nonatomic) CGFloat price;
+- (void)addRow:(void (^)(UIThemeModel *row))row;
 
 @end
+
+

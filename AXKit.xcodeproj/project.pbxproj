@@ -73,6 +73,9 @@
 		CD3543931F9AEFEC009317A6 /* EmptyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3543921F9AEFEC009317A6 /* EmptyVC.m */; };
 		CD36EE7F1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */; };
+		CD3A8EF71FC3F91B00177ADC /* CachedThemeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A8EF61FC3F91B00177ADC /* CachedThemeCollectionView.m */; };
+		CD3A8EFB1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A8EF91FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m */; };
+		CD3A8EFC1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */; };
 		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */; };
 		CD4154251FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -359,6 +362,11 @@
 		CD3543921F9AEFEC009317A6 /* EmptyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyVC.m; sourceTree = "<group>"; };
 		CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+AXWrapper.h"; sourceTree = "<group>"; };
 		CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+AXWrapper.m"; sourceTree = "<group>"; };
+		CD3A8EF51FC3F91B00177ADC /* CachedThemeCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CachedThemeCollectionView.h; sourceTree = "<group>"; };
+		CD3A8EF61FC3F91B00177ADC /* CachedThemeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CachedThemeCollectionView.m; sourceTree = "<group>"; };
+		CD3A8EF81FC3FCF700177ADC /* ThemePreviewCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemePreviewCollectionViewCell.h; sourceTree = "<group>"; };
+		CD3A8EF91FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemePreviewCollectionViewCell.m; sourceTree = "<group>"; };
+		CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePreviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
 		CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugHelper.m; sourceTree = "<group>"; };
 		CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXMailWrapper.h"; sourceTree = "<group>"; };
@@ -1199,6 +1207,9 @@
 				CD63A42F1FC2CA0E00581AF6 /* ThemePreviewView.h */,
 				CD63A4301FC2CA0E00581AF6 /* ThemePreviewView.m */,
 				CD63A4321FC2CA1700581AF6 /* ThemePreviewView.xib */,
+				CD3A8EF81FC3FCF700177ADC /* ThemePreviewCollectionViewCell.h */,
+				CD3A8EF91FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m */,
+				CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */,
 			);
 			path = ThemeDetail;
 			sourceTree = "<group>";
@@ -1209,6 +1220,8 @@
 				CD63A41F1FC1B80700581AF6 /* ThemeManageVC.h */,
 				CD63A4201FC1B80700581AF6 /* ThemeManageVC.m */,
 				CD63A4211FC1B80700581AF6 /* ThemeManageVC.xib */,
+				CD3A8EF51FC3F91B00177ADC /* CachedThemeCollectionView.h */,
+				CD3A8EF61FC3F91B00177ADC /* CachedThemeCollectionView.m */,
 			);
 			path = ThemeManage;
 			sourceTree = "<group>";
@@ -1786,6 +1799,7 @@
 				CD5745A21EDADE510014E833 /* FontSizeTableViewCell.xib in Resources */,
 				CD63A40F1FC1957A00581AF6 /* ThemeCollectionViewCell.xib in Resources */,
 				CDE94E9C1EC709D700596B93 /* ghinfo.json in Resources */,
+				CD3A8EFC1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib in Resources */,
 				CD57459D1EDADE510014E833 /* CustomTableVC.xib in Resources */,
 				CD57458B1EDADE510014E833 /* DefaultViewController.xib in Resources */,
 				CD63A4331FC2CA1700581AF6 /* ThemePreviewView.xib in Resources */,
@@ -1944,6 +1958,7 @@
 				CD63A4061FC1925D00581AF6 /* ThemeStoreVC.m in Sources */,
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */,
+				CD3A8EFB1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m in Sources */,
 				CDB716451F8E441A0025E8D7 /* CameraVC.m in Sources */,
 				CD5745881EDADE510014E833 /* ResizeableImageVC.m in Sources */,
 				CDC1A7851ECFDC63003AAA63 /* BaseLabel.m in Sources */,
@@ -2003,6 +2018,7 @@
 				CD63A4221FC1B80700581AF6 /* ThemeManageVC.m in Sources */,
 				CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */,
 				CD5745B41EDADE510014E833 /* SettingTableView.m in Sources */,
+				CD3A8EF71FC3F91B00177ADC /* CachedThemeCollectionView.m in Sources */,
 				CDBB3B2B1EB9E80F00E8ED25 /* NSObject+MJClass.m in Sources */,
 				8579EEFF1E6BEDF900C33881 /* main.m in Sources */,
 				CD57459C1EDADE510014E833 /* CustomTableVC.m in Sources */,

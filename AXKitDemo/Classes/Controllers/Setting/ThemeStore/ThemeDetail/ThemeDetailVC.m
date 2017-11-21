@@ -21,15 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = self.model.name;
+    self.title = @"主题预览";
     
     NSString *btnTitle = @"下载";
-    self.tableView.model = self.model;
     if ([service.cache isThemeDownloaded:self.model]) {
         btnTitle = @"应用";
-        [self.tableView updateWithTheme:[UIThemeModel modelWithEmail:self.model.email name:self.model.name]];
+        
     }
-    [self.tableView reloadDataSourceAndRefreshTableView];
+    [self.tableView updateWithTheme:self.model];
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithTitle:btnTitle action:^(UIBarButtonItem * _Nonnull sender) {
         if ([sender.title isEqualToString:@"下载"]) {
@@ -44,7 +43,7 @@
         } else {
             // 应用主题
             if ([service.cache isThemeDownloaded:weakSelf.model]) {
-                [axThemeManager applyThemeWithEmail:weakSelf.model.email name:weakSelf.model.name];
+                [axThemeManager applyTheme:weakSelf.model];
             }
         }
     }];

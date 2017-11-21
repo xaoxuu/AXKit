@@ -65,21 +65,20 @@ static NSString *themeCachePath(NSString *email, NSString *name){
     });
 }
 
-- (BOOL)isThemeDownloaded:(ThemeCollectionRowModel *)model{
-    NSString *path = themeCachePath(model.email, model.name);
+- (BOOL)isThemeDownloaded:(UIThemeModel *)model{
+    NSString *path = themeCachePath(model.info.email, model.info.name);
     return [[NSFileManager defaultManager] fileExistsAtPath:path];
 }
 
-- (void)downloadTheme:(ThemeCollectionRowModel *)model completion:(void (^)(UIThemeModel *theme))completion{
+- (void)downloadTheme:(UIThemeModel *)model completion:(void (^)(UIThemeModel *theme))completion{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // @xaoxuu: in background queue
-        NSString *urlString = BaseURLForTheme.appendPathComponent(model.email).appendPathComponent([model.name stringByURLEncode]).extension(@"json");
+        NSString *urlString = BaseURLForTheme.appendPathComponent(model.info.email).appendPathComponent([model.info.name stringByURLEncode]).extension(@"json");
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
             NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            themeCachePath(model.email, model.name).saveFile(jsonString);
+            themeCachePath(model.info.email, model.info.name).saveFile(jsonString);
             if (completion) {
-                UIThemeModel *tmp = [UIThemeModel modelWithPath:themeCachePath(model.email, model.name)];
-                completion(tmp);
+                completion(model);
             }
         } fail:^(NSError *error) {
             

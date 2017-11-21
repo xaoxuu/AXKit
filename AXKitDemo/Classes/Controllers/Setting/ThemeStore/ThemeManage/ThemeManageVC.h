@@ -9,6 +9,6 @@
 #import "BaseViewController.h"
 #import "ThemeStoreVC.h"
 
-@interface ThemeManageVC : ThemeStoreVC
+@interface ThemeManageVC : BaseViewController
 
 @end

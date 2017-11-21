@@ -7,16 +7,14 @@
 //
 
 #import "ThemePreviewView.h"
+#import "ThemePreviewCollectionViewCell.h"
+#import <UIImageView+WebCache.h>
 
-@interface ThemePreviewView ()
-//@property (weak, nonatomic) IBOutlet UIView *bg;
-//
-//@property (weak, nonatomic) IBOutlet UIView *navBar;
-//@property (weak, nonatomic) IBOutlet UILabel *navTitle;
-//
-//@property (weak, nonatomic) IBOutlet UITextView *content;
-//
-//@property (weak, nonatomic) IBOutlet UIView *tabBar;
+static NSString *reuseIdentifier = @"ThemePreviewCollectionViewCell";
+
+@interface ThemePreviewView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -25,34 +23,39 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     self.height = 360;
-    [self.imgv.layer ax_shadow:LayerShadowDownFloat];
-//    [self.bg.layer ax_shadow:LayerShadowDownFloat];
-//    self.content.contentInset = UIEdgeInsetsMake(8, 8, 8, 8);
-//    [self.navBar.layer ax_shadow:LayerShadowDownNormal];
-//    [self.tabBar.layer ax_shadow:LayerShadowUpLight];
-//
-//    self.model = axThemeManager;
+    self.width = kScreenW;
     
+    UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc] init];
+    flowLayout.minimumLineSpacing = 0;
+    flowLayout.minimumInteritemSpacing = 0;
+    flowLayout.itemSize = self.frame.size;
+    flowLayout.sectionInset = UIEdgeInsetsZero;
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.collectionView.collectionViewLayout = flowLayout;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    [self.collectionView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
-//- (void)setModel:(UIThemeModel *)model{
-//    _model = model;
-//
-//    if (model) {
-//        self.bg.backgroundColor = model.color.background;
-//        self.navBar.backgroundColor = model.color.theme;
-//        if (model.color.theme.isLightColor) {
-//            self.navTitle.textColor = model.color.theme.adaptive;
-//        } else {
-//            self.navTitle.textColor = [UIColor whiteColor];
-//        }
-//
-//        self.content.font = model.font.customNormal;
-//    }
-//
-//
-//}
 
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (self.model) {
+        return self.model.info.preview.count;
+    } else {
+        return 0;
+    }
+}
+
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    ThemePreviewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    if (self.model.info.preview.count) {
+        [cell.imgv sd_setImageWithURL:self.model.info.preview[indexPath.row].absoluteURL];
+    }
+
+    return cell;
+}
 
 
 @end

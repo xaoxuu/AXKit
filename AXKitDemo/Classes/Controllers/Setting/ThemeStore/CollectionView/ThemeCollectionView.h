@@ -10,5 +10,6 @@
 #import "ThemeCollectionModel.h"
 
 @interface ThemeCollectionView : UICollectionView
-@property (strong, nonatomic) ThemeCollectionModel *dataList;
+
+
 @end

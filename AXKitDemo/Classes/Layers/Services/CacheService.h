@@ -18,9 +18,9 @@
 - (ThemeCollectionModel *)cachedThemeList;
 - (void)loadThemeList:(void (^)(ThemeCollectionModel *model))callback;
 
-- (BOOL)isThemeDownloaded:(ThemeCollectionRowModel *)model;
+- (BOOL)isThemeDownloaded:(UIThemeModel *)model;
 
-- (void)downloadTheme:(ThemeCollectionRowModel *)model completion:(void (^)(UIThemeModel *theme))completion;
+- (void)downloadTheme:(UIThemeModel *)model completion:(void (^)(UIThemeModel *theme))completion;
 
 
 

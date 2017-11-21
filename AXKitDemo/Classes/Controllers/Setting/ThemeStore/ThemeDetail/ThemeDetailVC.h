@@ -13,6 +13,6 @@
 @interface ThemeDetailVC : BaseViewController
 
 
-@property (strong, nonatomic) ThemeCollectionRowModel *model;
+@property (strong, nonatomic) UIThemeModel *model;
 
 @end

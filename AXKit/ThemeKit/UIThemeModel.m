@@ -48,11 +48,8 @@ static CGFloat smallSize = 12.0f;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [super init]) {
-        self.name = [dictionary stringValueForKey:@"name"];
-        self.author = [dictionary stringValueForKey:@"author"];
-        self.email = [dictionary stringValueForKey:@"email"];
-        self.price = [dictionary doubleValueForKey:@"price"];
-        
+        NSDictionary *info = [dictionary dictionaryValueForKey:@"info"];
+        self.info = [UIThemeInfoModel modelWithDictionary:info];
         NSDictionary *color = [dictionary dictionaryValueForKey:@"color"];
         self.color = [UIThemeColorModel modelWithDictionary:color];
         NSDictionary *font = [dictionary dictionaryValueForKey:@"font"];
@@ -65,10 +62,14 @@ static CGFloat smallSize = 12.0f;
 
 - (NSMutableDictionary *)dictionaryWithModel{
     NSMutableDictionary *jsonFile = [NSMutableDictionary dictionary];
-    jsonFile[@"name"] = self.name;
-    jsonFile[@"author"] = self.author;
-    jsonFile[@"email"] = self.email;
-    jsonFile[@"price"] = @(self.price);
+    
+    NSMutableDictionary *infoDict = [NSMutableDictionary dictionary];
+    infoDict[@"name"] = self.info.name;
+    infoDict[@"author"] = self.info.author;
+    infoDict[@"email"] = self.info.email;
+    infoDict[@"price"] = @(self.info.price);
+    infoDict[@"preview"] = self.info.preview;
+    jsonFile[@"info"] = infoDict;
     
     NSMutableDictionary *colorDict = [NSMutableDictionary dictionary];
     colorDict[@"background"] = self.color.background.hexStringWithAlpha;
@@ -93,14 +94,20 @@ static CGFloat smallSize = 12.0f;
     NSData *data = [NSJSONSerialization dataWithJSONObject:[self dictionaryWithModel] options:NSJSONWritingPrettyPrinted error:nil];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    [UIThemeModel filePathWithEmail:self.email name:self.name].saveFile(jsonString);
-    
-    [NSUserDefaults ax_setString:[UIThemeModel identifierWithEmail:self.email name:self.name] forKey:ThemeKitBundleIdentify];
+    self.filePath.saveFile(jsonString);
+    [NSUserDefaults ax_setString:self.identifier forKey:ThemeKitBundleIdentify];
     [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationColorChanged object:nil];
 }
 
+- (NSString *)filePath{
+    return [UIThemeModel filePathWithEmail:self.info.email name:self.info.name];
+}
+- (NSString *)identifier{
+    return [UIThemeModel identifierWithEmail:self.info.email name:self.info.name];
+}
+
 - (void)deleteThemeFile{
-    [UIThemeModel filePathWithEmail:self.email name:self.name].removeFile();
+    self.filePath.removeFile();
 }
 
 + (void)deleteAllThemes{
@@ -277,6 +284,31 @@ static CGFloat smallSize = 12.0f;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [self init]) {
         self.dict = dictionary;
+    }
+    return self;
+}
+
+
+@end
+@implementation UIThemeInfoModel
+
++ (instancetype)modelWithDictionary:(NSDictionary *)dictionary{
+    return [[self alloc] initWithDictionary:dictionary];
+}
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary{
+    if (self = [self init]) {
+        self.name = [dictionary stringValueForKey:@"name"];
+        self.author = [dictionary stringValueForKey:@"author"];
+        self.email = [dictionary stringValueForKey:@"email"];
+        self.price = [dictionary doubleValueForKey:@"price"];
+        self.preview = [dictionary arrayValueForKey:@"preview"];
+    }
+    return self;
+}
+
+- (instancetype)init{
+    if (self = [super init]) {
+        _preview = [NSArray array];
     }
     return self;
 }
