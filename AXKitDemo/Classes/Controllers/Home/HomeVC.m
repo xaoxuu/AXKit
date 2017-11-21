@@ -8,6 +8,8 @@
 
 #import "HomeVC.h"
 #import "FullWideButton.h"
+#import "StatusKit.h"
+
 
 @interface HomeVC ()
 
@@ -66,6 +68,18 @@
 //    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
 //        [weakSelf.view layoutSubviews];
 //    }];
+    
+    // 彩蛋
+    if ([UIDevice currentDevice].isIphoneX) {
+        
+        UIView *bar = [AXStatusBar getSystemStatusBar];
+        UILabel *lb = [[UILabel alloc] initWithFrame:bar.bounds];
+        lb.height = 24;
+        lb.textAlignment = NSTextAlignmentCenter;
+        lb.text = @"^_^";
+        [bar addSubview:lb];
+    }
+    
 }
 
 
