@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZL-Z1-jSm">
-                        <rect key="frame" x="119" y="32" width="121.5" height="162"/>
+                        <rect key="frame" x="125" y="32" width="109.5" height="146"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="QZL-Z1-jSm" secondAttribute="height" multiplier="3:4" id="QeD-zU-YzL"/>
                         </constraints>
@@ -28,7 +28,7 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="QZL-Z1-jSm" secondAttribute="bottom" constant="32" id="1bh-hU-dI9"/>
+                <constraint firstAttribute="bottom" secondItem="QZL-Z1-jSm" secondAttribute="bottom" constant="48" id="1bh-hU-dI9"/>
                 <constraint firstItem="QZL-Z1-jSm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="32" id="2mW-Yn-ita"/>
                 <constraint firstItem="QZL-Z1-jSm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="rgD-rh-qQU"/>
             </constraints>
