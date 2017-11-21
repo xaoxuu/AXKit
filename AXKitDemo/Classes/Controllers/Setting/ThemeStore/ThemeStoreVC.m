@@ -34,8 +34,9 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"在线主题";
     __weak typeof(self) weakSelf = self;
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithTitle:@"管理" action:^(UIBarButtonItem * _Nonnull sender) {
-        [weakSelf.navigationController ax_pushViewControllerNamed:@"ThemeManageVC"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithTitle:@"清空缓存" action:^(UIBarButtonItem * _Nonnull sender) {
+//        [weakSelf.navigationController ax_pushViewControllerNamed:@"ThemeManageVC"];
+        [UIThemeModel deleteAllThemes];
     }];
     
 //    [self setupCollectionView];

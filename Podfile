@@ -6,7 +6,7 @@ pod 'YYKit'
 pod 'FMDB'
 pod 'SDWebImage'
 pod 'AXCameraKit'
-
+pod 'MJRefresh'
 pod 'SCLAlertView-Objective-C'
 
 

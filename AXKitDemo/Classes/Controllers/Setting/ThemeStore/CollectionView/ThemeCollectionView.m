@@ -33,8 +33,8 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
     [self registerNib:[UINib nibWithNibName:reuseIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
     [self registerNib:[UINib nibWithNibName:headerReuseIdentifier bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseIdentifier];
 //    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
-//    self.contentInset = UIEdgeInsetsMake(0, 4, 0, 4);
-    
+    self.contentInset = UIEdgeInsetsMake(0, 4, 0, 4);
+    self.backgroundColor = [UIColor clearColor];
     UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc] init];
     
     self.width = kScreenW;
@@ -45,6 +45,7 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
     CGFloat width = (self.width-8)/3;
     flowLayout.itemSize = CGSizeMake(width, width * 4 / 3 + 50);
     flowLayout.sectionInset = UIEdgeInsetsZero;
+    
     self.collectionViewLayout = flowLayout;
     [self loadDataFromNetwork];
     self.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFromNetwork)];
@@ -104,5 +105,8 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
     [self.controller.navigationController pushViewController:vc animated:YES];
 }
 
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+//    return UIEdgeInsetsMake(8, 8, 8, 8);
+//}
 
 @end
