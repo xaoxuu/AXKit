@@ -8,7 +8,6 @@
 
 #import "DebugVC.h"
 #import "DebugTV.h"
-#import <AXCameraKit/AXCameraKit.h>
 
 @interface DebugVC ()
 
@@ -21,8 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    [self loadCameraKit];
     
 }
 

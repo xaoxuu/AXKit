@@ -18,10 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
  - CameraOverlayButtonSwitch: 切换前后摄像头按钮
  */
 typedef NS_ENUM(NSUInteger, CameraOverlayButton) {
-    CameraOverlayButtonUnknown = 0,
+    CameraOverlayButtonUnknown = 10000,
     CameraOverlayButtonDismiss,
     CameraOverlayButtonShutter,
     CameraOverlayButtonSwitch,
+    CameraOverlayButtonFlashlight,
 };
 
 
@@ -30,6 +31,11 @@ typedef NS_ENUM(NSUInteger, CameraOverlayButton) {
  */
 @interface AXCameraOverlayView : UIView
 
+
+/**
+ 闪光灯
+ */
+@property (strong, nonatomic) UIButton *flashlightButton;
 
 /**
  dismiss按钮，用于退出相机页面
@@ -55,6 +61,10 @@ typedef NS_ENUM(NSUInteger, CameraOverlayButton) {
  设置是否显示缩略图预览，默认为否
  */
 @property (assign, getter=isEnablePreview, nonatomic) BOOL enablePreview;
+
+
+
+- (UIImage *)loadImageWithName:(NSString *)name;
 
 @end
 NS_ASSUME_NONNULL_END

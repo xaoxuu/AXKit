@@ -23,10 +23,9 @@
                 AXLogFailure();
             }];
         } else if (row == 8) {
-            [self.controller presentCameraVC:nil failure:^(NSError * _Nonnull error) {
-                [UIAlertController ax_showAlertWithTitle:error.localizedDescription message:error.localizedFailureReason actions:^(UIAlertController * _Nonnull alert) {
-                    [alert ax_addCancelAction];
-                }];
+            AXCameraViewController *vc = [[AXCameraViewController alloc] init];
+            [self.controller presentViewController:vc animated:YES completion:^{
+                
             }];
         } else {
             [self.controller.navigationController ax_pushViewControllerNamed:model.target];
