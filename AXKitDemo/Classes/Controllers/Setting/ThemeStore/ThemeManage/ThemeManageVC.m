@@ -22,7 +22,7 @@
     self.title = @"主题管理";
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"icon_trash" action:^(UIBarButtonItem * _Nonnull sender) {
-        [UIThemeModel deleteAllThemes];
+        [axThemeManager deleteAllThemes];
         [weakSelf.collectionView reloadData];
     }];
     self.view.backgroundColor = axThemeManager.color.background;

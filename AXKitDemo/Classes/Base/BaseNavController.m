@@ -24,10 +24,9 @@
     
     [self updateTheme];
     
-    
     if (@available(iOS 11.0, *)) {
         // on newer versions
-        self.navigationBar.prefersLargeTitles = NO;
+        self.navigationBar.prefersLargeTitles = YES;
     } else {
         // Fallback on earlier versions
         
@@ -42,6 +41,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -54,17 +57,7 @@
 
 
 - (void)updateTheme{
-    self.navigationBar.translucent = NO;
-    self.navigationBar.barTintColor = axThemeManager.color.theme;
-    if (axThemeManager.color.theme.isLightColor) {
-        self.navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.7);
-        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7)}];
-        
-    } else {
-        self.navigationBar.tintColor = [UIColor whiteColor];
-        [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        
-    }
+    [axThemeManager updateThemeForNavigationBar:self.navigationBar];
 }
 
 

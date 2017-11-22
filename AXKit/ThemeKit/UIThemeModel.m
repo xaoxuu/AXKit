@@ -15,10 +15,6 @@
 
 NSString *ThemeKitBundleIdentify = @"com.xaoxuu.AXKit.theme";
 
-NSString *ThemeKitNotificationColorChanged = @"com.xaoxuu.AXKit.theme.notification.ColorChanged";
-NSString *ThemeKitNotificationFontChanged = @"com.xaoxuu.AXKit.theme.notification.FontChanged";
-NSString *ThemeKitNotificationIconPackChanged = @"com.xaoxuu.AXKit.theme.notification.IconPackChanged";
-
 static CGFloat standardSize = 14.0f;
 static CGFloat smallSize = 12.0f;
 
@@ -61,43 +57,14 @@ static CGFloat smallSize = 12.0f;
 }
 
 - (NSMutableDictionary *)dictionaryWithModel{
-    NSMutableDictionary *jsonFile = [NSMutableDictionary dictionary];
-    
-    NSMutableDictionary *infoDict = [NSMutableDictionary dictionary];
-    infoDict[@"name"] = self.info.name;
-    infoDict[@"author"] = self.info.author;
-    infoDict[@"email"] = self.info.email;
-    infoDict[@"price"] = @(self.info.price);
-    infoDict[@"preview"] = self.info.preview;
-    jsonFile[@"info"] = infoDict;
-    
-    NSMutableDictionary *colorDict = [NSMutableDictionary dictionary];
-    colorDict[@"background"] = self.color.background.hexStringWithAlpha;
-    colorDict[@"theme"] = self.color.theme.hexStringWithAlpha;
-    colorDict[@"accent"] = self.color.accent.hexStringWithAlpha;
-    colorDict[@"groupTableViewBackground"] = self.color.groupTableViewBackground.hexStringWithAlpha;
-    colorDict[@"separatorColor"] = self.color.separatorColor.hexStringWithAlpha;
-    jsonFile[@"color"] = colorDict;
-    
-    NSMutableDictionary *fontDict = [NSMutableDictionary dictionary];
-    fontDict[@"prefersFontSize"] = @(self.font.prefersFontSize);
-    fontDict[@"name"] = self.font.name;
-    jsonFile[@"font"] = fontDict;
-    
-    NSMutableDictionary *iconDict = [NSMutableDictionary dictionary];
-    jsonFile[@"icon"] = iconDict;
-    return jsonFile;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"info"] = [self.info dictionaryWithModel];
+    dict[@"color"] = [self.color dictionaryWithModel];
+    dict[@"font"] = [self.font dictionaryWithModel];
+    dict[@"icon"] = [self.icon dictionaryWithModel];
+    return dict;
 }
 
-- (void)saveCurrentTheme{
-    
-    NSData *data = [NSJSONSerialization dataWithJSONObject:[self dictionaryWithModel] options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    self.filePath.saveFile(jsonString);
-    [NSUserDefaults ax_setString:self.identifier forKey:ThemeKitBundleIdentify];
-    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationColorChanged object:nil];
-}
 
 - (NSString *)filePath{
     return [UIThemeModel filePathWithEmail:self.info.email name:self.info.name];
@@ -106,13 +73,6 @@ static CGFloat smallSize = 12.0f;
     return [UIThemeModel identifierWithEmail:self.info.email name:self.info.name];
 }
 
-- (void)deleteThemeFile{
-    self.filePath.removeFile();
-}
-
-+ (void)deleteAllThemes{
-    [UIThemeModel filePathWithIdentifier:@""].removeFile();
-}
 
 + (NSString *)identifierWithEmail:(NSString *)email name:(NSString *)name{
     return [NSString stringWithFormat:@"%@/%@.json", email, name];
@@ -123,14 +83,7 @@ static CGFloat smallSize = 12.0f;
 + (NSString *)filePathWithEmail:(NSString *)email name:(NSString *)name{
     return [self filePathWithIdentifier:[self identifierWithEmail:email name:name]];
 }
-+ (NSArray<UIThemeModel *> *)getAllDownloadedThemes{
-    NSMutableArray<UIThemeModel *> *models = [NSMutableArray array];
-    [ThemeKitBundleIdentify.docPath.subpaths(@"json") enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIThemeModel *model = [UIThemeModel modelWithPath:obj];
-        [models addObject:model];
-    }];
-    return models;
-}
+
 
 @end
 @implementation UIThemeColorModel
@@ -167,6 +120,18 @@ static CGFloat smallSize = 12.0f;
         
     }
     return self;
+}
+
+- (NSMutableDictionary *)dictionaryWithModel{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    dict[@"background"] = self.background.hexStringWithAlpha;
+    dict[@"theme"] = self.theme.hexStringWithAlpha;
+    dict[@"accent"] = self.accent.hexStringWithAlpha;
+    dict[@"groupTableViewBackground"] = self.groupTableViewBackground.hexStringWithAlpha;
+    dict[@"separatorColor"] = self.separatorColor.hexStringWithAlpha;
+    
+    return dict;
 }
 
 - (UIColor *)background{
@@ -232,7 +197,7 @@ static CGFloat smallSize = 12.0f;
         _customLarge = [UIFont systemFontOfSize:standardSize * 1.2 * ratio];
         _customBoldLarge = [UIFont boldSystemFontOfSize:standardSize * 1.2 * ratio];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontChanged object:@YES];
+    
 }
 
 - (UIFont *)fontWithCustomPrefersFontSize:(CGFloat)size{
@@ -275,6 +240,16 @@ static CGFloat smallSize = 12.0f;
     return self;
 }
 
+
+- (NSMutableDictionary *)dictionaryWithModel{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    dict[@"prefersFontSize"] = @(self.prefersFontSize);
+    dict[@"name"] = self.name;
+    
+    return dict;
+}
+
 @end
 @implementation UIThemeIconModel
 
@@ -286,6 +261,19 @@ static CGFloat smallSize = 12.0f;
         self.dict = dictionary;
     }
     return self;
+}
+
+
+- (NSMutableDictionary *)dictionaryWithModel{
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//
+//    dict[@"name"] = self.info.name;
+//    dict[@"author"] = self.info.author;
+//    dict[@"email"] = self.info.email;
+//    dict[@"price"] = @(self.info.price);
+//    dict[@"preview"] = self.info.preview;
+    
+    return self.dict;
 }
 
 
@@ -312,4 +300,18 @@ static CGFloat smallSize = 12.0f;
     }
     return self;
 }
+
+
+- (NSMutableDictionary *)dictionaryWithModel{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    dict[@"name"] = self.name;
+    dict[@"author"] = self.author;
+    dict[@"email"] = self.email;
+    dict[@"price"] = @(self.price);
+    dict[@"preview"] = self.preview;
+    
+    return dict;
+}
+
 @end

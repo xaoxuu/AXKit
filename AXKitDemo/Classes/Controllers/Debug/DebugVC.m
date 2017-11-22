@@ -21,6 +21,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    if (@available(iOS 11.0, *)) {
+        // on newer versions
+        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
+    } else {
+        // Fallback on earlier versions
+        
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

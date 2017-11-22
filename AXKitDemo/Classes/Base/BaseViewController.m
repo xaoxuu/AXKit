@@ -22,6 +22,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if (@available(iOS 11.0, *)) {
+        // on newer versions
+        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
+    } else {
+        // Fallback on earlier versions
+        
+    }
+    
     // @xaoxuu: 基类 初始化 顶部区域 NavigationBar
     [self baseInitNavBar];
     // @xaoxuu: 基类 初始化 内容区域

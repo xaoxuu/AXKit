@@ -12,6 +12,7 @@
 // @xaoxuu: layer
 #import "CALayer+AXWrapper.h"
 
+#import "ThemeKit.h"
 
 #import "UIBarButtonItem+AXBlockWrapper.h"
 
@@ -20,8 +21,6 @@
 #import "UINavigationItem+AXExtension.h"
 
 #import "UITabBar+AXExtension.h"
-
-#import "UIThemeManager.h"
 
 #import "UIColor+AXColorPack.h"
 #import "UIColor+MDColorPack.h"

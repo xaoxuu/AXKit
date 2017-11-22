@@ -29,23 +29,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     [self.tabBar ax_hideSeparator];
 
-    
     [self updateTheme];
-   
     
 }
 
 - (void)updateTheme{
-    self.tabBar.translucent = NO;
-    if (axThemeManager.color.theme.isLightColor) {
-        self.tabBar.tintColor = axThemeManager.color.theme.darkRatio(0.2);
-    } else {
-        self.tabBar.tintColor = axThemeManager.color.theme;
-    }
+    [axThemeManager updateThemeForTabBar:self.tabBar];
 }
 
 - (NSString *)configurationFilePath{

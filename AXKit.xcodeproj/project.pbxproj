@@ -76,6 +76,7 @@
 		CD3A8EF71FC3F91B00177ADC /* CachedThemeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A8EF61FC3F91B00177ADC /* CachedThemeCollectionView.m */; };
 		CD3A8EFB1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A8EF91FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m */; };
 		CD3A8EFC1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */; };
+		CD3A8F051FC5499000177ADC /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3A8F041FC5490A00177ADC /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */; };
 		CD4154251FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -367,6 +368,7 @@
 		CD3A8EF81FC3FCF700177ADC /* ThemePreviewCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemePreviewCollectionViewCell.h; sourceTree = "<group>"; };
 		CD3A8EF91FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemePreviewCollectionViewCell.m; sourceTree = "<group>"; };
 		CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePreviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		CD3A8F041FC5490A00177ADC /* ThemeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKit.h; sourceTree = "<group>"; };
 		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
 		CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugHelper.m; sourceTree = "<group>"; };
 		CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXMailWrapper.h"; sourceTree = "<group>"; };
@@ -870,6 +872,7 @@
 		CD4154211FC01F3100D4ED2C /* ThemeKit */ = {
 			isa = PBXGroup;
 			children = (
+				CD3A8F041FC5490A00177ADC /* ThemeKit.h */,
 				CD4154431FC0335C00D4ED2C /* UIThemeModel.h */,
 				CD4154441FC0335C00D4ED2C /* UIThemeModel.m */,
 				CDB716531F8E6EC80025E8D7 /* UIThemeManager.h */,
@@ -1630,6 +1633,7 @@
 			files = (
 				CDAB58F71E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h in Headers */,
 				CDAB590B1E6BF96B0017CA1E /* UIColor+AXExtension.h in Headers */,
+				CD3A8F051FC5499000177ADC /* ThemeKit.h in Headers */,
 				CDAB58EF1E6BF5A20017CA1E /* NSString+AXExtension.h in Headers */,
 				CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */,
 				CDAB59371E6BFE170017CA1E /* UIView+AXExtension.h in Headers */,

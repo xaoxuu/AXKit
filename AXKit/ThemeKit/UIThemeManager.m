@@ -1,4 +1,4 @@
-//
+
 //  UIThemeManager.m
 //  AXKit
 //
@@ -7,6 +7,7 @@
 //
 
 #import "UIThemeManager.h"
+#import "ThemeKit.h"
 #import "_AXKitBundle.h"
 #import "NSUserDefaults+AXWrapper.h"
 #import "NSString+AXFileStreamChainedWrapper.h"
@@ -14,94 +15,17 @@
 #import "UIResponder+AXExtension.h"
 
 
+NSString *ThemeKitNotificationColorChanged = @"com.xaoxuu.AXKit.theme.notification.ColorChanged";
+NSString *ThemeKitNotificationFontChanged = @"com.xaoxuu.AXKit.theme.notification.FontChanged";
+NSString *ThemeKitNotificationIconPackChanged = @"com.xaoxuu.AXKit.theme.notification.IconPackChanged";
+
+
 UIThemeManager *axThemeManager = nil;
 
 @implementation UIThemeManager
 
-- (void)configDefaultTheme:(void (^)(UIThemeManager *))defaultTheme{
-    BOOL hasCustomTheme = NO;
-    hasCustomTheme = [NSUserDefaults ax_readStringForKey:ThemeKitBundleIdentify].length;
-    if (!hasCustomTheme) {
-        if (defaultTheme) {
-            defaultTheme(self);
-        }
-    }
-}
-
-- (void)applyThemeWithPath:(NSString *)path{
-    axThemeManager = [UIThemeManager modelWithPath:path];
-    [self saveCurrentTheme];
-}
-- (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name{
-    UIThemeModel *theme = [UIThemeModel modelWithEmail:email name:name];
-    [self applyTheme:theme];
-}
-- (void)applyTheme:(UIThemeModel *)theme{
-    axThemeManager.info = theme.info;
-    axThemeManager.color = theme.color;
-    axThemeManager.font = theme.font;
-    axThemeManager.icon = theme.icon;
-    [self saveCurrentTheme];
-}
-- (void)saveCurrentTheme{
-    [super saveCurrentTheme];
-    
-    if (axThemeManager.color.theme.isLightColor) {
-        [UINavigationBar appearance].tintColor = axThemeManager.color.theme.darkRatio(0.6);
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.6)}];
-        [UITabBar appearance].tintColor = axThemeManager.color.theme.darkRatio(0.3);
-    } else {
-        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        [UITabBar appearance].tintColor = axThemeManager.color.theme;
-    }
-    
-    [UINavigationBar appearance].barStyle = UIBarStyleDefault;
-    [UINavigationBar appearance].translucent = NO;
-    [UINavigationBar appearance].opaque = YES;
-    [UINavigationBar appearance].barTintColor = axThemeManager.color.theme;
-    
-    
-    [UITabBar appearance].barStyle = UIBarStyleDefault;
-    [UITabBar appearance].translucent = NO;
-    [UITabBar appearance].opaque = YES;
-    [UITabBar appearance].barTintColor = [UIColor whiteColor];
-    [UITabBar appearance].tintColor = axThemeManager.color.theme;
-    
-    [AXRootViewController().view layoutSubviews];
-    
-    
-}
-
-- (void)updateCurrentTheme:(void (^)(UIThemeManager *theme))update{
-    if (update) {
-        update(self);
-    }
-    [self saveCurrentTheme];
-    
-}
-
-- (void)updateCurrentColorTheme:(void (^)(UIThemeColorModel *color))update{
-    [self updateCurrentTheme:^(UIThemeManager *theme) {
-        if (update) {
-            update(theme.color);
-        }
-    }];
-}
-- (void)updateCurrentFontTheme:(void (^)(UIThemeFontModel *font))update{
-    [self updateCurrentTheme:^(UIThemeManager *theme) {
-        if (update) {
-            update(theme.font);
-        }
-    }];
-}
 
 #pragma mark - life circle
-
-#pragma mark init
-
-
-#pragma mark creator
 
 // defaultManager
 + (instancetype)defaultManager{
@@ -125,22 +49,191 @@ UIThemeManager *axThemeManager = nil;
                 axThemeManager = [self modelWithPath:path];
                 // init settings
                 
-//                [axThemeManager addObserver:axThemeManager forKeyPath:@"font.prefersFontSize" options:NSKeyValueObservingOptionNew context:nil];
-                
             }
         });
     }
     return axThemeManager;
 }
 
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-//    if ([keyPath isEqualToString:@"font.prefersFontSize"]) {
-//        [self saveCurrentTheme];
-//    }
-//}
-//
-//- (void)dealloc{
-//    [axThemeManager removeObserver:axThemeManager forKeyPath:@"font.prefersFontSize"];
-//}
+#pragma mark - manager
+
+/**
+ 设置默认的颜色配置（会被用户的更改覆盖，一般用在appDelegate中）
+ 
+ @param defaultTheme 默认的颜色配置
+ */
+- (void)configDefaultTheme:(void (^)(UIThemeManager *))defaultTheme{
+    BOOL hasCustomTheme = NO;
+    hasCustomTheme = [NSUserDefaults ax_readStringForKey:ThemeKitBundleIdentify].length;
+    if (!hasCustomTheme) {
+        if (defaultTheme) {
+            defaultTheme(self);
+        }
+    }
+}
+
+/**
+ 应用主题
+ 
+ @param path 主题文件路径
+ */
+- (void)applyThemeWithPath:(NSString *)path{
+    UIThemeManager *theme = [UIThemeManager modelWithPath:path];
+    [self applyTheme:theme];
+}
+
+/**
+ 应用主题
+ 
+ @param email 主题作者邮箱
+ @param name 主题名
+ */
+- (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name{
+    UIThemeModel *theme = [UIThemeModel modelWithEmail:email name:name];
+    [self applyTheme:theme];
+}
+
+/**
+ 应用主题
+ 
+ @param theme 主题
+ */
+- (void)applyTheme:(UIThemeModel *)theme{
+    axThemeManager.info = theme.info;
+    axThemeManager.color = theme.color;
+    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationColorChanged object:nil];
+    axThemeManager.font = theme.font;
+    [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontChanged object:nil];
+    axThemeManager.icon = theme.icon;
+     [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationIconPackChanged object:nil];
+    [self saveCurrentThemeAndUpdateUI];
+}
+
+/**
+ 更新主题色
+ 
+ @param update 主题色
+ */
+- (void)updateCurrentColorTheme:(void (^)(UIThemeColorModel *color))update{
+    [self updateCurrentTheme:^(UIThemeManager *theme) {
+        if (update) {
+            update(theme.color);
+            [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationColorChanged object:nil];
+        }
+    }];
+}
+
+/**
+ 更新主题字体
+ 
+ @param update 主题字体
+ */
+- (void)updateCurrentFontTheme:(void (^)(UIThemeFontModel *font))update{
+    [self updateCurrentTheme:^(UIThemeManager *theme) {
+        if (update) {
+            update(theme.font);
+            [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontChanged object:nil];
+        }
+    }];
+}
+
+
+
+#pragma mark - util
+
+
+/**
+ 获取所有已下载的主题
+ 
+ @return 所有已下载的主题
+ */
+- (NSArray<UIThemeModel *> *)getAllDownloadedThemes{
+    NSMutableArray<UIThemeModel *> *models = [NSMutableArray array];
+    [ThemeKitBundleIdentify.docPath.subpaths(@"json") enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIThemeModel *model = [UIThemeModel modelWithPath:obj];
+        [models addObject:model];
+    }];
+    return models;
+}
+
+/**
+ 删除主题
+ 
+ @param theme 主题
+ */
+- (void)deleteTheme:(UIThemeModel *)theme{
+    theme.filePath.removeFile();
+}
+
+/**
+ 删除所有主题
+ */
+- (void)deleteAllThemes{
+    [UIThemeModel filePathWithIdentifier:@""].removeFile();
+}
+
+/**
+ 为navigationBar更新主题
+ 
+ @param navigationBar navigationBar
+ */
+- (void)updateThemeForNavigationBar:(UINavigationBar *)navigationBar{
+    navigationBar.translucent = NO;
+    navigationBar.barTintColor = axThemeManager.color.theme;
+    if (axThemeManager.color.theme.isLightColor) {
+        navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.7);
+        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7)};
+        if (@available(iOS 11.0, *)) {
+            // on newer versions
+            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7)};
+        }
+    } else {
+        navigationBar.tintColor = [UIColor whiteColor];
+        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+        if (@available(iOS 11.0, *)) {
+            // on newer versions
+            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+        }
+    }
+}
+
+/**
+ 为tabBar更新主题
+ 
+ @param tabBar tabBar
+ */
+- (void)updateThemeForTabBar:(UITabBar *)tabBar{
+    tabBar.translucent = NO;
+    tabBar.barTintColor = [UIColor whiteColor];
+    if (axThemeManager.color.theme.isLightColor) {
+        tabBar.tintColor = axThemeManager.color.theme.darkRatio(0.2);
+    } else {
+        tabBar.tintColor = axThemeManager.color.theme;
+    }
+}
+
+#pragma mark - priv
+
+- (void)updateCurrentTheme:(void (^)(UIThemeManager *theme))update{
+    if (update) {
+        update(self);
+    }
+    [self saveCurrentThemeAndUpdateUI];
+}
+
+
+- (void)saveCurrentThemeAndUpdateUI{
+    // save file
+    NSData *data = [NSJSONSerialization dataWithJSONObject:[self dictionaryWithModel] options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    self.filePath.saveFile(jsonString);
+    // save user defaults
+    [NSUserDefaults ax_setString:self.identifier forKey:ThemeKitBundleIdentify];
+    
+    // update ui
+    [self updateThemeForNavigationBar:[UINavigationBar appearance]];
+    [self updateThemeForTabBar:[UITabBar appearance]];
+    
+}
 
 @end

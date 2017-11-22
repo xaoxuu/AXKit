@@ -8,13 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-FOUNDATION_EXTERN NSString *ThemeKitBundleIdentify;
 
-FOUNDATION_EXTERN NSString *ThemeKitNotificationColorChanged;
-
-FOUNDATION_EXTERN NSString *ThemeKitNotificationFontChanged;
-
-FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 
 @class UIThemeColorModel,UIThemeFontModel,UIThemeIconModel, UIThemeInfoModel;
 
@@ -41,28 +35,45 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
  */
 @property (strong, nonatomic) UIThemeIconModel *icon;
 
+
 + (instancetype)modelWithPath:(NSString *)path;
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
 + (instancetype)modelWithEmail:(NSString *)email name:(NSString *)name;
+- (NSMutableDictionary *)dictionaryWithModel;
 
 
 /**
  保存当前主题
  */
-- (void)saveCurrentTheme;
+//- (void)saveCurrentTheme;
 
 
-- (void)deleteThemeFile;
+/**
+ 删除当前主题文件
+ */
+//- (void)deleteThemeFile;
+
+/**
+ 主题文件路径
+
+ @return 主题文件路径
+ */
 - (NSString *)filePath;
+
+/**
+ 主题id
+
+ @return 主题id
+ */
 - (NSString *)identifier;
 
 
 
-+ (void)deleteAllThemes;
+//+ (void)deleteAllThemes;
 + (NSString *)identifierWithEmail:(NSString *)email name:(NSString *)name;
 + (NSString *)filePathWithIdentifier:(NSString *)identifier;
 + (NSString *)filePathWithEmail:(NSString *)email name:(NSString *)name;
-+ (NSArray<UIThemeModel *> *)getAllDownloadedThemes;
+//+ (NSArray<UIThemeModel *> *)getAllDownloadedThemes;
 
 @end
 
@@ -94,6 +105,7 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 
 
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
+- (NSMutableDictionary *)dictionaryWithModel;
 
 @end
 
@@ -133,6 +145,7 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 - (UIFont *)boldFontWithCustomPrefersFontSize:(CGFloat)size;
 
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
+- (NSMutableDictionary *)dictionaryWithModel;
 
 @end
 
@@ -142,6 +155,7 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 @property (strong, nonatomic) NSDictionary *dict;
 
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
+- (NSMutableDictionary *)dictionaryWithModel;
 
 @end
 
@@ -175,5 +189,6 @@ FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
 @property (copy, nonatomic) NSArray<NSString *> *preview;
 
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary;
+- (NSMutableDictionary *)dictionaryWithModel;
 
 @end

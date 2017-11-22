@@ -26,7 +26,7 @@
 - (ThemeCollectionModel *)dataList{
     if (!_dataList) {
         _dataList = [ThemeCollectionModel new];
-        NSArray<UIThemeModel *> *themes = [UIThemeManager getAllDownloadedThemes];
+        NSArray<UIThemeModel *> *themes = [axThemeManager getAllDownloadedThemes];
         if (themes.count) {
             [_dataList addSection:^(ThemeCollectionSectionModel *section) {
                 section.title = @"已下载的主题";
