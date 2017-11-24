@@ -71,11 +71,10 @@ static NSString *reuseIdentifier = @"ThemeCollectionViewCell";
     }];
 }
 
-- (void)reloadData{
+- (void)reloadDataSourceAndUpdateUI{
     self.dataList = nil;
-    [super reloadData];
+    [self reloadData];
 }
-
 
 #pragma mark - data source
 

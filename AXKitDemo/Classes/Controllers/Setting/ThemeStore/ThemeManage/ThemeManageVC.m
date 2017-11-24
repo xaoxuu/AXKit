@@ -23,7 +23,7 @@
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"icon_trash" action:^(UIBarButtonItem * _Nonnull sender) {
         [axThemeManager deleteAllThemes];
-        [weakSelf.collectionView reloadData];
+        [weakSelf.collectionView reloadDataSourceAndUpdateUI];
     }];
     self.view.backgroundColor = axThemeManager.color.background;
 }

@@ -20,7 +20,9 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    UIView *bar = [[UIView alloc] initWithFrame:[AXStatusBar getCustomStatusBar].bounds];
+    bar.backgroundColor = [UIColor ax_blue];
+    [self.view insertSubview:bar aboveSubview:self.webView];
     
     
 }

@@ -11,5 +11,6 @@
 
 @interface ThemeCollectionView : UICollectionView
 
+- (void)reloadDataSourceAndUpdateUI;
 
 @end

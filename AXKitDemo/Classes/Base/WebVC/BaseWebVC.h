@@ -40,6 +40,8 @@
 // @xaoxuu: url string
 @property (copy, nonatomic) NSString *urlStr;
 
+// @xaoxuu: wk
+@property (strong, nonatomic) WKWebView *webView;
 
 + (instancetype)webVCWithURLString:(NSString *)url;
 

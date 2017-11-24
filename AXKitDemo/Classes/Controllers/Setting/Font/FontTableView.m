@@ -61,7 +61,7 @@ static NSString *fontSizeCell = @"FontSizeTableViewCell";
     [model addSection:^(AXTableSectionModel *section) {
         section.headerTitle = @"字号";
         [section addRow:^(AXTableRowModel *row) {
-            row.rowHeight = 400;
+            row.rowHeight = 300;
         }];
     }];
     

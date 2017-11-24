@@ -13,8 +13,6 @@
 @interface BaseWebVC ()<WKUIDelegate, WKNavigationDelegate>
 
 
-// @xaoxuu: wk
-@property (strong, nonatomic) WKWebView *webView;
 // @xaoxuu: progress
 @property (strong, nonatomic) UIProgressView *progressView;
 @property (strong, nonatomic) UIActivityIndicatorView *indicator;
