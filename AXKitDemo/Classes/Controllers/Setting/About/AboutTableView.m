@@ -41,7 +41,7 @@ static CGFloat const iconSize = 64;
     [view addSubview:icon];
     
     // @xaoxuu: app name
-    NormalLabel *appName = [NormalLabel labelWithTitle:[NSBundle ax_appName] fontSize:12];
+    NormalLabel *appName = [NormalLabel labelWithTitle:[NSBundle ax_appDisplayName] fontSize:12];
     appName.centerX = 0.5 * view.width;
     appName.top = icon.bottom + 8;
     [view addSubview:appName];

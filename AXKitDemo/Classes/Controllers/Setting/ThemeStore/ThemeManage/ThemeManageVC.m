@@ -8,6 +8,7 @@
 
 #import "ThemeManageVC.h"
 #import "CachedThemeCollectionView.h"
+#import <SDImageCache.h>
 
 @interface ThemeManageVC ()
 @property (weak, nonatomic) IBOutlet CachedThemeCollectionView *collectionView;

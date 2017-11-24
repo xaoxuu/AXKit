@@ -27,7 +27,7 @@ static const CGFloat lbHeight = 20;
 
 - (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title fontSize:(CGFloat)fontSize{
     if (self = [self initWithFrame:frame title:title]) {
-        self.font = [UIFont systemFontOfSize:fontSize?:14];
+        self.font = [axThemeManager.font fontWithCustomPrefersFontSize:fontSize];
     }
     return self;
 }

@@ -202,7 +202,7 @@ static CGFloat smallSize = 12.0f;
 
 - (UIFont *)fontWithCustomPrefersFontSize:(CGFloat)size{
     CGFloat ratio = size / standardSize;
-    return [UIFont systemFontOfSize:standardSize * ratio];
+    return [UIFont fontWithName:self.name size:standardSize * ratio];
 }
 - (UIFont *)boldFontWithCustomPrefersFontSize:(CGFloat)size{
     CGFloat ratio = size / standardSize;
