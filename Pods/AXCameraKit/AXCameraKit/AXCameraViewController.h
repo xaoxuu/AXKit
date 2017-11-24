@@ -11,6 +11,9 @@
 
 @interface AXCameraViewController : UIViewController
 
+/**
+ 相机操作按钮覆盖图层
+ */
 @property (strong, nonatomic) AXCameraOverlayView *overlayView;
 
 /**
@@ -26,9 +29,12 @@
 
 
 /**
- 开关闪光灯
+ 开关闪光灯模式
+ 0:关, 1:开, 2:自动
  */
-- (void)switchFlashlight;
+- (void)changeFlashMode;
+
+
 
 
 @end

@@ -12,7 +12,7 @@
 
 static NSString *moduleName = @"AXCameraKit";
 
-@interface AXCameraViewController ()<AVCaptureMetadataOutputObjectsDelegate,UIAlertViewDelegate>
+@interface AXCameraViewController ()<AVCaptureMetadataOutputObjectsDelegate,UIAlertViewDelegate, AXCameraOverlayViewDelegate>
 
 /**
  捕获设备
@@ -54,6 +54,8 @@ static NSString *moduleName = @"AXCameraKit";
 
 @implementation AXCameraViewController
 
+#pragma mark - life circle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -84,8 +86,8 @@ static NSString *moduleName = @"AXCameraKit";
             });
         } else {
             // 可以拍照
-            [self customCamera];
             [self customUI];
+            [self customCamera];
         }
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"无法打开相机" message:@"设备不支持相机" preferredStyle:UIAlertControllerStyleAlert];
@@ -99,11 +101,23 @@ static NSString *moduleName = @"AXCameraKit";
     }
     
 }
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChanged) name:UIDeviceOrientationDidChangeNotification object:nil];
+    self.overlayView.aspectRatio = CameraOverlayViewAspectRatio4_3;
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)dealloc{
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -112,6 +126,10 @@ static NSString *moduleName = @"AXCameraKit";
 
 
 - (void)customUI{
+    self.view.backgroundColor = [UIColor blackColor];
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.navigationController.navigationBar.hidden = YES;
+    
     self.focusView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
     self.focusView.layer.borderWidth = 1.0;
     self.focusView.layer.borderColor =[UIColor greenColor].CGColor;
@@ -121,11 +139,17 @@ static NSString *moduleName = @"AXCameraKit";
 
     
     AXCameraOverlayView *overlay = [self setupOverlayView];
+    overlay.delegate = self;
     self.overlayView = overlay;
     [self.view addSubview:overlay];
     self.overlayView.enablePreview = YES;
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(focusGesture:)];
-    [self.view addGestureRecognizer:tapGesture];
+    
+    
+    if (self.navigationController) {
+        self.overlayView.dismissButton.transform = CGAffineTransformMakeRotation(M_PI_2);
+    }
+    
+    [self deviceOrientationDidChanged];
 }
 - (void)customCamera{
     
@@ -154,9 +178,10 @@ static NSString *moduleName = @"AXCameraKit";
     
     //使用self.captureSession，初始化预览层，self.captureSession负责驱动input进行信息的采集，layer负责把图像渲染显示
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
-    self.previewLayer.frame = [UIScreen mainScreen].bounds;
+    self.previewLayer.frame = self.overlayView.previewFrame;
+    
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [self.view.layer addSublayer:self.previewLayer];
+    [self.overlayView.layer insertSublayer:self.previewLayer atIndex:0];
     
     //开始启动
     [self.captureSession startRunning];
@@ -173,37 +198,115 @@ static NSString *moduleName = @"AXCameraKit";
     
 }
 
-// 开关闪光灯
-- (void)switchFlashlight{
-    UIButton *sender = self.overlayView.flashlightButton;
-    static NSInteger state;
-    // state: 0:auto 1:on 2:off
-    if ([self.cameraDdevice lockForConfiguration:nil]) {
-        if (state == 0) {
-            if ([self.cameraDdevice isFlashModeSupported:AVCaptureFlashModeOn]) {
-                state = 1;
-                [self.cameraDdevice setFlashMode:AVCaptureFlashModeOn];
-                [sender setImage:[self.overlayView loadImageWithName:@"ax_camera_flash_on"] forState:UIControlStateNormal];
-            }
-        } else if (state == 1) {
-            if ([self.cameraDdevice isFlashModeSupported:AVCaptureFlashModeOff]) {
-                state = 2;
-                [self.cameraDdevice setFlashMode:AVCaptureFlashModeOff];
-                [sender setImage:[self.overlayView loadImageWithName:@"ax_camera_flash_off"] forState:UIControlStateNormal];
+
+#pragma mark - public func
+
+
+- (void)takePicture {
+    AVCaptureConnection *videoConnection = [self.imageOutput connectionWithMediaType:AVMediaTypeVideo];
+    if (!videoConnection) {
+        NSLog(@"take photo failed!");
+        return;
+    }
+    [self.imageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+        if (imageDataSampleBuffer == NULL) {
+            return;
+        }
+        NSData * imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+        UIImage *image = [UIImage imageWithData:imageData];
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+        if (self.overlayView.isEnablePreview) {
+            [self.overlayView.previewButton setImage:image forState:UIControlStateNormal];
+        }
+        
+    }];
+}
+- (void)changeFlashMode{
+    [self.overlayView sendButtonAction:self.overlayView.switchFlashlightButton];
+}
+- (void)switchCameraDevice{
+    NSUInteger cameraCount = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] count];
+    if (cameraCount > 1) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSError *error;
+            CATransition *animation = [CATransition animation];
+            animation.duration = 0.5f;
+            animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+            
+            animation.type = @"oglFlip";
+            AVCaptureDevice *newCamera = nil;
+            AVCaptureDeviceInput *newInput = nil;
+            AVCaptureDevicePosition position = self.input.device.position;
+            NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+            if (position == AVCaptureDevicePositionFront){
+                for ( AVCaptureDevice *device in devices ) {
+                    if ( device.position == position ) {
+                        newCamera = device;
+                        animation.subtype = kCATransitionFromLeft;
+                        break;
+                    }
+                }
+                newCamera = [self cameraWithPosition:AVCaptureDevicePositionBack];
+                animation.subtype = kCATransitionFromLeft;
+            } else {
+                newCamera = [self cameraWithPosition:AVCaptureDevicePositionFront];
+                animation.subtype = kCATransitionFromRight;
             }
             
-        } else {
-            if ([self.cameraDdevice isFlashModeSupported:AVCaptureFlashModeAuto]) {
-                state = 0;
-                [self.cameraDdevice setFlashMode:AVCaptureFlashModeAuto];
-                [sender setImage:[self.overlayView loadImageWithName:@"ax_camera_flash_auto"] forState:UIControlStateNormal];
+            newInput = [AVCaptureDeviceInput deviceInputWithDevice:newCamera error:nil];
+            
+            if (newInput != nil) {
+                [self.captureSession beginConfiguration];
+                [self.captureSession removeInput:self.input];
+                if ([self.captureSession canAddInput:newInput]) {
+                    
+                    [self.captureSession addInput:newInput];
+                    self.input = newInput;
+                } else {
+                    [self.captureSession addInput:self.input];
+                }
+                [self.captureSession commitConfiguration];
+                
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.previewLayer addAnimation:animation forKey:nil];
+                });
+                
+            } else if (error) {
+                NSLog(@"toggle carema failed, error = %@", error);
             }
-        }
-        [self.cameraDdevice unlockForConfiguration];
+        });
+        
     }
 }
 
-- (void)switchCameraDevice{
+#pragma mark - 相册保存回调
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
+    if(error != NULL){
+#if DEBUG
+        NSLog(@"图片保存失败：%@", error.localizedDescription);
+#endif
+    }
+}
+
+
+
+
+#pragma mark - overlay delegate
+
+- (void)overlayViewDidTappedShutterButton:(UIButton *)sender{
+    [self takePicture];
+}
+
+- (void)overlayViewDidTappedDismissButton:(UIButton *)sender{
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+- (void)overlayViewDidSwitchCameraDevicePosition:(AVCaptureDevicePosition)position{
     NSUInteger cameraCount = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] count];
     if (cameraCount > 1) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -250,6 +353,38 @@ static NSString *moduleName = @"AXCameraKit";
         
     }
 }
+
+- (void)overlayViewDidChangeFlashMode:(AVCaptureFlashMode)mode{
+    if ([self.cameraDdevice lockForConfiguration:nil]) {
+        if ([self.cameraDdevice isFlashModeSupported:mode]) {
+            [self.cameraDdevice setFlashMode:mode];
+        }
+        [self.cameraDdevice unlockForConfiguration];
+    }
+}
+
+- (void)overlayViewDidTouchAtPoint:(CGPoint)point{
+    NSError *error;
+    if ([self.cameraDdevice lockForConfiguration:&error]) {
+        if ([self.cameraDdevice isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+            [self.cameraDdevice setFocusPointOfInterest:point];
+            [self.cameraDdevice setFocusMode:AVCaptureFocusModeAutoFocus];
+        }
+        if ([self.cameraDdevice isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
+            [self.cameraDdevice setExposurePointOfInterest:point];
+            [self.cameraDdevice setExposureMode:AVCaptureExposureModeAutoExpose];
+        }
+        [self.cameraDdevice unlockForConfiguration];
+    }
+}
+
+- (void)overlayViewDidChangeAspectRatio:(CameraOverlayViewAspectRatio)aspectRatio{
+    self.previewLayer.frame = self.overlayView.previewFrame;
+}
+
+#pragma mark - priv
+
+
 - (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position{
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     for ( AVCaptureDevice *device in devices ) {
@@ -260,94 +395,7 @@ static NSString *moduleName = @"AXCameraKit";
     return nil;
 }
 
-#pragma mark 点击手势：对焦
-- (void)focusGesture:(UITapGestureRecognizer*)gesture{
-    CGPoint point = [gesture locationInView:gesture.view];
-    [self focusAtPoint:point];
-}
 
-- (void)focusAtPoint:(CGPoint)point{
-    CGSize size = self.view.bounds.size;
-    CGPoint focusPoint = CGPointMake( point.y /size.height ,1-point.x/size.width );
-    NSError *error;
-    if ([self.cameraDdevice lockForConfiguration:&error]) {
-        
-        if ([self.cameraDdevice isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
-            [self.cameraDdevice setFocusPointOfInterest:focusPoint];
-            [self.cameraDdevice setFocusMode:AVCaptureFocusModeAutoFocus];
-        }
-        
-        if ([self.cameraDdevice isExposureModeSupported:AVCaptureExposureModeAutoExpose ]) {
-            [self.cameraDdevice setExposurePointOfInterest:focusPoint];
-            [self.cameraDdevice setExposureMode:AVCaptureExposureModeAutoExpose];
-        }
-        
-        [self.cameraDdevice unlockForConfiguration];
-        self.focusView.center = point;
-        self.focusView.hidden = NO;
-        [UIView animateWithDuration:0.3 animations:^{
-            self.focusView.transform = CGAffineTransformMakeScale(1.1, 1.1);
-        }completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.5 animations:^{
-                self.focusView.transform = CGAffineTransformIdentity;
-            } completion:^(BOOL finished) {
-                self.focusView.hidden = YES;
-            }];
-        }];
-    }
-    
-}
-
-#pragma mark - 拍照
-- (void)takePicture {
-    AVCaptureConnection * videoConnection = [self.imageOutput connectionWithMediaType:AVMediaTypeVideo];
-    if (!videoConnection) {
-        NSLog(@"take photo failed!");
-        return;
-    }
-    [self.imageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
-        if (imageDataSampleBuffer == NULL) {
-            return;
-        }
-        NSData * imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-        UIImage *image = [UIImage imageWithData:imageData];
-        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-        if (self.overlayView.isEnablePreview) {
-            self.overlayView.previewImage = image;
-        }
-        
-    }];
-}
-
-#pragma mark 相册保存回调
-- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
-    if(error != NULL){
-#if DEBUG
-        NSLog(@"图片保存失败：%@", error.localizedDescription);
-#endif
-    }
-}
-
-
-#pragma mark - 按钮点击事件
-
-- (void)overlayButtonTapped:(UIButton *)sender{
-    if (sender.tag == CameraOverlayButtonDismiss) {
-        if (self.navigationController) {
-            [self.navigationController popViewControllerAnimated:YES];
-        } else {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-    } else if (sender.tag == CameraOverlayButtonShutter) {
-        [self takePicture];
-    } else if (sender.tag == CameraOverlayButtonSwitch) {
-        [self switchCameraDevice];
-    } else if (sender.tag == CameraOverlayButtonFlashlight) {
-        [self switchFlashlight];
-    }
-}
-
-#pragma mark - priv
 
 // 设备支持的质量
 - (AVCaptureSessionPreset)maxCaptureSessionPreset{
@@ -365,19 +413,19 @@ static NSString *moduleName = @"AXCameraKit";
 - (AXCameraOverlayView *)setupOverlayView{
     CGRect frame = [UIScreen mainScreen].bounds;
     AXCameraOverlayView *overlayView = [[AXCameraOverlayView alloc] initWithFrame:frame];
-    [overlayView.flashlightButton addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [overlayView.dismissButton addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [overlayView.shutterButton addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     NSUInteger cameraCount = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] count];
-    if (cameraCount > 1) {
-        [overlayView.switchButton addTarget:self action:@selector(overlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    } else {
-        overlayView.switchButton.hidden = YES;
-    }
-    
+    overlayView.switchCameraDeviceButton.hidden = !cameraCount;
     return overlayView;
 }
 
+
+
+/**
+ 根据屏幕方向更新UI
+ */
+- (void)deviceOrientationDidChanged{
+    [self.overlayView updateUIWithDeviceOrientation];
+}
 
 
 @end

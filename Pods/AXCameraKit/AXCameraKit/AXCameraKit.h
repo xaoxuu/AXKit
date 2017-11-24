@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewController+AXCameraExtension.h"
+
 #import "AXCameraViewController.h"
 
 //! Project version number for AXCameraKit.
