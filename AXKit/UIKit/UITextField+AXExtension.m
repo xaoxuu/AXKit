@@ -100,20 +100,6 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
 }
 
 #pragma mark - private methods
-/*
- + (void)load{
- 
- // exchange (textRectForBounds)
- Method textRectForBounds = class_getInstanceMethod([UITextField class], @selector(textRectForBounds:));
- Method ax_textRectForBounds = class_getInstanceMethod([UITextField class], @selector(ax_textRectForBounds:));
- method_exchangeImplementations(textRectForBounds, ax_textRectForBounds);
- // exchage (editingRectForBounds)
- Method editingRectForBounds = class_getInstanceMethod([UITextField class], @selector(editingRectForBounds:));
- Method ax_editingRectForBounds = class_getInstanceMethod([UITextField class], @selector(ax_editingRectForBounds:));
- method_exchangeImplementations(editingRectForBounds, ax_editingRectForBounds);
- 
- }
- */
 
 - (UIEdgeInsets)contentEdgeInsets{
     NSValue *value = objc_getAssociatedObject(self, UITextFieldAXExtensionKey_ContentEdgeInsets);

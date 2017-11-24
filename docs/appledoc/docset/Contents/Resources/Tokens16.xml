@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIActivityIndicatorView+AXWrapper.html">
+	<File path="Categories/NSArray+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIActivityIndicatorView(AXWrapper)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/NSArray(AXExtension)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
+			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -13,63 +13,62 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/defaultIndicator</TokenIdentifier>
-			<Abstract type="html">创建一个活动指示器</Abstract>
-			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_sum</TokenIdentifier>
+			<Abstract type="html">总和</Abstract>
+			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)defaultIndicator</Declaration>
+			<Declaration>- (CGFloat)ax_sum</Declaration>
 			
-			<ReturnValue><Abstract type="html">活动指示器</Abstract></ReturnValue>
-			<Anchor>//api/name/defaultIndicator</Anchor>
+			<ReturnValue><Abstract type="html">总和</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_sum</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/defaultIndicatorWithLoading</TokenIdentifier>
-			<Abstract type="html">创建一个带&quot;LOADING&quot;字样的活动指示器</Abstract>
-			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_avg</TokenIdentifier>
+			<Abstract type="html">平均值</Abstract>
+			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)defaultIndicatorWithLoading</Declaration>
+			<Declaration>- (CGFloat)ax_avg</Declaration>
 			
-			<ReturnValue><Abstract type="html">一个带&quot;LOADING&quot;字样的活动指示器</Abstract></ReturnValue>
-			<Anchor>//api/name/defaultIndicatorWithLoading</Anchor>
+			<ReturnValue><Abstract type="html">平均值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_avg</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/addToView:</TokenIdentifier>
-			<Abstract type="html">显示到某个view</Abstract>
-			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_max</TokenIdentifier>
+			<Abstract type="html">最大值</Abstract>
+			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)addToView:(UIView *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">view</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (CGFloat)ax_max</Declaration>
 			
-			<Anchor>//api/name/addToView:</Anchor>
+			<ReturnValue><Abstract type="html">最大值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_max</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/addToView:withLoading:</TokenIdentifier>
-			<Abstract type="html">显示到某个view (带&quot;LOADING&quot;字样的活动指示器)</Abstract>
-			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_min</TokenIdentifier>
+			<Abstract type="html">最小值</Abstract>
+			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)addToView:(UIView *)view withLoading:(BOOL)loading</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">view</Abstract>
-				</Parameter><Parameter>
-					<Name>loading</Name>
-					<Abstract type="html">&quot;LOADING&quot;标签</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (CGFloat)ax_min</Declaration>
 			
-			<Anchor>//api/name/addToView:withLoading:</Anchor>
+			<ReturnValue><Abstract type="html">最小值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_min</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSArray/distinctUnionOfObjects</TokenIdentifier>
+			<Abstract type="html">去重后的数组</Abstract>
+			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)distinctUnionOfObjects</Declaration>
+			
+			<ReturnValue><Abstract type="html">去重后的数组</Abstract></ReturnValue>
+			<Anchor>//api/name/distinctUnionOfObjects</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

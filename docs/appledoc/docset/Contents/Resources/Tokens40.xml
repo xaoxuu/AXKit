@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIViewController+AXExtension.html">
+	<File path="Categories/UINavigationItem+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIViewController(AXExtension)</TokenIdentifier>
-			<Abstract type="html">根据view controller的类名创建实例</Abstract>
-			<DeclaredIn>UIViewController+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/UINavigationItem(AXExtension)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="40"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UINavigationItem/ax_hideBackBarButtonTitle</TokenIdentifier>
+			<Abstract type="html">隐藏返回按钮的标题</Abstract>
+			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_hideBackBarButtonTitle</Declaration>
+			
+			
+			<Anchor>//api/name/ax_hideBackBarButtonTitle</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UINavigationItem/ax_hideBackBarButton</TokenIdentifier>
+			<Abstract type="html">隐藏返回按钮（同时也不能右划返回）</Abstract>
+			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_hideBackBarButton</Declaration>
+			
+			
+			<Anchor>//api/name/ax_hideBackBarButton</Anchor>
+            <NodeRef refid="40"/>
+		</Token>
 		
         
         

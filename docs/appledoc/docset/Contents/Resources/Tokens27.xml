@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UINavigationController+AXExtension.html">
+	<File path="Categories/NSUserDefaults+AXWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UINavigationController(AXExtension)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/NSUserDefaults(AXWrapper)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="27"/>
@@ -13,102 +13,750 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_hidesBottomBarWhenPushed:</TokenIdentifier>
-			<Abstract type="html">隐藏子控制器的BottomBar</Abstract>
-			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readObjectForKey:</TokenIdentifier>
+			<Abstract type="html">读取object值（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_hidesBottomBarWhenPushed:(BOOL)hide</Declaration>
+			<Declaration>+ (nullable id)ax_readObjectForKey:(NSString *)key</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>hide</Name>
-					<Abstract type="html">是否隐藏</Abstract>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_hidesBottomBarWhenPushed:</Anchor>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readObjectForKey:</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_pushViewControllerNamed:</TokenIdentifier>
-			<Abstract type="html">push到指定name的控制器，animated为YES</Abstract>
-			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readObjectForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取object值（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_pushViewControllerNamed:(NSString *)vcName</Declaration>
+			<Declaration>+ (void)ax_readObjectForKey:(NSString *)key completion:(void ( ^ ) ( id object ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>vcName</Name>
-					<Abstract type="html">VC的name</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_pushViewControllerNamed:</Anchor>
-            <NodeRef refid="27"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_pushViewControllerNamed:animated:completion:failure:</TokenIdentifier>
-			<Abstract type="html">push到指定name的控制器</Abstract>
-			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void ( ^ ) ( UIViewController *targetVC ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>vcName</Name>
-					<Abstract type="html">VC的name</Abstract>
-				</Parameter><Parameter>
-					<Name>animated</Name>
-					<Abstract type="html">是否显示动画</Abstract>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
 				</Parameter><Parameter>
 					<Name>completion</Name>
-					<Abstract type="html">完成后的回调</Abstract>
+					<Abstract type="html">读取成功</Abstract>
 				</Parameter><Parameter>
 					<Name>failure</Name>
-					<Abstract type="html">失败时的错误信息（不存在或者self不属于NavController）</Abstract>
+					<Abstract type="html">读取失败（没有值）</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_pushViewControllerNamed:animated:completion:failure:</Anchor>
+			<Anchor>//api/name/ax_readObjectForKey:completion:failure:</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_popToViewControllerWithIndexFromRoot:animated:</TokenIdentifier>
-			<Abstract type="html">pop到指定viewController</Abstract>
-			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readBoolForKey:</TokenIdentifier>
+			<Abstract type="html">读取BOOL值</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index animated:(BOOL)animated</Declaration>
+			<Declaration>+ (BOOL)ax_readBoolForKey:(NSString *)key</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">从rootVC开始向后数的index，rootVC为0</Abstract>
-				</Parameter><Parameter>
-					<Name>animated</Name>
-					<Abstract type="html">是否显示动画</Abstract>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_popToViewControllerWithIndexFromRoot:animated:</Anchor>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readBoolForKey:</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_popToViewControllerWithIndexFromSelf:animated:</TokenIdentifier>
-			<Abstract type="html">pop到指定viewController</Abstract>
-			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readIntegerForKey:</TokenIdentifier>
+			<Abstract type="html">读取NSInteger值</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index animated:(BOOL)animated</Declaration>
+			<Declaration>+ (NSInteger)ax_readIntegerForKey:(NSString *)key</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">从当前viewController开始向前数的index，当前VC为0</Abstract>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readIntegerForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readFloatForKey:</TokenIdentifier>
+			<Abstract type="html">读取float值</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (float)ax_readFloatForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readFloatForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readDoubleForKey:</TokenIdentifier>
+			<Abstract type="html">读取double值</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (double)ax_readDoubleForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readDoubleForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readCGFloatForKey:</TokenIdentifier>
+			<Abstract type="html">读取CGFloat值</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (CGFloat)ax_readCGFloatForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readCGFloatForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readDataForKey:</TokenIdentifier>
+			<Abstract type="html">读取NSData值（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSData *)ax_readDataForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readDataForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readDataForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取NSData值（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_readDataForKey:(NSString *)key completion:(void ( ^ ) ( NSData *data ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
 				</Parameter><Parameter>
-					<Name>animated</Name>
-					<Abstract type="html">是否显示动画</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">读取成功</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">读取失败（没有值）</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_popToViewControllerWithIndexFromSelf:animated:</Anchor>
+			<Anchor>//api/name/ax_readDataForKey:completion:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readStringForKey:</TokenIdentifier>
+			<Abstract type="html">读取NSString值（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSString *)ax_readStringForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readStringForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readStringForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取NSString值（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_readStringForKey:(NSString *)key completion:(void ( ^ ) ( NSString *string ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">读取成功</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">读取失败（没有值）</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_readStringForKey:completion:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readStringArrayForKey:</TokenIdentifier>
+			<Abstract type="html">读取字符串数组（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSArray&lt;NSString*&gt; *)ax_readStringArrayForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readStringArrayForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readStringArrayForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取字符串数组（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void ( ^ ) ( NSArray&lt;NSString*&gt; *string ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">读取成功</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">读取失败（没有值）</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_readStringArrayForKey:completion:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readArrayForKey:</TokenIdentifier>
+			<Abstract type="html">读取NSArray值（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSArray *)ax_readArrayForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readArrayForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readArrayForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取NSArray值（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_readArrayForKey:(NSString *)key completion:(void ( ^ ) ( NSArray *array ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">读取成功</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">读取失败（没有值）</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_readArrayForKey:completion:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readDictionaryForKey:</TokenIdentifier>
+			<Abstract type="html">读取NSDictionary值（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSDictionary&lt;NSString*,id&gt; *)ax_readDictionaryForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readDictionaryForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readDictionaryForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取NSDictionary值（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_readDictionaryForKey:(NSString *)key completion:(void ( ^ ) ( NSDictionary *dictionary ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">读取成功</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">读取失败（没有值）</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_readDictionaryForKey:completion:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readDictionaryWithValuesForKeys:</TokenIdentifier>
+			<Abstract type="html">读取若干字符串值，并组装成NSDictionary</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary&lt;NSString*,id&gt; *)ax_readDictionaryWithValuesForKeys:(NSArray&lt;NSString*&gt; *)keys</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>keys</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readDictionaryWithValuesForKeys:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readURLForKey:</TokenIdentifier>
+			<Abstract type="html">读取URL值（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSURL *)ax_readURLForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readURLForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readURLForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取NSURL值（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_readURLForKey:(NSString *)key completion:(void ( ^ ) ( NSURL *url ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">读取成功</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">读取失败（没有值）</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_readURLForKey:completion:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readImageForKey:</TokenIdentifier>
+			<Abstract type="html">读取图片（不推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (UIImage *)ax_readImageForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">值</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_readImageForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_readImageForKey:completion:failure:</TokenIdentifier>
+			<Abstract type="html">读取图片（推荐）</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_readImageForKey:(NSString *)key completion:(void ( ^ ) ( UIImage *_Nonnull ))completion failure:(void ( ^ ) ( NSError *_Nonnull ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">读取成功</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">读取失败（没有值）</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_readImageForKey:completion:failure:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setObject:forKey:</TokenIdentifier>
+			<Abstract type="html">保存id对象，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setObject:(nullable id)obj forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setObject:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setValue:forKey:</TokenIdentifier>
+			<Abstract type="html">保存value，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setValue:(nullable id)value forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setValue:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setBool:forKey:</TokenIdentifier>
+			<Abstract type="html">保存BOOL值，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setBool:(BOOL)x forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setBool:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setInteger:forKey:</TokenIdentifier>
+			<Abstract type="html">保存NSInteger，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setInteger:(NSInteger)x forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setInteger:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setFloat:forKey:</TokenIdentifier>
+			<Abstract type="html">保存float，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setFloat:(float)x forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setFloat:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setDouble:forKey:</TokenIdentifier>
+			<Abstract type="html">保存double，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setDouble:(double)x forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setDouble:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setCGFloat:forKey:</TokenIdentifier>
+			<Abstract type="html">保存CGFloat，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setCGFloat:(CGFloat)x forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setCGFloat:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setImage:forKey:</TokenIdentifier>
+			<Abstract type="html">保存图片，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_setImage:(nullable UIImage *)image forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">图片</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setImage:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_caches:</TokenIdentifier>
+			<Abstract type="html">批量保存用户设置，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_caches:(void ( ^ ) ( NSUserDefaults *user ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>action</Name>
+					<Abstract type="html">批量保存用户设置的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_caches:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setData:forKey:</TokenIdentifier>
+			<Abstract type="html">保存NSData，不带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_setData:(nullable NSData *)data forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setData:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setString:forKey:</TokenIdentifier>
+			<Abstract type="html">保存字符串，不带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setString:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setStringArray:forKey:</TokenIdentifier>
+			<Abstract type="html">保存字符串数组，不带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_setStringArray:(NSArray *( ^ ) ( NSArray&lt;NSString*&gt; *cachedArray ))block forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setStringArray:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setArray:forKey:</TokenIdentifier>
+			<Abstract type="html">保存数组，不带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_setArray:(NSArray *( ^ ) ( NSArray *cachedArray ))block forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setArray:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setDictionary:forKey:</TokenIdentifier>
+			<Abstract type="html">保存字典，不带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_setDictionary:(NSDictionary *( ^ ) ( NSMutableDictionary&lt;NSString*,id&gt; *dict ))block forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setDictionary:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_setURL:forKey:</TokenIdentifier>
+			<Abstract type="html">保存NSURL，不带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_setURL:(nullable NSURL *)url forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">值</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_setURL:forKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_removeObjectForKey:</TokenIdentifier>
+			<Abstract type="html">删除用户设置，自带synchronize</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_removeObjectForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">键</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_removeObjectForKey:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSUserDefaults/ax_removeDefaultPersistentDomain</TokenIdentifier>
+			<Abstract type="html">移除默认的[NSUserDefaults standardUserDefaults]的所有配置</Abstract>
+			<DeclaredIn>NSUserDefaults+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (void)ax_removeDefaultPersistentDomain</Declaration>
+			
+			
+			<Anchor>//api/name/ax_removeDefaultPersistentDomain</Anchor>
             <NodeRef refid="27"/>
 		</Token>
 		

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/AXKitErrorCode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/AXKitErrorCode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
+            
+			
+			<NodeRef refid="57"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodePushNavVC</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AXKitErrorCodePushNavVC</Declaration>
+            
+            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
+            
+            <NodeRef refid="57"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodeObjectForKeyNotFound</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AXKitErrorCodeObjectForKeyNotFound</Declaration>
+            
+            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
+            
+            <NodeRef refid="57"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

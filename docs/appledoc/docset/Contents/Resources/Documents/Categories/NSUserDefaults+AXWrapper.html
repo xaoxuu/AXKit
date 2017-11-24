@@ -56,8 +56,6 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/ax_caches:">+ ax_caches:</option>
-		
 		<option value="//api/name/ax_readArrayForKey:">+ ax_readArrayForKey:</option>
 		
 		<option value="//api/name/ax_readArrayForKey:completion:failure:">+ ax_readArrayForKey:completion:failure:</option>
@@ -106,15 +104,9 @@
 		
 		<option value="//api/name/ax_removeObjectForKey:">+ ax_removeObjectForKey:</option>
 		
-		<option value="//api/name/ax_setArray:forKey:">+ ax_setArray:forKey:</option>
-		
 		<option value="//api/name/ax_setBool:forKey:">+ ax_setBool:forKey:</option>
 		
 		<option value="//api/name/ax_setCGFloat:forKey:">+ ax_setCGFloat:forKey:</option>
-		
-		<option value="//api/name/ax_setData:forKey:">+ ax_setData:forKey:</option>
-		
-		<option value="//api/name/ax_setDictionary:forKey:">+ ax_setDictionary:forKey:</option>
 		
 		<option value="//api/name/ax_setDouble:forKey:">+ ax_setDouble:forKey:</option>
 		
@@ -125,12 +117,6 @@
 		<option value="//api/name/ax_setInteger:forKey:">+ ax_setInteger:forKey:</option>
 		
 		<option value="//api/name/ax_setObject:forKey:">+ ax_setObject:forKey:</option>
-		
-		<option value="//api/name/ax_setString:forKey:">+ ax_setString:forKey:</option>
-		
-		<option value="//api/name/ax_setStringArray:forKey:">+ ax_setStringArray:forKey:</option>
-		
-		<option value="//api/name/ax_setURL:forKey:">+ ax_setURL:forKey:</option>
 		
 		<option value="//api/name/ax_setValue:forKey:">+ ax_setValue:forKey:</option>
 		
@@ -920,7 +906,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)ax_readStringArrayForKey:(NSString *)<em>key</em> completion:(void ( ^ ) ( NSArray&lt;NSString*&gt; *array ))<em>completion</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)ax_readStringArrayForKey:(NSString *)<em>key</em> completion:(void ( ^ ) ( NSArray&lt;NSString*&gt; *string ))<em>completion</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
 
 		    
 			
@@ -1404,7 +1390,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (nullable UIImage *)ax_readImageForKey:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (UIImage *)ax_readImageForKey:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -1462,7 +1448,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)ax_readImageForKey:(NSString *)<em>key</em> completion:(void ( ^ ) ( UIImage *image ))<em>completion</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)ax_readImageForKey:(NSString *)<em>key</em> completion:(void ( ^ ) ( UIImage *_Nonnull ))<em>completion</em> failure:(void ( ^ ) ( NSError *_Nonnull ))<em>failure</em></code></div>
 
 		    
 			
@@ -1483,59 +1469,6 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>failure</code></th>
 						<td><p>读取失败（没有值）</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSUserDefaults+AXWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ax_caches:" title="ax_caches:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ax_caches:">+&nbsp;ax_caches:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>批量保存用户设置，自带synchronize</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)ax_caches:(void ( ^ ) ( NSUserDefaults *defaultUser ))<em>action</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>action</code></th>
-						<td><p>批量保存用户设置的block</p></td>
 					</tr>
 				
 				</table>
@@ -1968,354 +1901,6 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/ax_setData:forKey:" title="ax_setData:forKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ax_setData:forKey:">+&nbsp;ax_setData:forKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>保存NSData，自带synchronize</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)ax_setData:(NSData *)<em>data</em> forKey:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>data</code></th>
-						<td><p>值</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>键</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSUserDefaults+AXWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ax_setString:forKey:" title="ax_setString:forKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ax_setString:forKey:">+&nbsp;ax_setString:forKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>保存字符串，自带synchronize</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)ax_setString:(NSString *)<em>string</em> forKey:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>string</code></th>
-						<td><p>值</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>键</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSUserDefaults+AXWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ax_setStringArray:forKey:" title="ax_setStringArray:forKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ax_setStringArray:forKey:">+&nbsp;ax_setStringArray:forKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>保存字符串数组，自带synchronize</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)ax_setStringArray:(NSArray *( ^ ) ( NSArray&lt;NSString*&gt; *cachedArray ))<em>block</em> forKey:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>值</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>键</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSUserDefaults+AXWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ax_setArray:forKey:" title="ax_setArray:forKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ax_setArray:forKey:">+&nbsp;ax_setArray:forKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>保存数组，自带synchronize</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)ax_setArray:(NSArray *( ^ ) ( NSArray *cachedArray ))<em>block</em> forKey:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>值</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>键</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSUserDefaults+AXWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ax_setDictionary:forKey:" title="ax_setDictionary:forKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ax_setDictionary:forKey:">+&nbsp;ax_setDictionary:forKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>保存字典，自带synchronize</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)ax_setDictionary:(NSDictionary *( ^ ) ( NSMutableDictionary&lt;NSString*,id&gt; *dict ))<em>block</em> forKey:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>值</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>键</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSUserDefaults+AXWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ax_setURL:forKey:" title="ax_setURL:forKey:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ax_setURL:forKey:">+&nbsp;ax_setURL:forKey:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>保存NSURL，自带synchronize</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (void)ax_setURL:(NSURL *)<em>url</em> forKey:(NSString *)<em>key</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>url</code></th>
-						<td><p>值</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>key</code></th>
-						<td><p>键</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSUserDefaults+AXWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/ax_setImage:forKey:" title="ax_setImage:forKey:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/ax_setImage:forKey:">+&nbsp;ax_setImage:forKey:</a></code>
 </h3>
@@ -2332,7 +1917,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)ax_setImage:(UIImage *)<em>image</em> forKey:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)ax_setImage:(nullable UIImage *)<em>image</em> forKey:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -2443,7 +2028,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)ax_setData:(NSData *)<em>data</em> forKey:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)ax_setData:(nullable NSData *)<em>data</em> forKey:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -2501,7 +2086,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)ax_setString:(NSString *)<em>string</em> forKey:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)ax_setString:(nullable NSString *)<em>string</em> forKey:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -2733,7 +2318,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)ax_setURL:(NSURL *)<em>url</em> forKey:(NSString *)<em>key</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)ax_setURL:(nullable NSURL *)<em>url</em> forKey:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -2883,7 +2468,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 xaoxuu. All rights reserved. Updated: 2017-09-16</p>
+						<p class="copyright">Copyright &copy; 2017 xaoxuu. All rights reserved. Updated: 2017-11-24</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

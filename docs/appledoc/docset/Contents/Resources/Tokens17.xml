@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIAlertController+AXWrapper.html">
+	<File path="Categories/NSBundle+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIAlertController(AXWrapper)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSBundle(AXExtension)</TokenIdentifier>
+			<Abstract type="html">将view里所有的控件中的文字转换成NSLocalizedString（含所有子视图中的所有控件，耗费性能，慎用）</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,131 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_showAlertWithTitle:message:actions:</TokenIdentifier>
-			<Abstract type="html">弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleDisplayName</TokenIdentifier>
+			<Abstract type="html">bundle display name</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void ( ^ __nullable ) ( UIAlertController *alert ))actions</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">标题</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">消息</Abstract>
-				</Parameter><Parameter>
-					<Name>actions</Name>
-					<Abstract type="html">按钮</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)ax_bundleDisplayName</Declaration>
 			
-			<Anchor>//api/name/ax_showAlertWithTitle:message:actions:</Anchor>
+			<ReturnValue><Abstract type="html">bundle display name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleDisplayName</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_showActionSheetWithTitle:message:actions:</TokenIdentifier>
-			<Abstract type="html">弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleName</TokenIdentifier>
+			<Abstract type="html">bundle name</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void ( ^ __nullable ) ( UIAlertController *alert ))actions</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">标题</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">消息</Abstract>
-				</Parameter><Parameter>
-					<Name>actions</Name>
-					<Abstract type="html">按钮</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)ax_bundleName</Declaration>
 			
-			<Anchor>//api/name/ax_showActionSheetWithTitle:message:actions:</Anchor>
+			<ReturnValue><Abstract type="html">bundle name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleName</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addActionWithTitle:style:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个按钮</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleShortVersionString</TokenIdentifier>
+			<Abstract type="html">bundle short version string</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addActionWithTitle:(nullable NSString *)title style:(UIAlertActionStyle)style handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
-				</Parameter><Parameter>
-					<Name>style</Name>
-					<Abstract type="html">按钮样式</Abstract>
-				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)ax_bundleShortVersionString</Declaration>
 			
-			<Anchor>//api/name/ax_addActionWithTitle:style:handler:</Anchor>
+			<ReturnValue><Abstract type="html">bundle short version string</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleShortVersionString</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addCancelActionWithTitle:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个取消样式的按钮(标题传nil则为默认标题)</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleVersion</TokenIdentifier>
+			<Abstract type="html">bundle build version string</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addCancelActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
-				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)ax_bundleVersion</Declaration>
 			
-			<Anchor>//api/name/ax_addCancelActionWithTitle:handler:</Anchor>
+			<ReturnValue><Abstract type="html">bundle build version string</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleVersion</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addDefaultActionWithTitle:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个默认样式的按钮(标题传nil则为默认标题)</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_mainBundleId</TokenIdentifier>
+			<Abstract type="html">main bundle id</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addDefaultActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
-				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (NSString *)ax_mainBundleId</Declaration>
 			
-			<Anchor>//api/name/ax_addDefaultActionWithTitle:handler:</Anchor>
+			<ReturnValue><Abstract type="html">main bundle id</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_mainBundleId</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addDestructiveActionWithTitle:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个破坏性按钮（红色）(标题传nil则为默认标题)</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appDisplayName</TokenIdentifier>
+			<Abstract type="html">app name (CFBundleDisplayName)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addDestructiveActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
-				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (NSString *)ax_appDisplayName</Declaration>
 			
-			<Anchor>//api/name/ax_addDestructiveActionWithTitle:handler:</Anchor>
+			<ReturnValue><Abstract type="html">app name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appDisplayName</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appName</TokenIdentifier>
+			<Abstract type="html">app name (CFBundleDisplayName)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appName</Declaration>
+			
+			<ReturnValue><Abstract type="html">app name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appName</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appVersion</TokenIdentifier>
+			<Abstract type="html">app version (CFBundleShortVersionString)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appVersion</Declaration>
+			
+			<ReturnValue><Abstract type="html">app version</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appVersion</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appBuild</TokenIdentifier>
+			<Abstract type="html">app build (CFBundleVersion)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appBuild</Declaration>
+			
+			<ReturnValue><Abstract type="html">app build</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appBuild</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_localizedInfoDictionary</TokenIdentifier>
+			<Abstract type="html">bundle localized info dictionary</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)ax_localizedInfoDictionary</Declaration>
+			
+			<ReturnValue><Abstract type="html">bundle localized info dictionary</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_localizedInfoDictionary</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_infoDictionary</TokenIdentifier>
+			<Abstract type="html">bundle info dictionary</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)ax_infoDictionary</Declaration>
+			
+			<ReturnValue><Abstract type="html">bundle info dictionary</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_infoDictionary</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appIconPath</TokenIdentifier>
+			<Abstract type="html">appicon path</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appIconPath</Declaration>
+			
+			<ReturnValue><Abstract type="html">appicon path</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appIconPath</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appIcon</TokenIdentifier>
+			<Abstract type="html">appicon</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (UIImage *)ax_appIcon</Declaration>
+			
+			<ReturnValue><Abstract type="html">appicon</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appIcon</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appLaunchImagePath</TokenIdentifier>
+			<Abstract type="html">启动图片路径</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appLaunchImagePath</Declaration>
+			
+			<ReturnValue><Abstract type="html">启动图片路径</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appLaunchImagePath</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appLaunchImage</TokenIdentifier>
+			<Abstract type="html">启动图片</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (UIImage *)ax_appLaunchImage</Declaration>
+			
+			<ReturnValue><Abstract type="html">启动图片</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appLaunchImage</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

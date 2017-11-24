@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIImage+AXExtension.html">
+	<File path="Categories/NSString+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIImage(AXExtension)</TokenIdentifier>
-			<Abstract type="html">缩放到某个长宽比</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXExtension)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="23"/>
@@ -13,140 +13,75 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithColor:size:alpha:</TokenIdentifier>
-			<Abstract type="html">创建一个纯色图片</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/absoluteURL</TokenIdentifier>
+			<Abstract type="html">以当前字符串为路径的URL</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (UIImage *)ax_imageWithColor:(UIColor *)color size:(CGSize)size alpha:(float)alpha</Declaration>
+			<Declaration>- (nullable NSURL *)absoluteURL</Declaration>
+			
+			<ReturnValue><Abstract type="html">以当前字符串为路径的URL</Abstract></ReturnValue>
+			<Anchor>//api/name/absoluteURL</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/isURLString</TokenIdentifier>
+			<Abstract type="html">是不是URL字符串</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isURLString</Declaration>
+			
+			<ReturnValue><Abstract type="html">是不是URL字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/isURLString</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/image</TokenIdentifier>
+			<Abstract type="html">以当前字符串为名的图片</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (nullable UIImage *)image</Declaration>
+			
+			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
+			<Anchor>//api/name/image</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_textHeightWithFont:width:</TokenIdentifier>
+			<Abstract type="html">文本在指定字体、宽度时候需要的高度</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>color</Name>
-					<Abstract type="html">颜色</Abstract>
+					<Name>font</Name>
+					<Abstract type="html">字体</Abstract>
 				</Parameter><Parameter>
-					<Name>size</Name>
-					<Abstract type="html">尺寸</Abstract>
-				</Parameter><Parameter>
-					<Name>alpha</Name>
-					<Abstract type="html">alpha值</Abstract>
+					<Name>width</Name>
+					<Abstract type="html">文本框宽度</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithColor:size:alpha:</Anchor>
+			<ReturnValue><Abstract type="html">文本框高度</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_textHeightWithFont:width:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithView:</TokenIdentifier>
-			<Abstract type="html">将view转换成图片</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/laterVersion:</TokenIdentifier>
+			<Abstract type="html">比较两个版本（返回较新的版本）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (UIImage *)ax_imageWithView:(UIView *)view</Declaration>
+			<Declaration>- (NSString *)laterVersion:(NSString *)version</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">view</Abstract>
+					<Name>version</Name>
+					<Abstract type="html">要对比的另一个版本</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithView:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithBundleImageName:</TokenIdentifier>
-			<Abstract type="html">从bundle中读取图片（自动追加.png/.jpg/.jpeg扩展名）</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>+ (UIImage *)ax_imageWithBundleImageName:(NSString *)name</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">图片名</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithBundleImageName:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithBundleImageName:count:</TokenIdentifier>
-			<Abstract type="html">从bundle中读取一组图片（自动追加.png/.jpg/.jpeg扩展名）</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>+ (NSArray&lt;UIImage*&gt; *)ax_imageWithBundleImageName:(NSString *)name count:(NSUInteger)count</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">图片名（image,不含序号）</Abstract>
-				</Parameter><Parameter>
-					<Name>count</Name>
-					<Abstract type="html">图片数量</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">图片&lt;image0,image1,image2, ...&gt;</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithBundleImageName:count:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_squareImage</TokenIdentifier>
-			<Abstract type="html">把图片剪裁为正方形</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIImage *)ax_squareImage</Declaration>
-			
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_squareImage</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_roundedImage</TokenIdentifier>
-			<Abstract type="html">把图片剪裁为圆形</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIImage *)ax_roundedImage</Declaration>
-			
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_roundedImage</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_blurEffectWithFactor:</TokenIdentifier>
-			<Abstract type="html">毛玻璃效果</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIImage *)ax_blurEffectWithFactor:(CGFloat)ratio</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">毛玻璃效果指数</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">毛玻璃效果处理后的图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_blurEffectWithFactor:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_blurEffectWithFactor:completion:</TokenIdentifier>
-			<Abstract type="html">毛玻璃效果</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_blurEffectWithFactor:(CGFloat)ratio completion:(void ( ^ ) ( UIImage *image ))completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">毛玻璃效果指数</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">处理完成后执行的block</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_blurEffectWithFactor:completion:</Anchor>
+			<ReturnValue><Abstract type="html">较新的版本</Abstract></ReturnValue>
+			<Anchor>//api/name/laterVersion:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		

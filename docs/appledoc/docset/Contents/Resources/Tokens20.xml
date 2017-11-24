@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIColor+AXExtension.html">
+	<File path="Categories/NSError+AXKitHelpExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIColor(AXExtension)</TokenIdentifier>
-			<Abstract type="html">更改状态栏背景色</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSError(AXKitHelpExtension)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,180 +13,22 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/dark</TokenIdentifier>
-			<Abstract type="html">颜色变深</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/axkit_errorWithCode:reason:</TokenIdentifier>
+			<Abstract type="html">创建一个Error对象并弹窗提醒用户错误原因以及帮助信息网址</Abstract>
+			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
 			
-			<Declaration>- (UIColor *)dark</Declaration>
-			
-			<ReturnValue><Abstract type="html">变深之后的颜色</Abstract></ReturnValue>
-			<Anchor>//api/name/dark</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/light</TokenIdentifier>
-			<Abstract type="html">颜色变浅</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIColor *)light</Declaration>
-			
-			<ReturnValue><Abstract type="html">变浅之后的颜色</Abstract></ReturnValue>
-			<Anchor>//api/name/light</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/darkRatio</TokenIdentifier>
-			<Abstract type="html">颜色变深，传入参数ratio为比例（0~1）</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIColor *( ^ ) ( CGFloat ratio ))darkRatio</Declaration>
-			
-			
-			<Anchor>//api/name/darkRatio</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/lightRatio</TokenIdentifier>
-			<Abstract type="html">颜色变浅，传入参数ratio为比例（0~1）</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIColor *( ^ ) ( CGFloat ratio ))lightRatio</Declaration>
-			
-			
-			<Anchor>//api/name/lightRatio</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/randomColor</TokenIdentifier>
-			<Abstract type="html">随机色</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>+ (UIColor *)randomColor</Declaration>
-			
-			<ReturnValue><Abstract type="html">随机色</Abstract></ReturnValue>
-			<Anchor>//api/name/randomColor</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/colorWithHex:</TokenIdentifier>
-			<Abstract type="html">以HEX创建颜色</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>+ (UIColor *)colorWithHex:(NSUInteger)hex</Declaration>
+			<Declaration>+ (instancetype)axkit_errorWithCode:(NSInteger)code reason:(nullable NSString *( ^ ) ( void ))reason</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>hex</Name>
-					<Abstract type="html">16进制</Abstract>
+					<Name>code</Name>
+					<Abstract type="html">错误码</Abstract>
+				</Parameter><Parameter>
+					<Name>reason</Name>
+					<Abstract type="html">原因</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">UIColor实例</Abstract></ReturnValue>
-			<Anchor>//api/name/colorWithHex:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/colorWithHexString:</TokenIdentifier>
-			<Abstract type="html">以HEX字符串创建颜色</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>+ (UIColor *)colorWithHexString:(NSString *)hexStr</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>hexStr</Name>
-					<Abstract type="html">HEX字符串</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">UIColor实例</Abstract></ReturnValue>
-			<Anchor>//api/name/colorWithHexString:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/redValue</TokenIdentifier>
-			<Abstract type="html">获取UIColor中的R值</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)redValue</Declaration>
-			
-			<ReturnValue><Abstract type="html">R值（0~1）</Abstract></ReturnValue>
-			<Anchor>//api/name/redValue</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/greenValue</TokenIdentifier>
-			<Abstract type="html">获取UIColor中的G值</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)greenValue</Declaration>
-			
-			<ReturnValue><Abstract type="html">R值（0~1）</Abstract></ReturnValue>
-			<Anchor>//api/name/greenValue</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/blueValue</TokenIdentifier>
-			<Abstract type="html">获取UIColor中的B值</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)blueValue</Declaration>
-			
-			<ReturnValue><Abstract type="html">R值（0~1）</Abstract></ReturnValue>
-			<Anchor>//api/name/blueValue</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/alphaValue</TokenIdentifier>
-			<Abstract type="html">获取UIColor中的Alpha值</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)alphaValue</Declaration>
-			
-			<ReturnValue><Abstract type="html">R值（0~1）</Abstract></ReturnValue>
-			<Anchor>//api/name/alphaValue</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/hexString</TokenIdentifier>
-			<Abstract type="html">获取颜色的HEX字符串（不含Alpha值）</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)hexString</Declaration>
-			
-			<ReturnValue><Abstract type="html">HEX字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/hexString</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/hexStringWithAlpha</TokenIdentifier>
-			<Abstract type="html">获取颜色的HEX字符串</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)hexStringWithAlpha</Declaration>
-			
-			<ReturnValue><Abstract type="html">HEX字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/hexStringWithAlpha</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIColor/isLightColor</TokenIdentifier>
-			<Abstract type="html">粗略判断颜色是不是浅色调</Abstract>
-			<DeclaredIn>UIColor+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isLightColor</Declaration>
-			
-			<ReturnValue><Abstract type="html">是不是浅色</Abstract></ReturnValue>
-			<Anchor>//api/name/isLightColor</Anchor>
+			<ReturnValue><Abstract type="html">Error实例</Abstract></ReturnValue>
+			<Anchor>//api/name/axkit_errorWithCode:reason:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

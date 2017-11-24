@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIView+AXGestureExtension.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIView(AXGestureExtension)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+            
+			
+			<NodeRef refid="51"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addTapGestureHandler:</TokenIdentifier>
+			<Abstract type="html">处理tap手势</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addTapGestureHandler:(void ( ^ ) ( UITapGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addTapGestureHandler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addTapGesture:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个tap手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addTapGesture:(nullable void ( ^ ) ( UITapGestureRecognizer *sender ))tap handler:(void ( ^ ) ( UITapGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tap</Name>
+					<Abstract type="html">tap</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addTapGesture:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addTapGesture:handler:animatedScale:duration:</TokenIdentifier>
+			<Abstract type="html">添加一个tap手势，并处理，附加动画效果</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addTapGesture:(nullable void ( ^ ) ( UITapGestureRecognizer *sender ))tap handler:(void ( ^ ) ( UITapGestureRecognizer *sender ))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tap</Name>
+					<Abstract type="html">tap</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter><Parameter>
+					<Name>scale</Name>
+					<Abstract type="html">动画比例</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">持续时间</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addTapGesture:handler:animatedScale:duration:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addDoubleTapGesture:duration:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个双击手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addDoubleTapGesture:(nullable void ( ^ ) ( UITapGestureRecognizer *sender ))doubleTap duration:(NSTimeInterval)duration handler:(void ( ^ ) ( UITapGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>doubleTap</Name>
+					<Abstract type="html">double tap</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">双击间隔时间</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addDoubleTapGesture:duration:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addLongPressGesture:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个长按手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addLongPressGesture:(nullable void ( ^ ) ( UILongPressGestureRecognizer *sender ))longPress handler:(void ( ^ ) ( UILongPressGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>longPress</Name>
+					<Abstract type="html">长按手势</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addLongPressGesture:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addSwipeGesture:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个轻扫手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addSwipeGesture:(nullable void ( ^ ) ( UISwipeGestureRecognizer *sender ))swipe handler:(void ( ^ ) ( UISwipeGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>swipe</Name>
+					<Abstract type="html">轻扫</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addSwipeGesture:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addPanGesture:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个滑动手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addPanGesture:(nullable void ( ^ ) ( UIPanGestureRecognizer *sender ))pan handler:(void ( ^ ) ( UIPanGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pan</Name>
+					<Abstract type="html">滑动</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addPanGesture:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addScreenEdgePanGesture:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个屏幕边缘滑动手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addScreenEdgePanGesture:(nullable void ( ^ ) ( UIScreenEdgePanGestureRecognizer *sender ))screenEdgePan handler:(void ( ^ ) ( UIScreenEdgePanGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>screenEdgePan</Name>
+					<Abstract type="html">屏幕边缘滑动</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addScreenEdgePanGesture:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addPinchGesture:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个双指缩放手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addPinchGesture:(nullable void ( ^ ) ( UIPinchGestureRecognizer *sender ))pinch handler:(void ( ^ ) ( UIPinchGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pinch</Name>
+					<Abstract type="html">双指缩放手势</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block
+
+sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
+sender.scale = 1;</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addPinchGesture:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_addRotationGesture:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个双指旋转手势，并处理</Abstract>
+			<DeclaredIn>UIView+AXGestureExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_addRotationGesture:(nullable void ( ^ ) ( UIRotationGestureRecognizer *sender ))rotation handler:(void ( ^ ) ( UIRotationGestureRecognizer *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rotation</Name>
+					<Abstract type="html">双指旋转手势</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">处理手势的block
+
+sender.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
+sender.rotation = 0;</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_addRotationGesture:handler:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

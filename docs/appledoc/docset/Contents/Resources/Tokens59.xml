@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/RandomStringType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/RandomStringType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+            
+			
+			<NodeRef refid="59"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RandomStringTypeName</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>RandomStringTypeName</Declaration>
+            
+            <DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="59"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RandomStringTypePassword</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>RandomStringTypePassword</Declaration>
+            
+            <DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="59"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RandomStringTypeLower</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>RandomStringTypeLower</Declaration>
+            
+            <DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="59"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RandomStringTypeUpper</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>RandomStringTypeUpper</Declaration>
+            
+            <DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="59"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RandomStringTypeCapitalize</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>RandomStringTypeCapitalize</Declaration>
+            
+            <DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="59"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

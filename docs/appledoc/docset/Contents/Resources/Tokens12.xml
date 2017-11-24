@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSString+AXFileStreamChainedWrapper.html">
+	<File path="Classes/UIThemeInfoModel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXFileStreamChainedWrapper)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/UIThemeInfoModel</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
             
 			
 			<NodeRef refid="12"/>
@@ -13,291 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readArray</TokenIdentifier>
-			<Abstract type="html">读取一个数组或可变数组(自动追加.plist</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setName:</TokenIdentifier>
+			<Abstract type="html">theme name</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (nullable __kindof NSArray *)readArray</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
 			
-			<ReturnValue><Abstract type="html">数组</Abstract></ReturnValue>
-			<Anchor>//api/name/readArray</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readDictionary</TokenIdentifier>
-			<Abstract type="html">读取一个字典或可变字典(自动追加.plist</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/name</TokenIdentifier>
+			<Abstract type="html">theme name</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (nullable __kindof NSDictionary *)readDictionary</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
 			
-			<ReturnValue><Abstract type="html">字典</Abstract></ReturnValue>
-			<Anchor>//api/name/readDictionary</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readArchivedPlist</TokenIdentifier>
-			<Abstract type="html">解档一个已归档的plist文件(自动追加.plist</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/name</TokenIdentifier>
+			<Abstract type="html">theme name</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)readArchivedPlist</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
 			
-			<ReturnValue><Abstract type="html">一个已归档的plist文件</Abstract></ReturnValue>
-			<Anchor>//api/name/readArchivedPlist</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readJson</TokenIdentifier>
-			<Abstract type="html">读取一个json文件(自动追加.json</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setAuthor:</TokenIdentifier>
+			<Abstract type="html">theme author</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)readJson</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *author</Declaration>
 			
-			<ReturnValue><Abstract type="html">数组或字典</Abstract></ReturnValue>
-			<Anchor>//api/name/readJson</Anchor>
+			
+			<Anchor>//api/name/author</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readTxt</TokenIdentifier>
-			<Abstract type="html">读取一个纯文本文件(自动追加.txt</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/author</TokenIdentifier>
+			<Abstract type="html">theme author</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (nullable NSString *)readTxt</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *author</Declaration>
 			
-			<ReturnValue><Abstract type="html">txt文件</Abstract></ReturnValue>
-			<Anchor>//api/name/readTxt</Anchor>
+			
+			<Anchor>//api/name/author</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readArchivedFile</TokenIdentifier>
-			<Abstract type="html">read file
-解档一个已归档的文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/author</TokenIdentifier>
+			<Abstract type="html">theme author</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (nullable id)readArchivedFile</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *author</Declaration>
 			
-			<ReturnValue><Abstract type="html">a file</Abstract></ReturnValue>
-			<Anchor>//api/name/readArchivedFile</Anchor>
+			
+			<Anchor>//api/name/author</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/savePlist</TokenIdentifier>
-			<Abstract type="html">保存一个plist文件（自动追加.plist）</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setEmail:</TokenIdentifier>
+			<Abstract type="html">theme author&apos;s email</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL ( ^ ) ( id ))savePlist</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *email</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/savePlist</Anchor>
+			
+			<Anchor>//api/name/email</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/saveArchivedPlist</TokenIdentifier>
-			<Abstract type="html">归档一个实现NSCoding协议的plist文件（自动追加.plist）</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/email</TokenIdentifier>
+			<Abstract type="html">theme author&apos;s email</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL ( ^ ) ( NSObject&lt;NSCoding&gt; *))saveArchivedPlist</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *email</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/saveArchivedPlist</Anchor>
+			
+			<Anchor>//api/name/email</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/saveArchivedObject</TokenIdentifier>
-			<Abstract type="html">归档一个实现NSCoding协议的文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/email</TokenIdentifier>
+			<Abstract type="html">theme author&apos;s email</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL ( ^ ) ( NSObject&lt;NSCoding&gt; *))saveArchivedObject</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *email</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/saveArchivedObject</Anchor>
+			
+			<Anchor>//api/name/email</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/save</TokenIdentifier>
-			<Abstract type="html">归档一个文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setPrice:</TokenIdentifier>
+			<Abstract type="html">theme&apos;s price</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL ( ^ ) ( id&lt;NSCoding&gt; ))save</Declaration>
+			<Declaration>@property (assign, nonatomic) CGFloat price</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/save</Anchor>
+			
+			<Anchor>//api/name/price</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/removePlist</TokenIdentifier>
-			<Abstract type="html">删除一个plist文件（自动追加.plist）</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/price</TokenIdentifier>
+			<Abstract type="html">theme&apos;s price</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)removePlist</Declaration>
+			<Declaration>@property (assign, nonatomic) CGFloat price</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/removePlist</Anchor>
+			
+			<Anchor>//api/name/price</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/removeJson</TokenIdentifier>
-			<Abstract type="html">删除一个json文件（自动追加.json）</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/price</TokenIdentifier>
+			<Abstract type="html">theme&apos;s price</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)removeJson</Declaration>
+			<Declaration>@property (assign, nonatomic) CGFloat price</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/removeJson</Anchor>
+			
+			<Anchor>//api/name/price</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/removeTxt</TokenIdentifier>
-			<Abstract type="html">删除一个txt文件（自动追加.txt）</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setPreview:</TokenIdentifier>
+			<Abstract type="html">theme&apos;s preview image urls</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)removeTxt</Declaration>
+			<Declaration>@property (copy, nonatomic) NSArray&lt;NSString*&gt; *preview</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/removeTxt</Anchor>
+			
+			<Anchor>//api/name/preview</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/remove</TokenIdentifier>
-			<Abstract type="html">删除一个文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/preview</TokenIdentifier>
+			<Abstract type="html">theme&apos;s preview image urls</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)remove</Declaration>
+			<Declaration>@property (copy, nonatomic) NSArray&lt;NSString*&gt; *preview</Declaration>
 			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/remove</Anchor>
+			
+			<Anchor>//api/name/preview</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/mainBundlePath</TokenIdentifier>
-			<Abstract type="html">‘self’在mainBundle中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/preview</TokenIdentifier>
+			<Abstract type="html">theme&apos;s preview image urls</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (nullable NSString *)mainBundlePath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在mainBundle中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/mainBundlePath</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/docPath</TokenIdentifier>
-			<Abstract type="html">‘self’在documents中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)docPath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在documents中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/docPath</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/cachePath</TokenIdentifier>
-			<Abstract type="html">‘self’在cache中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)cachePath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在cache中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/cachePath</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/tempPath</TokenIdentifier>
-			<Abstract type="html">‘self’在tmp中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)tempPath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在tmp中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/tempPath</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/path</TokenIdentifier>
-			<Abstract type="html">‘self’在NSSearchPathDirectory中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *( ^ ) ( NSSearchPathDirectory ))path</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在NSSearchPathDirectory中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/path</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/extension</TokenIdentifier>
-			<Abstract type="html">追加一个扩展名</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *( ^ ) ( NSString *))extension</Declaration>
+			<Declaration>@property (copy, nonatomic) NSArray&lt;NSString*&gt; *preview</Declaration>
 			
 			
-			<Anchor>//api/name/extension</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/plist</TokenIdentifier>
-			<Abstract type="html">追加.plist</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)plist</Declaration>
-			
-			<ReturnValue><Abstract type="html">追加.plist后的路径</Abstract></ReturnValue>
-			<Anchor>//api/name/plist</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/json</TokenIdentifier>
-			<Abstract type="html">追加.json</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)json</Declaration>
-			
-			<ReturnValue><Abstract type="html">追加.json后的路径</Abstract></ReturnValue>
-			<Anchor>//api/name/json</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/txt</TokenIdentifier>
-			<Abstract type="html">追加.txt</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)txt</Declaration>
-			
-			<ReturnValue><Abstract type="html">追加.txt后的路径</Abstract></ReturnValue>
-			<Anchor>//api/name/txt</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/subpaths</TokenIdentifier>
-			<Abstract type="html">‘self’路径下的所有文件路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (nullable NSArray&lt;NSString*&gt; *( ^ ) ( NSString *__nullable ))subpaths</Declaration>
-			
-			
-			<Anchor>//api/name/subpaths</Anchor>
+			<Anchor>//api/name/preview</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

@@ -58,23 +58,23 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/appendPathComponent">- appendPathComponent</option>
+		
 		<option value="//api/name/cachePath">- cachePath</option>
+		
+		<option value="//api/name/createDirectory">- createDirectory</option>
 		
 		<option value="//api/name/docPath">- docPath</option>
 		
 		<option value="//api/name/extension">- extension</option>
 		
-		<option value="//api/name/json">- json</option>
+		<option value="//api/name/isDirectoryExist">- isDirectoryExist</option>
 		
 		<option value="//api/name/mainBundlePath">- mainBundlePath</option>
 		
 		<option value="//api/name/path">- path</option>
 		
-		<option value="//api/name/plist">- plist</option>
-		
 		<option value="//api/name/readArchivedFile">- readArchivedFile</option>
-		
-		<option value="//api/name/readArchivedPlist">- readArchivedPlist</option>
 		
 		<option value="//api/name/readArray">- readArray</option>
 		
@@ -84,27 +84,17 @@
 		
 		<option value="//api/name/readTxt">- readTxt</option>
 		
-		<option value="//api/name/remove">- remove</option>
+		<option value="//api/name/removeFile">- removeFile</option>
 		
-		<option value="//api/name/removeJson">- removeJson</option>
+		<option value="//api/name/saveArchivedFile">- saveArchivedFile</option>
 		
-		<option value="//api/name/removePlist">- removePlist</option>
+		<option value="//api/name/saveFile">- saveFile</option>
 		
-		<option value="//api/name/removeTxt">- removeTxt</option>
-		
-		<option value="//api/name/save">- save</option>
-		
-		<option value="//api/name/saveArchivedObject">- saveArchivedObject</option>
-		
-		<option value="//api/name/saveArchivedPlist">- saveArchivedPlist</option>
-		
-		<option value="//api/name/savePlist">- savePlist</option>
+		<option value="//api/name/saveStringByAppendingToEndOfFile">- saveStringByAppendingToEndOfFile</option>
 		
 		<option value="//api/name/subpaths">- subpaths</option>
 		
-		<option value="//api/name/tempPath">- tempPath</option>
-		
-		<option value="//api/name/txt">- txt</option>
+		<option value="//api/name/tmpPath">- tmpPath</option>
 		
 	</optgroup>
 	
@@ -156,12 +146,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>读取一个数组或可变数组(自动追加.<a href="#//api/name/plist">plist</a>)</p>
+				<p>读取一个数组或可变数组(自动追加.plist)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSArray *)readArray</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSArray *( ^ ) ( void ))readArray</code></div>
 
 		    
 			
@@ -202,12 +192,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>读取一个字典或可变字典(自动追加.<a href="#//api/name/plist">plist</a>)</p>
+				<p>读取一个字典或可变字典(自动追加.plist)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSDictionary *)readDictionary</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable __kindof NSDictionary *( ^ ) ( void ))readDictionary</code></div>
 
 		    
 			
@@ -216,52 +206,6 @@
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
 				<p>字典</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/readArchivedPlist" title="readArchivedPlist"></a>
-	<h3 class="method-title"><code><a href="#//api/name/readArchivedPlist">&ndash;&nbsp;readArchivedPlist</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>解档一个已归档的plist文件(自动追加.<a href="#//api/name/plist">plist</a>)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (nullable id)readArchivedPlist</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>一个已归档的plist文件</p>
 			</div>
 			
 
@@ -294,12 +238,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>读取一个json文件(自动追加.<a href="#//api/name/json">json</a>)</p>
+				<p>读取一个json文件(自动追加.json)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (nullable id)readJson</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id ( ^ ) ( void ))readJson</code></div>
 
 		    
 			
@@ -340,12 +284,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>读取一个纯文本文件(自动追加.<a href="#//api/name/txt">txt</a>)</p>
+				<p>读取一个纯文本文件(自动追加.txt)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (nullable NSString *)readTxt</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *( ^ ) ( void ))readTxt</code></div>
 
 		    
 			
@@ -386,13 +330,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>read file
-解档一个已归档的文件</p>
+				<p>解档一个已归档的文件</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (nullable id)readArchivedFile</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id ( ^ ) ( void ))readArchivedFile</code></div>
 
 		    
 			
@@ -400,7 +343,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>a file</p>
+				<p>文件</p>
 			</div>
 			
 
@@ -422,8 +365,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/savePlist" title="savePlist"></a>
-	<h3 class="method-title"><code><a href="#//api/name/savePlist">&ndash;&nbsp;savePlist</a></code>
+	<a name="//api/name/saveFile" title="saveFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveFile">&ndash;&nbsp;saveFile</a></code>
 </h3>
 
 	<div class="method-info">
@@ -433,12 +376,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>保存一个plist文件（自动追加.plist）</p>
+				<p>保存一个文件</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( id ))savePlist</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( id ))saveFile</code></div>
 
 		    
 			
@@ -468,54 +411,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/saveArchivedPlist" title="saveArchivedPlist"></a>
-	<h3 class="method-title"><code><a href="#//api/name/saveArchivedPlist">&ndash;&nbsp;saveArchivedPlist</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>归档一个实现NSCoding协议的plist文件（自动追加.plist）</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( NSObject&lt;NSCoding&gt; *))saveArchivedPlist</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>成功与否</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/saveArchivedObject" title="saveArchivedObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/saveArchivedObject">&ndash;&nbsp;saveArchivedObject</a></code>
+	<a name="//api/name/saveArchivedFile" title="saveArchivedFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveArchivedFile">&ndash;&nbsp;saveArchivedFile</a></code>
 </h3>
 
 	<div class="method-info">
@@ -530,7 +427,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( NSObject&lt;NSCoding&gt; *))saveArchivedObject</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( NSObject&lt;NSCoding&gt; *))saveArchivedFile</code></div>
 
 		    
 			
@@ -560,8 +457,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/save" title="save"></a>
-	<h3 class="method-title"><code><a href="#//api/name/save">&ndash;&nbsp;save</a></code>
+	<a name="//api/name/saveStringByAppendingToEndOfFile" title="saveStringByAppendingToEndOfFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/saveStringByAppendingToEndOfFile">&ndash;&nbsp;saveStringByAppendingToEndOfFile</a></code>
 </h3>
 
 	<div class="method-info">
@@ -571,58 +468,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>归档一个文件</p>
+				<p>拼接文本到沙盒文件</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( id&lt;NSCoding&gt; ))save</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>成功与否</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/removePlist" title="removePlist"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removePlist">&ndash;&nbsp;removePlist</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>删除一个plist文件（自动追加.plist）</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)removePlist</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( NSString *))saveStringByAppendingToEndOfFile</code></div>
 
 		    
 			
@@ -652,100 +503,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/removeJson" title="removeJson"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeJson">&ndash;&nbsp;removeJson</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>删除一个json文件（自动追加.json）</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)removeJson</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>成功与否</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/removeTxt" title="removeTxt"></a>
-	<h3 class="method-title"><code><a href="#//api/name/removeTxt">&ndash;&nbsp;removeTxt</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>删除一个txt文件（自动追加.txt）</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)removeTxt</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>成功与否</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/remove" title="remove"></a>
-	<h3 class="method-title"><code><a href="#//api/name/remove">&ndash;&nbsp;remove</a></code>
+	<a name="//api/name/removeFile" title="removeFile"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeFile">&ndash;&nbsp;removeFile</a></code>
 </h3>
 
 	<div class="method-info">
@@ -760,7 +519,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)remove</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( void ))removeFile</code></div>
 
 		    
 			
@@ -928,8 +687,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/tempPath" title="tempPath"></a>
-	<h3 class="method-title"><code><a href="#//api/name/tempPath">&ndash;&nbsp;tempPath</a></code>
+	<a name="//api/name/tmpPath" title="tmpPath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tmpPath">&ndash;&nbsp;tmpPath</a></code>
 </h3>
 
 	<div class="method-info">
@@ -944,7 +703,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)tempPath</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *)tmpPath</code></div>
 
 		    
 			
@@ -1020,6 +779,47 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/subpaths" title="subpaths"></a>
+	<h3 class="method-title"><code><a href="#//api/name/subpaths">&ndash;&nbsp;subpaths</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>‘self’路径下的所有文件路径</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;NSString*&gt; *( ^ ) ( NSString *__nullable ))subpaths</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/extension" title="extension"></a>
 	<h3 class="method-title"><code><a href="#//api/name/extension">&ndash;&nbsp;extension</a></code>
 </h3>
@@ -1061,8 +861,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/plist" title="plist"></a>
-	<h3 class="method-title"><code><a href="#//api/name/plist">&ndash;&nbsp;plist</a></code>
+	<a name="//api/name/appendPathComponent" title="appendPathComponent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/appendPathComponent">&ndash;&nbsp;appendPathComponent</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1072,12 +872,53 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>追加.plist</p>
+				<p>路径</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)plist</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *( ^ ) ( NSString *))appendPathComponent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isDirectoryExist" title="isDirectoryExist"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isDirectoryExist">&ndash;&nbsp;isDirectoryExist</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>创建路径是否存在</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( void ))isDirectoryExist</code></div>
 
 		    
 			
@@ -1085,7 +926,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>追加.plist后的路径</p>
+				<p>创建路径是否存在</p>
 			</div>
 			
 
@@ -1107,8 +948,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/json" title="json"></a>
-	<h3 class="method-title"><code><a href="#//api/name/json">&ndash;&nbsp;json</a></code>
+	<a name="//api/name/createDirectory" title="createDirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createDirectory">&ndash;&nbsp;createDirectory</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1118,12 +959,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>追加.json</p>
+				<p>如果不存在创建路径</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)json</code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL ( ^ ) ( void ))createDirectory</code></div>
 
 		    
 			
@@ -1131,95 +972,8 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>追加.json后的路径</p>
+				<p>路径</p>
 			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/txt" title="txt"></a>
-	<h3 class="method-title"><code><a href="#//api/name/txt">&ndash;&nbsp;txt</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>追加.txt</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)txt</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>追加.txt后的路径</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSString+AXFileStreamChainedWrapper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/subpaths" title="subpaths"></a>
-	<h3 class="method-title"><code><a href="#//api/name/subpaths">&ndash;&nbsp;subpaths</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>‘self’路径下的所有文件路径</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (nullable NSArray&lt;NSString*&gt; *( ^ ) ( NSString *__nullable ))subpaths</code></div>
-
-		    
-			
-
 			
 
 			
@@ -1254,7 +1008,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 xaoxuu. All rights reserved. Updated: 2017-09-16</p>
+						<p class="copyright">Copyright &copy; 2017 xaoxuu. All rights reserved. Updated: 2017-11-24</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

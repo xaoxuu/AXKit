@@ -52,23 +52,23 @@
 
 	
 	
-	<optgroup label="Properties">
+
+	
+
+	
+	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/accent">accent</option>
+		<option value="//api/name/accent">- accent</option>
 		
-		<option value="//api/name/background">background</option>
+		<option value="//api/name/background">- background</option>
 		
-		<option value="//api/name/groupTableViewBackground">groupTableViewBackground</option>
+		<option value="//api/name/groupTableViewBackground">- groupTableViewBackground</option>
 		
-		<option value="//api/name/separatorColor">separatorColor</option>
+		<option value="//api/name/separatorColor">- separatorColor</option>
 		
-		<option value="//api/name/theme">theme</option>
+		<option value="//api/name/theme">- theme</option>
 		
 	</optgroup>
-	
-
-	
-
 	
 	
 </select>
@@ -92,7 +92,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>UIColorManager.h<br />UIColorManager.m</td>
+	<td>UIThemeModel.h<br />UIThemeModel.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,8 +110,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/theme" title="theme"></a>
-	<h3 class="method-title"><code><a href="#//api/name/theme">&nbsp;&nbsp;theme</a></code>
+	<a name="//api/name/background" title="background"></a>
+	<h3 class="method-title"><code><a href="#//api/name/background">&ndash;&nbsp;background</a></code>
 </h3>
 
 	<div class="method-info">
@@ -121,12 +121,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>当前app的主题色</p>
+				<p>background color</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) UIColor *theme</code></div>
+			<div class="method-subsection method-declaration"><code>- (UIColor *)background</code></div>
 
 		    
 			
@@ -144,7 +144,48 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColorManager.h</code></p>
+				<p><code class="declared-in-ref">UIThemeModel.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/theme" title="theme"></a>
+	<h3 class="method-title"><code><a href="#//api/name/theme">&ndash;&nbsp;theme</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>theme color</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (UIColor *)theme</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">UIThemeModel.h</code></p>
 			</div>
 			
 			
@@ -152,7 +193,7 @@
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/accent" title="accent"></a>
-	<h3 class="method-title"><code><a href="#//api/name/accent">&nbsp;&nbsp;accent</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/accent">&ndash;&nbsp;accent</a></code>
 </h3>
 
 	<div class="method-info">
@@ -162,12 +203,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>当前app的强调色</p>
+				<p>accent color</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) UIColor *accent</code></div>
+			<div class="method-subsection method-declaration"><code>- (UIColor *)accent</code></div>
 
 		    
 			
@@ -185,48 +226,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColorManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/background" title="background"></a>
-	<h3 class="method-title"><code><a href="#//api/name/background">&nbsp;&nbsp;background</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>当前app的背景色（一般为白色或很浅的灰色）</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) UIColor *background</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColorManager.h</code></p>
+				<p><code class="declared-in-ref">UIThemeModel.h</code></p>
 			</div>
 			
 			
@@ -234,7 +234,7 @@
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/groupTableViewBackground" title="groupTableViewBackground"></a>
-	<h3 class="method-title"><code><a href="#//api/name/groupTableViewBackground">&nbsp;&nbsp;groupTableViewBackground</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/groupTableViewBackground">&ndash;&nbsp;groupTableViewBackground</a></code>
 </h3>
 
 	<div class="method-info">
@@ -249,7 +249,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) UIColor *groupTableViewBackground</code></div>
+			<div class="method-subsection method-declaration"><code>- (UIColor *)groupTableViewBackground</code></div>
 
 		    
 			
@@ -267,7 +267,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColorManager.h</code></p>
+				<p><code class="declared-in-ref">UIThemeModel.h</code></p>
 			</div>
 			
 			
@@ -275,7 +275,7 @@
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/separatorColor" title="separatorColor"></a>
-	<h3 class="method-title"><code><a href="#//api/name/separatorColor">&nbsp;&nbsp;separatorColor</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/separatorColor">&ndash;&nbsp;separatorColor</a></code>
 </h3>
 
 	<div class="method-info">
@@ -290,7 +290,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) UIColor *separatorColor</code></div>
+			<div class="method-subsection method-declaration"><code>- (UIColor *)separatorColor</code></div>
 
 		    
 			
@@ -308,7 +308,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColorManager.h</code></p>
+				<p><code class="declared-in-ref">UIThemeModel.h</code></p>
 			</div>
 			
 			
@@ -329,7 +329,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 xaoxuu. All rights reserved. Updated: 2017-09-16</p>
+						<p class="copyright">Copyright &copy; 2017 xaoxuu. All rights reserved. Updated: 2017-11-24</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -56,7 +56,7 @@ static CGFloat smallSize = 12.0f;
     return self;
 }
 
-- (NSMutableDictionary *)dictionaryWithModel{
+- (NSDictionary *)dictionaryWithModel{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[@"info"] = [self.info dictionaryWithModel];
     dict[@"color"] = [self.color dictionaryWithModel];
@@ -122,7 +122,7 @@ static CGFloat smallSize = 12.0f;
     return self;
 }
 
-- (NSMutableDictionary *)dictionaryWithModel{
+- (NSDictionary *)dictionaryWithModel{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     dict[@"background"] = self.background.hexStringWithAlpha;
@@ -241,7 +241,7 @@ static CGFloat smallSize = 12.0f;
 }
 
 
-- (NSMutableDictionary *)dictionaryWithModel{
+- (NSDictionary *)dictionaryWithModel{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     dict[@"prefersFontSize"] = @(self.prefersFontSize);
@@ -264,7 +264,7 @@ static CGFloat smallSize = 12.0f;
 }
 
 
-- (NSMutableDictionary *)dictionaryWithModel{
+- (NSDictionary *)dictionaryWithModel{
 //    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 //
 //    dict[@"name"] = self.info.name;
@@ -302,7 +302,7 @@ static CGFloat smallSize = 12.0f;
 }
 
 
-- (NSMutableDictionary *)dictionaryWithModel{
+- (NSDictionary *)dictionaryWithModel{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     dict[@"name"] = self.name;

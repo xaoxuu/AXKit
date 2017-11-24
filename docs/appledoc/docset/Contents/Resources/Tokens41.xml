@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/AXKitErrorCode.html">
+	<File path="Categories/UIResponder+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/AXKitErrorCode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/UIResponder(AXExtension)</TokenIdentifier>
+			<Abstract type="html">根控制器</Abstract>
+			<DeclaredIn>UIResponder+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="41"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodePushNavVC</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>AXKitErrorCodePushNavVC</Declaration>
-            
-            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIResponder/rootVC</TokenIdentifier>
+			<Abstract type="html">获取app根控制器</Abstract>
+			<DeclaredIn>UIResponder+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (nullable UIViewController *)rootVC</Declaration>
+			
+			<ReturnValue><Abstract type="html">根控制器rootVC</Abstract></ReturnValue>
+			<Anchor>//api/name/rootVC</Anchor>
             <NodeRef refid="41"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodeObjectForKeyNotFound</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>AXKitErrorCodeObjectForKeyNotFound</Declaration>
-            
-            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
-            
-            <NodeRef refid="41"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

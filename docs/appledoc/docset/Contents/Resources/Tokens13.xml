@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSString+AXRandomExtension.html">
+	<File path="Classes/UIThemeManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXRandomExtension)</TokenIdentifier>
-			<Abstract type="html">产生指定位数的随机十六进制数</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/UIThemeManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,87 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomNameWithLength:</TokenIdentifier>
-			<Abstract type="html">产生指定长度的随机字符串（适用于用户名）</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/configDefaultTheme:</TokenIdentifier>
+			<Abstract type="html">设置默认的颜色配置（会被用户的更改覆盖，一般用在appDelegate中）</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_stringWithRandomNameWithLength:(AXUIntegerRange)length</Declaration>
+			<Declaration>- (void)configDefaultTheme:(void ( ^ ) ( UIThemeManager *))defaultTheme</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>length</Name>
-					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+					<Name>defaultTheme</Name>
+					<Abstract type="html">默认的颜色配置</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_stringWithRandomNameWithLength:</Anchor>
+			
+			<Anchor>//api/name/configDefaultTheme:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomPasswordWithLength:</TokenIdentifier>
-			<Abstract type="html">产生指定长度的随机字符串（适用于密码）</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/applyThemeWithPath:</TokenIdentifier>
+			<Abstract type="html">应用主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_stringWithRandomPasswordWithLength:(AXUIntegerRange)length</Declaration>
+			<Declaration>- (void)applyThemeWithPath:(NSString *)path</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>length</Name>
-					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+					<Name>path</Name>
+					<Abstract type="html">主题文件路径</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_stringWithRandomPasswordWithLength:</Anchor>
+			
+			<Anchor>//api/name/applyThemeWithPath:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomLowerStringWithLength:</TokenIdentifier>
-			<Abstract type="html">产生指定长度的随机字符串（纯小写）</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/applyThemeWithEmail:name:</TokenIdentifier>
+			<Abstract type="html">应用主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_stringWithRandomLowerStringWithLength:(AXUIntegerRange)length</Declaration>
+			<Declaration>- (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>length</Name>
-					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+					<Name>email</Name>
+					<Abstract type="html">主题作者邮箱</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">主题名</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_stringWithRandomLowerStringWithLength:</Anchor>
+			
+			<Anchor>//api/name/applyThemeWithEmail:name:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomUpperStringWithLength:</TokenIdentifier>
-			<Abstract type="html">产生指定长度的随机字符串（纯大写）</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/applyTheme:</TokenIdentifier>
+			<Abstract type="html">应用主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_stringWithRandomUpperStringWithLength:(AXUIntegerRange)length</Declaration>
+			<Declaration>- (void)applyTheme:(UIThemeModel *)theme</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>length</Name>
-					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+					<Name>theme</Name>
+					<Abstract type="html">主题</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_stringWithRandomUpperStringWithLength:</Anchor>
+			
+			<Anchor>//api/name/applyTheme:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomCapitalizeStringWithLength:</TokenIdentifier>
-			<Abstract type="html">产生指定长度的随机字符串（首字母大写）</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateCurrentColorTheme:</TokenIdentifier>
+			<Abstract type="html">更新主题色</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_stringWithRandomCapitalizeStringWithLength:(AXUIntegerRange)length</Declaration>
+			<Declaration>- (void)updateCurrentColorTheme:(void ( ^ ) ( UIThemeColorModel *color ))update</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>length</Name>
-					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+					<Name>update</Name>
+					<Abstract type="html">主题色</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_stringWithRandomCapitalizeStringWithLength:</Anchor>
+			
+			<Anchor>//api/name/updateCurrentColorTheme:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateCurrentFontTheme:</TokenIdentifier>
+			<Abstract type="html">更新主题字体</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			
+			<Declaration>- (void)updateCurrentFontTheme:(void ( ^ ) ( UIThemeFontModel *font ))update</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>update</Name>
+					<Abstract type="html">主题字体</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateCurrentFontTheme:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/getAllDownloadedThemes</TokenIdentifier>
+			<Abstract type="html">获取所有已下载的主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;UIThemeModel*&gt; *)getAllDownloadedThemes</Declaration>
+			
+			<ReturnValue><Abstract type="html">所有已下载的主题</Abstract></ReturnValue>
+			<Anchor>//api/name/getAllDownloadedThemes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/deleteTheme:</TokenIdentifier>
+			<Abstract type="html">删除主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteTheme:(UIThemeModel *)theme</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>theme</Name>
+					<Abstract type="html">主题</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteTheme:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/deleteAllThemes</TokenIdentifier>
+			<Abstract type="html">删除所有主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteAllThemes</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAllThemes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateThemeForNavigationBar:</TokenIdentifier>
+			<Abstract type="html">为navigationBar更新主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			
+			<Declaration>- (void)updateThemeForNavigationBar:(UINavigationBar *)navigationBar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>navigationBar</Name>
+					<Abstract type="html">navigationBar</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateThemeForNavigationBar:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateThemeForTabBar:</TokenIdentifier>
+			<Abstract type="html">为tabBar更新主题</Abstract>
+			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			
+			<Declaration>- (void)updateThemeForTabBar:(UITabBar *)tabBar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tabBar</Name>
+					<Abstract type="html">tabBar</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateThemeForTabBar:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

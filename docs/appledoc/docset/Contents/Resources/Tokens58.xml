@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/LayerShadow.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/LayerShadow</TokenIdentifier>
+			<Abstract type="html">阴影效果</Abstract>
+			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+			
+			<NodeRef refid="58"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowNone</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowNone</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowDownLight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowDownLight</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowDownNormal</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowDownNormal</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowDownFloat</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowDownFloat</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowUpLight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowUpLight</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowUpNormal</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowUpNormal</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowCenterLight</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowCenterLight</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowCenterNormal</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowCenterNormal</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LayerShadowCenterHeavy</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>LayerShadowCenterHeavy</Declaration>
+            
+            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            
+            <NodeRef refid="58"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

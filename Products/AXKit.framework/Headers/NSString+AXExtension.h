@@ -133,7 +133,7 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 /**
  拼接换行符
  */
-- (NSString *(^)())appendReturn;
+- (NSString *(^)(void))appendReturn;
 
 /**
  添加前缀（在前面拼接字符串）
@@ -143,6 +143,23 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 
 @end
 
+@interface NSVersionString : NSString
+
+@property (assign, readonly, nonatomic) NSInteger majorVersionNumber;
+@property (assign, readonly, nonatomic) NSInteger minorVersionNumber;
+@property (assign, readonly, nonatomic) NSInteger revisionVersionNumber;
+
++ (instancetype)versionStringFromString:(NSString *)string;
+
+/**
+ 比较两个版本（返回较新的版本）
+ 
+ @param version 要对比的另一个版本
+ @return 较新的版本
+ */
+- (NSVersionString *)laterVersion:(NSVersionString *)version;
+
+@end
 
 @interface NSString (AXExtension)
 
@@ -179,6 +196,14 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
  */
 - (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width;
 
+
+/**
+ 比较两个版本（返回较新的版本）
+
+ @param version 要对比的另一个版本
+ @return 较新的版本
+ */
+- (NSString *)laterVersion:(NSString *)version;
 
 @end
 
@@ -290,6 +315,8 @@ FOUNDATION_EXTERN NSString *AXRandomHexStringWithLength(NSUInteger length);
 + (NSString *)ax_stringWithRandomCapitalizeStringWithLength:(AXUIntegerRange)length;
 
 @end
+
+
 
 
 

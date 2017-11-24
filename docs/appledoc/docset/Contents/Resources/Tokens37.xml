@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIView+AXAnimatedWrapper.html">
+	<File path="Categories/UIImageView+AXGetColor.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIView(AXAnimatedWrapper)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/UIImageView(AXGetColor)</TokenIdentifier>
+			<Abstract type="html">从UIImageView指定Point取色（UIColor）</Abstract>
+			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
             
 			
 			<NodeRef refid="37"/>
@@ -13,71 +13,128 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_animatedScaleIn:duration:completion:</TokenIdentifier>
-			<Abstract type="html">build in 动画</Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getColorFromCircleWithPoint:completion:</TokenIdentifier>
+			<Abstract type="html">从圆形范围内的指定点获取UIColor对象，并在block中执行操作</Abstract>
+			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_animatedScaleIn:(CGFloat)scale duration:(NSTimeInterval)duration completion:(void ( ^ ) ( BOOL finished ))completion</Declaration>
+			<Declaration>- (void)ax_getColorFromCircleWithPoint:(CGPoint)point completion:(void ( ^ ) ( UIColor *color ))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">缩放比例</Abstract>
-				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">持续时间</Abstract>
+					<Name>point</Name>
+					<Abstract type="html">指定坐标点</Abstract>
 				</Parameter><Parameter>
 					<Name>completion</Name>
-					<Abstract type="html">完成后执行</Abstract>
+					<Abstract type="html">取色完成后执行的block</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_animatedScaleIn:duration:completion:</Anchor>
+			<Anchor>//api/name/ax_getColorFromCircleWithPoint:completion:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_animatedScale:duration:completion:</TokenIdentifier>
-			<Abstract type="html">动画</Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getRGBAFromCircleWithPoint:completion:</TokenIdentifier>
+			<Abstract type="html">从圆形范围内的指定点获取RGBA值，并在block中执行操作</Abstract>
+			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration completion:(void ( ^ ) ( BOOL finished ))completion</Declaration>
+			<Declaration>- (void)ax_getRGBAFromCircleWithPoint:(CGPoint)point completion:(void ( ^ ) ( CGFloat red , CGFloat green , CGFloat blue , CGFloat alpha ))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">缩放比例</Abstract>
-				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">持续时间</Abstract>
+					<Name>point</Name>
+					<Abstract type="html">指定坐标点</Abstract>
 				</Parameter><Parameter>
 					<Name>completion</Name>
-					<Abstract type="html">完成后执行</Abstract>
+					<Abstract type="html">取色完成后执行的block</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_animatedScale:duration:completion:</Anchor>
+			<Anchor>//api/name/ax_getRGBAFromCircleWithPoint:completion:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_animatedScaleOut:duration:completion:</TokenIdentifier>
-			<Abstract type="html">build out 动画</Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getColorWithPoint:completion:</TokenIdentifier>
+			<Abstract type="html">从指定点获取UIColor对象，并在block中执行操作</Abstract>
+			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_animatedScaleOut:(CGFloat)scale duration:(NSTimeInterval)duration completion:(void ( ^ ) ( BOOL finished ))completion</Declaration>
+			<Declaration>- (void)ax_getColorWithPoint:(CGPoint)point completion:(void ( ^ ) ( UIColor *color ))completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">缩放比例</Abstract>
-				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">持续时间</Abstract>
+					<Name>point</Name>
+					<Abstract type="html">指定坐标点</Abstract>
 				</Parameter><Parameter>
 					<Name>completion</Name>
-					<Abstract type="html">完成后执行</Abstract>
+					<Abstract type="html">取色完成后执行的block</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_animatedScaleOut:duration:completion:</Anchor>
+			<Anchor>//api/name/ax_getColorWithPoint:completion:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getRGBAWithPoint:completion:</TokenIdentifier>
+			<Abstract type="html">从指定点获取RGBA值，并在block中执行操作</Abstract>
+			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_getRGBAWithPoint:(CGPoint)point completion:(void ( ^ ) ( CGFloat red , CGFloat green , CGFloat blue , CGFloat alpha ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">指定坐标点</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">取色完成后执行的block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_getRGBAWithPoint:completion:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getColorWithPoint:</TokenIdentifier>
+			<Abstract type="html">从指定点获取UIColor对象（最原始最暴力的方法，不推荐用）</Abstract>
+			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			
+			<Declaration>- (UIColor *)ax_getColorWithPoint:(CGPoint)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">指定坐标点</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">UIColor对象（可空）</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_getColorWithPoint:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getRed:green:blue:alpha:withPoint:</TokenIdentifier>
+			<Abstract type="html">从指定点获取RGBA值（最原始最暴力的方法，不推荐用）</Abstract>
+			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_getRed:(nullable CGFloat *)red green:(nullable CGFloat *)green blue:(nullable CGFloat *)blue alpha:(nullable CGFloat *)alpha withPoint:(CGPoint)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>red</Name>
+					<Abstract type="html">red</Abstract>
+				</Parameter><Parameter>
+					<Name>green</Name>
+					<Abstract type="html">green</Abstract>
+				</Parameter><Parameter>
+					<Name>blue</Name>
+					<Abstract type="html">blue</Abstract>
+				</Parameter><Parameter>
+					<Name>alpha</Name>
+					<Abstract type="html">alpha</Abstract>
+				</Parameter><Parameter>
+					<Name>point</Name>
+					<Abstract type="html">指定坐标点</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_getRed:green:blue:alpha:withPoint:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		

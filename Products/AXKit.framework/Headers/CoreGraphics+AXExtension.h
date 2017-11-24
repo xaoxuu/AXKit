@@ -20,15 +20,16 @@
 
 
 
-// @xaoxuu: 状态栏高度 = 20
-CG_EXTERN const CGFloat kStatusBarHeight;
+// @xaoxuu: 状态栏高度 = 20 or 44
+CG_EXTERN CGFloat kStatusBarHeight(void);
 // @xaoxuu: 导航栏高度 = 44
-CG_EXTERN const CGFloat kNavBarHeight;
-// @xaoxuu: 状态栏和导航栏总高度 = 64
-CG_EXTERN const CGFloat kTopBarHeight;
+CG_EXTERN CGFloat kNavBarHeight(void);
+// @xaoxuu: 状态栏和导航栏总高度 = 64 or 88
+CG_EXTERN CGFloat kTopBarHeight(void);
 // @xaoxuu: tabbar高度
-CG_EXTERN const CGFloat kTabBarHeight;
+CG_EXTERN CGFloat kTabBarHeight(void);
 
+CG_EXTERN CGFloat kSafeAreaBottomHeight(void);
 
 // @xaoxuu: 窄 margin = 4
 CG_EXTERN const CGFloat kMarginNarrow;
@@ -41,7 +42,7 @@ CG_EXTERN const CGFloat kMarginWide;
 CG_EXTERN const CGFloat kAlertWidth;
 
 
-CG_EXTERN CGRect CGRectFromScreen();
+CG_EXTERN CGRect CGRectFromScreen(void);
 
 
 
@@ -150,7 +151,14 @@ CG_EXTERN NSInteger AXMakeIntegerInRange(NSInteger value, AXIntegerRange range);
  */
 CG_EXTERN NSUInteger AXMakeUIntegerInRange(NSUInteger value, AXUIntegerRange range);
 
+/**
+ 确保索引在数组内
 
+ @param index 索引
+ @param array 数组
+ @return 安全的索引
+ */
+CG_EXTERN NSInteger AXSafeIndexForArray(NSInteger index, NSArray * array);
 
 #pragma mark 判断值是否在范围内
 

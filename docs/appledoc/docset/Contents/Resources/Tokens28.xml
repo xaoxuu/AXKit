@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UINavigationItem+AXExtension.html">
+	<File path="Categories/UIActivityIndicatorView+AXWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UINavigationItem(AXExtension)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/UIActivityIndicatorView(AXWrapper)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="28"/>
@@ -13,26 +13,63 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationItem/ax_hideBackBarButtonTitle</TokenIdentifier>
-			<Abstract type="html">隐藏返回按钮的标题</Abstract>
-			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/defaultIndicator</TokenIdentifier>
+			<Abstract type="html">创建一个活动指示器</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_hideBackBarButtonTitle</Declaration>
+			<Declaration>+ (instancetype)defaultIndicator</Declaration>
 			
-			
-			<Anchor>//api/name/ax_hideBackBarButtonTitle</Anchor>
+			<ReturnValue><Abstract type="html">活动指示器</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultIndicator</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationItem/ax_hideBackBarButton</TokenIdentifier>
-			<Abstract type="html">隐藏返回按钮（同时也不能右划返回）</Abstract>
-			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/defaultIndicatorWithLoading</TokenIdentifier>
+			<Abstract type="html">创建一个带&quot;LOADING&quot;字样的活动指示器</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_hideBackBarButton</Declaration>
+			<Declaration>+ (instancetype)defaultIndicatorWithLoading</Declaration>
 			
+			<ReturnValue><Abstract type="html">一个带&quot;LOADING&quot;字样的活动指示器</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultIndicatorWithLoading</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/addToView:</TokenIdentifier>
+			<Abstract type="html">显示到某个view</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
 			
-			<Anchor>//api/name/ax_hideBackBarButton</Anchor>
+			<Declaration>- (void)addToView:(UIView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addToView:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/addToView:withLoading:</TokenIdentifier>
+			<Abstract type="html">显示到某个view (带&quot;LOADING&quot;字样的活动指示器)</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
+			
+			<Declaration>- (void)addToView:(UIView *)view withLoading:(BOOL)loading</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">view</Abstract>
+				</Parameter><Parameter>
+					<Name>loading</Name>
+					<Abstract type="html">&quot;LOADING&quot;标签</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addToView:withLoading:</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		

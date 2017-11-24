@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIImageView+AXGetColor.html">
+	<File path="Categories/NSString+AXRandomExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIImageView(AXGetColor)</TokenIdentifier>
-			<Abstract type="html">从指定点获取RGBA值（最原始最暴力的方法，不推荐用）</Abstract>
-			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXRandomExtension)</TokenIdentifier>
+			<Abstract type="html">产生指定位数的随机十六进制数</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
@@ -13,128 +13,87 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getColorFromCircleWithPoint:completion:</TokenIdentifier>
-			<Abstract type="html">从圆形范围内的指定点获取UIColor对象，并在block中执行操作</Abstract>
-			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomLowerStringWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（纯小写）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_getColorFromCircleWithPoint:(CGPoint)point completion:(void ( ^ ) ( UIColor *color ))completion</Declaration>
+			<Declaration>+ (NSString *)ax_stringWithRandomLowerStringWithLength:(AXUIntegerRange)length</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">指定坐标点</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">取色完成后执行的block</Abstract>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_getColorFromCircleWithPoint:completion:</Anchor>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomLowerStringWithLength:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getRGBAFromCircleWithPoint:completion:</TokenIdentifier>
-			<Abstract type="html">从圆形范围内的指定点获取RGBA值，并在block中执行操作</Abstract>
-			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomUpperStringWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（纯大写）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_getRGBAFromCircleWithPoint:(CGPoint)point completion:(void ( ^ ) ( CGFloat red , CGFloat green , CGFloat blue , CGFloat alpha ))completion</Declaration>
+			<Declaration>+ (NSString *)ax_stringWithRandomUpperStringWithLength:(AXUIntegerRange)length</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">指定坐标点</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">取色完成后执行的block</Abstract>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_getRGBAFromCircleWithPoint:completion:</Anchor>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomUpperStringWithLength:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getColorWithPoint:completion:</TokenIdentifier>
-			<Abstract type="html">从指定点获取UIColor对象，并在block中执行操作</Abstract>
-			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomCapitalizeStringWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（首字母大写）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_getColorWithPoint:(CGPoint)point completion:(void ( ^ ) ( UIColor *color ))completion</Declaration>
+			<Declaration>+ (NSString *)ax_stringWithRandomCapitalizeStringWithLength:(AXUIntegerRange)length</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">指定坐标点</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">取色完成后执行的block</Abstract>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_getColorWithPoint:completion:</Anchor>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomCapitalizeStringWithLength:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getRGBAWithPoint:completion:</TokenIdentifier>
-			<Abstract type="html">从指定点获取RGBA值，并在block中执行操作</Abstract>
-			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomNameWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（适用于用户名）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_getRGBAWithPoint:(CGPoint)point completion:(void ( ^ ) ( CGFloat red , CGFloat green , CGFloat blue , CGFloat alpha ))completion</Declaration>
+			<Declaration>+ (NSString *)ax_stringWithRandomNameWithLength:(AXUIntegerRange)length</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">指定坐标点</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">取色完成后执行的block</Abstract>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_getRGBAWithPoint:completion:</Anchor>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomNameWithLength:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getColorWithPoint:</TokenIdentifier>
-			<Abstract type="html">从指定点获取UIColor对象（最原始最暴力的方法，不推荐用）</Abstract>
-			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomPasswordWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（适用于密码）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable UIColor *)ax_getColorWithPoint:(CGPoint)point</Declaration>
+			<Declaration>+ (NSString *)ax_stringWithRandomPasswordWithLength:(AXUIntegerRange)length</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">指定坐标点</Abstract>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">UIColor对象（可空）</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_getColorWithPoint:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImageView/ax_getRed:green:blue:alpha:withPoint:</TokenIdentifier>
-			<Abstract type="html">从指定点获取RGBA值（最原始最暴力的方法，不推荐用）</Abstract>
-			<DeclaredIn>UIImageView+AXGetColor.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_getRed:(nullable CGFloat *)red green:(nullable CGFloat *)green blue:(nullable CGFloat *)blue alpha:(nullable CGFloat *)alpha withPoint:(CGPoint)point</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>red</Name>
-					<Abstract type="html">red</Abstract>
-				</Parameter><Parameter>
-					<Name>green</Name>
-					<Abstract type="html">green</Abstract>
-				</Parameter><Parameter>
-					<Name>blue</Name>
-					<Abstract type="html">blue</Abstract>
-				</Parameter><Parameter>
-					<Name>alpha</Name>
-					<Abstract type="html">alpha</Abstract>
-				</Parameter><Parameter>
-					<Name>point</Name>
-					<Abstract type="html">指定坐标点</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_getRed:green:blue:alpha:withPoint:</Anchor>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomPasswordWithLength:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		

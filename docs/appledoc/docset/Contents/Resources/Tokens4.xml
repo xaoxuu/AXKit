@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/CALayer+AXWrapper.html">
+	<File path="Classes/AXTabBarController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/CALayer(AXWrapper)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/AXTabBarController</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+			<DeclaredIn>AXTabBarController.h</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>
@@ -13,88 +13,76 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_maskToCircle</TokenIdentifier>
-			<Abstract type="html">剪裁成圆形（适用用于头像）</Abstract>
-			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTabBarController/classNameForBaseNavigationController</TokenIdentifier>
+			<Abstract type="html">导航栏基类名
+如果使用系统提供的UINavigationController而不进行继承，可以不实现此方法。</Abstract>
+			<DeclaredIn>AXTabBarController.m</DeclaredIn>
 			
-			<Declaration>- (void)ax_maskToCircle</Declaration>
+			<Declaration>- (NSString *)classNameForBaseNavigationController</Declaration>
 			
-			
-			<Anchor>//api/name/ax_maskToCircle</Anchor>
+			<ReturnValue><Abstract type="html">导航栏基类名</Abstract></ReturnValue>
+			<Anchor>//api/name/classNameForBaseNavigationController</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_shadow:</TokenIdentifier>
-			<Abstract type="html">阴影效果枚举</Abstract>
-			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTabBarController/configurationFilePath</TokenIdentifier>
+			<Abstract type="html">配置文件路径
+使用与本类同名的json文件作为配置文件时，可以不实现此方法。</Abstract>
+			<DeclaredIn>AXTabBarController.m</DeclaredIn>
 			
-			<Declaration>- (void)ax_shadow:(LayerShadow)shadow</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>shadow</Name>
-					<Abstract type="html">阴影效果枚举</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)configurationFilePath</Declaration>
 			
-			<Anchor>//api/name/ax_shadow:</Anchor>
+			<ReturnValue><Abstract type="html">配置文件路径</Abstract></ReturnValue>
+			<Anchor>//api/name/configurationFilePath</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_cornerRadius:shadow:</TokenIdentifier>
-			<Abstract type="html">设置圆角和阴影</Abstract>
-			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTabBarController/configurationKeyForViewControllerName</TokenIdentifier>
+			<Abstract type="html">配置文件中ViewController的类名的key值，默认是&quot;vc&quot;</Abstract>
+			<DeclaredIn>AXTabBarController.m</DeclaredIn>
 			
-			<Declaration>- (void)ax_cornerRadius:(CGFloat)cornerRadius shadow:(LayerShadow)shadow</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>cornerRadius</Name>
-					<Abstract type="html">圆角半径</Abstract>
-				</Parameter><Parameter>
-					<Name>shadow</Name>
-					<Abstract type="html">阴影枚举</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)configurationKeyForViewControllerName</Declaration>
 			
-			<Anchor>//api/name/ax_cornerRadius:shadow:</Anchor>
+			<ReturnValue><Abstract type="html">配置文件中ViewController的name的key值，默认是&quot;vc&quot;</Abstract></ReturnValue>
+			<Anchor>//api/name/configurationKeyForViewControllerName</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_whiteBorder:</TokenIdentifier>
-			<Abstract type="html">设置白色边框</Abstract>
-			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTabBarController/configurationKeyForViewControllerTitle</TokenIdentifier>
+			<Abstract type="html">配置文件中ViewController的类名的key值，默认是&quot;title&quot;</Abstract>
+			<DeclaredIn>AXTabBarController.m</DeclaredIn>
 			
-			<Declaration>- (void)ax_whiteBorder:(CGFloat)width</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>width</Name>
-					<Abstract type="html">边框宽度</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)configurationKeyForViewControllerTitle</Declaration>
 			
-			<Anchor>//api/name/ax_whiteBorder:</Anchor>
+			<ReturnValue><Abstract type="html">配置文件中ViewController的title的key值，默认是&quot;title&quot;</Abstract></ReturnValue>
+			<Anchor>//api/name/configurationKeyForViewControllerTitle</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_borderWidth:color:</TokenIdentifier>
-			<Abstract type="html">设置边框</Abstract>
-			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTabBarController/configurationKeyForTabBarIconName</TokenIdentifier>
+			<Abstract type="html">配置文件中icon的key值，默认是&quot;icon&quot;</Abstract>
+			<DeclaredIn>AXTabBarController.m</DeclaredIn>
 			
-			<Declaration>- (void)ax_borderWidth:(CGFloat)width color:(UIColor *)color</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>width</Name>
-					<Abstract type="html">边框宽度</Abstract>
-				</Parameter><Parameter>
-					<Name>color</Name>
-					<Abstract type="html">边框颜色</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)configurationKeyForTabBarIconName</Declaration>
 			
-			<Anchor>//api/name/ax_borderWidth:color:</Anchor>
+			<ReturnValue><Abstract type="html">配置文件中icon的key值，默认是&quot;icon&quot;</Abstract></ReturnValue>
+			<Anchor>//api/name/configurationKeyForTabBarIconName</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTabBarController/configurationKeyForTabBarSelectedIconName</TokenIdentifier>
+			<Abstract type="html">配置文件中选中状态的icon的key值，默认是&quot;icon_sel&quot;</Abstract>
+			<DeclaredIn>AXTabBarController.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)configurationKeyForTabBarSelectedIconName</Declaration>
+			
+			<ReturnValue><Abstract type="html">配置文件中选中状态的icon的key值，默认是&quot;icon_sel&quot;</Abstract></ReturnValue>
+			<Anchor>//api/name/configurationKeyForTabBarSelectedIconName</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

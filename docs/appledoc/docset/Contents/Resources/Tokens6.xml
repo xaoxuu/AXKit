@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSBundle+AXExtension.html">
+	<File path="Classes/AXTableRowModel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSBundle(AXExtension)</TokenIdentifier>
-			<Abstract type="html">将view里所有的控件中的文字转换成NSLocalizedString（含所有子视图中的所有控件，耗费性能，慎用）</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/AXTableRowModel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>
@@ -13,110 +13,218 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appName</TokenIdentifier>
-			<Abstract type="html">app name (CFBundleDisplayName)</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/setTitle:</TokenIdentifier>
+			<Abstract type="html">title</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_appName</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *title</Declaration>
 			
-			<ReturnValue><Abstract type="html">app name</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_appName</Anchor>
+			
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appVersion</TokenIdentifier>
-			<Abstract type="html">app version (CFBundleShortVersionString)</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/title</TokenIdentifier>
+			<Abstract type="html">title</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_appVersion</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *title</Declaration>
 			
-			<ReturnValue><Abstract type="html">app version</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_appVersion</Anchor>
+			
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appBuild</TokenIdentifier>
-			<Abstract type="html">app build (CFBundleVersion)</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/AXTableRowModel/title</TokenIdentifier>
+			<Abstract type="html">title</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_appBuild</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *title</Declaration>
 			
-			<ReturnValue><Abstract type="html">app build</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_appBuild</Anchor>
+			
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_localizedInfoDictionary</TokenIdentifier>
-			<Abstract type="html">bundle localized info dictionary</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/setDetail:</TokenIdentifier>
+			<Abstract type="html">detail</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSDictionary *)ax_localizedInfoDictionary</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *detail</Declaration>
 			
-			<ReturnValue><Abstract type="html">bundle localized info dictionary</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_localizedInfoDictionary</Anchor>
+			
+			<Anchor>//api/name/detail</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_infoDictionary</TokenIdentifier>
-			<Abstract type="html">bundle info dictionary</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/detail</TokenIdentifier>
+			<Abstract type="html">detail</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSDictionary *)ax_infoDictionary</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *detail</Declaration>
 			
-			<ReturnValue><Abstract type="html">bundle info dictionary</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_infoDictionary</Anchor>
+			
+			<Anchor>//api/name/detail</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appIconPath</TokenIdentifier>
-			<Abstract type="html">appicon path</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/AXTableRowModel/detail</TokenIdentifier>
+			<Abstract type="html">detail</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_appIconPath</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *detail</Declaration>
 			
-			<ReturnValue><Abstract type="html">appicon path</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_appIconPath</Anchor>
+			
+			<Anchor>//api/name/detail</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appIcon</TokenIdentifier>
-			<Abstract type="html">appicon</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/setIcon:</TokenIdentifier>
+			<Abstract type="html">icon path</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (UIImage *)ax_appIcon</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *icon</Declaration>
 			
-			<ReturnValue><Abstract type="html">appicon</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_appIcon</Anchor>
+			
+			<Anchor>//api/name/icon</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appLaunchImagePath</TokenIdentifier>
-			<Abstract type="html">启动图片路径</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/icon</TokenIdentifier>
+			<Abstract type="html">icon path</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)ax_appLaunchImagePath</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *icon</Declaration>
 			
-			<ReturnValue><Abstract type="html">启动图片路径</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_appLaunchImagePath</Anchor>
+			
+			<Anchor>//api/name/icon</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appLaunchImage</TokenIdentifier>
-			<Abstract type="html">启动图片</Abstract>
-			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/AXTableRowModel/icon</TokenIdentifier>
+			<Abstract type="html">icon path</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
 			
-			<Declaration>+ (UIImage *)ax_appLaunchImage</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *icon</Declaration>
 			
-			<ReturnValue><Abstract type="html">启动图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_appLaunchImage</Anchor>
+			
+			<Anchor>//api/name/icon</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/setTarget:</TokenIdentifier>
+			<Abstract type="html">要跳转的地方，可以是ViewController的名字，也可以是一个网址</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (copy, nonatomic) NSString *target</Declaration>
+			
+			
+			<Anchor>//api/name/target</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/target</TokenIdentifier>
+			<Abstract type="html">要跳转的地方，可以是ViewController的名字，也可以是一个网址</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (copy, nonatomic) NSString *target</Declaration>
+			
+			
+			<Anchor>//api/name/target</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AXTableRowModel/target</TokenIdentifier>
+			<Abstract type="html">要跳转的地方，可以是ViewController的名字，也可以是一个网址</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (copy, nonatomic) NSString *target</Declaration>
+			
+			
+			<Anchor>//api/name/target</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/setRowHeight:</TokenIdentifier>
+			<Abstract type="html">row height</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) CGFloat rowHeight</Declaration>
+			
+			
+			<Anchor>//api/name/rowHeight</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/rowHeight</TokenIdentifier>
+			<Abstract type="html">row height</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) CGFloat rowHeight</Declaration>
+			
+			
+			<Anchor>//api/name/rowHeight</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AXTableRowModel/rowHeight</TokenIdentifier>
+			<Abstract type="html">row height</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) CGFloat rowHeight</Declaration>
+			
+			
+			<Anchor>//api/name/rowHeight</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/setAccessoryType:</TokenIdentifier>
+			<Abstract type="html">accessory</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) UITableViewCellAccessoryType accessoryType</Declaration>
+			
+			
+			<Anchor>//api/name/accessoryType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AXTableRowModel/accessoryType</TokenIdentifier>
+			<Abstract type="html">accessory</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) UITableViewCellAccessoryType accessoryType</Declaration>
+			
+			
+			<Anchor>//api/name/accessoryType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AXTableRowModel/accessoryType</TokenIdentifier>
+			<Abstract type="html">accessory</Abstract>
+			<DeclaredIn>AXTableModel.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) UITableViewCellAccessoryType accessoryType</Declaration>
+			
+			
+			<Anchor>//api/name/accessoryType</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		

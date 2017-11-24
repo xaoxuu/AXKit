@@ -14,6 +14,7 @@
 /**
  阴影效果
  
+ - LayerShadowNone: 清除阴影
  - LayerShadowDownLight: 适用于浅色NavigationBar
  - LayerShadowDownNormal: 适用于深色NavigationBar
  - LayerShadowDownFloat: 适用于浮起的按钮
@@ -24,6 +25,8 @@
  - LayerShadowCenterHeavy: 适用于深色的按钮、图片等控件
  */
 typedef NS_ENUM(NSUInteger,LayerShadow) {
+    
+    LayerShadowNone,
     
     LayerShadowDownLight,
     
@@ -95,6 +98,17 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
  @param color 边框颜色
  */
 - (void)ax_borderWidth:(CGFloat)width color:(UIColor *)color;
+
+
+
+#pragma mark - animation
+
+- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatDuration:(CFTimeInterval)repeatDuration;
+
+- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatCount:(float)repeatCount;
+
+- (void)ax_hideColorAnimation;
+
 
 @end
 

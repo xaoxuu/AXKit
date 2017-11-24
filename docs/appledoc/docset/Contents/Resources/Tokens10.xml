@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSString+AXAppendExtension.html">
+	<File path="Classes/UIThemeColorModel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXAppendExtension)</TokenIdentifier>
-			<Abstract type="html">汉字转拼音</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/UIThemeColorModel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,74 +13,62 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/append</TokenIdentifier>
-			<Abstract type="html">拼接字符串</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/background</TokenIdentifier>
+			<Abstract type="html">background color</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *( ^ ) ( NSString *string ))append</Declaration>
+			<Declaration>- (UIColor *)background</Declaration>
 			
 			
-			<Anchor>//api/name/append</Anchor>
+			<Anchor>//api/name/background</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendNSInteger</TokenIdentifier>
-			<Abstract type="html">拼接NSInteger</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/theme</TokenIdentifier>
+			<Abstract type="html">theme color</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *( ^ ) ( NSInteger x ))appendNSInteger</Declaration>
+			<Declaration>- (UIColor *)theme</Declaration>
 			
 			
-			<Anchor>//api/name/appendNSInteger</Anchor>
+			<Anchor>//api/name/theme</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendNSUInteger</TokenIdentifier>
-			<Abstract type="html">拼接NSUInteger</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/accent</TokenIdentifier>
+			<Abstract type="html">accent color</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *( ^ ) ( NSUInteger x ))appendNSUInteger</Declaration>
+			<Declaration>- (UIColor *)accent</Declaration>
 			
 			
-			<Anchor>//api/name/appendNSUInteger</Anchor>
+			<Anchor>//api/name/accent</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendCGFloat</TokenIdentifier>
-			<Abstract type="html">拼接CGFloat</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/groupTableViewBackground</TokenIdentifier>
+			<Abstract type="html">组tableview背景色</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *( ^ ) ( CGFloat x ))appendCGFloat</Declaration>
+			<Declaration>- (UIColor *)groupTableViewBackground</Declaration>
 			
 			
-			<Anchor>//api/name/appendCGFloat</Anchor>
+			<Anchor>//api/name/groupTableViewBackground</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendReturn</TokenIdentifier>
-			<Abstract type="html">拼接换行符</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/separatorColor</TokenIdentifier>
+			<Abstract type="html">分割线颜色</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *( ^ ) ( ))appendReturn</Declaration>
-			
-			
-			<Anchor>//api/name/appendReturn</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/prefix</TokenIdentifier>
-			<Abstract type="html">添加前缀（在前面拼接字符串）</Abstract>
-			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (NSString *( ^ ) ( NSString *string ))prefix</Declaration>
+			<Declaration>- (UIColor *)separatorColor</Declaration>
 			
 			
-			<Anchor>//api/name/prefix</Anchor>
+			<Anchor>//api/name/separatorColor</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

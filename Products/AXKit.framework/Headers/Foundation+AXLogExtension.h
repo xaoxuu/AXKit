@@ -100,6 +100,59 @@
 
 #endif // ==================== [ DEBUG Macro ] ==================== //
 
+
+
 #else
 #endif // ==================== [ __OBJC__ Macro ] ==================== //
 
+
+#define AXLogToCachePath(NSObject) [AXLog writeLogWithFunc:[NSString stringWithFormat:@"##### [%@] func:%s", [NSDate date], __FUNCTION__] input:NSObject]
+
+
+NS_ASSUME_NONNULL_BEGIN
+@interface AXLog : NSObject
+
+
+/**
+ 获取所有的日志路径
+
+ @return 日志路径
+ */
++ (nullable NSArray<NSString *> *)getAllCachedLogPath;
+
+/**
+ 获取某个日期以后的日志路径
+
+ @param date 日期
+ @return 日志路径
+ */
++ (nullable NSArray<NSString *> *)getLatestCachedLogPathSinceDate:(NSDate *)date;
+
+
+/**
+ 获取最近几条日志路径
+
+ @param count 日志数量
+ @return 日志路径
+ */
++ (nullable NSArray<NSString *> *)getLatestCachedLogPathWithCount:(NSUInteger)count;
+
+/**
+ 根据路径读取某个日志内容
+
+ @param path 日志路径
+ @return 日志内容
+ */
++ (nullable NSString *)getLogStringWithPath:(NSString *)path;
+
+/**
+ 写日志（每次启动保存一份日志文件，文件名为启动时间）
+ 要在日志中记录更详细的内容，需要重写输入对象的-description方法。
+
+ @param func __FUNCTION__
+ @param input 输入obj
+ */
++ (void)writeLogWithFunc:(NSString *)func input:(NSObject *)input;
+
+@end
+NS_ASSUME_NONNULL_END

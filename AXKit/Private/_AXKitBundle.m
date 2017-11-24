@@ -20,18 +20,27 @@ inline NSString *NSLocalizedStringFromAXKit(NSString *key){
     static _AXKitBundle *bundle;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        // @xaoxuu: in main bundle/AXKit.bundle（直接将AXKit源码导入项目中）
+        // xxx.app/AXKit.bundle（直接将AXKit源码导入项目中或使用Cocoapods或者方式导入）
         if (!bundle) {
-            bundle = [_AXKitBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"AXKit" ofType:@"bundle"]];
-        }
-        // @xaoxuu: in main bundle/AXKit.framework/AXKit.bundle（使用Cocoapods或者静态库方式导入）
-        if (!bundle) {
-            NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Frameworks/AXKit.framework"];
+            NSString *path = [NSBundle mainBundle].bundlePath;
+            path = [[NSBundle mainBundle] pathForResource:@"AXKit" ofType:@"bundle"];
             bundle = [_AXKitBundle bundleWithPath:path];
-            bundle = [_AXKitBundle bundleWithPath:[bundle pathForResource:@"AXKit" ofType:@"bundle"]];
         }
+        // xxx.app/AXKit.framework/AXKit.bundle（使用静态库方式导入）
+        if (!bundle) {
+            NSString *path = [[NSBundle mainBundle] bundlePath];
+            path = [path stringByAppendingPathComponent:@"Frameworks/AXKit.framework"];
+            bundle = [_AXKitBundle bundleWithPath:path]; // 得到AXKit.framework
+            path = [bundle pathForResource:@"AXKit" ofType:@"bundle"];
+            bundle = [_AXKitBundle bundleWithPath:path];
+        }
+        if (!bundle) {
+            NSLog(@"com.xaoxuu.AXKit: bundle not found!");
+        }
+        
     });
     return bundle;
 }
 
 @end
+

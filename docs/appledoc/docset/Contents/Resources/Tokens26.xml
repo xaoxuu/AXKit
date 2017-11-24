@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UINavigationBar+AXExtension.html">
+	<File path="Categories/NSTimer+AXBlockWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UINavigationBar(AXExtension)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/NSTimer(AXBlockWrapper)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UINavigationBar+AXExtension.h</DeclaredIn>
+			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,14 +13,96 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationBar/ax_hideSeparator</TokenIdentifier>
-			<Abstract type="html">隐藏系统自带的分割线</Abstract>
-			<DeclaredIn>UINavigationBar+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_scheduledTimerWithTimeInterval:repeats:usingBlock:</TokenIdentifier>
+			<Abstract type="html">创建一个shchedule定时器添加到当前Runloop</Abstract>
+			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_hideSeparator</Declaration>
+			<Declaration>+ (instancetype)ax_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats usingBlock:(void ( ^ ) ( NSTimer *timer ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>interval</Name>
+					<Abstract type="html">时间间隔</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">是否重复</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">执行的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">定时器实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_scheduledTimerWithTimeInterval:repeats:usingBlock:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_timerWithTimeInterval:repeats:usingBlock:</TokenIdentifier>
+			<Abstract type="html">创建一个shchedule定时器，需要手动添加到指定Runloop</Abstract>
+			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
 			
+			<Declaration>+ (instancetype)ax_timerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats usingBlock:(void ( ^ ) ( NSTimer *timer ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>interval</Name>
+					<Abstract type="html">时间间隔</Abstract>
+				</Parameter><Parameter>
+					<Name>repeats</Name>
+					<Abstract type="html">是否重复</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">执行的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">定时器实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_timerWithTimeInterval:repeats:usingBlock:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_isRunning</TokenIdentifier>
+			<Abstract type="html">获取定时器的状态（只适用于重复型定时器）</Abstract>
+			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
 			
-			<Anchor>//api/name/ax_hideSeparator</Anchor>
+			<Declaration>- (BOOL)ax_isRunning</Declaration>
+			
+			<ReturnValue><Abstract type="html">定时器的运行状态（YES: 运行，NO:没有运行）</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_isRunning</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_pause</TokenIdentifier>
+			<Abstract type="html">暂停定时器</Abstract>
+			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)ax_pause</Declaration>
+			
+			<ReturnValue><Abstract type="html">是否成功</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_pause</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_restart</TokenIdentifier>
+			<Abstract type="html">开启/重启定时器（从0开始计时）对于非重复型定时器，此方法会使定时器立即生效。</Abstract>
+			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)ax_restart</Declaration>
+			
+			<ReturnValue><Abstract type="html">是否成功</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_restart</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_turnover</TokenIdentifier>
+			<Abstract type="html">翻转定时器状态（只适用于重复型定时器）</Abstract>
+			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)ax_turnover</Declaration>
+			
+			<ReturnValue><Abstract type="html">定时器的运行状态（YES: 运行，NO:没有运行）</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_turnover</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
