@@ -114,6 +114,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ 配置log文件版本
+
+ @param version log文件版本
+ */
++ (void)configLogVersion:(CGFloat)version;
+
+/**
  获取所有的日志路径
 
  @return 日志路径
