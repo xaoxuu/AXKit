@@ -118,21 +118,21 @@ static NSTimer *timer;
                 [timer ax_pause];
                 [AXStatusBar hideStatusBarProgressMessage];
             } else if (row == 1) {
-                [AXStatusBar showStatusBarProgress:0 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:3];
+                [AXStatusBar showStatusBarProgress:0 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:3];
             } else if (row == 2) {
-                [AXStatusBar showStatusBarProgress:0.11 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:5];
+                [AXStatusBar showStatusBarProgress:0.11 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:5];
             } else if (row == 3) {
-                [AXStatusBar showStatusBarProgress:0.5097 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:8];
+                [AXStatusBar showStatusBarProgress:0.5097 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:8];
             } else if (row == 4) {
-                [AXStatusBar showStatusBarProgress:0.757 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:8];
+                [AXStatusBar showStatusBarProgress:0.757 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:8];
             } else if (row == 5) {
-                [AXStatusBar showStatusBarProgress:1 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:15];
+                [AXStatusBar showStatusBarProgress:1 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:15];
             } else if (row == 6) {
                 __block CGFloat x = 0;
                 [timer ax_pause];
                 timer = nil;
                 timer = [NSTimer ax_scheduledTimerWithTimeInterval:0.01 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
-                    [AXStatusBar showStatusBarProgress:x textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme duration:2];
+                    [AXStatusBar showStatusBarProgress:x textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:2];
                     x += 0.00075;
                     if (x >= 1) {
                         [timer ax_pause];

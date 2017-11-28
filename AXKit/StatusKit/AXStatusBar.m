@@ -71,18 +71,19 @@ static inline UIView *getStatusBarProgressMessageContentView(){
             view.frame = frame;
             view.layer.cornerRadius = 0.5*frame.size.height;
         } else {
-            const CGFloat width = 86;
-            CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, 20);
-            const CGFloat corner = frame.size.height/2;
+            const CGFloat height = 20;
+            const CGFloat width = 72;
+            CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, height);
+            const CGFloat quarter = height/4;
             CAShapeLayer *layer = [CAShapeLayer layer];
             UIBezierPath *path = [UIBezierPath bezierPath];
             [path moveToPoint:CGPointZero];
-            [path addQuadCurveToPoint:CGPointMake(1*corner, 1*corner) controlPoint:CGPointMake(1*corner, 0)];
-            [path addQuadCurveToPoint:CGPointMake(2*corner, 2*corner) controlPoint:CGPointMake(1*corner, 2*corner)];
-            CGPoint po = CGPointMake(width - 2*corner, 2*corner);
+            [path addLineToPoint:CGPointMake(0, quarter)];
+            [path addQuadCurveToPoint:CGPointMake(3*quarter, 4*quarter) controlPoint:CGPointMake(0, 4*quarter)];
+            CGPoint po = CGPointMake(width - 3*quarter, 4*quarter);
             [path addLineToPoint:po];
-            [path addQuadCurveToPoint:CGPointMake(po.x + 1*corner, 1*corner) controlPoint:CGPointMake(po.x + 1*corner, 2*corner)];
-            [path addQuadCurveToPoint:CGPointMake(po.x + 2*corner, 0) controlPoint:CGPointMake(po.x + 1*corner, 0)];
+            [path addQuadCurveToPoint:CGPointMake(width, 1*quarter) controlPoint:CGPointMake(width, 4*quarter)];
+            [path addLineToPoint:CGPointMake(width, 0)];
             [path closePath];
             layer.path = path.CGPath;
             view.layer.mask = layer;
