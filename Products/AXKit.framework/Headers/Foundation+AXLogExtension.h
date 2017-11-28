@@ -106,12 +106,19 @@
 #endif // ==================== [ __OBJC__ Macro ] ==================== //
 
 
-#define AXLogToCachePath(NSObject) [AXLog writeLogWithFunc:[NSString stringWithFormat:@"##### [%@] func:%s", [NSDate date], __FUNCTION__] input:NSObject]
+#define AXLogToCachePath(NSObject) [AXLog writeLogWithFunc:[NSString stringWithFormat:@"%s", __FUNCTION__] input:NSObject]
 
 
 NS_ASSUME_NONNULL_BEGIN
 @interface AXLog : NSObject
 
+
+/**
+ 配置log文件版本
+
+ @param version log文件版本
+ */
++ (void)configLogVersion:(CGFloat)version;
 
 /**
  获取所有的日志路径

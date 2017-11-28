@@ -13,6 +13,23 @@
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AXLog/configLogVersion:</TokenIdentifier>
+			<Abstract type="html">配置log文件版本</Abstract>
+			<DeclaredIn>Foundation+AXLogExtension.h</DeclaredIn>
+			
+			<Declaration>+ (void)configLogVersion:(CGFloat)version</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>version</Name>
+					<Abstract type="html">log文件版本</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/configLogVersion:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/AXLog/getAllCachedLogPath</TokenIdentifier>
 			<Abstract type="html">获取所有的日志路径</Abstract>
 			<DeclaredIn>Foundation+AXLogExtension.h</DeclaredIn>
