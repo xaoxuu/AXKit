@@ -64,13 +64,31 @@ static inline UIView *getStatusBarProgressMessageContentView(){
     dispatch_once(&onceToken, ^{
         view = [[UIView alloc] init];
         CGSize statusBarSize = getSystemStatusBar().bounds.size;
-        static CGFloat width = 60;
-        CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, 20);
         if (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)) {
+            const CGFloat width = 64;
+            CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, 20);
             frame.origin = CGPointMake(14, (statusBarSize.height - frame.size.height)/2);
+            view.frame = frame;
+            view.layer.cornerRadius = 0.5*frame.size.height;
+        } else {
+            const CGFloat width = 86;
+            CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, 20);
+            const CGFloat corner = frame.size.height/2;
+            CAShapeLayer *layer = [CAShapeLayer layer];
+            UIBezierPath *path = [UIBezierPath bezierPath];
+            [path moveToPoint:CGPointZero];
+            [path addQuadCurveToPoint:CGPointMake(1*corner, 1*corner) controlPoint:CGPointMake(1*corner, 0)];
+            [path addQuadCurveToPoint:CGPointMake(2*corner, 2*corner) controlPoint:CGPointMake(1*corner, 2*corner)];
+            CGPoint po = CGPointMake(width - 2*corner, 2*corner);
+            [path addLineToPoint:po];
+            [path addQuadCurveToPoint:CGPointMake(po.x + 1*corner, 1*corner) controlPoint:CGPointMake(po.x + 1*corner, 2*corner)];
+            [path addQuadCurveToPoint:CGPointMake(po.x + 2*corner, 0) controlPoint:CGPointMake(po.x + 1*corner, 0)];
+            [path closePath];
+            layer.path = path.CGPath;
+            view.layer.mask = layer;
+            view.frame = frame;
         }
-        view.frame = frame;
-        view.layer.cornerRadius = 0.5*frame.size.height;
+        
         [getSystemStatusBar() addSubview:view];
         
     });
