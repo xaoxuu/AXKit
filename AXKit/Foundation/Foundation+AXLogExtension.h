@@ -106,7 +106,7 @@
 #endif // ==================== [ __OBJC__ Macro ] ==================== //
 
 
-#define AXLogToCachePath(NSObject) [AXLog writeLogWithFunc:[NSString stringWithFormat:@"##### [%@] func:%s", [NSDate date], __FUNCTION__] input:NSObject]
+#define AXLogToCachePath(NSObject) [AXLog writeLogWithFunc:[NSString stringWithFormat:@"%s", __FUNCTION__] input:NSObject]
 
 
 NS_ASSUME_NONNULL_BEGIN

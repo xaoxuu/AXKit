@@ -48,7 +48,7 @@ static inline NSString *logPath(){
         NSString *fileName = [NSString stringWithFormat:@"%@.%@", [dateFormatter(@"yyyy-MM-dd") stringFromDate:today], logFileExtension];
         path = [[@"com.xaoxuu.AXKit" stringByAppendingPathComponent:logFileDir()] stringByAppendingPathComponent:fileName].cachePath;
         // 写入第一行，文件标题
-        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"## %@\n", [dateFormatter(@"yyyy-MM-dd HH:mm:ss") stringFromDate:today]]);
+        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"## app launch: %@\n", [dateFormatter(@"yyyy-MM-dd HH:mm:ss") stringFromDate:today]]);
     });
     return path;
 }
@@ -128,7 +128,8 @@ static inline NSString *logPath(){
     }
     dispatch_async(logQueue(), ^{
         // @xaoxuu: in log queue
-        NSString *str = [NSString stringWithFormat:@"%@\n```\n%@\n```\n\n", func, input.description];
+        NSString *dateString = [dateFormatter(@"yyyy-MM-dd HH:mm:ss Z") stringFromDate:[NSDate date]];
+        NSString *str = [NSString stringWithFormat:@"##### [%@] func:%@\n```\n%@\n```\n\n", dateString, func, input.description];
 #ifdef DEBUG
         NSLog(@"%@",str);
 #endif
