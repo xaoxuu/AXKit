@@ -9,11 +9,16 @@
 #import "AXStatusBar.h"
 #import "NSOperation+AXExtension.h"
 #import "CALayer+AXWrapper.h"
-
+#import "UIDevice+AXExtension.h"
+#import "UIColor+AXExtension.h"
+#import "CALayer+AXWrapper.h"
 
 // 是否正在展示状态栏消息
 static BOOL isStatusMessageShowing;
 static BOOL isStatusProgressMessageShowing;
+
+static CALayer *progressLayer;
+
 
 /**
  获取状态栏（如果要自定义状态栏，建议使用+[ax_getCustomStatusBar]）
@@ -62,19 +67,35 @@ static inline UIView *getStatusBarProgressMessageContentView(){
     static UIView *view;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        const CGFloat height = 20;
+        const CGFloat quarter = height/4;
         view = [[UIView alloc] init];
         CGSize statusBarSize = getSystemStatusBar().bounds.size;
+        
         if (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)) {
             const CGFloat width = 64;
             CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, 20);
             frame.origin = CGPointMake(14, (statusBarSize.height - frame.size.height)/2);
             view.frame = frame;
             view.layer.cornerRadius = 0.5*frame.size.height;
+            
+            CAShapeLayer *layer = [CAShapeLayer layer];
+            UIBezierPath *path = [UIBezierPath bezierPath];
+            [path moveToPoint:CGPointMake(2*quarter, 0)];
+            [path addQuadCurveToPoint:CGPointMake(0, 2*quarter) controlPoint:CGPointMake(0, 0)];
+            [path addQuadCurveToPoint:CGPointMake(2*quarter, 4*quarter) controlPoint:CGPointMake(0, 4*quarter)];
+            [path addLineToPoint:CGPointMake(width - 2*quarter, 4*quarter)];
+            [path addQuadCurveToPoint:CGPointMake(width, 2*quarter) controlPoint:CGPointMake(width, 4*quarter)];
+            [path addQuadCurveToPoint:CGPointMake(width - 2*quarter, 0) controlPoint:CGPointMake(width, 0)];
+            [path closePath];
+            layer.path = path.CGPath;
+            view.layer.mask = layer;
+            
         } else {
-            const CGFloat height = 20;
             const CGFloat width = 72;
             CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, height);
-            const CGFloat quarter = height/4;
+            view.frame = frame;
+            
             CAShapeLayer *layer = [CAShapeLayer layer];
             UIBezierPath *path = [UIBezierPath bezierPath];
             [path moveToPoint:CGPointZero];
@@ -87,13 +108,24 @@ static inline UIView *getStatusBarProgressMessageContentView(){
             [path closePath];
             layer.path = path.CGPath;
             view.layer.mask = layer;
-            view.frame = frame;
+            
         }
-        
+        progressLayer = [CALayer layer];
+        progressLayer.backgroundColor = [UIColor blueColor].CGColor;
+        progressLayer.frame = view.bounds;
+        [view.layer addSublayer:progressLayer];
         [getSystemStatusBar() addSubview:view];
         
     });
     return view;
+}
+
+static inline void updateStatusBarProgress(CGFloat progress){
+    progressLayer.backgroundColor = getStatusBarProgressMessageContentView().backgroundColor.darkRatio(0.2).CGColor;
+    CGRect frame = getStatusBarProgressMessageContentView().bounds;
+    CGFloat width = progress * frame.size.width;
+    frame.size.width = width;
+    progressLayer.frame = frame;
 }
 
 /**
@@ -108,12 +140,20 @@ static inline void hideStatusBarMessage(){
     }];
 }
 static inline void hideStatusBarProgressMessage(){
-    [UIView animateWithDuration:0.38f animations:^{
-        getStatusBarProgressMessageContentView().alpha = 0;
+    
+    [UIView animateWithDuration:0.58f delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut animations:^{
+        if ([UIDevice currentDevice].isIphoneX) {
+            getStatusBarProgressMessageContentView().alpha = 0;
+            getStatusBarProgressMessageContentView().transform = CGAffineTransformMakeScale(1.2, 1.2);
+        } else {
+            getStatusBarProgressMessageContentView().transform = CGAffineTransformMakeTranslation(0, -20);
+        }
     } completion:^(BOOL finished) {
         isStatusProgressMessageShowing = NO;
         [getStatusBarProgressMessageContentView() removeFromSuperview];
+        updateStatusBarProgress(0);
     }];
+    
 }
 /**
  显示状态栏消息
@@ -123,10 +163,10 @@ static inline void hideStatusBarProgressMessage(){
 static inline void showStatusBarMessageView(NSTimeInterval duration){
     // 显示
     if (!isStatusMessageShowing) {
+        isStatusMessageShowing = YES;
         getStatusBarMessageContentView().alpha = 0;
         [getSystemStatusBar() addSubview:getStatusBarMessageContentView()];
         [UIView animateWithDuration:0.38f animations:^{
-            isStatusMessageShowing = YES;
             getStatusBarMessageContentView().alpha = 1;
         }];
     }
@@ -141,12 +181,26 @@ static inline void showStatusBarMessageView(NSTimeInterval duration){
 static inline void showStatusBarProgressMessageView(NSTimeInterval duration){
     // 显示
     if (!isStatusProgressMessageShowing) {
-        getStatusBarProgressMessageContentView().alpha = 0;
+        isStatusProgressMessageShowing = YES;
         [getSystemStatusBar() addSubview:getStatusBarProgressMessageContentView()];
-        [UIView animateWithDuration:0.38f animations:^{
-            isStatusProgressMessageShowing = YES;
-            getStatusBarProgressMessageContentView().alpha = 1;
-        }];
+        if ([UIDevice currentDevice].isIphoneX) {
+            getStatusBarProgressMessageContentView().alpha = 0;
+            getStatusBarProgressMessageContentView().transform = CGAffineTransformMakeScale(1.2, 1.2);
+            [UIView animateWithDuration:0.58f delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut animations:^{
+                getStatusBarProgressMessageContentView().alpha = 1;
+                getStatusBarProgressMessageContentView().transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                
+            }];
+        } else {
+            getStatusBarProgressMessageContentView().transform = CGAffineTransformMakeTranslation(0, -20);
+            [UIView animateWithDuration:0.38f delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut animations:^{
+                getStatusBarProgressMessageContentView().transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                
+            }];
+        }
+        
     }
     // 超时自动消失
     static ax_dispatch_operation_t timeoutToken;
@@ -312,6 +366,7 @@ static inline UILabel *getStatusBarProgressMessageLabel(NSString *text){
     UILabel *label = getStatusBarProgressMessageLabel(message);
     label.textColor = textColor;
     showStatusBarProgressMessageView(duration);
+    updateStatusBarProgress(progress);
     return label;
 }
 
@@ -319,5 +374,6 @@ static inline UILabel *getStatusBarProgressMessageLabel(NSString *text){
 + (void)hideStatusBarProgressMessage{
     hideStatusBarProgressMessage();
 }
+
 
 @end
