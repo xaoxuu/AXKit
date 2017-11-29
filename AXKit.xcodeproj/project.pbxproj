@@ -234,6 +234,10 @@
 		CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */; };
 		CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDB54D901FCEC6040051EEFA /* LocalNotificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D8F1FCEC6040051EEFA /* LocalNotificationVC.m */; };
+		CDB54D931FCEC6120051EEFA /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D921FCEC6120051EEFA /* LocalNotificationManager.m */; };
+		CDB54D961FCEC6260051EEFA /* LocalNotificationTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D951FCEC6260051EEFA /* LocalNotificationTV.m */; };
+		CDB54D981FCEC76B0051EEFA /* LocalNotificationTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB54D971FCEC76B0051EEFA /* LocalNotificationTV.json */; };
 		CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */; };
 		CDB716451F8E441A0025E8D7 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB716441F8E441A0025E8D7 /* CameraVC.m */; };
 		CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB716511F8E4A190025E8D7 /* Debug.xcassets */; };
@@ -585,6 +589,13 @@
 		CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXGestureExtension.h"; sourceTree = "<group>"; };
 		CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXGestureExtension.m"; sourceTree = "<group>"; };
 		CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXMacros.h"; sourceTree = "<group>"; };
+		CDB54D8E1FCEC6040051EEFA /* LocalNotificationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationVC.h; sourceTree = "<group>"; };
+		CDB54D8F1FCEC6040051EEFA /* LocalNotificationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationVC.m; sourceTree = "<group>"; };
+		CDB54D911FCEC6120051EEFA /* LocalNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
+		CDB54D921FCEC6120051EEFA /* LocalNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
+		CDB54D941FCEC6260051EEFA /* LocalNotificationTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationTV.h; sourceTree = "<group>"; };
+		CDB54D951FCEC6260051EEFA /* LocalNotificationTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationTV.m; sourceTree = "<group>"; };
+		CDB54D971FCEC76B0051EEFA /* LocalNotificationTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocalNotificationTV.json; sourceTree = "<group>"; };
 		CDB716431F8E441A0025E8D7 /* CameraVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraVC.h; sourceTree = "<group>"; };
 		CDB716441F8E441A0025E8D7 /* CameraVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraVC.m; sourceTree = "<group>"; };
 		CDB716511F8E4A190025E8D7 /* Debug.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Debug.xcassets; sourceTree = "<group>"; };
@@ -909,6 +920,7 @@
 				CD57450E1EDADE510014E833 /* DebugTV.h */,
 				CD5745101EDADE510014E833 /* DebugTV.m */,
 				CD57450F1EDADE510014E833 /* DebugTV.json */,
+				CDB54D8D1FCEC5CA0051EEFA /* LocalNotification */,
 				CD3543901F9AEFE2009317A6 /* EmptyVC */,
 				CD74F9F01F9ADE9A00EBD3B5 /* Cooldown */,
 				CDB716421F8E436C0025E8D7 /* Camera */,
@@ -1436,6 +1448,20 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		CDB54D8D1FCEC5CA0051EEFA /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				CDB54D8E1FCEC6040051EEFA /* LocalNotificationVC.h */,
+				CDB54D8F1FCEC6040051EEFA /* LocalNotificationVC.m */,
+				CDB54D941FCEC6260051EEFA /* LocalNotificationTV.h */,
+				CDB54D951FCEC6260051EEFA /* LocalNotificationTV.m */,
+				CDB54D971FCEC76B0051EEFA /* LocalNotificationTV.json */,
+				CDB54D911FCEC6120051EEFA /* LocalNotificationManager.h */,
+				CDB54D921FCEC6120051EEFA /* LocalNotificationManager.m */,
+			);
+			path = LocalNotification;
+			sourceTree = "<group>";
+		};
 		CDB716421F8E436C0025E8D7 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -1820,6 +1846,7 @@
 				CD5745801EDADE510014E833 /* DebugTV.json in Resources */,
 				CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
+				CDB54D981FCEC76B0051EEFA /* LocalNotificationTV.json in Resources */,
 				CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */,
 				CD5745851EDADE510014E833 /* FeedbackVC.xib in Resources */,
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
@@ -2006,6 +2033,7 @@
 				CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */,
 				CD5745B51EDADE510014E833 /* SettingVC.m in Sources */,
 				CDE94E971EC705C800596B93 /* GitHubUserModel.m in Sources */,
+				CDB54D931FCEC6120051EEFA /* LocalNotificationManager.m in Sources */,
 				CD5745A11EDADE510014E833 /* FontSizeTableViewCell.m in Sources */,
 				CD5745B91EDADE510014E833 /* ThemeColorTableView.m in Sources */,
 				CD5745A31EDADE510014E833 /* FontVC.m in Sources */,
@@ -2018,6 +2046,7 @@
 				CD2096E61FC171710049739A /* ServiceLayer.m in Sources */,
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
 				CD5745841EDADE510014E833 /* EmailVC.m in Sources */,
+				CDB54D901FCEC6040051EEFA /* LocalNotificationVC.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
 				CD63A4221FC1B80700581AF6 /* ThemeManageVC.m in Sources */,
 				CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */,
@@ -2028,6 +2057,7 @@
 				CD57459C1EDADE510014E833 /* CustomTableVC.m in Sources */,
 				CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */,
 				CD63A4361FC2CCDE00581AF6 /* ThemeDetailTV.m in Sources */,
+				CDB54D961FCEC6260051EEFA /* LocalNotificationTV.m in Sources */,
 				CD2096E91FC1718E0049739A /* BaseService.m in Sources */,
 				CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */,
 				CD5745911EDADE510014E833 /* AboutTableView.m in Sources */,

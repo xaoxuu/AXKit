@@ -13,6 +13,11 @@
             "rowHeight":"44",
             "rows":[
                 {
+                    "title":"本地推送",
+                    "detail":"",
+                    "target":"LocalNotificationVC",
+                },
+                {
                     "title":"拉伸图片",
                     "detail":"",
                     "target":"ResizeableImageVC",
