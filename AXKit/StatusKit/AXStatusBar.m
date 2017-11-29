@@ -206,7 +206,7 @@ static inline void showStatusBarProgressMessageView(NSTimeInterval duration){
     static ax_dispatch_operation_t timeoutToken;
     ax_dispatch_cancel_operation(timeoutToken);
     timeoutToken = ax_dispatch_cancellable(duration, dispatch_get_main_queue(), ^{
-        hideStatusBarMessage();
+        hideStatusBarProgressMessage();
     });
 }
 
@@ -350,23 +350,14 @@ static inline UILabel *getStatusBarProgressMessageLabel(NSString *text){
  @return 消息标签
  */
 + (UILabel *)showStatusBarProgress:(CGFloat)progress textColor:(UIColor *)textColor backgroundColor:(UIColor *)backgroundColor duration:(NSTimeInterval)duration{
-//    if (message.length > 6) {
-//        return [self showStatusBarMessage:message textColor:textColor backgroundColor:backgroundColor duration:duration];
-//    }
     UIView *contentView = getStatusBarProgressMessageContentView();
     contentView.backgroundColor = backgroundColor;
-    NSString *message;//0.5097
-//    int tmp = (int)(progress * 1000);//510
-//    if (tmp % 10 == 0) {
-//        message = [NSString stringWithFormat:@"%.0f%%", 100 * progress];
-//    } else {
-//        message = [NSString stringWithFormat:@"%.1f%%", 100 * progress];
-//    }
+    NSString *message;
     message = [NSString stringWithFormat:@"%.0f%%", 100 * progress];
     UILabel *label = getStatusBarProgressMessageLabel(message);
     label.textColor = textColor;
-    showStatusBarProgressMessageView(duration);
     updateStatusBarProgress(progress);
+    showStatusBarProgressMessageView(duration);
     return label;
 }
 

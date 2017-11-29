@@ -114,20 +114,10 @@ static NSTimer *timer;
             
         } else if (section == 5) {
             // @xaoxuu: 状态栏进度
-            if (row == 0) {
+            if ([model.title isEqualToString:@"隐藏消息"]) {
                 [timer ax_pause];
                 [AXStatusBar hideStatusBarProgressMessage];
-            } else if (row == 1) {
-                [AXStatusBar showStatusBarProgress:0 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:3];
-            } else if (row == 2) {
-                [AXStatusBar showStatusBarProgress:0.11 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:5];
-            } else if (row == 3) {
-                [AXStatusBar showStatusBarProgress:0.5097 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:8];
-            } else if (row == 4) {
-                [AXStatusBar showStatusBarProgress:0.757 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:8];
-            } else if (row == 5) {
-                [AXStatusBar showStatusBarProgress:1 textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:15];
-            } else if (row == 6) {
+            } else if ([model.title isEqualToString:@"自动"]) {
                 __block CGFloat x = 0;
                 [timer ax_pause];
                 timer = nil;
@@ -139,6 +129,10 @@ static NSTimer *timer;
                     }
                 }];
                 [timer ax_restart];
+            } else {
+                NSString *tmp = [model.title substringToIndex:model.title.length-1];
+                CGFloat value = tmp.doubleValue / 100;
+                [AXStatusBar showStatusBarProgress:value textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:3];
             }
             
         }
