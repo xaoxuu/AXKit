@@ -12,6 +12,8 @@
 #import "UIDevice+AXExtension.h"
 #import "UIColor+AXExtension.h"
 #import "CALayer+AXWrapper.h"
+#import "UIColor+MDColorPack.h"
+
 
 // 是否正在展示状态栏消息
 static BOOL isStatusMessageShowing;
@@ -111,7 +113,7 @@ static inline UIView *getStatusBarProgressMessageContentView(){
             
         }
         progressLayer = [CALayer layer];
-        progressLayer.backgroundColor = [UIColor blueColor].CGColor;
+        progressLayer.backgroundColor = [UIColor md_blue].light.CGColor;
         progressLayer.frame = view.bounds;
         [view.layer addSublayer:progressLayer];
         [getSystemStatusBar() addSubview:view];
@@ -121,7 +123,11 @@ static inline UIView *getStatusBarProgressMessageContentView(){
 }
 
 static inline void updateStatusBarProgress(CGFloat progress){
-    progressLayer.backgroundColor = getStatusBarProgressMessageContentView().backgroundColor.darkRatio(0.2).CGColor;
+    UIColor *color = getStatusBarProgressMessageContentView().backgroundColor;
+    if (!color) {
+        color = [UIColor md_blue].light;
+    }
+    progressLayer.backgroundColor = color.darkRatio(0.2).CGColor;
     CGRect frame = getStatusBarProgressMessageContentView().bounds;
     CGFloat width = progress * frame.size.width;
     frame.size.width = width;
