@@ -18,6 +18,11 @@
                     "target":"LocalNotificationVC",
                 },
                 {
+                    "title":"自定义状态栏",
+                    "detail":"",
+                    "target":"CustomStatusBarVC",
+                },
+                {
                     "title":"拉伸图片",
                     "detail":"",
                     "target":"ResizeableImageVC",

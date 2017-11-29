@@ -11,6 +11,14 @@
 
 @implementation DebugTV
 
+- (AXTableModelType *)ax_tableViewPreloadDataSource{
+    AXTableModelType *model = [self loadDataSourceFromPath:[service.cache cacheForClassWithName:NSStringFromClass(self.class)]];
+    if (!model) {
+        model = [self loadDataSourceFromBundle];
+    }
+    return model;
+}
+
 - (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
     AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
     NSInteger section = indexPath.section;
@@ -34,6 +42,7 @@
         [self.controller.navigationController ax_pushViewControllerNamed:model.target];
     }
 }
+
 
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{

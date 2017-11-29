@@ -14,59 +14,15 @@ static NSString *fontSizeCell = @"FontSizeTableViewCell";
 
 @implementation FontTableView
 
+
 - (AXTableModelType *)ax_tableViewPreloadDataSource{
-    AXTableModel *model = [[AXTableModel alloc] init];
-    [model addSection:^(AXTableSectionModel *section) {
-        section.headerTitle = @"字体";
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"默认";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Arial";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Avenir";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Chalkboard SE";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Chalkduster";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Cochin";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Copperplate";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Gill Sans";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Helvetica";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Menlo";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"PingFang SC";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Trebuchet MS";
-        }];
-        [section addRow:^(AXTableRowModel *row) {
-            row.title = @"Zapfino";
-        }];
-    }];
-    [model addSection:^(AXTableSectionModel *section) {
-        section.headerTitle = @"字号";
-        [section addRow:^(AXTableRowModel *row) {
-            row.rowHeight = 300;
-        }];
-    }];
-    
+    AXTableModelType *model = [self loadDataSourceFromPath:[service.cache cacheForClassWithName:NSStringFromClass(self.class)]];
+    if (!model) {
+        model = [self loadDataSourceFromBundle];
+    }
     return model;
 }
+
 
 - (AXTableViewCellType *)ax_tableViewRegisterReuseableCell{
     return [[FontTableViewCell alloc] init];

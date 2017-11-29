@@ -134,13 +134,13 @@ static CGFloat defaultRowHeight = 44;
 }
 
 
-- (NSObject<AXTableModel> *)loadDataSourceFromBundle{
+- (AXTableModelType *)loadDataSourceFromBundle{
     NSString *path = [[NSBundle mainBundle] pathForResource:NSStringFromClass([self class]) ofType:@".json"];
     return [self loadDataSourceFromPath:path];
 }
 
 
-- (NSObject<AXTableModel> *)loadDataSourceFromPath:(NSString *)path{
+- (AXTableModelType *)loadDataSourceFromPath:(NSString *)path{
     NSData *data = [NSData dataWithContentsOfFile:path];
     if (!data) {
         return nil;

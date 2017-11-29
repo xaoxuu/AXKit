@@ -12,6 +12,15 @@
 @implementation SettingTableView
 
 
+- (AXTableModelType *)ax_tableViewPreloadDataSource{
+    AXTableModelType *model = [self loadDataSourceFromPath:[service.cache cacheForClassWithName:NSStringFromClass(self.class)]];
+    if (!model) {
+        model = [self loadDataSourceFromBundle];
+    }
+    return model;
+}
+
+
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
     __weak typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {

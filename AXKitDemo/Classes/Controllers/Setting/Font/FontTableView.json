@@ -1,0 +1,66 @@
+{
+    "title":"自定义字体",
+    "headerTitle":"this is table header",
+    "headerHeight":20,
+    "footerTitle":"this is table footer",
+    "footerHeight":44,
+    "sections":[
+        {
+            "headerTitle":"字体",
+            "headerHeight":44,
+            "footerTitle":"",
+            "footerHeight":1,
+            "rowHeight":44,
+            "rows":[
+                {
+                    "title":"默认"
+                },
+                {
+                    "title":"Arial"
+                },
+                {
+                    "title":"Avenir"
+                },
+                {
+                    "title":"Chalkboard SE"
+                },
+                {
+                    "title":"Chalkduster"
+                },
+                {
+                    "title":"Cochin"
+                },
+                {
+                    "title":"Copperplate"
+                },
+                {
+                    "title":"Gill Sans"
+                },
+                {
+                    "title":"Helvetica"
+                },
+                {
+                    "title":"Menlo"
+                },
+                {
+                    "title":"PingFang SC"
+                },
+                {
+                    "title":"Trebuchet MS"
+                }
+            ]
+        },
+        {
+            "headerTitle":"字号",
+            "headerHeight":44,
+            "footerTitle":"",
+            "footerHeight":1,
+            "rowHeight":300,
+            "rows":[
+                {
+                    "rowHeight":300
+                }
+            ]
+        }
+    ]
+}

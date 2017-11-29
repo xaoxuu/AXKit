@@ -238,6 +238,7 @@
 		CDB54D931FCEC6120051EEFA /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D921FCEC6120051EEFA /* LocalNotificationManager.m */; };
 		CDB54D961FCEC6260051EEFA /* LocalNotificationTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D951FCEC6260051EEFA /* LocalNotificationTV.m */; };
 		CDB54D981FCEC76B0051EEFA /* LocalNotificationTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB54D971FCEC76B0051EEFA /* LocalNotificationTV.json */; };
+		CDB54DA21FCEDAA30051EEFA /* FontTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB54DA11FCEDAA20051EEFA /* FontTableView.json */; };
 		CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */; };
 		CDB716451F8E441A0025E8D7 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB716441F8E441A0025E8D7 /* CameraVC.m */; };
 		CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB716511F8E4A190025E8D7 /* Debug.xcassets */; };
@@ -596,6 +597,7 @@
 		CDB54D941FCEC6260051EEFA /* LocalNotificationTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationTV.h; sourceTree = "<group>"; };
 		CDB54D951FCEC6260051EEFA /* LocalNotificationTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationTV.m; sourceTree = "<group>"; };
 		CDB54D971FCEC76B0051EEFA /* LocalNotificationTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocalNotificationTV.json; sourceTree = "<group>"; };
+		CDB54DA11FCEDAA20051EEFA /* FontTableView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FontTableView.json; sourceTree = "<group>"; };
 		CDB716431F8E441A0025E8D7 /* CameraVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraVC.h; sourceTree = "<group>"; };
 		CDB716441F8E441A0025E8D7 /* CameraVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraVC.m; sourceTree = "<group>"; };
 		CDB716511F8E4A190025E8D7 /* Debug.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Debug.xcassets; sourceTree = "<group>"; };
@@ -1066,6 +1068,7 @@
 				CD5745531EDADE510014E833 /* FontVC.m */,
 				CD57454D1EDADE510014E833 /* FontTableView.h */,
 				CD57454E1EDADE510014E833 /* FontTableView.m */,
+				CDB54DA11FCEDAA20051EEFA /* FontTableView.json */,
 				CD57454F1EDADE510014E833 /* FontSizeTableViewCell.h */,
 				CD5745501EDADE510014E833 /* FontSizeTableViewCell.m */,
 				CD5745511EDADE510014E833 /* FontSizeTableViewCell.xib */,
@@ -1851,6 +1854,7 @@
 				CD5745851EDADE510014E833 /* FeedbackVC.xib in Resources */,
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
 				CD149E251F0105D4007051CE /* Assets.xcassets in Resources */,
+				CDB54DA21FCEDAA30051EEFA /* FontTableView.json in Resources */,
 				CD5745871EDADE510014E833 /* HitTestVC.xib in Resources */,
 				CD5745901EDADE510014E833 /* AboutTableView.json in Resources */,
 				CD149E271F0105D4007051CE /* tmp.xcassets in Resources */,
