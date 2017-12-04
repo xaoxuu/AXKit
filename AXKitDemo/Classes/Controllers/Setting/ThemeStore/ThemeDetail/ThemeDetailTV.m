@@ -79,7 +79,7 @@
 - (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
     AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
     if ([model.title isEqualToString:@"邮箱"]) {
-        [self.controller sendEmail:^(MFMailComposeViewController *mailCompose) {
+        [[EmailManager sharedInstance] sendEmail:^(MFMailComposeViewController *mailCompose) {
             // 设置收件人
             [mailCompose setToRecipients:@[model.detail]];
         } completion:^(MFMailComposeResult result) {

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackVC">
             <connections>
-                <outlet property="btn" destination="wHg-KR-hFb" id="fcD-zs-lzH"/>
+                <outlet property="collection" destination="9C7-pM-G57" id="6XV-yx-hev"/>
                 <outlet property="seg_subject" destination="yTT-yO-dyf" id="RVB-Cv-2cB"/>
                 <outlet property="tf_summary" destination="vDx-fJ-zh2" id="Zxh-Ku-jXe"/>
                 <outlet property="tv_content" destination="leC-o3-g9B" id="WO2-B5-WCd"/>
@@ -36,14 +36,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHg-KR-hFb">
-                    <rect key="frame" x="67" y="317.5" width="31" height="30"/>
-                    <state key="normal" title="相册"/>
-                </button>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-yO-dyf">
                     <rect key="frame" x="67" y="16" width="292" height="29"/>
                     <segments>
-                        <segment title="bug"/>
+                        <segment title="BUG"/>
                         <segment title="需求"/>
                         <segment title="建议"/>
                     </segments>
@@ -54,7 +50,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                 </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="附件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85V-W9-rd5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="截图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85V-W9-rd5">
                     <rect key="frame" x="16" y="322" width="35" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -72,19 +68,32 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-pM-G57">
+                    <rect key="frame" x="67" y="322" width="292" height="329"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="mag-7y-8EH">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="y0Q-2y-6R1" firstAttribute="centerY" secondItem="vDx-fJ-zh2" secondAttribute="centerY" id="Cyv-qo-msu"/>
                 <constraint firstItem="bPf-1B-3e6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="EtW-h1-iKT"/>
+                <constraint firstAttribute="bottom" secondItem="9C7-pM-G57" secondAttribute="bottom" constant="16" id="F1C-a5-vja"/>
                 <constraint firstItem="yTT-yO-dyf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="GvE-VZ-5Om"/>
                 <constraint firstItem="y0Q-2y-6R1" firstAttribute="leading" secondItem="bPf-1B-3e6" secondAttribute="leading" id="HaJ-lI-S1v"/>
                 <constraint firstItem="85V-W9-rd5" firstAttribute="leading" secondItem="aUm-fw-1LZ" secondAttribute="leading" id="IDG-Aq-lfs"/>
+                <constraint firstItem="9C7-pM-G57" firstAttribute="top" secondItem="85V-W9-rd5" secondAttribute="top" id="IZE-Iz-x4N"/>
                 <constraint firstItem="yTT-yO-dyf" firstAttribute="leading" secondItem="bPf-1B-3e6" secondAttribute="trailing" constant="16" id="JCg-KQ-3XW"/>
+                <constraint firstItem="9C7-pM-G57" firstAttribute="leading" secondItem="leC-o3-g9B" secondAttribute="leading" id="K3E-F2-CxZ"/>
                 <constraint firstItem="leC-o3-g9B" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="Lbo-Zb-aJP"/>
                 <constraint firstItem="leC-o3-g9B" firstAttribute="leading" secondItem="aUm-fw-1LZ" secondAttribute="trailing" constant="16" id="Oea-tN-mRe"/>
-                <constraint firstItem="wHg-KR-hFb" firstAttribute="leading" secondItem="leC-o3-g9B" secondAttribute="leading" id="PAW-MK-Mcl"/>
                 <constraint firstItem="vDx-fJ-zh2" firstAttribute="top" secondItem="yTT-yO-dyf" secondAttribute="bottom" constant="16" id="RSR-Dv-Cwh"/>
+                <constraint firstItem="9C7-pM-G57" firstAttribute="trailing" secondItem="leC-o3-g9B" secondAttribute="trailing" id="XbW-J1-VbG"/>
                 <constraint firstAttribute="trailing" secondItem="yTT-yO-dyf" secondAttribute="trailing" constant="16" id="YJj-9l-vHs"/>
                 <constraint firstItem="aUm-fw-1LZ" firstAttribute="top" secondItem="leC-o3-g9B" secondAttribute="top" id="YKA-rw-9Zs"/>
                 <constraint firstItem="bPf-1B-3e6" firstAttribute="centerY" secondItem="yTT-yO-dyf" secondAttribute="centerY" id="ZFt-br-3gr"/>
@@ -92,7 +101,6 @@
                 <constraint firstItem="leC-o3-g9B" firstAttribute="top" secondItem="vDx-fJ-zh2" secondAttribute="bottom" constant="16" id="dza-wC-gTO"/>
                 <constraint firstItem="85V-W9-rd5" firstAttribute="trailing" secondItem="aUm-fw-1LZ" secondAttribute="trailing" id="mcf-lD-zwh"/>
                 <constraint firstItem="85V-W9-rd5" firstAttribute="top" secondItem="leC-o3-g9B" secondAttribute="bottom" constant="16" id="oIU-VH-4d5"/>
-                <constraint firstItem="wHg-KR-hFb" firstAttribute="centerY" secondItem="85V-W9-rd5" secondAttribute="centerY" id="oMq-ka-bs0"/>
                 <constraint firstItem="vDx-fJ-zh2" firstAttribute="leading" secondItem="y0Q-2y-6R1" secondAttribute="trailing" constant="16" id="rCG-qb-7rh"/>
                 <constraint firstItem="aUm-fw-1LZ" firstAttribute="leading" secondItem="bPf-1B-3e6" secondAttribute="leading" id="tWm-94-1B6"/>
                 <constraint firstAttribute="trailing" secondItem="vDx-fJ-zh2" secondAttribute="trailing" constant="16" id="xDy-T8-SXn"/>

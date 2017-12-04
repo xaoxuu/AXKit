@@ -49,6 +49,11 @@
 		CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F01EC45E100024F25E /* BaseButton.m */; };
 		CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F61EC45E650024F25E /* AccentBgButton.m */; };
 		CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F91EC45E790024F25E /* ThemeBgButton.m */; };
+		CD1425ED1FD5552F007571E8 /* FeedbackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1425EB1FD5552F007571E8 /* FeedbackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD1425F11FD5572E007571E8 /* EmailManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1425EF1FD5572E007571E8 /* EmailManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD1425F21FD5572E007571E8 /* EmailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425F01FD5572E007571E8 /* EmailManager.m */; };
+		CD1425F91FD5638A007571E8 /* FeedbackCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425F71FD5638A007571E8 /* FeedbackCollectionViewCell.m */; };
+		CD1425FA1FD5638A007571E8 /* FeedbackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1425F81FD5638A007571E8 /* FeedbackCollectionViewCell.xib */; };
 		CD149E251F0105D4007051CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E221F0105D4007051CE /* Assets.xcassets */; };
 		CD149E261F0105D4007051CE /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E231F0105D4007051CE /* Setting.xcassets */; };
 		CD149E271F0105D4007051CE /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E241F0105D4007051CE /* tmp.xcassets */; };
@@ -79,10 +84,7 @@
 		CD3A8F051FC5499000177ADC /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3A8F041FC5490A00177ADC /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */; };
-		CD4154251FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD4154261FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154241FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m */; };
 		CD4154281FC0213A00D4ED2C /* TabKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154271FC0213300D4ED2C /* TabKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD41542A1FC0218600D4ED2C /* FeedbackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154291FC0218600D4ED2C /* FeedbackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD41542F1FC0226400D4ED2C /* StatusKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD41542D1FC0226400D4ED2C /* StatusKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD4154331FC023BD00D4ED2C /* AXStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154311FC023BD00D4ED2C /* AXStatusBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD4154341FC023BD00D4ED2C /* AXStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154321FC023BD00D4ED2C /* AXStatusBar.m */; };
@@ -107,7 +109,6 @@
 		CD5745801EDADE510014E833 /* DebugTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CD57450F1EDADE510014E833 /* DebugTV.json */; };
 		CD5745811EDADE510014E833 /* DebugTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745101EDADE510014E833 /* DebugTV.m */; };
 		CD5745821EDADE510014E833 /* DebugVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745121EDADE510014E833 /* DebugVC.m */; };
-		CD5745841EDADE510014E833 /* EmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745161EDADE510014E833 /* EmailVC.m */; };
 		CD5745851EDADE510014E833 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5745171EDADE510014E833 /* FeedbackVC.xib */; };
 		CD5745861EDADE510014E833 /* HitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57451A1EDADE510014E833 /* HitTestVC.m */; };
 		CD5745871EDADE510014E833 /* HitTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD57451B1EDADE510014E833 /* HitTestVC.xib */; };
@@ -338,6 +339,12 @@
 		CD0B62F61EC45E650024F25E /* AccentBgButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccentBgButton.m; sourceTree = "<group>"; };
 		CD0B62F81EC45E790024F25E /* ThemeBgButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeBgButton.h; sourceTree = "<group>"; };
 		CD0B62F91EC45E790024F25E /* ThemeBgButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeBgButton.m; sourceTree = "<group>"; };
+		CD1425EB1FD5552F007571E8 /* FeedbackKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackKit.h; sourceTree = "<group>"; };
+		CD1425EF1FD5572E007571E8 /* EmailManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailManager.h; sourceTree = "<group>"; };
+		CD1425F01FD5572E007571E8 /* EmailManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailManager.m; sourceTree = "<group>"; };
+		CD1425F61FD5638A007571E8 /* FeedbackCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackCollectionViewCell.h; sourceTree = "<group>"; };
+		CD1425F71FD5638A007571E8 /* FeedbackCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackCollectionViewCell.m; sourceTree = "<group>"; };
+		CD1425F81FD5638A007571E8 /* FeedbackCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD149E221F0105D4007051CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD149E231F0105D4007051CE /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
 		CD149E241F0105D4007051CE /* tmp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = tmp.xcassets; sourceTree = "<group>"; };
@@ -376,10 +383,7 @@
 		CD3A8F041FC5490A00177ADC /* ThemeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKit.h; sourceTree = "<group>"; };
 		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
 		CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugHelper.m; sourceTree = "<group>"; };
-		CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXMailWrapper.h"; sourceTree = "<group>"; };
-		CD4154241FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXMailWrapper.m"; sourceTree = "<group>"; };
 		CD4154271FC0213300D4ED2C /* TabKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabKit.h; sourceTree = "<group>"; };
-		CD4154291FC0218600D4ED2C /* FeedbackKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackKit.h; sourceTree = "<group>"; };
 		CD41542D1FC0226400D4ED2C /* StatusKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusKit.h; sourceTree = "<group>"; };
 		CD4154311FC023BD00D4ED2C /* AXStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXStatusBar.h; sourceTree = "<group>"; };
 		CD4154321FC023BD00D4ED2C /* AXStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXStatusBar.m; sourceTree = "<group>"; };
@@ -408,8 +412,6 @@
 		CD5745101EDADE510014E833 /* DebugTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugTV.m; sourceTree = "<group>"; };
 		CD5745111EDADE510014E833 /* DebugVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugVC.h; sourceTree = "<group>"; };
 		CD5745121EDADE510014E833 /* DebugVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugVC.m; sourceTree = "<group>"; };
-		CD5745151EDADE510014E833 /* EmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailVC.h; sourceTree = "<group>"; };
-		CD5745161EDADE510014E833 /* EmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailVC.m; sourceTree = "<group>"; };
 		CD5745171EDADE510014E833 /* FeedbackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
 		CD5745191EDADE510014E833 /* HitTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitTestVC.h; sourceTree = "<group>"; };
 		CD57451A1EDADE510014E833 /* HitTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HitTestVC.m; sourceTree = "<group>"; };
@@ -861,9 +863,9 @@
 		CD41541F1FC01F3100D4ED2C /* FeedbackKit */ = {
 			isa = PBXGroup;
 			children = (
-				CD4154291FC0218600D4ED2C /* FeedbackKit.h */,
-				CD4154231FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h */,
-				CD4154241FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m */,
+				CD1425EB1FD5552F007571E8 /* FeedbackKit.h */,
+				CD1425EF1FD5572E007571E8 /* EmailManager.h */,
+				CD1425F01FD5572E007571E8 /* EmailManager.m */,
 			);
 			path = FeedbackKit;
 			sourceTree = "<group>";
@@ -931,20 +933,10 @@
 				CD79DF951EEF8FE900408BAD /* Shadow */,
 				CD79DF911EEF805E00408BAD /* Keyboard */,
 				CD54981E1EE1964500748C22 /* TestFrame */,
-				CD5745141EDADE510014E833 /* Email */,
 				CD5745181EDADE510014E833 /* HitTest */,
 				CD57451C1EDADE510014E833 /* ResizeableImage */,
 			);
 			path = Debug;
-			sourceTree = "<group>";
-		};
-		CD5745141EDADE510014E833 /* Email */ = {
-			isa = PBXGroup;
-			children = (
-				CD5745151EDADE510014E833 /* EmailVC.h */,
-				CD5745161EDADE510014E833 /* EmailVC.m */,
-			);
-			path = Email;
 			sourceTree = "<group>";
 		};
 		CD5745181EDADE510014E833 /* HitTest */ = {
@@ -1057,6 +1049,9 @@
 				CD5745491EDADE510014E833 /* FeedbackVC.h */,
 				CD57454A1EDADE510014E833 /* FeedbackVC.m */,
 				CD5745171EDADE510014E833 /* FeedbackVC.xib */,
+				CD1425F61FD5638A007571E8 /* FeedbackCollectionViewCell.h */,
+				CD1425F71FD5638A007571E8 /* FeedbackCollectionViewCell.m */,
+				CD1425F81FD5638A007571E8 /* FeedbackCollectionViewCell.xib */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -1663,6 +1658,7 @@
 				CDAB58F71E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h in Headers */,
 				CDAB590B1E6BF96B0017CA1E /* UIColor+AXExtension.h in Headers */,
 				CD3A8F051FC5499000177ADC /* ThemeKit.h in Headers */,
+				CD1425F11FD5572E007571E8 /* EmailManager.h in Headers */,
 				CDAB58EF1E6BF5A20017CA1E /* NSString+AXExtension.h in Headers */,
 				CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */,
 				CDAB59371E6BFE170017CA1E /* UIView+AXExtension.h in Headers */,
@@ -1677,6 +1673,7 @@
 				CDAB58E71E6BF37E0017CA1E /* CoreGraphics+AXExtension.h in Headers */,
 				CDAB59031E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.h in Headers */,
 				CDAB590F1E6BF9B90017CA1E /* UIColor+MDColorPack.h in Headers */,
+				CD1425ED1FD5552F007571E8 /* FeedbackKit.h in Headers */,
 				CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */,
 				CDAB59331E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.h in Headers */,
 				CDAB59231E6BFC2F0017CA1E /* UIImageView+AXGetColor.h in Headers */,
@@ -1700,7 +1697,6 @@
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
 				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
-				CD4154251FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */,
@@ -1710,7 +1706,6 @@
 				CD4154421FC02F8800D4ED2C /* AXTableViewCell.h in Headers */,
 				CD4154361FC02F8000D4ED2C /* TableKit.h in Headers */,
 				CD41542F1FC0226400D4ED2C /* StatusKit.h in Headers */,
-				CD41542A1FC0218600D4ED2C /* FeedbackKit.h in Headers */,
 				CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */,
 				CD4154451FC0335C00D4ED2C /* UIThemeModel.h in Headers */,
 				CD63A4391FC2ED5B00581AF6 /* UIDevice+AXExtension.h in Headers */,
@@ -1848,6 +1843,7 @@
 				CD5745891EDADE510014E833 /* ResizeableImageVC.xib in Resources */,
 				CD5745801EDADE510014E833 /* DebugTV.json in Resources */,
 				CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */,
+				CD1425FA1FD5638A007571E8 /* FeedbackCollectionViewCell.xib in Resources */,
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CDB54D981FCEC76B0051EEFA /* LocalNotificationTV.json in Resources */,
 				CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */,
@@ -2049,7 +2045,6 @@
 				CD63A40E1FC1957A00581AF6 /* ThemeCollectionViewCell.m in Sources */,
 				CD2096E61FC171710049739A /* ServiceLayer.m in Sources */,
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
-				CD5745841EDADE510014E833 /* EmailVC.m in Sources */,
 				CDB54D901FCEC6040051EEFA /* LocalNotificationVC.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
 				CD63A4221FC1B80700581AF6 /* ThemeManageVC.m in Sources */,
@@ -2087,6 +2082,7 @@
 				CD5745921EDADE510014E833 /* AboutVC.m in Sources */,
 				CD5746111EDBFED40014E833 /* ReleaseLogVC.m in Sources */,
 				CD63A40A1FC1944400581AF6 /* ThemeCollectionModel.m in Sources */,
+				CD1425F91FD5638A007571E8 /* FeedbackCollectionViewCell.m in Sources */,
 				CD5745821EDADE510014E833 /* DebugVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2136,7 +2132,6 @@
 				CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */,
 				CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */,
 				CD23DCA61EC1DD76006E331B /* UINavigationBar+AXExtension.m in Sources */,
-				CD4154261FC01F8F00D4ED2C /* UIViewController+AXMailWrapper.m in Sources */,
 				CDAB59181E6BFAA90017CA1E /* UIControl+AXBlockWrapper.m in Sources */,
 				CD5746031EDAE9B80014E833 /* _AXKitHelpServices.m in Sources */,
 				CDAB59101E6BF9B90017CA1E /* UIColor+MDColorPack.m in Sources */,
@@ -2146,6 +2141,7 @@
 				CDC8CDF61ECC92B7009F855E /* UIAlertController+AXWrapper.m in Sources */,
 				CDAB59081E6BF92F0017CA1E /* UIColor+AXColorPack.m in Sources */,
 				CDAB58E81E6BF37E0017CA1E /* CoreGraphics+AXExtension.m in Sources */,
+				CD1425F21FD5572E007571E8 /* EmailManager.m in Sources */,
 				CDBCEE211F18B14500FBB3C7 /* UINavigationItem+AXExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
