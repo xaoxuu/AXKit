@@ -54,7 +54,7 @@
 		CD1425F21FD5572E007571E8 /* EmailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425F01FD5572E007571E8 /* EmailManager.m */; };
 		CD1425F91FD5638A007571E8 /* FeedbackCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425F71FD5638A007571E8 /* FeedbackCollectionViewCell.m */; };
 		CD1425FA1FD5638A007571E8 /* FeedbackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1425F81FD5638A007571E8 /* FeedbackCollectionViewCell.xib */; };
-		CD1426051FD655E8007571E8 /* EmailAttachmentDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1426031FD655E8007571E8 /* EmailAttachmentDataSource.h */; };
+		CD1426051FD655E8007571E8 /* EmailAttachmentDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1426031FD655E8007571E8 /* EmailAttachmentDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD1426061FD655E8007571E8 /* EmailAttachmentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1426041FD655E8007571E8 /* EmailAttachmentDataSource.m */; };
 		CD149E251F0105D4007051CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E221F0105D4007051CE /* Assets.xcassets */; };
 		CD149E261F0105D4007051CE /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E231F0105D4007051CE /* Setting.xcassets */; };
