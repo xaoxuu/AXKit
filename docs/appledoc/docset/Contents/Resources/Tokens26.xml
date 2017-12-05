@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSTimer+AXBlockWrapper.html">
+	<File path="Categories/NSString+AXRandomExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSTimer(AXBlockWrapper)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXRandomExtension)</TokenIdentifier>
+			<Abstract type="html">产生指定位数的随机十六进制数</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -13,96 +13,87 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_scheduledTimerWithTimeInterval:repeats:usingBlock:</TokenIdentifier>
-			<Abstract type="html">创建一个shchedule定时器添加到当前Runloop</Abstract>
-			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomLowerStringWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（纯小写）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)ax_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats usingBlock:(void ( ^ ) ( NSTimer *timer ))block</Declaration>
+			<Declaration>+ (NSString *)ax_stringWithRandomLowerStringWithLength:(AXUIntegerRange)length</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>interval</Name>
-					<Abstract type="html">时间间隔</Abstract>
-				</Parameter><Parameter>
-					<Name>repeats</Name>
-					<Abstract type="html">是否重复</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">执行的事件</Abstract>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">定时器实例</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_scheduledTimerWithTimeInterval:repeats:usingBlock:</Anchor>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomLowerStringWithLength:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_timerWithTimeInterval:repeats:usingBlock:</TokenIdentifier>
-			<Abstract type="html">创建一个shchedule定时器，需要手动添加到指定Runloop</Abstract>
-			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomUpperStringWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（纯大写）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)ax_timerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats usingBlock:(void ( ^ ) ( NSTimer *timer ))block</Declaration>
+			<Declaration>+ (NSString *)ax_stringWithRandomUpperStringWithLength:(AXUIntegerRange)length</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>interval</Name>
-					<Abstract type="html">时间间隔</Abstract>
-				</Parameter><Parameter>
-					<Name>repeats</Name>
-					<Abstract type="html">是否重复</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">执行的事件</Abstract>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">定时器实例</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_timerWithTimeInterval:repeats:usingBlock:</Anchor>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomUpperStringWithLength:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_isRunning</TokenIdentifier>
-			<Abstract type="html">获取定时器的状态（只适用于重复型定时器）</Abstract>
-			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomCapitalizeStringWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（首字母大写）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)ax_isRunning</Declaration>
-			
-			<ReturnValue><Abstract type="html">定时器的运行状态（YES: 运行，NO:没有运行）</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_isRunning</Anchor>
+			<Declaration>+ (NSString *)ax_stringWithRandomCapitalizeStringWithLength:(AXUIntegerRange)length</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomCapitalizeStringWithLength:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_pause</TokenIdentifier>
-			<Abstract type="html">暂停定时器</Abstract>
-			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomNameWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（适用于用户名）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)ax_pause</Declaration>
-			
-			<ReturnValue><Abstract type="html">是否成功</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_pause</Anchor>
+			<Declaration>+ (NSString *)ax_stringWithRandomNameWithLength:(AXUIntegerRange)length</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomNameWithLength:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_restart</TokenIdentifier>
-			<Abstract type="html">开启/重启定时器（从0开始计时）对于非重复型定时器，此方法会使定时器立即生效。</Abstract>
-			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_stringWithRandomPasswordWithLength:</TokenIdentifier>
+			<Abstract type="html">产生指定长度的随机字符串（适用于密码）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)ax_restart</Declaration>
-			
-			<ReturnValue><Abstract type="html">是否成功</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_restart</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSTimer/ax_turnover</TokenIdentifier>
-			<Abstract type="html">翻转定时器状态（只适用于重复型定时器）</Abstract>
-			<DeclaredIn>NSTimer+AXBlockWrapper.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)ax_turnover</Declaration>
-			
-			<ReturnValue><Abstract type="html">定时器的运行状态（YES: 运行，NO:没有运行）</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_turnover</Anchor>
+			<Declaration>+ (NSString *)ax_stringWithRandomPasswordWithLength:(AXUIntegerRange)length</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>length</Name>
+					<Abstract type="html">长度范围（最小长度，最大长度）</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">随机字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_stringWithRandomPasswordWithLength:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

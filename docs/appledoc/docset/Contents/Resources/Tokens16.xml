@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSArray+AXExtension.html">
+	<File path="Categories/CALayer+AXWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSArray(AXExtension)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/CALayer(AXWrapper)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
+			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="16"/>
@@ -13,62 +13,88 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_sum</TokenIdentifier>
-			<Abstract type="html">总和</Abstract>
-			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_maskToCircle</TokenIdentifier>
+			<Abstract type="html">剪裁成圆形（适用用于头像）</Abstract>
+			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)ax_sum</Declaration>
+			<Declaration>- (void)ax_maskToCircle</Declaration>
 			
-			<ReturnValue><Abstract type="html">总和</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_sum</Anchor>
+			
+			<Anchor>//api/name/ax_maskToCircle</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_avg</TokenIdentifier>
-			<Abstract type="html">平均值</Abstract>
-			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_shadow:</TokenIdentifier>
+			<Abstract type="html">阴影效果枚举</Abstract>
+			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)ax_avg</Declaration>
+			<Declaration>- (void)ax_shadow:(LayerShadow)shadow</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>shadow</Name>
+					<Abstract type="html">阴影效果枚举</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<ReturnValue><Abstract type="html">平均值</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_avg</Anchor>
+			<Anchor>//api/name/ax_shadow:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_max</TokenIdentifier>
-			<Abstract type="html">最大值</Abstract>
-			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_cornerRadius:shadow:</TokenIdentifier>
+			<Abstract type="html">设置圆角和阴影</Abstract>
+			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)ax_max</Declaration>
+			<Declaration>- (void)ax_cornerRadius:(CGFloat)cornerRadius shadow:(LayerShadow)shadow</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cornerRadius</Name>
+					<Abstract type="html">圆角半径</Abstract>
+				</Parameter><Parameter>
+					<Name>shadow</Name>
+					<Abstract type="html">阴影枚举</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<ReturnValue><Abstract type="html">最大值</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_max</Anchor>
+			<Anchor>//api/name/ax_cornerRadius:shadow:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSArray/ax_min</TokenIdentifier>
-			<Abstract type="html">最小值</Abstract>
-			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_whiteBorder:</TokenIdentifier>
+			<Abstract type="html">设置白色边框</Abstract>
+			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)ax_min</Declaration>
+			<Declaration>- (void)ax_whiteBorder:(CGFloat)width</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>width</Name>
+					<Abstract type="html">边框宽度</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<ReturnValue><Abstract type="html">最小值</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_min</Anchor>
+			<Anchor>//api/name/ax_whiteBorder:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSArray/distinctUnionOfObjects</TokenIdentifier>
-			<Abstract type="html">去重后的数组</Abstract>
-			<DeclaredIn>NSArray+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/CALayer/ax_borderWidth:color:</TokenIdentifier>
+			<Abstract type="html">设置边框</Abstract>
+			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)distinctUnionOfObjects</Declaration>
+			<Declaration>- (void)ax_borderWidth:(CGFloat)width color:(UIColor *)color</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>width</Name>
+					<Abstract type="html">边框宽度</Abstract>
+				</Parameter><Parameter>
+					<Name>color</Name>
+					<Abstract type="html">边框颜色</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<ReturnValue><Abstract type="html">去重后的数组</Abstract></ReturnValue>
-			<Anchor>//api/name/distinctUnionOfObjects</Anchor>
+			<Anchor>//api/name/ax_borderWidth:color:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

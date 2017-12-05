@@ -25,6 +25,7 @@
 						<NodeRef refid="12"/>
 						<NodeRef refid="13"/>
 						<NodeRef refid="14"/>
+						<NodeRef refid="15"/>
 						
 					</Subnodes>
 				</Node>
@@ -34,7 +35,6 @@
 					<Name>Categories</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="15"/>
 						<NodeRef refid="16"/>
 						<NodeRef refid="17"/>
 						<NodeRef refid="18"/>
@@ -107,6 +107,7 @@
                     <Path>index.html</Path>
                     <Subnodes>
                         <NodeRef refid="60"/>
+                        <NodeRef refid="61"/>
                         
                     </Subnodes>
                 </Node>
@@ -351,6 +352,39 @@
             
         </Node>
 		<Node id="9" type="file" documentType="reference">
+            <Name>EmailManager</Name>
+            <Path>Classes/EmailManager.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/EmailManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/EmailManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/EmailManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/EmailManager.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="10" type="file" documentType="reference">
             <Name>NSVersionString</Name>
             <Path>Classes/NSVersionString.html</Path>
             
@@ -377,7 +411,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="10" type="file" documentType="reference">
+		<Node id="11" type="file" documentType="reference">
             <Name>UIThemeColorModel</Name>
             <Path>Classes/UIThemeColorModel.html</Path>
             
@@ -404,7 +438,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="12" type="file" documentType="reference">
             <Name>UIThemeFontModel</Name>
             <Path>Classes/UIThemeFontModel.html</Path>
             
@@ -431,7 +465,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>UIThemeInfoModel</Name>
             <Path>Classes/UIThemeInfoModel.html</Path>
             
@@ -458,7 +492,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
             <Name>UIThemeManager</Name>
             <Path>Classes/UIThemeManager.html</Path>
             
@@ -485,7 +519,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="15" type="file" documentType="reference">
             <Name>UIThemeModel</Name>
             <Path>Classes/UIThemeModel.html</Path>
             
@@ -519,7 +553,7 @@
             
         </Node>
 		
-		<Node id="15" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>CALayer(AXWrapper)</Name>
             <Path>Categories/CALayer+AXWrapper.html</Path>
             
@@ -546,7 +580,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
             <Name>NSArray(AXExtension)</Name>
             <Path>Categories/NSArray+AXExtension.html</Path>
             
@@ -573,7 +607,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="18" type="file" documentType="reference">
             <Name>NSBundle(AXExtension)</Name>
             <Path>Categories/NSBundle+AXExtension.html</Path>
             
@@ -606,7 +640,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="18" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>NSDate(AXExtension)</Name>
             <Path>Categories/NSDate+AXExtension.html</Path>
             
@@ -639,7 +673,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>NSError(AXExtension)</Name>
             <Path>Categories/NSError+AXExtension.html</Path>
             
@@ -666,7 +700,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>NSError(AXKitHelpExtension)</Name>
             <Path>Categories/NSError+AXKitHelpExtension.html</Path>
             
@@ -693,7 +727,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="22" type="file" documentType="reference">
             <Name>NSOperation(AXExtension)</Name>
             <Path>Categories/NSOperation+AXExtension.html</Path>
             
@@ -726,7 +760,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
             <Name>NSString(AXAppendExtension)</Name>
             <Path>Categories/NSString+AXAppendExtension.html</Path>
             
@@ -753,7 +787,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="24" type="file" documentType="reference">
             <Name>NSString(AXExtension)</Name>
             <Path>Categories/NSString+AXExtension.html</Path>
             
@@ -780,7 +814,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="24" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
             <Name>NSString(AXFileStreamChainedWrapper)</Name>
             <Path>Categories/NSString+AXFileStreamChainedWrapper.html</Path>
             
@@ -807,7 +841,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>NSString(AXRandomExtension)</Name>
             <Path>Categories/NSString+AXRandomExtension.html</Path>
             
@@ -834,7 +868,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
             <Name>NSTimer(AXBlockWrapper)</Name>
             <Path>Categories/NSTimer+AXBlockWrapper.html</Path>
             
@@ -867,7 +901,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="28" type="file" documentType="reference">
             <Name>NSUserDefaults(AXWrapper)</Name>
             <Path>Categories/NSUserDefaults+AXWrapper.html</Path>
             
@@ -900,7 +934,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="28" type="file" documentType="reference">
+		<Node id="29" type="file" documentType="reference">
             <Name>UIActivityIndicatorView(AXWrapper)</Name>
             <Path>Categories/UIActivityIndicatorView+AXWrapper.html</Path>
             
@@ -933,7 +967,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="29" type="file" documentType="reference">
+		<Node id="30" type="file" documentType="reference">
             <Name>UIAlertController(AXWrapper)</Name>
             <Path>Categories/UIAlertController+AXWrapper.html</Path>
             
@@ -966,7 +1000,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="30" type="file" documentType="reference">
+		<Node id="31" type="file" documentType="reference">
             <Name>UIApplication(AXExtension)</Name>
             <Path>Categories/UIApplication+AXExtension.html</Path>
             
@@ -993,7 +1027,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="31" type="file" documentType="reference">
+		<Node id="32" type="file" documentType="reference">
             <Name>UIBarButtonItem(ATBlockWrapper)</Name>
             <Path>Categories/UIBarButtonItem+ATBlockWrapper.html</Path>
             
@@ -1026,7 +1060,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="32" type="file" documentType="reference">
+		<Node id="33" type="file" documentType="reference">
             <Name>UIButton(AXBlockWrapper)</Name>
             <Path>Categories/UIButton+AXBlockWrapper.html</Path>
             
@@ -1053,7 +1087,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="33" type="file" documentType="reference">
+		<Node id="34" type="file" documentType="reference">
             <Name>UIColor(AXExtension)</Name>
             <Path>Categories/UIColor+AXExtension.html</Path>
             
@@ -1086,7 +1120,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="34" type="file" documentType="reference">
+		<Node id="35" type="file" documentType="reference">
             <Name>UIControl(AXBlockWrapper)</Name>
             <Path>Categories/UIControl+AXBlockWrapper.html</Path>
             
@@ -1113,7 +1147,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="35" type="file" documentType="reference">
+		<Node id="36" type="file" documentType="reference">
             <Name>UIImage(AXExtension)</Name>
             <Path>Categories/UIImage+AXExtension.html</Path>
             
@@ -1146,12 +1180,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="36" type="file" documentType="reference">
+		<Node id="37" type="file" documentType="reference">
             <Name>UIImageView(AXExtension)</Name>
             <Path>Categories/UIImageView+AXExtension.html</Path>
             
         </Node>
-		<Node id="37" type="file" documentType="reference">
+		<Node id="38" type="file" documentType="reference">
             <Name>UIImageView(AXGetColor)</Name>
             <Path>Categories/UIImageView+AXGetColor.html</Path>
             
@@ -1178,7 +1212,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="38" type="file" documentType="reference">
+		<Node id="39" type="file" documentType="reference">
             <Name>UINavigationBar(AXExtension)</Name>
             <Path>Categories/UINavigationBar+AXExtension.html</Path>
             
@@ -1205,7 +1239,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="39" type="file" documentType="reference">
+		<Node id="40" type="file" documentType="reference">
             <Name>UINavigationController(AXExtension)</Name>
             <Path>Categories/UINavigationController+AXExtension.html</Path>
             
@@ -1232,7 +1266,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="40" type="file" documentType="reference">
+		<Node id="41" type="file" documentType="reference">
             <Name>UINavigationItem(AXExtension)</Name>
             <Path>Categories/UINavigationItem+AXExtension.html</Path>
             
@@ -1259,7 +1293,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="41" type="file" documentType="reference">
+		<Node id="42" type="file" documentType="reference">
             <Name>UIResponder(AXExtension)</Name>
             <Path>Categories/UIResponder+AXExtension.html</Path>
             
@@ -1286,7 +1320,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="42" type="file" documentType="reference">
+		<Node id="43" type="file" documentType="reference">
             <Name>UISegmentedControl(AXBlockWrapper)</Name>
             <Path>Categories/UISegmentedControl+AXBlockWrapper.html</Path>
             
@@ -1313,7 +1347,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="43" type="file" documentType="reference">
+		<Node id="44" type="file" documentType="reference">
             <Name>UISlider(AXBlockWrapper)</Name>
             <Path>Categories/UISlider+AXBlockWrapper.html</Path>
             
@@ -1340,7 +1374,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="44" type="file" documentType="reference">
+		<Node id="45" type="file" documentType="reference">
             <Name>UISwitch(AXBlockWrapper)</Name>
             <Path>Categories/UISwitch+AXBlockWrapper.html</Path>
             
@@ -1367,7 +1401,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="45" type="file" documentType="reference">
+		<Node id="46" type="file" documentType="reference">
             <Name>UITabBar(AXExtension)</Name>
             <Path>Categories/UITabBar+AXExtension.html</Path>
             
@@ -1394,7 +1428,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="46" type="file" documentType="reference">
+		<Node id="47" type="file" documentType="reference">
             <Name>UITextField(AXBlockWrapper)</Name>
             <Path>Categories/UITextField+AXBlockWrapper.html</Path>
             
@@ -1421,7 +1455,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="47" type="file" documentType="reference">
+		<Node id="48" type="file" documentType="reference">
             <Name>UITextField(AXExtension)</Name>
             <Path>Categories/UITextField+AXExtension.html</Path>
             
@@ -1448,7 +1482,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="48" type="file" documentType="reference">
+		<Node id="49" type="file" documentType="reference">
             <Name>UITextView(AXExtension)</Name>
             <Path>Categories/UITextView+AXExtension.html</Path>
             
@@ -1475,7 +1509,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="49" type="file" documentType="reference">
+		<Node id="50" type="file" documentType="reference">
             <Name>UIView(AXAnimatedWrapper)</Name>
             <Path>Categories/UIView+AXAnimatedWrapper.html</Path>
             
@@ -1502,7 +1536,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="50" type="file" documentType="reference">
+		<Node id="51" type="file" documentType="reference">
             <Name>UIView(AXExtension)</Name>
             <Path>Categories/UIView+AXExtension.html</Path>
             
@@ -1535,7 +1569,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="51" type="file" documentType="reference">
+		<Node id="52" type="file" documentType="reference">
             <Name>UIView(AXGestureExtension)</Name>
             <Path>Categories/UIView+AXGestureExtension.html</Path>
             
@@ -1562,36 +1596,9 @@
             </Subnodes>
             
         </Node>
-		<Node id="52" type="file" documentType="reference">
+		<Node id="53" type="file" documentType="reference">
             <Name>UIViewController(AXExtension)</Name>
             <Path>Categories/UIViewController+AXExtension.html</Path>
-            
-        </Node>
-		<Node id="53" type="file" documentType="reference">
-            <Name>UIViewController(AXMailWrapper)</Name>
-            <Path>Categories/UIViewController+AXMailWrapper.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Categories/UIViewController+AXMailWrapper.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Categories/UIViewController+AXMailWrapper.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                
-                
-                <Node type="section">
-                    <Path>Categories/UIViewController+AXMailWrapper.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
             
         </Node>
 		
@@ -1694,6 +1701,11 @@
         </Node>
 		
         <Node id="60" type="file" documentType="reference">
+            <Name>BlockType</Name>
+            <Path>Blocks/BlockType.html</Path>
+            
+        </Node>
+        <Node id="61" type="file" documentType="reference">
             <Name>__nullable</Name>
             <Path>Blocks/__nullable.html</Path>
             

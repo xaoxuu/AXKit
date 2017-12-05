@@ -1,39 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIViewController+AXMailWrapper.html">
+	<File path="Categories/UIViewController+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIViewController(AXMailWrapper)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIViewController+AXMailWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/UIViewController(AXExtension)</TokenIdentifier>
+			<Abstract type="html">根据view controller的类名创建实例</Abstract>
+			<DeclaredIn>UIViewController+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="53"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIViewController/sendEmail:completion:fail:</TokenIdentifier>
-			<Abstract type="html">发送Email</Abstract>
-			<DeclaredIn>UIViewController+AXMailWrapper.h</DeclaredIn>
-			
-			<Declaration>- (void)sendEmail:(void ( ^ ) ( MFMailComposeViewController *mailCompose ))email completion:(void ( ^ ) ( MFMailComposeResult result ))completion fail:(void ( ^ ) ( NSError *error ))fail</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>email</Name>
-					<Abstract type="html">email</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">发送完成</Abstract>
-				</Parameter><Parameter>
-					<Name>fail</Name>
-					<Abstract type="html">发送失败</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/sendEmail:completion:fail:</Anchor>
-            <NodeRef refid="53"/>
-		</Token>
 		
         
         

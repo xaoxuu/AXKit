@@ -136,7 +136,7 @@ typedef UITableView<AXTableView> AXTableViewType;
 
  @return 数据源
  */
-- (NSObject<AXTableModel> *)loadDataSourceFromBundle;
+- (AXTableModelType *)loadDataSourceFromBundle;
 
 /**
  从指定路径加载数据源
@@ -144,6 +144,6 @@ typedef UITableView<AXTableView> AXTableViewType;
  @param path 路径
  @return 数据源
  */
-- (NSObject<AXTableModel> *)loadDataSourceFromPath:(NSString *)path;
+- (AXTableModelType *)loadDataSourceFromPath:(NSString *)path;
 
 @end

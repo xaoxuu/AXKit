@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/UIThemeColorModel.html">
+	<File path="Classes/NSVersionString.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/UIThemeColorModel</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/NSVersionString</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIThemeModel.h</DeclaredIn>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,62 +13,19 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/background</TokenIdentifier>
-			<Abstract type="html">background color</Abstract>
-			<DeclaredIn>UIThemeModel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSVersionString/laterVersion:</TokenIdentifier>
+			<Abstract type="html">比较两个版本（返回较新的版本）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (UIColor *)background</Declaration>
-			
-			
-			<Anchor>//api/name/background</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/theme</TokenIdentifier>
-			<Abstract type="html">theme color</Abstract>
-			<DeclaredIn>UIThemeModel.h</DeclaredIn>
-			
-			<Declaration>- (UIColor *)theme</Declaration>
-			
-			
-			<Anchor>//api/name/theme</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/accent</TokenIdentifier>
-			<Abstract type="html">accent color</Abstract>
-			<DeclaredIn>UIThemeModel.h</DeclaredIn>
-			
-			<Declaration>- (UIColor *)accent</Declaration>
-			
-			
-			<Anchor>//api/name/accent</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/groupTableViewBackground</TokenIdentifier>
-			<Abstract type="html">组tableview背景色</Abstract>
-			<DeclaredIn>UIThemeModel.h</DeclaredIn>
-			
-			<Declaration>- (UIColor *)groupTableViewBackground</Declaration>
-			
-			
-			<Anchor>//api/name/groupTableViewBackground</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/separatorColor</TokenIdentifier>
-			<Abstract type="html">分割线颜色</Abstract>
-			<DeclaredIn>UIThemeModel.h</DeclaredIn>
-			
-			<Declaration>- (UIColor *)separatorColor</Declaration>
-			
-			
-			<Anchor>//api/name/separatorColor</Anchor>
+			<Declaration>- (NSVersionString *)laterVersion:(NSVersionString *)version</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>version</Name>
+					<Abstract type="html">要对比的另一个版本</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">较新的版本</Abstract></ReturnValue>
+			<Anchor>//api/name/laterVersion:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		

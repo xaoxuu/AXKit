@@ -92,7 +92,7 @@
 			<Abstract type="html">从bundle中加载数据源（需要与本类同名的json文件）</Abstract>
 			<DeclaredIn>AXTableView.h</DeclaredIn>
 			
-			<Declaration>- (NSObject&lt;AXTableModel&gt; *)loadDataSourceFromBundle</Declaration>
+			<Declaration>- (AXTableModelType *)loadDataSourceFromBundle</Declaration>
 			
 			<ReturnValue><Abstract type="html">数据源</Abstract></ReturnValue>
 			<Anchor>//api/name/loadDataSourceFromBundle</Anchor>
@@ -104,7 +104,7 @@
 			<Abstract type="html">从指定路径加载数据源</Abstract>
 			<DeclaredIn>AXTableView.h</DeclaredIn>
 			
-			<Declaration>- (NSObject&lt;AXTableModel&gt; *)loadDataSourceFromPath:(NSString *)path</Declaration>
+			<Declaration>- (AXTableModelType *)loadDataSourceFromPath:(NSString *)path</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>path</Name>

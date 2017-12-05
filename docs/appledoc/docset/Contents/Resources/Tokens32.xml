@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIButton+AXBlockWrapper.html">
+	<File path="Categories/UIBarButtonItem+ATBlockWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIButton(AXBlockWrapper)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/UIBarButtonItem(ATBlockWrapper)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="32"/>
@@ -13,79 +13,266 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIButton/ax_addEventHandler:forControlEvents:</TokenIdentifier>
-			<Abstract type="html">添加一个任意事件</Abstract>
-			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_itemWithImageName:action:</TokenIdentifier>
+			<Abstract type="html">创建一个baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addEventHandler:(void ( ^ ) ( __kindof UIButton *sender ))handler forControlEvents:(UIControlEvents)controlEvents</Declaration>
+			<Declaration>+ (instancetype)ax_itemWithImageName:(NSString *)image action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">处理事件的block</Abstract>
+					<Name>image</Name>
+					<Abstract type="html">图片名</Abstract>
 				</Parameter><Parameter>
-					<Name>controlEvents</Name>
-					<Abstract type="html">事件</Abstract>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_addEventHandler:forControlEvents:</Anchor>
+			<ReturnValue><Abstract type="html">baritem实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_itemWithImageName:action:</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIButton/ax_addTouchDownHandler:</TokenIdentifier>
-			<Abstract type="html">添加一个TouchDown事件</Abstract>
-			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_itemWithTitle:action:</TokenIdentifier>
+			<Abstract type="html">快速创建一个baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addTouchDownHandler:(void ( ^ ) ( __kindof UIButton *sender ))handler</Declaration>
+			<Declaration>+ (instancetype)ax_itemWithTitle:(NSString *)title action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">处理事件的block</Abstract>
+					<Name>title</Name>
+					<Abstract type="html">标题</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_addTouchDownHandler:</Anchor>
+			<ReturnValue><Abstract type="html">baritem实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_itemWithTitle:action:</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIButton/ax_addTouchUpInsideHandler:</TokenIdentifier>
-			<Abstract type="html">添加一个TouchUpInside事件</Abstract>
-			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_itemWithCustomView:action:</TokenIdentifier>
+			<Abstract type="html">快速创建一个baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addTouchUpInsideHandler:(void ( ^ ) ( __kindof UIButton *sender ))handler</Declaration>
+			<Declaration>+ (instancetype)ax_itemWithCustomView:(UIView *)view action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">处理事件的block</Abstract>
+					<Name>view</Name>
+					<Abstract type="html">自定义视图</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_addTouchUpInsideHandler:</Anchor>
+			<ReturnValue><Abstract type="html">baritem实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_itemWithCustomView:action:</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIButton/ax_addTouchUpInsideHandler:animatedScale:duration:</TokenIdentifier>
-			<Abstract type="html">添加一个TouchUpInside事件，并附加动画</Abstract>
-			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_itemWithSystem:action:</TokenIdentifier>
+			<Abstract type="html">创建一个system样式的baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addTouchUpInsideHandler:(nullable void ( ^ ) ( __kindof UIButton *sender ))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration</Declaration>
+			<Declaration>+ (instancetype)ax_itemWithSystem:(UIBarButtonSystemItem)systemItem action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">处理事件的block</Abstract>
+					<Name>systemItem</Name>
+					<Abstract type="html">系统item样式</Abstract>
 				</Parameter><Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">动画的缩放比例</Abstract>
-				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">动画持续时间</Abstract>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_itemWithSystem:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_itemWithImage:style:action:</TokenIdentifier>
+			<Abstract type="html">创建一个自定义baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
 			
-			<Anchor>//api/name/ax_addTouchUpInsideHandler:animatedScale:duration:</Anchor>
+			<Declaration>+ (instancetype)ax_itemWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">图片</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">样式</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_itemWithImage:style:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_itemWithImage:landscapeImagePhone:style:action:</TokenIdentifier>
+			<Abstract type="html">创建一个自定义baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)ax_itemWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">图片</Abstract>
+				</Parameter><Parameter>
+					<Name>landscapeImagePhone</Name>
+					<Abstract type="html">横屏图片</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">样式</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_itemWithImage:landscapeImagePhone:style:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_itemWithTitle:style:action:</TokenIdentifier>
+			<Abstract type="html">创建一个文字baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)ax_itemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">文字</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">样式</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_itemWithTitle:style:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_initWithSystem:action:</TokenIdentifier>
+			<Abstract type="html">创建一个system样式的baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)ax_initWithSystem:(UIBarButtonSystemItem)systemItem action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>systemItem</Name>
+					<Abstract type="html">系统item样式</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_initWithSystem:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_initWithImage:style:action:</TokenIdentifier>
+			<Abstract type="html">创建一个自定义baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)ax_initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">图片</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">样式</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_initWithImage:style:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_initWithImage:landscapeImagePhone:style:action:</TokenIdentifier>
+			<Abstract type="html">创建一个自定义baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)ax_initWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>image</Name>
+					<Abstract type="html">图片</Abstract>
+				</Parameter><Parameter>
+					<Name>landscapeImagePhone</Name>
+					<Abstract type="html">横屏图片</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">样式</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_initWithImage:landscapeImagePhone:style:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_initWithTitle:style:action:</TokenIdentifier>
+			<Abstract type="html">创建一个文字baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)ax_initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">文字</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">样式</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">item实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_initWithTitle:style:action:</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIBarButtonItem/ax_initWithCustomView:action:</TokenIdentifier>
+			<Abstract type="html">快速创建一个baritem</Abstract>
+			<DeclaredIn>UIBarButtonItem+AXBlockWrapper.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)ax_initWithCustomView:(UIView *)view action:(void ( ^ ) ( UIBarButtonItem *sender ))action</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">自定义视图</Abstract>
+				</Parameter><Parameter>
+					<Name>action</Name>
+					<Abstract type="html">响应的事件</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">baritem实例</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_initWithCustomView:action:</Anchor>
             <NodeRef refid="32"/>
 		</Token>
 		

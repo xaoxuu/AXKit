@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/UIThemeManager.html">
+	<File path="Classes/UIThemeInfoModel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/UIThemeManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/UIThemeInfoModel</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,182 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/configDefaultTheme:</TokenIdentifier>
-			<Abstract type="html">设置默认的颜色配置（会被用户的更改覆盖，一般用在appDelegate中）</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setName:</TokenIdentifier>
+			<Abstract type="html">theme name</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)configDefaultTheme:(void ( ^ ) ( UIThemeManager *))defaultTheme</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>defaultTheme</Name>
-					<Abstract type="html">默认的颜色配置</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
 			
-			<Anchor>//api/name/configDefaultTheme:</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/applyThemeWithPath:</TokenIdentifier>
-			<Abstract type="html">应用主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/name</TokenIdentifier>
+			<Abstract type="html">theme name</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)applyThemeWithPath:(NSString *)path</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>path</Name>
-					<Abstract type="html">主题文件路径</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
 			
-			<Anchor>//api/name/applyThemeWithPath:</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/applyThemeWithEmail:name:</TokenIdentifier>
-			<Abstract type="html">应用主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/name</TokenIdentifier>
+			<Abstract type="html">theme name</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>email</Name>
-					<Abstract type="html">主题作者邮箱</Abstract>
-				</Parameter><Parameter>
-					<Name>name</Name>
-					<Abstract type="html">主题名</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
 			
-			<Anchor>//api/name/applyThemeWithEmail:name:</Anchor>
+			
+			<Anchor>//api/name/name</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/applyTheme:</TokenIdentifier>
-			<Abstract type="html">应用主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setAuthor:</TokenIdentifier>
+			<Abstract type="html">theme author</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)applyTheme:(UIThemeModel *)theme</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>theme</Name>
-					<Abstract type="html">主题</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *author</Declaration>
 			
-			<Anchor>//api/name/applyTheme:</Anchor>
+			
+			<Anchor>//api/name/author</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateCurrentColorTheme:</TokenIdentifier>
-			<Abstract type="html">更新主题色</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/author</TokenIdentifier>
+			<Abstract type="html">theme author</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)updateCurrentColorTheme:(void ( ^ ) ( UIThemeColorModel *color ))update</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>update</Name>
-					<Abstract type="html">主题色</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *author</Declaration>
 			
-			<Anchor>//api/name/updateCurrentColorTheme:</Anchor>
+			
+			<Anchor>//api/name/author</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateCurrentFontTheme:</TokenIdentifier>
-			<Abstract type="html">更新主题字体</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/author</TokenIdentifier>
+			<Abstract type="html">theme author</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)updateCurrentFontTheme:(void ( ^ ) ( UIThemeFontModel *font ))update</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>update</Name>
-					<Abstract type="html">主题字体</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *author</Declaration>
 			
-			<Anchor>//api/name/updateCurrentFontTheme:</Anchor>
+			
+			<Anchor>//api/name/author</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/getAllDownloadedThemes</TokenIdentifier>
-			<Abstract type="html">获取所有已下载的主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setEmail:</TokenIdentifier>
+			<Abstract type="html">theme author&apos;s email</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (NSArray&lt;UIThemeModel*&gt; *)getAllDownloadedThemes</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *email</Declaration>
 			
-			<ReturnValue><Abstract type="html">所有已下载的主题</Abstract></ReturnValue>
-			<Anchor>//api/name/getAllDownloadedThemes</Anchor>
+			
+			<Anchor>//api/name/email</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/deleteTheme:</TokenIdentifier>
-			<Abstract type="html">删除主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/email</TokenIdentifier>
+			<Abstract type="html">theme author&apos;s email</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)deleteTheme:(UIThemeModel *)theme</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>theme</Name>
-					<Abstract type="html">主题</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *email</Declaration>
 			
-			<Anchor>//api/name/deleteTheme:</Anchor>
+			
+			<Anchor>//api/name/email</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/deleteAllThemes</TokenIdentifier>
-			<Abstract type="html">删除所有主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/email</TokenIdentifier>
+			<Abstract type="html">theme author&apos;s email</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)deleteAllThemes</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *email</Declaration>
 			
 			
-			<Anchor>//api/name/deleteAllThemes</Anchor>
+			<Anchor>//api/name/email</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateThemeForNavigationBar:</TokenIdentifier>
-			<Abstract type="html">为navigationBar更新主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setPrice:</TokenIdentifier>
+			<Abstract type="html">theme&apos;s price</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)updateThemeForNavigationBar:(UINavigationBar *)navigationBar</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>navigationBar</Name>
-					<Abstract type="html">navigationBar</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (assign, nonatomic) CGFloat price</Declaration>
 			
-			<Anchor>//api/name/updateThemeForNavigationBar:</Anchor>
+			
+			<Anchor>//api/name/price</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeManager/updateThemeForTabBar:</TokenIdentifier>
-			<Abstract type="html">为tabBar更新主题</Abstract>
-			<DeclaredIn>UIThemeManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/price</TokenIdentifier>
+			<Abstract type="html">theme&apos;s price</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>- (void)updateThemeForTabBar:(UITabBar *)tabBar</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>tabBar</Name>
-					<Abstract type="html">tabBar</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (assign, nonatomic) CGFloat price</Declaration>
 			
-			<Anchor>//api/name/updateThemeForTabBar:</Anchor>
+			
+			<Anchor>//api/name/price</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/price</TokenIdentifier>
+			<Abstract type="html">theme&apos;s price</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
+			
+			<Declaration>@property (assign, nonatomic) CGFloat price</Declaration>
+			
+			
+			<Anchor>//api/name/price</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/setPreview:</TokenIdentifier>
+			<Abstract type="html">theme&apos;s preview image urls</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
+			
+			<Declaration>@property (copy, nonatomic) NSArray&lt;NSString*&gt; *preview</Declaration>
+			
+			
+			<Anchor>//api/name/preview</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeInfoModel/preview</TokenIdentifier>
+			<Abstract type="html">theme&apos;s preview image urls</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
+			
+			<Declaration>@property (copy, nonatomic) NSArray&lt;NSString*&gt; *preview</Declaration>
+			
+			
+			<Anchor>//api/name/preview</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UIThemeInfoModel/preview</TokenIdentifier>
+			<Abstract type="html">theme&apos;s preview image urls</Abstract>
+			<DeclaredIn>UIThemeModel.h</DeclaredIn>
+			
+			<Declaration>@property (copy, nonatomic) NSArray&lt;NSString*&gt; *preview</Declaration>
+			
+			
+			<Anchor>//api/name/preview</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIAlertController+AXWrapper.html">
+	<File path="Categories/UIActivityIndicatorView+AXWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIAlertController(AXWrapper)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/UIActivityIndicatorView(AXWrapper)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
@@ -13,131 +13,63 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_showAlertWithTitle:message:actions:</TokenIdentifier>
-			<Abstract type="html">弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/defaultIndicator</TokenIdentifier>
+			<Abstract type="html">创建一个活动指示器</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void ( ^ __nullable ) ( UIAlertController *alert ))actions</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">标题</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">消息</Abstract>
-				</Parameter><Parameter>
-					<Name>actions</Name>
-					<Abstract type="html">按钮</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (instancetype)defaultIndicator</Declaration>
 			
-			<Anchor>//api/name/ax_showAlertWithTitle:message:actions:</Anchor>
+			<ReturnValue><Abstract type="html">活动指示器</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultIndicator</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_showActionSheetWithTitle:message:actions:</TokenIdentifier>
-			<Abstract type="html">弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/defaultIndicatorWithLoading</TokenIdentifier>
+			<Abstract type="html">创建一个带&quot;LOADING&quot;字样的活动指示器</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void ( ^ __nullable ) ( UIAlertController *alert ))actions</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">标题</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">消息</Abstract>
-				</Parameter><Parameter>
-					<Name>actions</Name>
-					<Abstract type="html">按钮</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (instancetype)defaultIndicatorWithLoading</Declaration>
 			
-			<Anchor>//api/name/ax_showActionSheetWithTitle:message:actions:</Anchor>
+			<ReturnValue><Abstract type="html">一个带&quot;LOADING&quot;字样的活动指示器</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultIndicatorWithLoading</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addActionWithTitle:style:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个按钮</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/addToView:</TokenIdentifier>
+			<Abstract type="html">显示到某个view</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addActionWithTitle:(nullable NSString *)title style:(UIAlertActionStyle)style handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
+			<Declaration>- (void)addToView:(UIView *)view</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
-				</Parameter><Parameter>
-					<Name>style</Name>
-					<Abstract type="html">按钮样式</Abstract>
-				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
+					<Name>view</Name>
+					<Abstract type="html">view</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_addActionWithTitle:style:handler:</Anchor>
+			<Anchor>//api/name/addToView:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addCancelActionWithTitle:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个取消样式的按钮(标题传nil则为默认标题)</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIActivityIndicatorView/addToView:withLoading:</TokenIdentifier>
+			<Abstract type="html">显示到某个view (带&quot;LOADING&quot;字样的活动指示器)</Abstract>
+			<DeclaredIn>UIActivityIndicatorView+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_addCancelActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
+			<Declaration>- (void)addToView:(UIView *)view withLoading:(BOOL)loading</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
+					<Name>view</Name>
+					<Abstract type="html">view</Abstract>
 				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
+					<Name>loading</Name>
+					<Abstract type="html">&quot;LOADING&quot;标签</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_addCancelActionWithTitle:handler:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addDefaultActionWithTitle:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个默认样式的按钮(标题传nil则为默认标题)</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_addDefaultActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
-				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_addDefaultActionWithTitle:handler:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addDestructiveActionWithTitle:handler:</TokenIdentifier>
-			<Abstract type="html">添加一个破坏性按钮（红色）(标题传nil则为默认标题)</Abstract>
-			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_addDestructiveActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>title</Name>
-					<Abstract type="html">按钮标题</Abstract>
-				</Parameter><Parameter>
-					<Name>handler</Name>
-					<Abstract type="html">按钮事件</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_addDestructiveActionWithTitle:handler:</Anchor>
+			<Anchor>//api/name/addToView:withLoading:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
