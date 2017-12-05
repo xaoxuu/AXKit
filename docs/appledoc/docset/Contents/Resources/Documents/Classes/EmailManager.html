@@ -72,11 +72,11 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/addDefaultAttachmentData:mimeType:fileName:">- addDefaultAttachmentData:mimeType:fileName:</option>
+		<option value="//api/name/addAttachmentDataSourceWithFilePath:mimeType:fileName:">- addAttachmentDataSourceWithFilePath:mimeType:fileName:</option>
+		
+		<option value="//api/name/attachmentDataSource">- attachmentDataSource</option>
 		
 		<option value="//api/name/configDefaultCompose:">- configDefaultCompose:</option>
-		
-		<option value="//api/name/defaultAttachmentData">- defaultAttachmentData</option>
 		
 		<option value="//api/name/sendEmail:completion:fail:">- sendEmail:completion:fail:</option>
 		
@@ -125,8 +125,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/defaultAttachmentData" title="defaultAttachmentData"></a>
-	<h3 class="method-title"><code><a href="#//api/name/defaultAttachmentData">&ndash;&nbsp;defaultAttachmentData</a></code>
+	<a name="//api/name/attachmentDataSource" title="attachmentDataSource"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attachmentDataSource">&ndash;&nbsp;attachmentDataSource</a></code>
 </h3>
 
 	<div class="method-info">
@@ -136,12 +136,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>默认的附件</p>
+				<p>附件源（可提前设置好，但直到发送文件的时候才从路径中取出文件）</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSMutableArray&lt;EmailAttachmentData*&gt; *)defaultAttachmentData</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSMutableArray&lt;EmailAttachmentDataSource*&gt; *)attachmentDataSource</code></div>
 
 		    
 			
@@ -219,8 +219,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/addDefaultAttachmentData:mimeType:fileName:" title="addDefaultAttachmentData:mimeType:fileName:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addDefaultAttachmentData:mimeType:fileName:">&ndash;&nbsp;addDefaultAttachmentData:mimeType:fileName:</a></code>
+	<a name="//api/name/addAttachmentDataSourceWithFilePath:mimeType:fileName:" title="addAttachmentDataSourceWithFilePath:mimeType:fileName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAttachmentDataSourceWithFilePath:mimeType:fileName:">&ndash;&nbsp;addAttachmentDataSourceWithFilePath:mimeType:fileName:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -230,12 +230,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>添加默认的附件</p>
+				<p>添加附件源
+可提前设置好，但直到发送文件的时候才从路径中取出文件。</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addDefaultAttachmentData:(NSData *)<em>attachment</em> mimeType:(NSString *)<em>mimeType</em> fileName:(NSString *)<em>filename</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addAttachmentDataSourceWithFilePath:(NSString *)<em>filePath</em> mimeType:(nullable NSString *)<em>mimeType</em> fileName:(nullable NSString *)<em>fileName</em></code></div>
 
 		    
 			
@@ -244,17 +245,17 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>attachment</code></th>
-						<td><p>附件</p></td>
+						<th scope="row" class="argument-name"><code>filePath</code></th>
+						<td><p>文件路径</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>mimeType</code></th>
-						<td><p>附件类型</p></td>
+						<td><p>文件类型</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>filename</code></th>
+						<th scope="row" class="argument-name"><code>fileName</code></th>
 						<td><p>文件名</p></td>
 					</tr>
 				

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/EmailManager.html">
+	<File path="Classes/EmailAttachmentDataSource.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/EmailManager</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/EmailAttachmentDataSource</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
@@ -13,257 +13,110 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/defaultAttachmentData</TokenIdentifier>
-			<Abstract type="html">默认的附件</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EmailAttachmentDataSource/setFilePath:</TokenIdentifier>
+			<Abstract type="html">文件路径（必填）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>- (NSMutableArray&lt;EmailAttachmentData*&gt; *)defaultAttachmentData</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *filePath</Declaration>
 			
 			
-			<Anchor>//api/name/defaultAttachmentData</Anchor>
+			<Anchor>//api/name/filePath</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/configDefaultCompose:</TokenIdentifier>
-			<Abstract type="html">配置默认compose</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EmailAttachmentDataSource/filePath</TokenIdentifier>
+			<Abstract type="html">文件路径（必填）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)configDefaultCompose:(void ( ^ ) ( EmailManager *))defaultCompose</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>defaultCompose</Name>
-					<Abstract type="html">默认的compose</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *filePath</Declaration>
 			
-			<Anchor>//api/name/configDefaultCompose:</Anchor>
+			
+			<Anchor>//api/name/filePath</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/addDefaultAttachmentData:mimeType:fileName:</TokenIdentifier>
-			<Abstract type="html">添加默认的附件</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EmailAttachmentDataSource/filePath</TokenIdentifier>
+			<Abstract type="html">文件路径（必填）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)addDefaultAttachmentData:(NSData *)attachment mimeType:(NSString *)mimeType fileName:(NSString *)filename</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>attachment</Name>
-					<Abstract type="html">附件</Abstract>
-				</Parameter><Parameter>
-					<Name>mimeType</Name>
-					<Abstract type="html">附件类型</Abstract>
-				</Parameter><Parameter>
-					<Name>filename</Name>
-					<Abstract type="html">文件名</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *filePath</Declaration>
 			
-			<Anchor>//api/name/addDefaultAttachmentData:mimeType:fileName:</Anchor>
+			
+			<Anchor>//api/name/filePath</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/sendEmail:completion:fail:</TokenIdentifier>
-			<Abstract type="html">发送邮件</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EmailAttachmentDataSource/setMimeType:</TokenIdentifier>
+			<Abstract type="html">文件mime类型（可选）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>- (void)sendEmail:(void ( ^ ) ( MFMailComposeViewController *mailCompose ))email completion:(void ( ^ ) ( MFMailComposeResult result ))completion fail:(void ( ^ ) ( NSError *error ))fail</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>email</Name>
-					<Abstract type="html">邮件内容</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">发送完成回调</Abstract>
-				</Parameter><Parameter>
-					<Name>fail</Name>
-					<Abstract type="html">发送失败回调</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (copy, nonatomic) NSString *mimeType</Declaration>
 			
-			<Anchor>//api/name/sendEmail:completion:fail:</Anchor>
+			
+			<Anchor>//api/name/mimeType</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/setDefaultToRecipients:</TokenIdentifier>
-			<Abstract type="html">默认的收件人</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EmailAttachmentDataSource/mimeType</TokenIdentifier>
+			<Abstract type="html">文件mime类型（可选）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultToRecipients</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *mimeType</Declaration>
 			
 			
-			<Anchor>//api/name/defaultToRecipients</Anchor>
+			<Anchor>//api/name/mimeType</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/defaultToRecipients</TokenIdentifier>
-			<Abstract type="html">默认的收件人</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EmailAttachmentDataSource/mimeType</TokenIdentifier>
+			<Abstract type="html">文件mime类型（可选）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultToRecipients</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *mimeType</Declaration>
 			
 			
-			<Anchor>//api/name/defaultToRecipients</Anchor>
+			<Anchor>//api/name/mimeType</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EmailManager/defaultToRecipients</TokenIdentifier>
-			<Abstract type="html">默认的收件人</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EmailAttachmentDataSource/setFileName:</TokenIdentifier>
+			<Abstract type="html">文件名（可选，默认为实体文件名）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultToRecipients</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *fileName</Declaration>
 			
 			
-			<Anchor>//api/name/defaultToRecipients</Anchor>
+			<Anchor>//api/name/fileName</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/setDefaultCcRecipients:</TokenIdentifier>
-			<Abstract type="html">默认的抄送</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/EmailAttachmentDataSource/fileName</TokenIdentifier>
+			<Abstract type="html">文件名（可选，默认为实体文件名）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultCcRecipients</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *fileName</Declaration>
 			
 			
-			<Anchor>//api/name/defaultCcRecipients</Anchor>
+			<Anchor>//api/name/fileName</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/defaultCcRecipients</TokenIdentifier>
-			<Abstract type="html">默认的抄送</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/EmailAttachmentDataSource/fileName</TokenIdentifier>
+			<Abstract type="html">文件名（可选，默认为实体文件名）</Abstract>
+			<DeclaredIn>EmailAttachmentDataSource.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultCcRecipients</Declaration>
-			
-			
-			<Anchor>//api/name/defaultCcRecipients</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EmailManager/defaultCcRecipients</TokenIdentifier>
-			<Abstract type="html">默认的抄送</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultCcRecipients</Declaration>
+			<Declaration>@property (copy, nonatomic) NSString *fileName</Declaration>
 			
 			
-			<Anchor>//api/name/defaultCcRecipients</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/setDefaultBccRecipients:</TokenIdentifier>
-			<Abstract type="html">默认的密送</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultBccRecipients</Declaration>
-			
-			
-			<Anchor>//api/name/defaultBccRecipients</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/defaultBccRecipients</TokenIdentifier>
-			<Abstract type="html">默认的密送</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultBccRecipients</Declaration>
-			
-			
-			<Anchor>//api/name/defaultBccRecipients</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EmailManager/defaultBccRecipients</TokenIdentifier>
-			<Abstract type="html">默认的密送</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (strong, nonatomic) NSArray&lt;NSString*&gt; *defaultBccRecipients</Declaration>
-			
-			
-			<Anchor>//api/name/defaultBccRecipients</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/setDefaultSubject:</TokenIdentifier>
-			<Abstract type="html">默认的主题</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic) NSString *defaultSubject</Declaration>
-			
-			
-			<Anchor>//api/name/defaultSubject</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/defaultSubject</TokenIdentifier>
-			<Abstract type="html">默认的主题</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic) NSString *defaultSubject</Declaration>
-			
-			
-			<Anchor>//api/name/defaultSubject</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EmailManager/defaultSubject</TokenIdentifier>
-			<Abstract type="html">默认的主题</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic) NSString *defaultSubject</Declaration>
-			
-			
-			<Anchor>//api/name/defaultSubject</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/setDefaultMessageBody:</TokenIdentifier>
-			<Abstract type="html">默认的body</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic) NSString *defaultMessageBody</Declaration>
-			
-			
-			<Anchor>//api/name/defaultMessageBody</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/EmailManager/defaultMessageBody</TokenIdentifier>
-			<Abstract type="html">默认的body</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic) NSString *defaultMessageBody</Declaration>
-			
-			
-			<Anchor>//api/name/defaultMessageBody</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/EmailManager/defaultMessageBody</TokenIdentifier>
-			<Abstract type="html">默认的body</Abstract>
-			<DeclaredIn>EmailManager.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic) NSString *defaultMessageBody</Declaration>
-			
-			
-			<Anchor>//api/name/defaultMessageBody</Anchor>
+			<Anchor>//api/name/fileName</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

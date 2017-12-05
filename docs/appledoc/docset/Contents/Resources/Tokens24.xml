@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSString+AXExtension.html">
+	<File path="Categories/NSString+AXAppendExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXExtension)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXAppendExtension)</TokenIdentifier>
+			<Abstract type="html">汉字转拼音</Abstract>
 			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
             
 			
@@ -13,75 +13,74 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/absoluteURL</TokenIdentifier>
-			<Abstract type="html">以当前字符串为路径的URL</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/append</TokenIdentifier>
+			<Abstract type="html">拼接字符串</Abstract>
 			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable NSURL *)absoluteURL</Declaration>
+			<Declaration>- (NSString *( ^ ) ( NSString *string ))append</Declaration>
 			
-			<ReturnValue><Abstract type="html">以当前字符串为路径的URL</Abstract></ReturnValue>
-			<Anchor>//api/name/absoluteURL</Anchor>
+			
+			<Anchor>//api/name/append</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/isURLString</TokenIdentifier>
-			<Abstract type="html">是不是URL字符串</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendNSInteger</TokenIdentifier>
+			<Abstract type="html">拼接NSInteger</Abstract>
 			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isURLString</Declaration>
+			<Declaration>- (NSString *( ^ ) ( NSInteger x ))appendNSInteger</Declaration>
 			
-			<ReturnValue><Abstract type="html">是不是URL字符串</Abstract></ReturnValue>
-			<Anchor>//api/name/isURLString</Anchor>
+			
+			<Anchor>//api/name/appendNSInteger</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/image</TokenIdentifier>
-			<Abstract type="html">以当前字符串为名的图片</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendNSUInteger</TokenIdentifier>
+			<Abstract type="html">拼接NSUInteger</Abstract>
 			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable UIImage *)image</Declaration>
+			<Declaration>- (NSString *( ^ ) ( NSUInteger x ))appendNSUInteger</Declaration>
 			
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/image</Anchor>
+			
+			<Anchor>//api/name/appendNSUInteger</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_textHeightWithFont:width:</TokenIdentifier>
-			<Abstract type="html">文本在指定字体、宽度时候需要的高度</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendCGFloat</TokenIdentifier>
+			<Abstract type="html">拼接CGFloat</Abstract>
 			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>font</Name>
-					<Abstract type="html">字体</Abstract>
-				</Parameter><Parameter>
-					<Name>width</Name>
-					<Abstract type="html">文本框宽度</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">文本框高度</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_textHeightWithFont:width:</Anchor>
+			<Declaration>- (NSString *( ^ ) ( CGFloat x ))appendCGFloat</Declaration>
+			
+			
+			<Anchor>//api/name/appendCGFloat</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/laterVersion:</TokenIdentifier>
-			<Abstract type="html">比较两个版本（返回较新的版本）</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendReturn</TokenIdentifier>
+			<Abstract type="html">拼接换行符</Abstract>
 			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)laterVersion:(NSString *)version</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>version</Name>
-					<Abstract type="html">要对比的另一个版本</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">较新的版本</Abstract></ReturnValue>
-			<Anchor>//api/name/laterVersion:</Anchor>
+			<Declaration>- (NSString *( ^ ) ( void ))appendReturn</Declaration>
+			
+			
+			<Anchor>//api/name/appendReturn</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/prefix</TokenIdentifier>
+			<Abstract type="html">添加前缀（在前面拼接字符串）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (NSString *( ^ ) ( NSString *string ))prefix</Declaration>
+			
+			
+			<Anchor>//api/name/prefix</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

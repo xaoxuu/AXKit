@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/AXKitErrorCode.html">
+	<File path="Protocols/AXTableViewCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/AXKitErrorCode</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/AXTableViewCell</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
+			<DeclaredIn>AXTableViewCell.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodePushNavVC</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>AXKitErrorCodePushNavVC</Declaration>
-            
-            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AXTableViewCell/setModel:</TokenIdentifier>
+			<Abstract type="html">cell必须要有数据模型</Abstract>
+			<DeclaredIn>AXTableViewCell.h</DeclaredIn>
+			
+			<Declaration>- (void)setModel:(AXTableRowModelType *)model</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>model</Name>
+					<Abstract type="html">数据模型</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setModel:</Anchor>
             <NodeRef refid="57"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodeObjectForKeyNotFound</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>AXKitErrorCodeObjectForKeyNotFound</Declaration>
-            
-            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
-            
-            <NodeRef refid="57"/>
-        </Token>
+		</Token>
+		
         
         
 	</File>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/LayerShadow.html">
+	<File path="Constants/AXKitErrorCode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/LayerShadow</TokenIdentifier>
-			<Abstract type="html">阴影效果</Abstract>
-			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/AXKitErrorCode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
@@ -14,91 +14,21 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowNone</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodePushNavVC</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowNone</Declaration>
+            <Declaration>AXKitErrorCodePushNavVC</Declaration>
             
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
             
             <NodeRef refid="58"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowDownLight</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/AXKitErrorCodeObjectForKeyNotFound</TokenIdentifier>
             <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowDownLight</Declaration>
+            <Declaration>AXKitErrorCodeObjectForKeyNotFound</Declaration>
             
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowDownNormal</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowDownNormal</Declaration>
-            
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowDownFloat</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowDownFloat</Declaration>
-            
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowUpLight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowUpLight</Declaration>
-            
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowUpNormal</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowUpNormal</Declaration>
-            
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowCenterLight</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowCenterLight</Declaration>
-            
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowCenterNormal</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowCenterNormal</Declaration>
-            
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
-            
-            <NodeRef refid="58"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LayerShadowCenterHeavy</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>LayerShadowCenterHeavy</Declaration>
-            
-            <DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
+            <DeclaredIn>_AXKitHelpServices.h</DeclaredIn>
             
             <NodeRef refid="58"/>
         </Token>

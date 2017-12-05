@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UITextView+AXExtension.html">
+	<File path="Categories/UITextField+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UITextView(AXExtension)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/UITextField(AXExtension)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UITextView+AXExtension.h</DeclaredIn>
+			<DeclaredIn>UITextField+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
@@ -13,9 +13,21 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UITextView/ax_adjustViewFrameWithKeyboard:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/UITextField/ax_clearText</TokenIdentifier>
+			<Abstract type="html">清空文本内容</Abstract>
+			<DeclaredIn>UITextField+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_clearText</Declaration>
+			
+			
+			<Anchor>//api/name/ax_clearText</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UITextField/ax_adjustViewFrameWithKeyboard:</TokenIdentifier>
 			<Abstract type="html">当键盘弹出的时候调整某个view的frame</Abstract>
-			<DeclaredIn>UITextView+AXExtension.h</DeclaredIn>
+			<DeclaredIn>UITextField+AXExtension.h</DeclaredIn>
 			
 			<Declaration>- (void)ax_adjustViewFrameWithKeyboard:(UIView *)view</Declaration>
 			<Parameters>
@@ -26,26 +38,6 @@
 			</Parameters>
 			
 			<Anchor>//api/name/ax_adjustViewFrameWithKeyboard:</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UITextView/ax_heightWithText:heightRange:</TokenIdentifier>
-			<Abstract type="html">获取TextView的高度</Abstract>
-			<DeclaredIn>UITextView+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (CGFloat)ax_heightWithText:(NSString *)text heightRange:(AXFloatRange)range</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>text</Name>
-					<Abstract type="html">TextView的文本</Abstract>
-				</Parameter><Parameter>
-					<Name>range</Name>
-					<Abstract type="html">高度范围（保证高度值不会超出此范围）</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">高度</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_heightWithText:heightRange:</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		

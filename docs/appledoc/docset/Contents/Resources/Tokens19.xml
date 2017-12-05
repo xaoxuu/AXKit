@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSDate+AXExtension.html">
+	<File path="Categories/NSBundle+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSDate(AXExtension)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>NSDate+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSBundle(AXExtension)</TokenIdentifier>
+			<Abstract type="html">将view里所有的控件中的文字转换成NSLocalizedString（含所有子视图中的所有控件，耗费性能，慎用）</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,31 +13,182 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDate/dateInteger</TokenIdentifier>
-			<Abstract type="html">8位数的整型值(yyyyMMdd)</Abstract>
-			<DeclaredIn>NSDate+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleDisplayName</TokenIdentifier>
+			<Abstract type="html">bundle display name</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (NSInteger)dateInteger</Declaration>
+			<Declaration>- (NSString *)ax_bundleDisplayName</Declaration>
 			
-			<ReturnValue><Abstract type="html">8位数的整型值(yyyyMMdd)</Abstract></ReturnValue>
-			<Anchor>//api/name/dateInteger</Anchor>
+			<ReturnValue><Abstract type="html">bundle display name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleDisplayName</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSDate/dateWithDateInteger:</TokenIdentifier>
-			<Abstract type="html">将8位数的日期值(yyyyMMdd)转换成日期</Abstract>
-			<DeclaredIn>NSDate+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleName</TokenIdentifier>
+			<Abstract type="html">bundle name</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
 			
-			<Declaration>+ (nullable NSDate *)dateWithDateInteger:(NSInteger)dateInteger</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>dateInteger</Name>
-					<Abstract type="html">8位数的整型值(yyyyMMdd)</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">日期</Abstract></ReturnValue>
-			<Anchor>//api/name/dateWithDateInteger:</Anchor>
+			<Declaration>- (NSString *)ax_bundleName</Declaration>
+			
+			<ReturnValue><Abstract type="html">bundle name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleName</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleShortVersionString</TokenIdentifier>
+			<Abstract type="html">bundle short version string</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)ax_bundleShortVersionString</Declaration>
+			
+			<ReturnValue><Abstract type="html">bundle short version string</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleShortVersionString</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_bundleVersion</TokenIdentifier>
+			<Abstract type="html">bundle build version string</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)ax_bundleVersion</Declaration>
+			
+			<ReturnValue><Abstract type="html">bundle build version string</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_bundleVersion</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_mainBundleId</TokenIdentifier>
+			<Abstract type="html">main bundle id</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_mainBundleId</Declaration>
+			
+			<ReturnValue><Abstract type="html">main bundle id</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_mainBundleId</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appDisplayName</TokenIdentifier>
+			<Abstract type="html">app name (CFBundleDisplayName)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appDisplayName</Declaration>
+			
+			<ReturnValue><Abstract type="html">app name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appDisplayName</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appName</TokenIdentifier>
+			<Abstract type="html">app name (CFBundleDisplayName)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appName</Declaration>
+			
+			<ReturnValue><Abstract type="html">app name</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appName</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appVersion</TokenIdentifier>
+			<Abstract type="html">app version (CFBundleShortVersionString)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appVersion</Declaration>
+			
+			<ReturnValue><Abstract type="html">app version</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appVersion</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appBuild</TokenIdentifier>
+			<Abstract type="html">app build (CFBundleVersion)</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appBuild</Declaration>
+			
+			<ReturnValue><Abstract type="html">app build</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appBuild</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_localizedInfoDictionary</TokenIdentifier>
+			<Abstract type="html">bundle localized info dictionary</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)ax_localizedInfoDictionary</Declaration>
+			
+			<ReturnValue><Abstract type="html">bundle localized info dictionary</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_localizedInfoDictionary</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_infoDictionary</TokenIdentifier>
+			<Abstract type="html">bundle info dictionary</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSDictionary *)ax_infoDictionary</Declaration>
+			
+			<ReturnValue><Abstract type="html">bundle info dictionary</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_infoDictionary</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appIconPath</TokenIdentifier>
+			<Abstract type="html">appicon path</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appIconPath</Declaration>
+			
+			<ReturnValue><Abstract type="html">appicon path</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appIconPath</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appIcon</TokenIdentifier>
+			<Abstract type="html">appicon</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (UIImage *)ax_appIcon</Declaration>
+			
+			<ReturnValue><Abstract type="html">appicon</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appIcon</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appLaunchImagePath</TokenIdentifier>
+			<Abstract type="html">启动图片路径</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)ax_appLaunchImagePath</Declaration>
+			
+			<ReturnValue><Abstract type="html">启动图片路径</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appLaunchImagePath</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSBundle/ax_appLaunchImage</TokenIdentifier>
+			<Abstract type="html">启动图片</Abstract>
+			<DeclaredIn>NSBundle+AXExtension.h</DeclaredIn>
+			
+			<Declaration>+ (UIImage *)ax_appLaunchImage</Declaration>
+			
+			<ReturnValue><Abstract type="html">启动图片</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_appLaunchImage</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

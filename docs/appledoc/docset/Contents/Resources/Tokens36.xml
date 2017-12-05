@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIImage+AXExtension.html">
+	<File path="Categories/UIControl+AXBlockWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIImage(AXExtension)</TokenIdentifier>
-			<Abstract type="html">缩放到某个长宽比</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/UIControl(AXBlockWrapper)</TokenIdentifier>
+			<Abstract type="html">Block control event handling for UIControl.</Abstract>
+			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="36"/>
@@ -13,140 +13,57 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithColor:size:alpha:</TokenIdentifier>
-			<Abstract type="html">创建一个纯色图片</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIControl/ax_addEventHandler:forControlEvents:</TokenIdentifier>
+			<Abstract type="html">Adds a block for a particular event to an internal dispatch table.</Abstract>
+			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (UIImage *)ax_imageWithColor:(UIColor *)color size:(CGSize)size alpha:(float)alpha</Declaration>
+			<Declaration>- (void)ax_addEventHandler:(void ( ^ ) ( __kindof UIControl *sender ))handler forControlEvents:(UIControlEvents)controlEvents</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>color</Name>
-					<Abstract type="html">颜色</Abstract>
+					<Name>handler</Name>
+					<Abstract type="html">A block representing an action message, with an argument for the sender.</Abstract>
 				</Parameter><Parameter>
-					<Name>size</Name>
-					<Abstract type="html">尺寸</Abstract>
-				</Parameter><Parameter>
-					<Name>alpha</Name>
-					<Abstract type="html">alpha值</Abstract>
+					<Name>controlEvents</Name>
+					<Abstract type="html">A bitmask specifying the control events for which the action message is sent.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithColor:size:alpha:</Anchor>
+			
+			<Anchor>//api/name/ax_addEventHandler:forControlEvents:</Anchor>
             <NodeRef refid="36"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithView:</TokenIdentifier>
-			<Abstract type="html">将view转换成图片</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIControl/ax_removeEventHandlersForControlEvents:</TokenIdentifier>
+			<Abstract type="html">Removes all control event blocks associated with the given mask of control
+events.</Abstract>
+			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (UIImage *)ax_imageWithView:(UIView *)view</Declaration>
+			<Declaration>- (void)ax_removeEventHandlersForControlEvents:(UIControlEvents)controlEvents</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">view</Abstract>
+					<Name>controlEvents</Name>
+					<Abstract type="html">A bitmask specifying the control events for which the block will be removed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithView:</Anchor>
+			
+			<Anchor>//api/name/ax_removeEventHandlersForControlEvents:</Anchor>
             <NodeRef refid="36"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithBundleImageName:</TokenIdentifier>
-			<Abstract type="html">从bundle中读取图片（自动追加.png/.jpg/.jpeg扩展名）</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIControl/ax_hasEventHandlersForControlEvents:</TokenIdentifier>
+			<Abstract type="html">Checks to see if the control has any blocks for a particular event combination.</Abstract>
+			<DeclaredIn>UIControl+AXBlockWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (UIImage *)ax_imageWithBundleImageName:(NSString *)name</Declaration>
+			<Declaration>- (NSUInteger)ax_hasEventHandlersForControlEvents:(UIControlEvents)controlEvents</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">图片名</Abstract>
+					<Name>controlEvents</Name>
+					<Abstract type="html">A bitmask specifying the control events for which to check for blocks.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithBundleImageName:</Anchor>
-            <NodeRef refid="36"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_imageWithBundleImageName:count:</TokenIdentifier>
-			<Abstract type="html">从bundle中读取一组图片（自动追加.png/.jpg/.jpeg扩展名）</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>+ (NSArray&lt;UIImage*&gt; *)ax_imageWithBundleImageName:(NSString *)name count:(NSUInteger)count</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">图片名（image,不含序号）</Abstract>
-				</Parameter><Parameter>
-					<Name>count</Name>
-					<Abstract type="html">图片数量</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">图片&lt;image0,image1,image2, ...&gt;</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_imageWithBundleImageName:count:</Anchor>
-            <NodeRef refid="36"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_squareImage</TokenIdentifier>
-			<Abstract type="html">把图片剪裁为正方形</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIImage *)ax_squareImage</Declaration>
-			
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_squareImage</Anchor>
-            <NodeRef refid="36"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_roundedImage</TokenIdentifier>
-			<Abstract type="html">把图片剪裁为圆形</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIImage *)ax_roundedImage</Declaration>
-			
-			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_roundedImage</Anchor>
-            <NodeRef refid="36"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_blurEffectWithFactor:</TokenIdentifier>
-			<Abstract type="html">毛玻璃效果</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (UIImage *)ax_blurEffectWithFactor:(CGFloat)ratio</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">毛玻璃效果指数</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">毛玻璃效果处理后的图片</Abstract></ReturnValue>
-			<Anchor>//api/name/ax_blurEffectWithFactor:</Anchor>
-            <NodeRef refid="36"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIImage/ax_blurEffectWithFactor:completion:</TokenIdentifier>
-			<Abstract type="html">毛玻璃效果</Abstract>
-			<DeclaredIn>UIImage+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_blurEffectWithFactor:(CGFloat)ratio completion:(void ( ^ ) ( UIImage *image ))completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">毛玻璃效果指数</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">处理完成后执行的block</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_blurEffectWithFactor:completion:</Anchor>
+			<ReturnValue><Abstract type="html">Returns YES if there are blocks for these control events, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_hasEventHandlersForControlEvents:</Anchor>
             <NodeRef refid="36"/>
 		</Token>
 		

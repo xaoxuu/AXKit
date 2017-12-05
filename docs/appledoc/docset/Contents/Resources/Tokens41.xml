@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UINavigationItem+AXExtension.html">
+	<File path="Categories/UINavigationController+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UINavigationItem(AXExtension)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/UINavigationController(AXExtension)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="41"/>
@@ -13,26 +13,102 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationItem/ax_hideBackBarButtonTitle</TokenIdentifier>
-			<Abstract type="html">隐藏返回按钮的标题</Abstract>
-			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_hidesBottomBarWhenPushed:</TokenIdentifier>
+			<Abstract type="html">隐藏子控制器的BottomBar</Abstract>
+			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_hideBackBarButtonTitle</Declaration>
+			<Declaration>- (void)ax_hidesBottomBarWhenPushed:(BOOL)hide</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hide</Name>
+					<Abstract type="html">是否隐藏</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/ax_hideBackBarButtonTitle</Anchor>
+			<Anchor>//api/name/ax_hidesBottomBarWhenPushed:</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UINavigationItem/ax_hideBackBarButton</TokenIdentifier>
-			<Abstract type="html">隐藏返回按钮（同时也不能右划返回）</Abstract>
-			<DeclaredIn>UINavigationItem+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_pushViewControllerNamed:</TokenIdentifier>
+			<Abstract type="html">push到指定name的控制器，animated为YES</Abstract>
+			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_hideBackBarButton</Declaration>
+			<Declaration>- (void)ax_pushViewControllerNamed:(NSString *)vcName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>vcName</Name>
+					<Abstract type="html">VC的name</Abstract>
+				</Parameter>
+			</Parameters>
 			
+			<Anchor>//api/name/ax_pushViewControllerNamed:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_pushViewControllerNamed:animated:completion:failure:</TokenIdentifier>
+			<Abstract type="html">push到指定name的控制器</Abstract>
+			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
 			
-			<Anchor>//api/name/ax_hideBackBarButton</Anchor>
+			<Declaration>- (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void ( ^ ) ( UIViewController *targetVC ))completion failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>vcName</Name>
+					<Abstract type="html">VC的name</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">是否显示动画</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">完成后的回调</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">失败时的错误信息（不存在或者self不属于NavController）</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_pushViewControllerNamed:animated:completion:failure:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_popToViewControllerWithIndexFromRoot:animated:</TokenIdentifier>
+			<Abstract type="html">pop到指定viewController</Abstract>
+			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index animated:(BOOL)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">从rootVC开始向后数的index，rootVC为0</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">是否显示动画</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_popToViewControllerWithIndexFromRoot:animated:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UINavigationController/ax_popToViewControllerWithIndexFromSelf:animated:</TokenIdentifier>
+			<Abstract type="html">pop到指定viewController</Abstract>
+			<DeclaredIn>UINavigationController+AXExtension.h</DeclaredIn>
+			
+			<Declaration>- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index animated:(BOOL)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">从当前viewController开始向前数的index，当前VC为0</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">是否显示动画</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ax_popToViewControllerWithIndexFromSelf:animated:</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		

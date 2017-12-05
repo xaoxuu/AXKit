@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIView+AXAnimatedWrapper.html">
+	<File path="Categories/UITextView+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIView(AXAnimatedWrapper)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/UITextView(AXExtension)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
+			<DeclaredIn>UITextView+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="50"/>
@@ -13,71 +13,39 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_animatedScaleIn:duration:completion:</TokenIdentifier>
-			<Abstract type="html">build in 动画</Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UITextView/ax_adjustViewFrameWithKeyboard:</TokenIdentifier>
+			<Abstract type="html">当键盘弹出的时候调整某个view的frame</Abstract>
+			<DeclaredIn>UITextView+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_animatedScaleIn:(CGFloat)scale duration:(NSTimeInterval)duration completion:(void ( ^ ) ( BOOL finished ))completion</Declaration>
+			<Declaration>- (void)ax_adjustViewFrameWithKeyboard:(UIView *)view</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">缩放比例</Abstract>
-				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">持续时间</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">完成后执行</Abstract>
+					<Name>view</Name>
+					<Abstract type="html">需要调整的view</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_animatedScaleIn:duration:completion:</Anchor>
+			<Anchor>//api/name/ax_adjustViewFrameWithKeyboard:</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_animatedScale:duration:completion:</TokenIdentifier>
-			<Abstract type="html">动画</Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UITextView/ax_heightWithText:heightRange:</TokenIdentifier>
+			<Abstract type="html">获取TextView的高度</Abstract>
+			<DeclaredIn>UITextView+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration completion:(void ( ^ ) ( BOOL finished ))completion</Declaration>
+			<Declaration>- (CGFloat)ax_heightWithText:(NSString *)text heightRange:(AXFloatRange)range</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">缩放比例</Abstract>
+					<Name>text</Name>
+					<Abstract type="html">TextView的文本</Abstract>
 				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">持续时间</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">完成后执行</Abstract>
+					<Name>range</Name>
+					<Abstract type="html">高度范围（保证高度值不会超出此范围）</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ax_animatedScale:duration:completion:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_animatedScaleOut:duration:completion:</TokenIdentifier>
-			<Abstract type="html">build out 动画</Abstract>
-			<DeclaredIn>UIView+AXAnimatedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_animatedScaleOut:(CGFloat)scale duration:(NSTimeInterval)duration completion:(void ( ^ ) ( BOOL finished ))completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">缩放比例</Abstract>
-				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">持续时间</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">完成后执行</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_animatedScaleOut:duration:completion:</Anchor>
+			<ReturnValue><Abstract type="html">高度</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_heightWithText:heightRange:</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		

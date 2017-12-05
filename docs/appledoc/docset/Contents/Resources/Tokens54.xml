@@ -1,90 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/AXTabBarController.html">
+	<File path="Categories/UIViewController+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/AXTabBarController</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AXTabBarController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/UIViewController(AXExtension)</TokenIdentifier>
+			<Abstract type="html">根据view controller的类名创建实例</Abstract>
+			<DeclaredIn>UIViewController+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="54"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AXTabBarController/classNameForBaseNavigationController</TokenIdentifier>
-			<Abstract type="html">导航栏基类名
-如果使用系统提供的UINavigationController而不进行继承，可以不实现此方法。</Abstract>
-			<DeclaredIn>AXTabBarController.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)classNameForBaseNavigationController</Declaration>
-			
-			<ReturnValue><Abstract type="html">导航栏基类名</Abstract></ReturnValue>
-			<Anchor>//api/name/classNameForBaseNavigationController</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AXTabBarController/configurationFilePath</TokenIdentifier>
-			<Abstract type="html">配置文件路径
-使用与本类同名的json文件作为配置文件时，可以不实现此方法。</Abstract>
-			<DeclaredIn>AXTabBarController.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)configurationFilePath</Declaration>
-			
-			<ReturnValue><Abstract type="html">配置文件路径</Abstract></ReturnValue>
-			<Anchor>//api/name/configurationFilePath</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AXTabBarController/configurationKeyForViewControllerName</TokenIdentifier>
-			<Abstract type="html">配置文件中ViewController的类名的key值，默认是&quot;vc&quot;</Abstract>
-			<DeclaredIn>AXTabBarController.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)configurationKeyForViewControllerName</Declaration>
-			
-			<ReturnValue><Abstract type="html">配置文件中ViewController的name的key值，默认是&quot;vc&quot;</Abstract></ReturnValue>
-			<Anchor>//api/name/configurationKeyForViewControllerName</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AXTabBarController/configurationKeyForViewControllerTitle</TokenIdentifier>
-			<Abstract type="html">配置文件中ViewController的类名的key值，默认是&quot;title&quot;</Abstract>
-			<DeclaredIn>AXTabBarController.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)configurationKeyForViewControllerTitle</Declaration>
-			
-			<ReturnValue><Abstract type="html">配置文件中ViewController的title的key值，默认是&quot;title&quot;</Abstract></ReturnValue>
-			<Anchor>//api/name/configurationKeyForViewControllerTitle</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AXTabBarController/configurationKeyForTabBarIconName</TokenIdentifier>
-			<Abstract type="html">配置文件中icon的key值，默认是&quot;icon&quot;</Abstract>
-			<DeclaredIn>AXTabBarController.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)configurationKeyForTabBarIconName</Declaration>
-			
-			<ReturnValue><Abstract type="html">配置文件中icon的key值，默认是&quot;icon&quot;</Abstract></ReturnValue>
-			<Anchor>//api/name/configurationKeyForTabBarIconName</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AXTabBarController/configurationKeyForTabBarSelectedIconName</TokenIdentifier>
-			<Abstract type="html">配置文件中选中状态的icon的key值，默认是&quot;icon_sel&quot;</Abstract>
-			<DeclaredIn>AXTabBarController.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)configurationKeyForTabBarSelectedIconName</Declaration>
-			
-			<ReturnValue><Abstract type="html">配置文件中选中状态的icon的key值，默认是&quot;icon_sel&quot;</Abstract></ReturnValue>
-			<Anchor>//api/name/configurationKeyForTabBarSelectedIconName</Anchor>
-            <NodeRef refid="54"/>
-		</Token>
 		
         
         

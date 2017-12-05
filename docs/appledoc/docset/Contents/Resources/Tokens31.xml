@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/UIApplication+AXExtension.html">
+	<File path="Categories/UIAlertController+AXWrapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/UIApplication(AXExtension)</TokenIdentifier>
-			<Abstract type="html">跳转到指定URLString</Abstract>
-			<DeclaredIn>UIApplication+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/UIAlertController(AXWrapper)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
@@ -13,74 +13,131 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIApplication/ax_openBluetoothSetting</TokenIdentifier>
-			<Abstract type="html">打开蓝牙设置</Abstract>
-			<DeclaredIn>UIApplication+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_showAlertWithTitle:message:actions:</TokenIdentifier>
+			<Abstract type="html">弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）</Abstract>
+			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (void)ax_openBluetoothSetting</Declaration>
+			<Declaration>+ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void ( ^ __nullable ) ( UIAlertController *alert ))actions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">标题</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">消息</Abstract>
+				</Parameter><Parameter>
+					<Name>actions</Name>
+					<Abstract type="html">按钮</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/ax_openBluetoothSetting</Anchor>
+			<Anchor>//api/name/ax_showAlertWithTitle:message:actions:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIApplication/ax_openWIFISetting</TokenIdentifier>
-			<Abstract type="html">打开WIFI设置</Abstract>
-			<DeclaredIn>UIApplication+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_showActionSheetWithTitle:message:actions:</TokenIdentifier>
+			<Abstract type="html">弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）</Abstract>
+			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (void)ax_openWIFISetting</Declaration>
+			<Declaration>+ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void ( ^ __nullable ) ( UIAlertController *alert ))actions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">标题</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">消息</Abstract>
+				</Parameter><Parameter>
+					<Name>actions</Name>
+					<Abstract type="html">按钮</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/ax_openWIFISetting</Anchor>
+			<Anchor>//api/name/ax_showActionSheetWithTitle:message:actions:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIApplication/ax_openNotificationSetting</TokenIdentifier>
-			<Abstract type="html">打开通知设置</Abstract>
-			<DeclaredIn>UIApplication+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addActionWithTitle:style:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个按钮</Abstract>
+			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (void)ax_openNotificationSetting</Declaration>
+			<Declaration>- (void)ax_addActionWithTitle:(nullable NSString *)title style:(UIAlertActionStyle)style handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">按钮标题</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">按钮样式</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">按钮事件</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/ax_openNotificationSetting</Anchor>
+			<Anchor>//api/name/ax_addActionWithTitle:style:handler:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIApplication/ax_openPhotosSetting</TokenIdentifier>
-			<Abstract type="html">打开相册设置</Abstract>
-			<DeclaredIn>UIApplication+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addCancelActionWithTitle:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个取消样式的按钮(标题传nil则为默认标题)</Abstract>
+			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (void)ax_openPhotosSetting</Declaration>
+			<Declaration>- (void)ax_addCancelActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">按钮标题</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">按钮事件</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/ax_openPhotosSetting</Anchor>
+			<Anchor>//api/name/ax_addCancelActionWithTitle:handler:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIApplication/ax_openSafariSetting</TokenIdentifier>
-			<Abstract type="html">打开浏览器设置</Abstract>
-			<DeclaredIn>UIApplication+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addDefaultActionWithTitle:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个默认样式的按钮(标题传nil则为默认标题)</Abstract>
+			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (void)ax_openSafariSetting</Declaration>
+			<Declaration>- (void)ax_addDefaultActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">按钮标题</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">按钮事件</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/ax_openSafariSetting</Anchor>
+			<Anchor>//api/name/ax_addDefaultActionWithTitle:handler:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIApplication/ax_openAppSetting</TokenIdentifier>
-			<Abstract type="html">打开当前app的设置页面</Abstract>
-			<DeclaredIn>UIApplication+AXExtension.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/UIAlertController/ax_addDestructiveActionWithTitle:handler:</TokenIdentifier>
+			<Abstract type="html">添加一个破坏性按钮（红色）(标题传nil则为默认标题)</Abstract>
+			<DeclaredIn>UIAlertController+AXWrapper.h</DeclaredIn>
 			
-			<Declaration>+ (void)ax_openAppSetting</Declaration>
+			<Declaration>- (void)ax_addDestructiveActionWithTitle:(nullable NSString *)title handler:(void ( ^ __nullable ) ( UIAlertAction *sender ))handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">按钮标题</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">按钮事件</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/ax_openAppSetting</Anchor>
+			<Anchor>//api/name/ax_addDestructiveActionWithTitle:handler:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		

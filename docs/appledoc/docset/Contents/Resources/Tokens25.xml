@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSString+AXFileStreamChainedWrapper.html">
+	<File path="Categories/NSString+AXExtension.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXFileStreamChainedWrapper)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString(AXExtension)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
@@ -13,230 +13,75 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readArray</TokenIdentifier>
-			<Abstract type="html">读取一个数组或可变数组(自动追加.plist)</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/absoluteURL</TokenIdentifier>
+			<Abstract type="html">以当前字符串为路径的URL</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable __kindof NSArray *( ^ ) ( void ))readArray</Declaration>
+			<Declaration>- (nullable NSURL *)absoluteURL</Declaration>
 			
-			<ReturnValue><Abstract type="html">数组</Abstract></ReturnValue>
-			<Anchor>//api/name/readArray</Anchor>
+			<ReturnValue><Abstract type="html">以当前字符串为路径的URL</Abstract></ReturnValue>
+			<Anchor>//api/name/absoluteURL</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readDictionary</TokenIdentifier>
-			<Abstract type="html">读取一个字典或可变字典(自动追加.plist)</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/isURLString</TokenIdentifier>
+			<Abstract type="html">是不是URL字符串</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable __kindof NSDictionary *( ^ ) ( void ))readDictionary</Declaration>
+			<Declaration>- (BOOL)isURLString</Declaration>
 			
-			<ReturnValue><Abstract type="html">字典</Abstract></ReturnValue>
-			<Anchor>//api/name/readDictionary</Anchor>
+			<ReturnValue><Abstract type="html">是不是URL字符串</Abstract></ReturnValue>
+			<Anchor>//api/name/isURLString</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readJson</TokenIdentifier>
-			<Abstract type="html">读取一个json文件(自动追加.json)</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/image</TokenIdentifier>
+			<Abstract type="html">以当前字符串为名的图片</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable id ( ^ ) ( void ))readJson</Declaration>
+			<Declaration>- (nullable UIImage *)image</Declaration>
 			
-			<ReturnValue><Abstract type="html">数组或字典</Abstract></ReturnValue>
-			<Anchor>//api/name/readJson</Anchor>
+			<ReturnValue><Abstract type="html">图片</Abstract></ReturnValue>
+			<Anchor>//api/name/image</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readTxt</TokenIdentifier>
-			<Abstract type="html">读取一个纯文本文件(自动追加.txt)</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/ax_textHeightWithFont:width:</TokenIdentifier>
+			<Abstract type="html">文本在指定字体、宽度时候需要的高度</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable NSString *( ^ ) ( void ))readTxt</Declaration>
-			
-			<ReturnValue><Abstract type="html">txt文件</Abstract></ReturnValue>
-			<Anchor>//api/name/readTxt</Anchor>
+			<Declaration>- (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>font</Name>
+					<Abstract type="html">字体</Abstract>
+				</Parameter><Parameter>
+					<Name>width</Name>
+					<Abstract type="html">文本框宽度</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">文本框高度</Abstract></ReturnValue>
+			<Anchor>//api/name/ax_textHeightWithFont:width:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/readArchivedFile</TokenIdentifier>
-			<Abstract type="html">解档一个已归档的文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSString/laterVersion:</TokenIdentifier>
+			<Abstract type="html">比较两个版本（返回较新的版本）</Abstract>
+			<DeclaredIn>NSString+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (nullable id ( ^ ) ( void ))readArchivedFile</Declaration>
-			
-			<ReturnValue><Abstract type="html">文件</Abstract></ReturnValue>
-			<Anchor>//api/name/readArchivedFile</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/saveFile</TokenIdentifier>
-			<Abstract type="html">保存一个文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (BOOL ( ^ ) ( id ))saveFile</Declaration>
-			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/saveFile</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/saveArchivedFile</TokenIdentifier>
-			<Abstract type="html">归档一个实现NSCoding协议的文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (BOOL ( ^ ) ( NSObject&lt;NSCoding&gt; *))saveArchivedFile</Declaration>
-			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/saveArchivedFile</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/saveStringByAppendingToEndOfFile</TokenIdentifier>
-			<Abstract type="html">拼接文本到沙盒文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (BOOL ( ^ ) ( NSString *))saveStringByAppendingToEndOfFile</Declaration>
-			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/saveStringByAppendingToEndOfFile</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/removeFile</TokenIdentifier>
-			<Abstract type="html">删除一个文件</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (BOOL ( ^ ) ( void ))removeFile</Declaration>
-			
-			<ReturnValue><Abstract type="html">成功与否</Abstract></ReturnValue>
-			<Anchor>//api/name/removeFile</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/mainBundlePath</TokenIdentifier>
-			<Abstract type="html">‘self’在mainBundle中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (nullable NSString *)mainBundlePath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在mainBundle中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/mainBundlePath</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/docPath</TokenIdentifier>
-			<Abstract type="html">‘self’在documents中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)docPath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在documents中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/docPath</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/cachePath</TokenIdentifier>
-			<Abstract type="html">‘self’在cache中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)cachePath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在cache中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/cachePath</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/tmpPath</TokenIdentifier>
-			<Abstract type="html">‘self’在tmp中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)tmpPath</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在tmp中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/tmpPath</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/path</TokenIdentifier>
-			<Abstract type="html">‘self’在NSSearchPathDirectory中的完整路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *( ^ ) ( NSSearchPathDirectory ))path</Declaration>
-			
-			<ReturnValue><Abstract type="html">‘self’在NSSearchPathDirectory中的完整路径</Abstract></ReturnValue>
-			<Anchor>//api/name/path</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/subpaths</TokenIdentifier>
-			<Abstract type="html">‘self’路径下的所有文件路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (nullable NSArray&lt;NSString*&gt; *( ^ ) ( NSString *__nullable ))subpaths</Declaration>
-			
-			
-			<Anchor>//api/name/subpaths</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/extension</TokenIdentifier>
-			<Abstract type="html">追加一个扩展名</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *( ^ ) ( NSString *))extension</Declaration>
-			
-			
-			<Anchor>//api/name/extension</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/appendPathComponent</TokenIdentifier>
-			<Abstract type="html">路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (NSString *( ^ ) ( NSString *))appendPathComponent</Declaration>
-			
-			
-			<Anchor>//api/name/appendPathComponent</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/isDirectoryExist</TokenIdentifier>
-			<Abstract type="html">创建路径是否存在</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (BOOL ( ^ ) ( void ))isDirectoryExist</Declaration>
-			
-			<ReturnValue><Abstract type="html">创建路径是否存在</Abstract></ReturnValue>
-			<Anchor>//api/name/isDirectoryExist</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/NSString/createDirectory</TokenIdentifier>
-			<Abstract type="html">如果不存在创建路径</Abstract>
-			<DeclaredIn>NSString+AXFileStreamChainedWrapper.h</DeclaredIn>
-			
-			<Declaration>- (BOOL ( ^ ) ( void ))createDirectory</Declaration>
-			
-			<ReturnValue><Abstract type="html">路径</Abstract></ReturnValue>
-			<Anchor>//api/name/createDirectory</Anchor>
+			<Declaration>- (NSString *)laterVersion:(NSString *)version</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>version</Name>
+					<Abstract type="html">要对比的另一个版本</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">较新的版本</Abstract></ReturnValue>
+			<Anchor>//api/name/laterVersion:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		

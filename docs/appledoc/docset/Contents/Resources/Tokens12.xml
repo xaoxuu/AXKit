@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/UIThemeFontModel.html">
+	<File path="Classes/UIThemeColorModel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/UIThemeFontModel</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/UIThemeColorModel</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>UIThemeModel.h</DeclaredIn>
             
@@ -13,77 +13,62 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeFontModel/setPrefersFontSize:</TokenIdentifier>
-			<Abstract type="html">偏好的字号，默认值为系统建议字号：14。
-当此数值变更时，custom的字号以相同的比例变更。</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/background</TokenIdentifier>
+			<Abstract type="html">background color</Abstract>
 			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>@property (assign, nonatomic) CGFloat prefersFontSize</Declaration>
+			<Declaration>- (UIColor *)background</Declaration>
 			
 			
-			<Anchor>//api/name/prefersFontSize</Anchor>
+			<Anchor>//api/name/background</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeFontModel/prefersFontSize</TokenIdentifier>
-			<Abstract type="html">偏好的字号，默认值为系统建议字号：14。
-当此数值变更时，custom的字号以相同的比例变更。</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/theme</TokenIdentifier>
+			<Abstract type="html">theme color</Abstract>
 			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>@property (assign, nonatomic) CGFloat prefersFontSize</Declaration>
+			<Declaration>- (UIColor *)theme</Declaration>
 			
 			
-			<Anchor>//api/name/prefersFontSize</Anchor>
+			<Anchor>//api/name/theme</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/UIThemeFontModel/prefersFontSize</TokenIdentifier>
-			<Abstract type="html">偏好的字号，默认值为系统建议字号：14。
-当此数值变更时，custom的字号以相同的比例变更。</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/accent</TokenIdentifier>
+			<Abstract type="html">accent color</Abstract>
 			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>@property (assign, nonatomic) CGFloat prefersFontSize</Declaration>
+			<Declaration>- (UIColor *)accent</Declaration>
 			
 			
-			<Anchor>//api/name/prefersFontSize</Anchor>
+			<Anchor>//api/name/accent</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeFontModel/setName:</TokenIdentifier>
-			<Abstract type="html">字体名（为空时是系统字体）</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/groupTableViewBackground</TokenIdentifier>
+			<Abstract type="html">组tableview背景色</Abstract>
 			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
+			<Declaration>- (UIColor *)groupTableViewBackground</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/groupTableViewBackground</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIThemeFontModel/name</TokenIdentifier>
-			<Abstract type="html">字体名（为空时是系统字体）</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/UIThemeColorModel/separatorColor</TokenIdentifier>
+			<Abstract type="html">分割线颜色</Abstract>
 			<DeclaredIn>UIThemeModel.h</DeclaredIn>
 			
-			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
+			<Declaration>- (UIColor *)separatorColor</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/UIThemeFontModel/name</TokenIdentifier>
-			<Abstract type="html">字体名（为空时是系统字体）</Abstract>
-			<DeclaredIn>UIThemeModel.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/separatorColor</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
