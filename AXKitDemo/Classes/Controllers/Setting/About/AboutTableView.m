@@ -26,7 +26,8 @@ static CGFloat const iconSize = 64;
 
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0.3*kScreenH)];
+    self.backgroundColor = [UIColor clearColor];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.width * 3 / 4)];
     
     // @xaoxuu: icon
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconSize, iconSize)];
@@ -51,6 +52,14 @@ static CGFloat const iconSize = 64;
 }
 
 - (void)ax_tableViewCell:(AXTableViewCellType *)cell willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 应该放在didLoad里面
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+    UIVisualEffectView *vev = [[UIVisualEffectView alloc] initWithFrame:cell.bounds];
+    UIVisualEffect *ve = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    vev.effect = ve;
+    cell.backgroundView = vev;
+    
+    
     AXTableRowModel *tmp = (AXTableRowModel *)model;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {

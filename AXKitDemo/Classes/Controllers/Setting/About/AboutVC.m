@@ -9,6 +9,9 @@
 #import "AboutVC.h"
 #import "AboutTableView.h"
 #import "FullWideButton.h"
+#import <UIImage+GIF.h>
+
+static UIImage *cachedImage;
 
 @interface AboutVC ()
 
@@ -57,7 +60,26 @@
 //
 //        }];
     }].addToView(self.view).layoutToBottom();
+    
+    UIImageView *bg = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    bg.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view insertSubview:bg belowSubview:tableView];
+    if (cachedImage) {
+        bg.image = cachedImage;
+    } else {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"header" ofType:@"gif"];
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            cachedImage = [UIImage sd_animatedGIFWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                bg.image = cachedImage;
+            });
+        });
+    }
+    
 }
+
+
 
 
 
