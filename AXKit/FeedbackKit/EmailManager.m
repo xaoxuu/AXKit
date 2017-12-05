@@ -110,20 +110,22 @@ EmailManager *manager = nil;
             [mailCompose setMessageBody:self.defaultMessageBody isHTML:NO];
         }
         
-        [self.attachmentDataSource enumerateObjectsUsingBlock:^(EmailAttachmentDataSource * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSData *data = [NSData dataWithContentsOfFile:obj.filePath];
-            NSString *fileName = obj.fileName;
-            if (!fileName.length) {
-                fileName = obj.filePath.lastPathComponent;
-            }
-            [mailCompose addAttachmentData:data mimeType:obj.mimeType fileName:fileName];
-        }];
-        
-        
         // callback
         if (email) {
             email(mailCompose);
         }
+        
+        [self.attachmentDataSource enumerateObjectsUsingBlock:^(EmailAttachmentDataSource * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSData *data = [NSData dataWithContentsOfFile:obj.filePath];
+            if (data) {
+                NSString *fileName = obj.fileName;
+                if (!fileName.length) {
+                    fileName = obj.filePath.lastPathComponent;
+                }
+                [mailCompose addAttachmentData:data mimeType:obj.mimeType fileName:fileName];
+            }
+        }];
+        
         self.block_callback = completion;
         [AXRootViewController() presentViewController:mailCompose animated:YES completion:nil];
     }
