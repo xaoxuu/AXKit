@@ -117,12 +117,12 @@ EmailManager *manager = nil;
         
         [self.attachmentDataSource enumerateObjectsUsingBlock:^(EmailAttachmentDataSource * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSData *data = [NSData dataWithContentsOfFile:obj.filePath];
-            if (data) {
+            if (data.length) { // 如果有data.length==0的文件加进去，MFMailComposeViewController会自动dismiss
                 NSString *fileName = obj.fileName;
                 if (!fileName.length) {
                     fileName = obj.filePath.lastPathComponent;
                 }
-                [mailCompose addAttachmentData:data mimeType:obj.mimeType fileName:fileName];
+                [mailCompose addAttachmentData:data mimeType:obj.mimeType?:@"" fileName:fileName];
             }
         }];
         
