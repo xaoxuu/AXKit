@@ -13,10 +13,10 @@
 typedef void(^BlockType)(MFMailComposeResult);
 EmailManager *manager = nil;
 
+
 @interface EmailManager()
 
 @property (copy, nonatomic) BlockType block_callback;
-
 
 
 @end
@@ -47,9 +47,44 @@ EmailManager *manager = nil;
     return manager;
 }
 
+- (NSMutableArray<EmailAttachmentData *> *)defaultAttachmentData{
+    if (!_defaultAttachmentData) {
+        _defaultAttachmentData = [NSMutableArray array];
+    }
+    return _defaultAttachmentData;
+}
 
 #pragma mark - public func
 
+/**
+ 配置默认compose
+ 
+ @param defaultCompose 默认的compose
+ */
+- (void)configDefaultCompose:(void (^)(EmailManager *))defaultCompose{
+    if (defaultCompose) {
+        defaultCompose(self);
+    }
+}
+
+/**
+ 添加默认的附件
+ 
+ @param attachment 附件
+ @param mimeType 附件类型
+ @param filename 文件名
+ */
+- (void)addDefaultAttachmentData:(NSData *)attachment mimeType:(NSString *)mimeType fileName:(NSString *)filename{
+    [self.defaultAttachmentData addObject:[EmailAttachmentData attachmentDataWithData:attachment mimeType:mimeType fileName:filename]];
+}
+
+/**
+ 发送邮件
+ 
+ @param email 邮件内容
+ @param completion 发送完成回调
+ @param fail 发送失败回调
+ */
 - (void)sendEmail:(void (^)(MFMailComposeViewController *mailCompose))email completion:(void (^)(MFMailComposeResult result))completion fail:(void (^)(NSError *error))fail{
     if (![MFMailComposeViewController canSendMail]) {
         if (fail) {
@@ -67,9 +102,15 @@ EmailManager *manager = nil;
         [mailCompose setToRecipients:self.defaultToRecipients];
         [mailCompose setCcRecipients:self.defaultCcRecipients];
         [mailCompose setBccRecipients:self.defaultBccRecipients];
+        [mailCompose setSubject:self.defaultSubject];
+        
         if (self.defaultMessageBody.length) {
             [mailCompose setMessageBody:self.defaultMessageBody isHTML:NO];
         }
+        
+        [self.defaultAttachmentData enumerateObjectsUsingBlock:^(EmailAttachmentData * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [mailCompose addAttachmentData:obj.data mimeType:obj.mimeType fileName:obj.fileName];
+        }];
         
         // callback
         if (email) {
@@ -105,4 +146,5 @@ EmailManager *manager = nil;
     }
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
+
 @end

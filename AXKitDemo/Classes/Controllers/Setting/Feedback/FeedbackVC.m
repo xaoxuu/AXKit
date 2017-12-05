@@ -83,13 +83,12 @@ static CGFloat margin = 4;
             // 设置邮件主题
             NSString *title = [weakSelf.seg_subject titleForSegmentAtIndex:weakSelf.seg_subject.selectedSegmentIndex];
             [mailCompose setSubject:[NSString stringWithFormat:@"[%@] - %@",title, weakSelf.tf_summary.text]];
-            // 设置收件人
-            [mailCompose setToRecipients:@[@"xaoxuu@gmail.com"]];
+            
             NSString *emailContent = weakSelf.tv_content.text;
             [mailCompose setMessageBody:emailContent isHTML:NO];
             
             [self.images enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                [mailCompose addAttachmentData:UIImagePNGRepresentation(obj) mimeType:@"" fileName:@"image"];
+                [mailCompose addAttachmentData:UIImagePNGRepresentation(obj) mimeType:@"png" fileName:@"image.png"];
             }];
             
         } completion:^(MFMailComposeResult result) {

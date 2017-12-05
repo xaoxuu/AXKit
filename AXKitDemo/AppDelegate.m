@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-
+#import "FeedbackKit.h"
 
 
 @interface AppDelegate ()
@@ -28,6 +28,10 @@
     [[UIThemeManager sharedInstance] configDefaultTheme:^(UIThemeManager *theme) {
         theme.color.theme = [UIColor ax_blue];
         theme.color.accent = [UIColor md_lime];
+    }];
+    
+    [[EmailManager sharedInstance] configDefaultCompose:^(EmailManager *manager) {
+        manager.defaultToRecipients = @[@"xaoxuu@gmail.com"];
     }];
     // @xaoxuu: 激活服务
     [ServiceLayer sharedInstance];
