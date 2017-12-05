@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EmailAttachmentData.h"
+#import "EmailAttachmentDataSource.h"
 #import <MessageUI/MessageUI.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @interface EmailManager : NSObject <MFMailComposeViewControllerDelegate>
 
 
@@ -40,9 +41,9 @@
 @property (copy, nonatomic) NSString *defaultMessageBody;
 
 /**
- 默认的附件
+ 附件源（可提前设置好，但直到发送文件的时候才从路径中取出文件）
  */
-@property (strong, nonatomic) NSMutableArray<EmailAttachmentData *> *defaultAttachmentData;
+@property (strong, nonatomic) NSMutableArray<EmailAttachmentDataSource *> *attachmentDataSource;
 
 
 
@@ -61,13 +62,14 @@
 - (void)configDefaultCompose:(void (^)(EmailManager *manager))defaultCompose;
 
 /**
- 添加默认的附件
-
- @param attachment 附件
- @param mimeType 附件类型
- @param filename 文件名
+ 添加附件源
+ 可提前设置好，但直到发送文件的时候才从路径中取出文件。
+ 
+ @param filePath 文件路径
+ @param mimeType 文件类型
+ @param fileName 文件名
  */
-- (void)addDefaultAttachmentData:(NSData *)attachment mimeType:(NSString *)mimeType fileName:(NSString *)filename;
+- (void)addAttachmentDataSourceWithFilePath:(NSString *)filePath mimeType:(nullable NSString *)mimeType fileName:(nullable NSString *)fileName;
 
 /**
  发送邮件
@@ -80,3 +82,4 @@
 
 
 @end
+NS_ASSUME_NONNULL_END

@@ -54,8 +54,8 @@
 		CD1425F21FD5572E007571E8 /* EmailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425F01FD5572E007571E8 /* EmailManager.m */; };
 		CD1425F91FD5638A007571E8 /* FeedbackCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425F71FD5638A007571E8 /* FeedbackCollectionViewCell.m */; };
 		CD1425FA1FD5638A007571E8 /* FeedbackCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1425F81FD5638A007571E8 /* FeedbackCollectionViewCell.xib */; };
-		CD1425FD1FD644CA007571E8 /* EmailAttachmentData.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1425FB1FD644CA007571E8 /* EmailAttachmentData.h */; };
-		CD1425FE1FD644CA007571E8 /* EmailAttachmentData.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425FC1FD644CA007571E8 /* EmailAttachmentData.m */; };
+		CD1426051FD655E8007571E8 /* EmailAttachmentDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1426031FD655E8007571E8 /* EmailAttachmentDataSource.h */; };
+		CD1426061FD655E8007571E8 /* EmailAttachmentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1426041FD655E8007571E8 /* EmailAttachmentDataSource.m */; };
 		CD149E251F0105D4007051CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E221F0105D4007051CE /* Assets.xcassets */; };
 		CD149E261F0105D4007051CE /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E231F0105D4007051CE /* Setting.xcassets */; };
 		CD149E271F0105D4007051CE /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E241F0105D4007051CE /* tmp.xcassets */; };
@@ -347,8 +347,8 @@
 		CD1425F61FD5638A007571E8 /* FeedbackCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackCollectionViewCell.h; sourceTree = "<group>"; };
 		CD1425F71FD5638A007571E8 /* FeedbackCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackCollectionViewCell.m; sourceTree = "<group>"; };
 		CD1425F81FD5638A007571E8 /* FeedbackCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackCollectionViewCell.xib; sourceTree = "<group>"; };
-		CD1425FB1FD644CA007571E8 /* EmailAttachmentData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailAttachmentData.h; sourceTree = "<group>"; };
-		CD1425FC1FD644CA007571E8 /* EmailAttachmentData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailAttachmentData.m; sourceTree = "<group>"; };
+		CD1426031FD655E8007571E8 /* EmailAttachmentDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailAttachmentDataSource.h; sourceTree = "<group>"; };
+		CD1426041FD655E8007571E8 /* EmailAttachmentDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailAttachmentDataSource.m; sourceTree = "<group>"; };
 		CD149E221F0105D4007051CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD149E231F0105D4007051CE /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
 		CD149E241F0105D4007051CE /* tmp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = tmp.xcassets; sourceTree = "<group>"; };
@@ -870,8 +870,8 @@
 				CD1425EB1FD5552F007571E8 /* FeedbackKit.h */,
 				CD1425EF1FD5572E007571E8 /* EmailManager.h */,
 				CD1425F01FD5572E007571E8 /* EmailManager.m */,
-				CD1425FB1FD644CA007571E8 /* EmailAttachmentData.h */,
-				CD1425FC1FD644CA007571E8 /* EmailAttachmentData.m */,
+				CD1426031FD655E8007571E8 /* EmailAttachmentDataSource.h */,
+				CD1426041FD655E8007571E8 /* EmailAttachmentDataSource.m */,
 			);
 			path = FeedbackKit;
 			sourceTree = "<group>";
@@ -1676,10 +1676,10 @@
 				8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */,
 				CDAB59071E6BF92F0017CA1E /* UIColor+AXColorPack.h in Headers */,
 				CDAB593B1E6BFE700017CA1E /* UIView+AXFrameExtension.h in Headers */,
+				CD1426051FD655E8007571E8 /* EmailAttachmentDataSource.h in Headers */,
 				CDAB58E71E6BF37E0017CA1E /* CoreGraphics+AXExtension.h in Headers */,
 				CDAB59031E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.h in Headers */,
 				CDAB590F1E6BF9B90017CA1E /* UIColor+MDColorPack.h in Headers */,
-				CD1425FD1FD644CA007571E8 /* EmailAttachmentData.h in Headers */,
 				CD1425ED1FD5552F007571E8 /* FeedbackKit.h in Headers */,
 				CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */,
 				CDAB59331E6BFDD60017CA1E /* UIView+AXAnimatedWrapper.h in Headers */,
@@ -2098,6 +2098,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1426061FD655E8007571E8 /* EmailAttachmentDataSource.m in Sources */,
 				CD63A43A1FC2ED5B00581AF6 /* UIDevice+AXExtension.m in Sources */,
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
 				CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */,
@@ -2107,7 +2108,6 @@
 				CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */,
 				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,
 				CD616C981FB99F8A00E38244 /* AXTabBarController.m in Sources */,
-				CD1425FE1FD644CA007571E8 /* EmailAttachmentData.m in Sources */,
 				CDAB58F41E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m in Sources */,
 				CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */,
 				CD41543F1FC02F8800D4ED2C /* AXTableModel.m in Sources */,

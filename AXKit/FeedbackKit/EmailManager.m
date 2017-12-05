@@ -47,12 +47,13 @@ EmailManager *manager = nil;
     return manager;
 }
 
-- (NSMutableArray<EmailAttachmentData *> *)defaultAttachmentData{
-    if (!_defaultAttachmentData) {
-        _defaultAttachmentData = [NSMutableArray array];
+- (NSMutableArray<EmailAttachmentDataSource *> *)attachmentDataSource{
+    if (!_attachmentDataSource) {
+        _attachmentDataSource = [NSMutableArray array];
     }
-    return _defaultAttachmentData;
+    return _attachmentDataSource;
 }
+
 
 #pragma mark - public func
 
@@ -68,14 +69,15 @@ EmailManager *manager = nil;
 }
 
 /**
- 添加默认的附件
+ 添加附件源
+ 可提前设置好，但直到发送文件的时候才从路径中取出文件。
  
- @param attachment 附件
- @param mimeType 附件类型
- @param filename 文件名
+ @param filePath 文件路径
+ @param mimeType 文件类型
+ @param fileName 文件名
  */
-- (void)addDefaultAttachmentData:(NSData *)attachment mimeType:(NSString *)mimeType fileName:(NSString *)filename{
-    [self.defaultAttachmentData addObject:[EmailAttachmentData attachmentDataWithData:attachment mimeType:mimeType fileName:filename]];
+- (void)addAttachmentDataSourceWithFilePath:(NSString *)filePath mimeType:(nullable NSString *)mimeType fileName:(nullable NSString *)fileName{
+    [self.attachmentDataSource addObject:[EmailAttachmentDataSource attachmentDataSourceWithFilePath:filePath mimeType:mimeType fileName:fileName]];
 }
 
 /**
@@ -108,9 +110,15 @@ EmailManager *manager = nil;
             [mailCompose setMessageBody:self.defaultMessageBody isHTML:NO];
         }
         
-        [self.defaultAttachmentData enumerateObjectsUsingBlock:^(EmailAttachmentData * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [mailCompose addAttachmentData:obj.data mimeType:obj.mimeType fileName:obj.fileName];
+        [self.attachmentDataSource enumerateObjectsUsingBlock:^(EmailAttachmentDataSource * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSData *data = [NSData dataWithContentsOfFile:obj.filePath];
+            NSString *fileName = obj.fileName;
+            if (!fileName.length) {
+                fileName = obj.filePath.lastPathComponent;
+            }
+            [mailCompose addAttachmentData:data mimeType:obj.mimeType fileName:fileName];
         }];
+        
         
         // callback
         if (email) {
