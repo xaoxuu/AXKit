@@ -267,6 +267,8 @@
 		CDC8CDF61ECC92B7009F855E /* UIAlertController+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */; };
 		CDCF31121EBB11A4005AC6CD /* NSURL+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDCF31131EBB11A4005AC6CD /* NSURL+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */; };
+		CDD2F8701FD9621500FFD01C /* UIScreen+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD2F86E1FD9621500FFD01C /* UIScreen+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDD2F8711FD9621500FFD01C /* UIScreen+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD2F86F1FD9621500FFD01C /* UIScreen+AXExtension.m */; };
 		CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */; };
 		CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -644,6 +646,8 @@
 		CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+AXWrapper.m"; sourceTree = "<group>"; };
 		CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+AXExtension.h"; sourceTree = "<group>"; };
 		CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+AXExtension.m"; sourceTree = "<group>"; };
+		CDD2F86E1FD9621500FFD01C /* UIScreen+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+AXExtension.h"; sourceTree = "<group>"; };
+		CDD2F86F1FD9621500FFD01C /* UIScreen+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+AXExtension.h"; sourceTree = "<group>"; };
 		CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXExtension.h"; sourceTree = "<group>"; };
@@ -1400,11 +1404,11 @@
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */,
+				CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */,
 				CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */,
 				CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */,
 				CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */,
-				CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */,
-				CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */,
 				CD77FE681EBEE62E001A5787 /* NSString */,
 				CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */,
 				CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */,
@@ -1432,6 +1436,8 @@
 				CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */,
 				CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */,
 				CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */,
+				CDD2F86E1FD9621500FFD01C /* UIScreen+AXExtension.h */,
+				CDD2F86F1FD9621500FFD01C /* UIScreen+AXExtension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1703,6 +1709,7 @@
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
 				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
+				CDD2F8701FD9621500FFD01C /* UIScreen+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
@@ -2098,6 +2105,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD2F8711FD9621500FFD01C /* UIScreen+AXExtension.m in Sources */,
 				CD1426061FD655E8007571E8 /* EmailAttachmentDataSource.m in Sources */,
 				CD63A43A1FC2ED5B00581AF6 /* UIDevice+AXExtension.m in Sources */,
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
