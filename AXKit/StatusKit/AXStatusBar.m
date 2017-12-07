@@ -70,31 +70,22 @@ static inline UIView *getStatusBarProgressMessageContentView(){
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         const CGFloat height = 20;
-        const CGFloat quarter = height/4;
         view = [[UIView alloc] init];
         CGSize statusBarSize = getSystemStatusBar().bounds.size;
-        
         if (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)) {
             const CGFloat width = 64;
             CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, 20);
             frame.origin = CGPointMake(14, (statusBarSize.height - frame.size.height)/2);
             view.frame = frame;
-            view.layer.cornerRadius = 0.5*frame.size.height;
-            
-            CAShapeLayer *layer = [CAShapeLayer layer];
-            UIBezierPath *path = [UIBezierPath bezierPath];
-            [path moveToPoint:CGPointMake(2*quarter, 0)];
-            [path addQuadCurveToPoint:CGPointMake(0, 2*quarter) controlPoint:CGPointMake(0, 0)];
-            [path addQuadCurveToPoint:CGPointMake(2*quarter, 4*quarter) controlPoint:CGPointMake(0, 4*quarter)];
-            [path addLineToPoint:CGPointMake(width - 2*quarter, 4*quarter)];
-            [path addQuadCurveToPoint:CGPointMake(width, 2*quarter) controlPoint:CGPointMake(width, 4*quarter)];
-            [path addQuadCurveToPoint:CGPointMake(width - 2*quarter, 0) controlPoint:CGPointMake(width, 0)];
-            [path closePath];
-            layer.path = path.CGPath;
-            view.layer.mask = layer;
+            CALayer *mask = [CALayer layer];
+            mask.frame = view.bounds;
+            mask.backgroundColor = [UIColor whiteColor].CGColor;
+            mask.cornerRadius = 0.5*height;
+            view.layer.mask = mask;
             
         } else {
             const CGFloat width = 72;
+            const CGFloat quarter = height/4;
             CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, height);
             view.frame = frame;
             
