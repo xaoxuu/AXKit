@@ -43,9 +43,14 @@ inline void ax_debug_release(void (^ _Nullable debug)(void), void (^ _Nullable r
  @return YES:debug模式；NO:release模式
  */
 inline BOOL ax_is_debug(){
-    BOOL debug = NO;
+    static BOOL isDebug;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
 #ifdef DEBUG
-    debug = YES;
+        isDebug = YES;
+#else
+        isDebug = NO;
 #endif
-    return debug;
+    });
+    return isDebug;
 }
