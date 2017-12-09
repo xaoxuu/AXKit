@@ -60,12 +60,12 @@
                 {
                     "title":"错误信息",
                     "detail":"",
-                    "target":"",
+                    "target":"error",
                 },
                 {
                     "title":"自定义相机",
                     "detail":"",
-                    "target":"",
+                    "target":"camera",
                 },
                 {
                     "title":"延迟函数",

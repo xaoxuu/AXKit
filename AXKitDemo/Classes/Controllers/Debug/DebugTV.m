@@ -21,23 +21,17 @@
 
 - (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
     AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    if (section == 0) {
-        if (row == 7) {
-            [NSUserDefaults ax_readStringForKey:@"123" completion:^(NSString * _Nonnull string) {
-                AXLogSuccess();
-            } failure:^(NSError * _Nonnull error) {
-                AXLogFailure();
-            }];
-        } else if (row == 8) {
-            AXCameraViewController *vc = [[AXCameraViewController alloc] init];
-            [self.controller presentViewController:vc animated:YES completion:^{
-                
-            }];
-        } else {
-            [self.controller.navigationController ax_pushViewControllerNamed:model.target];
-        }
+    if ([model.target isEqualToString:@"camera"]) {
+        AXCameraViewController *vc = [[AXCameraViewController alloc] init];
+        [self.controller presentViewController:vc animated:YES completion:^{
+            
+        }];
+    } else if ([model.target isEqualToString:@"error"]) {
+        [NSUserDefaults ax_readStringForKey:@"123" completion:^(NSString * _Nonnull string) {
+            AXLogSuccess();
+        } failure:^(NSError * _Nonnull error) {
+            AXLogFailure();
+        }];
     } else {
         [self.controller.navigationController ax_pushViewControllerNamed:model.target];
     }
