@@ -11,42 +11,133 @@
 
 #pragma mark - 常量
 
-// screen marco
-//#define kScreenBounds [UIScreen mainScreen].bounds
-#define kScreenW [UIScreen mainScreen].bounds.size.width
-#define kScreenH [UIScreen mainScreen].bounds.size.height
+
+/**
+ 屏幕尺寸枚举
+ 
+ kCGScreenSizeEnumUnknown: 未知
+ kCGScreenSizeEnum_3_5: 3.5英寸屏幕：1、2、3、3g、3gs、4、4s
+ kCGScreenSizeEnum_4_0: 4.0英寸屏幕：5、5c、5s
+ kCGScreenSizeEnum_4_7: 4.7英寸屏幕：6、6s、7、8
+ kCGScreenSizeEnum_5_5: 5.5英寸屏幕：6 plus、6s plus、7 plus、8 plus
+ kCGScreenSizeEnum_5_8: 5.8英寸屏幕：iPhone X
+ */
+typedef NS_ENUM(NSUInteger, kCGScreenSizeEnum) {
+    kCGScreenSizeEnumUnknown,
+    kCGScreenSizeEnum_3_5,
+    kCGScreenSizeEnum_4_0,
+    kCGScreenSizeEnum_4_7,
+    kCGScreenSizeEnum_5_5,
+    kCGScreenSizeEnum_5_8
+};
+
+/**
+ 获取当前屏幕尺寸枚举
+
+ @return 当前屏幕尺寸枚举
+ */
+CG_EXTERN kCGScreenSizeEnum CGConstGetScreenSizeEnum(void);
+
+/**
+ 当前屏幕CGRect
+ 
+ @return 当前屏幕CGRect
+ */
+CG_EXTERN CGRect CGConstGetScreenBounds(void);
+#ifndef kScreenBounds
+#define kScreenBounds CGConstGetScreenBounds()
+#endif
+
+/**
+ 当前屏幕尺寸
+
+ @return 当前屏幕尺寸
+ */
+CG_EXTERN CGSize CGConstGetScreenSize(void);
+#ifndef kScreenSize
+#define kScreenSize CGConstGetScreenSize()
+#endif
+#ifndef kScreenW
+#define kScreenW CGConstGetScreenSize().width
+#endif
+#ifndef kScreenH
+#define kScreenH CGConstGetScreenSize().height
+#endif
+
+
+/**
+ 获取CGRect的中心点
+
+ @param rect CGRect
+ @return CGRect的中心点
+ */
+CG_EXTERN CGPoint CGRectGetCenter(CGRect rect);
+
+/**
+ 当前屏幕中心点坐标
+
+ @return 当前屏幕中心点坐标
+ */
+CG_EXTERN CGPoint CGConstGetScreenCenter(void);
+#ifndef kScreenCenter
+#define kScreenCenter CGConstGetScreenCenter()
+#endif
+#ifndef kScreenCenterX
 #define kScreenCenterX (0.5 * kScreenW)
+#endif
+#ifndef kScreenCenterY
 #define kScreenCenterY (0.5 * kScreenH)
+#endif
 
+/**
+ 状态栏高度
 
+ @return 状态栏高度
+ */
+CG_EXTERN CGFloat CGConstGetStatusBarHeight(void);
+#ifndef kStatusBarHeight
+#define kStatusBarHeight CGConstGetStatusBarHeight()
+#endif
 
-// @xaoxuu: 状态栏高度 = 20 or 44
-CG_EXTERN CGFloat kStatusBarHeight(void);
-// @xaoxuu: 导航栏高度 = 44
-CG_EXTERN CGFloat kNavBarHeight(void);
-// @xaoxuu: 状态栏和导航栏总高度 = 64 or 88
-CG_EXTERN CGFloat kTopBarHeight(void);
-// @xaoxuu: tabbar高度
-CG_EXTERN CGFloat kTabBarHeight(void);
+/**
+ 导航栏高度
+ */
+CG_EXTERN const CGFloat kNavBarHeight;
 
-CG_EXTERN CGFloat kSafeAreaBottomHeight(void);
+/**
+ 状态栏+导航栏高度
+ 
+ @return 状态栏+导航栏高度
+ */
+CG_EXTERN CGFloat CGConstGetTopBarHeight(void);
+#ifndef kTopBarHeight
+#define kTopBarHeight CGConstGetTopBarHeight()
+#endif
 
-// @xaoxuu: 窄 margin = 4
-CG_EXTERN const CGFloat kMarginNarrow;
-// @xaoxuu: 普通 margin = 8
-CG_EXTERN const CGFloat kMarginNormal;
-// @xaoxuu: 很宽 margin = 16
-CG_EXTERN const CGFloat kMarginWide;
+/**
+ 底部安全区域高度（iPhone X为34，其他机型为0）
 
-// @xaoxuu: 系统弹窗的宽度
-CG_EXTERN const CGFloat kAlertWidth;
+ @return 底部安全区域高度（iPhone X为34，其他机型为0）
+ */
+CG_EXTERN CGFloat CGConstGetScreenBottomSafeAreaHeight(void);
+#ifndef kScreenBottomSafeAreaHeight
+#define kScreenBottomSafeAreaHeight CGConstGetScreenBottomSafeAreaHeight()
+#endif
 
+/**
+ tabbar高度
 
-CG_EXTERN CGRect CGRectFromScreen(void);
+ @return tabbar高度
+ */
+CG_EXTERN CGFloat CGConstGetTabBarHeight(void);
+#ifndef kTabBarHeight
+#define kTabBarHeight CGConstGetTabBarHeight()
+#endif
 
-
-
-
+/**
+ 系统弹窗的宽度
+ */
+CG_EXTERN const CGFloat kAlertViewWidth;
 
 
 
@@ -126,142 +217,43 @@ CG_EXTERN AXUIntegerRange AXUIntegerRangeMake(NSUInteger minValue, NSUInteger ma
 
 /**
  确保值在某个范围内
- 
- @param value 原始值
- @param range 取值范围
+
+ @param value 初始值
+ @param minValue 最小值
+ @param maxValue 最大值
  @return 最终值
  */
-CG_EXTERN CGFloat AXMakeFloatInRange(CGFloat value, AXFloatRange range);
-
-/**
- 确保值在某个范围内
- 
- @param value 原始值
- @param range 取值范围
- @return 最终值
- */
-CG_EXTERN NSInteger AXMakeIntegerInRange(NSInteger value, AXIntegerRange range);
-
-/**
- 确保值在某个范围内
- 
- @param value 原始值
- @param range 取值范围
- @return 最终值
- */
-CG_EXTERN NSUInteger AXMakeUIntegerInRange(NSUInteger value, AXUIntegerRange range);
-
-/**
- 确保索引在数组内
-
- @param index 索引
- @param array 数组
- @return 安全的索引
- */
-CG_EXTERN NSInteger AXSafeIndexForArray(NSInteger index, NSArray * array);
+CG_EXTERN NSNumber *AXMakeNumberInRange(NSNumber *value, NSNumber *minValue, NSNumber *maxValue);
 
 #pragma mark 判断值是否在范围内
-
 /**
- 判断值是否在某个范围内
+ 值是否在某个范围内
  
- @param range 取值范围
- @param value 值
- @return 是否包含该值
+ @param value 要判断的值
+ @param minValue 最小值
+ @param maxValue 最大值
+ @return 是否在[最小值,最大值]范围内
  */
-CG_EXTERN BOOL AXRangeContainsFloat(AXFloatRange range, CGFloat value);
-
-/**
- 判断值是否在某个范围内
- 
- @param range 取值范围
- @param value 值
- @return 是否包含该值
- */
-CG_EXTERN BOOL AXRangeContainsInteger(AXIntegerRange range, NSInteger value);
-
-/**
- 判断值是否在某个范围内
- 
- @param range 取值范围
- @param value 值
- @return 是否包含该值
- */
-CG_EXTERN BOOL AXRangeContainsUInteger(AXUIntegerRange range, NSUInteger value);
-
-
-
+CG_EXTERN BOOL AXNumberContainedInRange(NSNumber *value, NSNumber *minValue, NSNumber *maxValue);
 
 #pragma mark - 随机值
 
 /**
- 产生一个随机CGFloat
- 
- @param range CGFloat取值范围
+ 产生一个随机的CGFloat数
+
+ @param minValue 最小值
+ @param maxValue 最大值
  @return 随机的CGFloat
  */
-CG_EXTERN CGFloat AXRandomFloatFrom(AXFloatRange range);
+CG_EXTERN CGFloat AXRandomFloatInRange(CGFloat minValue, CGFloat maxValue);
 
 /**
- 产生一个随机NSInteger
+ 产生一个随机的NSInteger数
  
- @param range NSInteger取值范围
+ @param minValue 最小值
+ @param maxValue 最大值
  @return 随机的NSInteger
  */
-CG_EXTERN NSInteger AXRandomIntegerFrom(AXIntegerRange range);
-
-/**
- 产生一个随机NSUInteger
- 
- @param range NSUInteger取值范围
- @return 随机的NSUInteger
- */
-CG_EXTERN NSUInteger AXRandomUIntegerFrom(AXUIntegerRange range);
-
-
-#pragma mark CGSize
-
-
-
-
-/**
- CGSizeUp
-
- @param upOffset	up offset
-
- @return a size
- */
-CG_EXTERN CGSize CGSizeUp(CGFloat upOffset);
-
-/**
- CGSizeDown
-
- @param downOffset down offset
-
- @return a size
- */
-CG_EXTERN CGSize CGSizeDown(CGFloat downOffset);
-
-#pragma mark CGRect
-
-/**
- CGRectWithTopMargin
-
- @param top top margin
-
- @return a rect
- */
-CG_EXTERN CGRect CGRectWithTopMargin(CGFloat top);
-
-/**
- CGRectWithTopAndBottomMargin
-
- @param top    top margin
- @param bottom bottom margin
-
- @return a rect
- */
-CG_EXTERN CGRect CGRectWithTopAndBottomMargin(CGFloat top, CGFloat bottom);
-
+CG_EXTERN NSInteger AXRandomIntegerInRange(NSInteger minValue, NSInteger maxValue);
 
 

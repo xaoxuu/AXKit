@@ -33,12 +33,12 @@ static UIImage *cachedImage;
 
 - (AXTableViewType *)installTableView{
     CGRect frame = self.view.bounds;
-    frame.size.height -= kTabBarHeight();
+    frame.size.height -= kTabBarHeight;
     return [[AboutTableView alloc] initWithFrame:frame];
 }
 
 - (CGRect)initContentFrame:(CGRect)frame{
-    frame.size.height -= kTopBarHeight();
+    frame.size.height -= kTopBarHeight;
     return frame;
 }
 

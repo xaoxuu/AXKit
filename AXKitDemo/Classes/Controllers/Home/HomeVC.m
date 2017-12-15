@@ -70,7 +70,7 @@
 //    }];
     
     // 彩蛋
-    if ([UIDevice currentDevice].isIphoneX) {
+    if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
         
         UIView *bar = [AXStatusBar getSystemStatusBar];
         UILabel *lb = [[UILabel alloc] initWithFrame:bar.bounds];
@@ -79,6 +79,14 @@
         lb.text = @"^_^";
         [bar addSubview:lb];
     }
+//    AXLogCGFloat(kScreenWidth);
+//    AXLogCGFloat(kScreenHeight);
+    
+    
+//    AXLogOBJ(AXMakeNumberInRange(@100, @0, @111));
+//    AXLogOBJ(AXMakeNumberInRange(@100, @0, @90));
+    
+    
     
 }
 
@@ -95,6 +103,17 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    
+//    for (int i = -3; i < 3; i++) {
+//        AXLogOBJ(AXMakeNumberInRange(@(i), @(-1), @1));
+//    }
+//    NSMutableArray<NSNumber *> *tmp = [NSMutableArray arrayWithCapacity:100];
+//    for (int i = 0; i < 100; i++) {
+//        [tmp addObject:@(AXRandomFloatInRange(0, 1))];
+//    }
+//    AXLogOBJ(tmp);
+//    AXLogCGRect([UIScreen mainScreen].bounds);
     
     
 }

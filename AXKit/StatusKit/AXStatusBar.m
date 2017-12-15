@@ -9,11 +9,10 @@
 #import "AXStatusBar.h"
 #import "NSOperation+AXExtension.h"
 #import "CALayer+AXWrapper.h"
-#import "UIDevice+AXExtension.h"
 #import "UIColor+AXExtension.h"
 #import "CALayer+AXWrapper.h"
 #import "UIColor+MDColorPack.h"
-
+#import "CoreGraphics+AXExtension.h"
 
 // 是否正在展示状态栏消息
 static BOOL isStatusMessageShowing;
@@ -77,12 +76,7 @@ static inline UIView *getStatusBarProgressMessageContentView(){
             CGRect frame = CGRectMake((statusBarSize.width - width)/2, 0, width, 20);
             frame.origin = CGPointMake(14, (statusBarSize.height - frame.size.height)/2);
             view.frame = frame;
-            CALayer *mask = [CALayer layer];
-            mask.frame = view.bounds;
-            mask.backgroundColor = [UIColor whiteColor].CGColor;
-            mask.cornerRadius = 0.5*height;
-            view.layer.mask = mask;
-            
+            view.layer.mask = CAMaskLayerWithSizeAndCorner(view.bounds.size, 0.5*height);
         } else {
             const CGFloat width = 72;
             const CGFloat quarter = height/4;
@@ -139,7 +133,7 @@ static inline void hideStatusBarMessage(){
 static inline void hideStatusBarProgressMessage(){
     
     [UIView animateWithDuration:0.58f delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut animations:^{
-        if ([UIDevice currentDevice].isIphoneX) {
+        if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
             getStatusBarProgressMessageContentView().alpha = 0;
             getStatusBarProgressMessageContentView().transform = CGAffineTransformMakeScale(1.2, 1.2);
         } else {
@@ -180,7 +174,7 @@ static inline void showStatusBarProgressMessageView(NSTimeInterval duration){
     if (!isStatusProgressMessageShowing) {
         isStatusProgressMessageShowing = YES;
         [getSystemStatusBar() addSubview:getStatusBarProgressMessageContentView()];
-        if ([UIDevice currentDevice].isIphoneX) {
+        if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
             getStatusBarProgressMessageContentView().alpha = 0;
             getStatusBarProgressMessageContentView().transform = CGAffineTransformMakeScale(1.2, 1.2);
             [UIView animateWithDuration:0.58f delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut animations:^{

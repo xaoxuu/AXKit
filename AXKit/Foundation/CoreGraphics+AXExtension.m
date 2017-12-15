@@ -7,11 +7,80 @@
 //
 
 #import "CoreGraphics+AXExtension.h"
-#import "UIDevice+AXExtension.h"
 
 #pragma mark - 常量
 
-inline CGFloat kStatusBarHeight(void){
+/**
+ 获取当前屏幕尺寸枚举
+ 
+ @return 当前屏幕尺寸枚举
+ */
+inline kCGScreenSizeEnum CGConstGetScreenSizeEnum(void){
+    static kCGScreenSizeEnum currentSize;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        CGSize size = [UIScreen mainScreen].currentMode.size;
+        if (CGSizeEqualToSize(size, CGSizeMake(320, 480)) || CGSizeEqualToSize(size, CGSizeMake(640, 960))) {
+            currentSize = kCGScreenSizeEnum_3_5;
+        } else if (CGSizeEqualToSize(size, CGSizeMake(640, 1136))) {
+            currentSize = kCGScreenSizeEnum_4_0;
+        } else if (CGSizeEqualToSize(size, CGSizeMake(750, 1334))) {
+            currentSize = kCGScreenSizeEnum_4_7;
+        } else if (CGSizeEqualToSize(size, CGSizeMake(1242, 2208))) {
+            currentSize = kCGScreenSizeEnum_5_5;
+        } else if (CGSizeEqualToSize(size, CGSizeMake(1125, 2436))) {
+            currentSize = kCGScreenSizeEnum_5_8;
+        } else {
+            currentSize = kCGScreenSizeEnumUnknown;
+        }
+    });
+    return currentSize;
+}
+
+
+/**
+ 屏幕CGRect
+
+ @return 屏幕CGRect
+ */
+inline CGRect CGConstGetScreenBounds(void){
+    return [UIScreen mainScreen].bounds;
+}
+
+
+/**
+ 当前屏幕尺寸
+ 
+ @return 当前屏幕尺寸
+ */
+inline CGSize CGConstGetScreenSize(void){
+    return [UIScreen mainScreen].bounds.size;
+}
+
+/**
+ 获取CGRect的中心点
+ 
+ @param rect CGRect
+ @return CGRect的中心点
+ */
+inline CGPoint CGRectGetCenter(CGRect rect) {
+    return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
+}
+
+/**
+ 当前屏幕中心点坐标
+ 
+ @return 当前屏幕中心点坐标
+ */
+inline CGPoint CGConstGetScreenCenter(void){
+    return CGRectGetCenter(CGConstGetScreenBounds());
+}
+/**
+ 状态栏高度
+ 
+ @return 状态栏高度
+ */
+inline CGFloat CGConstGetStatusBarHeight(void){
     static CGFloat height;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -20,32 +89,53 @@ inline CGFloat kStatusBarHeight(void){
     });
     return height;
 }
-inline CGFloat kNavBarHeight(void){
-    return 44;
-}
-inline CGFloat kTopBarHeight(void){
-    return kStatusBarHeight() + 44;
-}
 
-inline CGFloat kTabBarHeight(void){
-    return 49 + kSafeAreaBottomHeight();
-}
+/**
+ 导航栏高度
+ */
+const CGFloat kNavBarHeight = 44.0f;
 
-
-inline CGFloat kSafeAreaBottomHeight(void){
-    if ([UIDevice currentDevice].isIphoneX) {
-        return 34;
-    } else {
-        return 0;
-    }
+/**
+ 状态栏+导航栏高度
+ 
+ @return 状态栏+导航栏高度
+ */
+inline CGFloat CGConstGetTopBarHeight(void){
+    return CGConstGetStatusBarHeight() + kNavBarHeight;
 }
 
-const CGFloat kMarginNarrow = 4;
-const CGFloat kMarginNormal = 8;
-const CGFloat kMarginWide = 16;
 
-// @xaoxuu: 系统弹窗的宽度
-const CGFloat kAlertWidth = 270.0f;
+/**
+ 底部安全区域高度（iPhone X为34，其他机型为0）
+ 
+ @return 底部安全区域高度（iPhone X为34，其他机型为0）
+ */
+inline CGFloat CGConstGetScreenBottomSafeAreaHeight(void){
+    static CGFloat height;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
+            height = 34;
+        } else {
+            height = 0;
+        }
+    });
+    return height;
+}
+
+/**
+ tabbar高度
+ 
+ @return tabbar高度
+ */
+inline CGFloat CGConstGetTabBarHeight(void){
+    return 49 + CGConstGetScreenBottomSafeAreaHeight();
+}
+
+/**
+ 系统弹窗的宽度
+ */
+const CGFloat kAlertViewWidth = 270.0f;
 
 
 #pragma mark 取值范围创建
@@ -67,96 +157,28 @@ inline AXUIntegerRange AXUIntegerRangeMake(NSUInteger minValue, NSUInteger maxVa
 
 #pragma mark 确保值的范围
 
-inline CGFloat AXMakeFloatInRange(CGFloat value, AXFloatRange range){
-    value = MAX(value, range.minValue);
-    value = MIN(value, range.maxValue);
+inline NSNumber *AXMakeNumberInRange(NSNumber *value, NSNumber *minValue, NSNumber *maxValue){
+    value = @(MAX(value.doubleValue, minValue.doubleValue));
+    value = @(MIN(value.doubleValue, maxValue.doubleValue));
     return value;
 }
 
-inline NSInteger AXMakeIntegerInRange(NSInteger value, AXIntegerRange range){
-    value = MAX(value, range.minValue);
-    value = MIN(value, range.maxValue);
-    return value;
-}
-
-inline NSUInteger AXMakeUIntegerInRange(NSUInteger value, AXUIntegerRange range){
-    value = MAX(value, range.minValue);
-    value = MIN(value, range.maxValue);
-    return value;
-}
-
-inline NSInteger AXSafeIndexForArray(NSInteger index, NSArray *array){
-    index = MAX(0, index);
-    index = MIN(index, array.count-1);
-    return index;
-}
 
 #pragma mark 判断值是否在范围内
 
-inline BOOL AXRangeContainsFloat(AXFloatRange range, CGFloat value){
-    if (value >= range.minValue && value <= range.maxValue) {
-        return YES;
-    } else {
-        return NO;
-    }
+inline BOOL AXNumberContainedInRange(NSNumber *value, NSNumber *minValue, NSNumber *maxValue){
+    return value.doubleValue >= minValue.doubleValue && value.doubleValue <= maxValue.doubleValue;
 }
-
-inline BOOL AXRangeContainsInteger(AXIntegerRange range, NSInteger value){
-    if (value >= range.minValue && value <= range.maxValue) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-inline BOOL AXRangeContainsUInteger(AXUIntegerRange range, NSUInteger value){
-    if (value >= range.minValue && value <= range.maxValue) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-
-
 
 
 #pragma mark - 随机值
 
-inline CGFloat AXRandomFloatFrom(AXFloatRange length){
-    return length.minValue + (NSInteger)arc4random_uniform((int)length.maxValue-(int)length.minValue + 1);
+inline CGFloat AXRandomFloatInRange(CGFloat minValue, CGFloat maxValue){
+    return minValue + (CGFloat)arc4random_uniform(1000000*(int)maxValue-1000000*(int)minValue + 1) / 1000000.0f;
 }
 
-inline NSInteger AXRandomIntegerFrom(AXIntegerRange length){
-    return length.minValue + (NSInteger)arc4random_uniform((int)length.maxValue-(int)length.minValue + 1);
-}
-
-inline NSUInteger AXRandomUIntegerFrom(AXUIntegerRange length){
-    return length.minValue + (NSUInteger)arc4random_uniform((int)length.maxValue-(int)length.minValue + 1);
+inline NSInteger AXRandomIntegerInRange(NSInteger minValue, NSInteger maxValue){
+    return minValue + (NSInteger)arc4random_uniform((int)maxValue-(int)minValue + 1);
 }
 
 
-
-#pragma mark - CGRect
-
-
-inline CGRect CGRectFromScreen(){
-    return [UIScreen mainScreen].bounds;
-}
-
-
-inline CGSize CGSizeUp(CGFloat upOffset){
-    return CGSizeMake(0, -upOffset);
-}
-
-inline CGSize CGSizeDown(CGFloat downOffset){
-    return CGSizeMake(0, downOffset);
-}
-
-
-inline CGRect CGRectWithTopMargin(CGFloat top){
-    return CGRectMake(0, top, kScreenW, kScreenH-top);
-}
-inline CGRect CGRectWithTopAndBottomMargin(CGFloat top, CGFloat bottom){
-    return CGRectMake(0, top, kScreenW, kScreenH-top-bottom);
-}

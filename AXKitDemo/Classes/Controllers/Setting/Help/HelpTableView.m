@@ -69,7 +69,7 @@
 - (UISearchBar *)searchBar{
     if (!_searchBar) {
         // create it
-        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 2*kMarginNormal, kScreenW, kNavBarHeight())];
+        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 2*kMarginNormal, kScreenW, kNavBarHeight)];
         _searchBar.delegate = self;
         // style
         _searchBar.searchBarStyle = UISearchBarStyleMinimal;

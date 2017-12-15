@@ -48,7 +48,7 @@
             }];
         } else if (row == 4) {
             [UIAlertController ax_showAlertWithTitle:nil message:@"\n\n\n\n\n\n\n\n\n\n\n" actions:^(UIAlertController * _Nonnull alert) {
-                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kAlertWidth-16, 222.3-16)];
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(8, 8, kAlertViewWidth-16, 222.3-16)];
                 view.backgroundColor = UIColor.lightGrayColor.light;
                 view.layer.masksToBounds = YES;
                 view.layer.cornerRadius = 8;

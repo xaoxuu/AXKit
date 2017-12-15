@@ -90,7 +90,7 @@
     // @xaoxuu: color
     self.view.backgroundColor = axThemeManager.color.background;
     // @xaoxuu: frame
-    self.view.frame = CGRectFromScreen();
+    self.view.frame = kScreenBounds;
     if ([self respondsToSelector:@selector(initContentFrame:)]) {
         self.view.frame = [self initContentFrame:self.view.frame];
     }
@@ -180,8 +180,8 @@
 #pragma mark - delegate
 
 - (CGRect)initContentFrame:(CGRect)frame{
-    frame.origin.y += kTopBarHeight();
-    frame.size.height = kScreenH - kTopBarHeight();
+    frame.origin.y += kTopBarHeight;
+    frame.size.height = kScreenH - kTopBarHeight;
     return frame;
 }
 

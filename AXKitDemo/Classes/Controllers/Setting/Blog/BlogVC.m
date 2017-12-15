@@ -54,7 +54,7 @@
 }
 
 - (CGRect)initContentFrame:(CGRect)frame{
-    return CGRectFromScreen();
+    return kScreenBounds;
 }
 
 @end

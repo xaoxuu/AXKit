@@ -42,7 +42,7 @@ inline NSString *NSStringFromPointer(id x){
 }
 
 inline NSString *NSStringFromPercent(CGFloat x){
-    x = AXMakeFloatInRange(x, AXFloatRangeMake(0, 1));
+    x = AXMakeNumberInRange(@(x), @0, @1).doubleValue;
     return [NSString stringWithFormat:@"%@%%",@(100 * x)];
 }
 
@@ -328,7 +328,7 @@ inline NSString *AXRandomHexStringWithLength(NSUInteger length){
 
 
 + (NSString *)ax_stringWithRandomLowerStringWithLength:(AXUIntegerRange)length{
-    NSUInteger randomLength = AXRandomUIntegerFrom(length);
+    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
     NSMutableString *str = [NSMutableString string];
     for (NSUInteger i=0; i<randomLength; i++) {
         [str appendFormat:@"%c",97 + arc4random_uniform(26)];
@@ -337,7 +337,7 @@ inline NSString *AXRandomHexStringWithLength(NSUInteger length){
 }
 
 + (NSString *)ax_stringWithRandomUpperStringWithLength:(AXUIntegerRange)length{
-    NSUInteger randomLength = AXRandomUIntegerFrom(length);
+    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
     NSMutableString *str = [NSMutableString string];
     for (NSUInteger i=0; i<randomLength; i++) {
         [str appendFormat:@"%c",65 + arc4random_uniform(26)];
@@ -346,7 +346,7 @@ inline NSString *AXRandomHexStringWithLength(NSUInteger length){
 }
 
 + (NSString *)ax_stringWithRandomCapitalizeStringWithLength:(AXUIntegerRange)length{
-    NSUInteger randomLength = AXRandomUIntegerFrom(length);
+    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
     NSMutableString *str = [NSMutableString string];
     [str appendFormat:@"%c",65 + arc4random_uniform(26)];
     for (NSUInteger i=0; i<randomLength-1; i++) {
@@ -357,7 +357,7 @@ inline NSString *AXRandomHexStringWithLength(NSUInteger length){
 
 + (NSString *)ax_stringWithRandomNameWithLength:(AXUIntegerRange)length{
     // first name
-    NSUInteger randomLength = AXRandomUIntegerFrom(length);
+    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
     NSMutableString *str = [NSMutableString string];
     [str appendFormat:@"%c",65 + arc4random_uniform(26)];
     for (NSUInteger i=0; i<randomLength-1; i++) {
@@ -377,7 +377,7 @@ inline NSString *AXRandomHexStringWithLength(NSUInteger length){
 
 + (NSString *)ax_stringWithRandomPasswordWithLength:(AXUIntegerRange)length{
     // first name
-    NSUInteger randomLength = AXRandomUIntegerFrom(length);
+    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
     NSMutableString *str = [NSMutableString string];
     for (NSUInteger i=0; i<randomLength; i++) {
         [str appendFormat:@"%c",32 + arc4random_uniform(95)];

@@ -14,6 +14,14 @@ inline UIView *UIViewWithHeight(CGFloat height){
     return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, height)];
 }
 
+inline UIView *UIMaskViewWithSizeAndCornerRadius(CGSize size, CGFloat cornerRadius){
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    view.backgroundColor = [UIColor whiteColor];
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = cornerRadius;
+    return view;
+}
+
 inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     return [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil].firstObject;
 }
@@ -78,10 +86,10 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
 }
 
 
-- (void)ax_eachSubviewWithTags:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_eachSubviewWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
-            if (AXRangeContainsInteger(tagRange, subview.tag)) {
+            if (AXNumberContainedInRange(@(subview.tag), @(tagRange.minValue), @(tagRange.maxValue))) {
                 action(subview);
             }
         }
@@ -110,12 +118,9 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     return [self.superview convertRect:self.frame toView:main];
 }
 
-- (void)ax_fillWithColor:(UIColor *)color{
-    self.backgroundColor = color;
-}
 
 - (void)ax_fillWithRandomColor{
-    [self ax_fillWithColor:[UIColor colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0]];
+    self.backgroundColor = [UIColor colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0];
 }
 
 

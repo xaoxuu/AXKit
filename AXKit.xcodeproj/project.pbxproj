@@ -178,8 +178,6 @@
 		CD63A4311FC2CA0E00581AF6 /* ThemePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4301FC2CA0E00581AF6 /* ThemePreviewView.m */; };
 		CD63A4331FC2CA1700581AF6 /* ThemePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD63A4321FC2CA1700581AF6 /* ThemePreviewView.xib */; };
 		CD63A4361FC2CCDE00581AF6 /* ThemeDetailTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4351FC2CCDE00581AF6 /* ThemeDetailTV.m */; };
-		CD63A4391FC2ED5B00581AF6 /* UIDevice+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD63A43A1FC2ED5B00581AF6 /* UIDevice+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */; };
 		CD63A43D1FC30FC400581AF6 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A43C1FC30FC400581AF6 /* FontTableViewCell.m */; };
 		CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD6476D31FC03D0A00B1E68A /* NSDictionary+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */; };
@@ -267,8 +265,6 @@
 		CDC8CDF61ECC92B7009F855E /* UIAlertController+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */; };
 		CDCF31121EBB11A4005AC6CD /* NSURL+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDCF31131EBB11A4005AC6CD /* NSURL+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */; };
-		CDD2F8701FD9621500FFD01C /* UIScreen+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD2F86E1FD9621500FFD01C /* UIScreen+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDD2F8711FD9621500FFD01C /* UIScreen+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD2F86F1FD9621500FFD01C /* UIScreen+AXExtension.m */; };
 		CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */; };
 		CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -528,8 +524,6 @@
 		CD63A4321FC2CA1700581AF6 /* ThemePreviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePreviewView.xib; sourceTree = "<group>"; };
 		CD63A4341FC2CCDE00581AF6 /* ThemeDetailTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeDetailTV.h; sourceTree = "<group>"; };
 		CD63A4351FC2CCDE00581AF6 /* ThemeDetailTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeDetailTV.m; sourceTree = "<group>"; };
-		CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+AXExtension.h"; sourceTree = "<group>"; };
-		CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AXExtension.m"; sourceTree = "<group>"; };
 		CD63A43B1FC30FC400581AF6 /* FontTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
 		CD63A43C1FC30FC400581AF6 /* FontTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
 		CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AXExtension.h"; sourceTree = "<group>"; };
@@ -646,8 +640,6 @@
 		CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+AXWrapper.m"; sourceTree = "<group>"; };
 		CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+AXExtension.h"; sourceTree = "<group>"; };
 		CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+AXExtension.m"; sourceTree = "<group>"; };
-		CDD2F86E1FD9621500FFD01C /* UIScreen+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+AXExtension.h"; sourceTree = "<group>"; };
-		CDD2F86F1FD9621500FFD01C /* UIScreen+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+AXExtension.h"; sourceTree = "<group>"; };
 		CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXExtension.h"; sourceTree = "<group>"; };
@@ -1432,12 +1424,8 @@
 				CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */,
 				CD6476D01FC03D0A00B1E68A /* NSDictionary+AXExtension.h */,
 				CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */,
-				CD63A4371FC2ED5B00581AF6 /* UIDevice+AXExtension.h */,
-				CD63A4381FC2ED5B00581AF6 /* UIDevice+AXExtension.m */,
 				CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */,
 				CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */,
-				CDD2F86E1FD9621500FFD01C /* UIScreen+AXExtension.h */,
-				CDD2F86F1FD9621500FFD01C /* UIScreen+AXExtension.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1709,7 +1697,6 @@
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
 				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
-				CDD2F8701FD9621500FFD01C /* UIScreen+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
 				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
@@ -1722,7 +1709,6 @@
 				CD41542F1FC0226400D4ED2C /* StatusKit.h in Headers */,
 				CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */,
 				CD4154451FC0335C00D4ED2C /* UIThemeModel.h in Headers */,
-				CD63A4391FC2ED5B00581AF6 /* UIDevice+AXExtension.h in Headers */,
 				CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */,
 				CD5746021EDAE9B80014E833 /* _AXKitHelpServices.h in Headers */,
 				CD77FE851EBF2971001A5787 /* NSOperation+AXExtension.h in Headers */,
@@ -2105,9 +2091,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD2F8711FD9621500FFD01C /* UIScreen+AXExtension.m in Sources */,
 				CD1426061FD655E8007571E8 /* EmailAttachmentDataSource.m in Sources */,
-				CD63A43A1FC2ED5B00581AF6 /* UIDevice+AXExtension.m in Sources */,
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
 				CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,

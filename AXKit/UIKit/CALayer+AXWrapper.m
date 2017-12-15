@@ -8,6 +8,16 @@
 
 #import "CALayer+AXWrapper.h"
 
+
+inline CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadius){
+    CALayer *layer = [CALayer layer];
+    layer.frame = CGRectMake(0, 0, size.width, size.height);
+    layer.backgroundColor = [UIColor whiteColor].CGColor;
+    layer.masksToBounds = YES;
+    layer.cornerRadius = cornerRadius;
+    return layer;
+}
+
 static inline void setLayerShadow(CALayer *layer, LayerShadow shadow){
     switch (shadow) {
         case LayerShadowNone: {

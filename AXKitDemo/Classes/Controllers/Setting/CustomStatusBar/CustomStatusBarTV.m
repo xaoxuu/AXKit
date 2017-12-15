@@ -123,7 +123,7 @@ static NSTimer *timer;
                 timer = nil;
                 timer = [NSTimer ax_scheduledTimerWithTimeInterval:0.01 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
                     [AXStatusBar showStatusBarProgress:x textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:2];
-                    x += 0.00075;
+                    x += 0.002;
                     if (x >= 1) {
                         [timer ax_pause];
                     }

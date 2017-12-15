@@ -22,14 +22,14 @@
     scroll.delegate = self;
     [self.view addSubview:scroll];
     for (int i = 0; i < 20; i++) {
-        UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(kMarginNormal, kMarginNormal+i*80, kScreenW-kMarginWide, 40)];
+        UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(kMarginNormal, kMarginNormal+i*80, kScreenW-16, 40)];
         [tf ax_adjustViewFrameWithKeyboard:self.view];
         [scroll addSubview:tf];
         tf.tag = i;
         tf.placeholder = NSStringFromInt(i);
         tf.backgroundColor = UIColor.lightGrayColor.light;
         tf.returnKeyType = UIReturnKeyNext;
-        scroll.contentSize = CGSizeMake(0, tf.bottom + kMarginWide);
+        scroll.contentSize = CGSizeMake(0, tf.bottom + 16);
         
         [tf ax_addEditingEndOnExitHandler:^(__kindof UITextField * _Nonnull sender) {
             UITextField *tf2 = [scroll viewWithTag:sender.tag+1];

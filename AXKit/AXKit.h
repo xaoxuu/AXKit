@@ -27,3 +27,9 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import <AXKit/AXKitFoundationHeader.h>
 #import <AXKit/AXKitUIHeader.h>
 
+//#import <AXKit/FeedbackKit.h>
+//#import <AXKit/StatusKit.h>
+//#import <AXKit/TabKit.h>
+#import <AXKit/TableKit.h>
+//#import <AXKit/ThemeKit.h>
+
