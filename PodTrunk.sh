@@ -7,7 +7,7 @@ if [ "$1" = "" ]; then
         exit 1
 fi
 
-FILENAME="AXkit.podspec"
+FILENAME="AXKit.podspec"
 VERSION=$1
 
 sed -i "" "s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/${VERSION}/g" ${FILENAME}
@@ -19,6 +19,8 @@ git push --tags
 pod lib lint
 # pod trunk push ${FILENAME}
 
+
+# pod trunk push AXKit.podspec
 
 
 
