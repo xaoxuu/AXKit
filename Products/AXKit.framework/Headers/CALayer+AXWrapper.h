@@ -9,8 +9,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-
-
 /**
  阴影效果
  
@@ -44,6 +42,17 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
     
     LayerShadowCenterHeavy,
 };
+
+
+/**
+ 根据尺寸和圆角半径创建layer
+ 
+ @param size 尺寸
+ @param cornerRadius 圆角半径
+ @return layer
+ */
+CG_EXTERN CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadius);
+
 
 @interface CALayer (AXWrapper)
 

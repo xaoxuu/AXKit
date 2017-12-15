@@ -14,19 +14,21 @@
  */
 FOUNDATION_EXTERN NSString *ThemeKitBundleIdentify;
 
+typedef const NSString *ThemeKitNotification;
+
 /**
  主题色更新通知
  */
-FOUNDATION_EXTERN NSString *ThemeKitNotificationColorChanged;
+FOUNDATION_EXTERN ThemeKitNotification ThemeKitNotificationColorChanged;
 
 /**
  主题字体更新通知
  */
-FOUNDATION_EXTERN NSString *ThemeKitNotificationFontChanged;
+FOUNDATION_EXTERN ThemeKitNotification ThemeKitNotificationFontChanged;
 
 /**
  主题图标更新通知
  */
-FOUNDATION_EXTERN NSString *ThemeKitNotificationIconPackChanged;
+FOUNDATION_EXTERN ThemeKitNotification ThemeKitNotificationIconPackChanged;
 
 

@@ -98,6 +98,7 @@
 						<NodeRef refid="58"/>
 						<NodeRef refid="59"/>
 						<NodeRef refid="60"/>
+						<NodeRef refid="61"/>
 						
 					</Subnodes>
 				</Node>
@@ -107,8 +108,8 @@
                     <Name>Blocks</Name>
                     <Path>index.html</Path>
                     <Subnodes>
-                        <NodeRef refid="61"/>
                         <NodeRef refid="62"/>
+                        <NodeRef refid="63"/>
                         
                     </Subnodes>
                 </Node>
@@ -1727,13 +1728,18 @@
             <Path>Constants/RandomStringType.html</Path>
             
         </Node>
+		<Node id="61" type="file" documentType="reference">
+            <Name>kCGScreenSizeEnum</Name>
+            <Path>Constants/kCGScreenSizeEnum.html</Path>
+            
+        </Node>
 		
-        <Node id="61" type="file" documentType="reference">
+        <Node id="62" type="file" documentType="reference">
             <Name>BlockType</Name>
             <Path>Blocks/BlockType.html</Path>
             
         </Node>
-        <Node id="62" type="file" documentType="reference">
+        <Node id="63" type="file" documentType="reference">
             <Name>__nullable</Name>
             <Path>Blocks/__nullable.html</Path>
             

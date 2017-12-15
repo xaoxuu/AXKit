@@ -164,11 +164,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_eachSubviewWithTags:action:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_eachSubviewWithTagsInRange:action:</TokenIdentifier>
 			<Abstract type="html">让每个tag在指定范围的子视图执行一段代码</Abstract>
 			<DeclaredIn>UIView+AXExtension.h</DeclaredIn>
 			
-			<Declaration>- (void)ax_eachSubviewWithTags:(AXIntegerRange)tagRange action:(void ( ^ ) ( __kindof UIView *subview ))action</Declaration>
+			<Declaration>- (void)ax_eachSubviewWithTagsInRange:(AXIntegerRange)tagRange action:(void ( ^ ) ( __kindof UIView *subview ))action</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>tagRange</Name>
@@ -179,7 +179,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ax_eachSubviewWithTags:action:</Anchor>
+			<Anchor>//api/name/ax_eachSubviewWithTagsInRange:action:</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
@@ -233,25 +233,8 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_fillWithColor:</TokenIdentifier>
-			<Abstract type="html">填充颜色</Abstract>
-			<DeclaredIn>UIView+AXExtension.h</DeclaredIn>
-			
-			<Declaration>- (void)ax_fillWithColor:(UIColor *)color</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>color</Name>
-					<Abstract type="html">颜色</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ax_fillWithColor:</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/UIView/ax_fillWithRandomColor</TokenIdentifier>
-			<Abstract type="html">填充随机色（多用于项目初期）</Abstract>
+			<Abstract type="html">填充随机色（多用于项目初期调试）</Abstract>
 			<DeclaredIn>UIView+AXExtension.h</DeclaredIn>
 			
 			<Declaration>- (void)ax_fillWithRandomColor</Declaration>

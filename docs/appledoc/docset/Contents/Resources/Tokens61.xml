@@ -1,8 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="">
+	<File path="Constants/kCGScreenSizeEnum.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/kCGScreenSizeEnum</TokenIdentifier>
+			<Abstract type="html">屏幕尺寸枚举</Abstract>
+			<DeclaredIn>CoreGraphics+AXExtension.h</DeclaredIn>
+            
+			
+			<NodeRef refid="61"/>
+		</Token>
 		
 		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kCGScreenSizeEnumUnknown</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kCGScreenSizeEnumUnknown</Declaration>
+            
+            <DeclaredIn>CoreGraphics+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kCGScreenSizeEnum_3_5</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kCGScreenSizeEnum_3_5</Declaration>
+            
+            <DeclaredIn>CoreGraphics+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kCGScreenSizeEnum_4_0</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kCGScreenSizeEnum_4_0</Declaration>
+            
+            <DeclaredIn>CoreGraphics+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kCGScreenSizeEnum_4_7</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kCGScreenSizeEnum_4_7</Declaration>
+            
+            <DeclaredIn>CoreGraphics+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kCGScreenSizeEnum_5_5</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kCGScreenSizeEnum_5_5</Declaration>
+            
+            <DeclaredIn>CoreGraphics+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/kCGScreenSizeEnum_5_8</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>kCGScreenSizeEnum_5_8</Declaration>
+            
+            <DeclaredIn>CoreGraphics+AXExtension.h</DeclaredIn>
+            
+            <NodeRef refid="61"/>
+        </Token>
         
         
 	</File>

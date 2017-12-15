@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CoreGraphics+AXExtension.h"
 #import "UIView+AXFrameExtension.h"
-//#import "UIView+AXAnimatedWrapper.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +21,16 @@ NS_ASSUME_NONNULL_BEGIN
  @return view
  */
 CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
+
+
+/**
+ 根据尺寸和圆角半径创建view
+
+ @param size 尺寸
+ @param cornerRadius 圆角半径
+ @return view
+ */
+CG_EXTERN UIView *UIMaskViewWithSizeAndCorner(CGSize size, CGFloat cornerRadius);
 
 /**
  从xib加载view
@@ -109,7 +119,7 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  @param tagRange 指定tag取值范围
  @param action 要执行的代码
  */
-- (void)ax_eachSubviewWithTags:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action;
+- (void)ax_eachSubviewWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action;
 
 /**
  让每个tag等于某个值的子视图执行一段代码
@@ -139,14 +149,7 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 
 
 /**
- 填充颜色
- 
- @param color 颜色
- */
-- (void)ax_fillWithColor:(UIColor *)color;
-
-/**
- 填充随机色（多用于项目初期）
+ 填充随机色（多用于项目初期调试）
  */
 - (void)ax_fillWithRandomColor;
 

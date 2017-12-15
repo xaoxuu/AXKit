@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cat/CALayer(AXWrapper)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">根据尺寸和圆角半径创建layer</Abstract>
 			<DeclaredIn>CALayer+AXWrapper.h</DeclaredIn>
             
 			
