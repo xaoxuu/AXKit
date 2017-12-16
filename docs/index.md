@@ -1,8 +1,17 @@
 [![](https://github.com/xaoxuu/AXKit/raw/master/resources/icons/header.png)](https://axkit.xaoxuu.com)
 
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/xaoxuu/AXKit/master/LICENSE) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](http://img.shields.io/cocoapods/v/AXKit.svg?style=flat)](http://cocoapods.org/?q=AXKit) [![CocoaPods](http://img.shields.io/cocoapods/p/AXKit.svg?style=flat)](http://cocoapods.org/?q=AXKit) [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/) 
-[![](https://img.shields.io/cocoapods/dt/AXKit.svg)](https://codeload.github.com/xaoxuu/AXKit/zip/master)
-[![](https://img.shields.io/cocoapods/at/AXKit.svg)](https://cocoapods.org/pods/AXKit)
+<!-- 开源协议 -->
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/xaoxuu/AXKit/master/LICENSE) 
+<!-- 平台 -->
+[![Carthage compatible](https://img.shields.io/badge/platform-iOS%208%2B%20-orange.svg?style=flat)](https://www.apple.com/nl/ios/) 
+<!-- 版本 -->
+[![CocoaPods](https://img.shields.io/cocoapods/v/AXKit.svg?style=flat)](https://cocoapods.org/pods/AXKit) 
+<!-- 下载量 -->
+[![CocoaPods](https://img.shields.io/cocoapods/dt/AXKit.svg)](https://codeload.github.com/xaoxuu/AXKit/zip/master) 
+<!-- 应用量 -->
+[![Support](https://img.shields.io/cocoapods/at/AXKit.svg)](https://cocoapods.org/pods/AXKit) 
+
+
 
 By using AXKit, you can largely simplify some system method calls, such as using block the way to create a button, although this is the same as the BlocksKit function, but AXKit not only block assembly to the method of system, and the extension of the string, for example, you can use the file name to create images, create a VC, create the View; Gesture extension, you can use a block to add gestures to the view; The chain package of sandbox file allows you to save or read a sandbox file only with one line of code; There is also NSUserDefault's perfect, code cooling mechanism (code that will not be repeated for some time); A simplified version of the color theme framework is also built in. Universal controller jump (push/pop to any level of VC, jump to VC for the specified file name) and so on.
 
