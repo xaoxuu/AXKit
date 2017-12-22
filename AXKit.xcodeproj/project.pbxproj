@@ -194,6 +194,8 @@
 		CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */; };
 		CDA527BE1FECFAC9009C39EC /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
+		CDA527BF1FECFE5C009C39EC /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
+		CDA527C21FECFED3009C39EC /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
 		CDA614D21FC17219001FB0BE /* DataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D11FC17219001FB0BE /* DataAccessLayer.m */; };
 		CDA614D51FC1724B001FB0BE /* NetworkDA.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D41FC1724B001FB0BE /* NetworkDA.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1791,6 +1793,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA527C21FECFED3009C39EC /* AXKit.bundle in Resources */,
 				CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
@@ -1836,6 +1839,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA527BF1FECFE5C009C39EC /* AXKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
