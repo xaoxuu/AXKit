@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="https://user-images.githubusercontent.com/16400144/34247501-a5729f56-e66d-11e7-9def-554f240de9fe.png">
+    <link rel="icon" href="https://user-images.githubusercontent.com/16400144/34246771-e72b7ef2-e66a-11e7-8642-b7d3d064fe63.png">
+    <title>AXKit by xaoxuu</title>
+    <link rel="stylesheet" href="https://fonts.geekzu.org/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600">
+    <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+    <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+</body>
+<script src="//unpkg.com/docsify-copy-code/index.js"></script>
+<script>
+    window.$docsify = {
+        name: '<b>AXKit</b><small> by xaoxuu</small>',
+
+        // GitHub Icon
+        repo: 'https://github.com/xaoxuu/AXKit',
+
+        // themeColor: '#757575',
+        themeColor: '#2CA3FF',
+
+        // disqus
+        disqus: 'xaoxuu',
+
+        // 封面
+        coverpage: true,
+
+        // Search Support
+        search: {
+            maxAge: 43200000, // 过期时间，单位毫秒，半天
+            // maxAge: 120000, // 过期时间，单位毫秒，2分钟
+            paths: 'auto',
+            placeholder: 'Search the docs',
+            placeholder: {
+                '/': 'Search the docs',
+                '/zh-cn/': '搜索文档'
+            },
+            noData: 'No Results!',
+            noData: {
+                '/': 'No Results!',
+                '/zh-cn/': '找不到结果'
+            },
+        },
+
+        // load sidevar from _sidebar.md
+        loadSidebar: true,
+        subMaxLevel: 4,
+        autoHeader: true,
+
+        // 加载 _navbar.md
+        loadNavbar: true,
+
+        //Auto2Top
+        auto2top: true,
+
+        plugins: [
+            // Other plugins might go here
+            window.DocsifyCopyCodePlugin.init()
+        ]
+        
+    }
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
+<!-- 代码高亮 -->
+<script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-objectivec.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-swift.min.js"></script>
+</html>
