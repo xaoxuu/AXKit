@@ -12,6 +12,9 @@
 #define BaseURLForApp   @"https://api-static.xaoxuu.com/app/axkit/"
 #define BaseURLForTheme @"https://api-static.xaoxuu.com/theme/"
 
+FOUNDATION_EXTERN NSString *kBaseURLStringForApp;
+FOUNDATION_EXTERN NSString *kBaseURLStringForTheme;
+
 @interface NetworkManager : NSObject
 
 + (void)getURLString:(NSString *)urlString completion:(void (^)(NSData * _Nullable data, id response))completion fail:(void (^)(NSError * error))fail;

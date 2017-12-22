@@ -25,7 +25,8 @@ static NSString *themeCachePath(NSString *email, NSString *name){
 - (NSString *)cacheForClassWithName:(NSString *)name{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // @xaoxuu: in background queue
-        [NetworkManager getURLString:BaseURLForApp.appendPathComponent(name).extension(@"json") completion:^(NSData * _Nullable data, id response) {
+        NSString *urlString = [NSString stringWithFormat:@"%@/%@.json", kBaseURLStringForApp, name];
+        [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
             NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             jsonCachePath(name).saveFile(jsonString);
         } fail:^(NSError *error) {
@@ -53,7 +54,8 @@ static NSString *themeCachePath(NSString *email, NSString *name){
 - (void)loadThemeList:(void (^)(ThemeCollectionModel *model))callback{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // @xaoxuu: in background queue
-        [NetworkManager getURLString:BaseURLForTheme.appendPathComponent(@"index").extension(@"json") completion:^(NSData * _Nullable data, id response) {
+        NSString *urlString = [NSString stringWithFormat:@"%@/index.json", kBaseURLStringForTheme];
+        [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
             if (callback) {
                 callback([ThemeCollectionModel modelWithDict:response]);
             }

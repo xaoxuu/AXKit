@@ -8,6 +8,9 @@
 
 #import "NetworkManager.h"
 
+NSString *kBaseURLStringForApp = @"https://api-static.xaoxuu.com/app/axkit";
+NSString *kBaseURLStringForTheme = @"https://api-static.xaoxuu.com/theme";
+
 @implementation NetworkManager
 
 
