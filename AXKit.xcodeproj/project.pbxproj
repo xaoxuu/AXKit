@@ -37,8 +37,6 @@
 		8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8579EF011E6BEDF900C33881 /* AppDelegate.m */; };
 		8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */; };
 		8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8579EF1B1E6BEE4F00C33881 /* AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8579EF201E6BEE4F00C33881 /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
-		8579EF211E6BEE4F00C33881 /* AXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD004D1A1EB2128C00ACC0B8 /* UIImageView+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD004D181EB2128C00ACC0B8 /* UIImageView+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD004D1B1EB2128C00ACC0B8 /* UIImageView+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD004D191EB2128C00ACC0B8 /* UIImageView+AXExtension.m */; };
 		CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD0645A51EB3A3DF007FBF06 /* Localizable.strings */; };
@@ -61,7 +59,6 @@
 		CD149E271F0105D4007051CE /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E241F0105D4007051CE /* tmp.xcassets */; };
 		CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = CD149E281F01080A007051CE /* _AXKitBundle.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD149E291F01080A007051CE /* _AXKitBundle.m */; };
-		CD149E2D1F010AD8007051CE /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
 		CD2096E61FC171710049739A /* ServiceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096E31FC171700049739A /* ServiceLayer.m */; };
 		CD2096E91FC1718E0049739A /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096E81FC1718E0049739A /* BaseService.m */; };
 		CD2096EC1FC171CC0049739A /* CacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096EB1FC171CC0049739A /* CacheService.m */; };
@@ -196,6 +193,9 @@
 		CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1AC1ECF30C2004FC692 /* BlogModels.m */; };
 		CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */; };
+		CDA527B71FECF7AD009C39EC /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
+		CDA527B81FECF80F009C39EC /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
+		CDA527BA1FECF82B009C39EC /* AXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDA614D21FC17219001FB0BE /* DataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D11FC17219001FB0BE /* DataAccessLayer.m */; };
 		CDA614D51FC1724B001FB0BE /* NetworkDA.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D41FC1724B001FB0BE /* NetworkDA.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -289,7 +289,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8579EF1E1E6BEE4F00C33881 /* PBXContainerItemProxy */ = {
+		CDA527BB1FECF82B009C39EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8579EEF21E6BEDF900C33881 /* Project object */;
 			proxyType = 1;
@@ -299,13 +299,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8579EF251E6BEE4F00C33881 /* Embed Frameworks */ = {
+		CDA527BD1FECF82B009C39EC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8579EF211E6BEE4F00C33881 /* AXKit.framework in Embed Frameworks */,
+				CDA527BA1FECF82B009C39EC /* AXKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,7 +683,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8579EF201E6BEE4F00C33881 /* AXKit.framework in Frameworks */,
+				CDA527B71FECF7AD009C39EC /* AXKit.framework in Frameworks */,
 				16DA2697365C05CC1F4CC264 /* libPods-AXKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1728,15 +1728,15 @@
 				8579EEF61E6BEDF900C33881 /* Sources */,
 				8579EEF71E6BEDF900C33881 /* Frameworks */,
 				8579EEF81E6BEDF900C33881 /* Resources */,
-				8579EF251E6BEE4F00C33881 /* Embed Frameworks */,
 				9C16A437EF91B6CDFD708BCA /* [CP] Embed Pods Frameworks */,
 				A988828DDB1F2347FD055152 /* [CP] Copy Pods Resources */,
 				CD67AF2E1F63F53E00F9B336 /* ShellScript */,
+				CDA527BD1FECF82B009C39EC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8579EF1F1E6BEE4F00C33881 /* PBXTargetDependency */,
+				CDA527BC1FECF82B009C39EC /* PBXTargetDependency */,
 			);
 			name = AXKitDemo;
 			productName = AXKitDemo;
@@ -1773,12 +1773,12 @@
 				TargetAttributes = {
 					8579EEF91E6BEDF900C33881 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6C36HX8DP4;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = D6M452FYRP;
+						ProvisioningStyle = Manual;
 					};
 					8579EF181E6BEE4F00C33881 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6C36HX8DP4;
+						DevelopmentTeam = D6M452FYRP;
 						ProvisioningStyle = Automatic;
 					};
 					CD67AF301F63F8F700F9B336 = {
@@ -1865,7 +1865,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD149E2D1F010AD8007051CE /* AXKit.bundle in Resources */,
+				CDA527B81FECF80F009C39EC /* AXKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2149,10 +2149,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8579EF1F1E6BEE4F00C33881 /* PBXTargetDependency */ = {
+		CDA527BC1FECF82B009C39EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8579EF181E6BEE4F00C33881 /* AXKit */;
-			targetProxy = 8579EF1E1E6BEE4F00C33881 /* PBXContainerItemProxy */;
+			targetProxy = CDA527BB1FECF82B009C39EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2211,6 +2211,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2266,6 +2267,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2288,17 +2290,20 @@
 			baseConfigurationReference = A667AFA9CC077ABA3219EC84 /* Pods-AXKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6C36HX8DP4;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = D6M452FYRP;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AXKitDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = AXKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.AXKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinteen.AXKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "c192192d-9b5b-4597-8440-919251189e35";
+				PROVISIONING_PROFILE_SPECIFIER = AXKitDemo_Dev;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2307,17 +2312,20 @@
 			baseConfigurationReference = E9083E906418E89A52CCBB86 /* Pods-AXKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6C36HX8DP4;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = D6M452FYRP;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AXKitDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = AXKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.AXKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinteen.AXKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "d4afd40c-9984-4cce-9df1-50d33f196a1a";
+				PROVISIONING_PROFILE_SPECIFIER = AXKitDemo_Dis;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -2325,10 +2333,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6C36HX8DP4;
+				DEVELOPMENT_TEAM = D6M452FYRP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2350,10 +2359,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6C36HX8DP4;
+				DEVELOPMENT_TEAM = D6M452FYRP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
