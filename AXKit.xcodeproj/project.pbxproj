@@ -193,9 +193,7 @@
 		CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1AC1ECF30C2004FC692 /* BlogModels.m */; };
 		CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9C30DB1FBFDBC20040E725 /* NSDate+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD9C30DE1FBFDBC20040E725 /* NSDate+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C30DC1FBFDBC20040E725 /* NSDate+AXExtension.m */; };
-		CDA527B71FECF7AD009C39EC /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
-		CDA527B81FECF80F009C39EC /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
-		CDA527BA1FECF82B009C39EC /* AXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDA527BE1FECFAC9009C39EC /* AXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8579EF191E6BEE4F00C33881 /* AXKit.framework */; };
 		CDA614D21FC17219001FB0BE /* DataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D11FC17219001FB0BE /* DataAccessLayer.m */; };
 		CDA614D51FC1724B001FB0BE /* NetworkDA.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA614D41FC1724B001FB0BE /* NetworkDA.m */; };
 		CDAB58E31E6BF3220017CA1E /* Foundation+AXLogExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -287,30 +285,6 @@
 		CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CC01EB884F1004B4794 /* RootViewController.m */; };
 		CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF18CE41EB888BE004B4794 /* UITableView+Creator.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CDA527BB1FECF82B009C39EC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8579EEF21E6BEDF900C33881 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8579EF181E6BEE4F00C33881;
-			remoteInfo = AXKit;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		CDA527BD1FECF82B009C39EC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CDA527BA1FECF82B009C39EC /* AXKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8579EEFA1E6BEDF900C33881 /* AXKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -683,7 +657,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA527B71FECF7AD009C39EC /* AXKit.framework in Frameworks */,
+				CDA527BE1FECFAC9009C39EC /* AXKit.framework in Frameworks */,
 				16DA2697365C05CC1F4CC264 /* libPods-AXKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1731,12 +1705,10 @@
 				9C16A437EF91B6CDFD708BCA /* [CP] Embed Pods Frameworks */,
 				A988828DDB1F2347FD055152 /* [CP] Copy Pods Resources */,
 				CD67AF2E1F63F53E00F9B336 /* ShellScript */,
-				CDA527BD1FECF82B009C39EC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CDA527BC1FECF82B009C39EC /* PBXTargetDependency */,
 			);
 			name = AXKitDemo;
 			productName = AXKitDemo;
@@ -1778,8 +1750,7 @@
 					};
 					8579EF181E6BEE4F00C33881 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = D6M452FYRP;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					CD67AF301F63F8F700F9B336 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -1865,7 +1836,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA527B81FECF80F009C39EC /* AXKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2148,14 +2118,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		CDA527BC1FECF82B009C39EC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8579EF181E6BEE4F00C33881 /* AXKit */;
-			targetProxy = CDA527BB1FECF82B009C39EC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -2335,9 +2297,10 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D6M452FYRP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2348,6 +2311,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.AXKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2361,9 +2325,10 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D6M452FYRP;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2374,6 +2339,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.AXKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
