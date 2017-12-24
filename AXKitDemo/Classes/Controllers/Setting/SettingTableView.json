@@ -3,14 +3,14 @@
     "headerTitle":"this is table header",
     "headerHeight":"20",
     "footerTitle":"this is table footer",
-    "footerHeight":"44",
+    "footerHeight":44,
     "sections":[
         {
             "headerTitle":"基本信息",
-            "headerHeight":"44",
+            "headerHeight":44,
             "footerTitle":"",
             "footerHeight":1,
-            "rowHeight":"44",
+            "rowHeight":44,
             "rows":[
                 {
                     "title":"关于",
@@ -19,9 +19,15 @@
                     "target":"AboutVC"
                 },
                 {
+                    "title":"主页",
+                    "detail":"xaoxuu.com",
+                    "icon":"https://user-images.githubusercontent.com/16400144/34246767-e5d695b4-e66a-11e7-9bde-61cc54c5bcc0.png",
+                    "target":"BlogVC"
+                },
+                {
                     "title":"博客",
-                    "detail":"xaoxuu's blog",
-                    "icon":"https://xaoxuu.com/images/avatar.png",
+                    "detail":"blog.xaoxuu.com",
+                    "icon":"https://user-images.githubusercontent.com/16400144/34246767-e5d695b4-e66a-11e7-9bde-61cc54c5bcc0.png",
                     "target":"BlogVC"
                 },
                 {
@@ -53,10 +59,10 @@
         },
         {
             "headerTitle":"个性化设置",
-            "headerHeight":"44",
+            "headerHeight":44,
             "footerTitle":"",
             "footerHeight":1,
-            "rowHeight":"44",
+            "rowHeight":44,
             "rows":[
                 {
                     "title":"主题商店",
@@ -92,10 +98,10 @@
         },
         {
             "headerTitle":"高级设置",
-            "headerHeight":"44",
+            "headerHeight":44,
             "footerTitle":"",
             "footerHeight":1,
-            "rowHeight":"44",
+            "rowHeight":44,
             "rows":[
                 {
                     "title":"组间距",
@@ -106,7 +112,7 @@
                 },
                 {
                     "title":"行高",
-                    "detail":"44",
+                    "detail":44,
                     "icon":"",
                     "target":"CustomTableVC",
                     "cmd":"rowHeight"
@@ -115,10 +121,10 @@
         },
         {
             "headerTitle":"缓存",
-            "headerHeight":"44",
+            "headerHeight":44,
             "footerTitle":"",
             "footerHeight":1,
-            "rowHeight":"44",
+            "rowHeight":44,
             "rows":[
                 {
                     "title":"清除缓存",

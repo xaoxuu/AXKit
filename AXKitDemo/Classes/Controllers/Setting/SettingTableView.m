@@ -9,6 +9,8 @@
 #import "SettingTableView.h"
 #import "CustomTableVC.h"
 #import "FeedbackVC.h"
+#import "BlogVC.h"
+
 @implementation SettingTableView
 
 
@@ -29,45 +31,17 @@
     tableView.tableFooterView = UIViewWithHeight(44);
 }
 
+- (void)ax_tableViewWillPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+    if ([viewController isKindOfClass:[BlogVC class]]) {
+        BlogVC *vc = (BlogVC *)viewController;
+        vc.urlStr = model.detail;
+    }
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     return nil;
 }
-
-
-//- (void)initTableView:(BaseTableView *)tableView{
-//    tableView.estimatedSectionFooterHeight = 0;
-//    tableView.sectionFooterHeight = 0;
-//
-//}
-
-//- (void)setupTableViewDataSource:(void (^)(NSMutableArray<BaseTableModelSection *> *))completion{
-//    if (completion) {
-//        completion(services.cache.settingList);
-//    }
-//}
-//
-//- (void)indexPath:(NSIndexPath *)indexPath willPush:(__kindof BaseViewController *)targetVC {
-//    BaseTableModelRow *model = [self rowModel:indexPath];
-//    if ([targetVC isKindOfClass:[FeedbackVC class]]) {
-//        FeedbackVC *vc = targetVC;
-//        vc.urlStr = model.cmd;
-//    }
-//    
-//    if ([targetVC isKindOfClass:[CustomTableVC class]]) {
-//        CustomTableVC *vc = targetVC;
-//        vc.cmd = model.cmd;
-//    }
-//    
-//}
-
-
-//- (void)indexPath:(NSIndexPath *)indexPath cell:(UITableViewCell<BaseTableViewCell> *)cell willSetModel:(BaseTableModelRow *)model{
-//    if (indexPath.section == 3) {
-//        if (indexPath.row == 0) {
-//            model.desc = services.cache.cachedFileSize;
-//        }
-//    }
-//}
 
 
 

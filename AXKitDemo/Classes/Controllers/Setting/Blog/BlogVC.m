@@ -16,8 +16,12 @@
 @implementation BlogVC
 
 - (void)viewDidLoad {
-    self.urlStr = @"https://blog.xaoxuu.com";
     
+    if (!self.urlStr.length) {
+        self.urlStr = @"https://blog.xaoxuu.com";
+    } else {
+        self.urlStr = [NSString stringWithFormat:@"https://%@", self.urlStr];
+    }
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     UIView *bar = [[UIView alloc] initWithFrame:[AXStatusBar getCustomStatusBar].bounds];
