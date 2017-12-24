@@ -30,7 +30,7 @@
 }
 
 + (UIColor *)ax_blue {
-    return [UIColor colorWithHexString:@"#2CA3FF"];
+    return [UIColor colorWithHexString:@"#52A1F8"];
 }
 
 
