@@ -63,6 +63,22 @@
                 {
                     "title":"md_deepOrange",
                     "target":"#FF5722",
+                },
+                {
+                    "title":"ax_blue",
+                    "target":"#52A1F8",
+                },
+                {
+                    "title":"ax_red",
+                    "target":"#F05153",
+                },
+                {
+                    "title":"ax_lightRed",
+                    "target":"#FF6868",
+                },
+                {
+                    "title":"ax_green",
+                    "target":"#7CC353",
                 }
             ]
         }
