@@ -58,22 +58,12 @@ inline CGSize CGConstGetScreenSize(void){
 }
 
 /**
- 获取CGRect的中心点
- 
- @param rect CGRect
- @return CGRect的中心点
- */
-inline CGPoint CGRectGetCenter(CGRect rect) {
-    return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
-}
-
-/**
  当前屏幕中心点坐标
  
  @return 当前屏幕中心点坐标
  */
 inline CGPoint CGConstGetScreenCenter(void){
-    return CGRectGetCenter(CGConstGetScreenBounds());
+    return CGPointMake(CGRectGetMidX(CGConstGetScreenBounds()), CGRectGetMidY(CGConstGetScreenBounds()));
 }
 /**
  状态栏高度
