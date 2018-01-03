@@ -7,19 +7,9 @@
 //
 
 #import "AXTabBarController.h"
+#import "UIViewController+AXExtension.h"
+#import "UIImage+AXExtension.h"
 
-static inline UIViewController *UIViewControllerFromString(NSString *name){
-    return [[[NSClassFromString(name) class] alloc] init];
-}
-
-static inline UIImage *UIImageFromString(NSString *name){
-    UIImage *image = [UIImage imageNamed:name];
-    if (!image) {
-        NSData *data = [NSData dataWithContentsOfFile:name];
-        image = [UIImage imageWithData:data];
-    }
-    return image;
-}
 
 @interface AXTabBarController ()
 
@@ -36,7 +26,7 @@ static inline UIImage *UIImageFromString(NSString *name){
     
     
     [self.controllers enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIViewController *vc = UIViewControllerFromString(obj[self.configurationKeyForViewControllerName]);
+        UIViewController *vc = UIViewControllerNamed(obj[self.configurationKeyForViewControllerName]);
         if (vc) {
             __kindof UINavigationController *nav = [[NSClassFromString(self.classNameForBaseNavigationController) alloc] initWithRootViewController:vc];
             [self addChildViewController:nav];
@@ -81,10 +71,10 @@ static inline UIImage *UIImageFromString(NSString *name){
             vc.title = NSStringFromClass(vc.class);
         }
         if (image.length) {
-            vc.tabBarItem.image = UIImageFromString(image);
+            vc.tabBarItem.image = UIImageNamed(image);
         }
         if (selectedImage) {
-            vc.tabBarItem.selectedImage = UIImageFromString(selectedImage);
+            vc.tabBarItem.selectedImage = UIImageNamed(selectedImage);
         }
     }
 }

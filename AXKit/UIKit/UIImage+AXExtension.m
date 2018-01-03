@@ -41,7 +41,13 @@ inline UIImage *UIImageFromView(UIView *view){
 }
 
 inline UIImage *UIImageNamed(NSString *name){
-    return [UIImage imageNamed:name];
+    UIImage *image = [UIImage imageNamed:name];
+    if (!image) {
+        NSData *data = [NSData dataWithContentsOfFile:name];
+        image = [UIImage imageWithData:data];
+    }
+    return image;
+
 }
 
 inline UIImage *UIImageWithBundleImageName(NSString *name){

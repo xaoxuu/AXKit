@@ -9,7 +9,7 @@
 #import "UIViewController+AXExtension.h"
 
 
-inline UIViewController *UIViewControllerFromString(NSString *name){
+inline UIViewController *UIViewControllerNamed(NSString *name){
     return [[[NSClassFromString(name) class] alloc] init];
 }
 
