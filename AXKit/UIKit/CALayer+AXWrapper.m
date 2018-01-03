@@ -83,7 +83,7 @@ static inline void setLayerShadow(CALayer *layer, LayerShadow shadow){
 
 
 
-static inline void showColorAnimation(CALayer *layer, UIColor *color, void (^callback)(CABasicAnimation *animation)){
+static inline void addColorAnimation(CALayer *layer, UIColor *color, void (^callback)(CABasicAnimation *animation)){
     static CABasicAnimation *animation;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -102,7 +102,7 @@ static inline void showColorAnimation(CALayer *layer, UIColor *color, void (^cal
 }
 
 
-static inline void hideColorAnimation(CALayer *layer){
+static inline void removeColorAnimation(CALayer *layer){
     [layer removeAnimationForKey:@"backgroundColor"];
 }
 
@@ -158,22 +158,22 @@ static inline void hideColorAnimation(CALayer *layer){
 
 #pragma mark - animation
 
-- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatDuration:(CFTimeInterval)repeatDuration{
-    showColorAnimation(self, color, ^(CABasicAnimation *animation) {
+- (void)ax_animatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatDuration:(CFTimeInterval)repeatDuration{
+    addColorAnimation(self, color, ^(CABasicAnimation *animation) {
         animation.duration = duration;
         animation.repeatDuration = repeatDuration;
     });
 }
 
-- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatCount:(float)repeatCount{
-    showColorAnimation(self, color, ^(CABasicAnimation *animation) {
+- (void)ax_animatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatCount:(float)repeatCount{
+    addColorAnimation(self, color, ^(CABasicAnimation *animation) {
         animation.duration = duration;
         animation.repeatCount = repeatCount;
     });
 }
 
-- (void)ax_hideColorAnimation{
-    hideColorAnimation(self);
+- (void)ax_clearColorAnimation{
+    removeColorAnimation(self);
 }
 
 

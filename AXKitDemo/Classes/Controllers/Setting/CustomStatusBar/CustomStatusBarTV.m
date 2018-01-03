@@ -58,13 +58,13 @@ static NSTimer *timer;
             if (row == 0) {
                 [customStatusBar.layer ax_hideColorAnimation];
             } else if (row == 1) {
-                [customStatusBar.layer ax_showAnimatedColor:axThemeManager.color.theme.dark duration:1 repeatCount:HUGE_VALF];
+                [customStatusBar.layer ax_animatedColor:axThemeManager.color.theme.dark duration:1 repeatCount:HUGE_VALF];
             } else if (row == 2) {
-                [customStatusBar.layer ax_showAnimatedColor:UIColor.md_red duration:1 repeatCount:HUGE_VALF];
+                [customStatusBar.layer ax_animatedColor:UIColor.md_red duration:1 repeatCount:HUGE_VALF];
             } else if (row == 3) {
-                [customStatusBar.layer ax_showAnimatedColor:UIColor.md_yellow duration:1.5 repeatCount:HUGE_VALF];
+                [customStatusBar.layer ax_animatedColor:UIColor.md_yellow duration:1.5 repeatCount:HUGE_VALF];
             } else if (row == 4) {
-                [customStatusBar.layer ax_showAnimatedColor:UIColor.md_blue duration:2 repeatCount:HUGE_VALF];
+                [customStatusBar.layer ax_animatedColor:UIColor.md_blue duration:2 repeatCount:HUGE_VALF];
                 
             }
             
