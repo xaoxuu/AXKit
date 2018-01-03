@@ -148,7 +148,7 @@ CG_EXTERN CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadiu
 /**
  清除颜色渐变动画
  */
-- (void)ax_clearColorAnimation;
+- (void)ax_removeColorAnimation;
 
 
 @end

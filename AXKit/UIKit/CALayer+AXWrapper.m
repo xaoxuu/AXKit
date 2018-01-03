@@ -172,7 +172,7 @@ static inline void removeColorAnimation(CALayer *layer){
     });
 }
 
-- (void)ax_clearColorAnimation{
+- (void)ax_removeColorAnimation{
     removeColorAnimation(self);
 }
 

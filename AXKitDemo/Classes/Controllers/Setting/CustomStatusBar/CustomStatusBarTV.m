@@ -56,7 +56,7 @@ static NSTimer *timer;
             customStatusBar.alpha = 1;
             customStatusBar.backgroundColor = axThemeManager.color.theme;
             if (row == 0) {
-                [customStatusBar.layer ax_hideColorAnimation];
+                [customStatusBar.layer ax_removeColorAnimation];
             } else if (row == 1) {
                 [customStatusBar.layer ax_animatedColor:axThemeManager.color.theme.dark duration:1 repeatCount:HUGE_VALF];
             } else if (row == 2) {

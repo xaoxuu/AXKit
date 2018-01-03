@@ -9,28 +9,49 @@
 #import "UIColor+AXColorPack.h"
 #import "UIColor+AXExtension.h"
 
+static UIColor *_ax_blue2;
+
 @implementation UIColor (AXColorPack)
 
 
-
 + (UIColor *)ax_red {
-    return [UIColor colorWithHexString:@"#F05153"];
+    static UIColor *color;
+    if (!color) {
+        color = [UIColor colorWithHexString:@"#F05153"];
+    }
+    return color;
 }
 
 + (UIColor *)ax_lightRed {
-    return [UIColor colorWithHexString:@"#FF6868"];
+    static UIColor *color;
+    if (!color) {
+        color = [UIColor colorWithHexString:@"#FF6868"];
+    }
+    return color;
 }
 
 + (UIColor *)ax_green {
-    return [UIColor colorWithHexString:@"#7CC353"];
+    static UIColor *color;
+    if (!color) {
+        color = [UIColor colorWithHexString:@"#7CC353"];
+    }
+    return color;
 }
 
 + (UIColor *)ax_cyan {
-    return [UIColor colorWithHexString:@"#66CDFA"];
+    static UIColor *color;
+    if (!color) {
+        color = [UIColor colorWithHexString:@"#66CDFA"];
+    }
+    return color;
 }
 
 + (UIColor *)ax_blue {
-    return [UIColor colorWithHexString:@"#52A1F8"];
+    static UIColor *color;
+    if (!color) {
+        color = [UIColor colorWithHexString:@"#52A1F8"];
+    }
+    return color;
 }
 
 

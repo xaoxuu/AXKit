@@ -13,31 +13,31 @@
 @interface UIColor (MDColorPack)
 
 #pragma mark red -> purple
-+ (UIColor *)md_red;
-+ (UIColor *)md_pink;
-+ (UIColor *)md_purple;
-+ (UIColor *)md_deepPurple;
+@property (class, strong, readonly, nonatomic) UIColor *md_red;
+@property (class, strong, readonly, nonatomic) UIColor *md_pink;
+@property (class, strong, readonly, nonatomic) UIColor *md_purple;
+@property (class, strong, readonly, nonatomic) UIColor *md_deepPurple;
 
 #pragma mark blue -> cyan
-+ (UIColor *)md_indigo;
-+ (UIColor *)md_blue;
-+ (UIColor *)md_lightBlue;
-+ (UIColor *)md_cyan;
-+ (UIColor *)md_teal;
+@property (class, strong, readonly, nonatomic) UIColor *md_indigo;
+@property (class, strong, readonly, nonatomic) UIColor *md_blue;
+@property (class, strong, readonly, nonatomic) UIColor *md_lightBlue;
+@property (class, strong, readonly, nonatomic) UIColor *md_cyan;
+@property (class, strong, readonly, nonatomic) UIColor *md_teal;
 
 #pragma mark green -> yellow
-+ (UIColor *)md_green;
-+ (UIColor *)md_lightGreen;
-+ (UIColor *)md_lime;
-+ (UIColor *)md_yellow;
-+ (UIColor *)md_amber;
+@property (class, strong, readonly, nonatomic) UIColor *md_green;
+@property (class, strong, readonly, nonatomic) UIColor *md_lightGreen;
+@property (class, strong, readonly, nonatomic) UIColor *md_lime;
+@property (class, strong, readonly, nonatomic) UIColor *md_yellow;
+@property (class, strong, readonly, nonatomic) UIColor *md_amber;
 
 #pragma mark orange -> gray
-+ (UIColor *)md_orange;
-+ (UIColor *)md_deepOrange;
-+ (UIColor *)md_brown;
-+ (UIColor *)md_blueGray;
-+ (UIColor *)md_gray;
+@property (class, strong, readonly, nonatomic) UIColor *md_orange;
+@property (class, strong, readonly, nonatomic) UIColor *md_deepOrange;
+@property (class, strong, readonly, nonatomic) UIColor *md_brown;
+@property (class, strong, readonly, nonatomic) UIColor *md_blueGray;
+@property (class, strong, readonly, nonatomic) UIColor *md_gray;
 
 
 @end

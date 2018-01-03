@@ -906,7 +906,6 @@
 				CD3543901F9AEFE2009317A6 /* EmptyVC */,
 				CD74F9F01F9ADE9A00EBD3B5 /* Cooldown */,
 				CDB716421F8E436C0025E8D7 /* Camera */,
-				CD9B8C781F8B1FBE00A3A84B /* Error */,
 				CD79DF9B1EEF910000408BAD /* Alert */,
 				CD79DF951EEF8FE900408BAD /* Shadow */,
 				CD79DF911EEF805E00408BAD /* Keyboard */,
@@ -1360,13 +1359,6 @@
 				CD88D1A91ECF30B6004FC692 /* BlogContentModel.m */,
 			);
 			path = BlogModels;
-			sourceTree = "<group>";
-		};
-		CD9B8C781F8B1FBE00A3A84B /* Error */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Error;
 			sourceTree = "<group>";
 		};
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
