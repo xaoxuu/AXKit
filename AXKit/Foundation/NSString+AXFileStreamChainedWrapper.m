@@ -9,9 +9,6 @@
 #import "NSString+AXFileStreamChainedWrapper.h"
 #import "Foundation+AXLogExtension.h"
 
-static NSString *plist = @"plist";
-static NSString *json  = @"json";
-static NSString *txt   = @"txt";
 
 
 @implementation NSString (AXFileStreamChainedWrapper)
@@ -20,13 +17,13 @@ static NSString *txt   = @"txt";
 
 - (nullable __kindof NSArray *(^)(void))readArray{
     return ^{
-        return [self readArrayWithExtension:plist];
+        return [self readArrayWithExtension:nil];
     };
 }
 
 - (nullable __kindof NSDictionary *(^)(void))readDictionary{
     return ^{
-        return [self readDictionaryWithExtension:plist];
+        return [self readDictionaryWithExtension:nil];
     };
 }
 
@@ -34,7 +31,7 @@ static NSString *txt   = @"txt";
 - (nullable id (^)(void))readJson{
     return ^{
         id result = nil;
-        NSString *jsonStr = [NSString stringWithContentsOfFile:self.extension(json) encoding:NSUTF8StringEncoding error:nil];
+        NSString *jsonStr = [NSString stringWithContentsOfFile:self encoding:NSUTF8StringEncoding error:nil];
         if (jsonStr.length) {
             result = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding] options:0 error:NULL];
         }
@@ -42,9 +39,9 @@ static NSString *txt   = @"txt";
     };
 }
 
-- (nullable NSString *(^)(void))readTxt{
+- (nullable NSString *(^)(void))readString{
     return ^{
-        return [NSString stringWithContentsOfFile:self.extension(txt) encoding:NSUTF8StringEncoding error:nil];
+        return [NSString stringWithContentsOfFile:self encoding:NSUTF8StringEncoding error:nil];
     };
 }
 
@@ -129,8 +126,8 @@ static NSString *txt   = @"txt";
     };
 }
 
-- (NSArray<NSString *> *(^)(NSString *))subpaths{
-    return ^(NSString *extension){
+- (NSArray<NSString *> *(^)(NSString * __nullable))subpaths{
+    return ^(NSString * __nullable extension){
         NSMutableArray *allPlist = [NSMutableArray array];
         NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:self];
         NSString *path;
@@ -143,8 +140,8 @@ static NSString *txt   = @"txt";
     };
 }
 
-- (NSString *(^)(NSString *))extension{
-    return ^(NSString *extension){
+- (NSString *(^)(NSString * __nullable))extension{
+    return ^(NSString * __nullable extension){
         // @xaoxuu: 以.开头
         if (extension.length && ![self.lastPathComponent containsString:[@"."stringByAppendingString:extension]]) {
             NSString *first = [extension substringToIndex:1];
@@ -158,9 +155,13 @@ static NSString *txt   = @"txt";
     };
 }
 
-- (NSString *(^)(NSString *))appendPathComponent{
-    return ^(NSString *component){
-        return [self stringByAppendingPathComponent:component];
+- (NSString *(^)(NSString * __nullable))appendPathComponent{
+    return ^(NSString * __nullable component){
+        if (component.length) {
+            return [self stringByAppendingPathComponent:component];
+        } else {
+            return self;
+        }
     };
 }
 
@@ -189,15 +190,15 @@ static NSString *txt   = @"txt";
 
 #pragma mark read file
 
-- (nullable NSArray *)readArrayWithExtension:(NSString *)extension{
+- (nullable NSArray *)readArrayWithExtension:(nullable NSString *)extension{
     return [NSArray arrayWithContentsOfFile:self.extension(extension)];
 }
 
-- (nullable NSDictionary *)readDictionaryWithExtension:(NSString *)extension{
+- (nullable NSDictionary *)readDictionaryWithExtension:(nullable NSString *)extension{
     return [NSDictionary dictionaryWithContentsOfFile:self.extension(extension)];
 }
 
-- (nullable id)readArchivedFileWithExtension:(NSString *)extension{
+- (nullable id)readArchivedFileWithExtension:(nullable NSString *)extension{
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.extension(extension)]) {
         NSData *data = [NSData dataWithContentsOfFile:self.extension(extension)];
         return [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -209,7 +210,7 @@ static NSString *txt   = @"txt";
 #pragma mark write file
 
 - (BOOL)writeFile:(__kindof NSObject *)file
-        extension:(NSString *)extension
+        extension:(nullable NSString *)extension
        completion:(void (^)(void))completion{
     BOOL result = (BOOL)file;
     if (!result) {
@@ -281,7 +282,7 @@ static NSString *txt   = @"txt";
 
 
 - (BOOL)writeArchivedFile:(__kindof NSObject *)file
-                extension:(NSString *)extension
+                extension:(nullable NSString *)extension
                completion:(void (^)(void))completion{
     BOOL result = (BOOL)file;
     if (!result) {
@@ -323,7 +324,7 @@ static NSString *txt   = @"txt";
 
 #pragma mark remove file
 
-- (BOOL)removeFileWithExtension:(NSString *)extension
+- (BOOL)removeFileWithExtension:(nullable NSString *)extension
                      completion:(void (^)(void))completion{
     BOOL result = [[NSFileManager defaultManager] removeItemAtPath:self.extension(extension) error:nil];
     if (!result) AXLogFailure(@"remove failure.");
