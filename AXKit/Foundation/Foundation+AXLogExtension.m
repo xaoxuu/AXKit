@@ -10,15 +10,18 @@
 #import "NSString+AXFileStreamChainedWrapper.h"
 #import "NSDate+AXExtension.h"
 
-// 日志版本
-static CGFloat logFileVersion = 1.0;
+
+
+
+static LogTypeString *app = @"app";
+static LogTypeString *data = @"data";
+static LogTypeString *error = @"error";
+
 // 日志文件扩展名
-static NSString *logFileExtension = @"md";
+static NSString *logFileExtension = @"log";
 
 // 日志存放的文件夹名
-static NSString *logFileDir(){
-    return [NSString stringWithFormat:@"log%.1f", logFileVersion];
-}
+static NSString *logFileDirName = @"Logs";
 
 static NSDateFormatter *formatter;
 
@@ -40,25 +43,61 @@ static inline NSDateFormatter *dateFormatter(NSString *format){
     return formatter;
 }
 
-static inline NSString *logPath(){
-    static NSString *path;
+static inline NSString *getTodayString(){
+    static NSString *str;
+    if (!str) {
+        str = [dateFormatter(@"yyyy-MM-dd") stringFromDate:[NSDate date]];
+    }
+    return str;
+}
+
+static inline NSString *getCurrentTimeString(){
+    return [dateFormatter(@"yyyy-MM-dd HH:mm:ss Z") stringFromDate:[NSDate date]];
+}
+
+static inline NSString *logDir(){
+    static NSString *dir;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSDate *today = [NSDate date];
-        NSString *fileName = [NSString stringWithFormat:@"%@.%@", [dateFormatter(@"yyyy-MM-dd") stringFromDate:today], logFileExtension];
-        path = [[@"com.xaoxuu.AXKit" stringByAppendingPathComponent:logFileDir()] stringByAppendingPathComponent:fileName].cachePath;
-        // 写入第一行，文件标题
-        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"## app launch: %@\n", [dateFormatter(@"yyyy-MM-dd HH:mm:ss") stringFromDate:today]]);
+        dir = [NSString stringWithFormat:@"com.xaoxuu.AXKit/%@", logFileDirName].cachePath;
+        if (!dir.isDirectoryExist()) {
+            dir.createDirectory();
+        }
     });
+    return dir;
+}
+
+/**
+ 当天的log文件夹
+
+ @return 当天的log文件夹
+ */
+static inline NSString *logDirToday(){
+    static NSString *dir;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dir = [NSString stringWithFormat:@"%@/%@", logDir(), getTodayString()];
+        if (!dir.isDirectoryExist()) {
+            dir.createDirectory();
+        }
+    });
+    return dir;
+}
+
+
+static inline NSString *logPath(LogTypeString *type){
+    NSString *path = [NSString stringWithFormat:@"%@/%@-%@.%@", logDirToday(), getTodayString(), type, logFileExtension];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        // 初始化写入第一行，记录启动时间
+        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"-> [%@] app launched \n\n", getCurrentTimeString()]);
+    }
     return path;
 }
 
 
-@implementation AXLog
+@implementation AXCachedLog
 
-+ (void)configLogVersion:(CGFloat)version{
-    logFileVersion = version;
-}
+
 
 /**
  获取所有的日志路径
@@ -66,8 +105,9 @@ static inline NSString *logPath(){
  @return 日志路径
  */
 + (NSArray<NSString *> *)getAllCachedLogPath{
-    return logPath().stringByDeletingLastPathComponent.subpaths(logFileExtension);
+    return logDir().subpaths(logFileExtension);
 }
+
 
 /**
  获取某个日期以后的日志路径
@@ -76,33 +116,53 @@ static inline NSString *logPath(){
  @return 日志路径
  */
 + (NSArray<NSString *> *)getLatestCachedLogPathSinceDate:(NSDate *)date{
-    NSMutableArray<NSString *> *result = [NSMutableArray arrayWithArray:[self getAllCachedLogPath]];
-    for (int i = 0; i < result.count; i++) {
-        NSString *obj = result[i];
-        NSString *dateString = obj.lastPathComponent.stringByDeletingPathExtension;
-        NSDate *targetDate = [dateFormatter(@"yyyy-MM-dd") dateFromString:dateString];
-        NSTimeInterval targetTimestamp = [targetDate timeIntervalSince1970];
-        if (targetTimestamp < [date timeIntervalSince1970]) {
-            [result removeObjectAtIndex:i];
-            i--;
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
+    NSArray<NSString *> *dirArr = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:logDir() error:nil];
+    dirArr = [dirArr sortedArrayUsingDescriptors:@[descriptor]];
+    NSMutableArray<NSString *> *tmp = [NSMutableArray array];
+    [dirArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (![obj isEqualToString:@".DS_Store"]) {
+            NSString *dateString = obj.lastPathComponent.stringByDeletingPathExtension;
+            NSDate *thisDate = [dateFormatter(@"yyyy-MM-dd") dateFromString:dateString];
+            if (thisDate.dateInteger >= date.dateInteger) {
+                [tmp addObject:obj];
+            }
         }
-    }
-    return result;
+    }];
+    NSMutableArray<NSString *> *ret = [NSMutableArray array];
+    [tmp enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *path = [NSString stringWithFormat:@"%@/%@", logDir(), obj];
+        [ret addObjectsFromArray:path.subpaths(logFileExtension)];
+    }];
+    
+    return ret;
 }
 
 /**
- 获取最近几条日志路径
+ 获取最近几天的日志路径
  
- @param count 日志数量
+ @param count 天数
  @return 日志路径
  */
-+ (NSArray<NSString *> *)getLatestCachedLogPathWithCount:(NSUInteger)count{
-    NSArray *result = [self getAllCachedLogPath];
++ (NSArray<NSString *> *)getLatestCachedLogPathWithDateCount:(NSUInteger)count{
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
+    NSArray<NSString *> *dirArr = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:logDir() error:nil];
+    dirArr = [dirArr sortedArrayUsingDescriptors:@[descriptor]];
+    NSMutableArray<NSString *> *result = [NSMutableArray arrayWithCapacity:count];
+    [dirArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (![obj isEqualToString:@".DS_Store"]) {
+            [result addObject:obj];
+        }
+    }];
     if (result.count > count) {
-        NSRange range = NSMakeRange(result.count - count, count);
-        result = [result subarrayWithRange:range];
+        dirArr = [result subarrayWithRange:NSMakeRange(0, count)];
     }
-    return result;
+    NSMutableArray<NSString *> *ret = [NSMutableArray array];
+    [dirArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *path = [NSString stringWithFormat:@"%@/%@", logDir(), obj];
+        [ret addObjectsFromArray:path.subpaths(logFileExtension)];
+    }];
+    return ret;
 }
 
 /**
@@ -115,6 +175,15 @@ static inline NSString *logPath(){
     return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 }
 
++ (void)writeAppLogWithFunc:(const char *)func input:(NSObject *)input{
+    return [self writeLogWithType:app func:func input:input];
+}
++ (void)writeDataLogWithFunc:(const char *)func input:(NSObject *)input{
+    return [self writeLogWithType:data func:func input:input];
+}
++ (void)writeErrorLogWithFunc:(const char *)func input:(NSObject *)input{
+    return [self writeLogWithType:error func:func input:input];
+}
 /**
  写日志（每次启动保存一份日志文件，文件名为启动时间）
  要在日志中记录更详细的内容，需要重写输入对象的-description方法。
@@ -122,18 +191,17 @@ static inline NSString *logPath(){
  @param func __FUNCTION__
  @param input 输入obj
  */
-+ (void)writeLogWithFunc:(NSString *)func input:(NSObject *)input{
++ (void)writeLogWithType:(LogTypeString *)type func:(const char *)func input:(nullable NSObject *)input{
     if (!input) {
         return;
     }
     dispatch_async(logQueue(), ^{
         // @xaoxuu: in log queue
-        NSString *dateString = [dateFormatter(@"yyyy-MM-dd HH:mm:ss Z") stringFromDate:[NSDate date]];
-        NSString *str = [NSString stringWithFormat:@"##### [%@] func:%@\n```\n%@\n```\n\n", dateString, func, input.description];
+        NSString *str = [NSString stringWithFormat:@"-> [%@] func:%@\n%@\n\n", getCurrentTimeString(), [NSString stringWithFormat:@"%s", func], input.description];
 #ifdef DEBUG
         NSLog(@"%@",str);
 #endif
-        logPath().saveStringByAppendingToEndOfFile(str);
+        logPath(type).saveStringByAppendingToEndOfFile(str);
     });
 }
 

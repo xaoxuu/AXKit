@@ -51,7 +51,7 @@ inline void databaseDeferredTransaction(void (^block)(FMDatabase *db, BOOL *roll
         BOOL result = [self executeUpdate:update];
         if (!result) {
             AXLogFailure(@"database option failure: >>>>%@", update);
-            AXLogToCachePath(update);
+            AXCachedLogOBJ(update);
         }
         return result;
     };
