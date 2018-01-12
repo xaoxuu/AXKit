@@ -63,6 +63,7 @@ static UIImage *cachedImage;
     
     UIImageView *bg = [[UIImageView alloc] initWithFrame:self.view.bounds];
     bg.contentMode = UIViewContentModeScaleAspectFill;
+    bg.maskView = UIMaskViewWithSizeAndCornerRadius(self.view.bounds.size, 0);
     [self.view insertSubview:bg belowSubview:tableView];
     if (cachedImage) {
         bg.image = cachedImage;

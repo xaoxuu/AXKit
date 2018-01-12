@@ -29,7 +29,7 @@
                     "title":"更新日志",
                     "detail":"",
                     "icon":"",
-                    "target":"ReleaseLogVC"
+                    "target":"BlogVC"
                     }
             ]
         },

@@ -31,23 +31,16 @@
                     "target":"BlogVC"
                 },
                 {
-                    "title":"项目",
-                    "detail":"xaoxuu's proj",
+                    "title":"文档",
+                    "detail":"",
                     "icon":"setting_projects",
-                    "target":"ProjectsVC"
+                    "target":"BlogVC"
                 },
                 {
-                    "title":"GitHub反馈",
+                    "title":"GitHub",
                     "detail":"bug反馈、功能建议",
                     "icon":"setting_feedback_github",
                     "target":"https://github.com/xaoxuu/AXKit/issues"
-                },
-                {
-                    "title":"邮件反馈",
-                    "detail":"直接发邮件给开发者",
-                    "icon":"setting_feedback_email",
-                    "target":"FeedbackVC",
-                    "cmd":"feedbackEmail"
                 },
                 {
                     "title":"帮助",

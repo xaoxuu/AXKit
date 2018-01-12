@@ -22,6 +22,12 @@
     } else {
         self.urlStr = [NSString stringWithFormat:@"https://%@", self.urlStr];
     }
+    
+    if ([self.title isEqualToString:@"文档"]) {
+        self.urlStr = @"https://xaoxuu.com/docs/axkit/";
+    } else if ([self.title isEqualToString:@"更新日志"]) {
+        self.urlStr = @"https://xaoxuu.com/docs/axkit/#/zh-cn/appendix/changelog";
+    }
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     UIView *bar = [[UIView alloc] initWithFrame:[AXStatusBar getCustomStatusBar].bounds];

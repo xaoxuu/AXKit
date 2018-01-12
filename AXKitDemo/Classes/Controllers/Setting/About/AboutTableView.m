@@ -9,7 +9,7 @@
 #import "AboutTableView.h"
 #import "NormalLabel.h"
 #import "BaseWebVC.h"
-
+#import "BlogVC.h"
 
 #define CACHE_VERSION @"CACHE_VERSION"
 
@@ -82,6 +82,13 @@ static CGFloat const iconSize = 64;
     }
 }
 
+- (void)ax_tableViewWillPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+    if ([viewController isKindOfClass:[BlogVC class]]) {
+        BlogVC *vc = (BlogVC *)viewController;
+        vc.urlStr = model.detail;
+    }
+}
 
 - (BOOL)ax_tableViewShouldPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{
 //    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
