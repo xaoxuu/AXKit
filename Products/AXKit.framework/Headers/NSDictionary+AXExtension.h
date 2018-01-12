@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (double)doubleValueForKey:(NSString *)key;
 
 - (NSInteger)integerValueForKey:(NSString *)key;
+
 - (BOOL)boolValueForKey:(NSString *)key;
 
 @end

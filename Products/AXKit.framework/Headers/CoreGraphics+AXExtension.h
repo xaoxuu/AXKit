@@ -66,14 +66,6 @@ CG_EXTERN CGSize CGConstGetScreenSize(void);
 
 
 /**
- 获取CGRect的中心点
-
- @param rect CGRect
- @return CGRect的中心点
- */
-CG_EXTERN CGPoint CGRectGetCenter(CGRect rect);
-
-/**
  当前屏幕中心点坐标
 
  @return 当前屏幕中心点坐标

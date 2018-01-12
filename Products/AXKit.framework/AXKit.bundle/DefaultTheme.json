@@ -1,0 +1,24 @@
+{
+    "info":{
+        "name":"默认",
+        "author":"xaoxuu",
+        "email":"xaoxuu@gmail.com",
+        "price":0,
+        "preview":[
+            "https://user-images.githubusercontent.com/16400144/33026312-1e56c180-ce4b-11e7-8262-ef15d57d798e.png"
+        ]
+    },
+    "price":0,
+    "color": {
+        "background":"ffffff",
+        "theme":"03A9F4",
+        "accent":""
+    },
+    "font": {
+        "prefersFontSize":14,
+        "name":"默认"
+    },
+    "icon": {
+        
+    }
+}

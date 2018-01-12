@@ -75,8 +75,8 @@ static CGFloat const iconSize = 64;
 //            }, nil);
             AXLogOBJ(model.detail);
         } else if (indexPath.row == 1) {
-            NSString *buildTime = @"20".append([NSBundle ax_appBuild]);
-            NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMMddHHmm"];
+            NSString *buildTime = @"2018".append([NSBundle ax_appBuild]);
+            NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMdd1"];
             tmp.detail = [date stringWithFormat:@"yyyy-MM-dd"];
         }
     }

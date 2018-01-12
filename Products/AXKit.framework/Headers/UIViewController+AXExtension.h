@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param name view controller的类名
  @return view controller实例对象
  */
-CG_EXTERN UIViewController *UIViewControllerFromString(NSString *name);
+CG_EXTERN UIViewController *UIViewControllerNamed(NSString *name);
 
 
 @interface UIViewController (AXExtension)

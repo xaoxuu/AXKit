@@ -106,19 +106,21 @@
 #endif // ==================== [ __OBJC__ Macro ] ==================== //
 
 
-#define AXLogToCachePath(NSObject) [AXLog writeLogWithFunc:[NSString stringWithFormat:@"%s", __FUNCTION__] input:NSObject]
 
-
-NS_ASSUME_NONNULL_BEGIN
-@interface AXLog : NSObject
+#define AXCachedLogWithType(LogTypeString, NSObject) [AXCachedLog writeLogWithType:LogTypeString func:__FUNCTION__ input:NSObject]
+#define AXCachedLogOBJ(NSObject) [AXCachedLog writeAppLogWithFunc:__FUNCTION__ input:NSObject]
+#define AXCachedLogData(NSObject) [AXCachedLog writeDataLogWithFunc:__FUNCTION__ input:NSObject]
+#define AXCachedLogError(NSObject) [AXCachedLog writeErrorLogWithFunc:__FUNCTION__ input:NSObject]
 
 
 /**
- 配置log文件版本
-
- @param version log文件版本
+ 这个类型就是log文件的名字，例如：【2018-01-11-type.log】
  */
-+ (void)configLogVersion:(CGFloat)version;
+typedef NSString LogTypeString;
+
+NS_ASSUME_NONNULL_BEGIN
+@interface AXCachedLog : NSObject
+
 
 /**
  获取所有的日志路径
@@ -137,12 +139,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 获取最近几条日志路径
-
- @param count 日志数量
+ 获取最近几天的日志路径
+ 
+ @param count 天数
  @return 日志路径
  */
-+ (nullable NSArray<NSString *> *)getLatestCachedLogPathWithCount:(NSUInteger)count;
++ (nullable NSArray<NSString *> *)getLatestCachedLogPathWithDateCount:(NSUInteger)count;
 
 /**
  根据路径读取某个日志内容
@@ -159,7 +161,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param func __FUNCTION__
  @param input 输入obj
  */
-+ (void)writeLogWithFunc:(NSString *)func input:(NSObject *)input;
 
++ (void)writeAppLogWithFunc:(const char *)func input:(nullable NSObject *)input;
++ (void)writeDataLogWithFunc:(const char *)func input:(nullable NSObject *)input;
++ (void)writeErrorLogWithFunc:(const char *)func input:(nullable NSObject *)input;
++ (void)writeLogWithType:(LogTypeString *)type func:(const char *)func input:(nullable NSObject *)input;
 @end
 NS_ASSUME_NONNULL_END

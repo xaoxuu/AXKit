@@ -15,32 +15,32 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark read
 
 /**
- 读取一个数组或可变数组(自动追加.plist)
+ 读取一个数组或可变数组
 
  @return 数组
  */
 - (nullable __kindof NSArray *(^)(void))readArray;
 
 /**
- 读取一个字典或可变字典(自动追加.plist)
+ 读取一个字典或可变字典
 
  @return 字典
  */
 - (nullable __kindof NSDictionary *(^)(void))readDictionary;
 
 /**
- 读取一个json文件(自动追加.json)
+ 读取一个json文件
 
  @return 数组或字典
  */
 - (nullable id (^)(void))readJson;
 
 /**
- 读取一个纯文本文件(自动追加.txt)
+ 读取一个纯文本文件
 
  @return txt文件
  */
-- (nullable NSString *(^)(void))readTxt;
+- (nullable NSString *(^)(void))readString;
 
 /**
  解档一个已归档的文件
@@ -122,17 +122,17 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  ‘self’路径下的所有文件路径
  */
-- (nullable NSArray<NSString *> *(^)(NSString *__nullable))subpaths;
+- (nullable NSArray<NSString *> *(^)(NSString * __nullable))subpaths;
 
 /**
  追加一个扩展名
  */
-- (NSString *(^)(NSString *))extension;
+- (NSString *(^)(NSString * __nullable))extension;
 
 /**
  路径
  */
-- (NSString *(^)(NSString *))appendPathComponent;
+- (NSString *(^)(NSString * __nullable))appendPathComponent;
 
 /**
  创建路径是否存在

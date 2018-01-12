@@ -85,9 +85,24 @@ CG_EXTERN CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadiu
  */
 - (void)ax_cornerRadius:(CGFloat)cornerRadius shadow:(LayerShadow)shadow;
 
+/**
+ 自定义阴影
 
+ @param opacity 透明度
+ @param radius 半径
+ @param offset 偏移
+ */
 - (void)ax_customShadowWithOpacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset;
 
+/**
+ 自定义阴影
+ 
+ @param opacity 透明度
+ @param radius 半径
+ @param offset 偏移
+ @param color 颜色
+ @param path 路径
+ */
 - (void)ax_customShadowWithOpacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset color:(UIColor *)color path:(CGPathRef)path;
 
 #pragma mark - border
@@ -112,11 +127,28 @@ CG_EXTERN CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadiu
 
 #pragma mark - animation
 
-- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatDuration:(CFTimeInterval)repeatDuration;
+/**
+ 颜色渐变动画
 
-- (void)ax_showAnimatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatCount:(float)repeatCount;
+ @param color 颜色
+ @param duration 持续时间
+ @param repeatDuration 重复时间
+ */
+- (void)ax_animatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatDuration:(CFTimeInterval)repeatDuration;
 
-- (void)ax_hideColorAnimation;
+/**
+ 颜色渐变动画
+
+ @param color 颜色
+ @param duration 持续时间
+ @param repeatCount 重复次数
+ */
+- (void)ax_animatedColor:(UIColor *)color duration:(CFTimeInterval)duration repeatCount:(float)repeatCount;
+
+/**
+ 清除颜色渐变动画
+ */
+- (void)ax_removeColorAnimation;
 
 
 @end

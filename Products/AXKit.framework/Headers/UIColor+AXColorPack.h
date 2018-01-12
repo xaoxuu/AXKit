@@ -11,20 +11,31 @@
 @interface UIColor (AXColorPack)
 
 
-// @xaoxuu: 红色
-+ (UIColor *)ax_red;
+/**
+ 蓝色
+ */
+@property (class, strong, readonly, nonatomic) UIColor *ax_blue;
 
-// @xaoxuu: 浅红色
-+ (UIColor *)ax_lightRed;
+/**
+ 青色
+ */
+@property (class, strong, readonly, nonatomic) UIColor *ax_cyan;
 
-// @xaoxuu: 绿色
-+ (UIColor *)ax_green;
+/**
+ 绿色
+ */
+@property (class, strong, readonly, nonatomic) UIColor *ax_green;
 
-// @xaoxuu: 青色
-+ (UIColor *)ax_cyan;
+/**
+ 浅红色
+ */
+@property (class, strong, readonly, nonatomic) UIColor *ax_lightRed;
 
-// @xaoxuu: 蓝色
-+ (UIColor *)ax_blue;
+/**
+ 红色
+ */
+@property (class, strong, readonly, nonatomic) UIColor *ax_red;
+
 
 
 @end
