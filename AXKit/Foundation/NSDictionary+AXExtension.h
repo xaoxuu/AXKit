@@ -17,11 +17,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)stringValueForKey:(NSString *)key;
 
+- (NSNumber *)numberValueForKey:(NSString *)key;
+
 - (double)doubleValueForKey:(NSString *)key;
+
+- (float)floatValueForKey:(NSString *)key;
 
 - (NSInteger)integerValueForKey:(NSString *)key;
 
+- (NSInteger)intValueForKey:(NSString *)key;
+
 - (BOOL)boolValueForKey:(NSString *)key;
+
++ (instancetype)dictionaryWithJsonString:(NSString *)string;
 
 @end
 NS_ASSUME_NONNULL_END
