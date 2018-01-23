@@ -58,8 +58,8 @@
     
     NSDate *date = [NSDate date];
     
-    int x = 1;
-    [NSDate dateWithDateInteger:x];
+//    int x = 1;
+//    [NSDate ax_dateWithIntegerValue:x];
 //    __weak typeof(self) weakSelf = self;
 //    [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationColorChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
 //        [weakSelf.view layoutSubviews];

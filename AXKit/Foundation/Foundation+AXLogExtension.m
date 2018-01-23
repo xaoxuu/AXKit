@@ -124,7 +124,7 @@ static inline NSString *logPath(LogTypeString *type){
         if (![obj isEqualToString:@".DS_Store"]) {
             NSString *dateString = obj.lastPathComponent.stringByDeletingPathExtension;
             NSDate *thisDate = [dateFormatter(@"yyyy-MM-dd") dateFromString:dateString];
-            if (thisDate.dateInteger >= date.dateInteger) {
+            if (thisDate.integerValue >= date.integerValue) {
                 [tmp addObject:obj];
             }
         }
