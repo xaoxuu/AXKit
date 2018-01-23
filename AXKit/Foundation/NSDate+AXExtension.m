@@ -29,14 +29,6 @@ static inline NSCalendar *calendar(){
     return [NSCalendar currentCalendar];
 }
 
-static inline NSDateComponents *components(){
-    static NSDateComponents *cm;
-    if (!cm) {
-        cm = [[NSDateComponents alloc] init];
-    }
-    return cm;
-}
-
 
 @implementation NSDate (AXExtension)
 
@@ -110,44 +102,51 @@ static inline NSDateComponents *components(){
 
 - (nullable NSDate *(^)(NSInteger))addYears{
     return ^(NSInteger x){
-        components().year = x;
-        return [calendar() dateByAddingComponents:components() toDate:self options:0];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.year = x;
+        return [calendar() dateByAddingComponents:components toDate:self options:0];
     };
 }
 - (nullable NSDate *(^)(NSInteger))addMonths{
     return ^(NSInteger x){
-        components().month = x;
-        return [calendar() dateByAddingComponents:components() toDate:self options:0];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.month = x;
+        return [calendar() dateByAddingComponents:components toDate:self options:0];
     };
 }
 - (nullable NSDate *(^)(NSInteger))addWeeks{
     return ^(NSInteger x){
-        components().weekOfYear = x;
-        return [calendar() dateByAddingComponents:components() toDate:self options:0];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.weekOfYear = x;
+        return [calendar() dateByAddingComponents:components toDate:self options:0];
     };
 }
 - (nullable NSDate *(^)(NSInteger))addDays{
     return ^(NSInteger x){
-        components().day = x;
-        return [calendar() dateByAddingComponents:components() toDate:self options:0];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.day = x;
+        return [calendar() dateByAddingComponents:components toDate:self options:0];
     };
 }
 - (nullable NSDate *(^)(NSInteger))addhours{
     return ^(NSInteger x){
-        components().hour = x;
-        return [calendar() dateByAddingComponents:components() toDate:self options:0];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.hour = x;
+        return [calendar() dateByAddingComponents:components toDate:self options:0];
     };
 }
 - (nullable NSDate *(^)(NSInteger))addMinutes{
     return ^(NSInteger x){
-        components().minute = x;
-        return [calendar() dateByAddingComponents:components() toDate:self options:0];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.minute = x;
+        return [calendar() dateByAddingComponents:components toDate:self options:0];
     };
 }
 - (nullable NSDate *(^)(NSInteger))addSeconds{
     return ^(NSInteger x){
-        components().second = x;
-        return [calendar() dateByAddingComponents:components() toDate:self options:0];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.second = x;
+        return [calendar() dateByAddingComponents:components toDate:self options:0];
     };
 }
 
