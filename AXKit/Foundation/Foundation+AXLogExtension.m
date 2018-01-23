@@ -89,7 +89,7 @@ static inline NSString *logPath(LogTypeString *type){
     NSString *path = [NSString stringWithFormat:@"%@/%@-%@.%@", logDirToday(), getTodayString(), type, logFileExtension];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         // 初始化写入第一行，记录启动时间
-        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"-> [%@] app launched \n\n", getCurrentTimeString()]);
+        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"-> [%@] application load completed. \n\n", getCurrentTimeString()]);
     }
     return path;
 }
