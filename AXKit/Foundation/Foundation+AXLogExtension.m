@@ -44,11 +44,7 @@ static inline NSDateFormatter *dateFormatter(NSString *format){
 }
 
 static inline NSString *getTodayString(){
-    static NSString *str;
-    if (!str) {
-        str = [dateFormatter(@"yyyy-MM-dd") stringFromDate:[NSDate date]];
-    }
-    return str;
+    return [dateFormatter(@"yyyy-MM-dd") stringFromDate:[NSDate date]];
 }
 
 static inline NSString *getCurrentTimeString(){
@@ -73,14 +69,10 @@ static inline NSString *logDir(){
  @return 当天的log文件夹
  */
 static inline NSString *logDirToday(){
-    static NSString *dir;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        dir = [NSString stringWithFormat:@"%@/%@", logDir(), getTodayString()];
-        if (!dir.isDirectoryExist()) {
-            dir.createDirectory();
-        }
-    });
+    NSString *dir = [NSString stringWithFormat:@"%@/%@", logDir(), getTodayString()];
+    if (!dir.isDirectoryExist()) {
+        dir.createDirectory();
+    }
     return dir;
 }
 
