@@ -11,7 +11,7 @@
 #import "FeedbackCollectionViewCell.h"
 
 static NSString *reuseId = @"FeedbackCollectionViewCell";
-static NSInteger count = 4;
+static NSInteger count = 3;
 static CGFloat margin = 4;
 
 @interface FeedbackVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, FeedbackCollectionViewCellDelegate>
@@ -133,6 +133,9 @@ static CGFloat margin = 4;
 - (void)didAddedImage:(UIImage *)image{
     [self.images addObject:image];
     [self.collection reloadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.collection scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.images.count inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    });
 }
 
 @end

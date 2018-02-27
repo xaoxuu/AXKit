@@ -13,6 +13,7 @@
 
 @interface FeedbackCollectionViewCell () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *add;
+@property (weak, nonatomic) IBOutlet UIImageView *imgv;
 
 @property (strong, nonatomic) UIImagePickerController *picker;
 
@@ -23,22 +24,14 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.add.contentMode = UIViewContentModeScaleAspectFill;
     
 }
 
 
 - (void)setImage:(UIImage *)image{
     _image = image;
-    if (image) {
-        [self.add setTitle:nil forState:UIControlStateNormal];
-        [self.add setBackgroundImage:image forState:UIControlStateNormal];
-    } else {
-        [self.add setTitle:@"+" forState:UIControlStateNormal];
-        [self.add setImage:nil forState:UIControlStateNormal];
-    }
-    
-    self.add.enabled = !image;
+    self.imgv.image = image;
+    self.add.hidden = image;
     
 }
 - (IBAction)btnTapped:(UIButton *)sender {
@@ -60,7 +53,7 @@
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    [self.picker dismissViewControllerAnimated:NO completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     
     // image
     if ([info[UIImagePickerControllerMediaType] isEqualToString:(NSString *)kUTTypeImage]) {
@@ -74,7 +67,7 @@
     
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 

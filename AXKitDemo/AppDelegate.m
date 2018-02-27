@@ -31,7 +31,7 @@
     }];
     
     [[EmailManager sharedInstance] configDefaultCompose:^(EmailManager *manager) {
-        manager.defaultToRecipients = @[@"xaoxuu@gmail.com"];
+        manager.defaultToRecipients = @[@"me@xaoxuu.com"];
     }];
     // @xaoxuu: 激活服务
     [ServiceLayer sharedInstance];

@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FeedbackCollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" id="gTV-IL-0wX" customClass="FeedbackCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="173" height="282"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="173" height="282"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-34-hb7">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cR-L9-hVU">
                         <rect key="frame" x="0.0" y="0.0" width="173" height="282"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-34-hb7">
+                        <rect key="frame" x="0.0" y="0.0" width="173" height="282"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <state key="normal" title="+">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
@@ -29,8 +33,12 @@
                     </button>
                 </subviews>
             </view>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="8cR-L9-hVU" secondAttribute="bottom" id="3ch-d5-lZV"/>
+                <constraint firstItem="8cR-L9-hVU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6Pi-mp-iSL"/>
+                <constraint firstAttribute="trailing" secondItem="8cR-L9-hVU" secondAttribute="trailing" id="7gw-ZK-ERa"/>
+                <constraint firstItem="8cR-L9-hVU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bdt-vR-U9L"/>
                 <constraint firstItem="ehc-34-hb7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Z0U-6a-Ldn"/>
                 <constraint firstAttribute="trailing" secondItem="ehc-34-hb7" secondAttribute="trailing" id="fHv-eb-iDf"/>
                 <constraint firstAttribute="bottom" secondItem="ehc-34-hb7" secondAttribute="bottom" id="lw4-Zf-TaC"/>
@@ -39,6 +47,7 @@
             <size key="customSize" width="173" height="282"/>
             <connections>
                 <outlet property="add" destination="ehc-34-hb7" id="Ij6-kR-37A"/>
+                <outlet property="imgv" destination="8cR-L9-hVU" id="xQK-xd-V2f"/>
             </connections>
             <point key="canvasLocation" x="95.5" y="170"/>
         </collectionViewCell>
