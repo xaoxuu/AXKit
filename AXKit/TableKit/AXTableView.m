@@ -8,6 +8,7 @@
 
 #import "AXTableView.h"
 #import "AXTableViewCell.h"
+#import "UIView+AXExtension.h"
 
 static CGFloat defaultRowHeight = 44;
 
@@ -78,7 +79,7 @@ static CGFloat defaultRowHeight = 44;
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
             [self registerNib:[UINib nibWithNibName:self.reuseIdentifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:self.reuseIdentifier];
         } else {
-            [self registerClass:NSClassFromString(self.reuseIdentifier) forCellReuseIdentifier:self.reuseIdentifier];
+//            [self registerClass:NSClassFromString(self.reuseIdentifier) forCellReuseIdentifier:self.reuseIdentifier];
         }
     }
     self.dataSource = self;
@@ -87,7 +88,7 @@ static CGFloat defaultRowHeight = 44;
     self.estimatedRowHeight = 44;
     self.estimatedSectionHeaderHeight = 0;
     self.rowHeight = 44;
-    // @xaoxuu: 分割线
+    
     
     
     
@@ -194,6 +195,9 @@ static CGFloat defaultRowHeight = 44;
     AXTableSectionModelType *section = self.dataList.sections[indexPath.section];
     AXTableRowModelType *model = section.rows[indexPath.row];
     AXTableViewCellType *cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifier];
+    if (!cell) {
+        cell = [[AXTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:self.reuseIdentifier];
+    }
     if (cell.frame.size.width != self.frame.size.width) {
         CGRect frame = cell.frame;
         frame.size.width = self.frame.size.width;
@@ -213,9 +217,7 @@ static CGFloat defaultRowHeight = 44;
     // @xaoxuu: 自定义icon
     if ([self respondsToSelector:@selector(ax_tableViewCellIcon:forRowAtIndexPath:)] && [cell respondsToSelector:@selector(icon)]) {
         [self ax_tableViewCellIcon:^(UIImage *icon) {
-            [cell updateIcon:^(UIImageView *imageView) {
-                imageView.image = icon;
-            }];
+            cell.imageView.image = icon;
         } forRowAtIndexPath:indexPath];
     }
     
@@ -260,15 +262,15 @@ static CGFloat defaultRowHeight = 44;
 }
 
 
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *row = self.dataList.sections[indexPath.section].rows[indexPath.row];
-    if ([row respondsToSelector:@selector(rowHeight)]) {
-        return row.rowHeight;
-    } else {
-        return defaultRowHeight;
-    }
-}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    AXTableRowModelType *row = self.dataList.sections[indexPath.section].rows[indexPath.row];
+//    if ([row respondsToSelector:@selector(rowHeight)]) {
+//        return row.rowHeight;
+//    } else {
+//        return defaultRowHeight;
+//    }
+//}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     AXTableSectionModelType *sec = self.dataList.sections[section];
@@ -279,23 +281,23 @@ static CGFloat defaultRowHeight = 44;
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    AXTableSectionModelType *sec = self.dataList.sections[section];
-    if ([sec respondsToSelector:@selector(headerHeight)]) {
-        return sec.headerHeight;
-    } else {
-        return defaultRowHeight;
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
-    AXTableSectionModelType *sec = self.dataList.sections[section];
-    if ([sec respondsToSelector:@selector(headerHeight)]) {
-        return sec.headerHeight;
-    } else {
-        return defaultRowHeight;
-    }
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//    AXTableSectionModelType *sec = self.dataList.sections[section];
+//    if ([sec respondsToSelector:@selector(headerHeight)]) {
+//        return sec.headerHeight;
+//    } else {
+//        return defaultRowHeight;
+//    }
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
+//    AXTableSectionModelType *sec = self.dataList.sections[section];
+//    if ([sec respondsToSelector:@selector(headerHeight)]) {
+//        return sec.headerHeight;
+//    } else {
+//        return defaultRowHeight;
+//    }
+//}
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
     AXTableSectionModelType *sec = self.dataList.sections[section];
@@ -305,15 +307,15 @@ static CGFloat defaultRowHeight = 44;
         return @"";
     }
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    AXTableSectionModelType *sec = self.dataList.sections[section];
-    if ([sec respondsToSelector:@selector(footerHeight)]) {
-        return sec.footerHeight;
-    } else {
-        return 0;
-    }
-}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//    AXTableSectionModelType *sec = self.dataList.sections[section];
+//    if ([sec respondsToSelector:@selector(footerHeight)]) {
+//        return sec.footerHeight;
+//    } else {
+//        return 0;
+//    }
+//}
 
 - (void)_indexPath:(NSIndexPath *)indexPath tryPush:(UIViewController *)targetVC withModel:(AXTableRowModelType *)model{
     void (^block_push)(void) = ^{
@@ -337,16 +339,5 @@ static CGFloat defaultRowHeight = 44;
     return [self loadDataSourceFromBundle];
 }
 
-
-#pragma mark - extension
-
-- (UIViewController *)controller{
-    UIResponder *responder = self;
-    while ((responder = [responder nextResponder])){
-        if ([responder isKindOfClass: [UIViewController class]])
-            return (UIViewController *)responder;
-    }
-    return nil;
-}
 
 @end

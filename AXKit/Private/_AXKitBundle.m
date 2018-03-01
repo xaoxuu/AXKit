@@ -22,8 +22,7 @@ inline NSString *NSLocalizedStringFromAXKit(NSString *key){
     dispatch_once(&onceToken, ^{
         // xxx.app/AXKit.bundle（直接将AXKit源码导入项目中或使用Cocoapods或者方式导入）
         if (!bundle) {
-            NSString *path = [NSBundle mainBundle].bundlePath;
-            path = [[NSBundle mainBundle] pathForResource:@"AXKit" ofType:@"bundle"];
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"AXKit" ofType:@"bundle"];
             bundle = [_AXKitBundle bundleWithPath:path];
         }
         // xxx.app/AXKit.framework/AXKit.bundle（使用静态库方式导入）

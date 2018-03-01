@@ -20,10 +20,6 @@
 - (void)setModel:(AXTableRowModelType *)model;
 - (AXTableRowModelType *)model;
 
-@optional
-- (UIImageView *)icon;
-- (void)updateIcon:(void (^)(UIImageView *imageView))icon;
-
 @end
 typedef UITableViewCell<AXTableViewCell> AXTableViewCellType;
 
@@ -32,15 +28,5 @@ typedef UITableViewCell<AXTableViewCell> AXTableViewCellType;
 // @xaoxuu: model
 @property (strong, readwrite, nonatomic) NSObject<AXTableRowModel> *model;
 
-// @xaoxuu: image
-@property (strong, readonly, nonatomic) UIImageView *icon;
-
-- (void)updateIcon:(void (^)(UIImageView *imageView))icon;
-
-
-- (UIFont *)fontForTitle;
-- (UIFont *)fontForDetail;
-- (void)updateFrame;
-- (UIImage *)imageWithPath:(NSString *)path;
 
 @end
