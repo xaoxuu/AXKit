@@ -44,7 +44,7 @@ UIThemeManager *axThemeManager = nil;
                 }
                 if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
                     [NSUserDefaults ax_removeObjectForKey:ThemeKitBundleIdentify];
-                    path = [[_AXKitBundle axkitBundle] pathForResource:@"DefaultTheme" ofType:@"json"];
+                    path = [[NSBundle axkitBundle] pathForResource:@"DefaultTheme" ofType:@"json"];
                 }
                 axThemeManager = [self modelWithPath:path];
                 // init settings
