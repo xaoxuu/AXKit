@@ -154,7 +154,7 @@
             }
             if (self.webView.estimatedProgress >= 1.0f) {
                 [self.indicator stopAnimating];
-                [UIView animateWithDuration:0.2 delay:0.2 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [UIView animateWithDuration:0.2 delay:0.2 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.progressView setAlpha:0.0f];
                 } completion:^(BOOL finished) {
                     [self.progressView setProgress:0.0f animated:NO];

@@ -128,7 +128,7 @@ static NSTimeInterval static_duration;
     [view addSubview:sPopView];
 
     isShowing = YES;
-    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.3 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut animations:^{
         [self _showTips];
     } completion:^(BOOL finished) {
         block_hide = dispatch_block_create(DISPATCH_BLOCK_BARRIER, ^{
@@ -141,7 +141,7 @@ static NSTimeInterval static_duration;
 }
 
 + (void)_dismissAnimation{
-    [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:2 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut animations:^{
         [self _hideTips];
     } completion:^(BOOL finished) {
         isShowing = NO;
