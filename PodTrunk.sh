@@ -39,3 +39,10 @@ pod lib lint
 
 # cd /Users/scow/GitHub/Lib3Framework-iOS/ 
 # sed -i "" "s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/${VERSION}/g" ${FILENAME}
+
+
+
+echo "please input this command to push trunk:"
+echo ""
+echo "pod trunk push ${FILENAME}"
+echo ""
