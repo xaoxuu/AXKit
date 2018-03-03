@@ -10,25 +10,31 @@
 #import "AXTableModel.h"
 #import "AXTableViewCell.h"
 
-
-
+NS_ASSUME_NONNULL_BEGIN
+@protocol AXTableView;
+typedef UITableView<AXTableView> AXTableViewType;
 @protocol AXTableView <UITableViewDataSource,UITableViewDelegate>
 
 #pragma mark data source
 
 @optional
+
 /**
- 预加载的数据源，项目中有和类同名的json数据源可以不用实现此方法
+ 预加载的数据源，只在tableview初始化的时候加载一次，刷新的时候不走此接口
+ 项目中有和类同名的json数据源可以不用实现此方法
+
+ @return 预加载的数据源
  */
 - (AXTableModelType *)ax_tableViewPreloadDataSource;
 
 /**
- 设置异步加载的数据源，已经实现了预加载的数据源并且数据源不需要更新可以不实现此方法。
+ 设置异步加载的数据源，刷新的时候会从此接口重新获取数据
+ 已经实现了预加载的数据源并且数据源不需要更新可以不实现此方法。
  
+ @param tableView table view
  @param dataSource 加载完成的回调
  */
-- (void)ax_tableViewDataSource:(void (^)(AXTableModelType *dataSource))dataSource;
-
+- (void)ax_tableView:(AXTableViewType *)tableView dataSource:(void (^)(AXTableModelType *dataSource))dataSource;
 
 
 #pragma mark delegate
@@ -39,44 +45,33 @@
  
  @param tableView table view
  */
-- (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView;
-
-- (AXTableViewCellType *)ax_tableViewRegisterReuseableCell;
-- (AXTableModelType *)ax_tableViewRegisterTableModel;
-
+- (void)ax_tableViewDidLoadFinished:(AXTableViewType *)tableView;
 
 /**
- 即将设置模型
- 
- @param indexPath 索引
- @param cell cell
+ 即将设置数据模型
+
+ @param tableView table view
  @param model 数据模型
- */
-- (void)ax_tableViewCell:(AXTableViewCellType *)cell willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath;
-
-/**
- cell的icon
- 
- @param indexPath 索引
- @param icon icon
- */
-- (void)ax_tableViewCellIcon:(void (^)(UIImage *icon))icon forRowAtIndexPath:(NSIndexPath *)indexPath;
-
-/**
- 选中了某一行(实现了此方法后点击cell将不会自动执行push操作，除非此方法内实现了push操作。)
- 
  @param indexPath 索引
  */
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)ax_tableView:(AXTableViewType *)tableView willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
- 是否允许push到某个控制器
+ 已经设置了数据模型
  
- @param viewController 目标视图控制器
+ @param tableView table view
+ @param cell cell
  @param indexPath 索引
- @return 是否可以进行push
  */
-- (BOOL)ax_tableViewShouldPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ 选中了某一行
+ 实现了此方法后点击cell将不会自动执行push操作，除非此方法内实现了push操作或者调用[super ...]。
+ 
+ @param indexPath 索引
+ */
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model;
 
 /**
  将要push到某个控制器
@@ -84,15 +79,14 @@
  @param viewController 目标视图控制器
  @param indexPath 索引
  */
-- (void)ax_tableViewWillPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)ax_tableView:(AXTableViewType *)tableView willPushViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath;
 
 
 
 @end
-typedef UITableView<AXTableView> AXTableViewType;
+
 
 @interface AXTableView : AXTableViewType
-
 
 
 /**
@@ -110,10 +104,10 @@ typedef UITableView<AXTableView> AXTableViewType;
 /**
  根据索引获取组模型
  
- @param indexPath 索引
+ @param section 组
  @return 组模型
  */
-- (AXTableSectionModelType *)tableViewSectionModelForIndexPath:(NSIndexPath *)indexPath;
+- (AXTableSectionModelType *)modelForSection:(NSInteger)section;
 
 /**
  根据索引获取row模型
@@ -121,7 +115,7 @@ typedef UITableView<AXTableView> AXTableViewType;
  @param indexPath 索引
  @return row模型
  */
-- (AXTableRowModelType *)tableViewRowModelForIndexPath:(NSIndexPath *)indexPath;
+- (AXTableRowModelType *)modelForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  删除某一行
@@ -136,7 +130,7 @@ typedef UITableView<AXTableView> AXTableViewType;
 
  @return 数据源
  */
-- (AXTableModelType *)loadDataSourceFromBundle;
+- (nullable AXTableModelType *)loadDataSourceFromBundle;
 
 /**
  从指定路径加载数据源
@@ -144,6 +138,7 @@ typedef UITableView<AXTableView> AXTableViewType;
  @param path 路径
  @return 数据源
  */
-- (AXTableModelType *)loadDataSourceFromPath:(NSString *)path;
+- (nullable AXTableModelType *)loadDataSourceFromPath:(NSString *)path;
 
 @end
+NS_ASSUME_NONNULL_END

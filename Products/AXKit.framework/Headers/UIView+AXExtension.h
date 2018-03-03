@@ -30,7 +30,7 @@ CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
  @param cornerRadius 圆角半径
  @return view
  */
-CG_EXTERN UIView *UIMaskViewWithSizeAndCorner(CGSize size, CGFloat cornerRadius);
+CG_EXTERN UIView *UIMaskViewWithSizeAndCornerRadius(CGSize size, CGFloat cornerRadius);
 
 /**
  从xib加载view

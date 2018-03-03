@@ -19,7 +19,7 @@
 - (NSString *)icon;
 
 - (NSString *)target;
-+ (instancetype)modelWithDictionary:(NSDictionary *)dict;
+- (NSString *)cmd;
 
 @optional
 - (CGFloat)rowHeight;
@@ -34,7 +34,6 @@ typedef NSObject<AXTableRowModel> AXTableRowModelType;
 @required
 
 - (NSMutableArray<AXTableRowModelType *> *)rows;
-+ (instancetype)modelWithDictionary:(NSDictionary *)dict;
 
 @optional
 - (NSString *)headerTitle;
@@ -52,15 +51,6 @@ typedef NSObject<AXTableSectionModel> AXTableSectionModelType;
 @required
 
 - (NSMutableArray<AXTableSectionModelType *> *)sections;
-+ (instancetype)modelWithDictionary:(NSDictionary *)dict;
-
-@optional
-- (NSString *)headerTitle;
-- (CGFloat)headerHeight;
-
-- (NSString *)footerTitle;
-- (CGFloat)footerHeight;
-
 
 @end
 typedef NSObject<AXTableModel> AXTableModelType;
@@ -74,39 +64,19 @@ typedef NSObject<AXTableModel> AXTableModelType;
 @property (copy, nonatomic) NSString *title;
 
 /**
- header title
- */
-@property (copy, nonatomic) NSString *headerTitle;
-
-/**
- header height
- */
-@property (assign, nonatomic) CGFloat headerHeight;
-
-/**
- footer title
- */
-@property (copy, nonatomic) NSString *footerTitle;
-
-/**
- footer height
- */
-@property (assign, nonatomic) CGFloat footerHeight;
-
-/**
  TableView的sections
  */
-@property (strong, nonatomic) NSMutableArray<__kindof AXTableSectionModel *> *sections;
+@property (strong, nonatomic) NSMutableArray<AXTableSectionModel *> *sections;
 
++ (instancetype)modelWithDictionary:(NSDictionary *)dict;
 
 /**
  添加一个section
-
+ 
  @param section section
  */
 - (void)addSection:(void (^)(AXTableSectionModel *section))section;
 
-+ (instancetype)modelWithDictionary:(NSDictionary *)dict;
 
 @end
 
@@ -141,16 +111,16 @@ typedef NSObject<AXTableModel> AXTableModelType;
 /**
  rows
  */
-@property (strong, nonatomic) NSMutableArray<__kindof AXTableRowModel *> *rows;
+@property (strong, nonatomic) NSMutableArray<AXTableRowModel *> *rows;
+
++ (instancetype)modelWithDictionary:(NSDictionary *)dict;
 
 /**
  添加一个row
-
+ 
  @param row row
  */
 - (void)addRow:(void (^)(AXTableRowModel *row))row;
-
-+ (instancetype)modelWithDictionary:(NSDictionary *)dict;
 
 @end
 
@@ -168,7 +138,7 @@ typedef NSObject<AXTableModel> AXTableModelType;
 @property (copy, nonatomic) NSString *detail;
 
 /**
- icon path
+ icon名，可以是Assets.xcassets中的icon名，也可以是bundle中的icon的路径，也可以是网络icon路径
  */
 @property (copy, nonatomic) NSString *icon;
 
@@ -178,10 +148,14 @@ typedef NSObject<AXTableModel> AXTableModelType;
 @property (copy, nonatomic) NSString *target;
 
 /**
+ 命令字符串，可以传递任何值或命令，需要自行解析
+ */
+@property (copy, nonatomic) NSString *cmd;
+
+/**
  row height
  */
 @property (assign, nonatomic) CGFloat rowHeight;
-
 
 /**
  accessory
