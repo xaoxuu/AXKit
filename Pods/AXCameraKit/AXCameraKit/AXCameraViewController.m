@@ -17,27 +17,27 @@ static NSString *moduleName = @"AXCameraKit";
 /**
  捕获设备
  */
-@property(nonatomic)AVCaptureDevice *cameraDdevice;
+@property (strong, nonatomic) AVCaptureDevice *cameraDdevice;
 
 /**
  输入设备
  */
-@property(nonatomic)AVCaptureDeviceInput *input;
+@property (strong, nonatomic) AVCaptureDeviceInput *input;
 
 /**
  图像输出
  */
-@property (nonatomic)AVCaptureStillImageOutput *imageOutput;
+@property (strong, nonatomic) AVCaptureStillImageOutput *imageOutput;
 
 /**
  捕获回话，将输入输出结合
  */
-@property(nonatomic)AVCaptureSession *captureSession;
+@property (strong, nonatomic) AVCaptureSession *captureSession;
 
 /**
  图像预览层，实时显示捕获的图像
  */
-@property(nonatomic)AVCaptureVideoPreviewLayer *previewLayer;
+@property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 
 
 /**
@@ -86,8 +86,8 @@ static NSString *moduleName = @"AXCameraKit";
             });
         } else {
             // 可以拍照
-            [self customUI];
-            [self customCamera];
+            [self setupUI];
+            [self setupCamera];
         }
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"无法打开相机" message:@"设备不支持相机" preferredStyle:UIAlertControllerStyleAlert];
@@ -104,19 +104,9 @@ static NSString *moduleName = @"AXCameraKit";
 - (BOOL)prefersStatusBarHidden{
     return YES;
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChanged) name:UIDeviceOrientationDidChangeNotification object:nil];
-    self.overlayView.aspectRatio = CameraOverlayViewAspectRatio4_3;
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (void)dealloc{
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,7 +115,7 @@ static NSString *moduleName = @"AXCameraKit";
 }
 
 
-- (void)customUI{
+- (void)setupUI{
     self.view.backgroundColor = [UIColor blackColor];
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.navigationController.navigationBar.hidden = YES;
@@ -150,8 +140,11 @@ static NSString *moduleName = @"AXCameraKit";
     }
     
     [self deviceOrientationDidChanged];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChanged) name:UIDeviceOrientationDidChangeNotification object:nil];
+    self.overlayView.aspectRatio = CameraOverlayViewAspectRatio4_3;
+    
 }
-- (void)customCamera{
+- (void)setupCamera{
     
     //使用AVMediaTypeVideo 指明self.device代表视频，默认使用后置摄像头进行初始化
     self.cameraDdevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -420,9 +413,6 @@ static NSString *moduleName = @"AXCameraKit";
 
 
 
-/**
- 根据屏幕方向更新UI
- */
 - (void)deviceOrientationDidChanged{
     [self.overlayView updateUIWithDeviceOrientation];
 }

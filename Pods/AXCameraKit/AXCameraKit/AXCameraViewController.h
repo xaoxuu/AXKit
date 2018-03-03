@@ -9,12 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "AXCameraOverlayView.h"
 
+/**
+ 自定义相机视图控制器
+ */
 @interface AXCameraViewController : UIViewController
 
+#pragma mark - 属性
 /**
  相机操作按钮覆盖图层
  */
 @property (strong, nonatomic) AXCameraOverlayView *overlayView;
+
+#pragma mark - public
 
 /**
  拍照

@@ -30,6 +30,9 @@ typedef NS_ENUM(NSUInteger, CameraOverlayViewAspectRatio) {
 
 
 
+/**
+ 代理
+ */
 @protocol AXCameraOverlayViewDelegate
 
 @optional
@@ -90,6 +93,7 @@ typedef NS_ENUM(NSUInteger, CameraOverlayViewAspectRatio) {
  delegate
  */
 @property (weak, nonatomic) NSObject<AXCameraOverlayViewDelegate> *delegate;
+
 #pragma mark - ui
 /**
  闪光灯

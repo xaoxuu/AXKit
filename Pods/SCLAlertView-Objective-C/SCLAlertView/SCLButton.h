@@ -3,7 +3,7 @@
 //  SCLAlertView
 //
 //  Created by Diogo Autilio on 9/26/14.
-//  Copyright (c) 2014-2016 AnyKey Entertainment. All rights reserved.
+//  Copyright (c) 2014-2017 AnyKey Entertainment. All rights reserved.
 //
 
 #if defined(__has_feature) && __has_feature(modules)
@@ -91,7 +91,7 @@ typedef NS_ENUM(NSInteger, SCLActionType)
  *
  * Holds the button timer, if present.
  */
-@property (nonatomic) SCLTimerDisplay *timer;
+@property (strong, nonatomic) SCLTimerDisplay *timer;
 
 /** Init method
  *
