@@ -26,6 +26,7 @@ static CGFloat const iconSize = 64;
 
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.backgroundColor = [UIColor clearColor];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.width * 3 / 4)];
     
@@ -52,6 +53,7 @@ static CGFloat const iconSize = 64;
 }
 
 - (void)ax_tableViewCell:(AXTableViewCellType *)cell willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     // 应该放在didLoad里面
     cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
     UIVisualEffectView *vev = [[UIVisualEffectView alloc] initWithFrame:cell.bounds];

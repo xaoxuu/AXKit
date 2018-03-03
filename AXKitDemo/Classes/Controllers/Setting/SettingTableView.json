@@ -37,16 +37,10 @@
                     "target":"BlogVC"
                 },
                 {
-                    "title":"GitHub",
-                    "detail":"bug反馈、功能建议",
-                    "icon":"setting_feedback_github",
-                    "target":"https://github.com/xaoxuu/AXKit/issues"
-                },
-                {
-                    "title":"帮助",
+                    "title":"更新日志",
                     "detail":"",
                     "icon":"setting_help",
-                    "target":"HelpVC"
+                    "target":"BlogVC"
                 }
             ]
         },

@@ -24,7 +24,7 @@
     }
     
     if ([self.title isEqualToString:@"文档"]) {
-        self.urlStr = @"https://xaoxuu.com/docs/axkit/";
+        self.urlStr = @"https://xaoxuu.com/docs/axkit/#/zh-cn/";
     } else if ([self.title isEqualToString:@"更新日志"]) {
         self.urlStr = @"https://xaoxuu.com/docs/axkit/#/zh-cn/appendix/changelog";
     }

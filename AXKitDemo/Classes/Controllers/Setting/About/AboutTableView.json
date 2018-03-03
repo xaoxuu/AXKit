@@ -19,18 +19,18 @@
                     "target":""
                 },
                 {
-                "title":"发布日期",
-                "detail":"",
-                "icon":"",
-                "target":"",
-                "cmd":""
-                    },
-                    {
+                    "title":"发布日期",
+                    "detail":"",
+                    "icon":"",
+                    "target":"",
+                    "cmd":""
+                },
+                {
                     "title":"更新日志",
                     "detail":"",
                     "icon":"",
                     "target":"BlogVC"
-                    }
+                }
             ]
         },
         {
