@@ -15,9 +15,9 @@
 #import "UIResponder+AXExtension.h"
 
 
-NSString *ThemeKitNotificationColorChanged = @"com.xaoxuu.AXKit.theme.notification.ColorChanged";
-NSString *ThemeKitNotificationFontChanged = @"com.xaoxuu.AXKit.theme.notification.FontChanged";
-NSString *ThemeKitNotificationIconPackChanged = @"com.xaoxuu.AXKit.theme.notification.IconPackChanged";
+NSNotificationName ThemeKitNotificationColorChanged = @"com.xaoxuu.AXKit.theme.notification.ColorChanged";
+NSNotificationName ThemeKitNotificationFontChanged = @"com.xaoxuu.AXKit.theme.notification.FontChanged";
+NSNotificationName ThemeKitNotificationIconPackChanged = @"com.xaoxuu.AXKit.theme.notification.IconPackChanged";
 
 
 UIThemeManager *axThemeManager = nil;

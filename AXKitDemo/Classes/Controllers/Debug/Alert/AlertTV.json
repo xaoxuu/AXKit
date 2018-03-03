@@ -1,16 +1,12 @@
 {
     "title":"",
-    "headerTitle":"this is table header",
-    "headerHeight":"32",
-    "footerTitle":"this is table footer",
-    "footerHeight":"32",
     "sections":[
         {
             "headerTitle":"Alert",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"只有一个OK按钮",
@@ -41,10 +37,10 @@
         },
         {
             "headerTitle":"ActionSheet",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"只有一个OK按钮",

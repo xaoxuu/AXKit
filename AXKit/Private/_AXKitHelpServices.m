@@ -9,7 +9,7 @@
 #import "_AXKitHelpServices.h"
 #import "NSError+AXExtension.h"
 #import "UIAlertController+AXWrapper.h"
-#import "UIResponder+AXExtension.h"
+#import "UIApplication+AXExtension.h"
 
 NSErrorDomain const AXKitErrorDomain = @"com.xaoxuu.axkit.error";
 
@@ -42,16 +42,7 @@ static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/iss
     [UIAlertController ax_showAlertWithTitle:kStringError() message:msg actions:^(UIAlertController * _Nonnull alert) {
         [alert ax_addCancelAction];
         [alert ax_addDefaultActionWithTitle:kStringHelp() handler:^(UIAlertAction * _Nonnull sender) {
-            if (@available(iOS 10.0, *)) {
-                // on newer versions
-                [[UIApplication sharedApplication] openURL:[AXKitHelpServices errorURLWithCode:code] options:@{} completionHandler:^(BOOL success) {
-                    
-                }];
-            } else {
-                // Fallback on earlier versions
-                [[UIApplication sharedApplication] openURL:[AXKitHelpServices errorURLWithCode:code]];
-            }
-            
+            [UIApplication ax_presentSafariViewControllerWithURL:[AXKitHelpServices errorURLWithCode:code]];
         }];
     }];
     

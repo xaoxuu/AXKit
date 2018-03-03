@@ -52,29 +52,20 @@ static CGFloat const iconSize = 64;
 //    tableView.tableFooterView = services.app.copyrightTableFooter;
 }
 
-- (void)ax_tableViewCell:(AXTableViewCellType *)cell willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    // 应该放在didLoad里面
-    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-    UIVisualEffectView *vev = [[UIVisualEffectView alloc] initWithFrame:cell.bounds];
-    UIVisualEffect *ve = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    vev.effect = ve;
-    cell.backgroundView = vev;
-    
-    
+- (void)ax_tableView:(AXTableViewType *)tableView willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
     AXTableRowModel *tmp = (AXTableRowModel *)model;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             tmp.detail = [NSBundle ax_appVersion];
-//            tmp.detail = [NSUserDefaults ax_readStringForKey:CACHE_VERSION];
-//            VersionLaterThanVersion([NSBundle ax_appVersion], services.app.remoteVersion.name, ^(BOOL later) {
-//                if (later) {
-//                    model.detail = [NSString stringWithFormat:@"%@ beta (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
-//                } else {
-//                    model.detail = [NSString stringWithFormat:@"%@ (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
-//                }
-//                [NSUserDefaults ax_setString:model.desc forKey:CACHE_VERSION];
-//            }, nil);
+            //            tmp.detail = [NSUserDefaults ax_readStringForKey:CACHE_VERSION];
+            //            VersionLaterThanVersion([NSBundle ax_appVersion], services.app.remoteVersion.name, ^(BOOL later) {
+            //                if (later) {
+            //                    model.detail = [NSString stringWithFormat:@"%@ beta (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
+            //                } else {
+            //                    model.detail = [NSString stringWithFormat:@"%@ (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
+            //                }
+            //                [NSUserDefaults ax_setString:model.desc forKey:CACHE_VERSION];
+            //            }, nil);
             AXLogOBJ(model.detail);
         } else if (indexPath.row == 1) {
             NSString *buildTime = @"2018".append([NSBundle ax_appBuild]);
@@ -84,26 +75,17 @@ static CGFloat const iconSize = 64;
     }
 }
 
-- (void)ax_tableViewWillPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
-    if ([viewController isKindOfClass:[BlogVC class]]) {
-        BlogVC *vc = (BlogVC *)viewController;
-        vc.urlStr = model.detail;
-    }
-}
-
-- (BOOL)ax_tableViewShouldPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{
-//    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
-    if (indexPath.section == 0) {
-        
-    } else if (indexPath.section == 1) {
-//        if ([targetVC isKindOfClass:[BaseWebVC class]]) {
-//            BaseWebVC *vc = viewController;
-//            vc.urlStr = model.cmd;
-//        }
-        
-    }
-    return YES;
+- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
+    
+    // 应该放在didLoad里面
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+    UIVisualEffectView *vev = [[UIVisualEffectView alloc] initWithFrame:cell.bounds];
+    UIVisualEffect *ve = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    vev.effect = ve;
+    cell.backgroundView = vev;
+    
+    
+    
 }
 
 

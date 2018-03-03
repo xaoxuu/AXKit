@@ -1,16 +1,12 @@
 {
-    "title":"",
-    "headerTitle":"this is table header",
-    "headerHeight":"32",
-    "footerTitle":"this is table footer",
-    "footerHeight":"32",
+    "title":"DEBUG",
     "sections":[
         {
             "headerTitle":"默认分组",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"这是测试版，暂时没有更多了哦~",
-            "footerHeight":"44",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"本地推送",

@@ -9,7 +9,7 @@
 #import "HomeVC.h"
 #import "FullWideButton.h"
 #import "StatusKit.h"
-
+#import <UIImageView+WebCache.h>
 
 @interface HomeVC ()
 
@@ -85,8 +85,6 @@
     
 //    AXLogOBJ(AXMakeNumberInRange(@100, @0, @111));
 //    AXLogOBJ(AXMakeNumberInRange(@100, @0, @90));
-    
-    
     
 }
 

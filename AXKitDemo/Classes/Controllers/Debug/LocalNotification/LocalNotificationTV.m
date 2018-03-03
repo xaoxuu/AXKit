@@ -20,9 +20,7 @@
 */
 
 
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
-    
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     if (indexPath.section == 0) {
         NSTimeInterval timeInterval = model.detail.doubleValue;
         [LocalNotificationManager pushNotificationWithTimeInterval:timeInterval message:model.title];

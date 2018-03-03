@@ -10,6 +10,11 @@
 #import "CustomTableVC.h"
 #import "FeedbackVC.h"
 #import "BlogVC.h"
+#import <UIImageView+WebCache.h>
+@interface SettingTableView () <AXTableViewCellDelegate>
+
+
+@end
 
 @implementation SettingTableView
 
@@ -31,11 +36,11 @@
     tableView.tableFooterView = UIViewWithHeight(44);
 }
 
-- (void)ax_tableViewWillPushToViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+- (void)ax_tableView:(AXTableViewType *)tableView willPushViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *model = [self modelForRowAtIndexPath:indexPath];
     if ([viewController isKindOfClass:[BlogVC class]]) {
         BlogVC *vc = (BlogVC *)viewController;
-        vc.urlStr = model.detail;
+        vc.urlStr = model.cmd;
     }
 }
 
@@ -43,6 +48,13 @@
     return nil;
 }
 
+- (void)ax_tableViewCell:(AXTableViewCell *)cell needsLoadWebImageFromPath:(NSString *)path forImageView:(UIImageView *)imageView{
+    imageView.imageURL = [NSURL URLWithString:path];
+}
+
+- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
+    cell.delegate = self;
+}
 
 
 @end

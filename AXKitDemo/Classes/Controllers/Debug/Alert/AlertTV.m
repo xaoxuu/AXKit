@@ -11,8 +11,7 @@
 @implementation AlertTV
 
 
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     if (section == 0) {

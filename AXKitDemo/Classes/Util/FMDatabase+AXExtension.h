@@ -9,7 +9,7 @@
 #import <FMDB/FMDB.h>
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXTERN FMDatabaseQueue *databaseQueue();
+FOUNDATION_EXTERN FMDatabaseQueue *databaseQueue(void);
 
 FOUNDATION_EXTERN void databaseTransaction(void (^block)(FMDatabase *db, BOOL *rollback));
 
@@ -23,14 +23,14 @@ FOUNDATION_EXTERN void databaseDeferredTransaction(void (^block)(FMDatabase *db,
 /**
  所有更新数据库类的操作（对FMDB的直接封装）
  
- @param update sql增、删、改语句
+ update sql增、删、改语句
  */
 - (BOOL (^)(NSString *update))executeUpdate;
 
 /**
  所有查询类的操作（对FMDB的直接封装）
  
- @param query sql查询语句
+ query sql查询语句
  @return 查询结果
  */
 - (FMResultSet * _Nullable (^)(NSString *query))executeQuery;

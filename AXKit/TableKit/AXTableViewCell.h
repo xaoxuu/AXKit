@@ -10,6 +10,15 @@
 #import "AXTableModel.h"
 
 
+@class AXTableViewCell;
+
+@protocol AXTableViewCellDelegate <NSObject>
+
+- (void)ax_tableViewCell:(AXTableViewCell *)cell needsLoadWebImageFromPath:(NSString *)path forImageView:(UIImageView *)imageView;
+
+@end
+
+
 @protocol AXTableViewCell <NSObject>
 @required
 /**
@@ -19,14 +28,23 @@
  */
 - (void)setModel:(AXTableRowModelType *)model;
 - (AXTableRowModelType *)model;
+@optional
+
+- (void)setDelegate:(NSObject<AXTableViewCellDelegate> *)delegate;
+- (NSObject<AXTableViewCellDelegate> *)delegate;
 
 @end
 typedef UITableViewCell<AXTableViewCell> AXTableViewCellType;
+
 
 @interface AXTableViewCell : AXTableViewCellType
 
 // @xaoxuu: model
 @property (strong, readwrite, nonatomic) NSObject<AXTableRowModel> *model;
 
+/**
+ delegate
+ */
+@property (weak, nonatomic) NSObject<AXTableViewCellDelegate> *delegate;
 
 @end

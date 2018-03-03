@@ -9,9 +9,9 @@
 #import "AXTableView.h"
 #import "AXTableViewCell.h"
 #import "UIView+AXExtension.h"
-
-static CGFloat defaultRowHeight = 44;
-
+#import "NSString+AXExtension.h"
+#import "UIApplication+AXExtension.h"
+#import "ThemeKit.h"
 
 @interface AXTableView () <UIScrollViewDelegate>
 
@@ -60,16 +60,12 @@ static CGFloat defaultRowHeight = 44;
     
 }
 
+
+
 - (void)setupData{
-    self.reuseIdentifier = NSStringFromClass([AXTableViewCell class]);
+    self.reuseIdentifier = NSStringFromClass(AXTableViewCell.class);
     self.modelClassName = NSStringFromClass(AXTableModel.class);
     
-    if ([self respondsToSelector:@selector(ax_tableViewRegisterReuseableCell)]) {
-        self.reuseIdentifier = NSStringFromClass([self ax_tableViewRegisterReuseableCell].class);
-    }
-    if ([self respondsToSelector:@selector(ax_tableViewRegisterTableModel)]) {
-        self.modelClassName = NSStringFromClass([self ax_tableViewRegisterTableModel].class);
-    }
 }
 
 - (void)setupTableView{
@@ -79,7 +75,7 @@ static CGFloat defaultRowHeight = 44;
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
             [self registerNib:[UINib nibWithNibName:self.reuseIdentifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:self.reuseIdentifier];
         } else {
-//            [self registerClass:NSClassFromString(self.reuseIdentifier) forCellReuseIdentifier:self.reuseIdentifier];
+            
         }
     }
     self.dataSource = self;
@@ -112,18 +108,18 @@ static CGFloat defaultRowHeight = 44;
 }
 
 - (void)reloadDataSourceAndRefreshTableView{
-    if ([self respondsToSelector:@selector(ax_tableViewDataSource:)]) {
-        [self ax_tableViewDataSource:^(NSObject<AXTableModel> *dataSource) {
+    if ([self respondsToSelector:@selector(ax_tableView:dataSource:)]) {
+        [self ax_tableView:self dataSource:^(AXTableModelType *dataSource) {
             _dataList = dataSource;
             [self reloadData];
         }];
     }
 }
 
-- (AXTableSectionModelType *)tableViewSectionModelForIndexPath:(NSIndexPath *)indexPath{
-    return self.dataList.sections[indexPath.section];
+- (AXTableSectionModelType *)modelForSection:(NSInteger)section{
+    return self.dataList.sections[section];
 }
-- (AXTableRowModelType *)tableViewRowModelForIndexPath:(NSIndexPath *)indexPath{
+- (AXTableRowModelType *)modelForRowAtIndexPath:(NSIndexPath *)indexPath{
     return self.dataList.sections[indexPath.section].rows[indexPath.row];
 }
 
@@ -153,15 +149,18 @@ static CGFloat defaultRowHeight = 44;
         if (error) {
             NSLog(@"load data source error: %@", error.description);
         }
+//        NSAssert(NO, error.description);
 #endif
         return nil;
     }
-    
     
     NSObject<AXTableModel> *model = [NSClassFromString(self.modelClassName) modelWithDictionary:dict];
     return model;
 }
 
+- (UITableViewCell<AXTableViewCell> *)cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return (AXTableViewCellType *)[super cellForRowAtIndexPath:indexPath];
+}
 #pragma mark - priv
 
 - (NSObject<AXTableModel> *)dataList{
@@ -169,12 +168,7 @@ static CGFloat defaultRowHeight = 44;
         if ([self respondsToSelector:@selector(ax_tableViewPreloadDataSource)]) {
             _dataList = [self ax_tableViewPreloadDataSource];
         }
-        if ([self respondsToSelector:@selector(ax_tableViewDataSource:)]) {
-            [self ax_tableViewDataSource:^(NSObject<AXTableModel> *dataSource) {
-                _dataList = dataSource;
-                [self reloadData];
-            }];
-        }
+        [self reloadDataSourceAndRefreshTableView];
     }
     return _dataList;
 }
@@ -206,19 +200,16 @@ static CGFloat defaultRowHeight = 44;
     
     
     // @xaoxuu: 即将设置模型
-    if ([self respondsToSelector:@selector(ax_tableViewCell:willSetModel:forRowAtIndexPath:)]) {
-        [self ax_tableViewCell:cell willSetModel:model forRowAtIndexPath:indexPath];
+    if ([self respondsToSelector:@selector(ax_tableView:willSetModel:forRowAtIndexPath:)]) {
+        [self ax_tableView:self willSetModel:model forRowAtIndexPath:indexPath];
     }
     // @xaoxuu: 设置模型
     if ([cell respondsToSelector:@selector(setModel:)]) {
         cell.model = model;
     }
-    
-    // @xaoxuu: 自定义icon
-    if ([self respondsToSelector:@selector(ax_tableViewCellIcon:forRowAtIndexPath:)] && [cell respondsToSelector:@selector(icon)]) {
-        [self ax_tableViewCellIcon:^(UIImage *icon) {
-            cell.imageView.image = icon;
-        } forRowAtIndexPath:indexPath];
+    // @xaoxuu: 已经设置模型
+    if ([self respondsToSelector:@selector(ax_tableView:didSetModelForCell:atIndexPath:)]) {
+        [self ax_tableView:self didSetModelForCell:cell atIndexPath:indexPath];
     }
     
     
@@ -239,38 +230,31 @@ static CGFloat defaultRowHeight = 44;
         return;
     }
     // @xaoxuu: selection action
-    if ([self respondsToSelector:@selector(ax_tableViewDidSelectedRowAtIndexPath:)]) {
-        [self ax_tableViewDidSelectedRowAtIndexPath:indexPath];
+    if ([self respondsToSelector:@selector(ax_tableView:didSelectedRowAtIndexPath:model:)]) {
+        [self ax_tableView:self didSelectedRowAtIndexPath:indexPath model:model];
         return;
     }
     
-    // @xaoxuu: push action
-    UIViewController *vc = [[[NSClassFromString(model.target) class] alloc] init];
-    if (vc) {
-        vc.title = NSLocalizedString(model.title, nil);
-        [self _indexPath:indexPath tryPush:vc withModel:model];
-    } else if ([model.target containsString:@"http"]) {
-        if (@available(iOS 10.0, *)) {
-            // on newer versions
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.target] options:@{} completionHandler:nil];
-        } else {
-            // Fallback on earlier versions
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.target]];
-        }
-    }
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *row = self.dataList.sections[indexPath.section].rows[indexPath.row];
+    if ([row respondsToSelector:@selector(rowHeight)]) {
+        return row.rowHeight;
+    } else {
+        return -1;
+    }
+}
 
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    AXTableRowModelType *row = self.dataList.sections[indexPath.section].rows[indexPath.row];
-//    if ([row respondsToSelector:@selector(rowHeight)]) {
-//        return row.rowHeight;
-//    } else {
-//        return defaultRowHeight;
-//    }
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXTableRowModelType *row = self.dataList.sections[indexPath.section].rows[indexPath.row];
+    if ([row respondsToSelector:@selector(rowHeight)]) {
+        return row.rowHeight;
+    } else {
+        return -1;
+    }
+}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     AXTableSectionModelType *sec = self.dataList.sections[section];
@@ -281,24 +265,6 @@ static CGFloat defaultRowHeight = 44;
     }
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    AXTableSectionModelType *sec = self.dataList.sections[section];
-//    if ([sec respondsToSelector:@selector(headerHeight)]) {
-//        return sec.headerHeight;
-//    } else {
-//        return defaultRowHeight;
-//    }
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
-//    AXTableSectionModelType *sec = self.dataList.sections[section];
-//    if ([sec respondsToSelector:@selector(headerHeight)]) {
-//        return sec.headerHeight;
-//    } else {
-//        return defaultRowHeight;
-//    }
-//}
-
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
     AXTableSectionModelType *sec = self.dataList.sections[section];
     if ([sec respondsToSelector:@selector(footerTitle)]) {
@@ -307,36 +273,34 @@ static CGFloat defaultRowHeight = 44;
         return @"";
     }
 }
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//    AXTableSectionModelType *sec = self.dataList.sections[section];
-//    if ([sec respondsToSelector:@selector(footerHeight)]) {
-//        return sec.footerHeight;
-//    } else {
-//        return 0;
-//    }
-//}
+
 
 - (void)_indexPath:(NSIndexPath *)indexPath tryPush:(UIViewController *)targetVC withModel:(AXTableRowModelType *)model{
     void (^block_push)(void) = ^{
-        if ([self respondsToSelector:@selector(ax_tableViewWillPushToViewController:fromRowAtIndexPath:)]) {
-            [self ax_tableViewWillPushToViewController:targetVC fromRowAtIndexPath:indexPath];
+        if ([self respondsToSelector:@selector(ax_tableView:willPushViewController:fromRowAtIndexPath:)]) {
+            [self ax_tableView:self willPushViewController:targetVC fromRowAtIndexPath:indexPath];
         }
         [self.controller.navigationController pushViewController:targetVC animated:YES];
     };
-    if ([self respondsToSelector:@selector(ax_tableViewShouldPushToViewController:fromRowAtIndexPath:)]) {
-        if ([self ax_tableViewShouldPushToViewController:targetVC fromRowAtIndexPath:indexPath]) {
-            block_push();
-        }
-    } else {
-        block_push();
-    }
+    block_push();
 }
 
-#pragma mark - AXTableKit的协议
+#pragma mark - AXTableKit的协议默认实现
 
 - (NSObject<AXTableModel> *)ax_tableViewPreloadDataSource{
     return [self loadDataSourceFromBundle];
+}
+
+
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIViewController *vc = [[[NSClassFromString(model.target) class] alloc] init];
+    if (vc) {
+        vc.title = NSLocalizedString(model.title, nil);
+        [self _indexPath:indexPath tryPush:vc withModel:model];
+    } else if (model.target.isURLString) {
+        [UIApplication ax_presentSafariViewControllerWithURL:model.target.absoluteURL fromViewController:self.controller];
+    }
 }
 
 

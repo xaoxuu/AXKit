@@ -19,8 +19,7 @@
     return model;
 }
 
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     if ([model.target isEqualToString:@"camera"]) {
         AXCameraViewController *vc = [[AXCameraViewController alloc] init];
         [self.controller presentViewController:vc animated:YES completion:^{
@@ -33,7 +32,7 @@
             AXLogFailure();
         }];
     } else {
-        [self.controller.navigationController ax_pushViewControllerNamed:model.target];
+        [super ax_tableView:tableView didSelectedRowAtIndexPath:indexPath model:model];
     }
 }
 

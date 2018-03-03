@@ -45,9 +45,9 @@
     [axThemeManager updateThemeForTabBar:self.tabBar];
 }
 
-- (NSString *)configurationFilePath{
-    return [service.cache cacheForClassWithName:NSStringFromClass(self.class)];
-}
+//- (NSString *)configurationFilePath{
+//    return [service.cache cacheForClassWithName:NSStringFromClass(self.class)];
+//}
 
 - (NSString *)classNameForBaseNavigationController{
     return @"BaseNavController";

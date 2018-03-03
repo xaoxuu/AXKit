@@ -44,8 +44,7 @@
 //    }];
 }
 
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     BaseWebVC *vc = [BaseWebVC webVCWithTitle:model.title URLString:model.target];
     [self.controller.navigationController pushViewController:vc animated:YES];
 }

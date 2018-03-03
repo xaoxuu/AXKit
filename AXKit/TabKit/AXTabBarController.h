@@ -22,35 +22,39 @@
 
 /**
  配置文件路径
- 使用与本类同名的json文件作为配置文件时，可以不实现此方法。
+ 如果使用与本类同名的json文件作为配置文件时，可以不实现此方法
  
  @return 配置文件路径
  */
 - (NSString *)configurationFilePath;
 
 /**
- 配置文件中ViewController的类名的key值，默认是"vc"
+ 自定义配置文件中ViewController的类名的key值，默认是"vc"
+ 如果使用默认值"vc"，可以不实现此方法
  
  @return 配置文件中ViewController的name的key值，默认是"vc"
  */
 - (NSString *)configurationKeyForViewControllerName;
 
 /**
- 配置文件中ViewController的类名的key值，默认是"title"
+ 自定义配置文件中ViewController的类名的key值，默认是"title"
+ 如果使用默认值"title"，可以不实现此方法
  
  @return 配置文件中ViewController的title的key值，默认是"title"
  */
 - (NSString *)configurationKeyForViewControllerTitle;
 
 /**
- 配置文件中icon的key值，默认是"icon"
+ 自定义配置文件中icon的key值，默认是"icon"
+ 如果使用默认值"icon"，可以不实现此方法
  
  @return 配置文件中icon的key值，默认是"icon"
  */
 - (NSString *)configurationKeyForTabBarIconName;
 
 /**
- 配置文件中选中状态的icon的key值，默认是"icon_sel"
+ 自定义配置文件中选中状态的icon的key值，默认是"icon_sel"
+ 如果使用默认值"icon_sel"，可以不实现此方法
  
  @return 配置文件中选中状态的icon的key值，默认是"icon_sel"
  */

@@ -14,10 +14,10 @@
 - (instancetype)init{
     if (self = [super init]) {
         _title = @"";
-        _headerTitle = @"";
-        _headerHeight = 0;
-        _footerTitle = @"";
-        _footerHeight = 20;
+//        _headerTitle = @"";
+//        _headerHeight = 0;
+//        _footerTitle = @"";
+//        _footerHeight = -1; // 小于0的值系统会按默认行高处理
         _sections = [NSMutableArray array];
     }
     return self;
@@ -36,10 +36,10 @@
     AXTableModel *model = [[AXTableModel alloc] init];
     if (dict) {
         model.title = [dict stringValueForKey:@"title"];
-        model.headerTitle = [dict stringValueForKey:@"headerTitle"];
-        model.headerHeight = [dict doubleValueForKey:@"headerHeight"];
-        model.footerTitle = [dict stringValueForKey:@"footerTitle"];
-        model.footerHeight = [dict doubleValueForKey:@"footerHeight"];
+//        model.headerTitle = [dict stringValueForKey:@"headerTitle"];
+//        model.headerHeight = [dict doubleValueForKey:@"headerHeight"];
+//        model.footerTitle = [dict stringValueForKey:@"footerTitle"];
+//        model.footerHeight = [dict doubleValueForKey:@"footerHeight"];
         NSArray<NSDictionary *> *sections = [dict arrayValueForKey:@"sections"];
         [sections enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [model.sections addObject:[AXTableSectionModel modelWithDictionary:obj]];
@@ -55,10 +55,10 @@
 - (instancetype)init{
     if (self = [super init]) {
         _headerTitle = @"";
-        _headerHeight = 44;
+        _headerHeight = -1;// 小于0的值系统会按默认行高处理
         _footerTitle = @"";
         _footerHeight = 0;
-        _rowHeight = 44;
+        _rowHeight = -1;// 小于0的值系统会按默认行高处理
         _rows = [NSMutableArray array];
     }
     return self;
@@ -100,7 +100,8 @@
         _detail = @"";
         _icon = @"";
         _target = @"";
-        _rowHeight = 44;
+        _rowHeight = -1; // 小于0的值系统会按默认行高处理
+        self.cmd = @"";
         _accessoryType = UITableViewCellAccessoryNone;
     }
     return self;
@@ -114,6 +115,7 @@
         model.detail = [dict stringValueForKey:@"detail"];
         model.icon = [dict stringValueForKey:@"icon"];
         model.target = [dict stringValueForKey:@"target"];
+        model.cmd = [dict stringValueForKey:@"cmd"];
         CGFloat rowHeight = [dict doubleValueForKey:@"rowHeight"];
         if (rowHeight) {
             model.rowHeight = rowHeight;

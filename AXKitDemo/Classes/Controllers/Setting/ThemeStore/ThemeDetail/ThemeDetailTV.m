@@ -24,9 +24,10 @@
     tableView.tableHeaderView = self.header;
 }
 
-- (void)ax_tableViewDataSource:(void (^)(AXTableModelType *))dataSource{
+- (void)ax_tableView:(AXTableViewType *)tableView dataSource:(void (^)(AXTableModelType *))dataSource{
     AXTableModel *model = [AXTableModel new];
     [model addSection:^(AXTableSectionModel *section) {
+        
         section.headerTitle = @"主题信息";
         [section addRow:^(AXTableRowModel *row) {
             row.title = @"主题";
@@ -76,8 +77,7 @@
     [super reloadDataSourceAndRefreshTableView];
 }
 
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModel *)model{
     if ([model.title isEqualToString:@"邮箱"]) {
         [[EmailManager sharedInstance] sendEmail:^(MFMailComposeViewController *mailCompose) {
             // 设置收件人
@@ -90,10 +90,11 @@
     }
 }
 
-- (void)ax_tableViewCell:(AXTableViewCellType *)cell willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
     if (self.theme.color.theme) {
         cell.backgroundColor = self.theme.color.theme.lightRatio(0.85);
     }
 }
+
 
 @end

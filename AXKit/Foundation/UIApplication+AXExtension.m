@@ -7,6 +7,8 @@
 //
 
 #import "UIApplication+AXExtension.h"
+#import <SafariServices/SafariServices.h>
+#import "UIResponder+AXExtension.h"
 
 typedef void(^ __nullable BlockType)(BOOL success);
 
@@ -46,6 +48,21 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
 
 @implementation UIApplication (AXExtension)
 
+
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL{
+    [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil];
+}
+
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL fromViewController:(UIViewController *)viewController{
+    if (@available(iOS 9.0, *)) {
+        // on newer versions
+        SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:URL];
+        [viewController?:AXRootViewController() presentViewController:safari animated:YES completion:nil];
+    } else {
+        // Fallback on earlier versions
+        [[UIApplication sharedApplication] openURL:URL];
+    }
+}
 
 #pragma mark - 跳转
 

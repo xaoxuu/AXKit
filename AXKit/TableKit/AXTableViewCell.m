@@ -8,7 +8,7 @@
 
 #import "AXTableViewCell.h"
 #import "UIThemeManager.h"
-
+#import "NSString+AXExtension.h"
 
 @interface AXTableViewCell ()
 
@@ -23,6 +23,13 @@
     // Initialization code
     [self _init];
     
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self _init];
+    }
+    return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -58,7 +65,13 @@
     self.detailTextLabel.font = [self fontForDetail];
     self.textLabel.text = model.title;
     self.detailTextLabel.text = model.detail;
-    self.imageView.image = [self imageWithPath:model.icon];
+    if (model.icon.isURLString) {
+        if ([self.delegate respondsToSelector:@selector(ax_tableViewCell:needsLoadWebImageFromPath:forImageView:)]) {
+            [self.delegate ax_tableViewCell:self needsLoadWebImageFromPath:model.icon forImageView:self.imageView];
+        }
+    } else {
+        self.imageView.image = [self imageWithPath:model.icon];
+    }
     if ([model respondsToSelector:@selector(accessoryType)]) {
         self.accessoryType = model.accessoryType;
     }
@@ -80,9 +93,8 @@
     }
     if (!image) {
 #if DEBUG
-//        NSLog(@"本地找不到图片，需要从网络加载");
+        NSLog(@"本地找不到图片");
 #endif
-        
     }
     return image;
 }

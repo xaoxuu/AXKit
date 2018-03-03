@@ -57,11 +57,8 @@ static UIView *customView;
     [tips sizeToFit];
     tips.textColor = [UIColor darkGrayColor];
     
-    
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"icon_help" action:^(UIBarButtonItem * _Nonnull sender) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://blog.xaoxuu.com/ios/2017-11-09-gcd-delay"] options:@{} completionHandler:^(BOOL success) {
-            
-        }];
+        [UIApplication ax_presentSafariViewControllerWithURL:[NSURL URLWithString:@"https://blog.xaoxuu.com/ios/2017-11-09-gcd-delay"]];
     }];
     
 }

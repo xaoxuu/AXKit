@@ -11,8 +11,8 @@
     "price":0,
     "color": {
         "background":"ffffff",
-        "theme":"03A9F4",
-        "accent":""
+        "theme":"52A1F8",
+        "accent":"FF9800"
     },
     "font": {
         "prefersFontSize":14,

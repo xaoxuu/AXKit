@@ -23,32 +23,35 @@ static NSString *fontSizeCell = @"FontSizeTableViewCell";
     return model;
 }
 
-
-- (AXTableViewCellType *)ax_tableViewRegisterReuseableCell{
-    return [[FontTableViewCell alloc] init];
-}
-
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
     [tableView registerNib:[UINib nibWithNibName:fontSizeCell bundle:[NSBundle mainBundle]] forCellReuseIdentifier:fontSizeCell];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-        FontSizeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:fontSizeCell forIndexPath:indexPath];
+        FontSizeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:fontSizeCell];
+        if (!cell) {
+            cell = [[FontSizeTableViewCell alloc] init];
+        }
         [cell updateUI];
         return cell;
     } else {
-        AXTableViewCellType *cell = (AXTableViewCellType *)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-        if ([cell.model.title isEqualToString:axThemeManager.font.name]) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }
-        return cell;
+        return [super tableView:tableView cellForRowAtIndexPath:indexPath];
     }
     
 }
 
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+- (void)ax_tableView:(AXTableViewType *)tableView willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        if ([model.title isEqualToString:axThemeManager.font.name]) {
+            model.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else {
+            model.accessoryType = UITableViewCellAccessoryNone;
+        }
+    }
+}
+
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     if (model.title.length) {
         [axThemeManager updateCurrentFontTheme:^(UIThemeFontModel *font) {
             font.name = model.title;

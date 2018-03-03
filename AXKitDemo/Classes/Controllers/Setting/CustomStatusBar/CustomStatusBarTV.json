@@ -1,16 +1,12 @@
 {
     "title":"自定义状态栏",
-    "headerTitle":"this is table header",
-    "headerHeight":"0",
-    "footerTitle":"this is table footer",
-    "footerHeight":"0",
     "sections":[
         {
             "headerTitle":"还原",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"清除所有自定义设置"
@@ -19,10 +15,10 @@
         },
         {
             "headerTitle":"渐变效果",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"清除渐变动画"
@@ -43,10 +39,10 @@
         },
         {
             "headerTitle":"阴影效果",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"清除阴影效果"
@@ -64,10 +60,10 @@
         },
         {
             "headerTitle":"纯色模式",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"还原"
@@ -128,10 +124,10 @@
         },
         {
             "headerTitle":"状态栏消息",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"隐藏消息"
@@ -152,10 +148,10 @@
         },
         {
             "headerTitle":"状态栏进度通知",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"隐藏消息"

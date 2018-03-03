@@ -7,10 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface UIApplication (AXExtension)
 
 
+/**
+ 打开app内置Safari浏览器
+
+ @param URL 网址
+ */
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL;
+
+/**
+ 打开app内置Safari浏览器
+
+ @param URL 网址
+ @param viewController 从哪个视图控制器，传入nil可从根控制器打开
+ */
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL fromViewController:(nullable UIViewController *)viewController;
 
 #pragma mark - 跳转
 
@@ -45,3 +59,4 @@
 + (void)ax_openAppSetting NS_AVAILABLE_IOS(11.0);
 
 @end
+NS_ASSUME_NONNULL_END

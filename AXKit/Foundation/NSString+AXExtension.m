@@ -200,7 +200,7 @@ inline NSString *SpellForChinese(NSString *chinese){
 }
 
 - (BOOL)isURLString{
-    if ([self containsString:@"http://"] || [self containsString:@"https://"]) {
+    if ([self containsString:@"http"] && [self containsString:@"://"]) {
         return YES;
     } else {
         return NO;

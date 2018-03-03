@@ -1,16 +1,12 @@
 {
     "title":"",
-    "headerTitle":"this is table header",
-    "headerHeight":"32",
-    "footerTitle":"this is table footer",
-    "footerHeight":"32",
     "sections":[
         {
             "headerTitle":"延迟推送",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"",
-            "footerHeight":"0",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"2秒后推送内容1",
@@ -41,10 +37,10 @@
         },
         {
             "headerTitle":"定时推送",
-            "headerHeight":"44",
+            "headerHeight":-1,
             "footerTitle":"这是测试版，暂时没有更多了哦~",
-            "footerHeight":"44",
-            "rowHeight":"44",
+            "footerHeight":-1,
+            "rowHeight":-1,
             "rows":[
                 {
                     "title":"推送内容1",

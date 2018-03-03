@@ -9,6 +9,7 @@
 #import "AXTabBarController.h"
 #import "UIViewController+AXExtension.h"
 #import "UIImage+AXExtension.h"
+#import "_AXKitBundle.h"
 
 
 @interface AXTabBarController ()
@@ -79,19 +80,6 @@
     }
 }
 
-- (NSString *)pathForChildControllersConfiguration{
-    NSString *path;
-    path = [[NSBundle mainBundle] pathForResource:NSStringFromClass(self.class) ofType:@"json"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        path = [[NSBundle mainBundle] bundlePath];
-        path = [path stringByAppendingPathComponent:@"Frameworks/AXTabKit.framework"];
-        
-        path = [path stringByAppendingPathComponent:@"AXTabBarController.json"];
-    }
-    
-    return path;
-}
-
 
 #pragma mark - delegate
 
@@ -103,9 +91,7 @@
     NSString *path;
     path = [[NSBundle mainBundle] pathForResource:NSStringFromClass(self.class) ofType:@"json"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        path = [[NSBundle mainBundle] bundlePath];
-        path = [path stringByAppendingPathComponent:@"Frameworks/AXTabKit.framework"];
-        path = [path stringByAppendingPathComponent:@"AXTabBarController.json"];
+        path = [[NSBundle axkitBundle] pathForResource:@"AXTabBarController" ofType:@"json"];
     }
     return path;
 }

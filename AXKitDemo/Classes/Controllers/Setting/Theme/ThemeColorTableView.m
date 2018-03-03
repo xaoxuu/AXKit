@@ -11,16 +11,16 @@
 
 @implementation ThemeColorTableView
 
-- (void)ax_tableViewCellIcon:(void (^)(UIImage *))icon forRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
-    
-    if ([model.target containsString:@"#"]) {
-        icon([UIImage imageWithColor:[UIColor colorWithHexString:model.target]]);
+- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
+    if ([cell.model.target containsString:@"#"]) {
+        UIColor *color = [UIColor colorWithHexString:cell.model.target];
+        cell.imageView.image = [UIImage imageWithColor:color size:CGSizeMake(24, 24)];
+        [cell.imageView.layer ax_maskToCircle];
     }
 }
 
-- (void)ax_tableViewDidSelectedRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *model = [self tableViewRowModelForIndexPath:indexPath];
+
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     [axThemeManager updateCurrentColorTheme:^(UIThemeColorModel *color) {
         color.theme = [UIColor colorWithHexString:model.target];
     }];
