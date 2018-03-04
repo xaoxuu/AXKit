@@ -15,7 +15,7 @@ static inline NSDateFormatter *formatter(){
     static NSDateFormatter *fm;
     if (!fm) {
         fm = [[NSDateFormatter alloc] init];
-        fm.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+//        fm.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     }
     return fm;
 }
