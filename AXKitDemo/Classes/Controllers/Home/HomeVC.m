@@ -86,6 +86,9 @@
 //    AXLogOBJ(AXMakeNumberInRange(@100, @0, @111));
 //    AXLogOBJ(AXMakeNumberInRange(@100, @0, @90));
     
+    
+    [AXRuntimeHelper exchangeInstanceMethodImplementations:self.class selector1:@selector(test1) selector2:@selector(test2)];
+    
 }
 
 
@@ -96,13 +99,13 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    
+    [self test2];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    
+    [self test1];
 //    for (int i = -3; i < 3; i++) {
 //        AXLogOBJ(AXMakeNumberInRange(@(i), @(-1), @1));
 //    }
@@ -116,7 +119,13 @@
     
 }
 
+- (void)test1{
+    
+}
 
 
+- (void)test2{
+    
+}
 
 @end

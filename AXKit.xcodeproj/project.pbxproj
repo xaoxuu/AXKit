@@ -96,6 +96,8 @@
 		CD4154421FC02F8800D4ED2C /* AXTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CD41543C1FC02F8800D4ED2C /* AXTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD4154451FC0335C00D4ED2C /* UIThemeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CD4154431FC0335C00D4ED2C /* UIThemeModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD4154461FC0335C00D4ED2C /* UIThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154441FC0335C00D4ED2C /* UIThemeModel.m */; };
+		CD43DA18204D61150005C077 /* AXRuntimeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD43DA16204D61150005C077 /* AXRuntimeHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD43DA19204D61150005C077 /* AXRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD43DA17204D61150005C077 /* AXRuntimeHelper.m */; };
 		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
 		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -374,6 +376,8 @@
 		CD41543C1FC02F8800D4ED2C /* AXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTableViewCell.h; sourceTree = "<group>"; };
 		CD4154431FC0335C00D4ED2C /* UIThemeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIThemeModel.h; sourceTree = "<group>"; };
 		CD4154441FC0335C00D4ED2C /* UIThemeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIThemeModel.m; sourceTree = "<group>"; };
+		CD43DA16204D61150005C077 /* AXRuntimeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRuntimeHelper.h; sourceTree = "<group>"; };
+		CD43DA17204D61150005C077 /* AXRuntimeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRuntimeHelper.m; sourceTree = "<group>"; };
 		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
 		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
 		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
@@ -1394,6 +1398,8 @@
 				CD6476D11FC03D0A00B1E68A /* NSDictionary+AXExtension.m */,
 				CD60001A1F8D08C100771DE6 /* UIApplication+AXExtension.h */,
 				CD60001B1F8D08C100771DE6 /* UIApplication+AXExtension.m */,
+				CD43DA16204D61150005C077 /* AXRuntimeHelper.h */,
+				CD43DA17204D61150005C077 /* AXRuntimeHelper.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1641,6 +1647,7 @@
 				CD1426051FD655E8007571E8 /* EmailAttachmentDataSource.h in Headers */,
 				CDAB58E71E6BF37E0017CA1E /* CoreGraphics+AXExtension.h in Headers */,
 				CDAB59031E6BF8B70017CA1E /* UIBarButtonItem+AXBlockWrapper.h in Headers */,
+				CD43DA18204D61150005C077 /* AXRuntimeHelper.h in Headers */,
 				CDAB590F1E6BF9B90017CA1E /* UIColor+MDColorPack.h in Headers */,
 				CD1425ED1FD5552F007571E8 /* FeedbackKit.h in Headers */,
 				CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */,
@@ -2107,6 +2114,7 @@
 				CDC8CDF61ECC92B7009F855E /* UIAlertController+AXWrapper.m in Sources */,
 				CDAB59081E6BF92F0017CA1E /* UIColor+AXColorPack.m in Sources */,
 				CDAB58E81E6BF37E0017CA1E /* CoreGraphics+AXExtension.m in Sources */,
+				CD43DA19204D61150005C077 /* AXRuntimeHelper.m in Sources */,
 				CD1425F21FD5572E007571E8 /* EmailManager.m in Sources */,
 				CDBCEE211F18B14500FBB3C7 /* UINavigationItem+AXExtension.m in Sources */,
 			);
