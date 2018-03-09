@@ -18,7 +18,7 @@
 
 
 // @xaoxuu: list
-@property (strong, nonatomic) NSObject<AXTableModel> *dataList;
+@property (strong, nonatomic) NSObject<AXTableModel> *model;
 
 @property (copy, nonatomic) NSString *modelClassName;
 
@@ -102,31 +102,42 @@
 - (void)reloadData{
     dispatch_async(dispatch_get_main_queue(), ^{
         // @xaoxuu: in main queue
-        
         [super reloadData];
     });
 }
 
+- (void)reloadDataSource:(void (^)(AXTableModelType *))completion{
+    if ([self respondsToSelector:@selector(ax_tableView:dataSource:)]) {
+        [self ax_tableView:self dataSource:^(AXTableModelType *model) {
+            _model = model;
+            if (completion) {
+                completion(model);
+            }
+        }];
+    }
+}
+
 - (void)reloadDataSourceAndRefreshTableView{
     if ([self respondsToSelector:@selector(ax_tableView:dataSource:)]) {
-        [self ax_tableView:self dataSource:^(AXTableModelType *dataSource) {
-            _dataList = dataSource;
-            [self reloadData];
+        __weak typeof(self) weakSelf = self;
+        [self ax_tableView:self dataSource:^(AXTableModelType *model) {
+            _model = model;
+            [weakSelf reloadData];
         }];
     }
 }
 
 - (AXTableSectionModelType *)modelForSection:(NSInteger)section{
-    return self.dataList.sections[section];
+    return self.model.sections[section];
 }
 - (AXTableRowModelType *)modelForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return self.dataList.sections[indexPath.section].rows[indexPath.row];
+    return self.model.sections[indexPath.section].rows[indexPath.row];
 }
 
 
 
 - (void)deleteCellWithIndexPath:(NSIndexPath *)indexPath{
-    [self.dataList.sections[indexPath.section].rows removeObjectAtIndex:indexPath.row];
+    [self.model.sections[indexPath.section].rows removeObjectAtIndex:indexPath.row];
     [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
@@ -163,30 +174,30 @@
 }
 #pragma mark - priv
 
-- (NSObject<AXTableModel> *)dataList{
-    if (!_dataList) {
+- (NSObject<AXTableModel> *)model{
+    if (!_model) {
         if ([self respondsToSelector:@selector(ax_tableViewPreloadDataSource)]) {
-            _dataList = [self ax_tableViewPreloadDataSource];
+            _model = [self ax_tableViewPreloadDataSource];
         }
         [self reloadDataSourceAndRefreshTableView];
     }
-    return _dataList;
+    return _model;
 }
 
 
 #pragma mark - data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataList.sections.count;
+    return self.model.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataList.sections[section].rows.count;
+    return self.model.sections[section].rows.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
    
-    AXTableSectionModelType *section = self.dataList.sections[indexPath.section];
+    AXTableSectionModelType *section = self.model.sections[indexPath.section];
     AXTableRowModelType *model = section.rows[indexPath.row];
     AXTableViewCellType *cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifier];
     if (!cell) {
@@ -225,7 +236,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSUInteger section = indexPath.section;
     NSUInteger row = indexPath.row;
-    AXTableRowModelType *model = self.dataList.sections[section].rows[row];
+    AXTableRowModelType *model = self.model.sections[section].rows[row];
     if (!model) {
         return;
     }
@@ -239,7 +250,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *row = self.dataList.sections[indexPath.section].rows[indexPath.row];
+    AXTableRowModelType *row = self.model.sections[indexPath.section].rows[indexPath.row];
     if ([row respondsToSelector:@selector(rowHeight)]) {
         return row.rowHeight;
     } else {
@@ -248,7 +259,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXTableRowModelType *row = self.dataList.sections[indexPath.section].rows[indexPath.row];
+    AXTableRowModelType *row = self.model.sections[indexPath.section].rows[indexPath.row];
     if ([row respondsToSelector:@selector(rowHeight)]) {
         return row.rowHeight;
     } else {
@@ -257,7 +268,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    AXTableSectionModelType *sec = self.dataList.sections[section];
+    AXTableSectionModelType *sec = self.model.sections[section];
     if ([sec respondsToSelector:@selector(headerTitle)]) {
         return sec.headerTitle;
     } else {
@@ -266,7 +277,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    AXTableSectionModelType *sec = self.dataList.sections[section];
+    AXTableSectionModelType *sec = self.model.sections[section];
     if ([sec respondsToSelector:@selector(footerTitle)]) {
         return sec.footerTitle;
     } else {
