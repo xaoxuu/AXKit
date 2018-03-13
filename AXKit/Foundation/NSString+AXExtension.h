@@ -116,6 +116,11 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 - (NSString *(^)(NSString *string))append;
 
 /**
+ 拼接数字
+ */
+- (NSString *(^)(NSNumber *number))appendNumber;
+
+/**
  拼接NSInteger
  */
 - (NSString *(^)(NSInteger x))appendNSInteger;
@@ -212,6 +217,15 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 #pragma mark - 随机字符串
 #pragma mark 类型定义
 
+/**
+ 随机字符串类型
+
+ - RandomStringTypeName: 姓名
+ - RandomStringTypePassword: 密码
+ - RandomStringTypeLower: 全部小写
+ - RandomStringTypeUpper: 全部大写
+ - RandomStringTypeCapitalize: 首字母大写
+ */
 typedef NS_ENUM(NSUInteger, RandomStringType){
     RandomStringTypeName,
     RandomStringTypePassword,

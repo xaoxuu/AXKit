@@ -46,7 +46,7 @@ inline NSString *NSStringFromPercent(CGFloat x){
     return [NSString stringWithFormat:@"%@%%",@(100 * x)];
 }
 
-inline NSString *NSStringFromNSStringFromASCIIValue(unsigned char ASCIIValue){
+inline NSString *NSStringFromASCIIValue(unsigned char ASCIIValue){
     return [NSString stringWithFormat:@"%c",ASCIIValue];
 }
 
@@ -109,6 +109,12 @@ inline NSString *SpellForChinese(NSString *chinese){
     };
 }
 
+
+- (NSString *(^)(NSNumber *number))appendNumber{
+    return ^(NSNumber *number){
+        return [self stringByAppendingString:number.stringValue];
+    };
+}
 - (NSString *(^)(NSInteger x))appendNSInteger{
     return ^(NSInteger x){
         return [self stringByAppendingString:NSStringFromNSInteger(x)];;
