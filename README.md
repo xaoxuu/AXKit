@@ -37,7 +37,7 @@ You can install it in any of the following three ways:
 
 ## Example
 
-You can find example applications in our [latest release](https://github.com/xaoxuu/AXKit/releases/latest) , demonstrating how to use it with `UITableViewController`s, encryption, command-line tools and much more.
+You can find example applications in our [latest release](https://github.com/xaoxuu/AXKit/releases/latest) , demonstrating how to use functions of AXKit.
 
 You can also install the [demo app](itms-services://?action=download-manifest&url=https://xaoxuu.com/apps/AXKitDemo/manifest.plist) to the phone directly.
 
@@ -87,7 +87,7 @@ AXKit is available under the MIT license. See the LICENSE file for more info.
 
 ## 示例程序
 
-你可以在我们 [最新发布版本](https://github.com/xaoxuu/AXKit/releases/latest) 中找到示例应用程序，演示如何使用UITableViewControllers、加密、命令行工具等等。
+你可以在我们 [最新发布版本](https://github.com/xaoxuu/AXKit/releases/latest) 中找到示例应用程序，演示如何使用AXKit的各种功能。
 
 你也可以直接安装 [demo](itms-services://?action=download-manifest&url=https://xaoxuu.com/apps/AXKitDemo/manifest.plist) 到手机上查看。
 
