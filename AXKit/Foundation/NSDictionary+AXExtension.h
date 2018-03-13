@@ -29,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)boolValueForKey:(NSString *)key;
 
+/**
+ 根据json字符串创建字典
+
+ @param string json字符串
+ @return 字典
+ */
 + (instancetype)dictionaryWithJsonString:(NSString *)string;
 
 @end

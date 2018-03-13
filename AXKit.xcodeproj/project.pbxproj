@@ -47,6 +47,8 @@
 		CD0B62F11EC45E100024F25E /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F01EC45E100024F25E /* BaseButton.m */; };
 		CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F61EC45E650024F25E /* AccentBgButton.m */; };
 		CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0B62F91EC45E790024F25E /* ThemeBgButton.m */; };
+		CD0D17042057BD58004E8553 /* NSObject+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0D17022057BD58004E8553 /* NSObject+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD0D17052057BD58004E8553 /* NSObject+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0D17032057BD58004E8553 /* NSObject+AXExtension.m */; };
 		CD1425ED1FD5552F007571E8 /* FeedbackKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1425EB1FD5552F007571E8 /* FeedbackKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD1425F11FD5572E007571E8 /* EmailManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1425EF1FD5572E007571E8 /* EmailManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD1425F21FD5572E007571E8 /* EmailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1425F01FD5572E007571E8 /* EmailManager.m */; };
@@ -317,6 +319,8 @@
 		CD0B62F61EC45E650024F25E /* AccentBgButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccentBgButton.m; sourceTree = "<group>"; };
 		CD0B62F81EC45E790024F25E /* ThemeBgButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeBgButton.h; sourceTree = "<group>"; };
 		CD0B62F91EC45E790024F25E /* ThemeBgButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeBgButton.m; sourceTree = "<group>"; };
+		CD0D17022057BD58004E8553 /* NSObject+AXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXExtension.h"; sourceTree = "<group>"; };
+		CD0D17032057BD58004E8553 /* NSObject+AXExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXExtension.m"; sourceTree = "<group>"; };
 		CD1425EB1FD5552F007571E8 /* FeedbackKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackKit.h; sourceTree = "<group>"; };
 		CD1425EF1FD5572E007571E8 /* EmailManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailManager.h; sourceTree = "<group>"; };
 		CD1425F01FD5572E007571E8 /* EmailManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailManager.m; sourceTree = "<group>"; };
@@ -1376,6 +1380,8 @@
 				CD77FE681EBEE62E001A5787 /* NSString */,
 				CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */,
 				CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */,
+				CD0D17022057BD58004E8553 /* NSObject+AXExtension.h */,
+				CD0D17032057BD58004E8553 /* NSObject+AXExtension.m */,
 				CD36EE7D1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.h */,
 				CD36EE7E1E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m */,
 				CDAB58E51E6BF37E0017CA1E /* CoreGraphics+AXExtension.h */,
@@ -1640,6 +1646,7 @@
 				CDAB59271E6BFC730017CA1E /* UITextField+AXExtension.h in Headers */,
 				CDAB591F1E6BFBCE0017CA1E /* UIImage+AXExtension.h in Headers */,
 				CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */,
+				CD0D17042057BD58004E8553 /* NSObject+AXExtension.h in Headers */,
 				CD4154281FC0213A00D4ED2C /* TabKit.h in Headers */,
 				8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */,
 				CDAB59071E6BF92F0017CA1E /* UIColor+AXColorPack.h in Headers */,
@@ -2094,6 +2101,7 @@
 				CD77FE861EBF2971001A5787 /* NSOperation+AXExtension.m in Sources */,
 				CD6476D31FC03D0A00B1E68A /* NSDictionary+AXExtension.m in Sources */,
 				CDAB59241E6BFC2F0017CA1E /* UIImageView+AXGetColor.m in Sources */,
+				CD0D17052057BD58004E8553 /* NSObject+AXExtension.m in Sources */,
 				CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */,
 				CDE91FC21EAF478700FC5A88 /* NSBundle+AXExtension.m in Sources */,
 				CD41543D1FC02F8800D4ED2C /* AXTableViewCell.m in Sources */,
