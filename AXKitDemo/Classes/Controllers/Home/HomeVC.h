@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "BaseWebVC.h"
 
-@interface HomeVC : BaseViewController
+@interface HomeVC : BaseWebVC
 
 @end

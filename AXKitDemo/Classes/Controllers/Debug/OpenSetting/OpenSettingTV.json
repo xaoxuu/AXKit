@@ -1,0 +1,39 @@
+{
+    "title":"Open Setting",
+    "sections":[
+        {
+            "headerTitle":"",
+            "headerHeight":-1,
+            "footerTitle":"这是测试版，暂时没有更多了哦~",
+            "footerHeight":-1,
+            "rowHeight":-1,
+            "rows":[
+                {
+                    "title":"WIFI设置",
+                    "detail":"",
+                    "cmd":"wifi",
+                },
+                {
+                    "title":"Bluetooth设置",
+                    "detail":"",
+                    "cmd":"ble",
+                },
+                {
+                    "title":"通知设置",
+                    "detail":"",
+                    "cmd":"noti",
+                },
+                {
+                    "title":"photos设置",
+                    "detail":"",
+                    "cmd":"photos",
+                },
+                {
+                    "title":"app设置",
+                    "detail":"",
+                    "cmd":"app",
+                }
+            ]
+        }
+    ]
+}

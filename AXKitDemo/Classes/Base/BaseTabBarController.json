@@ -1,14 +1,14 @@
 [
     {
-        "vc":"HomeVC",
-        "title":"主页",
-        "icon":"tabbar_home",
+        "vc":"DebugVC",
+        "title":"调试",
+        "icon":"tabbar_lab",
         "icon_sel":""
     },
     {
-        "vc":"DebugVC",
-        "title":"调试",
-        "icon":"tabbar_debug",
+        "vc":"DocVC",
+        "title":"文档",
+        "icon":"tabbar_doc",
         "icon_sel":""
     },
     {

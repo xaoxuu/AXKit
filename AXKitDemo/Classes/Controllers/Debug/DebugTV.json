@@ -72,6 +72,11 @@
                     "title":"空白页面",
                     "detail":"",
                     "target":"EmptyVC",
+                },
+                {
+                    "title":"跳转到设置",
+                    "detail":"",
+                    "target":"OpenSettingVC",
                 }
             ]
         }

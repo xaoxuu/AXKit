@@ -1,41 +1,26 @@
 //
-//  HomeVC.m
-//  AXKit
+//  DocVC.m
+//  AXKitDemo
 //
-//  Created by xaoxuu on 29/04/2017.
-//  Copyright © 2017 Titan Studio. All rights reserved.
+//  Created by xaoxuu on 30/03/2018.
+//  Copyright © 2018 Titan Studio. All rights reserved.
 //
 
-#import "HomeVC.h"
+#import "DocVC.h"
 #import "FullWideButton.h"
 #import "StatusKit.h"
 #import <UIImageView+WebCache.h>
 
-@interface HomeVC ()
-
-
-
-
+@interface DocVC ()
 
 @end
 
-@implementation HomeVC
+@implementation DocVC
 
 - (void)viewDidLoad {
     self.urlStr = @"https://xaoxuu.com/docs/axkit/#/zh-cn/";
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    
-    
-    
-//    [self.view ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
-//        [AXStatusBar showStatusBarMessage:NSStringFromCGPoint([sender locationInView:sender.view]) textColor:[UIColor darkTextColor] backgroundColor:axThemeManager.color.theme duration:2];
-//    }];
-//    [self.view ax_addPanGesture:nil handler:^(UIPanGestureRecognizer * _Nonnull sender) {
-//        [AXStatusBar showStatusBarMessage:NSStringFromCGPoint([sender locationInView:sender.view]) textColor:[UIColor darkTextColor] backgroundColor:axThemeManager.color.theme duration:2];
-//    }];
-
+    // Do any additional setup after loading the view.
     self.navigationController.navigationBar.hidden = YES;
     
     UIView *header = UIViewWithHeight(20);

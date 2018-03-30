@@ -55,7 +55,9 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithSystem:UIBarButtonSystemItemRefresh action:^(id  _Nonnull sender) {
         [weakSelf reloadWebView];
     }];
-    
+    if ([self respondsToSelector:@selector(didLoadWebView)]) {
+        [self didLoadWebView];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,9 +68,7 @@
 
 - (void)reloadWebView{
     [self loadWithURLString];
-    if ([self respondsToSelector:@selector(didLoadWebView)]) {
-        [self didLoadWebView];
-    }
+    
 }
 
 

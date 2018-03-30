@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-
+#import "AXStatusBar.h"
 
 @interface RootViewController ()
 
@@ -24,6 +24,19 @@
     [self addChildViewController:self.mainTabBarVC];
     [self.view addSubview:self.mainTabBarVC.view];
 //    [services.app applyTheme];
+    
+    
+    // 彩蛋
+    if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
+        
+        UIView *bar = [AXStatusBar getSystemStatusBar];
+        UILabel *lb = [[UILabel alloc] initWithFrame:bar.bounds];
+        lb.height = 24;
+        lb.textAlignment = NSTextAlignmentCenter;
+        lb.text = @"^_^";
+        [bar addSubview:lb];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

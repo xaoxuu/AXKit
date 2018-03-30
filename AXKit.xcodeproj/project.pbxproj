@@ -239,6 +239,10 @@
 		CDAB593F1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDAB59401E6BFEAC0017CA1E /* UIView+AXGestureExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */; };
 		CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDB065D6206E2F6A001C08CD /* OpenSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB065D5206E2F6A001C08CD /* OpenSettingVC.m */; };
+		CDB065D9206E2F82001C08CD /* OpenSettingTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB065D8206E2F82001C08CD /* OpenSettingTV.m */; };
+		CDB065DB206E2F9A001C08CD /* OpenSettingTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB065DA206E2F99001C08CD /* OpenSettingTV.json */; };
+		CDB065DF206E383B001C08CD /* DocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB065DE206E383B001C08CD /* DocVC.m */; };
 		CDB54D901FCEC6040051EEFA /* LocalNotificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D8F1FCEC6040051EEFA /* LocalNotificationVC.m */; };
 		CDB54D931FCEC6120051EEFA /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D921FCEC6120051EEFA /* LocalNotificationManager.m */; };
 		CDB54D961FCEC6260051EEFA /* LocalNotificationTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D951FCEC6260051EEFA /* LocalNotificationTV.m */; };
@@ -576,6 +580,13 @@
 		CDAB593D1E6BFEAC0017CA1E /* UIView+AXGestureExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXGestureExtension.h"; sourceTree = "<group>"; };
 		CDAB593E1E6BFEAC0017CA1E /* UIView+AXGestureExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXGestureExtension.m"; sourceTree = "<group>"; };
 		CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+AXMacros.h"; sourceTree = "<group>"; };
+		CDB065D4206E2F6A001C08CD /* OpenSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSettingVC.h; sourceTree = "<group>"; };
+		CDB065D5206E2F6A001C08CD /* OpenSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSettingVC.m; sourceTree = "<group>"; };
+		CDB065D7206E2F82001C08CD /* OpenSettingTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSettingTV.h; sourceTree = "<group>"; };
+		CDB065D8206E2F82001C08CD /* OpenSettingTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSettingTV.m; sourceTree = "<group>"; };
+		CDB065DA206E2F99001C08CD /* OpenSettingTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpenSettingTV.json; sourceTree = "<group>"; };
+		CDB065DD206E383B001C08CD /* DocVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocVC.h; sourceTree = "<group>"; };
+		CDB065DE206E383B001C08CD /* DocVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocVC.m; sourceTree = "<group>"; };
 		CDB54D8E1FCEC6040051EEFA /* LocalNotificationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationVC.h; sourceTree = "<group>"; };
 		CDB54D8F1FCEC6040051EEFA /* LocalNotificationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationVC.m; sourceTree = "<group>"; };
 		CDB54D911FCEC6120051EEFA /* LocalNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
@@ -910,6 +921,7 @@
 				CD57450E1EDADE510014E833 /* DebugTV.h */,
 				CD5745101EDADE510014E833 /* DebugTV.m */,
 				CD57450F1EDADE510014E833 /* DebugTV.json */,
+				CDB065DC206E2FA0001C08CD /* OpenSetting */,
 				CDB54D8D1FCEC5CA0051EEFA /* LocalNotification */,
 				CD3543901F9AEFE2009317A6 /* EmptyVC */,
 				CD74F9F01F9ADE9A00EBD3B5 /* Cooldown */,
@@ -1426,6 +1438,18 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		CDB065DC206E2FA0001C08CD /* OpenSetting */ = {
+			isa = PBXGroup;
+			children = (
+				CDB065D4206E2F6A001C08CD /* OpenSettingVC.h */,
+				CDB065D5206E2F6A001C08CD /* OpenSettingVC.m */,
+				CDB065D7206E2F82001C08CD /* OpenSettingTV.h */,
+				CDB065D8206E2F82001C08CD /* OpenSettingTV.m */,
+				CDB065DA206E2F99001C08CD /* OpenSettingTV.json */,
+			);
+			path = OpenSetting;
+			sourceTree = "<group>";
+		};
 		CDB54D8D1FCEC5CA0051EEFA /* LocalNotification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1468,6 +1492,8 @@
 				CD5745241EDADE510014E833 /* Home */,
 				CD57450D1EDADE510014E833 /* Debug */,
 				CD57452C1EDADE510014E833 /* Setting */,
+				CDB065DD206E383B001C08CD /* DocVC.h */,
+				CDB065DE206E383B001C08CD /* DocVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1827,6 +1853,7 @@
 				CD2386051EC0D25D007AB90B /* tabbar_controllers.json in Resources */,
 				CDB54D981FCEC76B0051EEFA /* LocalNotificationTV.json in Resources */,
 				CD2386031EC0CF0F007AB90B /* appinfo.json in Resources */,
+				CDB065DB206E2F9A001C08CD /* OpenSettingTV.json in Resources */,
 				CD5745851EDADE510014E833 /* FeedbackVC.xib in Resources */,
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
 				CD149E251F0105D4007051CE /* Assets.xcassets in Resources */,
@@ -1996,6 +2023,7 @@
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */,
+				CDB065D6206E2F6A001C08CD /* OpenSettingVC.m in Sources */,
 				CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */,
 				CD5745BC1EDADE510014E833 /* BaseWebVC.m in Sources */,
 				CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */,
@@ -2012,6 +2040,7 @@
 				CDBB3B2E1EB9E80F00E8ED25 /* NSObject+MJProperty.m in Sources */,
 				CD74F9F31F9ADEB000EBD3B5 /* CooldownVC.m in Sources */,
 				CD5745B51EDADE510014E833 /* SettingVC.m in Sources */,
+				CDB065D9206E2F82001C08CD /* OpenSettingTV.m in Sources */,
 				CDE94E971EC705C800596B93 /* GitHubUserModel.m in Sources */,
 				CDB54D931FCEC6120051EEFA /* LocalNotificationManager.m in Sources */,
 				CD5745A11EDADE510014E833 /* FontSizeTableViewCell.m in Sources */,
@@ -2026,6 +2055,7 @@
 				CD2096E61FC171710049739A /* ServiceLayer.m in Sources */,
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
 				CDB54D901FCEC6040051EEFA /* LocalNotificationVC.m in Sources */,
+				CDB065DF206E383B001C08CD /* DocVC.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
 				CD63A4221FC1B80700581AF6 /* ThemeManageVC.m in Sources */,
 				CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */,
