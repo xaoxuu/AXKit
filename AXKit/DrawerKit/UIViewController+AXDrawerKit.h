@@ -15,14 +15,13 @@
 
 #pragma mark - gesture creator
 /**
- *    @author Aesir Titan, 2016-08-20 00:08:20
- *
- *    @brief setup navigation controller as main controller and drawer controller
- *
- *    @param MainVC        mainVC
- *    @param drawerVC        drawerVC
+ setup navigation controller as main controller and drawer controller
+
+ @param mainVC MainVC
+ @param drawerVC drawerVC
+ @param enable enable
  */
-- (void)at_setupMainVC:(nonnull UIViewController *)navigationVC
+- (void)at_setupMainVC:(nonnull UIViewController *)mainVC
               drawerVC:(nonnull UIViewController *)drawerVC enable:(BOOL)enable;
 
 #pragma mark - gesture setting
