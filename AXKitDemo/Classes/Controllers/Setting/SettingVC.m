@@ -62,10 +62,6 @@
     
 }
 
-- (void)installRightRefreshBarButton:(UIBarButtonItem *)sender{
-//    [self.tableView reloadDataSourceAndTableView];
-}
-
 
 
 - (AXTableViewType *)installTableView{

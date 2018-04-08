@@ -182,17 +182,17 @@ UIThemeManager *axThemeManager = nil;
     navigationBar.barTintColor = axThemeManager.color.theme;
     if (axThemeManager.color.theme.isLightColor) {
         navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.7);
-        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7)};
+        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7), NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:18]};
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7)};
+            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7), NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:32]};
         }
     } else {
         navigationBar.tintColor = [UIColor whiteColor];
-        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:18]};
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:32]};
         }
     }
 }

@@ -23,6 +23,7 @@ static UIView *customView;
 @property (strong, nonatomic) UILabel *label;
 
 
+
 @end
 
 @implementation CooldownVC
@@ -51,7 +52,7 @@ static UIView *customView;
     [self.view addSubview:tips];
     tips.numberOfLines = 0;
     tips.font = [UIFont systemFontOfSize:14];
-    tips.text = @"点击屏幕任意地方，计数会增加。某次点击结束后2秒内没有再次收到点击事件，就触发了事件A。（也就是说，每次点击都会延迟事件A的执行）\n\n事件A：计数器归0，状态栏弹出警告。";
+    tips.text = @"点击屏幕任意地方，计数会增加。某次点击结束后2秒内没有再次收到点击事件，就触发了事件A。（也就是说，每次点击都会延迟事件A的执行）\n\n事件A：计数器归0，弹出消息。";
     CGFloat height = [tips.text ax_textHeightWithFont:tips.font width:width];
     tips.frame = CGRectMake(16, 16, width, height);
     [tips sizeToFit];
@@ -72,13 +73,12 @@ static UIView *customView;
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    
     self.label.text = NSStringFromInt(++i);
     ax_dispatch_cancel_operation(token);
     token = ax_dispatch_cancellable(timeout, dispatch_get_main_queue(), ^{
         NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
         [self reset];
-        [AXStatusBar showStatusBarMessage:msg textColor:[UIColor blackColor] backgroundColor:[UIColor md_yellow] duration:2];
+        [AXProgressHUD ax_target:self.view showInfo:msg duration:1];
     });
 }
 

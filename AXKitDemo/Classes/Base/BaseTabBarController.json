@@ -1,7 +1,7 @@
 [
     {
         "vc":"DebugVC",
-        "title":"调试",
+        "title":"AXKit",
         "icon":"tabbar_lab",
         "icon_sel":""
     },

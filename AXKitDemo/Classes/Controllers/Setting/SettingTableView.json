@@ -17,13 +17,13 @@
                 {
                     "title":"主页",
                     "detail":"xaoxuu.com",
-                    "icon":"https://user-images.githubusercontent.com/16400144/34246767-e5d695b4-e66a-11e7-9bde-61cc54c5bcc0.png",
+                    "icon":"",
                     "target":"https://xaoxuu.com"
                 },
                 {
                     "title":"博客",
                     "detail":"blog.xaoxuu.com",
-                    "icon":"https://user-images.githubusercontent.com/16400144/34246767-e5d695b4-e66a-11e7-9bde-61cc54c5bcc0.png",
+                    "icon":"",
                     "target":"https://blog.xaoxuu.com"
                 },
                 {
@@ -56,7 +56,7 @@
                 {
                     "title":"更改主题色",
                     "detail":"",
-                    "icon":"",
+                    "icon":"color_board",
                     "target":"ThemeColorVC"
                 },
                 {
