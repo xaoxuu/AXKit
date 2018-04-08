@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface UIApplication (AXExtension)
 
+#pragma mark - Safari
 
 /**
  打开app内置Safari浏览器

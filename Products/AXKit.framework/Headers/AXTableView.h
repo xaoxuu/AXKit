@@ -34,7 +34,7 @@ typedef UITableView<AXTableView> AXTableViewType;
  @param tableView table view
  @param dataSource 加载完成的回调
  */
-- (void)ax_tableView:(AXTableViewType *)tableView dataSource:(void (^)(AXTableModelType *dataSource))dataSource;
+- (void)ax_tableView:(AXTableViewType *)tableView dataSource:(void (^)(AXTableModelType *model))dataSource;
 
 
 #pragma mark delegate
@@ -94,7 +94,12 @@ typedef UITableView<AXTableView> AXTableViewType;
 
  @return 数据
  */
-- (AXTableModelType *)dataList;
+- (AXTableModelType *)model;
+
+/**
+ 重新获取数据源
+ */
+- (void)reloadDataSource:(void (^)(AXTableModelType *model))completion;
 
 /**
  重新获取数据源并刷新tableView
