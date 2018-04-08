@@ -17,7 +17,7 @@ static UIImage *cachedImage;
 #define CACHE_VERSION @"CACHE_VERSION"
 
 
-static CGFloat const iconSize = 64;
+static CGFloat const iconSize = 60;
 @interface AboutTableView ()
 
 
@@ -38,6 +38,46 @@ static CGFloat const iconSize = 64;
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconSize, iconSize)];
     icon.image = [NSBundle ax_appIcon];
     icon.contentMode = UIViewContentModeScaleAspectFit;
+    if ([[UIApplication sharedApplication] supportsAlternateIcons]) {
+        NSString *iconName = [[UIApplication sharedApplication] alternateIconName];
+        if (iconName.length) {
+            icon.image = UIImageNamed(iconName);
+        }
+        [icon ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+            [UIAlertController ax_showAlertWithTitle:@"更改AppIcon" message:@"只支持iOS10.3及其以后的版本。" actions:^(UIAlertController * _Nonnull alert) {
+                [alert ax_addDefaultActionWithTitle:@"Icon-60" handler:^(UIAlertAction * _Nonnull sender) {
+                    icon.image = UIImageNamed(sender.title);
+                    [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
+                        AXLogError(error);
+                    }];
+                }];
+                [alert ax_addDefaultActionWithTitle:@"Icon-61" handler:^(UIAlertAction * _Nonnull sender) {
+                    icon.image = UIImageNamed(sender.title);
+                    [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
+                        AXLogError(error);
+                    }];
+                }];
+                [alert ax_addDefaultActionWithTitle:@"Icon-62" handler:^(UIAlertAction * _Nonnull sender) {
+                    icon.image = UIImageNamed(sender.title);
+                    [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
+                        AXLogError(error);
+                        
+                    }];
+                }];
+                [alert ax_addDefaultActionWithTitle:@"Icon-63" handler:^(UIAlertAction * _Nonnull sender) {
+                    icon.image = UIImageNamed(sender.title);
+                    [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
+                        AXLogError(error);
+                        
+                    }];
+                }];
+                
+            }];
+        }];
+    } else {
+        AXLogOBJ(@"buzhichi");
+    }
+    
     // @xaoxuu: layer
     icon.backgroundColor = [UIColor whiteColor];
     icon.layer.masksToBounds = YES;
