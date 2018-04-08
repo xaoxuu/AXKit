@@ -16,6 +16,9 @@
 
 @interface RootViewController ()
 
+@property (strong, nonatomic) BaseNavController *mainVC;
+
+@property (strong, nonatomic) AboutVC *aboutVC;
 
 @end
 
@@ -26,16 +29,16 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = axThemeManager.color.theme;
     DebugVC *debugVC = [[DebugVC alloc] init];
-    SettingVC *settingVC = [[SettingVC alloc] init];
-    AboutVC *aboutVC = [[AboutVC alloc] init];
-    BaseNavController *mainVC = [[BaseNavController alloc] initWithRootViewController:debugVC];
-    [mainVC.view.layer ax_shadow:LayerShadowCenterHeavy];
-    mainVC.view.layer.shadowRadius = 6.0f;
-    mainVC.view.layer.shadowOffset = CGSizeMake(0, 0);
-    mainVC.view.layer.shadowOpacity = 0.6f;
+    self.aboutVC = [[AboutVC alloc] init];
+    self.mainVC = [[BaseNavController alloc] initWithRootViewController:debugVC];
+    [self.mainVC.view.layer ax_shadow:LayerShadowCenterHeavy];
+    self.mainVC.view.layer.shadowRadius = 6.0f;
+    self.mainVC.view.layer.shadowOffset = CGSizeMake(0, 0);
+    self.mainVC.view.layer.shadowOpacity = 0.6f;
     
-    [self at_setupMainVC:mainVC drawerVC:aboutVC enable:YES];
-    
+    [self at_setupMainVC:self.mainVC drawerVC:self.aboutVC enable:YES];
+    self.mainVC.view.transform = CGAffineTransformMakeTranslation(kScreenW, 0);
+    self.aboutVC.view.transform = CGAffineTransformMakeTranslation(-60, 0);
     [self.view addSubview:debugVC.view];
     
 //    self.mainTabBarVC = [[BaseTabBarController alloc] init];
@@ -73,6 +76,22 @@
 }
 */
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [UIView animateWithDuration:1.5 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut animations:^{
+        self.mainVC.view.transform = CGAffineTransformIdentity;
+        self.aboutVC.view.transform = CGAffineTransformIdentity;
+    } completion:nil];
+    
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    
+    
+    
+}
 
 
 @end

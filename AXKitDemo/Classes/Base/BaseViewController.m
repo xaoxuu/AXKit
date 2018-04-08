@@ -50,7 +50,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self at_disableGeatureInChlidController];
+//    [self at_disableGeatureInChlidController];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

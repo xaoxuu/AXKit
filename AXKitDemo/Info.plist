@@ -12,18 +12,11 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>Icon-63</key>
+			<key>Icon-60</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>Icon-63</string>
-				</array>
-			</dict>
-			<key>Icon-62</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Icon-62</string>
+					<string>Icon-60</string>
 				</array>
 			</dict>
 			<key>Icon-61</key>
@@ -33,11 +26,18 @@
 					<string>Icon-61</string>
 				</array>
 			</dict>
-			<key>Icon-60</key>
+			<key>Icon-62</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>Icon-60</string>
+					<string>Icon-62</string>
+				</array>
+			</dict>
+			<key>Icon-63</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Icon-63</string>
 				</array>
 			</dict>
 		</dict>
@@ -71,9 +71,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2.1</string>
+	<string>0.2.2</string>
 	<key>CFBundleVersion</key>
-	<string>4081</string>
+	<string>4091</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>

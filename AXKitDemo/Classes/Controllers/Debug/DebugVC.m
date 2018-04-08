@@ -20,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.view.backgroundColor = axThemeManager.color.groupTableViewBackground;
     self.title = @"AXKit";
     if (@available(iOS 11.0, *)) {
         // on newer versions
-        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
+//        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
     } else {
         // Fallback on earlier versions
         

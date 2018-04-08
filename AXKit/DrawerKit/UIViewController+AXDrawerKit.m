@@ -201,16 +201,15 @@ static BOOL sEnable = YES;
     return CGPointMake(newScreenX, kScreenCenterY);
 }
 
+
 // open or close drawer view
 - (void)openDrawerViewIf:(BOOL)open{
-    
-    [UIView animateWithDuration:0.38f delay:0 options:UIViewAnimationOptionCurveEaseOut  animations:^{
+    [UIView animateWithDuration:0.48 delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.9 options:UIViewAnimationOptionCurveEaseOut animations:^{
         sMainVC.view.center = CGPointMake(open ? kScreenCenterX_Opened:kScreenCenterX, kScreenCenterY);
         sDrawerVC.view.center = CGPointMake(open ? kScreenCenterX:(kScreenCenterX - sLeftLimit), kScreenCenterY);
     } completion:^(BOOL finished) {
         sLeftViewOpen = open;
     }];
-    
 }
 
 #pragma mark warning

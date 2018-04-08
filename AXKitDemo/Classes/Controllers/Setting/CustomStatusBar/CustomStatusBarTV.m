@@ -24,9 +24,8 @@ static NSTimer *timer;
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
     if ([cell.model.target containsString:@"#"]) {
         UIColor *color = [UIColor colorWithHexString:cell.model.target];
-        CGSize size = CGSizeMake(16, cell.size.height);
+        CGSize size = CGSizeMake(8, cell.size.height - 2);
         cell.imageView.image = [UIImage imageWithColor:color size:size];
-        [cell.imageView.layer ax_borderWidth:1 color:[UIColor whiteColor]];
     }
 }
 

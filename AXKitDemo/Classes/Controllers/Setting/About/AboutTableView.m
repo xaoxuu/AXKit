@@ -71,7 +71,7 @@ static CGFloat const iconSize = 60;
                         
                     }];
                 }];
-                
+                [alert ax_addCancelAction];
             }];
         }];
     } else {
@@ -87,8 +87,16 @@ static CGFloat const iconSize = 60;
     [view addSubview:icon];
     // @xaoxuu: bg
     UIImageView *bg = [[UIImageView alloc] initWithFrame:view.bounds];
+    if (@available(iOS 11.0, *)) {
+        // on newer versions
+        
+    } else {
+        // Fallback on earlier versions
+        bg.height -= 20;
+        bg.top += 20;
+    }
     bg.contentMode = UIViewContentModeScaleAspectFill;
-    bg.maskView = UIMaskViewWithSizeAndCornerRadius(view.bounds.size, 0);
+    bg.clipsToBounds = YES;
     [view insertSubview:bg atIndex:0];
     if (cachedImage) {
         bg.image = cachedImage;
@@ -154,7 +162,7 @@ static CGFloat const iconSize = 60;
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
-    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.9];
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

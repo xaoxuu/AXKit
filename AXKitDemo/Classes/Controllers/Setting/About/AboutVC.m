@@ -22,7 +22,6 @@
     self.title = @"";
     self.view.backgroundColor = [UIColor clearColor];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {
