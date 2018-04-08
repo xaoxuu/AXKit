@@ -117,7 +117,7 @@ static CGFloat const iconSize = 60;
 //    tableView.tableFooterView = services.app.copyrightTableFooter;
     
     
-    NormalLabel *copyright = [NormalLabel labelWithTitle:@"Copyright © 2013-2017 Titan Studio" fontSize:13];
+    NormalLabel *copyright = [NormalLabel labelWithTitle:@"Copyright © 2013-2017 Titan Studio" fontSize:11];
     copyright.height = 50;
     copyright.textAlignment = NSTextAlignmentCenter;
     copyright.textColor = [UIColor colorWithWhite:0 alpha:0.5];

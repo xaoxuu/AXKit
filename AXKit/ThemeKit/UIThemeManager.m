@@ -180,19 +180,21 @@ UIThemeManager *axThemeManager = nil;
 - (void)updateThemeForNavigationBar:(UINavigationBar *)navigationBar{
     navigationBar.translucent = NO;
     navigationBar.barTintColor = axThemeManager.color.theme;
+    UIFont *titleFont = [UIFont fontWithName:axThemeManager.font.name size:18] ?: [UIFont systemFontOfSize:18];
+    UIFont *largeTitleFont = [UIFont fontWithName:axThemeManager.font.name size:32] ?: [UIFont systemFontOfSize:32];
     if (axThemeManager.color.theme.isLightColor) {
         navigationBar.tintColor = axThemeManager.color.theme.darkRatio(0.7);
-        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7), NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:18]};
+        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7), NSFontAttributeName:titleFont};
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7), NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:32]};
+            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:axThemeManager.color.theme.darkRatio(0.7), NSFontAttributeName:largeTitleFont};
         }
     } else {
         navigationBar.tintColor = [UIColor whiteColor];
-        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:18]};
+        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:titleFont};
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:axThemeManager.font.name size:32]};
+            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:largeTitleFont};
         }
     }
 }
