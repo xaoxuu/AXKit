@@ -56,7 +56,7 @@
                 {
                     "title":"更改主题色",
                     "detail":"",
-                    "icon":"alert_theme",
+                    "icon":"",
                     "target":"ThemeColorVC"
                 },
                 {

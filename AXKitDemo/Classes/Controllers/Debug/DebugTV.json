@@ -2,81 +2,161 @@
     "title":"DEBUG",
     "sections":[
         {
-            "headerTitle":"默认分组",
+            "headerTitle":"Foundation",
             "headerHeight":-1,
-            "footerTitle":"这是测试版，暂时没有更多了哦~",
+            "footerTitle":"",
             "footerHeight":-1,
             "rowHeight":-1,
             "rows":[
                 {
-                    "title":"本地推送",
+                    "title":"Cacheable Log",
                     "detail":"",
-                    "target":"LocalNotificationVC",
+                    "cmd":"",
+                    "target":"",
                 },
                 {
-                    "title":"自定义状态栏",
+                    "title":"String",
                     "detail":"",
-                    "target":"CustomStatusBarVC",
+                    "cmd":"",
+                    "target":"",
                 },
                 {
-                    "title":"拉伸图片",
+                    "title":"User Defaults",
                     "detail":"",
-                    "target":"ResizeableImageVC",
+                    "cmd":"",
+                    "target":"",
                 },
                 {
-                    "title":"pop",
+                    "title":"ax_dispatch、cooldown",
                     "detail":"",
-                    "target":"HitTestVC",
-                },
-                {
-                    "title":"Mail",
-                    "detail":"",
-                    "target":"FeedbackVC",
-                },
-                {
-                    "title":"TestFrame",
-                    "detail":"",
-                    "target":"TestFrameVC",
-                },
-                {
-                    "title":"处理键盘遮挡",
-                    "detail":"",
-                    "target":"KeyboardVC",
-                },
-                {
-                    "title":"阴影",
-                    "detail":"",
-                    "target":"ShadowVC",
-                },
-                {
-                    "title":"系统弹窗",
-                    "detail":"",
-                    "target":"AlertVC",
-                },
-                {
-                    "title":"错误信息",
-                    "detail":"",
-                    "target":"error",
-                },
-                {
-                    "title":"自定义相机",
-                    "detail":"",
-                    "target":"camera",
-                },
-                {
-                    "title":"延迟函数",
-                    "detail":"",
+                    "cmd":"",
                     "target":"CooldownVC",
                 },
                 {
-                    "title":"空白页面",
+                    "title":"NSDate+",
                     "detail":"",
-                    "target":"EmptyVC",
+                    "cmd":"",
+                    "target":"",
                 },
                 {
-                    "title":"跳转到设置",
+                    "title":"Runtime Helper",
                     "detail":"",
+                    "cmd":"",
+                    "target":"",
+                }
+            ]
+        },
+        {
+            "headerTitle":"UIKit",
+            "headerHeight":-1,
+            "footerTitle":"",
+            "footerHeight":-1,
+            "rowHeight":-1,
+            "rows":[
+                {
+                    "title":"Color",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"",
+                },
+                {
+                    "title":"UIControl",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"",
+                },
+                {
+                    "title":"Gesture",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"",
+                },
+                {
+                    "title":"Animation",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"",
+                },
+                {
+                    "title":"Alert",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"AlertVC",
+                },
+                {
+                    "title":"Push & Pop",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"",
+                },
+                {
+                    "title":"Keyboard Frame",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"KeyboardVC",
+                },
+                {
+                    "title":"Layer Shadow",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"ShadowVC",
+                },
+                {
+                    "title":"Open Setting",
+                    "detail":"",
+                    "cmd":"",
                     "target":"OpenSettingVC",
+                },
+                {
+                    "title":"Resizeable Image",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"ResizeableImageVC",
+                },
+                {
+                    "title":"Error & Help",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"error",
+                }
+            ]
+        },
+        {
+            "headerTitle":"Services",
+            "headerHeight":-1,
+            "footerTitle":"",
+            "footerHeight":-1,
+            "rowHeight":-1,
+            "rows":[
+                {
+                    "title":"Local Notification",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"LocalNotificationVC",
+                },
+                {
+                    "title":"StatusKit",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"CustomStatusBarVC",
+                },
+                {
+                    "title":"PopView",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"HitTestVC",
+                },
+                {
+                    "title":"FeedbackKit",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"FeedbackVC",
+                },
+                {
+                    "title":"CameraKit",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"camera",
                 }
             ]
         }

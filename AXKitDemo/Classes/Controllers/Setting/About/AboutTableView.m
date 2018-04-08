@@ -10,6 +10,9 @@
 #import "NormalLabel.h"
 #import "BaseWebVC.h"
 #import "BlogVC.h"
+#import <UIImage+GIF.h>
+
+static UIImage *cachedImage;
 
 #define CACHE_VERSION @"CACHE_VERSION"
 
@@ -41,11 +44,29 @@ static CGFloat const iconSize = 64;
     // @xaoxuu: point
     icon.center = view.boundsCenter;
     [view addSubview:icon];
+    // @xaoxuu: bg
+    UIImageView *bg = [[UIImageView alloc] initWithFrame:view.bounds];
+    bg.contentMode = UIViewContentModeScaleAspectFill;
+    bg.maskView = UIMaskViewWithSizeAndCornerRadius(view.bounds.size, 0);
+    [view insertSubview:bg atIndex:0];
+    if (cachedImage) {
+        bg.image = cachedImage;
+    } else {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"header" ofType:@"gif"];
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            cachedImage = [UIImage sd_animatedGIFWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                bg.image = cachedImage;
+            });
+        });
+    }
     
     // @xaoxuu: app name
-    NormalLabel *appName = [NormalLabel labelWithTitle:[NSBundle ax_appDisplayName] fontSize:12];
+    NormalLabel *appName = [NormalLabel labelWithTitle:[NSBundle ax_appDisplayName] fontSize:17];
     appName.centerX = 0.5 * view.width;
     appName.top = icon.bottom + 8;
+    appName.textColor = [UIColor whiteColor];
     [view addSubview:appName];
     
     tableView.tableHeaderView = view;
@@ -75,23 +96,12 @@ static CGFloat const iconSize = 64;
     }
 }
 
-- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
-    
-    // 应该放在didLoad里面
-    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-    UIVisualEffectView *vev = [[UIVisualEffectView alloc] initWithFrame:cell.bounds];
-    UIVisualEffect *ve = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    vev.effect = ve;
-    cell.backgroundView = vev;
-    
-    
-    
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 1;
 }
 
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//    return [self sectionModel:section].footer_height.floatValue;
-//}
 
 
 //

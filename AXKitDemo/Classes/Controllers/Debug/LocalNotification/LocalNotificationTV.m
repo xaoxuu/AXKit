@@ -19,6 +19,9 @@
 }
 */
 
+- (void)ax_tableViewDidLoadFinished:(AXTableViewType *)tableView{
+    tableView.tableFooterView = UIViewWithHeight(20);
+}
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     if (indexPath.section == 0) {
@@ -33,7 +36,8 @@
         } message:model.title];
     }
     
-    
 }
+
+
 
 @end
