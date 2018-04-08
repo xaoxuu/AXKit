@@ -29,6 +29,8 @@
 
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.showsVerticalScrollIndicator = NO;
     __weak typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf reloadData];
@@ -44,9 +46,6 @@
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return nil;
-}
 
 - (void)ax_tableViewCell:(AXTableViewCell *)cell needsLoadWebImageFromPath:(NSString *)path forImageView:(UIImageView *)imageView{
     imageView.imageURL = [NSURL URLWithString:path];

@@ -8,6 +8,11 @@
 
 #import "RootViewController.h"
 #import "AXStatusBar.h"
+#import "AXDrawerKit.h"
+#import "SettingVC.h"
+#import "AboutVC.h"
+#import "DebugVC.h"
+#import "BaseNavController.h"
 
 @interface RootViewController ()
 
@@ -19,10 +24,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = axThemeManager.color.background;
-    self.mainTabBarVC = [[BaseTabBarController alloc] init];
-    [self addChildViewController:self.mainTabBarVC];
-    [self.view addSubview:self.mainTabBarVC.view];
+    self.view.backgroundColor = axThemeManager.color.theme;
+    DebugVC *debugVC = [[DebugVC alloc] init];
+    SettingVC *settingVC = [[SettingVC alloc] init];
+    AboutVC *aboutVC = [[AboutVC alloc] init];
+    BaseNavController *mainVC = [[BaseNavController alloc] initWithRootViewController:debugVC];
+    [mainVC.view.layer ax_shadow:LayerShadowCenterHeavy];
+    mainVC.view.layer.shadowRadius = 6.0f;
+    mainVC.view.layer.shadowOffset = CGSizeMake(0, 0);
+    mainVC.view.layer.shadowOpacity = 0.6f;
+    
+    [self at_setupMainVC:mainVC drawerVC:aboutVC enable:YES];
+    
+    [self.view addSubview:debugVC.view];
+    
+//    self.mainTabBarVC = [[BaseTabBarController alloc] init];
+//    [self.mainTabBarVC.view.layer ax_shadow:LayerShadowCenterNormal];
+//    [self addChildViewController:self.mainTabBarVC];
+//    [self.view addSubview:self.mainTabBarVC.view];
 //    [services.app applyTheme];
     
     
@@ -53,5 +72,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

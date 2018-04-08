@@ -54,10 +54,28 @@
             "rowHeight":-1,
             "rows":[
                 {
+                    "title":"Theme Store",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"ThemeStoreVC",
+                },
+                {
                     "title":"Color",
                     "detail":"",
                     "cmd":"",
-                    "target":"",
+                    "target":"ThemeColorVC",
+                },
+                {
+                    "title":"Font",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"FontVC",
+                },
+                {
+                    "title":"StatusKit",
+                    "detail":"",
+                    "cmd":"",
+                    "target":"CustomStatusBarVC",
                 },
                 {
                     "title":"UIControl",
@@ -133,12 +151,6 @@
                     "detail":"",
                     "cmd":"",
                     "target":"LocalNotificationVC",
-                },
-                {
-                    "title":"StatusKit",
-                    "detail":"",
-                    "cmd":"",
-                    "target":"CustomStatusBarVC",
                 },
                 {
                     "title":"PopView",

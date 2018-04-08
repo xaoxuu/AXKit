@@ -2,7 +2,7 @@
     "title":"设置",
     "sections":[
         {
-            "headerTitle":"基本信息",
+            "headerTitle":"",
             "headerHeight":-1,
             "footerTitle":"",
             "footerHeight":-1,
@@ -41,7 +41,7 @@
             ]
         },
         {
-            "headerTitle":"个性化设置",
+            "headerTitle":"",
             "headerHeight":-1,
             "footerTitle":"",
             "footerHeight":-1,
@@ -76,45 +76,6 @@
                     "detail":"",
                     "icon":"setting_custom_status_bar",
                     "target":"CustomStatusBarVC"
-                }
-            ]
-        },
-        {
-            "headerTitle":"高级设置",
-            "headerHeight":-1,
-            "footerTitle":"",
-            "footerHeight":-1,
-            "rowHeight":-1,
-            "rows":[
-                {
-                    "title":"组间距",
-                    "detail":"0",
-                    "icon":"",
-                    "target":"CustomTableVC",
-                    "cmd":"margin"
-                },
-                {
-                    "title":"行高",
-                    "detail":"系统默认",
-                    "icon":"",
-                    "target":"CustomTableVC",
-                    "cmd":"rowHeight"
-                }
-            ]
-        },
-        {
-            "headerTitle":"缓存",
-            "headerHeight":-1,
-            "footerTitle":"",
-            "footerHeight":-1,
-            "rowHeight":-1,
-            "rows":[
-                {
-                    "title":"清除缓存",
-                    "detail":"",
-                    "icon":"setting_trash",
-                    "target":"RemoveCacheVC",
-                    "cmd":"setting"
                 }
             ]
         }

@@ -21,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"AXKit";
     if (@available(iOS 11.0, *)) {
         // on newer versions
         self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
@@ -54,11 +55,11 @@
     [self.view layoutSubviews];
 }
 
-- (CGRect)initContentFrame:(CGRect)frame{
-    frame.origin.y = kTopBarHeight;
-    frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
-    return frame;
-}
+//- (CGRect)initContentFrame:(CGRect)frame{
+//    frame.origin.y = kTopBarHeight;
+//    frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
+//    return frame;
+//}
 
 
 

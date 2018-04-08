@@ -40,12 +40,16 @@
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
     tableView.tableFooterView = UIViewWithHeight(44);
+    tableView.estimatedSectionFooterHeight = 12;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return nil;
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 12;
 }
 
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+//    return nil;
+//}
 
 
 @end

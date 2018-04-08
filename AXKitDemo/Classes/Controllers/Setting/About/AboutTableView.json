@@ -43,18 +43,24 @@
                     "target":"https://xaoxuu.com"
                 },
                 {
-                    "title":"项目源码",
+                    "title":"博客",
+                    "detail":"blog.xaoxuu.com",
+                    "icon":"",
+                    "target":"https://blog.xaoxuu.com"
+                },
+                {
+                    "title":"文档",
+                    "detail":"docs",
+                    "icon":"",
+                    "target":"https://xaoxuu.com/docs/axkit"
+                },
+                {
+                    "title":"源码",
                     "detail":"github.com/xaoxuu/AXKit",
                     "icon":"",
                     "target":"https://github.com/xaoxuu/AXKit"
-                },
-                {
-                    "title":"邮件反馈",
-                    "detail":"me@xaoxuu.com",
-                    "icon":"",
-                    "target":"FeedbackVC"
                 }
             ]
-        },
+        }
     ]
 }

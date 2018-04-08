@@ -14,8 +14,9 @@
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
     if ([cell.model.target containsString:@"#"]) {
         UIColor *color = [UIColor colorWithHexString:cell.model.target];
-        cell.imageView.image = [UIImage imageWithColor:color size:CGSizeMake(24, 24)];
-        [cell.imageView.layer ax_maskToCircle];
+        CGSize size = CGSizeMake(16, cell.size.height);
+        cell.imageView.image = [UIImage imageWithColor:color size:size];
+        [cell.imageView.layer ax_borderWidth:1 color:[UIColor whiteColor]];
     }
 }
 

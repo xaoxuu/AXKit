@@ -74,6 +74,10 @@
 		CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23DCE11EC36DE7006E331B /* AXProgressHUD.m */; };
 		CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD242F481EE29DF300C954EC /* NSArray+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD242F4B1EE29DF300C954EC /* NSArray+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */; };
+		CD2735CB207A24C0007C8666 /* AXDrawerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2735CA207A24C0007C8666 /* AXDrawerKit.h */; };
+		CD2735CE207A24E0007C8666 /* UIViewController+AXDrawerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2735CC207A24E0007C8666 /* UIViewController+AXDrawerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD2735CF207A24E0007C8666 /* UIViewController+AXDrawerKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2735CD207A24E0007C8666 /* UIViewController+AXDrawerKit.m */; };
+		CD2735D2207A2ADD007C8666 /* BaseContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2735D1207A2ADD007C8666 /* BaseContext.m */; };
 		CD2E9F2C1E7BBE7400C57CA6 /* UIViewController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD2E9F2D1E7BBE7400C57CA6 /* UIViewController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */; };
 		CD3543931F9AEFEC009317A6 /* EmptyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3543921F9AEFEC009317A6 /* EmptyVC.m */; };
@@ -357,6 +361,11 @@
 		CD23DCE11EC36DE7006E331B /* AXProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXProgressHUD.m; sourceTree = "<group>"; };
 		CD242F481EE29DF300C954EC /* NSArray+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AXExtension.h"; sourceTree = "<group>"; };
 		CD242F491EE29DF300C954EC /* NSArray+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AXExtension.m"; sourceTree = "<group>"; };
+		CD2735CA207A24C0007C8666 /* AXDrawerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDrawerKit.h; sourceTree = "<group>"; };
+		CD2735CC207A24E0007C8666 /* UIViewController+AXDrawerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXDrawerKit.h"; sourceTree = "<group>"; };
+		CD2735CD207A24E0007C8666 /* UIViewController+AXDrawerKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXDrawerKit.m"; sourceTree = "<group>"; };
+		CD2735D0207A2ADD007C8666 /* BaseContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseContext.h; sourceTree = "<group>"; };
+		CD2735D1207A2ADD007C8666 /* BaseContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseContext.m; sourceTree = "<group>"; };
 		CD2E9F2A1E7BBE7400C57CA6 /* UIViewController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXExtension.h"; sourceTree = "<group>"; };
 		CD2E9F2B1E7BBE7400C57CA6 /* UIViewController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXExtension.m"; sourceTree = "<group>"; };
 		CD3543911F9AEFEC009317A6 /* EmptyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyVC.h; sourceTree = "<group>"; };
@@ -763,6 +772,7 @@
 				CD41541E1FC01F3000D4ED2C /* TabKit */,
 				CD4154201FC01F3100D4ED2C /* TableKit */,
 				CD4154211FC01F3100D4ED2C /* ThemeKit */,
+				CD2735C9207A24AB007C8666 /* DrawerKit */,
 				CD149E2C1F010AD8007051CE /* AXKit.bundle */,
 			);
 			path = AXKit;
@@ -834,6 +844,16 @@
 				CD2096EB1FC171CC0049739A /* CacheService.m */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CD2735C9207A24AB007C8666 /* DrawerKit */ = {
+			isa = PBXGroup;
+			children = (
+				CD2735CA207A24C0007C8666 /* AXDrawerKit.h */,
+				CD2735CC207A24E0007C8666 /* UIViewController+AXDrawerKit.h */,
+				CD2735CD207A24E0007C8666 /* UIViewController+AXDrawerKit.m */,
+			);
+			path = DrawerKit;
 			sourceTree = "<group>";
 		};
 		CD3543901F9AEFE2009317A6 /* EmptyVC */ = {
@@ -1333,6 +1353,8 @@
 				CD2096E11FC171700049739A /* BaseLayers */,
 				CD2096E41FC171710049739A /* DataAccess */,
 				CD2096E51FC171710049739A /* Services */,
+				CD2735D0207A2ADD007C8666 /* BaseContext.h */,
+				CD2735D1207A2ADD007C8666 /* BaseContext.m */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -1698,11 +1720,13 @@
 				CD23DCA51EC1DD76006E331B /* UINavigationBar+AXExtension.h in Headers */,
 				CD09FCBB1EE03C9500F3D928 /* CALayer+AXWrapper.h in Headers */,
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
+				CD2735CE207A24E0007C8666 /* UIViewController+AXDrawerKit.h in Headers */,
 				CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */,
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
 				CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */,
 				CD616C971FB99F8A00E38244 /* AXTabBarController.h in Headers */,
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
+				CD2735CB207A24C0007C8666 /* AXDrawerKit.h in Headers */,
 				CDB716551F8E6EC80025E8D7 /* UIThemeManager.h in Headers */,
 				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
@@ -2033,6 +2057,7 @@
 				CD88D1A71ECF30AD004FC692 /* BlogListModel.m in Sources */,
 				CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */,
 				CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */,
+				CD2735D2207A2ADD007C8666 /* BaseContext.m in Sources */,
 				CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */,
 				CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */,
 				CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */,
@@ -2153,6 +2178,7 @@
 				CDAB59081E6BF92F0017CA1E /* UIColor+AXColorPack.m in Sources */,
 				CDAB58E81E6BF37E0017CA1E /* CoreGraphics+AXExtension.m in Sources */,
 				CD43DA19204D61150005C077 /* AXRuntimeHelper.m in Sources */,
+				CD2735CF207A24E0007C8666 /* UIViewController+AXDrawerKit.m in Sources */,
 				CD1425F21FD5572E007571E8 /* EmailManager.m in Sources */,
 				CDBCEE211F18B14500FBB3C7 /* UINavigationItem+AXExtension.m in Sources */,
 			);

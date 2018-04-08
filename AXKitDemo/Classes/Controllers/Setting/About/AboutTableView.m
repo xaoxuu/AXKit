@@ -30,7 +30,8 @@ static CGFloat const iconSize = 64;
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.backgroundColor = [UIColor clearColor];
+    tableView.showsVerticalScrollIndicator = NO;
+    tableView.backgroundColor = [UIColor clearColor];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.width * 3 / 4)];
     
     // @xaoxuu: icon
@@ -64,13 +65,29 @@ static CGFloat const iconSize = 64;
     
     // @xaoxuu: app name
     NormalLabel *appName = [NormalLabel labelWithTitle:[NSBundle ax_appDisplayName] fontSize:17];
+    appName.width = view.width;
     appName.centerX = 0.5 * view.width;
     appName.top = icon.bottom + 8;
     appName.textColor = [UIColor whiteColor];
     [view addSubview:appName];
     
     tableView.tableHeaderView = view;
+    tableView.estimatedSectionHeaderHeight = 20;
+    tableView.estimatedSectionFooterHeight = 0;
 //    tableView.tableFooterView = services.app.copyrightTableFooter;
+    
+    
+    NormalLabel *copyright = [NormalLabel labelWithTitle:@"Copyright © 2013-2017 Titan Studio" fontSize:13];
+    copyright.height = 50;
+    copyright.textAlignment = NSTextAlignmentCenter;
+    copyright.textColor = [UIColor colorWithWhite:0 alpha:0.5];
+//    if (axThemeManager.color.theme.isLightColor) {
+//        copyright.textColor = [UIColor darkTextColor];
+//    } else {
+//        copyright.textColor = [UIColor lightTextColor];
+//    }
+    tableView.tableFooterView = copyright;
+    
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -96,12 +113,17 @@ static CGFloat const iconSize = 64;
     }
 }
 
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 1;
+- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.9];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 8;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
+}
 
 
 //

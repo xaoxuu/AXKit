@@ -22,5 +22,6 @@
 
 #import "ServiceLayer.h"
 #import "AXProgressHUD.h"
+#import "BaseContext.h"
 
 #endif /* PrefixHeader_pch */

@@ -9,6 +9,8 @@
 #import "SettingVC.h"
 #import "SettingTableView.h"
 
+static CGFloat margin = 8.0;
+
 @interface SettingVC ()
 
 
@@ -19,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = @"Preferences";
+    [self.navigationController.navigationBar.layer ax_shadow:LayerShadowNone];
+    self.view.backgroundColor = [UIColor clearColor];
     
     if (@available(iOS 11.0, *)) {
         // on newer versions
@@ -36,9 +41,11 @@
 }
 
 
+
 - (CGRect)initContentFrame:(CGRect)frame{
     frame.origin.y = kTopBarHeight;
-    frame.size.height = kScreenH - kTopBarHeight - kTabBarHeight;
+    frame.size.height = kScreenH - kTopBarHeight;
+    frame.size.width = kScreenW - 60 - 2*margin;
     return frame;
 }
 
@@ -65,10 +72,10 @@
 
 
 - (AXTableViewType *)installTableView{
-    CGRect frame = self.view.bounds;
-//    frame.size.height += kTopBarHeight();
+    CGRect frame = CGRectMake(margin, 0, self.view.width, self.view.height);
     return [[SettingTableView alloc] initWithFrame:frame];
 }
+
 
 
 @end

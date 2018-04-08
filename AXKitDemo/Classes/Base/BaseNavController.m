@@ -58,6 +58,7 @@
 
 - (void)updateTheme{
     [axThemeManager updateThemeForNavigationBar:self.navigationBar];
+    self.rootVC.view.backgroundColor = axThemeManager.color.theme;
 }
 
 

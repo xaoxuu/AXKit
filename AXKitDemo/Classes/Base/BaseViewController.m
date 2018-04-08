@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "AXDrawerKit.h"
 
 @interface BaseViewController ()
 
@@ -39,7 +40,7 @@
     // @xaoxuu: 基类 初始化 ModuleKit组件库
     [self baseInitModuleKitLibrary];
     
-        
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +50,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    [self at_disableGeatureInChlidController];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
