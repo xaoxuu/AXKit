@@ -24,6 +24,8 @@
 - (void)at_setupMainVC:(nonnull UIViewController *)mainVC
               drawerVC:(nonnull UIViewController *)drawerVC enable:(BOOL)enable;
 
+- (void)openDrawerViewIf:(BOOL)open;
+
 #pragma mark - gesture setting
 
 /**

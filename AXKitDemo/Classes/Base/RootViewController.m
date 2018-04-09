@@ -37,6 +37,7 @@
     self.mainVC.view.layer.shadowOpacity = 0.6f;
     
     [self at_setupMainVC:self.mainVC drawerVC:self.aboutVC enable:YES];
+    
     self.mainVC.view.transform = CGAffineTransformMakeTranslation(kScreenW+60, 0);
     self.aboutVC.view.transform = CGAffineTransformMakeTranslation(30, 0);
     [self.view addSubview:debugVC.view];
@@ -48,6 +49,7 @@
 //    [services.app applyTheme];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationColorChanged object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationFontChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeDrawer) name:NOTI_DRAWER_CLOSE object:nil];
     // 彩蛋
     if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
         
@@ -104,5 +106,8 @@
     self.view.backgroundColor = axThemeManager.color.theme;
 }
 
+- (void)closeDrawer{
+    [self openDrawerViewIf:NO];
+}
 
 @end

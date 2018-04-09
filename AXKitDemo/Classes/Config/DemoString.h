@@ -20,6 +20,8 @@ FOUNDATION_EXTERN NSString *kStringPleaseConfirmDataSourceCorrect(void);
 FOUNDATION_EXTERN NSString *kStringPleaseImplementDataSource(NSString *cls);
 
 
+#define NOTI_DRAWER_CLOSE @"com.xaoxuu.axkit.drawerclose"
+
 @interface DemoString : NSObject
 
 @end

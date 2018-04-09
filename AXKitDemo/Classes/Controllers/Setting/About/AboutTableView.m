@@ -11,6 +11,7 @@
 #import "BaseWebVC.h"
 #import "BlogVC.h"
 #import <UIImage+GIF.h>
+#import "FeedbackKit.h"
 
 static UIImage *cachedImage;
 
@@ -88,6 +89,8 @@ static id<NSObject> observer;
     [view addSubview:icon];
     // @xaoxuu: bg
     UIImageView *bg = [[UIImageView alloc] initWithFrame:view.bounds];
+    bg.height -= 8;
+    bg.top += 8;
     if (@available(iOS 11.0, *)) {
         // on newer versions
         
@@ -155,15 +158,6 @@ static id<NSObject> observer;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             tmp.detail = [NSBundle ax_appVersion];
-            //            tmp.detail = [NSUserDefaults ax_readStringForKey:CACHE_VERSION];
-            //            VersionLaterThanVersion([NSBundle ax_appVersion], services.app.remoteVersion.name, ^(BOOL later) {
-            //                if (later) {
-            //                    model.detail = [NSString stringWithFormat:@"%@ beta (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
-            //                } else {
-            //                    model.detail = [NSString stringWithFormat:@"%@ (%@)", [NSBundle ax_appVersion], [NSBundle ax_appBuild]];
-            //                }
-            //                [NSUserDefaults ax_setString:model.desc forKey:CACHE_VERSION];
-            //            }, nil);
             AXLogOBJ(model.detail);
         } else if (indexPath.row == 1) {
             NSString *buildTime = @"2018".append([NSBundle ax_appBuild]);
@@ -175,6 +169,23 @@ static id<NSObject> observer;
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
     cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85];
+}
+
+- (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
+    if (model.target.length) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_DRAWER_CLOSE object:nil];
+    }
+    if (model.target.isURLString) {
+        [UIApplication ax_presentSafariViewControllerWithURL:[NSURL URLWithString:model.target] fromViewController:self.controller];
+    } else if ([model.target containsString:@"mailto:"]) {
+        [[EmailManager sharedInstance] sendEmail:^(MFMailComposeViewController * _Nonnull mailCompose) {
+            [mailCompose setToRecipients:@[model.detail]];
+        } completion:^(MFMailComposeResult result) {
+            
+        } fail:^(NSError * _Nonnull error) {
+            
+        }];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

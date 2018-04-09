@@ -37,7 +37,34 @@
             "rowHeight":-1,
             "rows":[
                 {
-                    "title":"开发者网站",
+                    "title":"主页",
+                    "detail":"proj/axkit",
+                    "icon":"",
+                    "target":"https://xaoxuu.com/proj/axkit"
+                },
+                {
+                    "title":"文档",
+                    "detail":"docs/axkit",
+                    "icon":"",
+                    "target":"https://xaoxuu.com/docs/axkit"
+                },
+                {
+                    "title":"源码",
+                    "detail":"github.com/xaoxuu/AXKit",
+                    "icon":"",
+                    "target":"https://github.com/xaoxuu/AXKit"
+                }
+            ]
+        },
+        {
+            "headerTitle":"",
+            "headerHeight":-1,
+            "footerTitle":"",
+            "footerHeight":-1,
+            "rowHeight":-1,
+            "rows":[
+                {
+                    "title":"开发者",
                     "detail":"xaoxuu.com",
                     "icon":"",
                     "target":"https://xaoxuu.com"
@@ -47,18 +74,21 @@
                     "detail":"blog.xaoxuu.com",
                     "icon":"",
                     "target":"https://blog.xaoxuu.com"
-                },
+                }
+            ]
+        },
+        {
+            "headerTitle":"",
+            "headerHeight":-1,
+            "footerTitle":"",
+            "footerHeight":-1,
+            "rowHeight":-1,
+            "rows":[
                 {
-                    "title":"文档",
-                    "detail":"docs",
-                    "icon":"",
-                    "target":"https://xaoxuu.com/docs/axkit"
-                },
-                {
-                    "title":"源码",
-                    "detail":"github.com/xaoxuu/AXKit",
-                    "icon":"",
-                    "target":"https://github.com/xaoxuu/AXKit"
+                "title":"邮箱",
+                "detail":"me@xaoxuu.com",
+                "icon":"",
+                "target":"mailto:"
                 }
             ]
         }
