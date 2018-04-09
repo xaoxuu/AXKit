@@ -10,11 +10,10 @@
 
 @interface BaseContext : NSObject
 
-/**
- drawer open
- */
-@property (assign, nonatomic) BOOL drawerOpened;
-
 + (instancetype)sharedInstance;
+
++ (BOOL)isChinese;
+
++ (NSString *)docsURLString;
 
 @end

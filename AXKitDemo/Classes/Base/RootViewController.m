@@ -42,11 +42,7 @@
     self.aboutVC.view.transform = CGAffineTransformMakeTranslation(30, 0);
     [self.view addSubview:debugVC.view];
     
-//    self.mainTabBarVC = [[BaseTabBarController alloc] init];
-//    [self.mainTabBarVC.view.layer ax_shadow:LayerShadowCenterNormal];
-//    [self addChildViewController:self.mainTabBarVC];
-//    [self.view addSubview:self.mainTabBarVC.view];
-//    [services.app applyTheme];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationColorChanged object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationFontChanged object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeDrawer) name:NOTI_DRAWER_CLOSE object:nil];

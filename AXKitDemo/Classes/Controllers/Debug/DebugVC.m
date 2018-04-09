@@ -30,19 +30,10 @@
         
     }
     
-    NSString *languageCode = [NSLocale currentLocale].languageCode;
-    NSString *urlString = @"https://xaoxuu.com/docs/axkit";
-    if ([languageCode isEqualToString:@"zh"]) {
-        urlString = [urlString stringByAppendingString:@"/#/zh-cn/"];
-    }
-    
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"icon_help" action:^(UIBarButtonItem * _Nonnull sender) {
-        [UIApplication ax_presentSafariViewControllerWithURL:[NSURL URLWithString:urlString] fromViewController:weakSelf];
+        [UIApplication ax_presentSafariViewControllerWithURL:[NSURL URLWithString:[BaseContext docsURLString]] fromViewController:weakSelf];
     }];
-    
-    
-    
     
     
 }

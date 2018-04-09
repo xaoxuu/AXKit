@@ -33,5 +33,21 @@ BaseContext *instance = nil;
 }
 
 
++ (BOOL)isChinese{
+    NSString *languageCode = [NSLocale currentLocale].languageCode;
+    if ([languageCode isEqualToString:@"zh"]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
++ (NSString *)docsURLString{
+    NSString *urlString = @"https://xaoxuu.com/docs/axkit";
+    if (self.isChinese) {
+        urlString = [urlString stringByAppendingString:@"/#/zh-cn"];
+    }
+    return urlString;
+}
 
 @end
