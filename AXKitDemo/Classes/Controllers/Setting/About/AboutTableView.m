@@ -18,6 +18,7 @@ static UIImage *cachedImage;
 
 
 static CGFloat const iconSize = 60;
+static id<NSObject> observer;
 @interface AboutTableView ()
 
 
@@ -136,6 +137,17 @@ static CGFloat const iconSize = 60;
 //    }
     tableView.tableFooterView = copyright;
     
+    __weak typeof(self) weakSelf = self;
+    observer = [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [weakSelf reloadData];
+        appName.font = [UIFont fontWithName:axThemeManager.font.name size:17];
+        copyright.font = [UIFont fontWithName:axThemeManager.font.name size:11];
+    }];
+    
+    
+}
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:observer];
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView willSetModel:(AXTableRowModelType *)model forRowAtIndexPath:(NSIndexPath *)indexPath{

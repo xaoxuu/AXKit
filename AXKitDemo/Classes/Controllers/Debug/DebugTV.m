@@ -11,6 +11,22 @@
 
 @implementation DebugTV
 
+
+- (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
+    tableView.tableFooterView = UIViewWithHeight(44);
+    tableView.estimatedSectionFooterHeight = 12;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationFontChanged object:nil];
+    
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)updateTheme{
+    [self reloadData];
+}
+
+
 - (AXTableModelType *)ax_tableViewPreloadDataSource{
     AXTableModelType *model = [self loadDataSourceFromPath:[service.cache cacheForClassWithName:NSStringFromClass(self.class)]];
     if (!model) {
@@ -18,7 +34,6 @@
     }
     return model;
 }
-
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     if ([model.target isEqualToString:@"camera"]) {
         AXCameraViewController *vc = [[AXCameraViewController alloc] init];
@@ -37,11 +52,6 @@
 }
 
 
-
-- (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
-    tableView.tableFooterView = UIViewWithHeight(44);
-    tableView.estimatedSectionFooterHeight = 12;
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 12;

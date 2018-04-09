@@ -46,8 +46,8 @@
 //    [self addChildViewController:self.mainTabBarVC];
 //    [self.view addSubview:self.mainTabBarVC.view];
 //    [services.app applyTheme];
-    
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationColorChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationFontChanged object:nil];
     // 彩蛋
     if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
         
@@ -64,6 +64,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 /*
@@ -91,6 +95,10 @@
     
     
     
+}
+
+- (void)updateTheme{
+    self.view.backgroundColor = axThemeManager.color.theme;
 }
 
 

@@ -69,7 +69,7 @@
         if ([self.delegate respondsToSelector:@selector(ax_tableViewCell:needsLoadWebImageFromPath:forImageView:)]) {
             [self.delegate ax_tableViewCell:self needsLoadWebImageFromPath:model.icon forImageView:self.imageView];
         }
-    } else {
+    } else if (model.icon.length) {
         self.imageView.image = [self imageWithPath:model.icon];
     }
     if ([model respondsToSelector:@selector(accessoryType)]) {

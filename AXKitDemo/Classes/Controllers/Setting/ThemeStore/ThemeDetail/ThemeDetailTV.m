@@ -92,7 +92,7 @@
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
     if (self.theme.color.theme) {
-        cell.backgroundColor = self.theme.color.theme.lightRatio(0.85);
+        cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85*0.7];;
     }
 }
 

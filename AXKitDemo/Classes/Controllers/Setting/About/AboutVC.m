@@ -30,6 +30,7 @@
 }
 
 
+
 - (AXTableViewType *)installTableView{
 //    CGRect frame = self.view.bounds;
 //    frame.size.height -= kTabBarHeight;
@@ -72,6 +73,8 @@
     
     
 }
+
+
 
 
 
