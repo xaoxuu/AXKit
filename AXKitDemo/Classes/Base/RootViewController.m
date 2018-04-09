@@ -37,8 +37,8 @@
     self.mainVC.view.layer.shadowOpacity = 0.6f;
     
     [self at_setupMainVC:self.mainVC drawerVC:self.aboutVC enable:YES];
-    self.mainVC.view.transform = CGAffineTransformMakeTranslation(kScreenW, 0);
-    self.aboutVC.view.transform = CGAffineTransformMakeTranslation(-60, 0);
+    self.mainVC.view.transform = CGAffineTransformMakeTranslation(kScreenW+60, 0);
+    self.aboutVC.view.transform = CGAffineTransformMakeTranslation(30, 0);
     [self.view addSubview:debugVC.view];
     
 //    self.mainTabBarVC = [[BaseTabBarController alloc] init];
@@ -83,10 +83,13 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [UIView animateWithDuration:1.5 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:1.2 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.mainVC.view.transform = CGAffineTransformIdentity;
+        self.aboutVC.view.transform = CGAffineTransformMakeTranslation(-60-20, 0);
+        
+    } completion:^(BOOL finished) {
         self.aboutVC.view.transform = CGAffineTransformIdentity;
-    } completion:nil];
+    }];
     
 }
 - (void)viewDidAppear:(BOOL)animated{
