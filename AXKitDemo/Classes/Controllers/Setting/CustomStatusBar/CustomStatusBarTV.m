@@ -26,6 +26,8 @@ static NSTimer *timer;
         UIColor *color = [UIColor colorWithHexString:cell.model.target];
         CGSize size = CGSizeMake(8, cell.size.height - 2);
         cell.imageView.image = [UIImage imageWithColor:color size:size];
+    } else {
+        cell.imageView.image = nil;
     }
 }
 
