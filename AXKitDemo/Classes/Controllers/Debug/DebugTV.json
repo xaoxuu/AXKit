@@ -171,6 +171,21 @@
                     "target":"camera",
                 }
             ]
+        },
+        {
+            "headerTitle":"Share",
+            "headerHeight":-1,
+            "footerTitle":"",
+            "footerHeight":-1,
+            "rowHeight":-1,
+            "rows":[
+                {
+                    "title":"Share",
+                    "detail":"",
+                    "cmd":"share",
+                    "target":"",
+                }
+            ]
         }
     ]
 }

@@ -33,6 +33,7 @@ inline UIImage *UIImageFromView(UIView *view){
     UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, [UIScreen mainScreen].scale);
     // @xaoxuu: 将图层放入上下文中
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+//    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
     // @xaoxuu: 取出图片
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     // @xaoxuu: 结束取图

@@ -47,7 +47,17 @@
             AXLogFailure();
         }];
     } else {
-        [super ax_tableView:tableView didSelectedRowAtIndexPath:indexPath model:model];
+        if ([model.cmd isEqualToString:@"share"]) {
+            NSString *string = @"message";
+            UIImage *imageToShare = UIImageFromView(self.rootVC.view);
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:@[string,imageToShare] applicationActivities:nil];
+            [self.controller presentViewController:activityVC animated:YES completion:^{
+                
+            }];
+        } else {
+            [super ax_tableView:tableView didSelectedRowAtIndexPath:indexPath model:model];
+        }
+        
     }
 }
 
