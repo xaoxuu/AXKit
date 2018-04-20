@@ -12,7 +12,7 @@
                     "title":"Cacheable Log",
                     "detail":"",
                     "cmd":"",
-                    "target":"",
+                    "target":"CacheableLogVC",
                 },
                 {
                     "title":"String",

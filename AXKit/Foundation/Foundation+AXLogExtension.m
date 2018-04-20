@@ -97,7 +97,12 @@ static inline NSString *logPath(LogTypeString *type){
  @return 日志路径
  */
 + (NSArray<NSString *> *)getAllCachedLogPath{
-    return logDir().subpaths(logFileExtension);
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
+    NSArray<NSString *> *results = logDir().subpaths(logFileExtension);
+    if (results.count) {
+        results = [results sortedArrayUsingDescriptors:@[descriptor]];
+    }
+    return results;
 }
 
 

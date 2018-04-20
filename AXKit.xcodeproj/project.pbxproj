@@ -112,6 +112,9 @@
 		CD4154461FC0335C00D4ED2C /* UIThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4154441FC0335C00D4ED2C /* UIThemeModel.m */; };
 		CD43DA18204D61150005C077 /* AXRuntimeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD43DA16204D61150005C077 /* AXRuntimeHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD43DA19204D61150005C077 /* AXRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD43DA17204D61150005C077 /* AXRuntimeHelper.m */; };
+		CD47DE6A20898ED7007E4F24 /* CacheableLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */; };
+		CD47DE6E20898F0B007E4F24 /* CacheableLogTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */; };
+		CD47DE712089915E007E4F24 /* ContentViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE702089915E007E4F24 /* ContentViewerVC.m */; };
 		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
 		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -411,6 +414,12 @@
 		CD4154441FC0335C00D4ED2C /* UIThemeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIThemeModel.m; sourceTree = "<group>"; };
 		CD43DA16204D61150005C077 /* AXRuntimeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRuntimeHelper.h; sourceTree = "<group>"; };
 		CD43DA17204D61150005C077 /* AXRuntimeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRuntimeHelper.m; sourceTree = "<group>"; };
+		CD47DE6820898ED7007E4F24 /* CacheableLogVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogVC.h; sourceTree = "<group>"; };
+		CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheableLogVC.m; sourceTree = "<group>"; };
+		CD47DE6C20898F0B007E4F24 /* CacheableLogTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogTV.h; sourceTree = "<group>"; };
+		CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheableLogTV.m; sourceTree = "<group>"; };
+		CD47DE6F2089915E007E4F24 /* ContentViewerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewerVC.h; sourceTree = "<group>"; };
+		CD47DE702089915E007E4F24 /* ContentViewerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewerVC.m; sourceTree = "<group>"; };
 		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
 		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
 		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
@@ -955,6 +964,17 @@
 			path = StatusKit;
 			sourceTree = "<group>";
 		};
+		CD47DE6B20898EE1007E4F24 /* CacheableLog */ = {
+			isa = PBXGroup;
+			children = (
+				CD47DE6820898ED7007E4F24 /* CacheableLogVC.h */,
+				CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */,
+				CD47DE6C20898F0B007E4F24 /* CacheableLogTV.h */,
+				CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */,
+			);
+			path = CacheableLog;
+			sourceTree = "<group>";
+		};
 		CD54981E1EE1964500748C22 /* TestFrame */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +993,9 @@
 				CD57450E1EDADE510014E833 /* DebugTV.h */,
 				CD5745101EDADE510014E833 /* DebugTV.m */,
 				CD57450F1EDADE510014E833 /* DebugTV.json */,
+				CD47DE6F2089915E007E4F24 /* ContentViewerVC.h */,
+				CD47DE702089915E007E4F24 /* ContentViewerVC.m */,
+				CD47DE6B20898EE1007E4F24 /* CacheableLog */,
 				CDB065DC206E2FA0001C08CD /* OpenSetting */,
 				CDB54D8D1FCEC5CA0051EEFA /* LocalNotification */,
 				CD3543901F9AEFE2009317A6 /* EmptyVC */,
@@ -2060,6 +2083,7 @@
 				CD63A4061FC1925D00581AF6 /* ThemeStoreVC.m in Sources */,
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */,
+				CD47DE6A20898ED7007E4F24 /* CacheableLogVC.m in Sources */,
 				CD3A8EFB1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m in Sources */,
 				CDB716451F8E441A0025E8D7 /* CameraVC.m in Sources */,
 				CD5745881EDADE510014E833 /* ResizeableImageVC.m in Sources */,
@@ -2091,6 +2115,7 @@
 				CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */,
 				CD5745BC1EDADE510014E833 /* BaseWebVC.m in Sources */,
 				CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */,
+				CD47DE712089915E007E4F24 /* ContentViewerVC.m in Sources */,
 				CD5745BA1EDADE510014E833 /* ThemeColorVC.m in Sources */,
 				CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */,
 				CDE94E941EC705C800596B93 /* GitHubLabelModel.m in Sources */,
@@ -2150,6 +2175,7 @@
 				CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */,
 				CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */,
 				CD57459E1EDADE510014E833 /* FeedbackVC.m in Sources */,
+				CD47DE6E20898F0B007E4F24 /* CacheableLogTV.m in Sources */,
 				CD63A4311FC2CA0E00581AF6 /* ThemePreviewView.m in Sources */,
 				CD57458A1EDADE510014E833 /* DefaultViewController.m in Sources */,
 				CD5745991EDADE510014E833 /* CacheTableView.m in Sources */,
