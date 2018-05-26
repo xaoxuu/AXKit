@@ -1858,7 +1858,7 @@
 				TargetAttributes = {
 					8579EEF91E6BEDF900C33881 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = D6M452FYRP;
+						DevelopmentTeam = 34W5TB5KD2;
 						ProvisioningStyle = Manual;
 					};
 					8579EF181E6BEE4F00C33881 = {
@@ -2393,16 +2393,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = D6M452FYRP;
+				DEVELOPMENT_TEAM = 34W5TB5KD2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AXKitDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = AXKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hinteen.AXKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.axkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c192192d-9b5b-4597-8440-919251189e35";
-				PROVISIONING_PROFILE_SPECIFIER = AXKitDemo_Dev;
+				PROVISIONING_PROFILE = "b3cc7f2e-794b-4893-9a3d-07eec01e9330";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev All";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2415,16 +2415,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = D6M452FYRP;
+				DEVELOPMENT_TEAM = 34W5TB5KD2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AXKitDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = AXKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hinteen.AXKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.axkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d4afd40c-9984-4cce-9df1-50d33f196a1a";
-				PROVISIONING_PROFILE_SPECIFIER = AXKitDemo_Dis;
+				PROVISIONING_PROFILE = "f4b5119c-2efd-4deb-8027-3e7065363730";
+				PROVISIONING_PROFILE_SPECIFIER = "Dis All";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
