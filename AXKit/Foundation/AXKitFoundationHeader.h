@@ -27,7 +27,7 @@
 // @xaoxuu: CG数据类型的扩展，包括取值范围、随机值、常量
 #import "CoreGraphics+AXExtension.h"
 // @xaoxuu: 对NSOperation的扩展，基于<BlocksKit>改编，并增加了冷却机制
-#import "NSOperation+AXExtension.h"
+#import "GCD+AXExtension.h"
 // @xaoxuu: URL
 #import "NSURL+AXExtension.h"
 // @xaoxuu: 对NSTimer的block封装，基于<BlocksKit>改编

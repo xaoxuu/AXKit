@@ -6,7 +6,7 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import <AXKit/TableKit.h>
+#import "AXTableKit.h"
 
 @interface LocalNotificationTV : AXTableView
 

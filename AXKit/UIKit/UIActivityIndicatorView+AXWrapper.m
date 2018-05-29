@@ -9,7 +9,7 @@
 #import "UIActivityIndicatorView+AXWrapper.h"
 #import "CoreGraphics+AXExtension.h"
 #import "UIView+AXFrameExtension.h"
-#import "NSOperation+AXExtension.h"
+#import "GCD+AXExtension.h"
 #import "_AXKitBundle.h"
 
 static NSTimeInterval indicatorTimeout = 30;
@@ -51,9 +51,9 @@ static NSTimeInterval indicatorTimeout = 30;
     }
     [view addSubview:self];
     [self startAnimating];
-    [NSBlockOperation ax_delay:indicatorTimeout performInMainQueue:^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(indicatorTimeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self stopAnimating];
-    }];
+    });
 }
 
 

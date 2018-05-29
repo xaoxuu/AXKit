@@ -8,7 +8,7 @@
 
 #import "CustomStatusBarTV.h"
 #import "MJExtension.h"
-#import "StatusKit.h"
+#import "AXStatusKit.h"
 
 
 static NSTimer *timer;

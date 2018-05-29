@@ -8,10 +8,10 @@
 
 #import "CooldownVC.h"
 #import "FullWideButton.h"
-#import "StatusKit.h"
+#import "AXStatusKit.h"
 
 
-static ax_dispatch_operation_t token = nil;
+static dispatch_block_t token = nil;
 static int i;
 static NSTimeInterval timeout = 2;
 static UIView *customView;
@@ -74,12 +74,14 @@ static UIView *customView;
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     self.label.text = NSStringFromInt(++i);
-    ax_dispatch_cancel_operation(token);
-    token = ax_dispatch_cancellable(timeout, dispatch_get_main_queue(), ^{
+    
+    token = ax_dispatch_postpone(token, timeout, dispatch_get_main_queue(), ^{
         NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
+        AXLogOBJ(msg);
         [self reset];
         [AXProgressHUD ax_target:self.view showInfo:msg duration:1];
     });
+    
 }
 
 - (void)dealloc{

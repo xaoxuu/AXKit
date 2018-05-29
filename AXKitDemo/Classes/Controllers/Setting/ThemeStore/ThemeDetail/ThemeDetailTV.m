@@ -8,7 +8,7 @@
 
 #import "ThemeDetailTV.h"
 #import "ThemePreviewView.h"
-#import "FeedbackKit.h"
+#import "AXFeedbackKit.h"
 #import <UIImageView+WebCache.h>
 @interface ThemeDetailTV ()
 

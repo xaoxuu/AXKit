@@ -7,7 +7,7 @@
 //
 
 #import "FeedbackVC.h"
-#import "FeedbackKit.h"
+#import "AXFeedbackKit.h"
 #import "FeedbackCollectionViewCell.h"
 
 static NSString *reuseId = @"FeedbackCollectionViewCell";

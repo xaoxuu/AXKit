@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "FeedbackKit.h"
+#import "AXFeedbackKit.h"
 
 
 @interface AppDelegate ()

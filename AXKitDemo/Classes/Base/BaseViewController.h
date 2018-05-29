@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TableKit.h"
+#import "AXTableKit.h"
 
 typedef NS_ENUM(NSUInteger, ContentViewStyle) {
     ContentViewStyleNoTopBar, // 默认   // view的区域覆盖屏幕除了navBar以外的地方，（适用于只有navBar没tabBar的视图）

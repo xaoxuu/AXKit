@@ -6,7 +6,7 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "TableKit.h"
+#import "AXTableKit.h"
 #import "ThemeCollectionModel.h"
 
 @interface ThemeDetailTV : AXTableView

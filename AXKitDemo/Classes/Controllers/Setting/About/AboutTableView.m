@@ -11,7 +11,7 @@
 #import "BaseWebVC.h"
 #import "BlogVC.h"
 #import <UIImage+GIF.h>
-#import "FeedbackKit.h"
+#import "AXFeedbackKit.h"
 
 static UIImage *cachedImage;
 

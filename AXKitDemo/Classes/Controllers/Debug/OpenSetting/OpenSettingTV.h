@@ -6,7 +6,7 @@
 //  Copyright © 2018 Titan Studio. All rights reserved.
 //
 
-#import <AXKit/AXKit.h>
+#import "AXTableKit.h"
 
 @interface OpenSettingTV : AXTableView
 

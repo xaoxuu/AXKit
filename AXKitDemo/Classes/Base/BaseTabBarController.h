@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TabKit.h"
+#import "AXTabKit.h"
 
 @interface BaseTabBarController : AXTabBarController
 
