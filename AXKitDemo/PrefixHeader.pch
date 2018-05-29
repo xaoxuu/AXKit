@@ -14,7 +14,7 @@
 #import "YYKit.h"
 // @xaoxuu: common
 #import "AXKit.h"
-#import "AXThemeKit.h"
+#import <AXThemeKit.h>
 
 // @xaoxuu: demo
 #import "DemoConst.h"

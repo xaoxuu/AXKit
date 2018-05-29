@@ -88,15 +88,6 @@
 		CD3A8EFC1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */; };
 		CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */; };
-		CD4166A620BCEED1005CFD10 /* UIViewController+AXDrawerKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4166A520BCEED1005CFD10 /* UIViewController+AXDrawerKit.m */; };
-		CD4166DB20BCF136005CFD10 /* AXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4166D820BCF135005CFD10 /* AXTabBarController.m */; };
-		CD4166DC20BCF136005CFD10 /* AXTabBarController.json in Resources */ = {isa = PBXBuildFile; fileRef = CD4166D920BCF135005CFD10 /* AXTabBarController.json */; };
-		CD41670720BCF28A005CFD10 /* AXTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41670120BCF28A005CFD10 /* AXTableModel.m */; };
-		CD41670820BCF28A005CFD10 /* AXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41670420BCF28A005CFD10 /* AXTableView.m */; };
-		CD41670920BCF28A005CFD10 /* AXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41670620BCF28A005CFD10 /* AXTableViewCell.m */; };
-		CD41676720BCF506005CFD10 /* AXStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41676520BCF506005CFD10 /* AXStatusBar.m */; };
-		CD41679820BCF565005CFD10 /* EmailAttachmentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41679420BCF565005CFD10 /* EmailAttachmentDataSource.m */; };
-		CD41679920BCF565005CFD10 /* EmailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD41679520BCF565005CFD10 /* EmailManager.m */; };
 		CD43DA18204D61150005C077 /* AXRuntimeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD43DA16204D61150005C077 /* AXRuntimeHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD43DA19204D61150005C077 /* AXRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD43DA17204D61150005C077 /* AXRuntimeHelper.m */; };
 		CD47DE6A20898ED7007E4F24 /* CacheableLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */; };
@@ -275,9 +266,6 @@
 		CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */; };
 		CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDD7A0711EA06A560068FDBF /* UINavigationController+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */; };
-		CDD97FFA20BD2A9700307C62 /* UIThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD97FF420BD2A9700307C62 /* UIThemeManager.m */; };
-		CDD97FFB20BD2A9700307C62 /* DefaultTheme.json in Resources */ = {isa = PBXBuildFile; fileRef = CDD97FF520BD2A9700307C62 /* DefaultTheme.json */; };
-		CDD97FFC20BD2A9700307C62 /* UIThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD97FF620BD2A9700307C62 /* UIThemeModel.m */; };
 		CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91F9E1EAEE6E000FC5A88 /* NSError+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */; };
 		CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -376,28 +364,6 @@
 		CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePreviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugHelper.h; sourceTree = "<group>"; };
 		CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugHelper.m; sourceTree = "<group>"; };
-		CD4166A320BCEED1005CFD10 /* AXDrawerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDrawerKit.h; sourceTree = "<group>"; };
-		CD4166A420BCEED1005CFD10 /* UIViewController+AXDrawerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXDrawerKit.h"; sourceTree = "<group>"; };
-		CD4166A520BCEED1005CFD10 /* UIViewController+AXDrawerKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXDrawerKit.m"; sourceTree = "<group>"; };
-		CD4166D720BCF135005CFD10 /* AXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTabBarController.h; sourceTree = "<group>"; };
-		CD4166D820BCF135005CFD10 /* AXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXTabBarController.m; sourceTree = "<group>"; };
-		CD4166D920BCF135005CFD10 /* AXTabBarController.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AXTabBarController.json; sourceTree = "<group>"; };
-		CD4166DA20BCF135005CFD10 /* AXTabKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTabKit.h; sourceTree = "<group>"; };
-		CD41670020BCF28A005CFD10 /* AXTableKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTableKit.h; sourceTree = "<group>"; };
-		CD41670120BCF28A005CFD10 /* AXTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXTableModel.m; sourceTree = "<group>"; };
-		CD41670220BCF28A005CFD10 /* AXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTableView.h; sourceTree = "<group>"; };
-		CD41670320BCF28A005CFD10 /* AXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTableViewCell.h; sourceTree = "<group>"; };
-		CD41670420BCF28A005CFD10 /* AXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXTableView.m; sourceTree = "<group>"; };
-		CD41670520BCF28A005CFD10 /* AXTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTableModel.h; sourceTree = "<group>"; };
-		CD41670620BCF28A005CFD10 /* AXTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXTableViewCell.m; sourceTree = "<group>"; };
-		CD41676420BCF506005CFD10 /* AXStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXStatusBar.h; sourceTree = "<group>"; };
-		CD41676520BCF506005CFD10 /* AXStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXStatusBar.m; sourceTree = "<group>"; };
-		CD41676620BCF506005CFD10 /* AXStatusKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXStatusKit.h; sourceTree = "<group>"; };
-		CD41679320BCF565005CFD10 /* AXFeedbackKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXFeedbackKit.h; sourceTree = "<group>"; };
-		CD41679420BCF565005CFD10 /* EmailAttachmentDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailAttachmentDataSource.m; sourceTree = "<group>"; };
-		CD41679520BCF565005CFD10 /* EmailManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailManager.m; sourceTree = "<group>"; };
-		CD41679620BCF565005CFD10 /* EmailManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailManager.h; sourceTree = "<group>"; };
-		CD41679720BCF565005CFD10 /* EmailAttachmentDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailAttachmentDataSource.h; sourceTree = "<group>"; };
 		CD43DA16204D61150005C077 /* AXRuntimeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRuntimeHelper.h; sourceTree = "<group>"; };
 		CD43DA17204D61150005C077 /* AXRuntimeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRuntimeHelper.m; sourceTree = "<group>"; };
 		CD47DE6820898ED7007E4F24 /* CacheableLogVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogVC.h; sourceTree = "<group>"; };
@@ -655,12 +621,6 @@
 		CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXExtension.h"; sourceTree = "<group>"; };
 		CDD7A06F1EA06A560068FDBF /* UINavigationController+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AXExtension.m"; sourceTree = "<group>"; };
-		CDD97FF420BD2A9700307C62 /* UIThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIThemeManager.m; sourceTree = "<group>"; };
-		CDD97FF520BD2A9700307C62 /* DefaultTheme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultTheme.json; sourceTree = "<group>"; };
-		CDD97FF620BD2A9700307C62 /* UIThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIThemeModel.m; sourceTree = "<group>"; };
-		CDD97FF720BD2A9700307C62 /* AXThemeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXThemeKit.h; sourceTree = "<group>"; };
-		CDD97FF820BD2A9700307C62 /* UIThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIThemeManager.h; sourceTree = "<group>"; };
-		CDD97FF920BD2A9700307C62 /* UIThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIThemeModel.h; sourceTree = "<group>"; };
 		CDE91F9E1EAEE6E000FC5A88 /* NSError+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+AXExtension.h"; sourceTree = "<group>"; };
 		CDE91F9F1EAEE6E000FC5A88 /* NSError+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+AXExtension.m"; sourceTree = "<group>"; };
 		CDE91FBF1EAF478700FC5A88 /* NSBundle+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+AXExtension.h"; sourceTree = "<group>"; };
@@ -729,12 +689,6 @@
 			children = (
 				8579EEFC1E6BEDF900C33881 /* AXKitDemo */,
 				8579EF1A1E6BEE4F00C33881 /* AXKit */,
-				CD41679220BCF565005CFD10 /* AXFeedbackKit */,
-				CD41676320BCF506005CFD10 /* AXStatusKit */,
-				CD4166FF20BCF28A005CFD10 /* AXTableKit */,
-				CDD97FF320BD2A9700307C62 /* AXThemeKit */,
-				CD4166D620BCF135005CFD10 /* AXTabKit */,
-				CD4166A220BCEED1005CFD10 /* AXDrawerKit */,
 				8579EEFB1E6BEDF900C33881 /* Products */,
 				12A43EFBEB4D2DD409C010A2 /* Pods */,
 				DEA666EC2C223146F94EACAF /* Frameworks */,
@@ -882,68 +836,6 @@
 				CD3543921F9AEFEC009317A6 /* EmptyVC.m */,
 			);
 			path = EmptyVC;
-			sourceTree = "<group>";
-		};
-		CD4166A220BCEED1005CFD10 /* AXDrawerKit */ = {
-			isa = PBXGroup;
-			children = (
-				CD4166A320BCEED1005CFD10 /* AXDrawerKit.h */,
-				CD4166A420BCEED1005CFD10 /* UIViewController+AXDrawerKit.h */,
-				CD4166A520BCEED1005CFD10 /* UIViewController+AXDrawerKit.m */,
-			);
-			name = AXDrawerKit;
-			path = ../AXDrawerKit/AXDrawerKit/AXDrawerKit;
-			sourceTree = "<group>";
-		};
-		CD4166D620BCF135005CFD10 /* AXTabKit */ = {
-			isa = PBXGroup;
-			children = (
-				CD4166D720BCF135005CFD10 /* AXTabBarController.h */,
-				CD4166D820BCF135005CFD10 /* AXTabBarController.m */,
-				CD4166D920BCF135005CFD10 /* AXTabBarController.json */,
-				CD4166DA20BCF135005CFD10 /* AXTabKit.h */,
-			);
-			name = AXTabKit;
-			path = ../AXTabKit/AXTabKit/AXTabKit;
-			sourceTree = "<group>";
-		};
-		CD4166FF20BCF28A005CFD10 /* AXTableKit */ = {
-			isa = PBXGroup;
-			children = (
-				CD41670020BCF28A005CFD10 /* AXTableKit.h */,
-				CD41670120BCF28A005CFD10 /* AXTableModel.m */,
-				CD41670220BCF28A005CFD10 /* AXTableView.h */,
-				CD41670320BCF28A005CFD10 /* AXTableViewCell.h */,
-				CD41670420BCF28A005CFD10 /* AXTableView.m */,
-				CD41670520BCF28A005CFD10 /* AXTableModel.h */,
-				CD41670620BCF28A005CFD10 /* AXTableViewCell.m */,
-			);
-			name = AXTableKit;
-			path = ../AXTableKit/AXTableKit/AXTableKit;
-			sourceTree = "<group>";
-		};
-		CD41676320BCF506005CFD10 /* AXStatusKit */ = {
-			isa = PBXGroup;
-			children = (
-				CD41676420BCF506005CFD10 /* AXStatusBar.h */,
-				CD41676520BCF506005CFD10 /* AXStatusBar.m */,
-				CD41676620BCF506005CFD10 /* AXStatusKit.h */,
-			);
-			name = AXStatusKit;
-			path = ../AXStatusKit/AXStatusKit/AXStatusKit;
-			sourceTree = "<group>";
-		};
-		CD41679220BCF565005CFD10 /* AXFeedbackKit */ = {
-			isa = PBXGroup;
-			children = (
-				CD41679320BCF565005CFD10 /* AXFeedbackKit.h */,
-				CD41679420BCF565005CFD10 /* EmailAttachmentDataSource.m */,
-				CD41679520BCF565005CFD10 /* EmailManager.m */,
-				CD41679620BCF565005CFD10 /* EmailManager.h */,
-				CD41679720BCF565005CFD10 /* EmailAttachmentDataSource.h */,
-			);
-			name = AXFeedbackKit;
-			path = ../AXFeedbackKit/AXFeedbackKit/AXFeedbackKit;
 			sourceTree = "<group>";
 		};
 		CD47DE6B20898EE1007E4F24 /* CacheableLog */ = {
@@ -1615,20 +1507,6 @@
 			path = label;
 			sourceTree = "<group>";
 		};
-		CDD97FF320BD2A9700307C62 /* AXThemeKit */ = {
-			isa = PBXGroup;
-			children = (
-				CDD97FF420BD2A9700307C62 /* UIThemeManager.m */,
-				CDD97FF520BD2A9700307C62 /* DefaultTheme.json */,
-				CDD97FF620BD2A9700307C62 /* UIThemeModel.m */,
-				CDD97FF720BD2A9700307C62 /* AXThemeKit.h */,
-				CDD97FF820BD2A9700307C62 /* UIThemeManager.h */,
-				CDD97FF920BD2A9700307C62 /* UIThemeModel.h */,
-			);
-			name = AXThemeKit;
-			path = ../AXThemeKit/AXThemeKit/AXThemeKit;
-			sourceTree = "<group>";
-		};
 		CDE94E881EC705C800596B93 /* GitHubModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1887,7 +1765,6 @@
 				CDA527C21FECFED3009C39EC /* AXKit.bundle in Resources */,
 				CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
-				CD4166DC20BCF136005CFD10 /* AXTabBarController.json in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* footer_rhesis.json in Resources */,
 				CD5745A21EDADE510014E833 /* FontSizeTableViewCell.xib in Resources */,
@@ -1925,7 +1802,6 @@
 				CD77FEB11EBF6583001A5787 /* datamap.json in Resources */,
 				CD149E251F0105D4007051CE /* Assets.xcassets in Resources */,
 				CDB54DA21FCEDAA30051EEFA /* FontTableView.json in Resources */,
-				CDD97FFB20BD2A9700307C62 /* DefaultTheme.json in Resources */,
 				CD5745871EDADE510014E833 /* HitTestVC.xib in Resources */,
 				CD273606207A5FF2007C8666 /* Icon-62@2x.png in Resources */,
 				CD5745901EDADE510014E833 /* AboutTableView.json in Resources */,
@@ -1971,6 +1847,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AXKitDemo/Pods-AXKitDemo-resources.sh",
 				"${PODS_ROOT}/AXCameraKit/AXCameraKit/AXCameraKit.bundle",
+				"${PODS_ROOT}/../../AXTabKit/AXTabKit/AXTabKit/AXTabBarController.json",
+				"${PODS_ROOT}/../../AXThemeKit/AXThemeKit/AXThemeKit/DefaultTheme.json",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -2089,21 +1967,17 @@
 				CDBB3B261EB9E80F00E8ED25 /* MJExtensionConst.m in Sources */,
 				CD63A4261FC2B9FB00581AF6 /* ThemeCollectionView.m in Sources */,
 				CDE94EA91EC72C2E00596B93 /* BaseLoadingView.m in Sources */,
-				CD41670920BCF28A005CFD10 /* AXTableViewCell.m in Sources */,
 				CDA614D51FC1724B001FB0BE /* NetworkDA.m in Sources */,
 				CDF18CCE1EB884F1004B4794 /* RootViewController.m in Sources */,
 				8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */,
 				CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */,
-				CDD97FFA20BD2A9700307C62 /* UIThemeManager.m in Sources */,
 				CDB065D6206E2F6A001C08CD /* OpenSettingVC.m in Sources */,
 				CD23DCE21EC36DE7006E331B /* AXProgressHUD.m in Sources */,
-				CD41670820BCF28A005CFD10 /* AXTableView.m in Sources */,
 				CD5745BC1EDADE510014E833 /* BaseWebVC.m in Sources */,
 				CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */,
 				CD47DE712089915E007E4F24 /* ContentViewerVC.m in Sources */,
 				CD5745BA1EDADE510014E833 /* ThemeColorVC.m in Sources */,
 				CDBB3B2D1EB9E80F00E8ED25 /* NSObject+MJKeyValue.m in Sources */,
-				CD41670720BCF28A005CFD10 /* AXTableModel.m in Sources */,
 				CDE94E941EC705C800596B93 /* GitHubLabelModel.m in Sources */,
 				CD88D1A71ECF30AD004FC692 /* BlogListModel.m in Sources */,
 				CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */,
@@ -2125,10 +1999,8 @@
 				CD5745811EDADE510014E833 /* DebugTV.m in Sources */,
 				CD5745A51EDADE510014E833 /* HelpDetailVC.m in Sources */,
 				CDBB3B281EB9E80F00E8ED25 /* MJProperty.m in Sources */,
-				CD4166DB20BCF136005CFD10 /* AXTabBarController.m in Sources */,
 				CD5745A81EDADE510014E833 /* HelpVC.m in Sources */,
 				CDE94EAC1EC72DDD00596B93 /* DefaultIndicatorView.m in Sources */,
-				CD41676720BCF506005CFD10 /* AXStatusBar.m in Sources */,
 				CD63A40E1FC1957A00581AF6 /* ThemeCollectionViewCell.m in Sources */,
 				CD2096E61FC171710049739A /* ServiceLayer.m in Sources */,
 				CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */,
@@ -2136,7 +2008,6 @@
 				CDB065DF206E383B001C08CD /* DocVC.m in Sources */,
 				CDBB39B81EB9D74E00E8ED25 /* DemoMarcos.m in Sources */,
 				CD63A4221FC1B80700581AF6 /* ThemeManageVC.m in Sources */,
-				CD4166A620BCEED1005CFD10 /* UIViewController+AXDrawerKit.m in Sources */,
 				CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */,
 				CD5745B41EDADE510014E833 /* SettingTableView.m in Sources */,
 				CD3A8EF71FC3F91B00177ADC /* CachedThemeCollectionView.m in Sources */,
@@ -2148,18 +2019,15 @@
 				CDB54D961FCEC6260051EEFA /* LocalNotificationTV.m in Sources */,
 				CD2096E91FC1718E0049739A /* BaseService.m in Sources */,
 				CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */,
-				CD41679820BCF565005CFD10 /* EmailAttachmentDataSource.m in Sources */,
 				CD5745911EDADE510014E833 /* AboutTableView.m in Sources */,
 				CD57460C1EDB2F650014E833 /* GitHubInfoModel.m in Sources */,
 				CD57459A1EDADE510014E833 /* RemoveCacheVC.m in Sources */,
 				CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */,
 				CD5746181EDC188F0014E833 /* AppVersionInfoModel.m in Sources */,
-				CDD97FFC20BD2A9700307C62 /* UIThemeModel.m in Sources */,
 				CD5745A71EDADE510014E833 /* HelpTableView.m in Sources */,
 				CD2096EC1FC171CC0049739A /* CacheService.m in Sources */,
 				CDBB3B2A1EB9E80F00E8ED25 /* MJPropertyType.m in Sources */,
 				CD5746151EDBFF030014E833 /* ReleaseLogTV.m in Sources */,
-				CD41679920BCF565005CFD10 /* EmailManager.m in Sources */,
 				CD63A43D1FC30FC400581AF6 /* FontTableViewCell.m in Sources */,
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,

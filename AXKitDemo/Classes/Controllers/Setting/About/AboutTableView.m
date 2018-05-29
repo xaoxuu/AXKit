@@ -11,7 +11,7 @@
 #import "BaseWebVC.h"
 #import "BlogVC.h"
 #import <UIImage+GIF.h>
-#import "AXFeedbackKit.h"
+#import <AXFeedbackKit.h>
 
 static UIImage *cachedImage;
 
@@ -169,6 +169,8 @@ static id<NSObject> observer;
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
     cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85];
+    cell.textLabel.font = axThemeManager.font.customNormal;
+    cell.detailTextLabel.font = axThemeManager.font.customSmall;
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{

@@ -9,6 +9,13 @@ pod 'AXCameraKit'
 pod 'MJRefresh'
 pod 'SCLAlertView-Objective-C'
 
+pod 'AXKit',         :path => '../AXKit'
+pod 'AXStatusKit',   :path => '../AXStatusKit'
+pod 'AXFeedbackKit', :path => '../AXFeedbackKit'
+pod 'AXTableKit',    :path => '../AXTableKit'
+pod 'AXTabKit',      :path => '../AXTabKit'
+pod 'AXDrawerKit',   :path => '../AXDrawerKit'
+pod 'AXThemeKit',    :path => '../AXThemeKit'
 
 end
 
