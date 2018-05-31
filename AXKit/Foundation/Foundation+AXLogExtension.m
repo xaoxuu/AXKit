@@ -56,9 +56,7 @@ static inline NSString *logDir(){
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         dir = [NSString stringWithFormat:@"com.xaoxuu.AXKit/%@", logFileDirName].cachePath;
-        if (!dir.isDirectoryExist()) {
-            dir.createDirectory();
-        }
+        dir.createDirectory();
     });
     return dir;
 }
@@ -70,7 +68,7 @@ static inline NSString *logDir(){
  */
 static inline NSString *logDirToday(){
     NSString *dir = [NSString stringWithFormat:@"%@/%@", logDir(), getTodayString()];
-    if (!dir.isDirectoryExist()) {
+    if (!dir.isDirectoryExist) {
         dir.createDirectory();
     }
     return dir;
@@ -81,7 +79,7 @@ static inline NSString *logPath(LogTypeString *type){
     NSString *path = [NSString stringWithFormat:@"%@/%@-%@.%@", logDirToday(), getTodayString(), type, logFileExtension];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         // 初始化写入第一行，记录启动时间
-        path.saveStringByAppendingToEndOfFile([NSString stringWithFormat:@"-> [%@] application load completed. \n\n", getCurrentTimeString()]);
+        path.appendStringToFile([NSString stringWithFormat:@"-> [%@] application load completed. \n\n", getCurrentTimeString()]);
     }
     return path;
 }
@@ -198,7 +196,7 @@ static inline NSString *logPath(LogTypeString *type){
 #ifdef DEBUG
         NSLog(@"%@",str);
 #endif
-        logPath(type).saveStringByAppendingToEndOfFile(str);
+        logPath(type).appendStringToFile(str);
     });
 }
 

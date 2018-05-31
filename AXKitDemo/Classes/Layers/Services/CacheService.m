@@ -28,7 +28,7 @@ static NSString *themeCachePath(NSString *email, NSString *name){
         NSString *urlString = [NSString stringWithFormat:@"%@/%@.json", kBaseURLStringForApp, name];
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
             NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            jsonCachePath(name).saveFile(jsonString);
+            jsonCachePath(name).saveObject(jsonString);
         } fail:^(NSError *error) {
             
         }];
@@ -60,7 +60,7 @@ static NSString *themeCachePath(NSString *email, NSString *name){
                 callback([ThemeCollectionModel modelWithDict:response]);
             }
             NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            themeListCachePath().saveFile(jsonString);
+            themeListCachePath().saveObject(jsonString);
         } fail:^(NSError *error) {
             
         }];
@@ -75,10 +75,10 @@ static NSString *themeCachePath(NSString *email, NSString *name){
 - (void)downloadTheme:(UIThemeModel *)model completion:(void (^)(UIThemeModel *theme))completion{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // @xaoxuu: in background queue
-        NSString *urlString = BaseURLForTheme.appendPathComponent(model.info.email).appendPathComponent([model.info.name stringByURLEncode]).extension(@"json");
+        NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@.json",BaseURLForTheme, model.info.email, model.info.name];
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
             NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            themeCachePath(model.info.email, model.info.name).saveFile(jsonString);
+            themeCachePath(model.info.email, model.info.name).saveObject(jsonString);
             if (completion) {
                 completion(model);
             }
