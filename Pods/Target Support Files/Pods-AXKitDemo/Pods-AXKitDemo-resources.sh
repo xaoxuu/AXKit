@@ -83,18 +83,6 @@ EOM
       ;;
   esac
 }
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/AXCameraKit/AXCameraKit/AXCameraKit.bundle"
-  install_resource "${PODS_ROOT}/../../AXTabKit/AXTabKit/AXTabKit/AXTabBarController.json"
-  install_resource "${PODS_ROOT}/../../AXThemeKit/AXThemeKit/AXThemeKit/DefaultTheme.json"
-  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/AXCameraKit/AXCameraKit/AXCameraKit.bundle"
-  install_resource "${PODS_ROOT}/../../AXTabKit/AXTabKit/AXTabKit/AXTabBarController.json"
-  install_resource "${PODS_ROOT}/../../AXThemeKit/AXThemeKit/AXThemeKit/DefaultTheme.json"
-  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

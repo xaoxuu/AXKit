@@ -10,8 +10,8 @@
 #import "NormalLabel.h"
 #import "BaseWebVC.h"
 #import "BlogVC.h"
-#import <UIImage+GIF.h>
-#import <AXFeedbackKit.h>
+#import <SDWebImage/UIImage+GIF.h>
+#import "AXFeedbackKit.h"
 
 static UIImage *cachedImage;
 
@@ -158,7 +158,6 @@ static id<NSObject> observer;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             tmp.detail = [NSBundle ax_appVersion];
-            AXLogOBJ(model.detail);
         } else if (indexPath.row == 1) {
             NSString *buildTime = @"2018".append([NSBundle ax_appBuild]);
             NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMdd1"];
@@ -197,11 +196,5 @@ static id<NSObject> observer;
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.1;
 }
-
-
-//
-//- (void)didDiscoverRemoteVersion:(AppVersionInfoModel *)version{
-//    [self reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-//}
 
 @end

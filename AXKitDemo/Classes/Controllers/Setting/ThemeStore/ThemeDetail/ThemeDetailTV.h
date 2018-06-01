@@ -11,8 +11,8 @@
 
 @interface ThemeDetailTV : AXTableView
 
-@property (strong, nonatomic) UIThemeModel *theme;
+@property (strong, nonatomic) AXThemeModel *theme;
 
-- (void)updateWithTheme:(UIThemeModel *)theme;
+- (void)updateWithTheme:(AXThemeModel *)theme;
 
 @end

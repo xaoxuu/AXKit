@@ -211,8 +211,30 @@ static inline AXFileOperationResult *saveObjectAtPath(id obj, NSString *path){
  @return 结果
  */
 static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString *path, NSJSONWritingOptions options){
-    NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:options error:nil];
-    return saveObjectAtPath(data, path);
+    NSData *data = nil;
+    if ([obj isKindOfClass:NSArray.class] || [obj isKindOfClass:NSDictionary.class]) {
+        data = [NSJSONSerialization dataWithJSONObject:obj options:options error:nil];
+    } else if ([obj isKindOfClass:NSData.class] || [obj isKindOfClass:[NSString class]]) {
+        NSData *testData;
+        if ([obj isKindOfClass:[NSString class]]) {
+            testData = [(NSString *)obj dataUsingEncoding:NSUTF8StringEncoding];
+        } else {
+            testData = obj;
+        }
+        // 验证是否是jsondata
+        id ret = [NSJSONSerialization JSONObjectWithData:testData options:NSJSONReadingMutableContainers error:nil];
+        if ([ret isKindOfClass:[NSDictionary class]] || [ret isKindOfClass:[NSArray class]]) {
+            data = obj;
+        }
+    }
+    if (data) {
+        return saveObjectAtPath(data, path);
+    } else {
+        return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError * _Nullable __autoreleasing * _Nullable error) {
+            *error = [NSError errorWithDomain:NSCocoaErrorDomain code:3840 userInfo:nil];
+            return NO;
+        }];
+    }
 }
 
 @implementation NSString (AXFileStreamChainedWrapper)

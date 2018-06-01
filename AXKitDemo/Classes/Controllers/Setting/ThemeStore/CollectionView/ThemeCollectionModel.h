@@ -25,9 +25,9 @@
 
 @property (copy, nonatomic) NSString *title;
 
-@property (strong, nonatomic) NSMutableArray<UIThemeModel *> *themes;
+@property (strong, nonatomic) NSMutableArray<AXThemeModel *> *themes;
 
-- (void)addRow:(void (^)(UIThemeModel *row))row;
+- (void)addRow:(void (^)(AXThemeModel *row))row;
 
 @end
 

@@ -7,7 +7,7 @@
 //
 
 #import "ThemeCollectionViewCell.h"
-#import <UIImageView+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ThemeCollectionViewCell ()
 
@@ -27,7 +27,7 @@
     self.imgv.backgroundColor = [UIColor randomColor];
 }
 
-- (void)setModel:(UIThemeModel *)model{
+- (void)setModel:(AXThemeModel *)model{
     _model = model;
     
     self.title.font = axThemeManager.font.customNormal;

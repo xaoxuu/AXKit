@@ -16,7 +16,7 @@ static NSString *themeListCachePath(){
     return [NSString stringWithFormat:@"com.xaoxuu.AXKitDemo/Themes/index.json"].cachePath;
 }
 static NSString *themeCachePath(NSString *email, NSString *name){
-    return [UIThemeModel filePathWithIdentifier:[UIThemeModel identifierWithEmail:email name:name]];
+    return [AXThemeModel filePathWithIdentifier:[AXThemeModel identifierWithEmail:email name:name]];
 }
 
 
@@ -27,15 +27,16 @@ static NSString *themeCachePath(NSString *email, NSString *name){
         // @xaoxuu: in background queue
         NSString *urlString = [NSString stringWithFormat:@"%@/%@.json", kBaseURLStringForApp, name];
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
-            NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            jsonCachePath(name).saveObject(jsonString);
+            [jsonCachePath(name).saveJson(response) error:^(NSError * _Nullable error) {
+                AXCachedLogError(error);
+            }];
         } fail:^(NSError *error) {
-            
+            AXCachedLogError(error);
         }];
     });
     NSString *path = jsonCachePath(name);
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
+        path = [[NSBundle bundleForClass:NSClassFromString(name)] pathForResource:name ofType:@"json"];
     }
     return path;
 }
@@ -44,8 +45,9 @@ static NSString *themeCachePath(NSString *email, NSString *name){
 - (ThemeCollectionModel *)cachedThemeList{
     NSString *path = themeListCachePath();
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary *json = [path.readJsonResult() error:^(NSError * _Nullable error) {
+            AXCachedLogError(error);
+        }].dictionaryValue;
         return [ThemeCollectionModel modelWithDict:json];
     }
     return nil;
@@ -59,31 +61,33 @@ static NSString *themeCachePath(NSString *email, NSString *name){
             if (callback) {
                 callback([ThemeCollectionModel modelWithDict:response]);
             }
-            NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            themeListCachePath().saveObject(jsonString);
+            [themeListCachePath().saveJson(data) error:^(NSError * _Nullable error) {
+                AXCachedLogError(error);
+            }];
         } fail:^(NSError *error) {
-            
+            AXCachedLogError(error);
         }];
     });
 }
 
-- (BOOL)isThemeDownloaded:(UIThemeModel *)model{
+- (BOOL)isThemeDownloaded:(AXThemeModel *)model{
     NSString *path = themeCachePath(model.info.email, model.info.name);
     return [[NSFileManager defaultManager] fileExistsAtPath:path];
 }
 
-- (void)downloadTheme:(UIThemeModel *)model completion:(void (^)(UIThemeModel *theme))completion{
+- (void)downloadTheme:(AXThemeModel *)model completion:(void (^)(AXThemeModel *theme))completion{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // @xaoxuu: in background queue
         NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@.json",BaseURLForTheme, model.info.email, model.info.name];
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
-            NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            themeCachePath(model.info.email, model.info.name).saveObject(jsonString);
+            [themeCachePath(model.info.email, model.info.name).saveJson(data) error:^(NSError * _Nullable error) {
+                AXCachedLogError(error);
+            }];
             if (completion) {
                 completion(model);
             }
         } fail:^(NSError *error) {
-            
+            AXCachedLogError(error);
         }];
     });
 }

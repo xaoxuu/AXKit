@@ -8,7 +8,7 @@
 
 #import "ThemePreviewView.h"
 #import "ThemePreviewCollectionViewCell.h"
-#import <UIImageView+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *reuseIdentifier = @"ThemePreviewCollectionViewCell";
 

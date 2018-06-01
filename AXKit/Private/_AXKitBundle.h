@@ -10,7 +10,7 @@
 
 FOUNDATION_EXTERN NSString *NSLocalizedStringFromAXKit(NSString *key);
 
-@interface NSBundle (AXPrivateExtension)
+@interface AXBundle : NSBundle
 
 + (instancetype)axkitBundle;
 

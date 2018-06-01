@@ -26,11 +26,11 @@
 - (ThemeCollectionModel *)dataList{
     if (!_dataList) {
         _dataList = [ThemeCollectionModel new];
-        NSArray<UIThemeModel *> *themes = [axThemeManager getAllDownloadedThemes];
+        NSArray<AXThemeModel *> *themes = [axThemeManager getAllDownloadedThemes];
         if (themes.count) {
             [_dataList addSection:^(ThemeCollectionSectionModel *section) {
                 section.title = @"已下载的主题";
-                [themes enumerateObjectsUsingBlock:^(UIThemeModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [themes enumerateObjectsUsingBlock:^(AXThemeModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     [section.themes addObject:obj];
                 }];
             }];

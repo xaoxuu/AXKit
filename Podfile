@@ -1,4 +1,5 @@
 platform :ios, '8.0'
+use_frameworks!
 
 target 'AXKitDemo' do
 
@@ -9,7 +10,7 @@ pod 'AXCameraKit'
 pod 'MJRefresh'
 pod 'SCLAlertView-Objective-C'
 
-pod 'AXKit',         :path => '../AXKit'
+#pod 'AXKit',         :path => '../AXKit'
 pod 'AXStatusKit',   :path => '../AXStatusKit'
 pod 'AXFeedbackKit', :path => '../AXFeedbackKit'
 pod 'AXTableKit',    :path => '../AXTableKit'

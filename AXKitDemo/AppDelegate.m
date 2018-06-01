@@ -25,7 +25,7 @@
     // Override point for customization after application launch.
     
     // @xaoxuu: 配置主题
-    [[UIThemeManager sharedInstance] configDefaultTheme:^(UIThemeManager *theme) {
+    [[AXThemeManager sharedInstance] configDefaultTheme:^(AXThemeManager *theme) {
         theme.color.theme = [UIColor ax_blue];
         theme.color.accent = [UIColor md_lime];
     }];

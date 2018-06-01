@@ -13,6 +13,6 @@
 @interface ThemeCollectionViewCell : UICollectionViewCell
 
 // @xaoxuu: model
-@property (strong, nonatomic) UIThemeModel *model;
+@property (strong, nonatomic) AXThemeModel *model;
 
 @end

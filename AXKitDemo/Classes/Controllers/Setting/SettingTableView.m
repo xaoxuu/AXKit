@@ -10,7 +10,7 @@
 #import "CustomTableVC.h"
 #import "FeedbackVC.h"
 #import "BlogVC.h"
-#import <UIImageView+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface SettingTableView () <AXTableViewCellDelegate>
 
 

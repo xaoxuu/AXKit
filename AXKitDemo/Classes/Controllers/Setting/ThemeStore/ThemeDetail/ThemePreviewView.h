@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIThemeModel.h"
+#import "AXThemeModel.h"
 
 @interface ThemePreviewView : UIView
 
 // @xaoxuu: model
-@property (strong, nonatomic) UIThemeModel *model;
+@property (strong, nonatomic) AXThemeModel *model;
 
 
 @end

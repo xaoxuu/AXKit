@@ -32,7 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		16DA2697365C05CC1F4CC264 /* libPods-AXKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D36335E66790626BD9FC9F58 /* libPods-AXKitDemo.a */; };
+		1BBA703454F7215902906992 /* Pods_AXKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFAB2B88CD9F14E9370ACD4 /* Pods_AXKitDemo.framework */; };
 		8579EEFF1E6BEDF900C33881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8579EEFE1E6BEDF900C33881 /* main.m */; };
 		8579EF021E6BEDF900C33881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8579EF011E6BEDF900C33881 /* AppDelegate.m */; };
 		8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8579EF0B1E6BEDF900C33881 /* LaunchScreen.storyboard */; };
@@ -286,6 +286,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EFAB2B88CD9F14E9370ACD4 /* Pods_AXKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8579EEFA1E6BEDF900C33881 /* AXKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8579EEFE1E6BEDF900C33881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8579EF001E6BEDF900C33881 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -651,7 +652,6 @@
 		CDF18CC01EB884F1004B4794 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		CDF18CE31EB888BE004B4794 /* UITableView+Creator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Creator.h"; sourceTree = "<group>"; };
 		CDF18CE41EB888BE004B4794 /* UITableView+Creator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Creator.m"; sourceTree = "<group>"; };
-		D36335E66790626BD9FC9F58 /* libPods-AXKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AXKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9083E906418E89A52CCBB86 /* Pods-AXKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AXKitDemo/Pods-AXKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -661,7 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA527BE1FECFAC9009C39EC /* AXKit.framework in Frameworks */,
-				16DA2697365C05CC1F4CC264 /* libPods-AXKitDemo.a in Frameworks */,
+				1BBA703454F7215902906992 /* Pods_AXKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1600,7 +1600,7 @@
 		DEA666EC2C223146F94EACAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D36335E66790626BD9FC9F58 /* libPods-AXKitDemo.a */,
+				3EFAB2B88CD9F14E9370ACD4 /* Pods_AXKitDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1830,9 +1830,34 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AXKitDemo/Pods-AXKitDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AXCameraKit/AXCameraKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AXDrawerKit/AXDrawerKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AXFeedbackKit/AXFeedbackKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AXStatusKit/AXStatusKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AXTabKit/AXTabKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AXTableKit/AXTableKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AXThemeKit/AXThemeKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView-Objective-C/SCLAlertView_Objective_C.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXCameraKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXDrawerKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXFeedbackKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXStatusKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXTabKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXTableKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXThemeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView_Objective_C.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1847,13 +1872,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AXKitDemo/Pods-AXKitDemo-resources.sh",
 				"${PODS_ROOT}/AXCameraKit/AXCameraKit/AXCameraKit.bundle",
-				"${PODS_ROOT}/../../AXTabKit/AXTabKit/AXTabKit/AXTabBarController.json",
-				"${PODS_ROOT}/../../AXThemeKit/AXThemeKit/AXThemeKit/DefaultTheme.json",
+				"${PODS_ROOT}/AXTabKit/AXTabKit/AXTabKit/AXTabBarController.json",
+				"${PODS_ROOT}/AXThemeKit/AXThemeKit/AXThemeKit/DefaultTheme.json",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXCameraKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXTabBarController.json",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DefaultTheme.json",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

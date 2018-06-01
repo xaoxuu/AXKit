@@ -1,0 +1,6 @@
+framework module AXThemeKit {
+  umbrella header "AXThemeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

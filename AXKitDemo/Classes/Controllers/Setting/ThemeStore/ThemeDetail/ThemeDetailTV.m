@@ -9,7 +9,7 @@
 #import "ThemeDetailTV.h"
 #import "ThemePreviewView.h"
 #import "AXFeedbackKit.h"
-#import <UIImageView+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface ThemeDetailTV ()
 
 @property (strong, nonatomic) ThemePreviewView *header;
@@ -62,7 +62,7 @@
     dataSource(model);
 }
 
-- (void)updateWithTheme:(UIThemeModel *)theme{
+- (void)updateWithTheme:(AXThemeModel *)theme{
     if (theme) {
         self.theme = theme;
         [self reloadDataSourceAndRefreshTableView];

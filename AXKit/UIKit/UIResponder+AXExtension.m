@@ -7,7 +7,6 @@
 //
 
 #import "UIResponder+AXExtension.h"
-#import "AppDelegate.h"
 
 
 @implementation UIViewController (AXResponderExtension)

@@ -32,7 +32,7 @@
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithTitle:btnTitle action:^(UIBarButtonItem * _Nonnull sender) {
         if ([sender.title isEqualToString:@"下载"]) {
-            [service.cache downloadTheme:weakSelf.model completion:^(UIThemeModel *theme) {
+            [service.cache downloadTheme:weakSelf.model completion:^(AXThemeModel *theme) {
                 AXLogOBJ(theme);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     // @xaoxuu: in main queue

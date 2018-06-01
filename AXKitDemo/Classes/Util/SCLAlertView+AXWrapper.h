@@ -6,7 +6,8 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import <SCLAlertView-Objective-C/SCLAlertView.h>
+#import <SCLAlertView_Objective_C/SCLAlertView.h>
+//#import <SCLAlertView-Objective-C/SCLAlertView.h>
 
 @interface SCLAlertView (AXWrapper)
 

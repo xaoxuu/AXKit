@@ -36,7 +36,7 @@
         section.title = [obj stringValueForKey:@"title"];
         NSArray<NSDictionary *> *themes = [obj arrayValueForKey:@"themes"];
         [themes enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            UIThemeModel *theme = [UIThemeModel modelWithDictionary:obj];
+            AXThemeModel *theme = [AXThemeModel modelWithDictionary:obj];
             [section.themes addObject:theme];
         }];
         [model.sections addObject:section];
@@ -57,8 +57,8 @@
     return self;
 }
 
-- (void)addRow:(void (^)(UIThemeModel *))row{
-    UIThemeModel *model = [[UIThemeModel alloc] init];
+- (void)addRow:(void (^)(AXThemeModel *))row{
+    AXThemeModel *model = [[AXThemeModel alloc] init];
     if (row) {
         row(model);
     }
