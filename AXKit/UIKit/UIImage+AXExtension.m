@@ -11,7 +11,6 @@
 
 #pragma mark - 生成
 
-
 inline UIImage *UIImageGetPureColorImage(UIColor *color, CGSize size, CGFloat alpha){
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);

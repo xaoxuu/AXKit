@@ -36,17 +36,6 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }
 }
 
-// find view's super controller
-- (UIViewController *)controller{
-    UIResponder *responder = self;
-    while ((responder = [responder nextResponder])){
-        if ([responder isKindOfClass: [UIViewController class]])
-            return (UIViewController *)responder;
-    }
-    return nil;
-}
-
-
 - (void)ax_removeAllSubviews:(Class)subClass {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (!subClass || [subview isKindOfClass:subClass]) {

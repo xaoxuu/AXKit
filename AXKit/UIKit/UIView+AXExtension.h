@@ -52,14 +52,6 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 - (void)ax_layer:(void (^)(CALayer *layer))layer;
 
 /**
- 当前view所在的控制器controller
-
- @return 控制器controller
- */
-- (nullable UIViewController *)controller;
-
-
-/**
  移除所有子视图
 
  @param subClass 指定范围（只移除属于哪个类的子视图，传入nil时移除所有子视图）

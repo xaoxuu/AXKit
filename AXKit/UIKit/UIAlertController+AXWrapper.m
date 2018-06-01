@@ -36,6 +36,7 @@ inline NSString *kStringError(void){
 
 #pragma mark - 弹窗
 
+
 /**
  弹窗(标题+消息+自定义按钮)（如果action为nil，则只有一个确定按钮）
  
@@ -43,12 +44,22 @@ inline NSString *kStringError(void){
  @param message 消息
  @param actions 按钮
  */
-+ (instancetype)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
++ (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
+    [self ax_showAlertWithViewController:UIViewController.rootViewController title:title message:message actions:actions completion:nil];
+}
++ (void)ax_showAlertWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions completion:(void (^)(void))completion{
+    [self ax_showAlertWithViewController:UIViewController.rootViewController title:title message:message actions:actions completion:completion];
+}
++ (void)ax_showAlertWithViewController:(UIViewController *)viewController title:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
+    [self ax_showAlertWithViewController:viewController title:title message:message actions:actions completion:nil];
+}
++ (void)ax_showAlertWithViewController:(UIViewController *)viewController title:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions completion:(void (^)(void))completion{
+    [viewController presentViewController:[self ax_alertWithTitle:title message:message actions:actions] animated:YES completion:completion];
+}
++ (instancetype)ax_alertWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
     UIAlertController *alert = [[self alloc] initAlertWithTitle:title message:message actions:actions];
-    [AXRootViewController() presentViewController:alert animated:YES completion:nil];
     return alert;
 }
-
 - (instancetype)initAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
     if (!title && message.length) {
         // @xaoxuu: title为nil的话，系统会把message当做title。
@@ -73,9 +84,20 @@ inline NSString *kStringError(void){
  @param message 消息
  @param actions 按钮
  */
-+ (instancetype)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
++ (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions{
+    [self ax_showActionSheetWithViewController:UIViewController.rootViewController title:title message:message actions:actions completion:nil];
+}
++ (void)ax_showActionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions completion:(void (^)(void))completion{
+    [self ax_showActionSheetWithViewController:UIViewController.rootViewController title:title message:message actions:actions completion:completion];
+}
++ (void)ax_showActionSheetWithViewController:(UIViewController *)viewController title:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
+    [self ax_showActionSheetWithViewController:viewController title:title message:message actions:actions completion:nil];
+}
++ (void)ax_showActionSheetWithViewController:(UIViewController *)viewController title:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions completion:(void (^)(void))completion{
+    [viewController presentViewController:[self ax_actionSheetWithTitle:title message:message actions:actions] animated:YES completion:completion];
+}
++ (instancetype)ax_actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
     UIAlertController *alert = [[self alloc] initActionSheetWithTitle:title message:message actions:actions];
-    [AXRootViewController() presentViewController:alert animated:YES completion:nil];
     return alert;
 }
 

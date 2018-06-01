@@ -24,7 +24,7 @@
         [subview ax_fillWithRandomColor];
         [subview ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
             CGPoint loc = [sender locationInView:weakSelf.view];
-            [AXProgressHUD ax_target:weakSelf.rootVC.view point:loc showInfo:sender.view.description duration:0.5];
+            [AXProgressHUD ax_target:UIViewController.rootViewController.view point:loc showInfo:sender.view.description duration:0.5];
         }];
     }];
     

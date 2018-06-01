@@ -7,18 +7,36 @@
 //
 
 #import "UIResponder+AXExtension.h"
+#import "AppDelegate.h"
 
-inline UIViewController *AXRootViewController(){
-    UIResponder *appDelegate = (UIResponder *)[UIApplication sharedApplication].delegate;
-    return (UIViewController *)[appDelegate valueForKeyPath:@"window.rootViewController"];
+
+@implementation UIViewController (AXResponderExtension)
+
++ (UIViewController *)rootViewController{
+    return UIWindow.keyWindow.rootViewController;
 }
 
-@implementation UIResponder (AXExtension)
+@end
 
+@implementation UIWindow (AXResponderExtension)
 
-- (UIViewController *)rootVC{
-    return AXRootViewController();
++ (UIWindow *)keyWindow{
+    UIResponder *appDelegate = (UIResponder *)UIApplication.sharedApplication.delegate;
+    return (UIWindow *)[appDelegate valueForKey:@"window"];
 }
- 
+
+@end
+
+@implementation UIView (AXResponderExtension)
+
+// find view's super controller
+- (UIViewController *)controller{
+    UIResponder *responder = self;
+    while ((responder = responder.nextResponder)){
+        if ([responder isKindOfClass: UIViewController.class])
+            return (UIViewController *)responder;
+    }
+    return nil;
+}
 
 @end

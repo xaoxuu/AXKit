@@ -90,7 +90,7 @@ static NSTimeInterval static_duration;
     
 //    sPopView.height = sLabel.top + sLabel.height + 16;
     sPopView.height = sLabel.height + 32;
-    sPopView.center = AXRootViewController().view.boundsCenter;
+    sPopView.center = UIViewController.rootViewController.view.boundsCenter;
     sMaskView.centerY = sPopView.boundsCenterY;
     
     

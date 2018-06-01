@@ -57,7 +57,7 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
     if (@available(iOS 9.0, *)) {
         // on newer versions
         SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:URL];
-        [viewController?:AXRootViewController() presentViewController:safari animated:YES completion:nil];
+        [viewController?:UIViewController.rootViewController presentViewController:safari animated:YES completion:nil];
     } else {
         // Fallback on earlier versions
         [[UIApplication sharedApplication] openURL:URL];

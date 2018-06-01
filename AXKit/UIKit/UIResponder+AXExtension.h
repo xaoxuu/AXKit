@@ -9,23 +9,31 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- 根控制器
 
- @return 根控制器
- */
-FOUNDATION_EXTERN UIViewController * _Nullable AXRootViewController(void);
-
-
-@interface UIResponder (AXExtension)
-
+@interface UIViewController (AXResponderExtension)
 
 /**
  获取app根控制器
  
  @return 根控制器rootVC
  */
-- (nullable UIViewController *)rootVC;
++ (nullable UIViewController *)rootViewController;
+
+@end
+
+@interface UIWindow (AXResponderExtension)
+
++ (nullable UIWindow *)keyWindow;
+
+@end
+@interface UIView (AXResponderExtension)
+
+/**
+ 当前view所在的控制器controller
+ 
+ @return 控制器controller
+ */
+- (nullable UIViewController *)controller;
 
 @end
 NS_ASSUME_NONNULL_END
