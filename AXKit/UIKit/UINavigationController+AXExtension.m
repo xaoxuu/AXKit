@@ -9,54 +9,9 @@
 #import "UINavigationController+AXExtension.h"
 #import "GCD+AXExtension.h"
 #import "_AXKitHelpServices.h"
-
-@import ObjectiveC.runtime;
-
-@implementation UIViewController (BackButtonHandler)
-
-@end
-
-
-static const void *UINavigationControllerAXExtensionKey = &UINavigationControllerAXExtensionKey;
-
-
-static inline void ax_exchangeSelector(Class theClass, SEL originalSelector, SEL newSelector) {
-    Method method_origin = class_getInstanceMethod(theClass, originalSelector);
-    Method method_new = class_getInstanceMethod(theClass, newSelector);
-    method_exchangeImplementations(method_origin, method_new);
-}
-
-
-static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method method) {
-    return class_addMethod(theClass, selector,  method_getImplementation(method),  method_getTypeEncoding(method));
-}
-
+#import "Foundation+AXLogExtension.h"
 
 @implementation UINavigationController (AXExtension)
-
-
-
-- (void)ax_hidesBottomBarWhenPushed:(BOOL)hide{
-    // @xaoxuu: origin method
-    Method method_origin = class_getInstanceMethod([self class], @selector(pushViewController:animated:));
-    // @xaoxuu: flag dictionary
-    NSMutableDictionary *imps = objc_getAssociatedObject(self, UINavigationControllerAXExtensionKey);
-    if (!imps) {
-        imps = [NSMutableDictionary dictionary];
-        objc_setAssociatedObject(self, UINavigationControllerAXExtensionKey, imps, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    BOOL isExchanged = [imps[[NSString stringWithFormat:@"%p",method_origin]] boolValue];
-    if (hide^isExchanged) {
-        // @xaoxuu: new method
-        Method method_new = class_getInstanceMethod([self class], @selector(ax_pushViewControllerHidesBottomBar:animated:));
-        // @xaoxuu: add new method to class
-        ax_class_addMethod([self class], @selector(ax_pushViewControllerHidesBottomBar:animated:), method_new);
-        // @xaoxuu: exchange methods
-        ax_exchangeSelector([self class], @selector(pushViewController:animated:), @selector(ax_pushViewControllerHidesBottomBar:animated:));
-        imps[[NSString stringWithFormat:@"%p",method_origin]] = @(hide);
-    }
-}
-
 
 
 - (void)ax_pushViewControllerNamed:(NSString *)vcName{
@@ -99,52 +54,5 @@ static inline BOOL ax_class_addMethod(Class theClass, SEL selector, Method metho
     NSUInteger targetIndex = vcs.count-1-index;
     [self popToViewController:vcs[targetIndex] animated:YES];
 }
-
-
-- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
-    
-    if([self.viewControllers count] < [navigationBar.items count]) {
-        return YES;
-    }
-    
-    BOOL shouldPop = YES;
-    UIViewController* vc = [self topViewController];
-    if([vc respondsToSelector:@selector(navigationShouldPopOnBackButton)]) {
-        shouldPop = [vc navigationShouldPopOnBackButton];
-    }
-    
-    if(shouldPop) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self popViewControllerAnimated:YES];
-        });
-    } else {
-        // Workaround for iOS7.1. Thanks to @boliva - http://stackoverflow.com/posts/comments/34452906
-        for(UIView *subview in [navigationBar subviews]) {
-            if(0. < subview.alpha && subview.alpha < 1.) {
-                [UIView animateWithDuration:.25 animations:^{
-                    subview.alpha = 1.;
-                }];
-            }
-        }
-    }
-    
-    return NO;
-}
-
-
-#pragma mark - 私有
-
-
-- (void)ax_pushViewControllerHidesBottomBar:(UIViewController *)viewController animated:(BOOL)animated{
-    
-    if (!self.viewControllers.count) {
-        viewController.hidesBottomBarWhenPushed = NO;
-    } else {
-        viewController.hidesBottomBarWhenPushed = YES;
-    }
-    
-    [self ax_pushViewControllerHidesBottomBar:viewController animated:animated];
-}
-
 
 @end

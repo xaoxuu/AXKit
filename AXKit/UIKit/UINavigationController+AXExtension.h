@@ -7,32 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Foundation+AXLogExtension.h"
-#import "NSError+AXExtension.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol BackButtonHandlerProtocol <NSObject>
-@optional
-// Override this method in UIViewController derived class to handle 'Back' button click
-- (BOOL)navigationShouldPopOnBackButton;
-@end
-
-@interface UIViewController (BackButtonHandler) <BackButtonHandlerProtocol>
-
-@end
-
 
 @interface UINavigationController (AXExtension)
-
-
-/**
- 隐藏子控制器的BottomBar
-
- @param hide 是否隐藏
- */
-- (void)ax_hidesBottomBarWhenPushed:(BOOL)hide;
-
 
 /**
  push到指定name的控制器，animated为YES
@@ -40,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param vcName VC的name
  */
 - (void)ax_pushViewControllerNamed:(NSString *)vcName;
-
 
 /**
  push到指定name的控制器

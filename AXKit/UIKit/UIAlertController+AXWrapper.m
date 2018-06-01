@@ -54,7 +54,13 @@ inline NSString *kStringError(void){
     [self ax_showAlertWithViewController:viewController title:title message:message actions:actions completion:nil];
 }
 + (void)ax_showAlertWithViewController:(UIViewController *)viewController title:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions completion:(void (^)(void))completion{
-    [viewController presentViewController:[self ax_alertWithTitle:title message:message actions:actions] animated:YES completion:completion];
+    if (viewController.presentedViewController) {
+        [viewController.presentedViewController dismissViewControllerAnimated:YES completion:^{
+            [viewController presentViewController:[self ax_alertWithTitle:title message:message actions:actions] animated:YES completion:completion];
+        }];
+    } else {
+        [viewController presentViewController:[self ax_alertWithTitle:title message:message actions:actions] animated:YES completion:completion];
+    }
 }
 + (instancetype)ax_alertWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
     UIAlertController *alert = [[self alloc] initAlertWithTitle:title message:message actions:actions];
@@ -94,7 +100,13 @@ inline NSString *kStringError(void){
     [self ax_showActionSheetWithViewController:viewController title:title message:message actions:actions completion:nil];
 }
 + (void)ax_showActionSheetWithViewController:(UIViewController *)viewController title:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions completion:(void (^)(void))completion{
-    [viewController presentViewController:[self ax_actionSheetWithTitle:title message:message actions:actions] animated:YES completion:completion];
+    if (viewController.presentedViewController) {
+        [viewController.presentedViewController dismissViewControllerAnimated:YES completion:^{
+            [viewController presentViewController:[self ax_actionSheetWithTitle:title message:message actions:actions] animated:YES completion:completion];
+        }];
+    } else {
+        [viewController presentViewController:[self ax_actionSheetWithTitle:title message:message actions:actions] animated:YES completion:completion];
+    }
 }
 + (instancetype)ax_actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
     UIAlertController *alert = [[self alloc] initActionSheetWithTitle:title message:message actions:actions];
