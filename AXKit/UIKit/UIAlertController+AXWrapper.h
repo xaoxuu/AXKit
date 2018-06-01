@@ -37,6 +37,7 @@ FOUNDATION_EXTERN NSString *kStringError(void);
  @param actions 按钮
  */
 + (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
+
 /**
  从根视图弹出一个弹窗Alert（标题+消息+自定义按钮）
  如果action为nil，则只有一个确定按钮
@@ -47,28 +48,29 @@ FOUNDATION_EXTERN NSString *kStringError(void);
  @param completion 完成回调
  */
 + (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions completion:(void (^ __nullable)(void))completion;
-/**
- 弹出一个弹窗Alert（标题+消息+自定义按钮）
- 如果action为nil，则只有一个确定按钮
- 
- @param viewController 从哪个VC弹出
- @param title 标题
- @param message 消息
- @param actions 按钮
- */
-+ (void)ax_showAlertWithViewController:(UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
 
 /**
  弹出一个弹窗Alert（标题+消息+自定义按钮）
  如果action为nil，则只有一个确定按钮
  
- @param viewController 从哪个VC弹出
  @param title 标题
  @param message 消息
  @param actions 按钮
+ @param viewController 从哪个VC弹出
+ */
++ (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions fromViewController:(nullable UIViewController *)viewController;
+
+/**
+ 弹出一个弹窗Alert（标题+消息+自定义按钮）
+ 如果action为nil，则只有一个确定按钮
+ 
+ @param title 标题
+ @param message 消息
+ @param actions 按钮
+ @param viewController 从哪个VC弹出
  @param completion 完成回调
  */
-+ (void)ax_showAlertWithViewController:(UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions completion:(void (^ __nullable)(void))completion;
++ (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions  fromViewController:(nullable UIViewController *)viewController completion:(void (^ __nullable)(void))completion;
 
 /**
  创建一个弹窗Alert（标题+消息+自定义按钮）
@@ -92,6 +94,7 @@ FOUNDATION_EXTERN NSString *kStringError(void);
  @param actions 按钮
  */
 + (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
+
 /**
  从根视图弹出一个操作表ActionSheet（标题+消息+自定义按钮）
  如果action为nil，则只有一个确定按钮
@@ -102,28 +105,29 @@ FOUNDATION_EXTERN NSString *kStringError(void);
  @param completion 完成回调
  */
 + (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions completion:(void (^ __nullable)(void))completion;
+
 /**
  弹出一个操作表ActionSheet（标题+消息+自定义按钮）
  如果action为nil，则只有一个确定按钮
  
- @param viewController 从哪个VC弹出
  @param title 标题
  @param message 消息
  @param actions 按钮
+ @param viewController 从哪个VC弹出
  */
-+ (void)ax_showActionSheetWithViewController:(UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions;
++ (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions fromViewController:(nullable UIViewController *)viewController;
 
 /**
  弹出一个操作表ActionSheet（标题+消息+自定义按钮）
  如果action为nil，则只有一个确定按钮
 
- @param viewController 从哪个VC弹出
  @param title 标题
  @param message 消息
  @param actions 按钮
+ @param viewController 从哪个VC弹出
  @param completion 完成回调
  */
-+ (void)ax_showActionSheetWithViewController:(UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions completion:(void (^ __nullable)(void))completion;
++ (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions fromViewController:(nullable UIViewController *)viewController completion:(void (^ __nullable)(void))completion;
 
 /**
  创建一个操作表ActionSheet（标题+消息+自定义按钮）

@@ -91,11 +91,6 @@ FOUNDATION_EXTERN NSString *NSStringFromPercent(CGFloat x);
 FOUNDATION_EXTERN NSString *NSStringFromASCIIValue(unsigned char ASCIIValue);
 
 
-
-
-FOUNDATION_EXTERN void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^ _Nullable failure)(NSError *error));
-
-
 /**
  汉字转拼音
 
@@ -183,15 +178,6 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
  */
 - (BOOL)isURLString;
 
-
-/**
- 以当前字符串为名的图片
-
- @return 图片
- */
-- (nullable UIImage *)image;
-
-
 /**
  文本在指定字体、宽度时候需要的高度
 
@@ -200,15 +186,6 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
  @return 文本框高度
  */
 - (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width;
-
-
-/**
- 比较两个版本（返回较新的版本）
-
- @param version 要对比的另一个版本
- @return 较新的版本
- */
-- (NSString *)laterVersion:(NSString *)version;
 
 @end
 

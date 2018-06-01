@@ -93,10 +93,6 @@
 		CD47DE6A20898ED7007E4F24 /* CacheableLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */; };
 		CD47DE6E20898F0B007E4F24 /* CacheableLogTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */; };
 		CD47DE712089915E007E4F24 /* ContentViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE702089915E007E4F24 /* ContentViewerVC.m */; };
-		CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5498161EE15E1300748C22 /* AXKitUIHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498171EE15E1300748C22 /* AXKitUIHeader.m */; };
-		CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */; };
 		CD5498221EE1965900748C22 /* TestFrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5498201EE1965900748C22 /* TestFrameVC.m */; };
 		CD5498231EE1965900748C22 /* TestFrameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5498211EE1965900748C22 /* TestFrameVC.xib */; };
 		CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5744A41ED9DD5C0014E833 /* DemoString.m */; };
@@ -373,10 +369,6 @@
 		CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheableLogTV.m; sourceTree = "<group>"; };
 		CD47DE6F2089915E007E4F24 /* ContentViewerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewerVC.h; sourceTree = "<group>"; };
 		CD47DE702089915E007E4F24 /* ContentViewerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewerVC.m; sourceTree = "<group>"; };
-		CD5498161EE15E1300748C22 /* AXKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitUIHeader.h; sourceTree = "<group>"; };
-		CD5498171EE15E1300748C22 /* AXKitUIHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitUIHeader.m; sourceTree = "<group>"; };
-		CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXKitFoundationHeader.h; sourceTree = "<group>"; };
-		CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXKitFoundationHeader.m; sourceTree = "<group>"; };
 		CD54981F1EE1965900748C22 /* TestFrameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFrameVC.h; sourceTree = "<group>"; };
 		CD5498201EE1965900748C22 /* TestFrameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFrameVC.m; sourceTree = "<group>"; };
 		CD5498211EE1965900748C22 /* TestFrameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestFrameVC.xib; sourceTree = "<group>"; };
@@ -1211,19 +1203,6 @@
 			path = Cooldown;
 			sourceTree = "<group>";
 		};
-		CD77FE681EBEE62E001A5787 /* NSString */ = {
-			isa = PBXGroup;
-			children = (
-				CDAB58ED1E6BF5A20017CA1E /* NSString+AXExtension.h */,
-				CDAB58EE1E6BF5A20017CA1E /* NSString+AXExtension.m */,
-				CD82DB5320BFDF0B00EAA11B /* AXFileOperationResult.h */,
-				CD82DB5420BFDF0B00EAA11B /* AXFileOperationResult.m */,
-				CDAB58F11E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.h */,
-				CDAB58F21E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m */,
-			);
-			name = NSString;
-			sourceTree = "<group>";
-		};
 		CD77FE691EBEE66C001A5787 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1337,12 +1316,15 @@
 		CDAB58DB1E6BF1810017CA1E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				CD54981A1EE15F2900748C22 /* AXKitFoundationHeader.h */,
-				CD54981B1EE15F2900748C22 /* AXKitFoundationHeader.m */,
 				CDAB59411E6BFF9C0017CA1E /* Foundation+AXMacros.h */,
 				CD3C4CD51F44213800B6A795 /* AXDebugHelper.h */,
 				CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */,
-				CD77FE681EBEE62E001A5787 /* NSString */,
+				CDAB58ED1E6BF5A20017CA1E /* NSString+AXExtension.h */,
+				CDAB58EE1E6BF5A20017CA1E /* NSString+AXExtension.m */,
+				CD82DB5320BFDF0B00EAA11B /* AXFileOperationResult.h */,
+				CD82DB5420BFDF0B00EAA11B /* AXFileOperationResult.m */,
+				CDAB58F11E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.h */,
+				CDAB58F21E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m */,
 				CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */,
 				CDAB58E21E6BF3220017CA1E /* Foundation+AXLogExtension.m */,
 				CD0D17022057BD58004E8553 /* NSObject+AXExtension.h */,
@@ -1376,8 +1358,6 @@
 		CDAB58DC1E6BF1810017CA1E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				CD5498161EE15E1300748C22 /* AXKitUIHeader.h */,
-				CD5498171EE15E1300748C22 /* AXKitUIHeader.m */,
 				CD09FCC11EE0599600F3D928 /* Layer */,
 				CD5746041EDAEA7A0014E833 /* Bar */,
 				CD77FE6A1EBEE685001A5787 /* UIColor */,
@@ -1644,14 +1624,12 @@
 				CD23DCA51EC1DD76006E331B /* UINavigationBar+AXExtension.h in Headers */,
 				CD09FCBB1EE03C9500F3D928 /* CALayer+AXWrapper.h in Headers */,
 				CDE91FA01EAEE6E000FC5A88 /* NSError+AXExtension.h in Headers */,
-				CD5498181EE15E1300748C22 /* AXKitUIHeader.h in Headers */,
 				CD5745011EDAB7E90014E833 /* UIActivityIndicatorView+AXWrapper.h in Headers */,
 				CDBCEE201F18B14500FBB3C7 /* UINavigationItem+AXExtension.h in Headers */,
 				CD3C4CD71F44213800B6A795 /* AXDebugHelper.h in Headers */,
 				CD9C30DD1FBFDBC20040E725 /* NSDate+AXExtension.h in Headers */,
 				CD60001C1F8D08C100771DE6 /* UIApplication+AXExtension.h in Headers */,
 				CD242F4A1EE29DF300C954EC /* NSArray+AXExtension.h in Headers */,
-				CD54981C1EE15F2900748C22 /* AXKitFoundationHeader.h in Headers */,
 				CD149E2A1F01080A007051CE /* _AXKitBundle.h in Headers */,
 				CD6476D21FC03D0A00B1E68A /* NSDictionary+AXExtension.h in Headers */,
 				CD5746001EDAE9B80014E833 /* _AXEventTarget.h in Headers */,
@@ -2084,11 +2062,9 @@
 				CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,
 				CD82DB5620BFDF0B00EAA11B /* AXFileOperationResult.m in Sources */,
-				CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */,
 				CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */,
 				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,
 				CDAB58F41E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m in Sources */,
-				CD5498191EE15E1300748C22 /* AXKitUIHeader.m in Sources */,
 				CD5746011EDAE9B80014E833 /* _AXEventTarget.m in Sources */,
 				CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */,
 				CDAB593C1E6BFE700017CA1E /* UIView+AXFrameExtension.m in Sources */,

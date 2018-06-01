@@ -30,7 +30,7 @@
     } else if ([model.cmd isEqualToString:@"app"]) {
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            [UIApplication ax_openAppSetting];
+            [UIApplication ax_openAppSetting:nil];
         } else {
             // Fallback on earlier versions
             

@@ -13,8 +13,8 @@
 
 
 - (void)ax_hideSeparator{
-    [self ax_eachSubview:[NSClassFromString(@"UIBarBackground") class] action:^(__kindof UIView * _Nonnull subview) {
-        [subview ax_eachImageViewInvokeAction:^(__kindof UIImageView * _Nonnull imageView) {
+    [self ax_allSubview:[NSClassFromString(@"UIBarBackground") class] action:^(__kindof UIView * _Nonnull subview) {
+        [subview ax_allImageViewInvokeAction:^(__kindof UIImageView * _Nonnull imageView) {
             if (imageView.frame.size.height < 1) {
                 imageView.hidden = YES;
             }

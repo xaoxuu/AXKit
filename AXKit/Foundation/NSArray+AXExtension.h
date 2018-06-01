@@ -49,5 +49,14 @@
  */
 - (instancetype)distinctUnionOfObjects;
 
+/**
+ 根据json字符串创建数组
+ 
+ @param string json字符串
+ @return 数组
+ */
++ (instancetype)arrayWithJsonString:(NSString *)string;
+
+
 @end
 

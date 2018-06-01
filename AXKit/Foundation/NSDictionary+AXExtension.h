@@ -19,16 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSNumber *)numberValueForKey:(NSString *)key;
 
-- (double)doubleValueForKey:(NSString *)key;
-
-- (float)floatValueForKey:(NSString *)key;
-
-- (NSInteger)integerValueForKey:(NSString *)key;
-
-- (NSInteger)intValueForKey:(NSString *)key;
-
-- (BOOL)boolValueForKey:(NSString *)key;
-
 /**
  根据json字符串创建字典
 

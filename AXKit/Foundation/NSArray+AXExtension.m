@@ -31,4 +31,19 @@
     return [self valueForKeyPath:@"@distinctUnionOfObjects.self"];
 }
 
+/**
+ 根据json字符串创建数组
+ 
+ @param string json字符串
+ @return 数组
+ */
++ (instancetype)arrayWithJsonString:(NSString *)string{
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    if (data) {
+        return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    } else {
+        return nil;
+    }
+}
+
 @end

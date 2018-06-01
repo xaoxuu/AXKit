@@ -10,8 +10,6 @@
 #import <SafariServices/SafariServices.h>
 #import "UIResponder+AXExtension.h"
 
-typedef void(^ __nullable BlockType)(BOOL success);
-
 
 /**
  获取跳转的URLString
@@ -35,7 +33,7 @@ static inline NSString *urlStringWithKey(NSString *key){
  @param urlString URLString
  @param completionHandler 完成回调（只有iOS10及其之后的版本可用）
  */
-static inline void openSettingURLWithString(NSString *urlString, BlockType completionHandler){
+static inline void openSettingURLWithString(NSString *urlString, void(^ __nullable completionHandler)(BOOL success)){
     NSURL *url = [NSURL URLWithString:urlString];
     if (@available(iOS 10.0, *)) {
         // on newer versions
@@ -50,14 +48,19 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
 
 
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL{
-    [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil];
+    [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:nil];
 }
-
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^)(void))completion{
+    [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:completion];
+}
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL fromViewController:(UIViewController *)viewController{
+    [self ax_presentSafariViewControllerWithURL:URL fromViewController:viewController completion:nil];
+}
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL fromViewController:(UIViewController *)viewController completion:(void (^)(void))completion{
     if (@available(iOS 9.0, *)) {
         // on newer versions
         SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:URL];
-        [viewController?:UIViewController.rootViewController presentViewController:safari animated:YES completion:nil];
+        [viewController?:UIViewController.rootViewController presentViewController:safari animated:YES completion:completion];
     } else {
         // Fallback on earlier versions
         [[UIApplication sharedApplication] openURL:URL];
@@ -70,53 +73,41 @@ static inline void openSettingURLWithString(NSString *urlString, BlockType compl
  打开蓝牙设置
  */
 + (void)ax_openBluetoothSetting{
-    openSettingURLWithString(urlStringWithKey(@"Bluetooth"), ^(BOOL success) {
-        
-    });
+    openSettingURLWithString(urlStringWithKey(@"Bluetooth"), nil);
 }
 
 /**
  打开WIFI设置
  */
 + (void)ax_openWIFISetting{
-    openSettingURLWithString(urlStringWithKey(@"WIFI"), ^(BOOL success) {
-        
-    });
+    openSettingURLWithString(urlStringWithKey(@"WIFI"), nil);
 }
 
 /**
  打开通知设置
  */
 + (void)ax_openNotificationSetting{
-    openSettingURLWithString(urlStringWithKey(@"NOTIFICATIONS_ID"), ^(BOOL success) {
-        
-    });
+    openSettingURLWithString(urlStringWithKey(@"NOTIFICATIONS_ID"), nil);
 }
 /**
  打开相册设置
  */
 + (void)ax_openPhotosSetting{
-    openSettingURLWithString(urlStringWithKey(@"Photos"), ^(BOOL success) {
-        
-    });
+    openSettingURLWithString(urlStringWithKey(@"Photos"), nil);
 }
 
 /**
  打开浏览器设置
  */
 + (void)ax_openSafariSetting{
-    openSettingURLWithString(urlStringWithKey(@"SAFARI"), ^(BOOL success) {
-        
-    });
+    openSettingURLWithString(urlStringWithKey(@"SAFARI"), nil);
 }
 
 /**
  打开当前app的设置页面
  */
-+ (void)ax_openAppSetting{
-    openSettingURLWithString(UIApplicationOpenSettingsURLString, ^(BOOL success) {
-        
-    });
++ (void)ax_openAppSetting:(void (^)(BOOL))completion{
+    openSettingURLWithString(UIApplicationOpenSettingsURLString, completion);
 }
 
 

@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view from its nib.
     
     __weak typeof(self) weakSelf = self;
-    [self.view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
+    [self.view ax_allSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         [subview ax_fillWithRandomColor];
         [subview ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
             CGPoint loc = [sender locationInView:weakSelf.view];

@@ -44,7 +44,7 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }];
 }
 
-- (void)ax_eachSubview:(Class)subClass action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_allSubview:(Class)subClass action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
             if (!subClass || [subview isKindOfClass:subClass]) {
@@ -54,28 +54,28 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }];
 }
 
-- (void)ax_eachLabelInvokeAction:(void (^)(__kindof UILabel *label))action {
-    [self ax_eachSubview:[UILabel class] action:action];
+- (void)ax_allLabelInvokeAction:(void (^)(__kindof UILabel *label))action {
+    [self ax_allSubview:[UILabel class] action:action];
 }
 
-- (void)ax_eachTextFieldInvokeAction:(void (^)(__kindof UITextField *textField))action {
-    [self ax_eachSubview:[UITextField class] action:action];
+- (void)ax_allTextFieldInvokeAction:(void (^)(__kindof UITextField *textField))action {
+    [self ax_allSubview:[UITextField class] action:action];
 }
 
-- (void)ax_eachTextViewInvokeAction:(void (^)(__kindof UITextView *textView))action {
-    [self ax_eachSubview:[UITextView class] action:action];
+- (void)ax_allTextViewInvokeAction:(void (^)(__kindof UITextView *textView))action {
+    [self ax_allSubview:[UITextView class] action:action];
 }
 
-- (void)ax_eachButtonInvokeAction:(void (^)(__kindof UIButton *button))action {
-    [self ax_eachSubview:[UIButton class] action:action];
+- (void)ax_allButtonInvokeAction:(void (^)(__kindof UIButton *button))action {
+    [self ax_allSubview:[UIButton class] action:action];
 }
 
-- (void)ax_eachImageViewInvokeAction:(void (^)(__kindof UIImageView *imageView))action {
-    [self ax_eachSubview:[UIImageView class] action:action];
+- (void)ax_allImageViewInvokeAction:(void (^)(__kindof UIImageView *imageView))action {
+    [self ax_allSubview:[UIImageView class] action:action];
 }
 
 
-- (void)ax_eachSubviewWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_allSubviewWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
             if (AXNumberContainedInRange(@(subview.tag), @(tagRange.minValue), @(tagRange.maxValue))) {
@@ -85,7 +85,7 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }];
 }
 
-- (void)ax_eachSubviewWithTag:(NSInteger)tag action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_allSubviewWithTag:(NSInteger)tag action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
             if (subview.tag == tag) {

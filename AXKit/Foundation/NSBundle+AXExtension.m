@@ -37,7 +37,7 @@ inline void AXLocalizeTextField(UITextField *textField){
 
 
 inline void AXLocalizeAllLabelsInView(UIView *view){
-    [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
+    [view ax_allSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
             AXLocalizeAllLabelsInView(subview);
         }
@@ -49,7 +49,7 @@ inline void AXLocalizeAllLabelsInView(UIView *view){
 }
 
 inline void AXLocalizeAllTextFieldsInView(UIView *view){
-    [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
+    [view ax_allSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
             AXLocalizeAllTextFieldsInView(subview);
         }
@@ -61,7 +61,7 @@ inline void AXLocalizeAllTextFieldsInView(UIView *view){
 }
 
 inline void AXLocalizeAllTextViewsInView(UIView *view){
-    [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
+    [view ax_allSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
             AXLocalizeAllTextViewsInView(subview);
         }
@@ -73,7 +73,7 @@ inline void AXLocalizeAllTextViewsInView(UIView *view){
 }
 
 inline void AXLocalizeAllSubviewsInView(UIView *view){
-    [view ax_eachSubview:nil action:^(__kindof UIView * _Nonnull subview) {
+    [view ax_allSubview:nil action:^(__kindof UIView * _Nonnull subview) {
         if (subview.subviews.count) {
             AXLocalizeAllSubviewsInView(subview);
         }
