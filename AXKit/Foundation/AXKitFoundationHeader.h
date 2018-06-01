@@ -28,8 +28,7 @@
 #import "CoreGraphics+AXExtension.h"
 // @xaoxuu: 对NSOperation的扩展，基于<BlocksKit>改编，并增加了冷却机制
 #import "GCD+AXExtension.h"
-// @xaoxuu: URL
-#import "NSURL+AXExtension.h"
+
 // @xaoxuu: 对NSTimer的block封装，基于<BlocksKit>改编
 #import "NSTimer+AXBlockWrapper.h"
 

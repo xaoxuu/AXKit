@@ -50,7 +50,7 @@ FOUNDATION_EXTERN dispatch_block_t ax_dispatch_cooldown(NSTimeInterval delay, NS
  
  @param token 操作口令
  */
-FOUNDATION_EXTERN void ax_dispatch_cancel_operation(dispatch_block_t token);
+FOUNDATION_EXTERN void ax_dispatch_cancel(dispatch_block_t token);
 
 
 

@@ -33,16 +33,13 @@ inline dispatch_block_t ax_dispatch_after(NSTimeInterval delay, dispatch_queue_t
 }
 
 inline dispatch_block_t ax_dispatch_postpone(dispatch_block_t token, NSTimeInterval delay, dispatch_queue_t queue, void (^block)(void)){
-    ax_dispatch_cancel_operation(token);
+    ax_dispatch_cancel(token);
     return ax_dispatch_after(delay, queue, block);
 }
 
 inline dispatch_block_t ax_dispatch_cooldown(NSTimeInterval delay, NSTimeInterval cooldown,id token, dispatch_queue_t queue, void (^block)(void), void (^ __nullable block_cooling)(void)){
     if (!token) {
         token = @"default token";
-    }
-    if (!queue) {
-        queue = dispatch_get_main_queue();
     }
     BOOL cooling = is_cooling(token);
     if (cooling) {
@@ -54,12 +51,12 @@ inline dispatch_block_t ax_dispatch_cooldown(NSTimeInterval delay, NSTimeInterva
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(cooldown * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             set_is_cooling(NO, token);
         });
-        return ax_dispatch_after(delay, queue, block);
+        return ax_dispatch_after(delay, queue?:dispatch_get_main_queue(), block);
     }
     return nil;
 }
 
-inline void ax_dispatch_cancel_operation(dispatch_block_t token) {
+inline void ax_dispatch_cancel(dispatch_block_t token) {
     !token?:dispatch_block_cancel((dispatch_block_t)token);
 }
 

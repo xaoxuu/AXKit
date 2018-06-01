@@ -262,8 +262,6 @@
 		CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */; };
 		CDC8CDF51ECC92B7009F855E /* UIAlertController+AXWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC8CDF31ECC92B7009F855E /* UIAlertController+AXWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDC8CDF61ECC92B7009F855E /* UIAlertController+AXWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */; };
-		CDCF31121EBB11A4005AC6CD /* NSURL+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDCF31131EBB11A4005AC6CD /* NSURL+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */; };
 		CDD7A06C1EA066000068FDBF /* UIResponder+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDD7A06D1EA066000068FDBF /* UIResponder+AXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */; };
 		CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -619,8 +617,6 @@
 		CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalLabel.m; sourceTree = "<group>"; };
 		CDC8CDF31ECC92B7009F855E /* UIAlertController+AXWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+AXWrapper.h"; sourceTree = "<group>"; };
 		CDC8CDF41ECC92B7009F855E /* UIAlertController+AXWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+AXWrapper.m"; sourceTree = "<group>"; };
-		CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+AXExtension.h"; sourceTree = "<group>"; };
-		CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06A1EA066000068FDBF /* UIResponder+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+AXExtension.h"; sourceTree = "<group>"; };
 		CDD7A06B1EA066000068FDBF /* UIResponder+AXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+AXExtension.m"; sourceTree = "<group>"; };
 		CDD7A06E1EA06A560068FDBF /* UINavigationController+AXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXExtension.h"; sourceTree = "<group>"; };
@@ -1357,8 +1353,6 @@
 				CDAB58E61E6BF37E0017CA1E /* CoreGraphics+AXExtension.m */,
 				CD77FE831EBF2971001A5787 /* GCD+AXExtension.h */,
 				CD77FE841EBF2971001A5787 /* GCD+AXExtension.m */,
-				CDCF31101EBB11A4005AC6CD /* NSURL+AXExtension.h */,
-				CDCF31111EBB11A4005AC6CD /* NSURL+AXExtension.m */,
 				CDAB58F51E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.h */,
 				CDAB58F61E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m */,
 				CDE91F9E1EAEE6E000FC5A88 /* NSError+AXExtension.h */,
@@ -1646,7 +1640,6 @@
 				CDD7A0701EA06A560068FDBF /* UINavigationController+AXExtension.h in Headers */,
 				CD004D1A1EB2128C00ACC0B8 /* UIImageView+AXExtension.h in Headers */,
 				CDE91FC11EAF478700FC5A88 /* NSBundle+AXExtension.h in Headers */,
-				CDCF31121EBB11A4005AC6CD /* NSURL+AXExtension.h in Headers */,
 				CD23DCA91EC1DDD5006E331B /* UITabBar+AXExtension.h in Headers */,
 				CD23DCA51EC1DD76006E331B /* UINavigationBar+AXExtension.h in Headers */,
 				CD09FCBB1EE03C9500F3D928 /* CALayer+AXWrapper.h in Headers */,
@@ -2063,7 +2056,6 @@
 				CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,
 				CD82DB5620BFDF0B00EAA11B /* AXFileOperationResult.m in Sources */,
-				CDCF31131EBB11A4005AC6CD /* NSURL+AXExtension.m in Sources */,
 				CD54981D1EE15F2900748C22 /* AXKitFoundationHeader.m in Sources */,
 				CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */,
 				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,

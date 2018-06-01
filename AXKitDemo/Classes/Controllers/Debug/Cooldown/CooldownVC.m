@@ -68,7 +68,7 @@ static UIView *customView;
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    ax_dispatch_cancel_operation(token);
+    ax_dispatch_cancel(token);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
