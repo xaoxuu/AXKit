@@ -1,12 +1,12 @@
 
-//  UIThemeManager.m
+//  AXThemeManager.m
 //  AXKit
 //
 //  Created by xaoxuu on 11/10/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "UIThemeManager.h"
+#import "AXThemeManager.h"
 
 
 NSNotificationName ThemeKitNotificationColorChanged = @"com.xaoxuu.AXKit.theme.notification.ColorChanged";
@@ -14,7 +14,7 @@ NSNotificationName ThemeKitNotificationFontChanged = @"com.xaoxuu.AXKit.theme.no
 NSNotificationName ThemeKitNotificationIconPackChanged = @"com.xaoxuu.AXKit.theme.notification.IconPackChanged";
 
 
-UIThemeManager *axThemeManager = nil;
+AXThemeManager *axThemeManager = nil;
 
 
 static inline NSArray<NSString *> *themeDownloads(){
@@ -62,7 +62,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-@implementation UIThemeManager
+@implementation AXThemeManager
 
 
 #pragma mark - life circle
@@ -80,12 +80,12 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
             if (!axThemeManager) {
                 NSString *path = [[NSUserDefaults standardUserDefaults] stringForKey:ThemeKitBundleIdentify];
                 if (path.length) {
-                    path = [UIThemeModel filePathWithIdentifier:path];
+                    path = [AXThemeModel filePathWithIdentifier:path];
                 }
                 if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
                     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:ThemeKitBundleIdentify];
                     [[NSUserDefaults standardUserDefaults] synchronize];
-                    path = [[NSBundle bundleForClass:self.class] pathForResource:@"DefaultTheme" ofType:@"json"];
+                    path = [[NSBundle bundleForClass:AXThemeManager.class] pathForResource:@"DefaultTheme" ofType:@"json"];
                 }
                 axThemeManager = [self modelWithPath:path];
                 // init settings
@@ -103,7 +103,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  
  @param defaultTheme 默认的颜色配置
  */
-- (void)configDefaultTheme:(void (^)(UIThemeManager *))defaultTheme{
+- (void)configDefaultTheme:(void (^)(AXThemeManager *))defaultTheme{
     BOOL hasCustomTheme = NO;
     hasCustomTheme = [[NSUserDefaults standardUserDefaults] stringForKey:ThemeKitBundleIdentify].length;
     if (!hasCustomTheme) {
@@ -119,7 +119,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  @param path 主题文件路径
  */
 - (void)applyThemeWithPath:(NSString *)path{
-    UIThemeManager *theme = [UIThemeManager modelWithPath:path];
+    AXThemeManager *theme = [AXThemeManager modelWithPath:path];
     [self applyTheme:theme];
 }
 
@@ -130,7 +130,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  @param name 主题名
  */
 - (void)applyThemeWithEmail:(NSString *)email name:(NSString *)name{
-    UIThemeModel *theme = [UIThemeModel modelWithEmail:email name:name];
+    AXThemeModel *theme = [AXThemeModel modelWithEmail:email name:name];
     [self applyTheme:theme];
 }
 
@@ -139,7 +139,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  
  @param theme 主题
  */
-- (void)applyTheme:(UIThemeModel *)theme{
+- (void)applyTheme:(AXThemeModel *)theme{
     axThemeManager.info = theme.info;
     axThemeManager.color = theme.color;
     [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationColorChanged object:nil];
@@ -156,7 +156,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  @param update 主题色
  */
 - (void)updateCurrentColorTheme:(void (^)(UIThemeColorModel *color))update{
-    [self updateCurrentTheme:^(UIThemeManager *theme) {
+    [self updateCurrentTheme:^(AXThemeManager *theme) {
         if (update) {
             update(theme.color);
             [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationColorChanged object:nil];
@@ -170,7 +170,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  @param update 主题字体
  */
 - (void)updateCurrentFontTheme:(void (^)(UIThemeFontModel *font))update{
-    [self updateCurrentTheme:^(UIThemeManager *theme) {
+    [self updateCurrentTheme:^(AXThemeManager *theme) {
         if (update) {
             update(theme.font);
             [[NSNotificationCenter defaultCenter] postNotificationName:ThemeKitNotificationFontChanged object:nil];
@@ -188,10 +188,10 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  
  @return 所有已下载的主题
  */
-- (NSArray<UIThemeModel *> *)getAllDownloadedThemes{
-    NSMutableArray<UIThemeModel *> *models = [NSMutableArray array];
+- (NSArray<AXThemeModel *> *)getAllDownloadedThemes{
+    NSMutableArray<AXThemeModel *> *models = [NSMutableArray array];
     [themeDownloads() enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIThemeModel *model = [UIThemeModel modelWithPath:obj];
+        AXThemeModel *model = [AXThemeModel modelWithPath:obj];
         [models addObject:model];
     }];
     return models;
@@ -202,7 +202,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
  
  @param theme 主题
  */
-- (void)deleteTheme:(UIThemeModel *)theme{
+- (void)deleteTheme:(AXThemeModel *)theme{
     removeFile(theme.filePath);
 }
 
@@ -259,7 +259,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
 
 #pragma mark - priv
 
-- (void)updateCurrentTheme:(void (^)(UIThemeManager *theme))update{
+- (void)updateCurrentTheme:(void (^)(AXThemeManager *theme))update{
     if (update) {
         update(self);
     }

@@ -6,5 +6,6 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "UIThemeManager.h"
+#import "AXThemeModel.h"
+#import "AXThemeManager.h"
 

@@ -1,5 +1,5 @@
 //
-//  UIThemeModel.h
+//  AXThemeModel.h
 //  AXKit
 //
 //  Created by xaoxuu on 18/11/2017.
@@ -12,7 +12,7 @@
 
 @class UIThemeColorModel,UIThemeFontModel,UIThemeIconModel, UIThemeInfoModel;
 
-@interface UIThemeModel : NSObject
+@interface AXThemeModel : NSObject
 
 
 /**
@@ -73,7 +73,7 @@
 + (NSString *)identifierWithEmail:(NSString *)email name:(NSString *)name;
 + (NSString *)filePathWithIdentifier:(NSString *)identifier;
 + (NSString *)filePathWithEmail:(NSString *)email name:(NSString *)name;
-//+ (NSArray<UIThemeModel *> *)getAllDownloadedThemes;
+//+ (NSArray<AXThemeModel *> *)getAllDownloadedThemes;
 
 @end
 

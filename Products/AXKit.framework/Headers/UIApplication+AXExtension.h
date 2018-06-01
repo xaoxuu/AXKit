@@ -21,11 +21,28 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  打开app内置Safari浏览器
+ 
+ @param URL 网址
+ @param completion 完成回调
+ */
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^ __nullable)(void))completion;
+
+/**
+ 打开app内置Safari浏览器
 
  @param URL 网址
  @param viewController 从哪个视图控制器，传入nil可从根控制器打开
  */
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL fromViewController:(nullable UIViewController *)viewController;
+
+/**
+ 打开app内置Safari浏览器
+
+ @param URL 网址
+ @param viewController 从哪个视图控制器，传入nil可从根控制器打开
+ @param completion 完成回调
+ */
++ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL fromViewController:(nullable UIViewController *)viewController completion:(void (^ __nullable)(void))completion;
 
 #pragma mark - 跳转
 
@@ -57,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  打开当前app的设置页面
  */
-+ (void)ax_openAppSetting NS_AVAILABLE_IOS(11.0);
++ (void)ax_openAppSetting:(void (^ __nullable)(BOOL))completion NS_AVAILABLE_IOS(11.0);
 
 @end
 NS_ASSUME_NONNULL_END

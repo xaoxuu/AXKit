@@ -1,12 +1,12 @@
 //
-//  UIThemeModel.m
+//  AXThemeModel.m
 //  AXKit
 //
 //  Created by xaoxuu on 18/11/2017.
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "UIThemeModel.h"
+#import "AXThemeModel.h"
 
 
 NSString *ThemeKitBundleIdentify = @"com.xaoxuu.AXKit.theme";
@@ -150,7 +150,7 @@ static inline NSString *hexStringWithAlpha(UIColor *color0){
     return hex;
 }
 
-@implementation UIThemeModel
+@implementation AXThemeModel
 
 + (instancetype)modelWithEmail:(NSString *)email name:(NSString *)name{
     NSString *path = [self filePathWithEmail:email name:name];
@@ -163,7 +163,9 @@ static inline NSString *hexStringWithAlpha(UIColor *color0){
 
 - (instancetype)initWithPath:(NSString *)path{
     NSData *data = [NSData dataWithContentsOfFile:path];
-    NSAssert(data != nil, @"The theme file is missing.");
+#if DEBUG
+    NSParameterAssert(data != nil);
+#endif
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     return [self initWithDictionary:dictionary];
 }
@@ -197,10 +199,10 @@ static inline NSString *hexStringWithAlpha(UIColor *color0){
 
 
 - (NSString *)filePath{
-    return [UIThemeModel filePathWithEmail:self.info.email name:self.info.name];
+    return [AXThemeModel filePathWithEmail:self.info.email name:self.info.name];
 }
 - (NSString *)identifier{
-    return [UIThemeModel identifierWithEmail:self.info.email name:self.info.name];
+    return [AXThemeModel identifierWithEmail:self.info.email name:self.info.name];
 }
 
 
