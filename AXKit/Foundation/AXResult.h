@@ -88,7 +88,22 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (AXResult *)resultWithPath:(NSString *)path idResult:(id (^)(NSError **error))callback;
 
+/**
+ json对象转data
+
+ @param opt options
+ @param callback 回调
+ @return 结果
+ */
 + (AXResult *)resultWithJsonWritingOptions:(NSJSONWritingOptions)opt object:(id (^)(NSError **error))callback;
+
+/**
+ data转json对象
+
+ @param opt options
+ @param callback 回调
+ @return 结果
+ */
 + (AXResult *)resultWithJsonReadingOptions:(NSJSONReadingOptions)opt data:(NSData *(^)(NSError **error))callback;
 
 // MARK: - 解析
