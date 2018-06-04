@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AXFileOperationResult.h"
+#import "AXResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,11 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  读取一个data
  */
-- (AXFileOperationResult *(^)(void))readDataResult;
+- (AXResult *(^)(void))readDataResult;
 /**
  读取一个data
  */
-- (AXFileOperationResult *(^)(NSDataReadingOptions options))readDataWithOptionsResult;
+- (AXResult *(^)(NSDataReadingOptions options))readDataWithOptionsResult;
 
 // MARK: array
 
@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 数组
  */
-- (AXFileOperationResult *(^)(void))readArrayResult;
+- (AXResult *(^)(void))readArrayResult;
 
 // MARK: dictionary
 
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 字典
  */
-- (AXFileOperationResult *(^)(void))readDictionaryResult;
+- (AXResult *(^)(void))readDictionaryResult;
 
 // MARK: json
 
@@ -77,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 数组或字典
  */
-- (AXFileOperationResult *(^)(void))readJsonResult;
+- (AXResult *(^)(void))readJsonResult;
 
 // MARK: string
 
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return txt文件
  */
-- (AXFileOperationResult *(^)(void))readStringResult;
+- (AXResult *(^)(void))readStringResult;
 
 // MARK: archive/unarchive
 
@@ -108,7 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 文件
  */
-- (AXFileOperationResult *(^)(void))unarchiveObjectResult;
+- (AXResult *(^)(void))unarchiveObjectResult;
 
 // MARK: - save
 
@@ -117,27 +117,27 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 操作结果
  */
-- (AXFileOperationResult *(^)(id))saveObject;
+- (AXResult *(^)(id))saveObject;
 /**
  保存一个json对象（数组、字典）
  
  @return 操作结果
  */
-- (AXFileOperationResult *(^)(id))saveJson;
+- (AXResult *(^)(id))saveJson;
 
 /**
  归档一个实现NSCoding协议的文件
  
  @return 操作结果
  */
-- (AXFileOperationResult *(^)(NSObject<NSCoding> *))archiveObject;
+- (AXResult *(^)(NSObject<NSCoding> *))archiveObject;
 
 /**
  拼接文本到沙盒文件
  
  @return 操作结果
  */
-- (AXFileOperationResult *(^)(NSString *))appendStringToFile;
+- (AXResult *(^)(NSString *))appendStringToFile;
 
 
 // MARK: - remove
@@ -147,7 +147,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 操作结果
  */
-- (AXFileOperationResult *(^)(void))removeFile;
+- (AXResult *(^)(void))removeFile;
 
 #pragma mark - path
 
@@ -208,7 +208,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 路径
  */
-- (AXFileOperationResult *(^)(void))createDirectory;
+- (AXResult *(^)(void))createDirectory;
 
 
 @end

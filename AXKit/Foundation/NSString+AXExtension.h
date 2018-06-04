@@ -187,6 +187,9 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
  */
 - (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width;
 
+
+- (NSNumber *)numberValue;
+
 @end
 
 

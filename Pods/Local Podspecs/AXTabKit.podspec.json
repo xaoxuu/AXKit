@@ -1,6 +1,6 @@
 {
   "name": "AXTabKit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "快速创建TabBar框架的app。",
   "homepage": "http://xaoxuu.com",
   "license": {
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/xaoxuu/AXTabKit.git",
-    "tag": "0.0.1",
+    "tag": "0.0.2",
     "submodules": true
   },
   "source_files": "AXTabKit/AXTabKit/*.{h,m,mm}",

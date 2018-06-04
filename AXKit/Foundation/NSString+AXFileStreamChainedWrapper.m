@@ -7,6 +7,7 @@
 //
 
 #import "NSString+AXFileStreamChainedWrapper.h"
+#import "NSObject+AXExtension.h"
 
 // MARK: path
 /**
@@ -15,9 +16,9 @@
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *createDirectoryIfNeed(NSString *path){
+static inline AXResult *createDirectoryIfNeed(NSString *path){
     NSString *dir = path.stringByDeletingLastPathComponent;
-    return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
+    return [AXResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
         return [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:error];
     }];
 }
@@ -28,8 +29,8 @@ static inline AXFileOperationResult *createDirectoryIfNeed(NSString *path){
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *readArrayResult(NSString *path){
-    return [AXFileOperationResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
+static inline AXResult *readArrayResult(NSString *path){
+    return [AXResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
         return [NSArray arrayWithContentsOfFile:path];
     }];
 }
@@ -40,8 +41,8 @@ static inline AXFileOperationResult *readArrayResult(NSString *path){
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *readDictionaryResult(NSString *path){
-    return [AXFileOperationResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
+static inline AXResult *readDictionaryResult(NSString *path){
+    return [AXResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
         return [NSDictionary dictionaryWithContentsOfFile:path];
     }];
 }
@@ -53,8 +54,8 @@ static inline AXFileOperationResult *readDictionaryResult(NSString *path){
  @param options 操作
  @return 结果
  */
-static inline AXFileOperationResult *readDataWithOptionsResult(NSString *path, NSDataReadingOptions options){
-    return [AXFileOperationResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
+static inline AXResult *readDataWithOptionsResult(NSString *path, NSDataReadingOptions options){
+    return [AXResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
         return [NSData dataWithContentsOfFile:path options:options error:error];
     }];
 }
@@ -65,7 +66,7 @@ static inline AXFileOperationResult *readDataWithOptionsResult(NSString *path, N
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *readDataResult(NSString *path){
+static inline AXResult *readDataResult(NSString *path){
     return readDataWithOptionsResult(path, NSDataReadingMappedIfSafe);
 }
 
@@ -76,10 +77,10 @@ static inline AXFileOperationResult *readDataResult(NSString *path){
  @param options 操作
  @return 结果
  */
-static inline AXFileOperationResult *readJsonWithOptionsResult(NSString *path, NSJSONReadingOptions options){
-    AXFileOperationResult *result = readDataResult(path);
+static inline AXResult *readJsonWithOptionsResult(NSString *path, NSJSONReadingOptions options){
+    AXResult *result = readDataResult(path);
     if (result.value) {
-        return [AXFileOperationResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
+        return [AXResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
             return [NSJSONSerialization JSONObjectWithData:result.value options:options error:error];
         }];
     } else {
@@ -92,7 +93,7 @@ static inline AXFileOperationResult *readJsonWithOptionsResult(NSString *path, N
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *readJsonResult(NSString *path){
+static inline AXResult *readJsonResult(NSString *path){
     return readJsonWithOptionsResult(path, NSJSONReadingMutableContainers);
 }
 
@@ -103,8 +104,8 @@ static inline AXFileOperationResult *readJsonResult(NSString *path){
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *readStringResult(NSString *path){
-    return [AXFileOperationResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
+static inline AXResult *readStringResult(NSString *path){
+    return [AXResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
         return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:error];
     }];
 }
@@ -115,8 +116,8 @@ static inline AXFileOperationResult *readStringResult(NSString *path){
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *unarchiveObjectAtPath(NSString *path){
-    return [AXFileOperationResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
+static inline AXResult *unarchiveObjectAtPath(NSString *path){
+    return [AXResult resultWithPath:path idResult:^id(NSError *__autoreleasing *error) {
         NSData *data = [NSData dataWithContentsOfFile:path];
         if (data.length) {
             return [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -134,12 +135,12 @@ static inline AXFileOperationResult *unarchiveObjectAtPath(NSString *path){
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *archiveObjectAtPath(id obj, NSString *path){
+static inline AXResult *archiveObjectAtPath(id obj, NSString *path){
     createDirectoryIfNeed(path);
     [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
     // save contents to file
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];
-    return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
+    return [AXResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
         return [data writeToFile:path atomically:YES];
     }];
 }
@@ -151,8 +152,8 @@ static inline AXFileOperationResult *archiveObjectAtPath(id obj, NSString *path)
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *appendStringToFile(NSString *obj, NSString *path){
-    return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
+static inline AXResult *appendStringToFile(NSString *obj, NSString *path){
+    return [AXResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
         NSFileHandle *handle = [NSFileHandle fileHandleForWritingAtPath:path];
         if (!handle) {
             path.saveObject(obj);
@@ -177,28 +178,28 @@ static inline AXFileOperationResult *appendStringToFile(NSString *obj, NSString 
  @param path 路径
  @return 结果
  */
-static inline AXFileOperationResult *saveObjectAtPath(id obj, NSString *path){
+static inline AXResult *saveObjectAtPath(id obj, NSString *path){
     createDirectoryIfNeed(path);
     if ([obj isKindOfClass:NSString.class]) {
-        return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
+        return [AXResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
             return [(NSString *)obj writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:error];
         }];
     } else if ([obj isKindOfClass:NSArray.class]) {
-        return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
+        return [AXResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
             return [(NSArray *)obj writeToFile:path atomically:YES];
         }];
     } else if ([obj isKindOfClass:NSDictionary.class]) {
-        return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
+        return [AXResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
             return [(NSDictionary *)obj writeToFile:path atomically:YES];
         }];
     } else if ([obj isKindOfClass:NSData.class]) {
-        return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
+        return [AXResult resultWithPath:path boolResult:^BOOL(NSError *__autoreleasing *error) {
             return [(NSData *)obj writeToFile:path atomically:YES];
         }];
     } else if (obj) {
         return archiveObjectAtPath(obj, path);
     } else {
-        return [AXFileOperationResult resultWithPath:path];
+        return [AXResult resultWithPath:path];
     }
 }
 
@@ -210,10 +211,12 @@ static inline AXFileOperationResult *saveObjectAtPath(id obj, NSString *path){
  @param options 操作
  @return 结果
  */
-static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString *path, NSJSONWritingOptions options){
+static inline AXResult *saveJsonWithOptionsResult(id obj, NSString *path, NSJSONWritingOptions options){
     NSData *data = nil;
-    if ([obj isKindOfClass:NSArray.class] || [obj isKindOfClass:NSDictionary.class]) {
-        data = [NSJSONSerialization dataWithJSONObject:obj options:options error:nil];
+    if ([obj isKindOfClass:NSArray.class]) {
+        data = ((NSArray *)obj).jsonValue.dataValue;
+    } else if ([obj isKindOfClass:NSDictionary.class]) {
+        data = ((NSDictionary *)obj).jsonValue.dataValue;
     } else if ([obj isKindOfClass:NSData.class] || [obj isKindOfClass:[NSString class]]) {
         NSData *testData;
         if ([obj isKindOfClass:[NSString class]]) {
@@ -221,16 +224,12 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
         } else {
             testData = obj;
         }
-        // 验证是否是jsondata
-        id ret = [NSJSONSerialization JSONObjectWithData:testData options:NSJSONReadingMutableContainers error:nil];
-        if ([ret isKindOfClass:[NSDictionary class]] || [ret isKindOfClass:[NSArray class]]) {
-            data = obj;
-        }
+        data = testData.jsonValue.dataValue;
     }
     if (data) {
         return saveObjectAtPath(data, path);
     } else {
-        return [AXFileOperationResult resultWithPath:path boolResult:^BOOL(NSError * _Nullable __autoreleasing * _Nullable error) {
+        return [AXResult resultWithPath:path boolResult:^BOOL(NSError * _Nullable __autoreleasing * _Nullable error) {
             *error = [NSError errorWithDomain:NSCocoaErrorDomain code:3840 userInfo:nil];
             return NO;
         }];
@@ -247,8 +246,8 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
     };
 }
 
-- (AXFileOperationResult * _Nonnull (^)(void))readDataResult{
-    return ^AXFileOperationResult *{
+- (AXResult * _Nonnull (^)(void))readDataResult{
+    return ^AXResult *{
         return readDataResult(self);
     };
 }
@@ -257,8 +256,8 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
         return readDataWithOptionsResult(self, options).dataValue;
     };
 }
-- (AXFileOperationResult *(^)(NSDataReadingOptions))readDataWithOptionsResult{
-    return ^AXFileOperationResult *(NSDataReadingOptions options){
+- (AXResult *(^)(NSDataReadingOptions))readDataWithOptionsResult{
+    return ^AXResult *(NSDataReadingOptions options){
         return readDataWithOptionsResult(self, options);
     };
 }
@@ -268,8 +267,8 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
         return readArrayResult(self).arrayValue;
     };
 }
-- (AXFileOperationResult * _Nonnull (^)(void))readArrayResult{
-    return ^AXFileOperationResult *{
+- (AXResult * _Nonnull (^)(void))readArrayResult{
+    return ^AXResult *{
         return readArrayResult(self);
     };
 }
@@ -279,8 +278,8 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
         return readDictionaryResult(self).dictionaryValue;
     };
 }
-- (AXFileOperationResult * _Nonnull (^)(void))readDictionaryResult{
-    return ^AXFileOperationResult *{
+- (AXResult * _Nonnull (^)(void))readDictionaryResult{
+    return ^AXResult *{
         return readDictionaryResult(self);
     };
 }
@@ -290,8 +289,8 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
         return readJsonResult(self).value;
     };
 }
-- (AXFileOperationResult * _Nonnull (^)(void))readJsonResult{
-    return ^AXFileOperationResult *{
+- (AXResult * _Nonnull (^)(void))readJsonResult{
+    return ^AXResult *{
         return readJsonResult(self);
     };
 }
@@ -301,8 +300,8 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
         return readStringResult(self).stringValue;
     };
 }
-- (AXFileOperationResult *(^)(void))readStringResult{
-    return ^AXFileOperationResult *{
+- (AXResult *(^)(void))readStringResult{
+    return ^AXResult *{
         return readStringResult(self);
     };
 }
@@ -312,43 +311,43 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
         return unarchiveObjectAtPath(self).value;
     };
 }
-- (AXFileOperationResult *(^)(void))unarchiveObjectResult{
-    return ^AXFileOperationResult *{
+- (AXResult *(^)(void))unarchiveObjectResult{
+    return ^AXResult *{
         return unarchiveObjectAtPath(self);
     };
 }
 
 #pragma mark - save
 
-- (AXFileOperationResult *(^)(id))saveObject{
-    return ^AXFileOperationResult *(id obj){
+- (AXResult *(^)(id))saveObject{
+    return ^AXResult *(id obj){
         return saveObjectAtPath(obj, self);
     };
 }
 
-- (AXFileOperationResult *(^)(id))saveJson{
-    return ^AXFileOperationResult *(id obj){
+- (AXResult *(^)(id))saveJson{
+    return ^AXResult *(id obj){
         return saveJsonWithOptionsResult(obj, self, NSJSONWritingPrettyPrinted);
     };
 }
 
-- (AXFileOperationResult *(^)(NSObject<NSCoding> *))archiveObject{
-    return ^AXFileOperationResult *(id obj){
+- (AXResult *(^)(NSObject<NSCoding> *))archiveObject{
+    return ^AXResult *(id obj){
         return archiveObjectAtPath(obj, self);
     };
 }
 
-- (AXFileOperationResult *(^)(NSString *))appendStringToFile{
-    return ^AXFileOperationResult *(NSString *obj){
+- (AXResult *(^)(NSString *))appendStringToFile{
+    return ^AXResult *(NSString *obj){
         return appendStringToFile(obj, self);
     };
 }
 
 #pragma mark - remove
 
-- (AXFileOperationResult *(^)(void))removeFile{
-    return ^AXFileOperationResult *{
-        return [AXFileOperationResult resultWithPath:self boolResult:^BOOL(NSError *__autoreleasing *error) {
+- (AXResult *(^)(void))removeFile{
+    return ^AXResult *{
+        return [AXResult resultWithPath:self boolResult:^BOOL(NSError *__autoreleasing *error) {
             return [[NSFileManager defaultManager] removeItemAtPath:self error:error];
         }];
     };
@@ -413,10 +412,10 @@ static inline AXFileOperationResult *saveJsonWithOptionsResult(id obj, NSString 
     };
 }
 
-- (AXFileOperationResult *(^)(void))createDirectory{
-    return ^AXFileOperationResult *{
+- (AXResult *(^)(void))createDirectory{
+    return ^AXResult *{
         // create dir if not exist
-        return [AXFileOperationResult resultWithPath:self boolResult:^BOOL(NSError *__autoreleasing *error) {
+        return [AXResult resultWithPath:self boolResult:^BOOL(NSError *__autoreleasing *error) {
             return [[NSFileManager defaultManager] createDirectoryAtPath:self withIntermediateDirectories:YES attributes:nil error:error];
         }];
     };

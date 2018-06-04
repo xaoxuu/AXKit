@@ -10,6 +10,8 @@
 #import "NSString+AXExtension.h"
 #import "NSError+AXExtension.h"
 #import "_AXKitHelpServices.h"
+#import "NSObject+AXExtension.h"
+
 
 inline NSString *NSStringFromBool(BOOL x){
     return @(x).stringValue;
@@ -165,6 +167,27 @@ inline NSString *SpellForChinese(NSString *chinese){
 - (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width{
     NSDictionary *dict = @{NSFontAttributeName:font};
     return [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dict context:nil].size.height;
+}
+
+- (NSNumber *)numberValue{
+    NSString *lower = safeString(self, nil).lowercaseString;
+    if (!lower.length) {
+        return nil;
+    }
+    static NSCharacterSet *dot;
+    if (!dot) {
+        dot = [NSCharacterSet characterSetWithRange:NSMakeRange('.', 1)];
+    }
+    if ([lower isEqualToString:@"true"] || [lower isEqualToString:@"yes"]) {
+        return @(YES);
+    } else if ([lower isEqualToString:@"false"] || [lower isEqualToString:@"no"]) {
+        return @(NO);
+    } else if ([self rangeOfCharacterFromSet:dot].location != NSNotFound) {
+        return @(self.doubleValue);
+    } else {
+        return @(self.longLongValue);
+    }
+    
 }
 
 @end

@@ -179,8 +179,8 @@
 		CD79DF9E1EEF911900408BAD /* AlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DF9D1EEF911900408BAD /* AlertVC.m */; };
 		CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD79DFA01EEF912800408BAD /* AlertTV.m */; };
 		CD79DFA31EEF918000408BAD /* AlertTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CD79DFA21EEF918000408BAD /* AlertTV.json */; };
-		CD82DB5520BFDF0B00EAA11B /* AXFileOperationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CD82DB5320BFDF0B00EAA11B /* AXFileOperationResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD82DB5620BFDF0B00EAA11B /* AXFileOperationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CD82DB5420BFDF0B00EAA11B /* AXFileOperationResult.m */; };
+		CD82DB5520BFDF0B00EAA11B /* AXResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CD82DB5320BFDF0B00EAA11B /* AXResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD82DB5620BFDF0B00EAA11B /* AXResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CD82DB5420BFDF0B00EAA11B /* AXResult.m */; };
 		CD88D1A71ECF30AD004FC692 /* BlogListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A61ECF30AD004FC692 /* BlogListModel.m */; };
 		CD88D1AA1ECF30B6004FC692 /* BlogContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1A91ECF30B6004FC692 /* BlogContentModel.m */; };
 		CD88D1AD1ECF30C2004FC692 /* BlogModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CD88D1AC1ECF30C2004FC692 /* BlogModels.m */; };
@@ -508,8 +508,8 @@
 		CD79DF9F1EEF912800408BAD /* AlertTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTV.h; sourceTree = "<group>"; };
 		CD79DFA01EEF912800408BAD /* AlertTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTV.m; sourceTree = "<group>"; };
 		CD79DFA21EEF918000408BAD /* AlertTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AlertTV.json; sourceTree = "<group>"; };
-		CD82DB5320BFDF0B00EAA11B /* AXFileOperationResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXFileOperationResult.h; sourceTree = "<group>"; };
-		CD82DB5420BFDF0B00EAA11B /* AXFileOperationResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFileOperationResult.m; sourceTree = "<group>"; };
+		CD82DB5320BFDF0B00EAA11B /* AXResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXResult.h; sourceTree = "<group>"; };
+		CD82DB5420BFDF0B00EAA11B /* AXResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXResult.m; sourceTree = "<group>"; };
 		CD88D1A51ECF30AD004FC692 /* BlogListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogListModel.h; sourceTree = "<group>"; };
 		CD88D1A61ECF30AD004FC692 /* BlogListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogListModel.m; sourceTree = "<group>"; };
 		CD88D1A81ECF30B6004FC692 /* BlogContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogContentModel.h; sourceTree = "<group>"; };
@@ -1321,8 +1321,8 @@
 				CD3C4CD61F44213800B6A795 /* AXDebugHelper.m */,
 				CDAB58ED1E6BF5A20017CA1E /* NSString+AXExtension.h */,
 				CDAB58EE1E6BF5A20017CA1E /* NSString+AXExtension.m */,
-				CD82DB5320BFDF0B00EAA11B /* AXFileOperationResult.h */,
-				CD82DB5420BFDF0B00EAA11B /* AXFileOperationResult.m */,
+				CD82DB5320BFDF0B00EAA11B /* AXResult.h */,
+				CD82DB5420BFDF0B00EAA11B /* AXResult.m */,
 				CDAB58F11E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.h */,
 				CDAB58F21E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m */,
 				CDAB58E11E6BF3220017CA1E /* Foundation+AXLogExtension.h */,
@@ -1602,7 +1602,7 @@
 				CDAB591F1E6BFBCE0017CA1E /* UIImage+AXExtension.h in Headers */,
 				CDAB59431E6BFF9C0017CA1E /* Foundation+AXMacros.h in Headers */,
 				CD0D17042057BD58004E8553 /* NSObject+AXExtension.h in Headers */,
-				CD82DB5520BFDF0B00EAA11B /* AXFileOperationResult.h in Headers */,
+				CD82DB5520BFDF0B00EAA11B /* AXResult.h in Headers */,
 				8579EF1D1E6BEE4F00C33881 /* AXKit.h in Headers */,
 				CDAB59071E6BF92F0017CA1E /* UIColor+AXColorPack.h in Headers */,
 				CDAB593B1E6BFE700017CA1E /* UIView+AXFrameExtension.h in Headers */,
@@ -2061,7 +2061,7 @@
 				CDAB58F81E6BF77E0017CA1E /* NSTimer+AXBlockWrapper.m in Sources */,
 				CD3C4CD81F44213800B6A795 /* AXDebugHelper.m in Sources */,
 				CDAB590C1E6BF96B0017CA1E /* UIColor+AXExtension.m in Sources */,
-				CD82DB5620BFDF0B00EAA11B /* AXFileOperationResult.m in Sources */,
+				CD82DB5620BFDF0B00EAA11B /* AXResult.m in Sources */,
 				CDE91FA11EAEE6E000FC5A88 /* NSError+AXExtension.m in Sources */,
 				CD36EE801E7BAE31001C0C47 /* NSUserDefaults+AXWrapper.m in Sources */,
 				CDAB58F41E6BF6CA0017CA1E /* NSString+AXFileStreamChainedWrapper.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  AXFileOperationResult.h
+//  AXResult.h
 //  AXKit
 //
 //  Created by xaoxuu on 2018/5/31.
@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  文件操作结果
  */
-@interface AXFileOperationResult : NSObject
+@interface AXResult : NSObject
 
 /**
  路径
@@ -35,7 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
  id值
  */
 @property (strong, readonly, nullable, nonatomic) id value;
-
+/**
+ number值，只有当id值为number类型时，numberValue才有值
+ */
+@property (copy, readonly, nullable, nonatomic) NSNumber *numberValue;
 /**
  string值，只有当id值为string类型时，stringValue才有值
  */
@@ -65,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param path 路径
  @return 结果
  */
-+ (AXFileOperationResult *)resultWithPath:(NSString *)path;
++ (AXResult *)resultWithPath:(NSString *)path;
 
 /**
  bool类型的结果
@@ -74,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param callback 回调
  @return 结果
  */
-+ (AXFileOperationResult *)resultWithPath:(NSString *)path boolResult:(BOOL (^)(NSError **error))callback;
++ (AXResult *)resultWithPath:(NSString *)path boolResult:(BOOL (^)(NSError **error))callback;
 
 /**
  id类型的结果
@@ -83,7 +86,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param callback 回调
  @return 结果
  */
-+ (AXFileOperationResult *)resultWithPath:(NSString *)path idResult:(id (^)(NSError **error))callback;
++ (AXResult *)resultWithPath:(NSString *)path idResult:(id (^)(NSError **error))callback;
+
++ (AXResult *)resultWithJsonWritingOptions:(NSJSONWritingOptions)opt object:(id (^)(NSError **error))callback;
++ (AXResult *)resultWithJsonReadingOptions:(NSJSONReadingOptions)opt data:(NSData *(^)(NSError **error))callback;
 
 // MARK: - 解析
 
@@ -93,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 回调
  @return 结果
  */
-- (AXFileOperationResult *)completed:(void (^)(BOOL success))block;
+- (AXResult *)completed:(void (^)(BOOL success))block;
 
 /**
  错误信息回调，只有当error有值时才会进入此回调
@@ -101,7 +107,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 回调
  @return 结果
  */
-- (AXFileOperationResult *)error:(void (^)(NSError * _Nullable error))block;
+- (AXResult *)error:(void (^)(NSError * _Nullable error))block;
 
 /**
  value值，只有当value有值时才会进入此回调
@@ -109,7 +115,15 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 回调
  @return 结果
  */
-- (AXFileOperationResult *)value:(void (^)(id value))block;
+- (AXResult *)value:(void (^)(id value))block;
+
+/**
+ number值，只有当numberValue有值时才会进入此回调
+ 
+ @param block 回调
+ @return 结果
+ */
+- (AXResult *)numberValue:(void (^)(NSNumber * numberValue))block;
 
 /**
  string值，只有当stringValue有值时才会进入此回调
@@ -117,7 +131,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 回调
  @return 结果
  */
-- (AXFileOperationResult *)stringValue:(void (^)(NSString * stringValue))block;
+- (AXResult *)stringValue:(void (^)(NSString * stringValue))block;
 
 /**
  array值，只有当arrayValue有值时才会进入此回调
@@ -125,7 +139,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 回调
  @return 结果
  */
-- (AXFileOperationResult *)arrayValue:(void (^)(NSArray * arrayValue))block;
+- (AXResult *)arrayValue:(void (^)(NSArray * arrayValue))block;
 
 /**
  dictionary值，只有当dictionaryValue有值时才会进入此回调
@@ -133,7 +147,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 回调
  @return 结果
  */
-- (AXFileOperationResult *)dictionaryValue:(void (^)(NSDictionary * dictionaryValue))block;
+- (AXResult *)dictionaryValue:(void (^)(NSDictionary * dictionaryValue))block;
 
 /**
  data值，只有当dataValue有值时才会进入此回调
@@ -141,7 +155,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param block 回调
  @return 结果
  */
-- (AXFileOperationResult *)dataValue:(void (^)(NSData *dataValue))block;
+- (AXResult *)dataValue:(void (^)(NSData *dataValue))block;
 
 
 @end
