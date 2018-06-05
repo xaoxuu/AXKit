@@ -28,16 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (UITapGestureRecognizer *)ax_addTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler;
 
 /**
- 添加一个tap手势，并处理，附加动画效果
-
- @param tap      tap
- @param handler  处理手势的block
- @param scale    动画比例
- @param duration 持续时间
- */
-- (UITapGestureRecognizer *)ax_addTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
-
-/**
  添加一个双击手势，并处理
 
  @param doubleTap double tap
@@ -107,6 +97,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)ax_removeGesture:(__kindof UIGestureRecognizer *)gesture;
 
+/**
+ 移除所有手势
+ */
+- (void)ax_removeAllGesture;
 
 @end
 

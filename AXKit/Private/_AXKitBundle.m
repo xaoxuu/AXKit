@@ -39,6 +39,10 @@ inline NSString *NSLocalizedStringFromAXKit(NSString *key){
 
 @implementation AXBundle
 
++ (NSBundle *)mainBundle{
+    return [AXBundle axkitBundle];
+}
+
 + (instancetype)axkitBundle{
     static AXBundle *bundle;
     static dispatch_once_t onceToken;

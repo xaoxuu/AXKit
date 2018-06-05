@@ -11,7 +11,7 @@
 #import "AXDrawerKit.h"
 
 @interface CacheableLogVC ()
-
+@property (strong, nonatomic) UIButton *btn;
 @end
 
 @implementation CacheableLogVC
@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     AXCachedLogOBJ(self);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +35,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     AXCachedLogOBJ(self);
 }
 - (void)viewDidAppear:(BOOL)animated{

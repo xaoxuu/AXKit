@@ -79,15 +79,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)ax_addTouchUpInsideHandler:(void (^)(__kindof UIButton *sender))handler;
 
-/**
- 添加一个TouchUpInside事件，并附加动画
-
- @param handler  处理事件的block
- @param scale    动画的缩放比例
- @param duration 动画持续时间
- */
-- (void)ax_addTouchUpInsideHandler:(nullable void (^)(__kindof UIButton *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
-
 
 @end
 
@@ -110,16 +101,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ax_addTouchDownHandler:(void (^)(__kindof UISlider *sender))handler;
 
 /**
- 添加一个TouchDown事件，并附加动画
- 
- @param handler  处理事件的block
- @param scale    动画的缩放比例
- @param duration 动画持续时间
- */
-- (void)ax_addTouchDownHandler:(nullable void (^)(__kindof UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
-
-
-/**
  添加一个ValueChanged事件
 
  @param handler 处理事件的block
@@ -132,15 +113,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param handler       处理事件的block
  */
 - (void)ax_addTouchUpHandler:(void (^)(__kindof UISlider *sender))handler;
-
-/**
- 添加一个TouchUp事件，并附加动画
- 
- @param handler  处理事件的block
- @param scale    动画的缩放比例
- @param duration 动画持续时间
- */
-- (void)ax_addTouchUpHandler:(nullable void (^)(__kindof UISlider *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
 
 @end
@@ -219,15 +191,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ax_addEditingBeginHandler:(void (^)(__kindof UITextField *sender))handler;
 
 /**
- 添加一个EditingBegin事件，并附加动画
- 
- @param handler  处理事件的block
- @param scale    动画的缩放比例
- @param duration 动画持续时间
- */
-- (void)ax_addEditingBeginHandler:(nullable void (^)(__kindof UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
-
-/**
  添加一个EditingChanged事件
  
  @param handler       处理事件的block
@@ -247,16 +210,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param handler       处理事件的block
  */
 - (void)ax_addEditingEndHandler:(void (^)(__kindof UITextField *sender))handler;
-
-/**
- 添加一个EditingEnd事件，并附加动画
- 
- @param handler  处理事件的block
- @param scale    动画的缩放比例
- @param duration 动画持续时间
- */
-- (void)ax_addEditingEndHandler:(nullable void (^)(__kindof UITextField *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
-
 
 @end
 

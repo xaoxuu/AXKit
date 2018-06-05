@@ -6,46 +6,36 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "_AXKitHelpServices.h"
+#import "_AXKitError.h"
 #import "NSError+AXExtension.h"
 #import "UIAlertController+AXWrapper.h"
 #import "UIApplication+AXExtension.h"
 
 NSErrorDomain const AXKitErrorDomain = @"com.xaoxuu.axkit.error";
 
+static NSString const *AXKitErrorBaseURL = @"https://github.com/xaoxuu/AXKit/issues";
 
-static NSString const *AXKitIssuesURLStr = @"https://github.com/xaoxuu/AXKit/issues";
-
-
-
-@implementation AXKitHelpServices
-
-+ (NSURL *)errorURLWithCode:(AXKitErrorCode)code{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",AXKitIssuesURLStr,@(code)]];
+static NSURL *urlForCode(NSInteger code){
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", AXKitErrorBaseURL, @(code)]];
 }
-
-@end
 
 @implementation NSError (AXKitHelpExtension)
 
+- (NSURL *)URL{
+    return urlForCode(self.code);
+}
 
 + (instancetype)axkit_errorWithCode:(NSInteger)code reason:(nullable NSString *(^)(void))reason{
     NSError *error = [self ax_errorWithMaker:^(NSErrorMaker * _Nonnull error) {
         error.domain = AXKitErrorDomain;
         error.code = code;
         error.localizedFailureReason = reason?reason():@"";
+        error.localizedRecoverySuggestion = [NSString stringWithFormat:@"See more at: %@", urlForCode(code)];
     }];
     NSString *msg = nil;
     if (reason) {
         msg = reason();
     }
-    [UIAlertController ax_showAlertWithTitle:kStringError() message:msg actions:^(UIAlertController * _Nonnull alert) {
-        [alert ax_addCancelAction];
-        [alert ax_addDefaultActionWithTitle:kStringHelp() handler:^(UIAlertAction * _Nonnull sender) {
-            [UIApplication ax_presentSafariViewControllerWithURL:[AXKitHelpServices errorURLWithCode:code]];
-        }];
-    }];
-    
     return error;
 }
 

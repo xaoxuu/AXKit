@@ -9,7 +9,7 @@
 
 #import "NSString+AXExtension.h"
 #import "NSError+AXExtension.h"
-#import "_AXKitHelpServices.h"
+#import "_AXKitError.h"
 #import "NSObject+AXExtension.h"
 
 
@@ -50,41 +50,6 @@ inline NSString *NSStringFromPercent(CGFloat x){
 
 inline NSString *NSStringFromASCIIValue(unsigned char ASCIIValue){
     return [NSString stringWithFormat:@"%c",ASCIIValue];
-}
-
-
-
-
-inline void VersionLaterThanVersion(NSString *thisVersion, NSString *anotherVersion, void (^completion)(BOOL later), void (^failure)(NSError *error)){
-    if (!completion) {
-        return;
-    }
-    NSArray<NSString *> *thisVersionArr = [thisVersion componentsSeparatedByString:@"."];
-    NSArray<NSString *> *anotherVersionArr = [anotherVersion componentsSeparatedByString:@"."];
-    NSUInteger maxCount = MAX(thisVersionArr.count, anotherVersionArr.count);
-    
-    if (!thisVersionArr.count || !anotherVersionArr.count) {
-        if (failure) {
-            NSError *error = [NSError axkit_errorWithCode:0 reason:^NSString * _Nonnull{
-                return @"invalid version string.";
-            }];
-            failure(error);
-        }
-        return;
-    }
-    
-    for (NSUInteger i = 0; i < maxCount; i++) {
-        NSInteger this = i<thisVersionArr.count ? thisVersionArr[i].integerValue : 0;
-        NSInteger another = i<anotherVersionArr.count ? anotherVersionArr[i].integerValue : 0;
-        if (this > another) {
-            completion(YES);
-            return;
-        } else if (this < another) {
-            completion(NO);
-            return;
-        }
-    }
-    completion(NO);
 }
 
 

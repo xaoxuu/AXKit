@@ -20,25 +20,17 @@ typedef NS_ENUM(NSUInteger, AXKitErrorCode) {
     
 };
 
-
-@interface AXKitHelpServices : NSObject
-
-
-/**
- AXKit错误信息网址
-
- @param code AXKit错误代码
- @return AXKit错误信息网址
- */
-+ (NSURL *)errorURLWithCode:(AXKitErrorCode)code;
-
-@end
-
 @interface NSError (AXKitHelpExtension)
 
+/**
+ 错误信息的URL
+
+ @return URL
+ */
+- (NSURL *)URL;
 
 /**
- 创建一个Error对象并弹窗提醒用户错误原因以及帮助信息网址
+ 创建一个Error对象错误原因以及帮助信息网址
 
  @param code 错误码
  @param reason 原因
