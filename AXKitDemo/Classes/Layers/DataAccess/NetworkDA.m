@@ -28,7 +28,7 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
-            AXLogError(error);
+            AXCachedLogError(error);
             if (fail) {
                 fail(error);
             }

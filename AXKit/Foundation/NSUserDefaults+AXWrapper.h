@@ -107,23 +107,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion failure:(void (^)(NSError *error))failure;
 
 /**
- 读取字符串数组（不推荐）
- 
- @param key 键
- @return 值
- */
-+ (nullable NSArray<NSString *> *)ax_readStringArrayForKey:(NSString *)key;
-
-/**
- 读取字符串数组（推荐）
- 
- @param key 键
- @param completion 读取成功
- @param failure 读取失败（没有值）
- */
-+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *array))completion failure:(void (^)(NSError *error))failure;
-
-/**
  读取NSArray值（不推荐）
  
  @param key 键
@@ -282,28 +265,20 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key;
 
 /**
- 保存字符串数组，自带synchronize
- 
- @param block 值
- @param key 键
- */
-+ (void)ax_setStringArray:(NSArray *(^)(NSArray<NSString *> *cachedArray))block forKey:(NSString *)key;
-
-/**
  保存数组，自带synchronize
  
- @param block 值
+ @param arr 值
  @param key 键
  */
-+ (void)ax_setArray:(nullable NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key;
++ (void)ax_setArray:(nullable NSArray *)arr forKey:(NSString *)key;
 
 /**
  保存字典，自带synchronize
  
- @param block 值
+ @param dict 值
  @param key 键
  */
-+ (void)ax_setDictionary:(NSDictionary *(^)(NSMutableDictionary <NSString *, id> * dict))block forKey:(NSString *)key;
++ (void)ax_setDictionary:(nullable NSDictionary *)dict forKey:(NSString *)key;
 /**
  保存NSURL，自带synchronize
  
@@ -346,28 +321,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key;
 
 /**
- 保存字符串数组，不带synchronize
- 
- @param block 值
- @param key 键
- */
-- (void)ax_setStringArray:(NSArray *(^)(NSArray<NSString *> *cachedArray))block forKey:(NSString *)key;
-
-/**
  保存数组，不带synchronize
  
- @param block 值
+ @param arr 值
  @param key 键
  */
-- (void)ax_setArray:(nullable NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key;
+- (void)ax_setArray:(nullable NSArray *)arr forKey:(NSString *)key;
 
 /**
  保存字典，不带synchronize
  
- @param block 值
+ @param dict 值
  @param key 键
  */
-- (void)ax_setDictionary:(NSDictionary *(^)(NSMutableDictionary <NSString *, id> * dict))block forKey:(NSString *)key;
+- (void)ax_setDictionary:(nullable NSDictionary *)dict forKey:(NSString *)key;
 
 /**
  保存NSURL，不带synchronize

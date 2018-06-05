@@ -24,6 +24,22 @@ static inline NSUserDefaults *DefaultUser(){
 
 @end
 
+static inline void readObjForKey(NSString *key, NSString *desc, void (^completion)(id object), void (^failure)(NSError *error)){
+    id obj = [DefaultUser() objectForKey:key];
+    if (obj) {
+        if (completion) {
+            completion(obj);
+        }
+    } else {
+        NSError *error = [NSError axkit_errorWithReason:^NSString *{
+            return [NSString stringWithFormat:@"The %@ for key: \'%@\' not found.\n", desc, key];
+        }];
+        if (failure && error) {
+            failure(error);
+        }
+    }
+}
+
 @implementation NSUserDefaults (AXWrapper)
 
 
@@ -34,20 +50,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (void)ax_readObjectForKey:(NSString *)key completion:(void (^)(id object))completion failure:(void (^)(NSError *error))failure{
-    id obj = [self ax_readObjectForKey:key];
-    if (obj) {
-        if (completion) {
-            completion(obj);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The object for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
+    readObjForKey(key, @"object", completion, failure);
 }
 
 + (BOOL)ax_readBoolForKey:(NSString *)key{
@@ -75,20 +78,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (void)ax_readDataForKey:(NSString *)key completion:(void (^)(NSData *data))completion failure:(void (^)(NSError *error))failure{
-    NSData *data = [self ax_readDataForKey:key];
-    if (data) {
-        if (completion) {
-            completion(data);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The data for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
+    readObjForKey(key, @"data", completion, failure);
 }
 
 + (nullable NSString *)ax_readStringForKey:(NSString *)key{
@@ -96,41 +86,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (void)ax_readStringForKey:(NSString *)key completion:(void (^)(NSString *string))completion failure:(void (^)(NSError *error))failure{
-    NSString *string = [self ax_readStringForKey:key];
-    if (string) {
-        if (completion) {
-            completion(string);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The string for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
-}
-
-+ (nullable NSArray<NSString *> *)ax_readStringArrayForKey:(NSString *)key{
-    return [DefaultUser() stringArrayForKey:key];
-}
-
-+ (void)ax_readStringArrayForKey:(NSString *)key completion:(void (^)(NSArray<NSString *> *string))completion failure:(void (^)(NSError *error))failure{
-    NSArray<NSString *> *stringArray = [self ax_readStringArrayForKey:key];
-    if (stringArray) {
-        if (completion) {
-            completion(stringArray);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The array for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
+    readObjForKey(key, @"string", completion, failure);
 }
 
 + (nullable NSArray *)ax_readArrayForKey:(NSString *)key{
@@ -138,20 +94,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (void)ax_readArrayForKey:(NSString *)key completion:(void (^)(NSArray *array))completion failure:(void (^)(NSError *error))failure{
-    NSArray *array = [self ax_readArrayForKey:key];
-    if (array) {
-        if (completion) {
-            completion(array);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The array for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
+    readObjForKey(key, @"array", completion, failure);
 }
 
 + (nullable NSDictionary<NSString *, id> *)ax_readDictionaryForKey:(NSString *)key{
@@ -159,20 +102,7 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (void)ax_readDictionaryForKey:(NSString *)key completion:(void (^)(NSDictionary *dictionary))completion failure:(void (^)(NSError *error))failure{
-    NSDictionary *dictionary = [self ax_readDictionaryForKey:key];
-    if (dictionary) {
-        if (completion) {
-            completion(dictionary);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The dictionary for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
+    readObjForKey(key, @"dictionary", completion, failure);
 }
 
 + (NSDictionary<NSString *, id> *)ax_readDictionaryWithValuesForKeys:(NSArray<NSString *> *)keys{
@@ -185,20 +115,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 
 + (void)ax_readURLForKey:(NSString *)key completion:(void (^)(NSURL *url))completion failure:(void (^)(NSError *error))failure{
-    NSURL *url = [self ax_readURLForKey:key];
-    if (url) {
-        if (completion) {
-            completion(url);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The url for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
+    readObjForKey(key, @"URL", completion, failure);
 }
 
 + (UIImage *)ax_readImageForKey:(NSString *)key{
@@ -207,20 +124,12 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage * _Nonnull))completion failure:(void (^)(NSError * _Nonnull))failure{
-    NSData *data = [self ax_readDataForKey:key];
-    if (data) {
+    readObjForKey(key, @"image", ^(id object) {
+        NSData *data = object;
         if (completion) {
             completion([UIImage imageWithData:data]);
         }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The image for key: \'%@\' not found.\n",key];
-        }];
-        AXLogError(error);
-        if (failure && error) {
-            failure(error);
-        }
-    }
+    }, failure);
 }
 
 
@@ -233,89 +142,68 @@ static inline NSUserDefaults *DefaultUser(){
 
 
 + (void)ax_setObject:(nullable id)obj forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setObject:obj forKey:key];
-    }];
+    [DefaultUser() setObject:obj forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setValue:(nullable id)value forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setValue:value forKey:key];
-    }];
+    [DefaultUser() setValue:value forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setBool:(BOOL)x forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setBool:x forKey:key];
-    }];
+    [DefaultUser() setBool:x forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setInteger:(NSInteger)x forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setInteger:x forKey:key];
-    }];
+    [DefaultUser() setInteger:x forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setFloat:(float)x forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setFloat:x forKey:key];
-    }];
+    [DefaultUser() setFloat:x forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setDouble:(double)x forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setDouble:x forKey:key];
-    }];
+    [DefaultUser() setDouble:x forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setCGFloat:(CGFloat)x forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setDouble:x forKey:key];
-    }];
+    [DefaultUser() setDouble:x forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setData:(nullable NSData *)data forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setObject:data forKey:key];
-    }];
+    [DefaultUser() setObject:data forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setString:(nullable NSString *)string forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setObject:string forKey:key];
-    }];
+    [DefaultUser() setObject:string forKey:key];
+    [DefaultUser() synchronize];
 }
 
-+ (void)ax_setStringArray:(NSArray *(^)(NSArray<NSString *> *cachedArray))block forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser ax_setArray:block forKey:key];
-    }];
++ (void)ax_setArray:(nullable NSArray *)arr forKey:(NSString *)key{
+    [DefaultUser() ax_setArray:arr forKey:key];
+    [DefaultUser() synchronize];
 }
 
-+ (void)ax_setArray:(nullable NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser ax_setArray:block forKey:key];
-    }];
++ (void)ax_setDictionary:(nullable NSDictionary *)dict forKey:(NSString *)key{
+    [DefaultUser() ax_setDictionary:dict forKey:key];
+    [DefaultUser() synchronize];
 }
-
-+ (void)ax_setDictionary:(NSDictionary *(^)(NSMutableDictionary <NSString *, id> * dict))block forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser ax_setDictionary:block forKey:key];
-    }];
-}
-
 
 + (void)ax_setURL:(nullable NSURL *)url forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        [defaultUser setObject:url forKey:key];
-    }];
+    [DefaultUser() setObject:url forKey:key];
+    [DefaultUser() synchronize];
 }
 
 + (void)ax_setImage:(nullable UIImage *)image forKey:(NSString *)key{
-    [self ax_caches:^(NSUserDefaults * _Nonnull defaultUser) {
-        NSData *data = UIImagePNGRepresentation(image);
-        [defaultUser setObject:data forKey:key];
-    }];
+    NSData *data = UIImagePNGRepresentation(image);
+    [DefaultUser() setObject:data forKey:key];
 }
 
 - (void)ax_caches:(void (^)(NSUserDefaults *user))action{
@@ -331,31 +219,16 @@ static inline NSUserDefaults *DefaultUser(){
     [self setObject:string forKey:key];
 }
 
-
-- (void)ax_setStringArray:(NSArray *(^)(NSArray<NSString *> *cachedArray))block forKey:(NSString *)key{
-    [self ax_setArray:block forKey:key];
+- (void)ax_setArray:(nullable NSArray *)arr forKey:(NSString *)key{
+    [self setObject:arr forKey:key];
 }
 
-- (void)ax_setArray:(NSArray *(^)(NSArray *cachedArray))block forKey:(NSString *)key{
-    if (block) {
-        NSMutableArray *arrM = [NSMutableArray array];
-        NSArray *arr = block(arrM);
-        [self setObject:arr ?: arrM forKey:key];
-    }
-}
-
-- (void)ax_setDictionary:(NSDictionary *(^)(NSMutableDictionary <NSString *, id> * dict))block forKey:(NSString *)key{
-    if (block) {
-        NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
-        NSDictionary *dict = block(dictM);
-        [self setObject:dict ?: dictM forKey:key];
-    }
+- (void)ax_setDictionary:(nullable NSDictionary *)dict forKey:(NSString *)key{
+    [self setObject:dict forKey:key];
 }
 - (void)ax_setURL:(nullable NSURL *)url forKey:(NSString *)key{
     [self setObject:url forKey:key];
 }
-
-
 
 #pragma mark - remove
 

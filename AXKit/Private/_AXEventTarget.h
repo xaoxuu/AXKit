@@ -13,6 +13,7 @@
 
 @interface AXEventTarget : NSObject
 
+@property (strong, nonatomic) UIGestureRecognizer *gesture;
 // @xaoxuu: 事件处理器target
 @property (copy, nonatomic) void (^handler)(id sender);
 

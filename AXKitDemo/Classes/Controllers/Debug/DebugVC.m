@@ -35,7 +35,6 @@
         [UIApplication ax_presentSafariViewControllerWithURL:[NSURL URLWithString:[BaseContext docsURLString]] fromViewController:weakSelf];
     }];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {

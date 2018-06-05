@@ -7,182 +7,182 @@
 //
 
 #import "UIView+AXGestureExtension.h"
-#import "NSString+AXExtension.h"
 #import "UIView+AXAnimatedWrapper.h"
 #import "_AXEventTarget.h"
-
-// create a new target
-#define AXDefaultTarget AXTargetWith(self, gesture, handler)
 
 @import ObjectiveC.runtime;
 
 static const void *UIViewGestureAXBlockWrapperKey = &UIViewGestureAXBlockWrapperKey;
 
-static inline void AXBindGestureAndTarget(UIGestureRecognizer *gesture, AXEventTarget *target){
-    [gesture addTarget:target action:@selector(handleEvent:)];
+static inline NSString *keyForGesture(id x){
+    return [NSString stringWithFormat:@"%p",x];
 }
 
-static inline AXEventTarget *AXTargetWith(UIView *obj, __kindof UIGestureRecognizer *gesture, id handler){
-    // create a target with <handler>
-    AXEventTarget *target = [AXEventTarget targetWithHandler:handler];
-    // add a <gesture> to target
-    [obj addGestureRecognizer:gesture];
-    // save target (gesture + handler) to dictionary
+static inline NSMutableDictionary *AXGetGestures(UIView *obj){
     NSMutableDictionary *gestures = objc_getAssociatedObject(obj, UIViewGestureAXBlockWrapperKey);
     if (!gestures) {
         gestures = [NSMutableDictionary dictionary];
         objc_setAssociatedObject(obj, UIViewGestureAXBlockWrapperKey, gestures, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    NSMutableSet *handlers = gestures[NSStringFromPointer(gesture)];
-    if (!handlers) {
-        handlers = [NSMutableSet set];
-        gestures[NSStringFromPointer(gesture)] = handlers;
+    return gestures;
+}
+
+// 把手势和执行体绑定并保存为view的私有属性
+static inline AXEventTarget *AXTargetWith(UIView *view, __kindof UIGestureRecognizer *gesture, id handler){
+    // view添加手势
+    [view addGestureRecognizer:gesture];
+    
+    // 获取view的手势执行者列表
+    NSMutableDictionary *gestures = AXGetGestures(view);
+    NSMutableSet *targets = gestures[keyForGesture(gesture)];
+    if (!targets) {
+        targets = [NSMutableSet set];
+        gestures[keyForGesture(gesture)] = targets;
     }
-    [handlers addObject:target];
+    
+    // 创建事件执行者
+    AXEventTarget *target = [AXEventTarget targetWithHandler:handler];
+    // 保存事件执行者到view的列表
+    [targets addObject:target];
     return target;
 }
 
+static inline void removeGesture(UIView *view, __kindof UIGestureRecognizer *gesture){
+    // view移除手势
+    [view removeGestureRecognizer:gesture];
+    // view的执行者列表中移除执行者
+    NSMutableDictionary *gestures = AXGetGestures(view);
+    // 移除这个手势的所有执行者
+    [gestures removeObjectForKey:keyForGesture(gesture)];
+}
 
 @implementation UIView (ATGestureExtension)
 
-- (void)_addGestures:(__kindof UIGestureRecognizer *(^)(AXEventTarget *target))sender handler:(void (^)(__kindof UIGestureRecognizer *sender))handler{
-    // create a target with <handler>
-    AXEventTarget *target = [AXEventTarget targetWithHandler:handler];
-    // add a <gesture> to target
-    UIGestureRecognizer *gesture = sender(target);
-    
-    // save target (gesture + handler) to dictionary
-    NSMutableDictionary *gestures = objc_getAssociatedObject(self, UIViewGestureAXBlockWrapperKey);
-    if (!gestures) {
-        gestures = [NSMutableDictionary dictionary];
-        objc_setAssociatedObject(self, UIViewGestureAXBlockWrapperKey, gestures, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    NSMutableSet *handlers = gestures[NSStringFromPointer(gesture)];
-    if (!handlers) {
-        handlers = [NSMutableSet set];
-        gestures[NSStringFromPointer(gesture)] = handlers;
-    }
-    [handlers addObject:target];
-}
 
 #pragma mark tap / long press
 
-- (void)ax_addTapGestureHandler:(void (^)(UITapGestureRecognizer *sender))handler{
+- (UITapGestureRecognizer *)ax_addTapGestureHandler:(void (^)(UITapGestureRecognizer *sender))handler{
     if ([self isKindOfClass:[UIImageView class]]) {
         self.userInteractionEnabled = YES;
     }
     UITapGestureRecognizer *gesture = [UITapGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
-    
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
+    return gesture;
 }
 
-- (void)ax_addTapGesture:(void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler{
+- (UITapGestureRecognizer *)ax_addTapGesture:(void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler{
     
     UITapGestureRecognizer *gesture = [UITapGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     if (tap) {
         tap(gesture);
     }
-    
+    return gesture;
 }
 
-- (void)ax_addTapGesture:(void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
+- (UITapGestureRecognizer *)ax_addTapGesture:(void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration{
     
     UITapGestureRecognizer *gesture = [UITapGestureRecognizer new];
-    AXEventTarget *target = AXDefaultTarget;
-    AXBindGestureAndTarget(gesture, target);
+    AXEventTarget *target = AXTargetWith(self, gesture, handler);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     [target setupAnimationWithView:self scale:scale duration:duration];
     // more setting
     if (tap) {
         tap(gesture);
     }
-    
+    return gesture;
 }
 
 
-- (void)ax_addDoubleTapGesture:(void (^)(UITapGestureRecognizer *sender))doubleTap duration:(NSTimeInterval)duration handler:(void (^)(UITapGestureRecognizer *sender))handler{
+- (UITapGestureRecognizer *)ax_addDoubleTapGesture:(void (^)(UITapGestureRecognizer *sender))doubleTap duration:(NSTimeInterval)duration handler:(void (^)(UITapGestureRecognizer *sender))handler{
     
     UITapGestureRecognizer *gesture = [UITapGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     gesture.numberOfTapsRequired = 2;
     if (doubleTap) {
         doubleTap(gesture);
     }
-    
+    return gesture;
 }
 
-- (void)ax_addLongPressGesture:(void (^)(UILongPressGestureRecognizer *))longPress handler:(void (^)(UILongPressGestureRecognizer *))handler{
+- (UILongPressGestureRecognizer *)ax_addLongPressGesture:(void (^)(UILongPressGestureRecognizer *))longPress handler:(void (^)(UILongPressGestureRecognizer *))handler{
     
     UILongPressGestureRecognizer *gesture = [UILongPressGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     gesture.minimumPressDuration = 2;
     if (longPress) {
         longPress(gesture);
     }
-    
+    return gesture;
 }
 
 
 #pragma mark swipe / pan / screen edge pan
 
-- (void)ax_addSwipeGesture:(void (^)(UISwipeGestureRecognizer *sender))swipe handler:(void (^)(UISwipeGestureRecognizer *sender))handler {
+- (UISwipeGestureRecognizer *)ax_addSwipeGesture:(void (^)(UISwipeGestureRecognizer *sender))swipe handler:(void (^)(UISwipeGestureRecognizer *sender))handler {
     
     UISwipeGestureRecognizer *gesture = [UISwipeGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     if (swipe) {
         swipe(gesture);
     }
-    
+    return gesture;
 }
 
-- (void)ax_addPanGesture:(void (^)(UIPanGestureRecognizer *sender))pan handler:(void (^)(UIPanGestureRecognizer *sender))handler {
+- (UIPanGestureRecognizer *)ax_addPanGesture:(void (^)(UIPanGestureRecognizer *sender))pan handler:(void (^)(UIPanGestureRecognizer *sender))handler {
     
     UIPanGestureRecognizer *gesture = [UIPanGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     if (pan) {
         pan(gesture);
     }
-    
+    return gesture;
 }
 
-- (void)ax_addScreenEdgePanGesture:(void (^)(UIScreenEdgePanGestureRecognizer *sender))screenEdgePan handler:(void (^)(UIScreenEdgePanGestureRecognizer *sender))handler {
+- (UIScreenEdgePanGestureRecognizer *)ax_addScreenEdgePanGesture:(void (^)(UIScreenEdgePanGestureRecognizer *sender))screenEdgePan handler:(void (^)(UIScreenEdgePanGestureRecognizer *sender))handler {
     
     UIScreenEdgePanGestureRecognizer *gesture = [UIScreenEdgePanGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     if (screenEdgePan) {
         screenEdgePan(gesture);
     }
-    
+    return gesture;
 }
 
 #pragma mark pinch / rotation
 
-- (void)ax_addPinchGesture:(void (^)(UIPinchGestureRecognizer *sender))pinch handler:(void (^)(UIPinchGestureRecognizer *sender))handler {
+- (UIPinchGestureRecognizer *)ax_addPinchGesture:(void (^)(UIPinchGestureRecognizer *sender))pinch handler:(void (^)(UIPinchGestureRecognizer *sender))handler {
     
     UIPinchGestureRecognizer *gesture = [UIPinchGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     if (pinch) {
         pinch(gesture);
     }
-    
+    return gesture;
 }
 
-- (void)ax_addRotationGesture:(void (^)(UIRotationGestureRecognizer *sender))rotation handler:(void (^)(UIRotationGestureRecognizer *sender))handler {
+- (UIRotationGestureRecognizer *)ax_addRotationGesture:(void (^)(UIRotationGestureRecognizer *sender))rotation handler:(void (^)(UIRotationGestureRecognizer *sender))handler {
     
     UIRotationGestureRecognizer *gesture = [UIRotationGestureRecognizer new];
-    AXBindGestureAndTarget(gesture, AXDefaultTarget);
+    [gesture addTarget:AXTargetWith(self, gesture, handler) action:@selector(handleEvent:)];
     // more setting
     if (rotation) {
         rotation(gesture);
     }
-    
+    return gesture;
+}
+
+// MARK: remove
+
+- (void)ax_removeGesture:(__kindof UIGestureRecognizer *)gesture{
+    removeGesture(self, gesture);
 }
 
 

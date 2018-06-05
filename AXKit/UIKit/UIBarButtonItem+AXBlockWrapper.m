@@ -8,17 +8,12 @@
 
 #import "UIBarButtonItem+AXBlockWrapper.h"
 #import "UIView+AXGestureExtension.h"
+
 @import ObjectiveC.runtime;
 
-static const void *UIBarButtonItemATBlockWrapperKey = &UIBarButtonItemATBlockWrapperKey;
+static const void *UIBarButtonItemAXBlockWrapperKey = &UIBarButtonItemAXBlockWrapperKey;
 
-@interface UIBarButtonItem (BlocksKitPrivate)
-
-- (void)ax_handleAction:(UIBarButtonItem *)sender;
-
-@end
-
-@implementation UIBarButtonItem (ATBlockWrapper)
+@implementation UIBarButtonItem (AXBlockWrapper)
 
 #pragma mark - 静态构造方法
 
@@ -58,67 +53,52 @@ static const void *UIBarButtonItemATBlockWrapperKey = &UIBarButtonItemATBlockWra
 
 #pragma mark - 实例构造方法
 
-
-
-- (void)ax_handleAction:(UIBarButtonItem *)sender
-{
-    void (^block)(id) = objc_getAssociatedObject(self, UIBarButtonItemATBlockWrapperKey);
-    if (block) block(sender);
-}
-
-
-
 - (instancetype)ax_initWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER {
-    self = [self initWithBarButtonSystemItem:systemItem target:self action:@selector(ax_handleAction:)];
-    if (!self) return nil;
-    
-    objc_setAssociatedObject(self, UIBarButtonItemATBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    
+    if (self = [self initWithBarButtonSystemItem:systemItem target:self action:@selector(ax_handleAction:)]) {
+        objc_setAssociatedObject(self, UIBarButtonItemAXBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
     return self;
 }
-
 
 - (instancetype)ax_initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER {
-    self = [self initWithImage:image style:style target:self action:@selector(ax_handleAction:)];
-    if (!self) return nil;
-    
-    objc_setAssociatedObject(self, UIBarButtonItemATBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    
+    if (self = [self initWithImage:image style:style target:self action:@selector(ax_handleAction:)]) {
+        objc_setAssociatedObject(self, UIBarButtonItemAXBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
     return self;
 }
-
-
 
 - (instancetype)ax_initWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER {
-    self = [self initWithImage:image landscapeImagePhone:landscapeImagePhone style:style target:self action:@selector(ax_handleAction:)];
-    if (!self) return nil;
-    
-    objc_setAssociatedObject(self, UIBarButtonItemATBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    
+    if (self = [self initWithImage:image landscapeImagePhone:landscapeImagePhone style:style target:self action:@selector(ax_handleAction:)]) {
+        objc_setAssociatedObject(self, UIBarButtonItemAXBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
     return self;
 }
 
-
 - (instancetype)ax_initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER {
-    self = [self initWithTitle:title style:style target:self action:@selector(ax_handleAction:)];
-    if (!self) return nil;
-    
-    objc_setAssociatedObject(self, UIBarButtonItemATBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    
+    if (self = [self initWithTitle:title style:style target:self action:@selector(ax_handleAction:)]) {
+        objc_setAssociatedObject(self, UIBarButtonItemAXBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
     return self;
 }
 
 - (instancetype)ax_initWithCustomView:(UIView *)view action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER{
-    self = [self initWithCustomView:view];
-    if (!self) {
-        return nil;
-    }
-    [view ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+    if (self = [self initWithCustomView:view]) {
         if (action) {
-            action(self);
+            typeof(self) weakSelf = self;
+            [view ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
+                action(weakSelf);
+            }];
         }
-    }];
+    }
     return self;
 }
+
+// MARK: priv
+
+- (void)ax_handleAction:(UIBarButtonItem *)sender {
+    void (^block)(id) = objc_getAssociatedObject(self, UIBarButtonItemAXBlockWrapperKey);
+    !block?:block(sender);
+}
+
 
 @end

@@ -9,8 +9,6 @@
 #import "UIColor+AXColorPack.h"
 #import "UIColor+AXExtension.h"
 
-static UIColor *_ax_blue2;
-
 @implementation UIColor (AXColorPack)
 
 

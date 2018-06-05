@@ -118,7 +118,7 @@ static inline UIColor *colorWithHexString(NSString *hexStr){
     return nil;
 }
 
-static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
+static inline UIColor *darken(UIColor *color, CGFloat ratio){
     CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
     [color getRed:&red green:&green blue:&blue alpha:&alpha];
     red   = red   * (1 - ratio);
@@ -250,7 +250,7 @@ static inline NSString *hexStringWithAlpha(UIColor *color0){
         if (separatorColor.length) {
             self.separatorColor = colorWithHexString(separatorColor);
         } else {
-            self.separatorColor = darkRatio(self.groupTableViewBackground, 0.08);
+            self.separatorColor = darken(self.groupTableViewBackground, 0.08);
         }
         
     }
@@ -295,7 +295,7 @@ static inline NSString *hexStringWithAlpha(UIColor *color0){
 }
 - (UIColor *)separatorColor{
     if (!_separatorColor) {
-        _separatorColor = darkRatio(self.groupTableViewBackground, 0.08);
+        _separatorColor = darken(self.groupTableViewBackground, 0.08);
     }
     return _separatorColor;
 }

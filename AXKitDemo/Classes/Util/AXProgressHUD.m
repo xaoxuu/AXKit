@@ -95,7 +95,7 @@ static NSTimeInterval static_duration;
     
     
     if (axThemeManager.color.theme.isLightColor) {
-        sLabel.textColor = axThemeManager.color.theme.darkRatio(0.3);
+        sLabel.textColor = axThemeManager.color.theme.darken(0.3);
     }
     
     

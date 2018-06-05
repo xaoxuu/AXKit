@@ -17,28 +17,6 @@ inline UIViewController *UIViewControllerNamed(NSString *name){
 @implementation UIViewController (AXExtension)
 
 
-//- (void)ax_hidesNavBarInRootController:(BOOL)hidden animated:(BOOL)animated{
-//    if (self.navigationController.viewControllers.count == 1) {
-//        // @xaoxuu: root controller
-//        [self.navigationController setNavigationBarHidden:hidden animated:animated];
-//    } else {
-//        // @xaoxuu: not root controller
-//        [self.navigationController setNavigationBarHidden:NO animated:animated];
-//    }
-//}
-//
-//- (void)ax_hidesBottomBarWhenPushed:(BOOL)pushed{
-//    NSArray *arr = self.navigationController.viewControllers;
-//    if (self.navigationController.viewControllers.count == 1) {
-//        // @xaoxuu: root controller
-//        self.hidesBottomBarWhenPushed = NO;
-//    } else {
-//        // @xaoxuu: not root controller
-//        self.hidesBottomBarWhenPushed = pushed;
-//    }
-//}
-
-
 @end
 
 

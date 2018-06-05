@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param handler 处理手势的block
  */
-- (void)ax_addTapGestureHandler:(void (^)(UITapGestureRecognizer *sender))handler;
+- (UITapGestureRecognizer *)ax_addTapGestureHandler:(void (^)(UITapGestureRecognizer *sender))handler;
 
 /**
  添加一个tap手势，并处理
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param tap     tap
  @param handler 处理手势的block
  */
-- (void)ax_addTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler;
+- (UITapGestureRecognizer *)ax_addTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler;
 
 /**
  添加一个tap手势，并处理，附加动画效果
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param scale    动画比例
  @param duration 持续时间
  */
-- (void)ax_addTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
+- (UITapGestureRecognizer *)ax_addTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))tap handler:(void (^)(UITapGestureRecognizer *sender))handler animatedScale:(CGFloat)scale duration:(NSTimeInterval)duration;
 
 /**
  添加一个双击手势，并处理
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param duration  双击间隔时间
  @param handler   处理手势的block
  */
-- (void)ax_addDoubleTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))doubleTap duration:(NSTimeInterval)duration handler:(void (^)(UITapGestureRecognizer *sender))handler;
+- (UITapGestureRecognizer *)ax_addDoubleTapGesture:(nullable void (^)(UITapGestureRecognizer *sender))doubleTap duration:(NSTimeInterval)duration handler:(void (^)(UITapGestureRecognizer *sender))handler;
 
 /**
  添加一个长按手势，并处理
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param longPress 长按手势
  @param handler   处理手势的block
  */
-- (void)ax_addLongPressGesture:(nullable void (^)(UILongPressGestureRecognizer *sender))longPress handler:(void (^)(UILongPressGestureRecognizer *sender))handler;
+- (UILongPressGestureRecognizer *)ax_addLongPressGesture:(nullable void (^)(UILongPressGestureRecognizer *sender))longPress handler:(void (^)(UILongPressGestureRecognizer *sender))handler;
 
 /**
  添加一个轻扫手势，并处理
@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param swipe   轻扫
  @param handler 处理手势的block
  */
-- (void)ax_addSwipeGesture:(nullable void (^)(UISwipeGestureRecognizer *sender))swipe handler:(void (^)(UISwipeGestureRecognizer *sender))handler;
+- (UISwipeGestureRecognizer *)ax_addSwipeGesture:(nullable void (^)(UISwipeGestureRecognizer *sender))swipe handler:(void (^)(UISwipeGestureRecognizer *sender))handler;
 
 /**
  添加一个滑动手势，并处理
@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param pan     滑动
  @param handler 处理手势的block
  */
-- (void)ax_addPanGesture:(nullable void (^)(UIPanGestureRecognizer *sender))pan handler:(void (^)(UIPanGestureRecognizer *sender))handler;
+- (UIPanGestureRecognizer *)ax_addPanGesture:(nullable void (^)(UIPanGestureRecognizer *sender))pan handler:(void (^)(UIPanGestureRecognizer *sender))handler;
 
 /**
  添加一个屏幕边缘滑动手势，并处理
@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param screenEdgePan  屏幕边缘滑动
  @param handler        处理手势的block
  */
-- (void)ax_addScreenEdgePanGesture:(nullable void (^)(UIScreenEdgePanGestureRecognizer *sender))screenEdgePan handler:(void (^)(UIScreenEdgePanGestureRecognizer *sender))handler;
+- (UIScreenEdgePanGestureRecognizer *)ax_addScreenEdgePanGesture:(nullable void (^)(UIScreenEdgePanGestureRecognizer *sender))screenEdgePan handler:(void (^)(UIScreenEdgePanGestureRecognizer *sender))handler;
 
 /**
  添加一个双指缩放手势，并处理
@@ -87,7 +87,7 @@ NS_ASSUME_NONNULL_BEGIN
  sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
  sender.scale = 1;
  */
-- (void)ax_addPinchGesture:(nullable void (^)(UIPinchGestureRecognizer *sender))pinch handler:(void (^)(UIPinchGestureRecognizer *sender))handler;
+- (UIPinchGestureRecognizer *)ax_addPinchGesture:(nullable void (^)(UIPinchGestureRecognizer *sender))pinch handler:(void (^)(UIPinchGestureRecognizer *sender))handler;
 
 /**
  添加一个双指旋转手势，并处理
@@ -98,7 +98,14 @@ NS_ASSUME_NONNULL_BEGIN
  sender.view.transform = CGAffineTransformRotate(sender.view.transform, sender.rotation);
  sender.rotation = 0;
  */
-- (void)ax_addRotationGesture:(nullable void (^)(UIRotationGestureRecognizer *sender))rotation handler:(void (^)(UIRotationGestureRecognizer *sender))handler;
+- (UIRotationGestureRecognizer *)ax_addRotationGesture:(nullable void (^)(UIRotationGestureRecognizer *sender))rotation handler:(void (^)(UIRotationGestureRecognizer *sender))handler;
+
+/**
+ 移除一个手势
+
+ @param gesture 手势对象
+ */
+- (void)ax_removeGesture:(__kindof UIGestureRecognizer *)gesture;
 
 
 @end

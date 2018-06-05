@@ -8,29 +8,36 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 /**
- 更改状态栏背景色
+ 颜色加深
 
  @param color 颜色
+ @param percent 加深比例（0~1）
+ @return 加深之后的颜色
  */
-CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
+CG_EXTERN UIColor *darken(UIColor *color, CGFloat percent);
 
+/**
+ 颜色变浅
 
+ @param color 颜色
+ @param percent 变浅比例（0~1）
+ @return 变浅之后的颜色
+ */
+CG_EXTERN UIColor *lighten(UIColor *color, CGFloat percent);
 
 @interface UIColor (AXExtension)
 
 
 /**
- 颜色变深
+ 颜色变深，默认比例0.48
 
  @return 变深之后的颜色
  */
 - (UIColor *)dark;
 
 /**
- 颜色变浅
+ 颜色变浅，默认比例0.6
 
  @return 变浅之后的颜色
  */
@@ -39,12 +46,12 @@ CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
 /**
  颜色变深，传入参数ratio为比例（0~1）
  */
-- (UIColor *(^)(CGFloat ratio))darkRatio;
+- (UIColor *(^)(CGFloat ratio))darken;
 
 /**
  颜色变浅，传入参数ratio为比例（0~1）
  */
-- (UIColor *(^)(CGFloat ratio))lightRatio;
+- (UIColor *(^)(CGFloat ratio))lighten;
 
 
 /**
@@ -53,14 +60,6 @@ CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
  @return 随机色
  */
 + (UIColor *)randomColor;
-
-/**
- 以HEX创建颜色
-
- @param hex 16进制
- @return UIColor实例
- */
-+ (UIColor *)colorWithHex:(NSUInteger)hex;
 
 /**
  以HEX字符串创建颜色
@@ -80,24 +79,44 @@ CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
 /**
  获取UIColor中的G值
  
- @return R值（0~1）
+ @return G值（0~1）
  */
 - (CGFloat)greenValue;
 
 /**
  获取UIColor中的B值
  
- @return R值（0~1）
+ @return B值（0~1）
  */
 - (CGFloat)blueValue;
 
 /**
  获取UIColor中的Alpha值
  
- @return R值（0~1）
+ @return A值（0~1）
  */
 - (CGFloat)alphaValue;
 
+/**
+ 色相
+
+ @return 色相
+ */
+- (CGFloat)hueValue;
+
+/**
+ 饱和度
+
+ @return 饱和度
+ */
+- (CGFloat)saturationValue;
+
+/**
+ 亮度
+
+ @return 亮度
+ */
+- (CGFloat)brightnessValue;
 
 /**
  获取颜色的HEX字符串（不含Alpha值）
@@ -113,7 +132,12 @@ CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
  */
 - (NSString *)hexStringWithAlpha;
 
+/**
+ 灰度
 
+ @return 灰度
+ */
+- (CGFloat)grayLevel;
 
 /**
  粗略判断颜色是不是浅色调
@@ -121,7 +145,6 @@ CG_EXTERN void AppSetStatusBarBackgroundColor(UIColor *color);
  @return 是不是浅色
  */
 - (BOOL)isLightColor;
-
 
 
 - (UIColor *)adaptive;

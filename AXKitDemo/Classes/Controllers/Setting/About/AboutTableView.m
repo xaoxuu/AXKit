@@ -50,27 +50,25 @@ static id<NSObject> observer;
                 [alert ax_addDefaultActionWithTitle:@"Icon-60" handler:^(UIAlertAction * _Nonnull sender) {
                     icon.image = UIImageNamed(sender.title);
                     [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
-                        AXLogError(error);
+                        AXCachedLogError(error);
                     }];
                 }];
                 [alert ax_addDefaultActionWithTitle:@"Icon-61" handler:^(UIAlertAction * _Nonnull sender) {
                     icon.image = UIImageNamed(sender.title);
                     [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
-                        AXLogError(error);
+                        AXCachedLogError(error);
                     }];
                 }];
                 [alert ax_addDefaultActionWithTitle:@"Icon-62" handler:^(UIAlertAction * _Nonnull sender) {
                     icon.image = UIImageNamed(sender.title);
                     [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
-                        AXLogError(error);
-                        
+                        AXCachedLogError(error);
                     }];
                 }];
                 [alert ax_addDefaultActionWithTitle:@"Icon-63" handler:^(UIAlertAction * _Nonnull sender) {
                     icon.image = UIImageNamed(sender.title);
                     [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
-                        AXLogError(error);
-                        
+                        AXCachedLogError(error);
                     }];
                 }];
                 [alert ax_addCancelAction];

@@ -72,7 +72,7 @@
 - (void)reloadDataSourceAndRefreshTableView{
     self.header.model = self.theme;
     if (self.theme.color.theme) {
-        self.backgroundColor = self.theme.color.theme.lightRatio(0.7);
+        self.backgroundColor = self.theme.color.theme.lighten(0.7);
     }
     [super reloadDataSourceAndRefreshTableView];
 }

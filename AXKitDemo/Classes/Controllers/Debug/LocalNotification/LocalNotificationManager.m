@@ -34,7 +34,7 @@ static inline void pushNotification(UNNotificationTrigger *trigger, void (^notif
     UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:content.body content:content trigger:trigger];
     
     [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-        AXLogError(error);
+        AXCachedLogError(error);
     }];
 }
 

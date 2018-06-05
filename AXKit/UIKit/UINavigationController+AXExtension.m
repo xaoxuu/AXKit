@@ -22,7 +22,6 @@
     }];
 }
 
-
 - (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion failure:(void (^)(NSError *error))failure{
     UIViewController *vc = [[NSClassFromString(vcName) class] new];
     if (vc) {
@@ -34,13 +33,12 @@
         NSError *error = [NSError axkit_errorWithCode:AXKitErrorCodePushNavVC reason:^NSString *{
             return [NSString stringWithFormat:@"The targetVC named: \'%@\' not found.\n",vcName];
         }];
-        AXLogError(error);
+        AXCachedLogError(error);
         if (failure && error) {
             failure(error);
         }
     }
 }
-
 
 - (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index animated:(BOOL)animated{
     NSArray *vcs = self.viewControllers;

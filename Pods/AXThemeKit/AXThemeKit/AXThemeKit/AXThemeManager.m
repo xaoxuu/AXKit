@@ -53,7 +53,7 @@ static inline BOOL isLightColor(UIColor *color){
         return NO;
     }
 }
-static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
+static inline UIColor *darken(UIColor *color, CGFloat ratio){
     CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
     [color getRed:&red green:&green blue:&blue alpha:&alpha];
     red   = red   * (1 - ratio);
@@ -226,11 +226,11 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
     UIFont *titleFont = [UIFont fontWithName:axThemeManager.font.name size:18] ?: [UIFont systemFontOfSize:18];
     UIFont *largeTitleFont = [UIFont fontWithName:axThemeManager.font.name size:32] ?: [UIFont systemFontOfSize:32];
     if (isLightColor(self.color.theme)) {
-        navigationBar.tintColor = darkRatio(self.color.theme, 0.7);
-        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:darkRatio(self.color.theme, 0.7), NSFontAttributeName:titleFont};
+        navigationBar.tintColor = darken(self.color.theme, 0.7);
+        navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:darken(self.color.theme, 0.7), NSFontAttributeName:titleFont};
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:darkRatio(self.color.theme, 0.7), NSFontAttributeName:largeTitleFont};
+            navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName:darken(self.color.theme, 0.7), NSFontAttributeName:largeTitleFont};
         }
     } else {
         navigationBar.tintColor = [UIColor whiteColor];
@@ -251,7 +251,7 @@ static inline UIColor *darkRatio(UIColor *color, CGFloat ratio){
     tabBar.translucent = NO;
     tabBar.barTintColor = [UIColor whiteColor];
     if (isLightColor(self.color.theme)) {
-        tabBar.tintColor = darkRatio(self.color.theme, 0.2);
+        tabBar.tintColor = darken(self.color.theme, 0.2);
     } else {
         tabBar.tintColor = axThemeManager.color.theme;
     }

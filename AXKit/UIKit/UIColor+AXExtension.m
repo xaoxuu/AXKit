@@ -8,15 +8,6 @@
 
 #import "UIColor+AXExtension.h"
 
-
-inline void AppSetStatusBarBackgroundColor(UIColor *color){
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]){
-        statusBar.backgroundColor = color;
-    }
-}
-
-
 static inline NSUInteger hexStrToInt(NSString *str) {
     uint32_t result = 0;
     sscanf([str UTF8String], "%X", &result);
@@ -57,109 +48,86 @@ static BOOL hexStrToRGBA(NSString *str,
 }
 
 
-static CGFloat static_color_ratio = 0.6;
+static UIColor *randomColor(){
+    return [UIColor colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0];
+}
+static CGFloat safePercentValue(CGFloat p){
+    return MAX(MIN(p, 1), 0);
+}
+inline UIColor *darken(UIColor *color, CGFloat percent){
+    CGFloat p = safePercentValue(percent);
+    CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
+    red   = red   * (1 - p);
+    green = green * (1 - p);
+    blue  = blue  * (1 - p);
+    return [UIColor colorWithRed:red green:green blue:blue alpha:percent];
+}
+inline UIColor *lighten(UIColor *color, CGFloat percent){
+    CGFloat p = safePercentValue(percent);
+    CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
+    red   = p + red   * (1 - p);
+    green = p + green * (1 - p);
+    blue  = p + blue  * (1 - p);
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
+static inline NSString *hexStringWithAlpha(UIColor *color, BOOL useAlpha){
+    CGColorRef colorRef = color.CGColor;
+    size_t count = CGColorGetNumberOfComponents(colorRef);
+    const CGFloat *components = CGColorGetComponents(colorRef);
+    static NSString *stringFormat = @"%02x%02x%02x";
+    NSString *hex = nil;
+    if (count == 2) {
+        NSUInteger white = (NSUInteger)(components[0] * 255.0f);
+        hex = [NSString stringWithFormat:stringFormat, white, white, white];
+    } else if (count == 4) {
+        hex = [NSString stringWithFormat:stringFormat,
+               (NSUInteger)(components[0] * 255.0f),
+               (NSUInteger)(components[1] * 255.0f),
+               (NSUInteger)(components[2] * 255.0f)];
+    }
+    
+    if (hex && useAlpha) {
+        hex = [hex stringByAppendingFormat:@"%02lx",
+               (unsigned long)(color.alphaValue * 255.0 + 0.5)];
+    }
+    return hex;
+}
+static CGFloat grayLevel(UIColor *color){
+    CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
+    [color getRed:&red green:&green blue:&blue alpha:&alpha];
+    return red * 0.299 + green * 0.587 + blue * 0.114;
+}
 
 @implementation UIColor (AXExtension)
 
 
 - (UIColor *)dark{
-    CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
-    [self getRed:&red green:&green blue:&blue alpha:&alpha];
-    red   = red * (1-static_color_ratio*0.8);
-    green = green * (1-static_color_ratio*0.8);
-    blue  = blue * (1-static_color_ratio*0.8);
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    return darken(self, 0.48);
 }
-- (UIColor *(^)(CGFloat ratio))darkRatio{
+- (UIColor *(^)(CGFloat ratio))darken{
     return ^(CGFloat ratio){
-        CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
-        [self getRed:&red green:&green blue:&blue alpha:&alpha];
-        red   = red   * (1 - ratio);
-        green = green * (1 - ratio);
-        blue  = blue  * (1 - ratio);
-        return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+        return darken(self, ratio);
     };
 }
 
 - (UIColor *)light{
-    CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
-    [self getRed:&red green:&green blue:&blue alpha:&alpha];
-    red   = static_color_ratio + red * (1-static_color_ratio);
-    green = static_color_ratio + green * (1-static_color_ratio);
-    blue  = static_color_ratio + blue * (1-static_color_ratio);
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    return lighten(self, 0.6);
 }
-- (UIColor *(^)(CGFloat ratio))lightRatio{
+- (UIColor *(^)(CGFloat ratio))lighten{
     return ^(CGFloat ratio){
-        CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
-        [self getRed:&red green:&green blue:&blue alpha:&alpha];
-        red   = ratio + red   * (1 - ratio);
-        green = ratio + green * (1 - ratio);
-        blue  = ratio + blue  * (1 - ratio);
-        return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+        return lighten(self, ratio);
     };
 }
 
 + (UIColor *)randomColor{
-    return [UIColor colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0];
+    return randomColor();
 }
 
 
-// color with hex
-+ (UIColor *)colorWithHex:(NSUInteger)hex{
-    return [UIColor
-            colorWithRed:((CGFloat)((hex & 0xFF0000) >> 16))/ 255.0
-            green:       ((CGFloat)((hex & 0xFF00) >> 8))   / 255.0
-            blue:        ((CGFloat)(hex & 0xFF))            / 255.0
-            alpha:1.0];
-}
 // color with hex string
-//+ (UIColor *)colorWithHexString:(NSString *)hexStr{
-//    float red = 0.0,green = 0.0,blue = 0.0,alpha = 1.0;
-//    if ([hexStr hasPrefix:@"#"]) {
-//        hexStr = [hexStr substringFromIndex:1];
-//        NSScanner *scanner = [NSScanner scannerWithString:hexStr];
-//        unsigned long long hexValue = 0;
-//        if ([scanner scanHexLongLong:&hexValue]) {
-//            switch (hexStr.length) {
-//                case 3:
-//                    red = ((hexValue & 0xF00) >> 8) / 15.0;
-//                    green = ((hexValue & 0x0F0) >> 4) / 15.0;
-//                    blue = (hexValue & 0x00F) / 15.0;
-//                    break;
-//                case 4:
-//                    red = ((hexValue & 0xF000) >> 12) / 15.0;
-//                    green = ((hexValue & 0x0F00) >> 8) / 15.0;
-//                    blue = ((hexValue & 0x00F0) >> 4) / 15.0;
-//                    alpha = (hexValue & 0x000F) / 15.0;
-//                    break;
-//                case 6:
-//                    red = ((hexValue & 0xFF0000) >> 16) / 255.0;
-//                    green = ((hexValue & 0x00FF00) >> 8) / 255.0;
-//                    blue = (hexValue & 0x0000FF) / 255.0;
-//                    break;
-//                case 8:
-//                    red = ((hexValue & 0xFF000000) >> 24) / 255.0;
-//                    green = ((hexValue & 0x00FF0000) >> 16) / 255.0;
-//                    blue = ((hexValue & 0x0000FF00) >> 8) / 255.0;
-//                    alpha = (hexValue & 0x000000FF) / 255.0;
-//                    break;
-//                default:
-//                    NSLog(
-//                          @"🔴func:%s :Invalid RGB string: '%@', number of characters after '#' should "@"be " @"either 3, 4, 6 or 8", __func__ ,
-//                          hexStr);
-//            }
-//        } else {
-//            NSLog(@"🔴func:%s Scan hex error", __func__);
-//        }
-//    } else {
-////        NSLog(@"🔴func:%s Invalid RGB string: '%@', missing '#' as prefix", __func__, hexStr);
-//        return [self colorWithHexString:[NSString stringWithFormat:@"#%@",hexStr]];
-//    }
-//
-//    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-//}
-
 + (instancetype)colorWithHexString:(NSString *)hexStr {
     CGFloat r, g, b, a;
     if (hexStrToRGBA(hexStr, &r, &g, &b, &a)) {
@@ -189,59 +157,45 @@ static CGFloat static_color_ratio = 0.6;
     return alpha;
 }
 
+- (CGFloat)hueValue {
+    CGFloat h = 0, s, b, a;
+    [self getHue:&h saturation:&s brightness:&b alpha:&a];
+    return h;
+}
+
+- (CGFloat)saturationValue {
+    CGFloat h, s = 0, b, a;
+    [self getHue:&h saturation:&s brightness:&b alpha:&a];
+    return s;
+}
+
+- (CGFloat)brightnessValue {
+    CGFloat h, s, b = 0, a;
+    [self getHue:&h saturation:&s brightness:&b alpha:&a];
+    return b;
+}
 
 - (NSString *)hexString {
-    return [self hexStringWithAlpha:NO];
+    return hexStringWithAlpha(self, NO);
 }
 
 - (NSString *)hexStringWithAlpha {
-    return [self hexStringWithAlpha:YES];
+    return hexStringWithAlpha(self, YES);
 }
-
-- (NSString *)hexStringWithAlpha:(BOOL)withAlpha {
-    CGColorRef color = self.CGColor;
-    size_t count = CGColorGetNumberOfComponents(color);
-    const CGFloat *components = CGColorGetComponents(color);
-    static NSString *stringFormat = @"%02x%02x%02x";
-    NSString *hex = nil;
-    if (count == 2) {
-        NSUInteger white = (NSUInteger)(components[0] * 255.0f);
-        hex = [NSString stringWithFormat:stringFormat, white, white, white];
-    } else if (count == 4) {
-        hex = [NSString stringWithFormat:stringFormat,
-               (NSUInteger)(components[0] * 255.0f),
-               (NSUInteger)(components[1] * 255.0f),
-               (NSUInteger)(components[2] * 255.0f)];
-    }
-    
-    if (hex && withAlpha) {
-        hex = [hex stringByAppendingFormat:@"%02lx",
-               (unsigned long)(CGColorGetAlpha(self.CGColor) * 255.0 + 0.5)];
-    }
-    return hex;
-}
-
 
 - (CGFloat)grayLevel{
-    CGFloat r = self.redValue;
-    CGFloat g = self.greenValue;
-    CGFloat b = self.blueValue;
-    
-    return r * 0.299 + g * 0.587 + b * 0.114;
+    return grayLevel(self);
 }
 
 - (BOOL)isLightColor{
-    
-    if (self.grayLevel >= 192.0/255.0) {
+    if (grayLevel(self) >= 192.0/255.0) {
         // @xaoxuu: light color
         return YES;
     } else {
         // @xaoxuu: dark color
         return NO;
     }
-    
 }
-
 
 - (UIColor *)adaptive{
     if (self.isLightColor) {
