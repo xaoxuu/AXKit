@@ -27,9 +27,11 @@ static NSString *themeCachePath(NSString *email, NSString *name){
         // @xaoxuu: in background queue
         NSString *urlString = [NSString stringWithFormat:@"%@/%@.json", kBaseURLStringForApp, name];
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
-            [jsonCachePath(name).saveJson(response) error:^(NSError * _Nullable error) {
-                AXCachedLogError(error);
-            }];
+            if (response) {
+                [jsonCachePath(name).saveJson(response) error:^(NSError * _Nullable error) {
+                    AXCachedLogError(error);
+                }];
+            }
         } fail:^(NSError *error) {
             AXCachedLogError(error);
         }];
@@ -58,12 +60,14 @@ static NSString *themeCachePath(NSString *email, NSString *name){
         // @xaoxuu: in background queue
         NSString *urlString = [NSString stringWithFormat:@"%@/index.json", kBaseURLStringForTheme];
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
-            if (callback) {
-                callback([ThemeCollectionModel modelWithDict:response]);
+            if (response) {
+                if (callback) {
+                    callback([ThemeCollectionModel modelWithDict:response]);
+                }
+                [themeListCachePath().saveJson(response) error:^(NSError * _Nullable error) {
+                    AXCachedLogError(error);
+                }];
             }
-            [themeListCachePath().saveJson(data) error:^(NSError * _Nullable error) {
-                AXCachedLogError(error);
-            }];
         } fail:^(NSError *error) {
             AXCachedLogError(error);
         }];
@@ -78,11 +82,13 @@ static NSString *themeCachePath(NSString *email, NSString *name){
 - (void)downloadTheme:(AXThemeModel *)model completion:(void (^)(AXThemeModel *theme))completion{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // @xaoxuu: in background queue
-        NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@.json",BaseURLForTheme, model.info.email, model.info.name];
+        NSString *urlString = [[NSString stringWithFormat:@"%@/%@/%@.json",BaseURLForTheme, model.info.email, model.info.name] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [NetworkManager getURLString:urlString completion:^(NSData * _Nullable data, id response) {
-            [themeCachePath(model.info.email, model.info.name).saveJson(data) error:^(NSError * _Nullable error) {
-                AXCachedLogError(error);
-            }];
+            if (response) {
+                [themeCachePath(model.info.email, model.info.name).saveJson(data) error:^(NSError * _Nullable error) {
+                    AXCachedLogError(error);
+                }];
+            }
             if (completion) {
                 completion(model);
             }

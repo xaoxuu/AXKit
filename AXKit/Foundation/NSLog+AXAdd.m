@@ -170,14 +170,14 @@ static inline NSString *logPath(LogTypeString *type){
     return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 }
 
-+ (void)writeAppLogWithFunc:(const char *)func input:(NSObject *)input{
-    return [self writeLogWithType:app func:func input:input];
++ (void)writeAppLogWithFunc:(const char *)func line:(int)line input:(NSObject *)input{
+    return [self writeLogWithType:app func:func line:line input:input];
 }
-+ (void)writeDataLogWithFunc:(const char *)func input:(NSObject *)input{
-    return [self writeLogWithType:data func:func input:input];
++ (void)writeDataLogWithFunc:(const char *)func line:(int)line input:(NSObject *)input{
+    return [self writeLogWithType:data func:func line:line input:input];
 }
-+ (void)writeErrorLogWithFunc:(const char *)func input:(NSObject *)input{
-    return [self writeLogWithType:error func:func input:input];
++ (void)writeErrorLogWithFunc:(const char *)func line:(int)line input:(NSObject *)input{
+    return [self writeLogWithType:error func:func line:line input:input];
 }
 /**
  写日志（每次启动保存一份日志文件，文件名为启动时间）
@@ -186,13 +186,13 @@ static inline NSString *logPath(LogTypeString *type){
  @param func __FUNCTION__
  @param input 输入obj
  */
-+ (void)writeLogWithType:(LogTypeString *)type func:(const char *)func input:(nullable NSObject *)input{
++ (void)writeLogWithType:(LogTypeString *)type func:(const char *)func line:(int)line input:(nullable NSObject *)input{
     if (!input) {
         return;
     }
     dispatch_async(logQueue(), ^{
         // @xaoxuu: in log queue
-        NSString *str = [NSString stringWithFormat:@"-> [%@] func:%@\n%@\n\n", getCurrentTimeString(), [NSString stringWithFormat:@"%s", func], input.description];
+        NSString *str = [NSString stringWithFormat:@"-> [%@] func:%@ line:%d\n%@\n\n", getCurrentTimeString(), [NSString stringWithFormat:@"%s", func], line, input.description];
 #ifdef DEBUG
         NSLog(@"%@",str);
 #endif

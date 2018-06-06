@@ -109,19 +109,19 @@
 /**
  保存日志文件【2018-01-12-传入参数1.log】
  */
-#define AXCachedLogWithType(LogTypeString, NSObject) [AXCachedLog writeLogWithType:LogTypeString func:__FUNCTION__ input:NSObject]
+#define AXCachedLogWithType(LogTypeString, NSObject) [AXCachedLog writeLogWithType:LogTypeString func:__FUNCTION__ line:__LINE__ input:NSObject]
 /**
  保存普通日志文件【2018-01-12-app.log】
  */
-#define AXCachedLogOBJ(NSObject) [AXCachedLog writeAppLogWithFunc:__FUNCTION__ input:NSObject]
+#define AXCachedLogOBJ(NSObject) [AXCachedLog writeAppLogWithFunc:__FUNCTION__ line:__LINE__ input:NSObject]
 /**
  保存数据类日志文件【2018-01-12-data.log】
  */
-#define AXCachedLogData(NSObject) [AXCachedLog writeDataLogWithFunc:__FUNCTION__ input:NSObject]
+#define AXCachedLogData(NSObject) [AXCachedLog writeDataLogWithFunc:__FUNCTION__ line:__LINE__ input:NSObject]
 /**
  保存Error类日志文件【2018-01-12-error.log】
  */
-#define AXCachedLogError(NSObject) [AXCachedLog writeErrorLogWithFunc:__FUNCTION__ input:NSObject]
+#define AXCachedLogError(NSObject) [AXCachedLog writeErrorLogWithFunc:__FUNCTION__ line:__LINE__ input:NSObject]
 
 
 /**
@@ -172,7 +172,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param func __FUNCTION__
  @param input 输入obj
  */
-+ (void)writeAppLogWithFunc:(const char *)func input:(nullable NSObject *)input;
++ (void)writeAppLogWithFunc:(const char *)func line:(int)line input:(nullable NSObject *)input;
 
 /**
  写日志（每次启动保存一份日志文件，文件名为启动时间）
@@ -181,7 +181,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param func __FUNCTION__
  @param input 输入obj
  */
-+ (void)writeDataLogWithFunc:(const char *)func input:(nullable NSObject *)input;
++ (void)writeDataLogWithFunc:(const char *)func line:(int)line input:(nullable NSObject *)input;
 
 /**
  写日志（每次启动保存一份日志文件，文件名为启动时间）
@@ -190,7 +190,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param func __FUNCTION__
  @param input 输入obj
  */
-+ (void)writeErrorLogWithFunc:(const char *)func input:(nullable NSObject *)input;
++ (void)writeErrorLogWithFunc:(const char *)func line:(int)line input:(nullable NSObject *)input;
 
 /**
  写日志（每次启动保存一份日志文件，文件名为启动时间）
@@ -200,7 +200,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param func __FUNCTION__
  @param input 输入obj
  */
-+ (void)writeLogWithType:(LogTypeString *)type func:(const char *)func input:(nullable NSObject *)input;
++ (void)writeLogWithType:(LogTypeString *)type func:(const char *)func line:(int)line input:(nullable NSObject *)input;
 
 @end
 NS_ASSUME_NONNULL_END
