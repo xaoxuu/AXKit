@@ -1,9 +1,10 @@
 Pod::Spec.new do |s|
 
+# pod lib lint
 # pod trunk push AXKit.podspec
 
   s.name         = "AXKit"
-  s.version      = "0.3.1"
+  s.version      = "0.3.2"
   s.summary      = "这是一个综合型开发工具包，包含对系统类的功能扩展和一些常用控件的封装。"
   s.homepage     = "http://xaoxuu.com"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
