@@ -135,7 +135,7 @@ static CGFloat grayLevel(UIColor *color){
     }
     return nil;
 }
-+ (UIColor *(^)(NSString *))colorNamed{
++ (UIColor *(^)(NSString *))named{
     return ^UIColor *(NSString *hex){
         return [self colorWithHexString:hex];
     };

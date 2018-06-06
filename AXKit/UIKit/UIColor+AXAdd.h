@@ -74,7 +74,7 @@ CG_EXTERN UIColor *lighten(UIColor *color, CGFloat percent);
  
  @return UIColor实例
  */
-+ (UIColor *(^)(NSString *))colorNamed;
++ (UIColor *(^)(NSString *))named;
 
 /**
  获取UIColor中的R值
