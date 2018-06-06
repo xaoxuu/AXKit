@@ -89,7 +89,7 @@ static inline UIViewController *sUIViewControllerNamed(NSString *name){
 
 - (NSString *)configurationFilePath{
     NSString *path;
-    path = [[NSBundle bundleForClass:AXTabBarController.class] pathForResource:NSStringFromClass(AXTabBarController.class) ofType:@"json"];
+    path = [[NSBundle bundleForClass:self.class] pathForResource:NSStringFromClass(self.class) ofType:@"json"];
     return path;
 }
 

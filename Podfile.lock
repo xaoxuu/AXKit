@@ -3,7 +3,7 @@ PODS:
   - AXDrawerKit (0.0.1)
   - AXFeedbackKit (0.0.1)
   - AXStatusKit (0.0.1)
-  - AXTabKit (0.0.2)
+  - AXTabKit (0.0.3)
   - AXTableKit (0.0.3)
   - AXThemeKit (0.0.3)
   - FMDB (2.7.2):
@@ -37,7 +37,7 @@ SPEC CHECKSUMS:
   AXDrawerKit: e4f40d560cb8c3054fb84cc1561f5537494eec0a
   AXFeedbackKit: 3b86e58489edd25208b804533a82cee27a957257
   AXStatusKit: 55b8e22a5e6f0ea9c8ca2c8dc99c72270c180447
-  AXTabKit: 33ae7e69f340d94982b72a2f17181a0adbce3719
+  AXTabKit: 1746b6882d506cb6e99d65a1554a0df97b86c697
   AXTableKit: db37c30dbe9edee260d274a9f93411b675665371
   AXThemeKit: abb1c715efa4464e2d48e04cd7127f3c5a139dfa
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
