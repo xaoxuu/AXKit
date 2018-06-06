@@ -10,7 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 #pragma mark - 从指定CGPoint获取UIColor
 
 #pragma mark 推荐用于圆形取色板
@@ -133,11 +132,6 @@ CG_EXTERN void UIImageViewGetRGBAWithPoint(UIImageView *imageView, CGPoint point
  @param point 指定坐标点
  */
 - (void)ax_getRed:(nullable CGFloat *)red green:(nullable CGFloat *)green blue:(nullable CGFloat *)blue alpha:(nullable CGFloat *)alpha withPoint:(CGPoint)point;
-
-
-
-
-
 
 @end
 

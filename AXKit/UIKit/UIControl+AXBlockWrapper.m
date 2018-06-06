@@ -39,21 +39,6 @@ static const void *UIControlAXBlockWrapperKey = &UIControlAXBlockWrapperKey;
     [AXEventTarget removeControlEvents:controlEvents forControl:self];
 }
 
-- (NSUInteger)ax_hasEventHandlersForControlEvents:(UIControlEvents)controlEvents{
-    // get events
-    NSMutableDictionary *events = objc_getAssociatedObject(self, UIControlAXBlockWrapperKey);
-    if (!events) {
-        events = [NSMutableDictionary dictionary];
-        objc_setAssociatedObject(self, UIControlAXBlockWrapperKey, events, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    // get handlers from events
-    NSNumber *key = @(controlEvents);
-    NSSet *handlers = events[key];
-    
-    return handlers.count;
-    
-}
-
 @end
 
 

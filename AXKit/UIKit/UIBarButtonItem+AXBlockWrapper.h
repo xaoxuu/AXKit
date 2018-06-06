@@ -100,8 +100,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param action 响应的事件
  @return item实例
  */
-- (instancetype)ax_initWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER;
-
+- (instancetype)ax_initWithSystemItem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER;
 
 /**
  创建一个自定义baritem

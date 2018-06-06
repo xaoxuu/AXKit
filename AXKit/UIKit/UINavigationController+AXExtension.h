@@ -30,7 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion failure:(void (^)(NSError *error))failure;
 
-
 /**
  pop到指定viewController
 

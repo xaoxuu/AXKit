@@ -10,47 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/** Block control event handling for UIControl.
- 
- Includes code by the following:
- 
- - [Kevin O'Neill](https://github.com/kevinoneill)
- - [Zach Waldowski](https://github.com/zwaldowski)
- 
- @warning UIControl is only available on a platform with UIKit.
- */
 #pragma mark - UIControl
 @interface UIControl (AXBlockWrapper)
 
-///-----------------------------------
-/// @name Block event handling
-///-----------------------------------
+/**
+ 添加一个事件
 
-/** Adds a block for a particular event to an internal dispatch table.
- 
- @param handler A block representing an action message, with an argument for the sender.
- @param controlEvents A bitmask specifying the control events for which the action message is sent.
- @see removeEventHandlersForControlEvents:
+ @param handler 处理事件的block
+ @param controlEvents 事件
  */
 - (void)ax_addEventHandler:(void (^)(__kindof UIControl *sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
-/** Removes all control event blocks associated with the given mask of control
- * events.
- *
- * Do note that, like @c UIControl, this method will not decompose control
- * events; thus, only a handler matching an exact given bitmask will be removed.
- *
- * @param controlEvents A bitmask specifying the control events for which the block will be removed.
- * @see addEventHandler:forControlEvents:
+/**
+ 移除一个事件
+
+ @param controlEvents 事件
  */
 - (void)ax_removeEventHandlersForControlEvents:(UIControlEvents)controlEvents;
-
-/** Checks to see if the control has any blocks for a particular event combination.
- @param controlEvents A bitmask specifying the control events for which to check for blocks.
- @see addEventHandler:forControlEvents:
- @return Returns YES if there are blocks for these control events, NO otherwise.
- */
-- (NSUInteger)ax_hasEventHandlersForControlEvents:(UIControlEvents)controlEvents;
 
 @end
 
@@ -58,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIButton (AXBlockWrapper)
 
 /**
- 添加一个任意事件
+ 添加一个事件
 
  @param handler       处理事件的block
  @param controlEvents 事件

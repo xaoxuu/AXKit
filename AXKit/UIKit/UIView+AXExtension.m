@@ -44,7 +44,7 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }];
 }
 
-- (void)ax_allSubview:(Class)subClass action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_allSubviews:(Class)subClass action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
             if (!subClass || [subview isKindOfClass:subClass]) {
@@ -54,28 +54,28 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }];
 }
 
-- (void)ax_allLabelInvokeAction:(void (^)(__kindof UILabel *label))action {
-    [self ax_allSubview:[UILabel class] action:action];
+- (void)ax_allLabelsInvokeAction:(void (^)(__kindof UILabel *label))action {
+    [self ax_allSubviews:[UILabel class] action:action];
 }
 
-- (void)ax_allTextFieldInvokeAction:(void (^)(__kindof UITextField *textField))action {
-    [self ax_allSubview:[UITextField class] action:action];
+- (void)ax_allTextFieldsInvokeAction:(void (^)(__kindof UITextField *textField))action {
+    [self ax_allSubviews:[UITextField class] action:action];
 }
 
-- (void)ax_allTextViewInvokeAction:(void (^)(__kindof UITextView *textView))action {
-    [self ax_allSubview:[UITextView class] action:action];
+- (void)ax_allTextViewsInvokeAction:(void (^)(__kindof UITextView *textView))action {
+    [self ax_allSubviews:[UITextView class] action:action];
 }
 
-- (void)ax_allButtonInvokeAction:(void (^)(__kindof UIButton *button))action {
-    [self ax_allSubview:[UIButton class] action:action];
+- (void)ax_allButtonsInvokeAction:(void (^)(__kindof UIButton *button))action {
+    [self ax_allSubviews:[UIButton class] action:action];
 }
 
-- (void)ax_allImageViewInvokeAction:(void (^)(__kindof UIImageView *imageView))action {
-    [self ax_allSubview:[UIImageView class] action:action];
+- (void)ax_allImageViewsInvokeAction:(void (^)(__kindof UIImageView *imageView))action {
+    [self ax_allSubviews:[UIImageView class] action:action];
 }
 
 
-- (void)ax_allSubviewWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_allSubviewsWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
             if (AXNumberContainedInRange(@(subview.tag), @(tagRange.minValue), @(tagRange.maxValue))) {
@@ -85,7 +85,7 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }];
 }
 
-- (void)ax_allSubviewWithTag:(NSInteger)tag action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_allSubviewsWithTag:(NSInteger)tag action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
             if (subview.tag == tag) {
@@ -106,12 +106,6 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     UIView *main = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     return [self.superview convertRect:self.frame toView:main];
 }
-
-
-- (void)ax_fillWithRandomColor{
-    self.backgroundColor = [UIColor colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0];
-}
-
 
 @end
 

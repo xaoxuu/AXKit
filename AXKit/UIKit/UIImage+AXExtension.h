@@ -194,7 +194,6 @@ CG_EXTERN UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize 
  */
 - (UIImage *)ax_roundedImage;
 
-
 /**
  毛玻璃效果
 

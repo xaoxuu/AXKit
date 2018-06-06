@@ -23,23 +23,14 @@
  - LayerShadowCenterHeavy: 适用于深色的按钮、图片等控件
  */
 typedef NS_ENUM(NSUInteger,LayerShadow) {
-    
     LayerShadowNone,
-    
     LayerShadowDownLight,
-    
     LayerShadowDownNormal,
-    
     LayerShadowDownFloat,
-    
     LayerShadowUpLight,
-    
     LayerShadowUpNormal,
-    
     LayerShadowCenterLight,
-    
     LayerShadowCenterNormal,
-    
     LayerShadowCenterHeavy,
 };
 
@@ -64,8 +55,6 @@ CG_EXTERN CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadiu
  剪裁成圆形（适用用于头像）
  */
 - (void)ax_maskToCircle;
-
-
 
 #pragma mark - shadow
 

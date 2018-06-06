@@ -35,7 +35,7 @@ static const void *UIBarButtonItemAXBlockWrapperKey = &UIBarButtonItemAXBlockWra
 #pragma mark 普通
 
 + (instancetype)ax_itemWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action {
-    return [[self alloc] ax_initWithSystem:systemItem action:action];
+    return [[self alloc] ax_initWithSystemItem:systemItem action:action];
 }
 
 + (instancetype)ax_itemWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style action:(void (^)(UIBarButtonItem *sender))action {
@@ -53,7 +53,7 @@ static const void *UIBarButtonItemAXBlockWrapperKey = &UIBarButtonItemAXBlockWra
 
 #pragma mark - 实例构造方法
 
-- (instancetype)ax_initWithSystem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER {
+- (instancetype)ax_initWithSystemItem:(UIBarButtonSystemItem)systemItem action:(void (^)(UIBarButtonItem *sender))action AX_INITIALIZER {
     if (self = [self initWithBarButtonSystemItem:systemItem target:self action:@selector(ax_handleAction:)]) {
         objc_setAssociatedObject(self, UIBarButtonItemAXBlockWrapperKey, action, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }

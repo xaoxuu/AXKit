@@ -65,7 +65,7 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  @param subClass 指定范围（属于哪个类的子视图，传入nil时代表所有子视图）
  @param action   子视图所执行的代码块
  */
-- (void)ax_allSubview:(nullable Class)subClass action:(void (^)(__kindof UIView *subview))action;
+- (void)ax_allSubviews:(nullable Class)subClass action:(void (^)(__kindof UIView *subview))action;
 
 
 /**
@@ -73,37 +73,35 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 
  @param action 要执行的代码
  */
-- (void)ax_allLabelInvokeAction:(void (^)(__kindof UILabel *label))action;
+- (void)ax_allLabelsInvokeAction:(void (^)(__kindof UILabel *label))action;
 
 /**
  让每个UITextField执行一段代码
  
  @param action 要执行的代码
  */
-- (void)ax_allTextFieldInvokeAction:(void (^)(__kindof UITextField *textField))action;
+- (void)ax_allTextFieldsInvokeAction:(void (^)(__kindof UITextField *textField))action;
 
 /**
  让每个UITextView执行一段代码
  
  @param action 要执行的代码
  */
-- (void)ax_allTextViewInvokeAction:(void (^)(__kindof UITextView *textView))action;
+- (void)ax_allTextViewsInvokeAction:(void (^)(__kindof UITextView *textView))action;
 
 /**
  让每个UIButton执行一段代码
  
  @param action 要执行的代码
  */
-- (void)ax_allButtonInvokeAction:(void (^)(__kindof UIButton *button))action;
+- (void)ax_allButtonsInvokeAction:(void (^)(__kindof UIButton *button))action;
 
 /**
  让每个UIImageView执行一段代码
  
  @param action 要执行的代码
  */
-- (void)ax_allImageViewInvokeAction:(void (^)(__kindof UIImageView *imageView))action;
-
-
+- (void)ax_allImageViewsInvokeAction:(void (^)(__kindof UIImageView *imageView))action;
 
 /**
  让每个tag在指定范围的子视图执行一段代码
@@ -111,7 +109,7 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  @param tagRange 指定tag取值范围
  @param action 要执行的代码
  */
-- (void)ax_allSubviewWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action;
+- (void)ax_allSubviewsWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action;
 
 /**
  让每个tag等于某个值的子视图执行一段代码
@@ -119,8 +117,7 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  @param tag 指定tag值
  @param action 要执行的代码
  */
-- (void)ax_allSubviewWithTag:(NSInteger)tag action:(void (^)(__kindof UIView *subview))action;
-
+- (void)ax_allSubviewsWithTag:(NSInteger)tag action:(void (^)(__kindof UIView *subview))action;
 
 /**
  圆角view
@@ -131,20 +128,12 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  */
 + (instancetype)ax_roundedViewWithFrame:(CGRect)rect;
 
-
 /**
  view在screen中的frame
 
  @return view在screen中的frame
  */
 - (CGRect)frameInScreen;
-
-
-/**
- 填充随机色（多用于项目初期调试）
- */
-- (void)ax_fillWithRandomColor;
-
 
 @end
 
