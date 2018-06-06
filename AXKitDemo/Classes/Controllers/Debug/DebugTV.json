@@ -132,10 +132,10 @@
                     "target":"ResizeableImageVC",
                 },
                 {
-                    "title":"Error & Help",
+                    "title":"PageVC",
                     "detail":"",
                     "cmd":"",
-                    "target":"error",
+                    "target":"PageVC",
                 }
             ]
         },

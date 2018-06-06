@@ -8,6 +8,7 @@
 
 #import "DebugTV.h"
 #import <AXCameraKit/AXCameraKit.h>
+#import "PageVC.h"
 
 @implementation DebugTV
 
@@ -42,12 +43,10 @@
         [self.controller presentViewController:vc animated:YES completion:^{
             
         }];
-    } else if ([model.target isEqualToString:@"error"]) {
-        [NSUserDefaults ax_readStringForKey:@"123" completion:^(NSString * _Nonnull string) {
-            AXLogSuccess();
-        } failure:^(NSError * _Nonnull error) {
-            AXLogFailure();
-        }];
+    } else if ([model.target isEqualToString:@"PageVC"]) {
+        PageVC *vc = [[PageVC alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        vc.title = model.target;
+        self.controller.navigationController.pushViewController(vc);
     } else {
         if ([model.cmd isEqualToString:@"share"]) {
             NSString *string = @"message";

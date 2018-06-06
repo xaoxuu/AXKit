@@ -152,6 +152,7 @@
 		CD3EEA1320C78BD00074F083 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EEA1220C78BD00074F083 /* BaseTableView.m */; };
 		CD3EEA1620C7B6420074F083 /* NSDateFormatter+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EEA1420C7B6420074F083 /* NSDateFormatter+AXAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3EEA1720C7B6420074F083 /* NSDateFormatter+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EEA1520C7B6420074F083 /* NSDateFormatter+AXAdd.m */; };
+		CD3EEA3820C7DC810074F083 /* PageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EEA3720C7DC810074F083 /* PageVC.m */; };
 		CD47DE6A20898ED7007E4F24 /* CacheableLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */; };
 		CD47DE6E20898F0B007E4F24 /* CacheableLogTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */; };
 		CD47DE712089915E007E4F24 /* ContentViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE702089915E007E4F24 /* ContentViewerVC.m */; };
@@ -427,6 +428,8 @@
 		CD3EEA1220C78BD00074F083 /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		CD3EEA1420C7B6420074F083 /* NSDateFormatter+AXAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+AXAdd.h"; sourceTree = "<group>"; };
 		CD3EEA1520C7B6420074F083 /* NSDateFormatter+AXAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+AXAdd.m"; sourceTree = "<group>"; };
+		CD3EEA3620C7DC810074F083 /* PageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageVC.h; sourceTree = "<group>"; };
+		CD3EEA3720C7DC810074F083 /* PageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVC.m; sourceTree = "<group>"; };
 		CD47DE6820898ED7007E4F24 /* CacheableLogVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogVC.h; sourceTree = "<group>"; };
 		CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheableLogVC.m; sourceTree = "<group>"; };
 		CD47DE6C20898F0B007E4F24 /* CacheableLogTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogTV.h; sourceTree = "<group>"; };
@@ -1381,6 +1384,8 @@
 				CD57452C1EDADE510014E833 /* Setting */,
 				CDB065DD206E383B001C08CD /* DocVC.h */,
 				CDB065DE206E383B001C08CD /* DocVC.m */,
+				CD3EEA3620C7DC810074F083 /* PageVC.h */,
+				CD3EEA3720C7DC810074F083 /* PageVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1983,6 +1988,7 @@
 				CD2096E91FC1718E0049739A /* BaseService.m in Sources */,
 				CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */,
 				CD5745911EDADE510014E833 /* AboutTableView.m in Sources */,
+				CD3EEA3820C7DC810074F083 /* PageVC.m in Sources */,
 				CD57460C1EDB2F650014E833 /* GitHubInfoModel.m in Sources */,
 				CD57459A1EDADE510014E833 /* RemoveCacheVC.m in Sources */,
 				CD0B62F71EC45E650024F25E /* AccentBgButton.m in Sources */,

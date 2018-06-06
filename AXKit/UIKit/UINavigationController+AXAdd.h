@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void (^)(NSString *name))pushViewControllerNamed;
 
+- (void (^)(UIViewController *))pushViewController;
+
 /**
  push到指定name的控制器
  

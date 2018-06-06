@@ -23,7 +23,13 @@
 }
 - (void (^)(NSString * _Nonnull))pushViewControllerNamed{
     return ^(NSString *name){
-        return [self ax_pushViewControllerNamed:name];
+        [self ax_pushViewControllerNamed:name];
+    };
+}
+
+- (void (^)(UIViewController * _Nonnull))pushViewController{
+    return ^(UIViewController *vc){
+        [self pushViewController:vc animated:YES];
     };
 }
 
