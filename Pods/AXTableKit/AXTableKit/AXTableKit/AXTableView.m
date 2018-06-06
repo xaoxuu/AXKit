@@ -9,9 +9,9 @@
 #import "AXTableView.h"
 #import "AXTableViewCell.h"
 #import <SafariServices/SafariServices.h>
-//#import "UIView+AXExtension.h"
-//#import "NSString+AXExtension.h"
-//#import "UIApplication+AXExtension.h"
+//#import "UIView+AXAdd.h"
+//#import "NSString+AXAdd.h"
+//#import "UIApplication+AXAdd.h"
 //#import "AXThemeKit.h"
 
 static inline BOOL isURLString(NSString *str){

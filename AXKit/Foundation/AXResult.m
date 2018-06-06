@@ -7,9 +7,9 @@
 //
 
 #import "AXResult.h"
-#import "NSObject+AXExtension.h"
-#import "NSArray+AXExtension.h"
-#import "NSDictionary+AXExtension.h"
+#import "NSObject+AXAdd.h"
+#import "NSArray+AXAdd.h"
+#import "NSDictionary+AXAdd.h"
 
 
 @implementation AXResult

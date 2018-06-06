@@ -7,7 +7,7 @@
 //
 
 #import "UIColor+MDColorPack.h"
-#import "UIColor+AXExtension.h"
+#import "UIColor+AXAdd.h"
 
 @implementation UIColor (MDColorPack)
 

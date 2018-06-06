@@ -29,12 +29,12 @@
 
 + (instancetype)modelWithDict:(NSDictionary *)dict{
     ThemeCollectionModel *model = [ThemeCollectionModel new];
-    model.updateTime = [NSDate dateWithString:[dict stringValueForKey:@"update"] format:@"yyyy-MM-dd HH:mm:ss"];
-    NSArray<NSDictionary *> *sections = [dict arrayValueForKey:@"sections"];
+    model.updateTime = [NSDate dateWithString:dict.stringValue(@"update") format:@"yyyy-MM-dd HH:mm:ss"];
+    NSArray<NSDictionary *> *sections = dict.arrayValue(@"sections");
     [sections enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ThemeCollectionSectionModel *section = [ThemeCollectionSectionModel new];
-        section.title = [obj stringValueForKey:@"title"];
-        NSArray<NSDictionary *> *themes = [obj arrayValueForKey:@"themes"];
+        section.title = obj.stringValue(@"title");
+        NSArray<NSDictionary *> *themes = obj.arrayValue(@"themes");
         [themes enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             AXThemeModel *theme = [AXThemeModel modelWithDictionary:obj];
             [section.themes addObject:theme];

@@ -7,9 +7,9 @@
 //
 
 #import "_AXKitError.h"
-#import "NSError+AXExtension.h"
-#import "UIAlertController+AXWrapper.h"
-#import "UIApplication+AXExtension.h"
+#import "NSError+AXAdd.h"
+#import "UIAlertController+AXAdd.h"
+#import "UIApplication+AXAdd.h"
 
 NSErrorDomain const AXKitErrorDomain = @"com.xaoxuu.axkit.error";
 
