@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSBundle (AXExtension)
+@interface NSBundle (AXAdd)
 
 /**
  bundle display name

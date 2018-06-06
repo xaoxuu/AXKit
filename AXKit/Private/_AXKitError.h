@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, AXKitErrorCode) {
     
 };
 
-@interface NSError (AXKitHelpExtension)
+@interface NSError (AXKitHelpAdd)
 
 /**
  错误信息的URL

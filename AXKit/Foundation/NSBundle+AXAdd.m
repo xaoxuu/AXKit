@@ -11,7 +11,7 @@
 
 
 
-@implementation NSBundle (AXExtension)
+@implementation NSBundle (AXAdd)
 
 - (NSString *)ax_bundleDisplayName{
     NSString *bundleName = [self.localizedInfoDictionary objectForKey:@"CFBundleDisplayName"];

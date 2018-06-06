@@ -41,7 +41,7 @@ CG_EXTERN UIView *UIMaskViewWithSizeAndCornerRadius(CGSize size, CGFloat cornerR
 CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 
 
-@interface UIView (AXExtension)
+@interface UIView (AXAdd)
 
 
 /**

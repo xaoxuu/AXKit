@@ -9,7 +9,7 @@
 #import "UIResponder+AXAdd.h"
 
 
-@implementation UIViewController (AXResponderExtension)
+@implementation UIViewController (AXResponderAdd)
 
 + (UIViewController *)rootViewController{
     return UIWindow.keyWindow.rootViewController;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation UIWindow (AXResponderExtension)
+@implementation UIWindow (AXResponderAdd)
 
 + (UIWindow *)keyWindow{
     UIResponder *appDelegate = (UIResponder *)UIApplication.sharedApplication.delegate;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation UIView (AXResponderExtension)
+@implementation UIView (AXResponderAdd)
 
 // find view's super controller
 - (UIViewController *)controller{

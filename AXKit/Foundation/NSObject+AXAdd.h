@@ -79,7 +79,7 @@ FOUNDATION_EXTERN NSNumber *safeNumber(id obj, NSNumber *def);
  */
 FOUNDATION_EXTERN NSNumber *autoNumber(id obj, NSNumber *def);
 
-@interface NSObject (AXExtension)
+@interface NSObject (AXAdd)
 
 
 /**

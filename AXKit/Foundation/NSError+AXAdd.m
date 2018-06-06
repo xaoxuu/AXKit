@@ -8,7 +8,7 @@
 
 #import "NSError+AXAdd.h"
 
-@implementation NSError (AXExtension)
+@implementation NSError (AXAdd)
 
 
 + (instancetype)ax_errorWithMaker:(void (^)(NSErrorMaker * _Nonnull))maker{

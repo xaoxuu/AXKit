@@ -26,7 +26,7 @@ CG_EXTERN UIColor *darken(UIColor *color, CGFloat percent);
  */
 CG_EXTERN UIColor *lighten(UIColor *color, CGFloat percent);
 
-@interface UIColor (AXExtension)
+@interface UIColor (AXAdd)
 
 
 /**

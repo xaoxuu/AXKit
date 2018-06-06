@@ -27,7 +27,7 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
 }
 
 
-@implementation UIView (AXExtension)
+@implementation UIView (AXAdd)
 
 
 - (void)ax_layer:(void (^)(CALayer *layer))layer{

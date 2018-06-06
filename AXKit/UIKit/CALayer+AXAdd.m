@@ -107,7 +107,7 @@ static inline void removeColorAnimation(CALayer *layer){
 }
 
 
-@implementation CALayer (AXWrapper)
+@implementation CALayer (AXAdd)
 
 
 #pragma mark - corner

@@ -23,7 +23,7 @@ static const void *UITextViewAXExtensionKey_SuperView = &UITextViewAXExtensionKe
 
 
 
-@implementation UITextView (AXExtension)
+@implementation UITextView (AXAdd)
 
 
 - (void)ax_adjustViewFrameWithKeyboard:(UIView *)view {

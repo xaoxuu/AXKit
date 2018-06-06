@@ -203,7 +203,7 @@ static inline NSString *logPath(LogTypeString *type){
 @end
 
 // @xaoxuu: log字典
-@implementation NSDictionary (AXLogExtension)
+@implementation NSDictionary (AXLogAdd)
 
 - (NSString *)descriptionWithLocale:(id)locale{
     NSMutableString *str = [NSMutableString string];
@@ -225,7 +225,7 @@ static inline NSString *logPath(LogTypeString *type){
 @end
 
 // @xaoxuu: log数组
-@implementation NSArray (AXLogExtension)
+@implementation NSArray (AXLogAdd)
 - (NSString *)descriptionWithLocale:(id)locale{
     NSMutableString *str = [NSMutableString string];
     [str appendString:@"[\n"];

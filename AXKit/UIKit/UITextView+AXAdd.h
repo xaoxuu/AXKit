@@ -10,7 +10,7 @@
 #import "CoreGraphics+AXAdd.h"
 
 
-@interface UITextView (AXExtension)
+@interface UITextView (AXAdd)
 
 
 /**

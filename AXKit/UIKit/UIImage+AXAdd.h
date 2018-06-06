@@ -133,7 +133,7 @@ CG_EXTERN UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize 
 
 
 
-@interface UIImage (AXExtension)
+@interface UIImage (AXAdd)
 
 #pragma mark - 生成
 

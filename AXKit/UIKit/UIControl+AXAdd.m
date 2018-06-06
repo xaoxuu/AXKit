@@ -28,7 +28,7 @@ static const void *UIControlAXBlockWrapperKey = &UIControlAXBlockWrapperKey;
 
 #pragma mark Category
 
-@implementation UIControl (AXBlockWrapper)
+@implementation UIControl (AXAdd)
 
 - (void)ax_addEventHandler:(void (^)(__kindof UIControl *sender))handler forControlEvents:(UIControlEvents)controlEvents{
     // add a control events to target
@@ -44,7 +44,7 @@ static const void *UIControlAXBlockWrapperKey = &UIControlAXBlockWrapperKey;
 
 #pragma mark - UIButton
 
-@implementation UIButton (AXBlockWrapper)
+@implementation UIButton (AXAdd)
 
 - (void)ax_addEventHandler:(void (^)(__kindof UIButton *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
@@ -66,7 +66,7 @@ static const void *UIControlAXBlockWrapperKey = &UIControlAXBlockWrapperKey;
 
 #pragma mark - UISlider
 
-@implementation UISlider (AXBlockWrapper)
+@implementation UISlider (AXAdd)
 
 - (void)ax_addEventHandler:(void (^)(__kindof UISlider *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
@@ -94,7 +94,7 @@ static const void *UIControlAXBlockWrapperKey = &UIControlAXBlockWrapperKey;
 
 #pragma mark - UISwitch
 
-@implementation UISwitch (AXBlockWrapper)
+@implementation UISwitch (AXAdd)
 
 - (void)ax_addEventHandler:(void (^)(__kindof UISwitch *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
@@ -121,7 +121,7 @@ static const void *UIControlAXBlockWrapperKey = &UIControlAXBlockWrapperKey;
 
 #pragma mark - UISegmentedControl
 
-@implementation UISegmentedControl (AXBlockWrapper)
+@implementation UISegmentedControl (AXAdd)
 
 - (void)ax_addEventHandler:(void (^)(__kindof UISegmentedControl *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target
@@ -138,7 +138,7 @@ static const void *UIControlAXBlockWrapperKey = &UIControlAXBlockWrapperKey;
 
 #pragma mark - UITextField
 
-@implementation UITextField (AXBlockWrapper)
+@implementation UITextField (AXAdd)
 
 - (void)ax_addEventHandler:(void (^)(__kindof UITextField *sender))handler forControlEvents:(UIControlEvents)controlEvents {
     // add a control events to target

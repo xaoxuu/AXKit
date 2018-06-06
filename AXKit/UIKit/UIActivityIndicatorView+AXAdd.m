@@ -14,7 +14,7 @@
 
 static NSTimeInterval indicatorTimeout = 30;
 
-@implementation UIActivityIndicatorView (AXWrapper)
+@implementation UIActivityIndicatorView (AXAdd)
 
 + (instancetype)defaultIndicator{
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];

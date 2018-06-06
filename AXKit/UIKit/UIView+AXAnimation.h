@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (AXAnimatedWrapper)
+@interface UIView (AXAnimation)
 
 
 #pragma mark - build in

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AXResult.h"
 NS_ASSUME_NONNULL_BEGIN
-@interface NSDictionary (AXExtension)
+@interface NSDictionary (AXAdd)
 
 /**
  根据json字符串创建字典

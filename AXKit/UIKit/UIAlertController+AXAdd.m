@@ -31,7 +31,7 @@ inline NSString *kStringError(void){
     return NSLocalizedStringFromAXKit(@"Error");
 }
 
-@implementation UIAlertController (AXWrapper)
+@implementation UIAlertController (AXAdd)
 
 
 #pragma mark - 弹窗

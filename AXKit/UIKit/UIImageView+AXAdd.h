@@ -17,7 +17,7 @@
  */
 CG_EXTERN UIImageView *UIImageViewWithImageNamed(NSString *name);
 
-@interface UIImageView (AXExtension)
+@interface UIImageView (AXAdd)
 
 
 

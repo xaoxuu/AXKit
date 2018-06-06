@@ -11,7 +11,7 @@
 #import "_AXKitError.h"
 #import "NSLog+AXAdd.h"
 
-@implementation UINavigationController (AXExtension)
+@implementation UINavigationController (AXAdd)
 
 
 - (void)ax_pushViewControllerNamed:(NSString *)vcName{

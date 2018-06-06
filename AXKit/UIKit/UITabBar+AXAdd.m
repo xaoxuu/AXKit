@@ -9,7 +9,7 @@
 #import "UITabBar+AXAdd.h"
 #import "UIView+AXAdd.h"
 
-@implementation UITabBar (AXExtension)
+@implementation UITabBar (AXAdd)
 
 
 - (void)ax_hideSeparator{

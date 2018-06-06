@@ -8,7 +8,7 @@
 
 #import "NSArray+AXAdd.h"
 
-@implementation NSArray (AXExtension)
+@implementation NSArray (AXAdd)
 
 
 - (CGFloat)ax_sum{

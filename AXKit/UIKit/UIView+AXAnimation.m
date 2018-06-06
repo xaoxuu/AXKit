@@ -8,7 +8,7 @@
 
 #import "UIView+AXAnimation.h"
 
-@implementation UIView (AXAnimatedWrapper)
+@implementation UIView (AXAnimation)
 
 #pragma mark - build in
 - (void)ax_animatedScaleIn:(CGFloat)scale duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion{

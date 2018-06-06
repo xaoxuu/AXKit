@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface NSUserDefaults (AXWrapper)
+@interface NSUserDefaults (AXAdd)
 
 #pragma mark - read
 

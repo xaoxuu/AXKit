@@ -24,7 +24,7 @@ static inline AXEventTarget *bindGesture(UIView *view, UIGestureRecognizer *gest
 @import ObjectiveC.runtime;
 
 
-@implementation UIView (ATGestureExtension)
+@implementation UIView (AXGestureAdd)
 
 
 #pragma mark tap / long press

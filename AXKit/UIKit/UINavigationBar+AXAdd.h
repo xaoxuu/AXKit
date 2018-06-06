@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (AXExtension)
+@interface UINavigationBar (AXAdd)
 
 
 /**

@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface UIViewController (AXResponderExtension)
+@interface UIViewController (AXResponderAdd)
 
 /**
  获取app根控制器
@@ -21,12 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UIWindow (AXResponderExtension)
+@interface UIWindow (AXResponderAdd)
 
 + (nullable UIWindow *)keyWindow;
 
 @end
-@interface UIView (AXResponderExtension)
+@interface UIView (AXResponderAdd)
 
 /**
  当前view所在的控制器controller

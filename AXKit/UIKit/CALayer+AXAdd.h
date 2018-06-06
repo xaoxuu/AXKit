@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
 CG_EXTERN CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadius);
 
 
-@interface CALayer (AXWrapper)
+@interface CALayer (AXAdd)
 
 
 

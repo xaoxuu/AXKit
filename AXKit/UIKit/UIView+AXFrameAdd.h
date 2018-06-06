@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIView (AXFrameWrapper)
+@interface UIView (AXFrameAdd)
 
 
 #pragma mark - property

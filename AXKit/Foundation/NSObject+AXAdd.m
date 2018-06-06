@@ -83,7 +83,7 @@ inline NSNumber *autoNumber(id obj, NSNumber *def){
 }
 
 
-@implementation NSObject (AXExtension)
+@implementation NSObject (AXAdd)
 
 + (NSArray *)ax_allSubclasses{
     NSMutableArray *subclasses = [NSMutableArray array];

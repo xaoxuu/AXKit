@@ -19,7 +19,7 @@ static NSURL *urlForCode(NSInteger code){
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", AXKitErrorBaseURL, @(code)]];
 }
 
-@implementation NSError (AXKitHelpExtension)
+@implementation NSError (AXKitHelpAdd)
 
 - (NSURL *)URL{
     return urlForCode(self.code);

@@ -9,7 +9,7 @@
 #import "UINavigationBar+AXAdd.h"
 #import "UIView+AXAdd.h"
 
-@implementation UINavigationBar (AXExtension)
+@implementation UINavigationBar (AXAdd)
 
 
 - (void)ax_hideSeparator{

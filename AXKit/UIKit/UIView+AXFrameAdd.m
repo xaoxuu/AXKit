@@ -11,7 +11,7 @@
 
 
 
-@implementation UIView (AXFrameWrapper)
+@implementation UIView (AXFrameAdd)
 
 #pragma mark - property
 

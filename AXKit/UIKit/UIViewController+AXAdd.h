@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 CG_EXTERN UIViewController *UIViewControllerNamed(NSString *name);
 
 
-@interface UIViewController (AXExtension)
+@interface UIViewController (AXAdd)
 
 @end
 

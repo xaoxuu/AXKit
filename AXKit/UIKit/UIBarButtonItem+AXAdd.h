@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface UIBarButtonItem (ATBlockWrapper)
+@interface UIBarButtonItem (AXAdd)
 
 #pragma mark - 静态构造方法
 

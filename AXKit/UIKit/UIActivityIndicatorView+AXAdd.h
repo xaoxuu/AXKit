@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIActivityIndicatorView (AXWrapper)
+@interface UIActivityIndicatorView (AXAdd)
 
 
 /**

@@ -44,7 +44,7 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
     }
 }
 
-@implementation UIApplication (AXExtension)
+@implementation UIApplication (AXAdd)
 
 
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL{

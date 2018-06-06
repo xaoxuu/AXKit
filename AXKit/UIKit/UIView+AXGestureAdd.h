@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (AXGestureExtension)
+@interface UIView (AXGestureAdd)
 
 /**
  处理tap手势

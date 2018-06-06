@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @class NSErrorMaker;
-@interface NSError (AXExtension)
+@interface NSError (AXAdd)
 
 
 /**

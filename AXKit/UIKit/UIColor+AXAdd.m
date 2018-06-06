@@ -101,7 +101,7 @@ static CGFloat grayLevel(UIColor *color){
     return red * 0.299 + green * 0.587 + blue * 0.114;
 }
 
-@implementation UIColor (AXExtension)
+@implementation UIColor (AXAdd)
 
 
 - (UIColor *)dark{

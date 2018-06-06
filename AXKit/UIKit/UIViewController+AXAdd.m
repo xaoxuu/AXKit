@@ -14,7 +14,7 @@ inline UIViewController *UIViewControllerNamed(NSString *name){
 }
 
 
-@implementation UIViewController (AXExtension)
+@implementation UIViewController (AXAdd)
 
 
 @end

@@ -37,7 +37,7 @@ inline void databaseDeferredTransaction(void (^block)(FMDatabase *db, BOOL *roll
 
 
 
-@implementation FMDatabase (AXExtension)
+@implementation FMDatabase (AXAdd)
 
 #pragma mark fmdb直接封装
 
@@ -234,7 +234,7 @@ inline void databaseDeferredTransaction(void (^block)(FMDatabase *db, BOOL *roll
 
 @end
 
-@implementation NSString (AXDatabaseExtension)
+@implementation NSString (AXDatabaseAdd)
 
 + (instancetype)stringWithBlock:(void (^)(NSMutableString *string))block{
     NSMutableString *string = [NSMutableString string];
@@ -279,7 +279,7 @@ inline void databaseDeferredTransaction(void (^block)(FMDatabase *db, BOOL *roll
 
 
 @end
-@implementation NSMutableString (AXDatabaseExtension)
+@implementation NSMutableString (AXDatabaseAdd)
 
 + (instancetype)stringWithBlock:(void (^)(NSMutableString *string))block{
     NSMutableString *string = [NSMutableString string];

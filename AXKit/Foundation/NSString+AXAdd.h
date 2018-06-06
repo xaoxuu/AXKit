@@ -101,7 +101,7 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 
 
 
-@interface NSString (AXAppendExtension)
+@interface NSString (AXAppendingAdd)
 
 
 
@@ -161,7 +161,7 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 
 @end
 
-@interface NSString (AXExtension)
+@interface NSString (AXAdd)
 
 
 /**
@@ -263,7 +263,7 @@ FOUNDATION_EXTERN NSString *AXRandomHexStringWithLength(NSUInteger length);
 
 
 
-@interface NSString (AXRandomExtension)
+@interface NSString (AXRandomAdd)
 
 
 /**

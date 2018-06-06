@@ -13,7 +13,7 @@
 
 static const void *UIBarButtonItemAXBlockWrapperKey = &UIBarButtonItemAXBlockWrapperKey;
 
-@implementation UIBarButtonItem (AXBlockWrapper)
+@implementation UIBarButtonItem (AXAdd)
 
 #pragma mark - 静态构造方法
 

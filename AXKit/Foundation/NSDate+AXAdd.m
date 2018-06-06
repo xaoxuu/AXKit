@@ -30,7 +30,7 @@ static inline NSCalendar *calendar(){
 }
 
 
-@implementation NSDate (AXExtension)
+@implementation NSDate (AXAdd)
 
 /**
  8位数的整型值(yyyyMMdd)

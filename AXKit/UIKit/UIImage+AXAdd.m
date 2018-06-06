@@ -196,7 +196,7 @@ inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize siz
 }
 
 
-@implementation UIImage (AXExtension)
+@implementation UIImage (AXAdd)
 
 
 #pragma mark - 生成

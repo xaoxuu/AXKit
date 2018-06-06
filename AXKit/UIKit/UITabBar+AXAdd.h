@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITabBar (AXExtension)
+@interface UITabBar (AXAdd)
 
 /**
  隐藏系统自带的分割线

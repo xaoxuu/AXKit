@@ -40,7 +40,7 @@ static inline void readObjForKey(NSString *key, NSString *desc, void (^completio
     }
 }
 
-@implementation NSUserDefaults (AXWrapper)
+@implementation NSUserDefaults (AXAdd)
 
 
 #pragma mark - read

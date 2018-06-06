@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CoreGraphics+AXAdd.h"
 
-@interface UITextField (AXExtension)
+@interface UITextField (AXAdd)
 
 
 @property (strong, readwrite, nonatomic) UIColor *placeholderColor;

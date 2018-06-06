@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface UINavigationController (AXExtension)
+@interface UINavigationController (AXAdd)
 
 /**
  push到指定name的控制器，animated为YES

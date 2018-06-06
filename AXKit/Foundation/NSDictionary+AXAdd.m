@@ -31,7 +31,7 @@ static inline NSNumber *numberValueForKey(NSDictionary *dict, NSString *key){
 }
 
 
-@implementation NSDictionary (AXExtension)
+@implementation NSDictionary (AXAdd)
 
 + (instancetype)dictionaryWithJsonString:(NSString *)string{
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];

@@ -62,7 +62,7 @@ inline NSString *SpellForChinese(NSString *chinese){
     return pinyin;
 }
 
-@implementation NSString (AXAppendExtension)
+@implementation NSString (AXAppendingAdd)
 
 
 
@@ -115,7 +115,7 @@ inline NSString *SpellForChinese(NSString *chinese){
 
 @end
 
-@implementation NSString (AXExtension)
+@implementation NSString (AXAdd)
 
 - (nullable NSURL *)absoluteURL{
     return [NSURL URLWithString:self].absoluteURL;
@@ -255,7 +255,7 @@ inline NSString *AXRandomHexStringWithLength(NSUInteger length){
 
 
 
-@implementation NSString (AXRandomExtension)
+@implementation NSString (AXRandomAdd)
 
 
 

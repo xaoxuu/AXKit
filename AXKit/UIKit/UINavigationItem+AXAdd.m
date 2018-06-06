@@ -8,7 +8,7 @@
 
 #import "UINavigationItem+AXAdd.h"
 
-@implementation UINavigationItem (AXExtension)
+@implementation UINavigationItem (AXAdd)
 
 /**
  隐藏返回按钮的标题

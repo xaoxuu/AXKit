@@ -24,7 +24,7 @@ FOUNDATION_EXTERN NSString *kStringHelp(void);
 // @xaoxuu: Error
 FOUNDATION_EXTERN NSString *kStringError(void);
 
-@interface UIAlertController (AXWrapper)
+@interface UIAlertController (AXAdd)
 
 #pragma mark - 弹窗
 

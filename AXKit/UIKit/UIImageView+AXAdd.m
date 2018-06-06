@@ -16,7 +16,7 @@ inline UIImageView *UIImageViewWithImageNamed(NSString *name){
 }
 
 
-@implementation UIImageView (AXExtension)
+@implementation UIImageView (AXAdd)
 
 
 @end

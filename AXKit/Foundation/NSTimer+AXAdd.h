@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface NSTimer (AXBlockWrapper)
+@interface NSTimer (AXAdd)
 
 /**
  创建一个shchedule定时器添加到当前Runloop

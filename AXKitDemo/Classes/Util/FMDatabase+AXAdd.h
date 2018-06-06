@@ -15,7 +15,7 @@ FOUNDATION_EXTERN void databaseTransaction(void (^block)(FMDatabase *db, BOOL *r
 
 FOUNDATION_EXTERN void databaseDeferredTransaction(void (^block)(FMDatabase *db, BOOL *rollback));
 
-@interface FMDatabase (AXExtension)
+@interface FMDatabase (AXAdd)
 
 #pragma mark fmdb直接封装
 
@@ -141,7 +141,7 @@ FOUNDATION_EXTERN void databaseDeferredTransaction(void (^block)(FMDatabase *db,
 
 @end
 
-@interface NSString (AXDatabaseExtension)
+@interface NSString (AXDatabaseAdd)
 
 + (instancetype)stringWithBlock:(void (^)(NSMutableString *string))block;
 
@@ -150,7 +150,7 @@ FOUNDATION_EXTERN void databaseDeferredTransaction(void (^block)(FMDatabase *db,
 
 @end
 
-@interface NSMutableString (AXDatabaseExtension)
+@interface NSMutableString (AXDatabaseAdd)
 
 + (instancetype)stringWithBlock:(void (^)(NSMutableString *string))block;
 
