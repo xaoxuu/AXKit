@@ -6,10 +6,10 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "AXTableKit.h"
+#import "BaseTableView.h"
 #import "ThemeCollectionModel.h"
 
-@interface ThemeDetailTV : AXTableView
+@interface ThemeDetailTV : BaseTableView
 
 @property (strong, nonatomic) AXThemeModel *theme;
 

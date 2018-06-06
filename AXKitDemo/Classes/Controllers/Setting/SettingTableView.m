@@ -52,6 +52,7 @@
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
+    
     cell.delegate = self;
 }
 

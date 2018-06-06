@@ -34,6 +34,7 @@
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     ContentViewerVC *vc = [[ContentViewerVC alloc] init];
     vc.content = model.cmd.readString();
+    vc.font = [UIFont fontWithName:@"Menlo-Regular" size:12];
     vc.title = model.title.stringByDeletingPathExtension;
     [vc requestUpdate:^NSString *{
         return model.cmd.readString();

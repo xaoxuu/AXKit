@@ -6,8 +6,8 @@
 //  Copyright © 2018 Titan Studio. All rights reserved.
 //
 
-#import "AXTableKit.h"
+#import "BaseTableView.h"
 
-@interface CacheableLogTV : AXTableView
+@interface CacheableLogTV : BaseTableView
 
 @end

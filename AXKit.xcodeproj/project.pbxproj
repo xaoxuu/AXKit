@@ -149,6 +149,7 @@
 		CD3EE9E620C77DC40074F083 /* UIView+AXGestureAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE99520C77DC30074F083 /* UIView+AXGestureAdd.m */; };
 		CD3EE9E720C77DC40074F083 /* UIViewController+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE99620C77DC30074F083 /* UIViewController+AXAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3EE9E820C77DC40074F083 /* UIViewController+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE99720C77DC30074F083 /* UIViewController+AXAdd.m */; };
+		CD3EEA1320C78BD00074F083 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EEA1220C78BD00074F083 /* BaseTableView.m */; };
 		CD47DE6A20898ED7007E4F24 /* CacheableLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */; };
 		CD47DE6E20898F0B007E4F24 /* CacheableLogTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */; };
 		CD47DE712089915E007E4F24 /* ContentViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE702089915E007E4F24 /* ContentViewerVC.m */; };
@@ -420,6 +421,8 @@
 		CD3EE99520C77DC30074F083 /* UIView+AXGestureAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXGestureAdd.m"; sourceTree = "<group>"; };
 		CD3EE99620C77DC30074F083 /* UIViewController+AXAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXAdd.h"; sourceTree = "<group>"; };
 		CD3EE99720C77DC30074F083 /* UIViewController+AXAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXAdd.m"; sourceTree = "<group>"; };
+		CD3EEA1120C78BD00074F083 /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		CD3EEA1220C78BD00074F083 /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		CD47DE6820898ED7007E4F24 /* CacheableLogVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogVC.h; sourceTree = "<group>"; };
 		CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheableLogVC.m; sourceTree = "<group>"; };
 		CD47DE6C20898F0B007E4F24 /* CacheableLogTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogTV.h; sourceTree = "<group>"; };
@@ -908,6 +911,15 @@
 				CD3EE99720C77DC30074F083 /* UIViewController+AXAdd.m */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CD3EEA1020C78BB10074F083 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CD3EEA1120C78BD00074F083 /* BaseTableView.h */,
+				CD3EEA1220C78BD00074F083 /* BaseTableView.m */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		CD47DE6B20898EE1007E4F24 /* CacheableLog */ = {
@@ -1491,6 +1503,7 @@
 		CDF18CD61EB8886C004B4794 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD3EEA1020C78BB10074F083 /* TableView */,
 				CDC1A7821ECFDC55003AAA63 /* label */,
 				CDE94EA61EC72C2200596B93 /* loading */,
 				CD0B62EE1EC45E060024F25E /* button */,
@@ -1984,6 +1997,7 @@
 				CD5745991EDADE510014E833 /* CacheTableView.m in Sources */,
 				CD5745941EDADE510014E833 /* BlogVC.m in Sources */,
 				CD5745921EDADE510014E833 /* AboutVC.m in Sources */,
+				CD3EEA1320C78BD00074F083 /* BaseTableView.m in Sources */,
 				CD5746111EDBFED40014E833 /* ReleaseLogVC.m in Sources */,
 				CD63A40A1FC1944400581AF6 /* ThemeCollectionModel.m in Sources */,
 				CD1425F91FD5638A007571E8 /* FeedbackCollectionViewCell.m in Sources */,

@@ -22,6 +22,7 @@ static NSTimer *timer;
 
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
+    [super ax_tableView:tableView didSetModelForCell:cell atIndexPath:indexPath];
     if ([cell.model.target containsString:@"#"]) {
         UIColor *color = [UIColor colorWithHexString:cell.model.target];
         CGSize size = CGSizeMake(8, cell.size.height - 2);

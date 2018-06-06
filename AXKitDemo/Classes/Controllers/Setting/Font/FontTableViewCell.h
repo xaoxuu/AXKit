@@ -6,7 +6,7 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 
-#import "AXTableKit.h"
+#import "BaseTableView.h"
 
 @interface FontTableViewCell : AXTableViewCell
 

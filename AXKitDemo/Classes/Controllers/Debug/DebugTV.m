@@ -34,10 +34,8 @@
     }
     return model;
 }
-- (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
-    cell.textLabel.font = axThemeManager.font.customNormal;
-    cell.detailTextLabel.font = axThemeManager.font.customSmall;
-}
+
+
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
     if ([model.target isEqualToString:@"camera"]) {
         AXCameraViewController *vc = [[AXCameraViewController alloc] init];
@@ -70,10 +68,5 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 12;
 }
-
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-//    return nil;
-//}
-
 
 @end

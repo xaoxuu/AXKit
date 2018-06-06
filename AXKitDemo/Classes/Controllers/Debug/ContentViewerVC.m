@@ -11,7 +11,6 @@
 @interface ContentViewerVC ()
 
 @property (strong, nonatomic) UITextView *textView;
-
 @property (copy, nonatomic) NSString *(^block)(void);
 
 @end
@@ -58,6 +57,9 @@
     self.textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.textView];
     self.textView.editable = NO;
+    if (self.font) {
+        self.textView.font = self.font;
+    }
     if (self.content.length) {
         self.textView.text = self.content;
     }

@@ -14,6 +14,8 @@
  content
  */
 @property (copy, nonatomic) NSString *content;
+@property (strong, nonatomic) UIFont *font;
+
 
 - (void)requestUpdate:(NSString *(^)(void))callback;
 

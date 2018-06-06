@@ -165,9 +165,8 @@ static id<NSObject> observer;
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{
+    [super ax_tableView:tableView didSetModelForCell:cell atIndexPath:indexPath];
     cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.85];
-    cell.textLabel.font = axThemeManager.font.customNormal;
-    cell.detailTextLabel.font = axThemeManager.font.customSmall;
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{
