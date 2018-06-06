@@ -851,8 +851,6 @@
 				CD3EE96420C77DC30074F083 /* NSTimer+AXAdd.m */,
 				CD3EE96520C77DC30074F083 /* NSUserDefaults+AXAdd.h */,
 				CD3EE96620C77DC30074F083 /* NSUserDefaults+AXAdd.m */,
-				CD3EE96720C77DC30074F083 /* UIApplication+AXAdd.h */,
-				CD3EE96820C77DC30074F083 /* UIApplication+AXAdd.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -866,6 +864,8 @@
 				CD3EE96D20C77DC30074F083 /* UIActivityIndicatorView+AXAdd.m */,
 				CD3EE96E20C77DC30074F083 /* UIAlertController+AXAdd.h */,
 				CD3EE96F20C77DC30074F083 /* UIAlertController+AXAdd.m */,
+				CD3EE96720C77DC30074F083 /* UIApplication+AXAdd.h */,
+				CD3EE96820C77DC30074F083 /* UIApplication+AXAdd.m */,
 				CD3EE97020C77DC30074F083 /* UIBarButtonItem+AXAdd.h */,
 				CD3EE97120C77DC30074F083 /* UIBarButtonItem+AXAdd.m */,
 				CD3EE97220C77DC30074F083 /* UIColor+AXAdd.h */,
