@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - UIControl
-@interface UIControl (AXAdd)
+@interface UIControl (AXEventAdd)
 
 /**
  添加一个事件
@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 #pragma mark - UIButton
-@interface UIButton (AXAdd)
+@interface UIButton (AXEventAdd)
 
 /**
  添加一个事件
@@ -59,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 #pragma mark - UISlider
-@interface UISlider (AXAdd)
+@interface UISlider (AXEventAdd)
 
 /**
  添加一个任意事件
@@ -94,7 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 #pragma mark - UISwitch
-@interface UISwitch (AXAdd)
+@interface UISwitch (AXEventAdd)
 
 /**
  添加一个任意事件
@@ -128,7 +128,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 #pragma mark - UISegmentedControl
-@interface UISegmentedControl (AXAdd)
+@interface UISegmentedControl (AXEventAdd)
 
 /**
  添加一个任意事件
@@ -149,7 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 #pragma mark - UITextField
-@interface UITextField (AXAdd)
+@interface UITextField (AXEventAdd)
 
 /**
  添加一个任意事件
