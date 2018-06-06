@@ -16,6 +16,12 @@ inline UIViewController *UIViewControllerNamed(NSString *name){
 
 @implementation UIViewController (AXAdd)
 
++ (UIViewController * _Nonnull (^)(NSString * _Nonnull))named{
+    return ^UIViewController *(NSString *name){
+        return UIViewControllerNamed(name);
+    };
+}
+
 
 @end
 

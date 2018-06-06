@@ -201,6 +201,12 @@ inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize siz
 
 #pragma mark - 生成
 
++ (UIImage * _Nonnull (^)(NSString * _Nonnull))named{
+    return ^UIImage *(NSString *name){
+        return [UIImage imageNamed:name];
+    };
+}
+
 + (UIImage *)ax_imageWithColor:(UIColor *)color size:(CGSize)size alpha:(float)alpha{
     return UIImageGetPureColorImage(color, size, alpha);
 }

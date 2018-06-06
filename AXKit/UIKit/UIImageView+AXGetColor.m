@@ -147,7 +147,11 @@ inline void UIImageViewGetColorFromCircle(UIImageView *imageView, CGPoint point,
 - (UIColor *)ax_getColorWithPoint:(CGPoint)point{
     return UIImageViewGetColorWithPoint(self, point);
 }
-
+- (UIColor * _Nonnull (^)(CGPoint))colorInPoint{
+    return ^UIColor *(CGPoint point){
+        return UIImageViewGetColorWithPoint(self, point);
+    };
+}
 
 // get red green blue alpha with point
 - (void)ax_getRed:(nullable CGFloat *)red green:(nullable CGFloat *)green blue:(nullable CGFloat *)blue alpha:(nullable CGFloat *)alpha withPoint:(CGPoint)point{

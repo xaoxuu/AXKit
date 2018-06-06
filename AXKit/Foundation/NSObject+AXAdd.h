@@ -11,6 +11,15 @@
 
 
 /**
+ 安全的data，如果传入obj不是data，则返回def
+ 
+ @param obj 传入对象
+ @param def 默认值
+ @return data或默认值
+ */
+FOUNDATION_EXTERN NSData *safeData(id obj, NSData *def);
+
+/**
  安全的字典，如果传入obj不是字典，则返回def
 
  @param obj 传入对象

@@ -64,7 +64,16 @@
     return [[self alloc] initWithPath:path idResult:callback];
 }
 - (AXResult *)initWithPath:(NSString *)path idResult:(id (^)(NSError *__autoreleasing *))callback{
-    if (self = [self initWithPath:path]) {
+    if (self = [self initWithIdResult:callback]) {
+        _path = path;
+    }
+    return self;
+}
++ (AXResult *)resultWithIdResult:(id  _Nonnull (^)(NSError * _Nullable __autoreleasing * _Nullable))callback{
+    return [[self alloc] initWithIdResult:callback];
+}
+- (AXResult *)initWithIdResult:(id  _Nonnull (^)(NSError * _Nullable __autoreleasing * _Nullable))callback{
+    if (self = [super init]) {
         NSError *error = nil;
         if (callback) {
             [self setupValue:callback(&error)];
@@ -74,7 +83,6 @@
     }
     return self;
 }
-
 + (AXResult *)resultWithJsonWritingOptions:(NSJSONWritingOptions)opt object:(id  _Nonnull (^)(NSError * _Nullable __autoreleasing * _Nullable))callback{
     return [[self alloc] initWithJsonObject:opt object:callback];
 }
@@ -112,8 +120,8 @@
 - (void)setupValue:(id)value{
     _value = value;
     
-    _numberValue = safeNumber(value, nil);
-    _stringValue = safeString(value, nil);
+    _numberValue = autoNumber(value, nil);
+    _stringValue = autoString(value, nil);
     _arrayValue = safeArray(value, nil);
     _dictionaryValue = safeDictionary(value, nil);
     _dataValue = [value isKindOfClass:NSData.class]?value:nil;

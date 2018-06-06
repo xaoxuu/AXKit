@@ -46,5 +46,17 @@
 @property (nonatomic, readonly, assign) CGFloat boundsCenterY;
 
 
+// MARK: frame
+
+/**
+ 设置view的高
+ */
+- (UIView *(^)(CGFloat height))heightWith;
+
+/**
+ 设置view的size
+ */
+- (UIView *(^)(CGSize size))sizeWith;
+
 
 @end

@@ -89,6 +89,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (AXResult *)resultWithPath:(NSString *)path idResult:(id (^)(NSError **error))callback;
 
 /**
+ id类型的结果
+ 
+ @param callback 回调
+ @return 结果
+ */
++ (AXResult *)resultWithIdResult:(id (^)(NSError **error))callback;
+
+/**
  json对象转data
 
  @param opt options

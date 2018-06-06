@@ -21,6 +21,13 @@ CG_EXTERN UIViewController *UIViewControllerNamed(NSString *name);
 
 @interface UIViewController (AXAdd)
 
+/**
+ 根据view controller的类名创建实例
+ 
+ @return view controller实例对象
+ */
++ (UIViewController *(^)(NSString *))named;
+
 @end
 
 NS_ASSUME_NONNULL_END

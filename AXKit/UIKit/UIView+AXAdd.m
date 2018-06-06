@@ -30,6 +30,31 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
 @implementation UIView (AXAdd)
 
 
++ (UIView * _Nonnull (^)(NSString * _Nonnull))named{
+    return ^UIView *(NSString *name){
+        return UIViewFromNibNamed(name);
+    };
+}
+
++ (UIView *(^)(CGFloat height))heightWith{
+    return ^UIView *(CGFloat height){
+        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, height)];
+    };
+}
+
++ (UIView *(^)(CGSize size))sizeWith{
+    return ^UIView *(CGSize size){
+        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    };
+}
+
+- (UIView *(^)(CGFloat cornerRadius))cornerRadiusWith{
+    return ^UIView *(CGFloat cornerRadius){
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = cornerRadius;
+        return self;
+    };
+}
 - (void)ax_layer:(void (^)(CALayer *layer))layer{
     if (layer) {
         layer(self.layer);

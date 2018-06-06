@@ -70,6 +70,13 @@ CG_EXTERN UIColor *lighten(UIColor *color, CGFloat percent);
 + (UIColor *)colorWithHexString:(NSString *)hexStr;
 
 /**
+ 以HEX字符串创建颜色
+ 
+ @return UIColor实例
+ */
++ (UIColor *(^)(NSString *))colorNamed;
+
+/**
  获取UIColor中的R值
 
  @return R值（0~1）

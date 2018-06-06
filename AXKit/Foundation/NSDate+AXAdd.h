@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, readonly, nonatomic) NSString *isoStringValue;
 
-
 /**
  将8位数的日期值(yyyyMMdd)转换成日期
  
@@ -34,6 +33,16 @@ NS_ASSUME_NONNULL_BEGIN
  @return 日期
  */
 + (nullable instancetype)ax_dateWithIntegerValue:(NSInteger)integerValue;
+
+/**
+ 根据日期字符串和格式生成日期
+ */
++ (nullable NSDate *(^)(NSString *str, NSString *format))dateWithStringAndFormat;
+
+/**
+ 根据UTC日期字符串和格式生成日期
+ */
++ (nullable NSDate *(^)(NSString *str, NSString *format))dateWithUTCStringAndFormat;
 
 /**
  根据日期字符串和格式生成日期
@@ -90,6 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  生成日期format格式的字符串，传入参数为format
  */
 - (nullable NSString *(^)(NSString *))stringValue;
+
 
 
 #pragma mark - 日期计算

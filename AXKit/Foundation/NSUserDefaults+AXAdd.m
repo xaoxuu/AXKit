@@ -10,7 +10,7 @@
 #import "NSError+AXAdd.h"
 #import "NSLog+AXAdd.h"
 #import "_AXKitError.h"
-
+#import "NSObject+AXAdd.h"
 static inline NSUserDefaults *DefaultUser(){
     return [NSUserDefaults standardUserDefaults];
 }
@@ -44,6 +44,55 @@ static inline void readObjForKey(NSString *key, NSString *desc, void (^completio
 
 
 #pragma mark - read
+
++ (nullable AXResult *(^)(NSString *key))objectResult{
+    return ^id (NSString *key){
+        return [AXResult resultWithIdResult:^id _Nonnull(NSError * _Nullable __autoreleasing * _Nullable error) {
+            return [DefaultUser() objectForKey:key];
+        }];
+    };
+}
+
++ (nullable id (^)(NSString *key))object{
+    return ^id (NSString *key){
+        return [DefaultUser() objectForKey:key];
+    };
+}
++ (nullable NSString *(^)(NSString *key))string{
+    return ^id (NSString *key){
+        return [DefaultUser() objectForKey:key];
+    };
+}
++ (nullable NSNumber *(^)(NSString *key))number{
+    return ^id (NSString *key){
+        return autoNumber([DefaultUser() objectForKey:key], nil);
+    };
+}
++ (nullable NSArray *(^)(NSString *key))array{
+    return ^id (NSString *key){
+        return safeArray([DefaultUser() objectForKey:key], nil);
+    };
+}
++ (nullable NSDictionary *(^)(NSString *key))dictionary{
+    return ^id (NSString *key){
+        return safeDictionary([DefaultUser() objectForKey:key], nil);
+    };
+}
++ (nullable NSData *(^)(NSString *key))data{
+    return ^id (NSString *key){
+        return safeData([DefaultUser() objectForKey:key], nil);
+    };
+}
++ (nullable UIImage *(^)(NSString *key))image{
+    return ^id (NSString *key){
+        NSData *data = safeData([DefaultUser() objectForKey:key], nil);
+        if (data) {
+            return [UIImage imageWithData:data];
+        } else {
+            return nil;
+        }
+    };
+}
 
 + (nullable id)ax_readObjectForKey:(NSString *)key{
     return [DefaultUser() objectForKey:key];
@@ -135,6 +184,12 @@ static inline void readObjForKey(NSString *key, NSString *desc, void (^completio
 
 #pragma mark - write
 
++ (void (^)(id , NSString * _Nonnull))setObjectForKey{
+    return ^(id obj, NSString *key){
+        [DefaultUser() setObject:obj forKey:key];
+        [DefaultUser() synchronize];
+    };
+}
 + (void)ax_caches:(void (^)(NSUserDefaults *defaultUser))action{
     action(DefaultUser());
     [DefaultUser() synchronize];

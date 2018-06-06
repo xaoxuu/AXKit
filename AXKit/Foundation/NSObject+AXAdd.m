@@ -10,7 +10,9 @@
 #import "NSString+AXAdd.h"
 @import ObjectiveC.runtime;
 
-
+inline NSData *safeData(id obj, NSData *def){
+    return [obj isKindOfClass:NSData.class]?obj:def;
+}
 inline NSDictionary *safeDictionary(id obj, NSDictionary *def){
     return [obj isKindOfClass:NSDictionary.class]?obj:def;
 }

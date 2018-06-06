@@ -43,6 +43,27 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 
 @interface UIView (AXAdd)
 
+/**
+ 从xib加载view
+ 
+ @return view
+ */
++ (UIView *(^)(NSString *))named;
+
+/**
+ 创建一个指定高的view
+ */
++ (UIView *(^)(CGFloat height))heightWith;
+
+/**
+ 创建一个指定size的view
+ */
++ (UIView *(^)(CGSize size))sizeWith;
+
+/**
+ 设置view的圆角
+ */
+- (UIView *(^)(CGFloat cornerRadius))cornerRadiusWith;
 
 /**
  对view的layer进行若干操作

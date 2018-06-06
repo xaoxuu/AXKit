@@ -44,7 +44,7 @@
     // 显示窗口
     [self.window makeKeyAndVisible];
     
-
+    UIApplication.openBluetoothSetting();
     
     return YES;
 }

@@ -143,23 +143,6 @@ FOUNDATION_EXTERN NSString *SpellForChinese(NSString *chinese);
 
 @end
 
-@interface NSVersionString : NSString
-
-@property (assign, readonly, nonatomic) NSInteger majorVersionNumber;
-@property (assign, readonly, nonatomic) NSInteger minorVersionNumber;
-@property (assign, readonly, nonatomic) NSInteger revisionVersionNumber;
-
-+ (instancetype)versionStringFromString:(NSString *)string;
-
-/**
- 比较两个版本（返回较新的版本）
- 
- @param version 要对比的另一个版本
- @return 较新的版本
- */
-- (NSVersionString *)laterVersion:(NSVersionString *)version;
-
-@end
 
 @interface NSString (AXAdd)
 

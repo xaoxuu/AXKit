@@ -7,23 +7,9 @@
 //
 
 #import "NSDate+AXAdd.h"
-
+#import "NSDateFormatter+AXAdd.h"
 static NSString *yyyyMMdd = @"yyyyMMdd";
 static NSString *ISOFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
-
-static inline NSDateFormatter *formatter(){
-    static NSDateFormatter *fm;
-    if (!fm) {
-        fm = [[NSDateFormatter alloc] init];
-//        fm.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    }
-    return fm;
-}
-
-static inline NSDateFormatter *dateFormatter(NSString *format){
-    formatter().dateFormat = format;
-    return formatter();
-}
 
 static inline NSCalendar *calendar(){
     return [NSCalendar currentCalendar];
@@ -36,21 +22,21 @@ static inline NSCalendar *calendar(){
  8位数的整型值(yyyyMMdd)
  */
 - (NSInteger)integerValue{
-    return [dateFormatter(yyyyMMdd) stringFromDate:self].integerValue;
+    return NSDateFormatter.sharedFormatter(yyyyMMdd).stringValue(self).integerValue;
 }
 
 /**
  8位数的整型值(yyyyMMdd)
  */
 - (int)intValue{
-    return [dateFormatter(yyyyMMdd) stringFromDate:self].intValue;
+    return NSDateFormatter.sharedFormatter(yyyyMMdd).stringValue(self).intValue;
 }
 
 /**
  ISOformat字符串(yyyy-MM-dd'T'HH:mm:ssZ)
  */
 - (NSString *)isoStringValue{
-    return [dateFormatter(ISOFormat) stringFromDate:self];
+    return NSDateFormatter.sharedFormatter(ISOFormat).stringValue(self);
 }
 
 /**
@@ -61,7 +47,19 @@ static inline NSCalendar *calendar(){
  */
 + (nullable instancetype)ax_dateWithIntegerValue:(NSInteger)integerValue{
     NSString *dateString = [NSString stringWithFormat:@"%08d", (int)integerValue];
-    return [dateFormatter(yyyyMMdd) dateFromString:dateString];
+    return NSDateFormatter.formatter(yyyyMMdd).date(dateString);
+}
+
++ (NSDate * _Nonnull (^)(NSString * _Nonnull, NSString * _Nonnull))dateWithStringAndFormat{
+    return ^NSDate *(NSString *dateString, NSString *format){
+        return NSDateFormatter.formatter(format).date(dateString);
+    };
+}
+
++ (NSDate * _Nonnull (^)(NSString * _Nonnull, NSString * _Nonnull))dateWithUTCStringAndFormat{
+    return ^NSDate *(NSString *dateString, NSString *format){
+        return NSDateFormatter.utcFormatter(format).date(dateString);
+    };
 }
 
 /**
@@ -72,7 +70,7 @@ static inline NSCalendar *calendar(){
  @return 日期
  */
 + (nullable instancetype)ax_dateWithString:(NSString *)dateString format:(NSString *)format{
-    return [dateFormatter(format) dateFromString:dateString];
+    return NSDateFormatter.formatter(format).date(dateString);
 }
 
 /**
@@ -88,10 +86,9 @@ static inline NSCalendar *calendar(){
                                     format:(NSString *)format
                                   timeZone:(nullable NSTimeZone *)timeZone
                                     locale:(nullable NSLocale *)locale{
-    formatter().dateFormat = format;
-    formatter().timeZone = timeZone;
-    formatter().locale = locale;
-    return [formatter() dateFromString:dateString];
+    NSDateFormatter *fm = NSDateFormatter.formatterWithTimeZone(format, timeZone);
+    fm.locale = locale;
+    return fm.date(dateString);
 }
 
 /**
@@ -101,7 +98,7 @@ static inline NSCalendar *calendar(){
  @return 日期
  */
 + (nullable instancetype)ax_dateWithISOFormatString:(NSString *)dateString{
-    return [dateFormatter(ISOFormat) dateFromString:dateString];
+    return NSDateFormatter.formatter(ISOFormat).date(dateString);
 }
 
 /**
@@ -111,7 +108,7 @@ static inline NSCalendar *calendar(){
  @return 日期字符串
  */
 - (nullable NSString *)ax_stringWithFormat:(NSString *)format{
-    return [dateFormatter(format) stringFromDate:self];
+    return NSDateFormatter.sharedFormatter(format).stringValue(self);
 }
 
 /**
@@ -125,10 +122,9 @@ static inline NSCalendar *calendar(){
 - (nullable NSString *)ax_stringWithFormat:(NSString *)format
                                   timeZone:(nullable NSTimeZone *)timeZone
                                     locale:(nullable NSLocale *)locale{
-    formatter().dateFormat = format;
-    formatter().timeZone = timeZone;
-    formatter().locale = locale;
-    return [formatter() stringFromDate:self];
+    NSDateFormatter *fm = NSDateFormatter.formatterWithTimeZone(format, timeZone);
+    fm.locale = locale;
+    return fm.stringValue(self);
 }
 
 /**
@@ -136,9 +132,10 @@ static inline NSCalendar *calendar(){
  */
 - (nullable NSString *(^)(NSString *))stringValue{
     return ^(NSString *format){
-        return [dateFormatter(format) stringFromDate:self];
+        return NSDateFormatter.sharedFormatter(format).stringValue(self);
     };
 }
+
 
 #pragma mark - 日期计算
 

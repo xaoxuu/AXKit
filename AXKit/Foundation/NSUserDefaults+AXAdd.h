@@ -7,12 +7,46 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AXResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface NSUserDefaults (AXAdd)
 
+
 #pragma mark - read
 
+/**
+ 读取object
+ */
++ (nullable AXResult *(^)(NSString *key))objectResult;
+/**
+ 读取object
+ */
++ (nullable id (^)(NSString *key))object;
+/**
+ 读取string
+ */
++ (nullable NSString *(^)(NSString *key))string;
+/**
+ 读取number
+ */
++ (nullable NSNumber *(^)(NSString *key))number;
+/**
+ 读取array
+ */
++ (nullable NSArray *(^)(NSString *key))array;
+/**
+ 读取dictionary
+ */
++ (nullable NSDictionary *(^)(NSString *key))dictionary;
+/**
+ 读取data
+ */
++ (nullable NSData *(^)(NSString *key))data;
+/**
+ 读取image
+ */
++ (nullable UIImage *(^)(NSString *key))image;
 
 /**
  读取object值（不推荐）
@@ -184,6 +218,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)ax_readImageForKey:(NSString *)key completion:(void (^)(UIImage *image))completion failure:(void (^)(NSError *error))failure;
 
 #pragma mark - write
+
+/**
+ 保存
+ */
++ (void (^)(id __nullable obj, NSString *key))setObjectForKey;
 
 /**
  批量保存用户设置，自带synchronize

@@ -21,6 +21,11 @@
         // @xaoxuu: do nothing.
     }];
 }
+- (void (^)(NSString * _Nonnull))pushViewControllerNamed{
+    return ^(NSString *name){
+        return [self ax_pushViewControllerNamed:name];
+    };
+}
 
 - (void)ax_pushViewControllerNamed:(NSString *)vcName animated:(BOOL)animated completion:(void (^)(UIViewController *targetVC))completion failure:(void (^)(NSError *error))failure{
     UIViewController *vc = [[NSClassFromString(vcName) class] new];

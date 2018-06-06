@@ -34,6 +34,7 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import "NSArray+AXAdd.h"
 #import "NSBundle+AXAdd.h"
 #import "NSDate+AXAdd.h"
+#import "NSDateFormatter+AXAdd.h"
 #import "NSDictionary+AXAdd.h"
 #import "NSError+AXAdd.h"
 #import "NSLog+AXAdd.h"

@@ -118,7 +118,24 @@
     return 0.5*self.bounds.size.height;
 }
 
+// MARK: frame
 
+- (UIView *(^)(CGFloat height))heightWith{
+    return ^UIView *(CGFloat height){
+        CGRect frame = self.frame;
+        frame.size.height = height;
+        self.frame = frame;
+        return self;
+    };
+}
 
+- (UIView *(^)(CGSize size))sizeWith{
+    return ^UIView *(CGSize size){
+        CGRect frame = self.frame;
+        frame.size = size;
+        self.frame = frame;
+        return self;
+    };
+}
 
 @end

@@ -18,5 +18,11 @@ inline UIImageView *UIImageViewWithImageNamed(NSString *name){
 
 @implementation UIImageView (AXAdd)
 
++ (UIImageView * _Nonnull (^)(NSString * _Nonnull))named{
+    return ^UIImageView *(NSString *name){
+        return UIImageViewWithImageNamed(name);
+    };
+}
+
 
 @end

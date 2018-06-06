@@ -50,6 +50,11 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL{
     [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:nil];
 }
++ (void (^)(NSURL * _Nonnull))presentSafariViewController{
+    return ^(NSURL *URL){
+        [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:nil];
+    };
+}
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^)(void))completion{
     [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:completion];
 }
@@ -75,6 +80,11 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 + (void)ax_openBluetoothSetting{
     openSettingURLWithString(urlStringWithKey(@"Bluetooth"), nil);
 }
++ (void (^)(void))openBluetoothSetting{
+    return ^{
+        [self ax_openBluetoothSetting];
+    };
+}
 
 /**
  打开WIFI设置
@@ -88,6 +98,11 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
  */
 + (void)ax_openNotificationSetting{
     openSettingURLWithString(urlStringWithKey(@"NOTIFICATIONS_ID"), nil);
+}
++ (void (^)(void))openNotificationSetting{
+    return ^{
+        [self ax_openNotificationSetting];
+    };
 }
 /**
  打开相册设置
@@ -110,5 +125,10 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
     openSettingURLWithString(UIApplicationOpenSettingsURLString, completion);
 }
 
++ (void (^)(void))openAppSetting{
+    return ^{
+        [self ax_openAppSetting:nil];
+    };
+}
 
 @end

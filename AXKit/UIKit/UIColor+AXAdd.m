@@ -135,7 +135,11 @@ static CGFloat grayLevel(UIColor *color){
     }
     return nil;
 }
-
++ (UIColor *(^)(NSString *))colorNamed{
+    return ^UIColor *(NSString *hex){
+        return [self colorWithHexString:hex];
+    };
+}
 - (CGFloat)redValue{
     CGFloat red;
     [self getRed:&red green:nil blue:nil alpha:nil];

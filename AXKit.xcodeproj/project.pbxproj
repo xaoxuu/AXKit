@@ -150,6 +150,8 @@
 		CD3EE9E720C77DC40074F083 /* UIViewController+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE99620C77DC30074F083 /* UIViewController+AXAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3EE9E820C77DC40074F083 /* UIViewController+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE99720C77DC30074F083 /* UIViewController+AXAdd.m */; };
 		CD3EEA1320C78BD00074F083 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EEA1220C78BD00074F083 /* BaseTableView.m */; };
+		CD3EEA1620C7B6420074F083 /* NSDateFormatter+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EEA1420C7B6420074F083 /* NSDateFormatter+AXAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD3EEA1720C7B6420074F083 /* NSDateFormatter+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EEA1520C7B6420074F083 /* NSDateFormatter+AXAdd.m */; };
 		CD47DE6A20898ED7007E4F24 /* CacheableLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */; };
 		CD47DE6E20898F0B007E4F24 /* CacheableLogTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE6D20898F0B007E4F24 /* CacheableLogTV.m */; };
 		CD47DE712089915E007E4F24 /* ContentViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47DE702089915E007E4F24 /* ContentViewerVC.m */; };
@@ -423,6 +425,8 @@
 		CD3EE99720C77DC30074F083 /* UIViewController+AXAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXAdd.m"; sourceTree = "<group>"; };
 		CD3EEA1120C78BD00074F083 /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
 		CD3EEA1220C78BD00074F083 /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		CD3EEA1420C7B6420074F083 /* NSDateFormatter+AXAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+AXAdd.h"; sourceTree = "<group>"; };
+		CD3EEA1520C7B6420074F083 /* NSDateFormatter+AXAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+AXAdd.m"; sourceTree = "<group>"; };
 		CD47DE6820898ED7007E4F24 /* CacheableLogVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogVC.h; sourceTree = "<group>"; };
 		CD47DE6920898ED7007E4F24 /* CacheableLogVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheableLogVC.m; sourceTree = "<group>"; };
 		CD47DE6C20898F0B007E4F24 /* CacheableLogTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheableLogTV.h; sourceTree = "<group>"; };
@@ -838,6 +842,8 @@
 				CD3EE95420C77DC30074F083 /* NSBundle+AXAdd.m */,
 				CD3EE95520C77DC30074F083 /* NSDate+AXAdd.h */,
 				CD3EE95620C77DC30074F083 /* NSDate+AXAdd.m */,
+				CD3EEA1420C7B6420074F083 /* NSDateFormatter+AXAdd.h */,
+				CD3EEA1520C7B6420074F083 /* NSDateFormatter+AXAdd.m */,
 				CD3EE95720C77DC30074F083 /* NSDictionary+AXAdd.h */,
 				CD3EE95820C77DC30074F083 /* NSDictionary+AXAdd.m */,
 				CD3EE95920C77DC30074F083 /* NSError+AXAdd.h */,
@@ -1579,6 +1585,7 @@
 				CD3EE9A720C77DC40074F083 /* NSDate+AXAdd.h in Headers */,
 				CD3EE9B520C77DC40074F083 /* NSTimer+AXAdd.h in Headers */,
 				CD3EE9DD20C77DC40074F083 /* UITextView+AXAdd.h in Headers */,
+				CD3EEA1620C7B6420074F083 /* NSDateFormatter+AXAdd.h in Headers */,
 				CD3EE9D320C77DC40074F083 /* UINavigationController+AXAdd.h in Headers */,
 				CD3EE9A520C77DC40074F083 /* NSBundle+AXAdd.h in Headers */,
 				CD3EE9E520C77DC40074F083 /* UIView+AXGestureAdd.h in Headers */,
@@ -2042,6 +2049,7 @@
 				CD3EE9B420C77DC40074F083 /* NSString+AXFileManager.m in Sources */,
 				CD3EE9A420C77DC40074F083 /* NSArray+AXAdd.m in Sources */,
 				CD3EE9B620C77DC40074F083 /* NSTimer+AXAdd.m in Sources */,
+				CD3EEA1720C7B6420074F083 /* NSDateFormatter+AXAdd.m in Sources */,
 				CD3EE9B820C77DC40074F083 /* NSUserDefaults+AXAdd.m in Sources */,
 				CD3EE99C20C77DC40074F083 /* AXResult.m in Sources */,
 				CD3EE9D020C77DC40074F083 /* UIImageView+AXGetColor.m in Sources */,

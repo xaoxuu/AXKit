@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 @interface UIApplication (AXAdd)
 
@@ -18,6 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
  @param URL 网址
  */
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL;
+
+/**
+ 打开app内置Safari浏览器
+ */
++ (void (^)(NSURL *))presentSafariViewController;
 
 /**
  打开app内置Safari浏览器
@@ -50,6 +56,10 @@ NS_ASSUME_NONNULL_BEGIN
  打开蓝牙设置
  */
 + (void)ax_openBluetoothSetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
+/**
+ 打开蓝牙设置
+ */
++ (void (^)(void))openBluetoothSetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 
 /**
  打开WIFI设置
@@ -60,6 +70,10 @@ NS_ASSUME_NONNULL_BEGIN
  打开通知设置
  */
 + (void)ax_openNotificationSetting NS_DEPRECATED_IOS(8_0, 10_0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
+/**
+ 打开通知设置
+ */
++ (void (^)(void))openNotificationSetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 
 /**
  打开相册设置
@@ -75,6 +89,11 @@ NS_ASSUME_NONNULL_BEGIN
  打开当前app的设置页面
  */
 + (void)ax_openAppSetting:(void (^ __nullable)(BOOL))completion NS_AVAILABLE_IOS(11.0);
+
+/**
+ 打开当前app的设置页面
+ */
++ (void (^)(void))openAppSetting NS_AVAILABLE_IOS(11.0);
 
 @end
 NS_ASSUME_NONNULL_END
