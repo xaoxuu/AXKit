@@ -21,6 +21,7 @@
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scroll.delegate = self;
     [self.view addSubview:scroll];
+    
     for (int i = 0; i < 20; i++) {
         UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(kMarginNormal, kMarginNormal+i*80, kScreenW-16, 40)];
         [tf ax_adjustViewFrameWithKeyboard:self.view];
@@ -38,10 +39,6 @@
             }
         }];
     }
-    
-    [scroll ax_addTapGestureHandler:^(UITapGestureRecognizer * _Nonnull sender) {
-        [self.view endEditing:YES];
-    }];
     
 }
 

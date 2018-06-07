@@ -34,11 +34,6 @@ static const void *UITextFieldAXExtensionKey_SuperView = &UITextFieldAXExtension
     [self setValue:placeholderColor forKeyPath:@"placeholderLabel.textColor"];
 }
 
-
-- (void)ax_clearText {
-    self.text = @"";
-}
-
 - (void)ax_adjustViewFrameWithKeyboard:(UIView *)view {
     self.ax_superview = view;
     // 添加对键盘的监控

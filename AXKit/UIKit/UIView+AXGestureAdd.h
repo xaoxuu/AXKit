@@ -96,11 +96,19 @@ NS_ASSUME_NONNULL_BEGIN
  @param gestureRecognizer 手势对象
  */
 - (void)ax_removeGestureRecognizer:(__kindof UIGestureRecognizer *)gestureRecognizer;
+/**
+ 移除一个手势
+ */
+- (void (^)(__kindof UIGestureRecognizer *))removeGestureRecognizer;
 
 /**
  移除所有手势
  */
 - (void)ax_removeAllGestureRecognizers;
+/**
+ 移除所有手势
+ */
+- (void (^)(void))removeAllGestureRecognizers;
 
 @end
 

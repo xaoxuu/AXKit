@@ -165,6 +165,11 @@ static inline void smartRGBA(CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a){
         return [self colorWithRed:red green:green blue:blue alpha:alpha];
     };
 }
++ (__kindof UIColor *(^)(CGFloat hue, CGFloat saturation, CGFloat brightness, CGFloat alpha))initWithHSBA{
+    return ^UIColor *(CGFloat hue, CGFloat saturation, CGFloat brightness, CGFloat alpha){
+        return [self colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
+    };
+}
 + (__kindof UIColor *(^)(CGFloat, CGFloat))initWithWhite{
     return ^UIColor *(CGFloat white, CGFloat alpha){
         return [UIColor colorWithWhite:white alpha:alpha];

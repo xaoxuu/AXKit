@@ -14,12 +14,6 @@
 
 @property (strong, readwrite, nonatomic) UIColor *placeholderColor;
 
-
-/**
- 清空文本内容
- */
-- (void)ax_clearText;
-
 /**
  当键盘弹出的时候调整某个view的frame
 

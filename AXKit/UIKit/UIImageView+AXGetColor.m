@@ -20,7 +20,7 @@
  @param blue blue value
  @param alpha alpha value
  */
-inline void UIImageViewGetRGBAWithPoint(UIImageView *imageView, CGPoint point, CGFloat *red, CGFloat *green, CGFloat *blue, CGFloat *alpha){
+static inline void UIImageViewGetRGBAWithPoint(UIImageView *imageView, CGPoint point, CGFloat *red, CGFloat *green, CGFloat *blue, CGFloat *alpha){
     // frame of image
     const CGRect imageFrame = CGRectMake(0.0f, 0.0f,
                                          imageView.frame.size.width, imageView.frame.size.height);
@@ -56,7 +56,7 @@ inline void UIImageViewGetRGBAWithPoint(UIImageView *imageView, CGPoint point, C
  @param point 坐标点
  @return UIColor
  */
-inline UIColor *UIImageViewGetColorWithPoint(UIImageView *imageView, CGPoint point){
+static inline UIColor *UIImageViewGetColorWithPoint(UIImageView *imageView, CGPoint point){
     // frame of image
     const CGRect imageFrame = CGRectMake(0.0f, 0.0f,
                                          imageView.frame.size.width, imageView.frame.size.height);
@@ -73,7 +73,7 @@ inline UIColor *UIImageViewGetColorWithPoint(UIImageView *imageView, CGPoint poi
 }
 
 
-inline void UIImageViewGetRGBA(UIImageView *imageView, CGPoint point, void(^completion)(CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha)){
+static inline void UIImageViewGetRGBA(UIImageView *imageView, CGPoint point, void(^completion)(CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha)){
     if (completion) {
         CGFloat red,green,blue,alpha;
         UIImageViewGetRGBAWithPoint(imageView, point, &red, &green, &blue, &alpha);
@@ -81,7 +81,7 @@ inline void UIImageViewGetRGBA(UIImageView *imageView, CGPoint point, void(^comp
     }
 }
 
-inline void UIImageViewGetColor(UIImageView *imageView, CGPoint point, void(^completion)(UIColor *color)){
+static inline void UIImageViewGetColor(UIImageView *imageView, CGPoint point, void(^completion)(UIColor *color)){
     if (completion) {
         UIColor *color = UIImageViewGetColorWithPoint(imageView, point);
         if (color) {
@@ -91,7 +91,7 @@ inline void UIImageViewGetColor(UIImageView *imageView, CGPoint point, void(^com
 }
 
 
-inline void UIImageViewGetRGBAFromCircle(UIImageView *imageView, CGPoint point, void(^completion)(CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha)){
+static inline void UIImageViewGetRGBAFromCircle(UIImageView *imageView, CGPoint point, void(^completion)(CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha)){
     // @xaoxuu: 过滤不符合条件的坐标点
     CGFloat inset = imageView.layer.borderWidth + imageView.layer.shadowRadius + 1;
     CGFloat r = 0.5 * (imageView.frame.size.width - inset);
@@ -103,7 +103,7 @@ inline void UIImageViewGetRGBAFromCircle(UIImageView *imageView, CGPoint point, 
     }
 }
 
-inline void UIImageViewGetColorFromCircle(UIImageView *imageView, CGPoint point, void(^completion)(UIColor *color)){
+static inline void UIImageViewGetColorFromCircle(UIImageView *imageView, CGPoint point, void(^completion)(UIColor *color)){
     // @xaoxuu: 过滤不符合条件的坐标点
     CGFloat inset = imageView.layer.borderWidth + imageView.layer.shadowRadius + 1;
     CGFloat r = 0.5 * (imageView.frame.size.width - inset);

@@ -79,6 +79,11 @@ CG_EXTERN __kindof UIColor *lighten(UIColor *color, CGFloat percent);
 + (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha))initWithRGBA;
 
 /**
+ 以RGBA创建颜色
+ */
++ (__kindof UIColor *(^)(CGFloat hue, CGFloat saturation, CGFloat brightness, CGFloat alpha))initWithHSBA;
+
+/**
  以white和alpha创建颜色
  */
 + (__kindof UIColor *(^)(CGFloat white, CGFloat alpha))initWithWhite;

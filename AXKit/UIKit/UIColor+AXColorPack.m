@@ -11,47 +11,33 @@
 
 @implementation UIColor (AXColorPack)
 
-
+// MARK: - [红色 -> 蓝色) ==================================================
++ (UIColor *)ax_lightRed {
+    return UIColor.initWithHEX(@"#FF6868");
+}
 + (UIColor *)ax_red {
-    static UIColor *color;
-    if (!color) {
-        color = UIColor.initWithHEX(@"#F05153");
-    }
-    return color;
+    return UIColor.initWithHEX(@"#F05153");
 }
 
-+ (UIColor *)ax_lightRed {
-    static UIColor *color;
-    if (!color) {
-        color = UIColor.initWithHEX(@"#FF6868");
-    }
-    return color;
++ (UIColor *)ax_lightPurple {
+    return UIColor.initWithHEX(@"#B6A5F4");
+}
+
+// MARK: - [蓝色 -> 绿色) ==================================================
++ (UIColor *)ax_blue {
+    return UIColor.initWithHEX(@"#52A1F8");
+}
+
+
+// MARK: - [绿色 -> 黄色) ==================================================
++ (UIColor *)ax_cyan {
+    return UIColor.initWithHEX(@"#66CDFA");
 }
 
 + (UIColor *)ax_green {
-    static UIColor *color;
-    if (!color) {
-        color = UIColor.initWithHEX(@"#7CC353");
-    }
-    return color;
+    return UIColor.initWithHEX(@"#7CC353");
 }
 
-+ (UIColor *)ax_cyan {
-    static UIColor *color;
-    if (!color) {
-        color = UIColor.initWithHEX(@"#66CDFA");
-    }
-    return color;
-}
-
-+ (UIColor *)ax_blue {
-    static UIColor *color;
-    if (!color) {
-        color = UIColor.initWithHEX(@"#52A1F8");
-    }
-    return color;
-}
-
-
+// MARK: - 黑白灰 ==================================================
 
 @end

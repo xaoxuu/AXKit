@@ -76,7 +76,7 @@
 - (void (^)(NSString * _Nonnull))popToViewControllerWithClassName{
     return ^(NSString *name){
         NSArray<UIViewController *> *vcs = self.viewControllers;
-        for (NSUInteger i = vcs.count-1; i >= 0; i--) {
+        for (NSInteger i = vcs.count-1; i >= 0; i--) {
             UIViewController *vc = vcs[i];
             if ([NSStringFromClass(vc.class) isEqualToString:name]) {
                 [self popToViewController:vc animated:YES];

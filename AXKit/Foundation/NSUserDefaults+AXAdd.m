@@ -24,24 +24,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 @end
 
-static inline void readObjForKey(NSString *key, NSString *desc, void (^completion)(id object), void (^failure)(NSError *error)){
-    id obj = [DefaultUser() objectForKey:key];
-    if (obj) {
-        if (completion) {
-            completion(obj);
-        }
-    } else {
-        NSError *error = [NSError axkit_errorWithReason:^NSString *{
-            return [NSString stringWithFormat:@"The %@ for key: \'%@\' not found.\n", desc, key];
-        }];
-        if (failure && error) {
-            failure(error);
-        }
-    }
-}
-
 @implementation NSUserDefaults (AXAdd)
-
 
 #pragma mark - read
 

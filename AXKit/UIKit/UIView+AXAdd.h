@@ -50,11 +50,6 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 + (__kindof UIView *(^)(CGSize size))initWithSize;
 
 /**
- 设置view的圆角
- */
-- (__kindof UIView *(^)(CGFloat cornerRadius))cornerRadiusWith;
-
-/**
  获取view
  */
 - (UIImage *(^)(void))screenshot;
@@ -72,7 +67,6 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  @param subClass 指定范围（只移除属于哪个类的子视图，传入nil时移除所有子视图）
  */
 - (void)ax_removeAllSubviews:(nullable Class)subClass;
-
 
 /**
  让每个子视图执行一段代码

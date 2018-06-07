@@ -139,10 +139,19 @@ static inline AXEventTarget *bindGesture(UIView *view, UIGestureRecognizer *gest
 - (void)ax_removeGestureRecognizer:(__kindof UIGestureRecognizer *)gestureRecognizer{
     [AXEventTarget removeGesturesRecognizer:gestureRecognizer forView:self];
 }
+- (void (^)(__kindof UIGestureRecognizer *))removeGestureRecognizer{
+    return ^(__kindof UIGestureRecognizer *gestureRecognizer){
+        [AXEventTarget removeGesturesRecognizer:gestureRecognizer forView:self];
+    };
+}
 - (void)ax_removeAllGestureRecognizers{
     [AXEventTarget removeAllGesturesRecognizerForView:self];
 }
-
+- (void (^)(void))removeAllGestureRecognizers{
+    return ^{
+        [AXEventTarget removeAllGesturesRecognizerForView:self];
+    };
+}
 
 @end
 

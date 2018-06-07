@@ -10,31 +10,22 @@
 
 @interface UIColor (AXColorPack)
 
+// MARK: - [红色 -> 蓝色) ==================================================
+@property (class, strong, readonly, nonatomic) UIColor *ax_lightRed;
+@property (class, strong, readonly, nonatomic) UIColor *ax_red;
 
-/**
- 蓝色
- */
+@property (class, strong, readonly, nonatomic) UIColor *ax_lightPurple;
+
+// MARK: - [蓝色 -> 绿色) ==================================================
 @property (class, strong, readonly, nonatomic) UIColor *ax_blue;
 
-/**
- 青色
- */
 @property (class, strong, readonly, nonatomic) UIColor *ax_cyan;
 
-/**
- 绿色
- */
+// MARK: - [绿色 -> 黄色) ==================================================
 @property (class, strong, readonly, nonatomic) UIColor *ax_green;
 
-/**
- 浅红色
- */
-@property (class, strong, readonly, nonatomic) UIColor *ax_lightRed;
 
-/**
- 红色
- */
-@property (class, strong, readonly, nonatomic) UIColor *ax_red;
+// MARK: - 黑白灰 ==================================================
 
 
 

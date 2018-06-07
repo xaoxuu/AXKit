@@ -40,14 +40,6 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     };
 }
 
-- (__kindof UIView *(^)(CGFloat cornerRadius))cornerRadiusWith{
-    return ^UIView *(CGFloat cornerRadius){
-        self.layer.masksToBounds = YES;
-        self.layer.cornerRadius = cornerRadius;
-        return self;
-    };
-}
-
 - (UIImage * _Nonnull (^)(void))screenshot{
     return ^UIImage *{
         return UIImage.initWithView(self);

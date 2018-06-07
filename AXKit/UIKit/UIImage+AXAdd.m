@@ -26,7 +26,6 @@ static inline UIImage *UIImageGetPureColorImage(UIColor *color, CGSize size){
     return pureColorImage;
 }
 
-
 static inline UIImage *UIImageFromView(UIView *view){
     // @xaoxuu: 开始取图
     UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, [UIScreen mainScreen].scale);
@@ -39,8 +38,6 @@ static inline UIImage *UIImageFromView(UIView *view){
     UIGraphicsEndImageContext();
     return image;
 }
-
-
 
 static inline UIImage *UIImageWithBundleImageName(NSBundle *bundle, NSString *name){
     NSString *path = [bundle pathForResource:name ofType:@"png"];
@@ -93,13 +90,6 @@ static inline UIImage *UIImageGetSquareImageAndOption(UIImage *image, void(^op)(
     UIGraphicsEndImageContext();
     return roundedImage;
 }
-
-static inline UIImage *UIImageGetRoundedImage(UIImage *image){
-    return UIImageGetSquareImageAndOption(image, ^(CGContextRef ctx, CGRect rect) {
-        CGContextAddEllipseInRect(ctx, rect);
-    });
-}
-
 
 static inline UIImage *UIImageGetBlurredImage(UIImage *image, CGFloat ratio){
     CIImage * ciImage = [[CIImage alloc]initWithImage:image];
