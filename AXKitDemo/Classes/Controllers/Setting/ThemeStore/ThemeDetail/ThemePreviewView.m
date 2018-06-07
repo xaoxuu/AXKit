@@ -63,7 +63,7 @@ static NSString *reuseIdentifier = @"ThemePreviewCollectionViewCell";
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ThemePreviewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     if (self.model.info.preview.count) {
-        [cell.imgv sd_setImageWithURL:self.model.info.preview[indexPath.row].absoluteURL];
+        [cell.imgv sd_setImageWithURL:[NSURL URLWithString:self.model.info.preview[indexPath.row]]];
     }
     [self updateNumberOfPages];
     return cell;

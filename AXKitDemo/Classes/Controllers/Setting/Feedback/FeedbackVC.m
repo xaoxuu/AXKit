@@ -93,7 +93,7 @@ static CGFloat margin = 4;
             
         } completion:^(MFMailComposeResult result) {
             
-            [UIAlertController ax_showAlertWithTitle:NSStringFromNSInteger(result) message:nil actions:nil];
+            [UIAlertController ax_showAlertWithTitle:@(result).stringValue message:nil actions:nil];
         } fail:^(NSError *error) {
             [UIAlertController ax_showAlertWithTitle:@"无法发送邮件" message:nil actions:nil];
         }];

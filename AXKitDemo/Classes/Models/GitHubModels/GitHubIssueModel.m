@@ -26,7 +26,7 @@
 
 - (instancetype)initWithModelItems:(NSArray<GitHubIssueModel *> *)items{
     if (self = [super init]) {
-        _total_count = NSStringFromNSUInteger(items.count);
+        _total_count = @(items.count).stringValue;
         _items = [NSMutableArray arrayWithArray:items];
     }
     return self;

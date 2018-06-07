@@ -26,7 +26,7 @@
         [tf ax_adjustViewFrameWithKeyboard:self.view];
         [scroll addSubview:tf];
         tf.tag = i;
-        tf.placeholder = NSStringFromInt(i);
+        tf.placeholder = @(i).stringValue;
         tf.backgroundColor = UIColor.lightGrayColor.light;
         tf.returnKeyType = UIReturnKeyNext;
         scroll.contentSize = CGSizeMake(0, tf.bottom + 16);

@@ -146,8 +146,8 @@
         id ret = [NSJSONSerialization JSONObjectWithData:testData options:opt error:error];
         if ([ret isKindOfClass:[NSDictionary class]] || [ret isKindOfClass:[NSArray class]]) {
             _dataValue = testData;
-            _dictionaryValue = autoDictionary(ret, nil);
-            _arrayValue = autoArray(ret, nil);
+            _dictionaryValue = safeDictionary(ret, nil);
+            _arrayValue = safeArray(ret, nil);
             _stringValue = [[NSString alloc] initWithData:testData encoding:NSUTF8StringEncoding];
         }
     }

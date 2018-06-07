@@ -13,113 +13,112 @@
 #import "NSObject+AXAdd.h"
 
 
-inline NSString *NSStringFromBool(BOOL x){
-    return @(x).stringValue;
-}
-
-inline NSString *NSStringFromFloat(float x){
-    return @(x).stringValue;
-}
-
-inline NSString *NSStringFromCGFloat(CGFloat x){
-    return @(x).stringValue;
-}
-
-inline NSString *NSStringFromInt(int x){
-    return @(x).stringValue;
-}
-
-inline NSString *NSStringFromNSInteger(NSInteger x){
-    return @(x).stringValue;
-}
-
-inline NSString *NSStringFromNSUInteger(NSUInteger x){
-    return @(x).stringValue;
-}
-
-
-
-inline NSString *NSStringFromPointer(id x){
-    return [NSString stringWithFormat:@"%p",x];
-}
-
-inline NSString *NSStringFromPercent(CGFloat x){
-    x = AXMakeNumberInRange(@(x), @0, @1).doubleValue;
-    return [NSString stringWithFormat:@"%@%%",@(100 * x)];
-}
-
-inline NSString *NSStringFromASCIIValue(unsigned char ASCIIValue){
-    return [NSString stringWithFormat:@"%c",ASCIIValue];
-}
-
-
-inline NSString *SpellForChinese(NSString *chinese){
-    NSMutableString *pinyin = [NSMutableString stringWithString:chinese];
-    // 将汉字转换为拼音(带音标)
-    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformMandarinLatin, NO);
-    // 去掉拼音的音标
-    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripCombiningMarks, NO);
-    return pinyin;
-}
-
-@implementation NSString (AXAppendingAdd)
-
-
-
-- (NSString *(^)(NSString *string))append{
-    return ^(NSString *string){
-        if (string.length) {
-            return [self stringByAppendingString:string];;
-        } else{
-            return self;
+static inline CGSize boundingSize(NSString *str, UIFont *font, CGSize size, NSLineBreakMode lineBreakMode){
+    CGSize result;
+    if (!font) font = [UIFont systemFontOfSize:12];
+    if ([str respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        NSMutableDictionary *attr = [NSMutableDictionary new];
+        attr[NSFontAttributeName] = font;
+        if (lineBreakMode != NSLineBreakByWordWrapping) {
+            NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+            paragraphStyle.lineBreakMode = lineBreakMode;
+            attr[NSParagraphStyleAttributeName] = paragraphStyle;
         }
-    };
+        CGRect rect = [str boundingRectWithSize:size
+                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                      attributes:attr context:nil];
+        result = rect.size;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        result = [str sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreakMode];
+#pragma clang diagnostic pop
+    }
+    return result;
 }
 
 
-- (NSString *(^)(NSNumber *number))appendNumber{
-    return ^(NSNumber *number){
-        return [self stringByAppendingString:number.stringValue];
-    };
-}
-- (NSString *(^)(NSInteger x))appendNSInteger{
-    return ^(NSInteger x){
-        return [self stringByAppendingString:NSStringFromNSInteger(x)];;
-    };
-}
-- (NSString *(^)(NSUInteger x))appendNSUInteger{
-    return ^(NSUInteger x){
-        return [self stringByAppendingString:NSStringFromNSUInteger(x)];;
-    };
-}
-- (NSString *(^)(CGFloat x))appendCGFloat{
-    return ^(CGFloat x){
-        return [self stringByAppendingString:NSStringFromCGFloat(x)];;
-    };
-}
-- (NSString *(^)(void))appendReturn{
-    return ^{
-        return [self stringByAppendingString:@"\n"];;
-    };
+/**
+ 产生指定位数的随机二进制数
+ 
+ @param length 随机数的位数（字符串的长度）
+ @return 随机数字
+ */
+static inline NSString *randomBin(NSUInteger length){
+    NSMutableString *str = [NSMutableString string];
+    for (NSUInteger i=0; i<length; i++) {
+        [str appendFormat:@"%c",48 + arc4random_uniform(2)];
+    }
+    return str;
 }
 
-- (NSString *(^)(NSString *string))prefix{
-    return ^(NSString *string){
-        if (string.length) {
-            return [string stringByAppendingString:self];;
-        } else{
-            return self;
+
+/**
+ 产生指定位数的随机八进制数
+ 
+ @param length 随机数的位数（字符串的长度）
+ @return 随机数字
+ */
+static inline NSString *randomOct(NSUInteger length){
+    NSMutableString *str = [NSMutableString string];
+    for (NSUInteger i=0; i<length; i++) {
+        [str appendFormat:@"%c",48 + arc4random_uniform(8)];
+    }
+    return str;
+}
+
+/**
+ 产生指定位数的随机十进制数
+ 
+ @param length 随机数的位数（字符串的长度）
+ @return 随机数字
+ */
+static inline NSString *randomDec(NSUInteger length){
+    NSMutableString *str = [NSMutableString string];
+    for (NSUInteger i=0; i<length; i++) {
+        [str appendFormat:@"%c",48 + arc4random_uniform(10)];
+    }
+    return str;
+}
+
+
+/**
+ 产生指定位数的随机十六进制数
+ 
+ @param length 随机数的位数（字符串的长度）
+ @return 随机数字
+ */
+static inline NSString *randomHex(NSUInteger length){
+    NSMutableString *str = [NSMutableString string];
+    for (NSUInteger i=0; i<length; i++) {
+        int x = arc4random_uniform(16);
+        if (x > 9) {
+            x += 7;
         }
-    };
+        char xChar = x + 48;
+        [str appendFormat:@"%c",xChar];
+    }
+    return str;
 }
 
-@end
+static inline NSString *randomLowerString(NSUInteger min, NSUInteger max){
+    NSUInteger randomLength = AXRandomIntegerInRange(min, max);
+    NSMutableString *str = [NSMutableString string];
+    for (NSUInteger i=0; i<randomLength; i++) {
+        [str appendFormat:@"%c",97 + arc4random_uniform(26)];
+    }
+    return str;
+}
+static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
+    NSUInteger randomLength = AXRandomIntegerInRange(min, max);
+    NSMutableString *str = [NSMutableString string];
+    for (NSUInteger i=0; i<randomLength; i++) {
+        [str appendFormat:@"%c",65 + arc4random_uniform(26)];
+    }
+    return str;
+}
 
 @implementation NSString (AXAdd)
-
-- (nullable NSURL *)absoluteURL{
-    return [NSURL URLWithString:self].absoluteURL;
-}
 
 - (BOOL)isURLString{
     if ([self containsString:@"http"] && [self containsString:@"://"]) {
@@ -129,9 +128,16 @@ inline NSString *SpellForChinese(NSString *chinese){
     }
 }
 
-- (CGFloat)ax_textHeightWithFont:(UIFont *)font width:(CGFloat)width{
-    NSDictionary *dict = @{NSFontAttributeName:font};
-    return [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dict context:nil].size.height;
+- (CGSize (^)(UIFont *font, CGSize size))boundingSize{
+    return ^CGSize(UIFont *font, CGSize size){
+        return boundingSize(self, font, size, NSLineBreakByWordWrapping);
+    };
+}
+
+- (CGFloat (^)(UIFont *font, CGFloat width))boundingHeight{
+    return ^CGFloat(UIFont *font, CGFloat width){
+        return boundingSize(self, font, CGSizeMake(width, MAXFLOAT), NSLineBreakByWordWrapping).height;
+    };
 }
 
 - (NSNumber *)numberValue{
@@ -155,166 +161,120 @@ inline NSString *SpellForChinese(NSString *chinese){
     
 }
 
-@end
++ (NSString *(^)(NSString *))spellForChinese{
+    return ^NSString *(NSString *chinese){
+        NSMutableString *pinyin = [NSMutableString stringWithString:chinese];
+        // 将汉字转换为拼音(带音标)
+        CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformMandarinLatin, NO);
+        // 去掉拼音的音标
+        CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripCombiningMarks, NO);
+        return pinyin;
+    };
+}
 
++ (NSString * _Nonnull (^)(id _Nonnull))pointerDescription{
+    return ^NSString *(id x){
+        return [NSString stringWithFormat:@"%p",x];
+    };
+}
 
+// MARK: - 拼接
 
-
-#pragma mark - 随机字符串
-
-
-inline NSString *AXRandomStringFrom(RandomStringType type, AXUIntegerRange length){
-    switch (type) {
-        case RandomStringTypeName: {
-            return [NSString ax_stringWithRandomNameWithLength:length];
-            break;
+- (NSString *(^)(NSString *string))append{
+    return ^(NSString *string){
+        if (string.length) {
+            return [self stringByAppendingString:string];;
+        } else{
+            return self;
         }
-        case RandomStringTypePassword: {
-            return [NSString ax_stringWithRandomPasswordWithLength:length];
-            break;
+    };
+}
+
+- (NSString *(^)(NSNumber *number))appendNumber{
+    return ^(NSNumber *number){
+        return [self stringByAppendingString:number.stringValue];
+    };
+}
+
+- (NSString *(^)(void))appendReturn{
+    return ^{
+        return [self stringByAppendingString:@"\n"];;
+    };
+}
+
+- (NSString *(^)(NSString *string))prefix{
+    return ^(NSString *string){
+        if (string.length) {
+            return [string stringByAppendingString:self];;
+        } else{
+            return self;
         }
-        case RandomStringTypeLower: {
-            return [NSString ax_stringWithRandomLowerStringWithLength:length];
-            break;
+    };
+}
+
+// MARK: - 随机
+
++ (NSString * _Nonnull (^)(NSUInteger))randomBin{
+    return ^NSString *(NSUInteger length){
+        return randomBin(length);
+    };
+}
+
++ (NSString * _Nonnull (^)(NSUInteger))randomOct{
+    return ^NSString *(NSUInteger length){
+        return randomOct(length);
+    };
+}
++ (NSString * _Nonnull (^)(NSUInteger))randomDec{
+    return ^NSString *(NSUInteger length){
+        return randomDec(length);
+    };
+}
++ (NSString * _Nonnull (^)(NSUInteger))randomHex{
+    return ^NSString *(NSUInteger length){
+        return randomHex(length);
+    };
+}
+
+
++ (NSString * _Nonnull (^)(NSUInteger, NSUInteger))randomName{
+    return ^NSString *(NSUInteger min, NSUInteger max){
+        // first name
+        NSMutableString *str = [NSMutableString string];
+        [str appendString:self.randomLowerString(min, max).capitalizedString];
+        [str appendString:@" "];
+        [str appendString:self.randomLowerString(min, max).capitalizedString];
+        return str;
+    };
+}
+
++ (NSString * _Nonnull (^)(NSUInteger, NSUInteger))randomPassword{
+    return ^NSString *(NSUInteger min, NSUInteger max){
+        NSUInteger randomLength = AXRandomIntegerInRange(min, max);
+        NSMutableString *str = [NSMutableString string];
+        for (NSUInteger i=0; i<randomLength; i++) {
+            [str appendFormat:@"%c",32 + arc4random_uniform(95)];
         }
-        case RandomStringTypeUpper: {
-            return [NSString ax_stringWithRandomUpperStringWithLength:length];
-            break;
-        }
-        case RandomStringTypeCapitalize: {
-            return [NSString ax_stringWithRandomCapitalizeStringWithLength:length];
-            break;
-        }
-    }
+        return str;
+    };
 }
 
-
-/**
- 产生指定位数的随机二进制数
- 
- @param length 随机数的位数（字符串的长度）
- @return 随机数字
- */
-inline NSString *AXRandomBinStringWithLength(NSUInteger length){
-    NSMutableString *str = [NSMutableString string];
-    for (NSUInteger i=0; i<length; i++) {
-        [str appendFormat:@"%c",48 + arc4random_uniform(2)];
-    }
-    return str;
++ (NSString * _Nonnull (^)(NSUInteger, NSUInteger))randomLowerString{
+    return ^NSString *(NSUInteger min, NSUInteger max){
+        return randomLowerString(min, max);
+    };
 }
 
-
-/**
- 产生指定位数的随机八进制数
- 
- @param length 随机数的位数（字符串的长度）
- @return 随机数字
- */
-inline NSString *AXRandomOctStringWithLength(NSUInteger length){
-    NSMutableString *str = [NSMutableString string];
-    for (NSUInteger i=0; i<length; i++) {
-        [str appendFormat:@"%c",48 + arc4random_uniform(8)];
-    }
-    return str;
++ (NSString * _Nonnull (^)(NSUInteger, NSUInteger))randomUpperString{
+    return ^NSString *(NSUInteger min, NSUInteger max){
+        return randomUpperString(min, max);
+    };
 }
 
-/**
- 产生指定位数的随机十进制数
- 
- @param length 随机数的位数（字符串的长度）
- @return 随机数字
- */
-inline NSString *AXRandomDecStringWithLength(NSUInteger length){
-    NSMutableString *str = [NSMutableString string];
-    for (NSUInteger i=0; i<length; i++) {
-        [str appendFormat:@"%c",48 + arc4random_uniform(10)];
-    }
-    return str;
-}
-
-
-/**
- 产生指定位数的随机十六进制数
- 
- @param length 随机数的位数（字符串的长度）
- @return 随机数字
- */
-inline NSString *AXRandomHexStringWithLength(NSUInteger length){
-    NSMutableString *str = [NSMutableString string];
-    for (NSUInteger i=0; i<length; i++) {
-        int x = arc4random_uniform(16);
-        if (x > 9) {
-            x += 7;
-        }
-        char xChar = x + 48;
-        [str appendFormat:@"%c",xChar];
-    }
-    return str;
-}
-
-
-
-
-@implementation NSString (AXRandomAdd)
-
-
-
-+ (NSString *)ax_stringWithRandomLowerStringWithLength:(AXUIntegerRange)length{
-    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
-    NSMutableString *str = [NSMutableString string];
-    for (NSUInteger i=0; i<randomLength; i++) {
-        [str appendFormat:@"%c",97 + arc4random_uniform(26)];
-    }
-    return str;
-}
-
-+ (NSString *)ax_stringWithRandomUpperStringWithLength:(AXUIntegerRange)length{
-    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
-    NSMutableString *str = [NSMutableString string];
-    for (NSUInteger i=0; i<randomLength; i++) {
-        [str appendFormat:@"%c",65 + arc4random_uniform(26)];
-    }
-    return str;
-}
-
-+ (NSString *)ax_stringWithRandomCapitalizeStringWithLength:(AXUIntegerRange)length{
-    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
-    NSMutableString *str = [NSMutableString string];
-    [str appendFormat:@"%c",65 + arc4random_uniform(26)];
-    for (NSUInteger i=0; i<randomLength-1; i++) {
-        [str appendFormat:@"%c",97 + arc4random_uniform(26)];
-    }
-    return str;
-}
-
-+ (NSString *)ax_stringWithRandomNameWithLength:(AXUIntegerRange)length{
-    // first name
-    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
-    NSMutableString *str = [NSMutableString string];
-    [str appendFormat:@"%c",65 + arc4random_uniform(26)];
-    for (NSUInteger i=0; i<randomLength-1; i++) {
-        [str appendFormat:@"%c",97 + arc4random_uniform(26)];
-    }
-    
-    [str appendString:@" "];
-    
-    // last name
-    randomLength = length.minValue + (NSUInteger)arc4random_uniform((int)length.maxValue-(int)length.minValue);
-    [str appendFormat:@"%c",65 + arc4random_uniform(26)];
-    for (NSUInteger i=0; i<randomLength-1; i++) {
-        [str appendFormat:@"%c",97 + arc4random_uniform(26)];
-    }
-    return str;
-}
-
-+ (NSString *)ax_stringWithRandomPasswordWithLength:(AXUIntegerRange)length{
-    // first name
-    NSUInteger randomLength = AXRandomIntegerInRange(length.minValue, length.maxValue);
-    NSMutableString *str = [NSMutableString string];
-    for (NSUInteger i=0; i<randomLength; i++) {
-        [str appendFormat:@"%c",32 + arc4random_uniform(95)];
-    }
-    return str;
++ (NSString * _Nonnull (^)(NSUInteger, NSUInteger))randomCapitalizedString{
+    return ^NSString *(NSUInteger min, NSUInteger max){
+        return self.randomLowerString(min, max).capitalizedString;
+    };
 }
 
 @end

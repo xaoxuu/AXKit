@@ -43,7 +43,7 @@
         }];
         [section addRow:^(AXTableRowModel *row) {
             row.title = @"字号";
-            row.detail = NSStringFromCGFloat(self.theme.font.prefersFontSize);
+            row.detail = @(self.theme.font.prefersFontSize).stringValue;
         }];
         
     }];

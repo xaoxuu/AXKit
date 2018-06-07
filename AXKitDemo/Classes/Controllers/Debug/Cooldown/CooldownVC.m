@@ -53,7 +53,7 @@ static UIView *customView;
     tips.numberOfLines = 0;
     tips.font = [UIFont systemFontOfSize:14];
     tips.text = @"点击屏幕任意地方，计数会增加。某次点击结束后2秒内没有再次收到点击事件，就触发了事件A。（也就是说，每次点击都会延迟事件A的执行）\n\n事件A：计数器归0，弹出消息。";
-    CGFloat height = [tips.text ax_textHeightWithFont:tips.font width:width];
+    CGFloat height = tips.text.boundingHeight(tips.font, width);
     tips.frame = CGRectMake(16, 16, width, height);
     [tips sizeToFit];
     tips.textColor = [UIColor darkGrayColor];
@@ -73,7 +73,7 @@ static UIView *customView;
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
-    self.label.text = NSStringFromInt(++i);
+    self.label.text = @(++i).stringValue;
     
     token = ax_dispatch_postpone(token, timeout, dispatch_get_main_queue(), ^{
         NSString *msg = [NSString stringWithFormat:@"最近%.0f秒内没有点击事件", timeout];
@@ -94,7 +94,7 @@ static UIView *customView;
 
 - (void)reset{
     i = 0;
-    self.label.text = NSStringFromInt(i);
+    self.label.text = @(i).stringValue;
 }
 
 

@@ -39,7 +39,7 @@
     }
     
     if (model.info.preview.count) {
-        [self.imgv sd_setImageWithURL:model.info.preview.firstObject.absoluteURL];
+        [self.imgv sd_setImageWithURL:[NSURL URLWithString:model.info.preview.firstObject]];
     }
     
 }
