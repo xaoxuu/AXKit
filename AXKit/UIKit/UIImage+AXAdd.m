@@ -201,7 +201,7 @@ inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize siz
 
 #pragma mark - 生成
 
-+ (UIImage * _Nonnull (^)(NSString * _Nonnull))named{
++ (UIImage * _Nonnull (^)(NSString * _Nonnull))initWithImageName{
     return ^UIImage *(NSString *name){
         return [UIImage imageNamed:name];
     };

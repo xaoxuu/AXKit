@@ -26,7 +26,12 @@ CG_EXTERN UIViewController *UIViewControllerNamed(NSString *name);
  
  @return view controller实例对象
  */
-+ (UIViewController *(^)(NSString *))named;
++ (__kindof UIViewController *(^)(NSString *))initWithClassName;
+
+/**
+ 获取storyboard中的VC
+ */
++ (__kindof UIViewController *(^)(NSBundle *bundle, NSString *storyboard, NSString *identifier))loadFromStoryboard;
 
 @end
 

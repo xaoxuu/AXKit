@@ -48,22 +48,22 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  
  @return view
  */
-+ (UIView *(^)(NSString *))named;
++ (__kindof UIView *(^)(NSString *))initWithXibName;
 
 /**
  创建一个指定高的view
  */
-+ (UIView *(^)(CGFloat height))heightWith;
++ (__kindof UIView *(^)(CGFloat height))initWithHeight;
 
 /**
  创建一个指定size的view
  */
-+ (UIView *(^)(CGSize size))sizeWith;
++ (__kindof UIView *(^)(CGSize size))initWithSize;
 
 /**
  设置view的圆角
  */
-- (UIView *(^)(CGFloat cornerRadius))cornerRadiusWith;
+- (__kindof UIView *(^)(CGFloat cornerRadius))cornerRadiusWith;
 
 /**
  对view的layer进行若干操作

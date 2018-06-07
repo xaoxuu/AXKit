@@ -15,7 +15,7 @@
  @param percent 加深比例（0~1）
  @return 加深之后的颜色
  */
-CG_EXTERN UIColor *darken(UIColor *color, CGFloat percent);
+CG_EXTERN __kindof UIColor *darken(UIColor *color, CGFloat percent);
 
 /**
  颜色变浅
@@ -24,7 +24,7 @@ CG_EXTERN UIColor *darken(UIColor *color, CGFloat percent);
  @param percent 变浅比例（0~1）
  @return 变浅之后的颜色
  */
-CG_EXTERN UIColor *lighten(UIColor *color, CGFloat percent);
+CG_EXTERN __kindof UIColor *lighten(UIColor *color, CGFloat percent);
 
 @interface UIColor (AXAdd)
 
@@ -34,24 +34,24 @@ CG_EXTERN UIColor *lighten(UIColor *color, CGFloat percent);
 
  @return 变深之后的颜色
  */
-- (UIColor *)dark;
+- (__kindof UIColor *)dark;
 
 /**
  颜色变浅，默认比例0.6
 
  @return 变浅之后的颜色
  */
-- (UIColor *)light;
+- (__kindof UIColor *)light;
 
 /**
  颜色变深，传入参数ratio为比例（0~1）
  */
-- (UIColor *(^)(CGFloat ratio))darken;
+- (__kindof UIColor *(^)(CGFloat ratio))darken;
 
 /**
  颜色变浅，传入参数ratio为比例（0~1）
  */
-- (UIColor *(^)(CGFloat ratio))lighten;
+- (__kindof UIColor *(^)(CGFloat ratio))lighten;
 
 
 /**
@@ -59,22 +59,24 @@ CG_EXTERN UIColor *lighten(UIColor *color, CGFloat percent);
 
  @return 随机色
  */
-+ (UIColor *)randomColor;
-
-/**
- 以HEX字符串创建颜色
-
- @param hexStr HEX字符串
- @return UIColor实例
- */
-+ (UIColor *)colorWithHexString:(NSString *)hexStr;
++ (__kindof UIColor *)randomColor;
 
 /**
  以HEX字符串创建颜色
  
  @return UIColor实例
  */
-+ (UIColor *(^)(NSString *))named;
++ (__kindof UIColor *(^)(NSString *))initWithHEX;
+
+/**
+ 以RGB创建颜色
+ */
++ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue))initWithRGB;
+
+/**
+ 以RGBA创建颜色
+ */
++ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha))initWithRGBA;
 
 /**
  获取UIColor中的R值

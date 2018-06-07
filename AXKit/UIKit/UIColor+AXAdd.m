@@ -47,10 +47,6 @@ static BOOL hexStrToRGBA(NSString *str,
     return YES;
 }
 
-
-static UIColor *randomColor(){
-    return [UIColor colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0];
-}
 static CGFloat safePercentValue(CGFloat p){
     return MAX(MIN(p, 1), 0);
 }
@@ -61,7 +57,7 @@ inline UIColor *darken(UIColor *color, CGFloat percent){
     red   = red   * (1 - p);
     green = green * (1 - p);
     blue  = blue  * (1 - p);
-    return [UIColor colorWithRed:red green:green blue:blue alpha:percent];
+    return [color.class colorWithRed:red green:green blue:blue alpha:percent];
 }
 inline UIColor *lighten(UIColor *color, CGFloat percent){
     CGFloat p = safePercentValue(percent);
@@ -70,7 +66,7 @@ inline UIColor *lighten(UIColor *color, CGFloat percent){
     red   = p + red   * (1 - p);
     green = p + green * (1 - p);
     blue  = p + blue  * (1 - p);
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    return [color.class colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 static inline NSString *hexStringWithAlpha(UIColor *color, BOOL useAlpha){
@@ -95,35 +91,51 @@ static inline NSString *hexStringWithAlpha(UIColor *color, BOOL useAlpha){
     }
     return hex;
 }
-static CGFloat grayLevel(UIColor *color){
+static inline CGFloat grayLevel(UIColor *color){
     CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
     [color getRed:&red green:&green blue:&blue alpha:&alpha];
     return red * 0.299 + green * 0.587 + blue * 0.114;
 }
 
+
+static inline void smartRGBA(CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a){
+    if (*r <= 1 && *g <= 1 && *b <= 1) {
+        // 传入的是0~1
+    } else if (*r <= 255 && *g <= 255 && *b <= 255) {
+        // 传入的是0~255
+        *r /= 255.0;
+        *g /= 255.0;
+        *b /= 255.0;
+    }
+    if (a != nil) {
+        if (*a > 1 && *a <= 255) {
+            *a /= 255.0;
+        }
+    }
+}
 @implementation UIColor (AXAdd)
 
 
-- (UIColor *)dark{
+- (__kindof UIColor *)dark{
     return darken(self, 0.48);
 }
-- (UIColor *(^)(CGFloat ratio))darken{
+- (__kindof UIColor *(^)(CGFloat ratio))darken{
     return ^(CGFloat ratio){
         return darken(self, ratio);
     };
 }
 
-- (UIColor *)light{
+- (__kindof UIColor *)light{
     return lighten(self, 0.6);
 }
-- (UIColor *(^)(CGFloat ratio))lighten{
+- (__kindof UIColor *(^)(CGFloat ratio))lighten{
     return ^(CGFloat ratio){
         return lighten(self, ratio);
     };
 }
 
-+ (UIColor *)randomColor{
-    return randomColor();
++ (__kindof UIColor *)randomColor{
+    return [self colorWithRed:(float)(arc4random()%256)/256 green:(float)(arc4random()%256)/256 blue:(float)(arc4random()%256)/256 alpha:1.0];
 }
 
 
@@ -131,15 +143,29 @@ static CGFloat grayLevel(UIColor *color){
 + (instancetype)colorWithHexString:(NSString *)hexStr {
     CGFloat r, g, b, a;
     if (hexStrToRGBA(hexStr, &r, &g, &b, &a)) {
-        return [UIColor colorWithRed:r green:g blue:b alpha:a];
+        return [self colorWithRed:r green:g blue:b alpha:a];
     }
     return nil;
 }
-+ (UIColor *(^)(NSString *))named{
-    return ^UIColor *(NSString *hex){
++ (__kindof UIColor *(^)(NSString *))initWithHEX{
+    return ^__kindof UIColor *(NSString *hex){
         return [self colorWithHexString:hex];
     };
 }
+
++ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue))initWithRGB{
+    return ^UIColor *(CGFloat red, CGFloat green, CGFloat blue){
+        smartRGBA(&red, &green, &blue, nil);
+        return [self colorWithRed:red green:green blue:blue alpha:1];
+    };
+}
++ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha))initWithRGBA{
+    return ^UIColor *(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha){
+        smartRGBA(&red, &green, &blue, &alpha);
+        return [self colorWithRed:red green:green blue:blue alpha:alpha];
+    };
+}
+
 - (CGFloat)redValue{
     CGFloat red;
     [self getRed:&red green:nil blue:nil alpha:nil];

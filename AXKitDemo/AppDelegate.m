@@ -26,10 +26,13 @@
     
     // @xaoxuu: 配置主题
     [[AXThemeManager sharedInstance] configDefaultTheme:^(AXThemeManager *theme) {
-        theme.color.theme = [UIColor ax_blue];
+        theme.color.theme = [UIColor ax_blue];//82,161,248
+//        theme.color.theme = UIColor.initWithRGB(0.32, 0.63, 0.97);
+//        theme.color.theme = UIColor.initWithRGB(182,161,248);
         theme.color.accent = [UIColor md_lime];
     }];
-    
+//    UIColor.initWithHEX(@"").ax
+    UIColor.initWithHEX;
     [[EmailManager sharedInstance] configDefaultCompose:^(EmailManager *manager) {
         manager.defaultToRecipients = @[@"me@xaoxuu.com"];
     }];
@@ -44,7 +47,12 @@
     // 显示窗口
     [self.window makeKeyAndVisible];
     
-    
+//    UIImage *img = UIImage.initWithImageName(@"");
+//    UIImageView.initWithFrame(CGRectZero);
+//    UIImageView.initWithImageName(@"");
+//    UIImageView.initWithImage(img);
+//    
+//    UIViewController.initWithClassName
     
     return YES;
 }

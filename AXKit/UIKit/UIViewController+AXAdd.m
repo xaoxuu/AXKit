@@ -16,12 +16,18 @@ inline UIViewController *UIViewControllerNamed(NSString *name){
 
 @implementation UIViewController (AXAdd)
 
-+ (UIViewController * _Nonnull (^)(NSString * _Nonnull))named{
++ (__kindof UIViewController * _Nonnull (^)(NSString * _Nonnull))initWithClassName{
     return ^UIViewController *(NSString *name){
         return UIViewControllerNamed(name);
     };
 }
 
++ (__kindof UIViewController * _Nonnull (^)(NSBundle * _Nonnull, NSString * _Nonnull, NSString * _Nonnull))loadFromStoryboard{
+    return ^UIViewController *(NSBundle *bundle, NSString *storyboard, NSString *identifier){
+        UIStoryboard *st = [UIStoryboard storyboardWithName:storyboard bundle:[NSBundle mainBundle]];
+        return [st instantiateViewControllerWithIdentifier:identifier];
+    };
+}
 
 @end
 

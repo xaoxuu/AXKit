@@ -137,7 +137,7 @@ CG_EXTERN UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize 
 
 #pragma mark - 生成
 
-+ (UIImage *(^)(NSString *))named;
++ (UIImage *(^)(NSString *))initWithImageName;
 
 /**
  创建一个纯色图片

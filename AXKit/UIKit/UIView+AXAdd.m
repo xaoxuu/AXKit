@@ -30,25 +30,25 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
 @implementation UIView (AXAdd)
 
 
-+ (UIView * _Nonnull (^)(NSString * _Nonnull))named{
++ (__kindof UIView * _Nonnull (^)(NSString * _Nonnull))initWithXibName{
     return ^UIView *(NSString *name){
         return UIViewFromNibNamed(name);
     };
 }
 
-+ (UIView *(^)(CGFloat height))heightWith{
++ (__kindof UIView *(^)(CGFloat height))initWithHeight{
     return ^UIView *(CGFloat height){
-        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, height)];
+        return [[self alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, height)];
     };
 }
 
-+ (UIView *(^)(CGSize size))sizeWith{
++ (__kindof UIView *(^)(CGSize size))initWithSize{
     return ^UIView *(CGSize size){
-        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+        return [[self alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     };
 }
 
-- (UIView *(^)(CGFloat cornerRadius))cornerRadiusWith{
+- (__kindof UIView *(^)(CGFloat cornerRadius))cornerRadiusWith{
     return ^UIView *(CGFloat cornerRadius){
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = cornerRadius;
@@ -128,7 +128,10 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
 }
 
 - (CGRect)frameInScreen{
-    UIView *main = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    static UIView *screenView;
+    if (!screenView) {
+        screenView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    }
     return [self.superview convertRect:self.frame toView:main];
 }
 
