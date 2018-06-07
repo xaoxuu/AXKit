@@ -12,7 +12,7 @@
 
 
 inline UIImageView *UIImageViewWithImageNamed(NSString *name){
-    return [[UIImageView alloc] initWithImage:[UIImage imageNamed:name]];
+    return [[UIImageView alloc] initWithImage:UIImage.named(name)];
 }
 
 
