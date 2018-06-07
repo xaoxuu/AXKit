@@ -45,21 +45,6 @@
     [self.window makeKeyAndVisible];
     
     
-    UIView *v;
-    
-    
-//    CALayer *l = CALayer.initWithSize(CGSizeMake(100, 100));
-//    
-//    self.rootVC.navigationController.popToViewControllerWithIndexFromRoot(2);
-//    self.rootVC.navigationController.popToViewControllerWithIndexFromSelf(3);
-//    
-//
-//    [l round:2];
-//    AXLogCGFloat(l.cornerRadius);
-//    [l round];
-//    AXLogCGFloat(l.cornerRadius);
-//    l.round(4);
-//    AXLogCGFloat(l.cornerRadius);
     return YES;
 }
 

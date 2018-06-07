@@ -47,22 +47,27 @@
     }
 }
 
-- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index animated:(BOOL)animated{
-    NSArray *vcs = self.viewControllers;
-    NSUInteger targetIndex = MIN(index, vcs.count-1);
-    [self popToViewController:vcs[targetIndex] animated:YES];
+
+
+- (void (^)(UIViewController *viewController, BOOL animated))popToViewController{
+    return ^(UIViewController *viewController, BOOL animated){
+        if ([self.viewControllers containsObject:viewController]) {
+            [self popToViewController:viewController animated:animated];
+        }
+    };
 }
+- (void (^)(BOOL animated))popToRootViewController{
+    return ^(BOOL animated){
+        [self popToRootViewControllerAnimated:animated];
+    };
+}
+
 - (void (^)(NSUInteger))popToViewControllerWithIndexFromRoot{
     return ^(NSUInteger index){
         [self ax_popToViewControllerWithIndexFromRoot:index animated:YES];
     };
 }
-- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index animated:(BOOL)animated{
-    NSArray *vcs = self.viewControllers;
-    index = MIN(index, vcs.count-1);
-    NSUInteger targetIndex = vcs.count-1-index;
-    [self popToViewController:vcs[targetIndex] animated:YES];
-}
+
 - (void (^)(NSUInteger))popToViewControllerWithIndexFromSelf{
     return ^(NSUInteger index){
         [self ax_popToViewControllerWithIndexFromSelf:index animated:YES];
@@ -70,10 +75,10 @@
 }
 - (void (^)(NSString * _Nonnull))popToViewControllerWithClassName{
     return ^(NSString *name){
-        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
-        NSArray<UIViewController *> *vcs = [self.viewControllers sortedArrayUsingDescriptors:@[descriptor]];
-        for (UIViewController *vc in vcs) {
-            if ([vc.class isKindOfClass:NSClassFromString(name)]) {
+        NSArray<UIViewController *> *vcs = self.viewControllers;
+        for (NSUInteger i = vcs.count-1; i >= 0; i--) {
+            UIViewController *vc = vcs[i];
+            if ([NSStringFromClass(vc.class) isEqualToString:name]) {
                 [self popToViewController:vc animated:YES];
                 break;
             }
@@ -81,4 +86,16 @@
     };
 }
 
+
+- (void)ax_popToViewControllerWithIndexFromRoot:(NSUInteger)index animated:(BOOL)animated{
+    NSArray *vcs = self.viewControllers;
+    NSUInteger targetIndex = MIN(index, vcs.count-1);
+    [self popToViewController:vcs[targetIndex] animated:YES];
+}
+- (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index animated:(BOOL)animated{
+    NSArray *vcs = self.viewControllers;
+    index = MIN(index, vcs.count-1);
+    NSUInteger targetIndex = vcs.count-1-index;
+    [self popToViewController:vcs[targetIndex] animated:YES];
+}
 @end
