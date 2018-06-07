@@ -165,7 +165,11 @@ static inline void smartRGBA(CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a){
         return [self colorWithRed:red green:green blue:blue alpha:alpha];
     };
 }
-
++ (__kindof UIColor *(^)(CGFloat, CGFloat))initWithWhite{
+    return ^UIColor *(CGFloat white, CGFloat alpha){
+        return [UIColor colorWithWhite:white alpha:alpha];
+    };
+}
 - (CGFloat)redValue{
     CGFloat red;
     [self getRed:&red green:nil blue:nil alpha:nil];

@@ -27,11 +27,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.targetView ax_layer:^(CALayer * _Nonnull layer) {
-        [layer ax_cornerRadius:8 shadow:LayerShadowDownNormal];
-    }];
-    [self.moveGestureView.layer ax_maskToCircle];
-    [self.resizeGestureView.layer ax_maskToCircle];
+    self.targetView.layer.corner(8).shadow(LayerShadowDownNormal);
+    self.moveGestureView.layer.rounded();
+    self.resizeGestureView.layer.rounded();
     
     
     UIImage *image = [UIImage imageNamed:@"chat"];

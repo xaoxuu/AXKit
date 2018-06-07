@@ -17,8 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.tabBar.layer ax_shadow:LayerShadowUpLight];
+    self.tabBar.layer.shadow(LayerShadowUpLight);
     
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationColorChanged object:nil];
     

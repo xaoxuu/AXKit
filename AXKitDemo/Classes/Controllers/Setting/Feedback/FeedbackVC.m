@@ -35,8 +35,9 @@ static CGFloat margin = 4;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.tv_content.layer ax_borderWidth:0.5 color:[UIColor colorWithWhite:0 alpha:0.2]];
-    [self.tv_content.layer ax_cornerRadius:5 shadow:LayerShadowNone];
+    
+    self.tv_content.layer.corner(5).border(0.5, UIColor.initWithWhite(0, 0.2));
+    
     self.images = [NSMutableArray array];
     [self setupCollectionView];
     

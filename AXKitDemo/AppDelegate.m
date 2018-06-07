@@ -44,7 +44,15 @@
     // 显示窗口
     [self.window makeKeyAndVisible];
     
+    CALayer *l = CALayer.initWithSize(CGSizeMake(100, 100));
     
+//
+//    [l round:2];
+//    AXLogCGFloat(l.cornerRadius);
+//    [l round];
+//    AXLogCGFloat(l.cornerRadius);
+//    l.round(4);
+//    AXLogCGFloat(l.cornerRadius);
     return YES;
 }
 

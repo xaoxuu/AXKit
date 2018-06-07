@@ -9,15 +9,6 @@
 #import "CALayer+AXAdd.h"
 
 
-inline CALayer *CAMaskLayerWithSizeAndCorner(CGSize size, CGFloat cornerRadius){
-    CALayer *layer = [CALayer layer];
-    layer.frame = CGRectMake(0, 0, size.width, size.height);
-    layer.backgroundColor = [UIColor whiteColor].CGColor;
-    layer.masksToBounds = YES;
-    layer.cornerRadius = cornerRadius;
-    return layer;
-}
-
 static inline void setLayerShadow(CALayer *layer, LayerShadow shadow){
     switch (shadow) {
         case LayerShadowNone: {
@@ -81,8 +72,6 @@ static inline void setLayerShadow(CALayer *layer, LayerShadow shadow){
     }
 }
 
-
-
 static inline void addColorAnimation(CALayer *layer, UIColor *color, void (^callback)(CABasicAnimation *animation)){
     static CABasicAnimation *animation;
     static dispatch_once_t onceToken;
@@ -110,50 +99,67 @@ static inline void removeColorAnimation(CALayer *layer){
 @implementation CALayer (AXAdd)
 
 
-#pragma mark - corner
-
-- (void)ax_maskToCircle{
-    self.masksToBounds = YES;
-    self.cornerRadius = 0.5 * fmin(self.frame.size.width, self.frame.size.height);
++ (CALayer *(^)(CGSize))initWithSize{
+    return ^CALayer *(CGSize size){
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(0, 0, size.width, size.height);
+        return layer;
+    };
 }
 
+#pragma mark - corner
+
+
+- (CALayer *(^)(CGFloat))corner{
+    return ^CALayer *(CGFloat cornerRadius){
+        self.cornerRadius = cornerRadius;
+        return self;
+    };
+}
+
+- (CALayer *(^)(void))rounded{
+    return ^CALayer *{
+        self.cornerRadius = 0.5 * fmin(self.frame.size.width, self.frame.size.height);
+        return self;
+    };
+}
 
 #pragma mark - shadow
 
-- (void)ax_shadow:(LayerShadow)shadow{
-    self.masksToBounds = NO;
-    setLayerShadow(self, shadow);
+- (CALayer *(^)(LayerShadow shadow))shadow{
+    return ^CALayer *(LayerShadow shadow){
+        setLayerShadow(self, shadow);
+        return self;
+    };
 }
 
 - (void)ax_cornerRadius:(CGFloat)cornerRadius shadow:(LayerShadow)shadow{
     self.cornerRadius = cornerRadius;
     setLayerShadow(self, shadow);
 }
-
-- (void)ax_customShadowWithOpacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset{
-    self.masksToBounds = NO;
-    self.shadowOpacity = opacity;
-    self.shadowRadius = radius;
-    self.shadowOffset = offset;
+- (CALayer *(^)(CGFloat cornerRadius, LayerShadow shadow))roundedShadow{
+    return ^CALayer *(CGFloat cornerRadius, LayerShadow shadow){
+        self.cornerRadius = cornerRadius;
+        setLayerShadow(self, shadow);
+        return self;
+    };
 }
-
-- (void)ax_customShadowWithOpacity:(CGFloat)opacity radius:(CGFloat)radius offset:(CGSize)offset color:(UIColor *)color path:(CGPathRef)path{
-    [self ax_customShadowWithOpacity:opacity radius:radius offset:offset];
-    self.shadowColor = color.CGColor;
-    self.shadowPath = path;
-}
-
 
 #pragma mark - border
 
-- (void)ax_whiteBorder:(CGFloat)width{
-    self.borderColor = [UIColor whiteColor].CGColor;
-    self.borderWidth = width;
+- (CALayer *(^)(CGFloat))whiteBorder{
+    return ^CALayer *(CGFloat borderWidth){
+        self.borderColor = [UIColor whiteColor].CGColor;
+        self.borderWidth = borderWidth;
+        return self;
+    };
 }
-
-- (void)ax_borderWidth:(CGFloat)width color:(UIColor *)color{
-    self.borderColor = color.CGColor;
-    self.borderWidth = width;
+- (CALayer *(^)(CGFloat, UIColor *))border{
+    return ^CALayer *(CGFloat borderWidth, UIColor *borderColor){
+        self.borderColor = borderColor.CGColor;
+        self.borderWidth = borderWidth;
+        return self;
+    };
 }
 
 #pragma mark - animation

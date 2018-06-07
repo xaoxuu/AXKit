@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [self.imgv.layer ax_shadow:LayerShadowDownFloat];
+    self.imgv.layer.shadow(LayerShadowDownFloat);
 }
 
 @end
