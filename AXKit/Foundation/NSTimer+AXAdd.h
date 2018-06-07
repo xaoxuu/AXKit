@@ -36,31 +36,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  暂停定时器
-
- @return 是否成功
  */
-- (BOOL)ax_pause;
+- (void (^)(void))pause;
 
 /**
  开启/重启定时器（从0开始计时）对于非重复型定时器，此方法会使定时器立即生效。
-
- @return 是否成功
  */
-- (BOOL)ax_restart;
+- (void (^)(void))restart;
 
 /**
  翻转定时器状态（只适用于重复型定时器）
-
- @return 定时器的运行状态（YES: 运行，NO:没有运行）
  */
-- (BOOL)ax_turnover;
+- (void (^)(void))turnover;
 
 /**
  获取定时器的状态（只适用于重复型定时器）
 
  @return 定时器的运行状态（YES: 运行，NO:没有运行）
  */
-- (BOOL)ax_isRunning;
+- (BOOL)isRunning;
 
 @end
 

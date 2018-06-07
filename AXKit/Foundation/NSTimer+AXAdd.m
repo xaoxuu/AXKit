@@ -28,36 +28,33 @@
     return (__bridge_transfer NSTimer *)CFRunLoopTimerCreateWithHandler(NULL, fireDate, interval, 0, 0, (void(^)(CFRunLoopTimerRef))block);
 }
 
-- (BOOL)ax_isRunning{
+- (BOOL)isRunning{
     return self.timeInterval > self.fireDate.timeIntervalSinceNow;
 }
 
-- (BOOL)ax_pause{
-    if ([self isValid]) {
-        [self setFireDate:[NSDate distantFuture]];
-        return YES;
-    } else{
-        return NO;
-    }
+- (void (^)(void))pause{
+    return ^{
+        if ([self isValid]) {
+            [self setFireDate:[NSDate distantFuture]];
+        }
+    };
 }
-- (BOOL)ax_restart{
-    if ([self isValid]) {
-        [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:self.timeInterval]];
-        return YES;
-    } else{
-        return NO;
-    }
+- (void (^)(void))restart{
+    return ^{
+        if ([self isValid]) {
+            [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:self.timeInterval]];
+        }
+    };
 }
-
-- (BOOL)ax_turnover{
-    if (self.ax_isRunning) {
-        [self ax_pause];
-    } else{
-        [self ax_restart];
-    }
-    return self.ax_isRunning;
+- (void (^)(void))turnover{
+    return ^{
+        if (self.isRunning) {
+            self.pause();
+        } else{
+            self.restart();
+        }
+    };
 }
-
 
 @end
 

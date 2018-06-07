@@ -16,7 +16,8 @@ static NSTimer *timer;
 @implementation CustomStatusBarTV
 
 - (void)dealloc{
-    [timer ax_pause];
+    timer.pause();
+    [timer invalidate];
     timer = nil;
 }
 
@@ -120,20 +121,20 @@ static NSTimer *timer;
         } else if (section == 5) {
             // @xaoxuu: 状态栏进度
             if ([model.title isEqualToString:@"隐藏消息"]) {
-                [timer ax_pause];
+                timer.pause();
                 [AXStatusBar hideStatusBarProgressMessage];
             } else if ([model.title isEqualToString:@"自动"]) {
                 __block CGFloat x = 0;
-                [timer ax_pause];
+                timer.pause();
                 timer = nil;
                 timer = [NSTimer ax_scheduledTimerWithTimeInterval:0.01 repeats:YES usingBlock:^(NSTimer * _Nonnull timer) {
                     [AXStatusBar showStatusBarProgress:x textColor:[UIColor blackColor] backgroundColor:axThemeManager.color.theme.light duration:2];
                     x += 0.002;
                     if (x >= 1) {
-                        [timer ax_pause];
+                        timer.pause();
                     }
                 }];
-                [timer ax_restart];
+                timer.restart();
             } else {
                 NSString *tmp = [model.title substringToIndex:model.title.length-1];
                 CGFloat value = tmp.doubleValue / 100;
