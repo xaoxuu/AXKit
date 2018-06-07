@@ -52,40 +52,88 @@ static inline void readObjForKey(NSString *key, NSString *desc, void (^completio
         }];
     };
 }
+- (nullable AXResult *(^)(NSString *key))objectResult{
+    return ^id (NSString *key){
+        return [AXResult resultWithIdResult:^id _Nonnull(NSError * _Nullable __autoreleasing * _Nullable error) {
+            return [self objectForKey:key];
+        }];
+    };
+}
 
 + (nullable id (^)(NSString *key))object{
     return ^id (NSString *key){
         return [DefaultUser() objectForKey:key];
     };
 }
+- (nullable id (^)(NSString *key))object{
+    return ^id (NSString *key){
+        return [self objectForKey:key];
+    };
+}
+
 + (nullable NSString *(^)(NSString *key))string{
     return ^id (NSString *key){
         return [DefaultUser() objectForKey:key];
     };
 }
+- (nullable NSString *(^)(NSString *key))string{
+    return ^id (NSString *key){
+        return [self objectForKey:key];
+    };
+}
+
 + (nullable NSNumber *(^)(NSString *key))number{
     return ^id (NSString *key){
         return autoNumber([DefaultUser() objectForKey:key], nil);
     };
 }
+- (nullable NSNumber *(^)(NSString *key))number{
+    return ^id (NSString *key){
+        return autoNumber([self objectForKey:key], nil);
+    };
+}
+
 + (nullable NSArray *(^)(NSString *key))array{
     return ^id (NSString *key){
-        return safeArray([DefaultUser() objectForKey:key], nil);
+        return autoArray([DefaultUser() objectForKey:key], nil);
     };
 }
+- (nullable NSArray *(^)(NSString *key))array{
+    return ^id (NSString *key){
+        return autoArray([self objectForKey:key], nil);
+    };
+}
+
 + (nullable NSDictionary *(^)(NSString *key))dictionary{
     return ^id (NSString *key){
-        return safeDictionary([DefaultUser() objectForKey:key], nil);
+        return autoDictionary([DefaultUser() objectForKey:key], nil);
     };
 }
+- (nullable NSDictionary *(^)(NSString *key))dictionary{
+    return ^id (NSString *key){
+        return autoDictionary([self objectForKey:key], nil);
+    };
+}
+
 + (nullable NSData *(^)(NSString *key))data{
     return ^id (NSString *key){
         return safeData([DefaultUser() objectForKey:key], nil);
     };
 }
+- (nullable NSData *(^)(NSString *key))data{
+    return ^id (NSString *key){
+        return safeData([self objectForKey:key], nil);
+    };
+}
+
 + (nullable UIImage *(^)(NSString *key))image{
     return ^id (NSString *key){
-        NSData *data = safeData([DefaultUser() objectForKey:key], nil);
+        return DefaultUser().image(key);
+    };
+}
+- (nullable UIImage *(^)(NSString *key))image{
+    return ^id (NSString *key){
+        NSData *data = safeData([self objectForKey:key], nil);
         if (data) {
             return [UIImage imageWithData:data];
         } else {
@@ -99,7 +147,11 @@ static inline void readObjForKey(NSString *key, NSString *desc, void (^completio
         return [DefaultUser() URLForKey:key];
     };
 }
-
+- (nullable NSURL *(^)(NSString *key))URL{
+    return ^NSURL *(NSString *key){
+        return [self URLForKey:key];
+    };
+}
 
 #pragma mark - write
 
@@ -109,6 +161,13 @@ static inline void readObjForKey(NSString *key, NSString *desc, void (^completio
         [DefaultUser() synchronize];
     };
 }
+- (void (^)(id , NSString * _Nonnull))set{
+    return ^(id obj, NSString *key){
+        [self setObject:obj forKey:key];
+        [self synchronize];
+    };
+}
+
 + (void)ax_caches:(void (^)(NSUserDefaults *defaultUser))action{
     action(DefaultUser());
     [DefaultUser() synchronize];
@@ -123,20 +182,26 @@ static inline void readObjForKey(NSString *key, NSString *desc, void (^completio
 
 + (void (^)(NSString *key))remove{
     return ^(NSString *key){
-        [DefaultUser() removeObjectForKey:key];
-        [DefaultUser() synchronize];
+        DefaultUser().remove(key);
     };
 }
-+ (void)ax_removeDefaultPersistentDomain{
-    [DefaultUser() removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+- (void (^)(NSString *key))remove{
+    return ^(NSString *key){
+        [self removeObjectForKey:key];
+        [self synchronize];
+    };
 }
+
 + (void (^)(void))removeDefaultPersistentDomain{
     return ^{
         [DefaultUser() removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
     };
 }
-#pragma mark - private 
-
+- (void (^)(void))removeDefaultPersistentDomain{
+    return ^{
+        [self removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+    };
+}
 
 
 @end
