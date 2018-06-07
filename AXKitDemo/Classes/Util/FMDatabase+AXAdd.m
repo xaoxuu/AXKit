@@ -16,9 +16,9 @@ inline FMDatabaseQueue *databaseQueue(){
     if (!queue) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            CGFloat lastDatabaseVersion = [NSUserDefaults ax_readDoubleForKey:@"DatabaseVersion"];
+            CGFloat lastDatabaseVersion = NSUserDefaults.number(@"DatabaseVersion").doubleValue;
             if (currentDatabaseVersion > lastDatabaseVersion) {
-                [NSUserDefaults ax_setDouble:currentDatabaseVersion forKey:@"DatabaseVersion"];
+                NSUserDefaults.set(@(currentDatabaseVersion), @"DatabaseVersion");
                 @"com.hinteen.linksmart.sqlite".docPath.removeFile();
             }
         });

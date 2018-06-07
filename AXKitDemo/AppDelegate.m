@@ -44,6 +44,12 @@
     // 显示窗口
     [self.window makeKeyAndVisible];
     
+    NSString *key;
+    
+    
+    NSUserDefaults.set(@23, key);
+    NSUserDefaults.remove(key);
+    NSUserDefaults.object(key);
     
     return YES;
 }
