@@ -66,6 +66,11 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
 - (__kindof UIView *(^)(CGFloat cornerRadius))cornerRadiusWith;
 
 /**
+ 获取view
+ */
+- (UIImage *(^)(void))screenshot;
+
+/**
  对view的layer进行若干操作
 
  @param layer layer
@@ -139,15 +144,6 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  @param action 要执行的代码
  */
 - (void)ax_allSubviewsWithTag:(NSInteger)tag action:(void (^)(__kindof UIView *subview))action;
-
-/**
- 圆角view
-
- @param rect 尺寸
-
- @return 圆角view
- */
-+ (instancetype)ax_roundedViewWithFrame:(CGRect)rect;
 
 /**
  view在screen中的frame

@@ -50,7 +50,7 @@
     } else {
         if ([model.cmd isEqualToString:@"share"]) {
             NSString *string = @"message";
-            UIImage *imageToShare = UIImageFromView(UIViewController.rootViewController.view);
+            UIImage *imageToShare = UIImage.initWithView(UIViewController.rootViewController.view);
             UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:@[string,imageToShare] applicationActivities:nil];
             [self.controller presentViewController:activityVC animated:YES completion:^{
                 

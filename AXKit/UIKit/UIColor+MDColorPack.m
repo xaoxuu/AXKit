@@ -16,64 +16,64 @@
 
 #pragma mark red -> purple
 + (UIColor *)md_red{
-    return [UIColor colorWithHexString:@"#F44336"];
+    return UIColor.initWithHEX(@"#F44336");
 }
 + (UIColor *)md_pink{
-    return [UIColor colorWithHexString:@"#E91E63"];
+    return UIColor.initWithHEX(@"#E91E63");
 }
 + (UIColor *)md_purple{
-    return [UIColor colorWithHexString:@"#9C27B0"];
+    return UIColor.initWithHEX(@"#9C27B0");
 }
 + (UIColor *)md_deepPurple{
-    return [UIColor colorWithHexString:@"#673AB7"];
+    return UIColor.initWithHEX(@"#673AB7");
 }
 #pragma mark blue -> cyan
 + (UIColor *)md_indigo{
-    return [UIColor colorWithHexString:@"#3F51B5"];
+    return UIColor.initWithHEX(@"#3F51B5");
 }
 + (UIColor *)md_blue{
-    return [UIColor colorWithHexString:@"#2196F3"];
+    return UIColor.initWithHEX(@"#2196F3");
 }
 + (UIColor *)md_lightBlue{
-    return [UIColor colorWithHexString:@"#03A9F4"];
+    return UIColor.initWithHEX(@"#03A9F4");
 }
 + (UIColor *)md_cyan{
-    return [UIColor colorWithHexString:@"#00BCD4"];
+    return UIColor.initWithHEX(@"#00BCD4");
 }
 + (UIColor *)md_teal{
-    return [UIColor colorWithHexString:@"#009688"];
+    return UIColor.initWithHEX(@"#009688");
 }
 #pragma mark green -> yellow
 + (UIColor *)md_green{
-    return [UIColor colorWithHexString:@"#4CAF50"];
+    return UIColor.initWithHEX(@"#4CAF50");
 }
 + (UIColor *)md_lightGreen{
-    return [UIColor colorWithHexString:@"#8BC34A"];
+    return UIColor.initWithHEX(@"#8BC34A");
 }
 + (UIColor *)md_lime{
-    return [UIColor colorWithHexString:@"#CDDC39"];
+    return UIColor.initWithHEX(@"#CDDC39");
 }
 + (UIColor *)md_yellow{
-    return [UIColor colorWithHexString:@"#FFEB3B"];
+    return UIColor.initWithHEX(@"#FFEB3B");
 }
 + (UIColor *)md_amber{
-    return [UIColor colorWithHexString:@"#FFC107"];
+    return UIColor.initWithHEX(@"#FFC107");
 }
 #pragma mark orange -> gray
 + (UIColor *)md_orange{
-    return [UIColor colorWithHexString:@"#FF9800"];
+    return UIColor.initWithHEX(@"#FF9800");
 }
 + (UIColor *)md_deepOrange{
-    return [UIColor colorWithHexString:@"#FF5722"];
+    return UIColor.initWithHEX(@"#FF5722");
 }
 + (UIColor *)md_brown{
-    return [UIColor colorWithHexString:@"#FF5722"];
+    return UIColor.initWithHEX(@"#FF5722");
 }
 + (UIColor *)md_blueGray{
-    return [UIColor colorWithHexString:@"#607D8B"];
+    return UIColor.initWithHEX(@"#607D8B");
 }
 + (UIColor *)md_gray{
-    return [UIColor colorWithHexString:@"#9E9E9E"];
+    return UIColor.initWithHEX(@"#9E9E9E");
 }
 
 

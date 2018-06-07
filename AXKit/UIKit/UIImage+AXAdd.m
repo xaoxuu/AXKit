@@ -8,15 +8,15 @@
 
 #import "UIImage+AXAdd.h"
 #import <CoreImage/CoreImage.h>
-
+#import "UIColor+AXAdd.h"
 #pragma mark - 生成
 
-inline UIImage *UIImageGetPureColorImage(UIColor *color, CGSize size, CGFloat alpha){
+static inline UIImage *UIImageGetPureColorImage(UIColor *color, CGSize size){
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetAlpha(context, alpha);
+    CGContextSetAlpha(context, color.alphaValue);
     CGContextSetFillColorWithColor(context,color.CGColor);
     CGContextFillRect(context, rect);
     
@@ -27,7 +27,7 @@ inline UIImage *UIImageGetPureColorImage(UIColor *color, CGSize size, CGFloat al
 }
 
 
-inline UIImage *UIImageFromView(UIView *view){
+static inline UIImage *UIImageFromView(UIView *view){
     // @xaoxuu: 开始取图
     UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, [UIScreen mainScreen].scale);
     // @xaoxuu: 将图层放入上下文中
@@ -40,61 +40,35 @@ inline UIImage *UIImageFromView(UIView *view){
     return image;
 }
 
-inline UIImage *UIImageNamed(NSString *name){
-    UIImage *image = [UIImage imageNamed:name];
-    if (!image) {
-        NSData *data = [NSData dataWithContentsOfFile:name];
-        image = [UIImage imageWithData:data];
-    }
-    return image;
 
-}
 
-inline UIImage *UIImageWithBundleImageName(NSString *name){
-    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];
+static inline UIImage *UIImageWithBundleImageName(NSBundle *bundle, NSString *name){
+    NSString *path = [bundle pathForResource:name ofType:@"png"];
     if (!path) {
-        path = [[NSBundle mainBundle] pathForResource:name ofType:@"jpg"];
+        path = [bundle pathForResource:name ofType:@"jpg"];
     }
     if (!path) {
-        path = [[NSBundle mainBundle] pathForResource:name ofType:@"jpeg"];
+        path = [bundle pathForResource:name ofType:@"jpeg"];
     }
     if (!path) {
         
     }
     return [UIImage imageWithContentsOfFile:path];
 }
-
-inline NSArray<UIImage *> *UIImagesWithBundleImageNames(NSString *name, NSUInteger count){
-    NSMutableArray<UIImage *> *array = [NSMutableArray array];
-    for (int i=0; i<count; i++) {
-        name = [name stringByAppendingFormat:@"%d",i];
-        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];
-        if (!path) {
-            path = [[NSBundle mainBundle] pathForResource:name ofType:@"jpg"];
-        }
-        if (!path) {
-            path = [[NSBundle mainBundle] pathForResource:name ofType:@"jpeg"];
-        }
-        if (!path) {
-            
-        }
-        UIImage *image = [UIImage imageWithContentsOfFile:path];
-        if (image) {
-            [array addObject:image];
+static inline UIImage *UIImageNamed(NSString *name){
+    UIImage *image = [UIImage imageNamed:name];
+    if (!image) { // 如果是bundle image
+        image = UIImageWithBundleImageName([NSBundle mainBundle], name);
+    }
+    if (!image) { // 如果是path
+        NSData *data = [NSData dataWithContentsOfFile:name];
+        if (data) {
+            image = [UIImage imageWithData:data];
         }
     }
-    if (array.count) {
-        return array;
-    } else{
-        return nil;
-    }
+    return image;
+    
 }
-
-
-
-
-
-
 #pragma mark - 加工
 
 static inline UIImage *UIImageGetSquareImageAndOption(UIImage *image, void(^op)(CGContextRef ctx, CGRect rect)){
@@ -119,17 +93,15 @@ static inline UIImage *UIImageGetSquareImageAndOption(UIImage *image, void(^op)(
     UIGraphicsEndImageContext();
     return roundedImage;
 }
-inline UIImage *UIImageGetSquareImage(UIImage *image){
-    return UIImageGetSquareImageAndOption(image, nil);
-}
-inline UIImage *UIImageGetRoundedImage(UIImage *image){
+
+static inline UIImage *UIImageGetRoundedImage(UIImage *image){
     return UIImageGetSquareImageAndOption(image, ^(CGContextRef ctx, CGRect rect) {
         CGContextAddEllipseInRect(ctx, rect);
     });
 }
 
 
-inline UIImage *UIImageGetBlurredImage(UIImage *image, CGFloat ratio){
+static inline UIImage *UIImageGetBlurredImage(UIImage *image, CGFloat ratio){
     CIImage * ciImage = [[CIImage alloc]initWithImage:image];
     CIFilter* blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
     [blurFilter setValue:ciImage forKey:kCIInputImageKey];
@@ -142,7 +114,7 @@ inline UIImage *UIImageGetBlurredImage(UIImage *image, CGFloat ratio){
     return blurredImage;
 }
 
-inline void UIImageBlurImageAsync(UIImage *image, CGFloat ratio, void (^completion)(UIImage *image)){
+static inline void UIImageBlurImageAsync(UIImage *image, CGFloat ratio, void (^completion)(UIImage *image)){
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // @xaoxuu: in background queue
         UIImage *blurredImage = UIImageGetBlurredImage(image, ratio);
@@ -160,7 +132,7 @@ inline void UIImageBlurImageAsync(UIImage *image, CGFloat ratio, void (^completi
 #pragma mark 缩放
 
 
-inline UIImage *UIImageNonInterpolatedScaleWithRatio(UIImage *image, CGFloat ratio){
+static inline UIImage *UIImageNonInterpolatedScaleWithRatio(UIImage *image, CGFloat ratio){
     CGRect extent = CGRectIntegral(image.CIImage.extent);
     
     // create bitmap;
@@ -183,13 +155,13 @@ inline UIImage *UIImageNonInterpolatedScaleWithRatio(UIImage *image, CGFloat rat
 }
 
 
-inline UIImage *UIImageNonInterpolatedScaleWithLength(UIImage *image, CGFloat length){
+static inline UIImage *UIImageNonInterpolatedScaleWithLength(UIImage *image, CGFloat length){
     CGRect extent = CGRectIntegral(image.CIImage.extent);
     CGFloat scale = fmin(length/CGRectGetWidth(extent), length/CGRectGetHeight(extent));
     return UIImageNonInterpolatedScaleWithRatio(image, scale);
 }
 
-inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize size){
+static inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize size){
     CGRect extent = CGRectIntegral(image.CIImage.extent);
     CGFloat scale = fmin(size.width/CGRectGetWidth(extent), size.height/CGRectGetHeight(extent));
     return UIImageNonInterpolatedScaleWithRatio(image, scale);
@@ -198,51 +170,75 @@ inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGSize siz
 
 @implementation UIImage (AXAdd)
 
-
-#pragma mark - 生成
-
-+ (UIImage * _Nonnull (^)(NSString * _Nonnull))initWithImageName{
++ (UIImage * _Nonnull (^)(NSString * _Nonnull))named{
     return ^UIImage *(NSString *name){
-        return [UIImage imageNamed:name];
+        return UIImageNamed(name);
     };
 }
 
-+ (UIImage *)ax_imageWithColor:(UIColor *)color size:(CGSize)size alpha:(float)alpha{
-    return UIImageGetPureColorImage(color, size, alpha);
++ (UIImage *(^)(UIView *))initWithView{
+    return ^UIImage *(UIView *view){
+        return UIImageFromView(view);
+    };
 }
 
-+ (UIImage *)ax_imageWithView:(UIView *)view{
-    return UIImageFromView(view);
++ (UIImage *(^)(UIColor *color, CGSize size))initWithPureColor{
+    return ^UIImage *(UIColor *color, CGSize size){
+        return UIImageGetPureColorImage(color, size);
+    };
 }
 
-+ (UIImage *)ax_imageWithBundleImageName:(NSString *)name{
-    return UIImageWithBundleImageName(name);
++ (UIImage *(^)(NSBundle *bundle, NSString *imageName))initWithBundleImageName{
+    return ^UIImage *(NSBundle *bundle, NSString *imageName){
+        return UIImageWithBundleImageName(bundle, imageName);
+    };
 }
-
-+ (NSArray<UIImage *> *)ax_imageWithBundleImageName:(NSString *)name count:(NSUInteger)count{
-    return UIImagesWithBundleImageNames(name, count);
-}
-
-
 
 
 
 #pragma mark - 加工
 
-- (UIImage *)ax_squareImage{
-    return UIImageGetSquareImage(self);
+
+- (UIImage * _Nonnull (^)(void))squared{
+    return ^UIImage *{
+        return UIImageGetSquareImageAndOption(self, nil);
+    };
 }
 
-- (UIImage *)ax_roundedImage{
-    return UIImageGetRoundedImage(self);
+- (UIImage * _Nonnull (^)(void))rounded{
+    return ^UIImage *{
+        return UIImageGetSquareImageAndOption(self, ^(CGContextRef ctx, CGRect rect) {
+            CGContextAddEllipseInRect(ctx, rect);
+        });
+    };
 }
 
-- (UIImage *)ax_blurEffectWithFactor:(CGFloat)ratio{
-    return UIImageGetBlurredImage(self, ratio);
+- (UIImage * _Nonnull (^)(CGFloat))blurred{
+    return ^UIImage *(CGFloat ratio){
+        return UIImageGetBlurredImage(self, ratio);
+    };
 }
 
-- (void)ax_blurEffectWithFactor:(CGFloat)ratio completion:(void (^)(UIImage *image))completion {
+- (void)blurred:(CGFloat)ratio completion:(void (^)(UIImage * _Nonnull))completion{
     UIImageBlurImageAsync(self, ratio, completion);
 }
 
+
+- (UIImage *(^)(CGFloat ratio))NonInterpolatedScaleWithRatio{
+    return ^UIImage *(CGFloat ratio){
+        return UIImageNonInterpolatedScaleWithRatio(self, ratio);
+    };
+}
+
+- (UIImage *(^)(CGFloat ratio))NonInterpolatedScaleWithLength{
+    return ^UIImage *(CGFloat length){
+        return UIImageNonInterpolatedScaleWithLength(self, length);
+    };
+}
+
+- (UIImage *(^)(CGSize size))NonInterpolatedScaleWithSize{
+    return ^UIImage *(CGSize size){
+        return UIImageNonInterpolatedScaleWithCGSize(self, size);
+    };
+}
 @end

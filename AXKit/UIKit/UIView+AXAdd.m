@@ -9,6 +9,7 @@
 #import "UIView+AXAdd.h"
 #import "CoreGraphics+AXAdd.h"
 #import "UIViewController+AXAdd.h"
+#import "UIImage+AXAdd.h"
 
 inline UIView *UIViewWithHeight(CGFloat height){
     return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, height)];
@@ -55,6 +56,13 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
         return self;
     };
 }
+
+- (UIImage * _Nonnull (^)(void))screenshot{
+    return ^UIImage *{
+        return UIImage.initWithView(self);
+    };
+}
+
 - (void)ax_layer:(void (^)(CALayer *layer))layer{
     if (layer) {
         layer(self.layer);
@@ -120,19 +128,12 @@ inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }];
 }
 
-+ (instancetype)ax_roundedViewWithFrame:(CGRect)rect {
-    UIView *view = [[UIView alloc] initWithFrame:rect];
-    view.backgroundColor = [UIColor whiteColor];
-    view.layer.cornerRadius = 0.5 * fmin(rect.size.width, rect.size.height);
-    return view;
-}
-
 - (CGRect)frameInScreen{
     static UIView *screenView;
     if (!screenView) {
         screenView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     }
-    return [self.superview convertRect:self.frame toView:main];
+    return [self.superview convertRect:self.frame toView:screenView];
 }
 
 @end
