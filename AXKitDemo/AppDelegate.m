@@ -44,8 +44,15 @@
     // 显示窗口
     [self.window makeKeyAndVisible];
     
-    CALayer *l = CALayer.initWithSize(CGSizeMake(100, 100));
     
+    UIView *v;
+    
+    
+//    CALayer *l = CALayer.initWithSize(CGSizeMake(100, 100));
+//    
+//    self.rootVC.navigationController.popToViewControllerWithIndexFromRoot(2);
+//    self.rootVC.navigationController.popToViewControllerWithIndexFromSelf(3);
+//    
 //
 //    [l round:2];
 //    AXLogCGFloat(l.cornerRadius);

@@ -86,21 +86,6 @@ static const void *UITextViewAXExtensionKey_SuperView = &UITextViewAXExtensionKe
     }
 }
 
-- (CGFloat)ax_heightWithText:(NSString *)text heightRange:(AXFloatRange)range{
-    CGSize constraint = CGSizeMake(self.contentSize.width , CGFLOAT_MAX);
-    CGRect size = [text boundingRectWithSize:constraint
-                                     options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
-                                  attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}
-                                     context:nil];
-    CGFloat textHeight = size.size.height + range.minValue;
-    if (textHeight > range.maxValue) {
-        textHeight = range.maxValue;
-        [self scrollRectToVisible:CGRectMake(0, textHeight, 0, 0) animated:YES];
-    }
-    return textHeight;
-}
-
-
 #pragma mark - private methods
 
 - (UIView *)ax_superview{

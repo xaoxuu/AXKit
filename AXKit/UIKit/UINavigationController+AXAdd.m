@@ -13,17 +13,13 @@
 
 @implementation UINavigationController (AXAdd)
 
-
-- (void)ax_pushViewControllerNamed:(NSString *)vcName{
-    [self ax_pushViewControllerNamed:vcName animated:YES completion:^(UIViewController * _Nonnull targetVC) {
-        // @xaoxuu: do nothing.
-    } failure:^(NSError * _Nonnull error) {
-        // @xaoxuu: do nothing.
-    }];
-}
 - (void (^)(NSString * _Nonnull))pushViewControllerNamed{
     return ^(NSString *name){
-        [self ax_pushViewControllerNamed:name];
+        [self ax_pushViewControllerNamed:name animated:YES completion:^(UIViewController * _Nonnull targetVC) {
+            // @xaoxuu: do nothing.
+        } failure:^(NSError * _Nonnull error) {
+            // @xaoxuu: do nothing.
+        }];
     };
 }
 
@@ -56,12 +52,33 @@
     NSUInteger targetIndex = MIN(index, vcs.count-1);
     [self popToViewController:vcs[targetIndex] animated:YES];
 }
-
+- (void (^)(NSUInteger))popToViewControllerWithIndexFromRoot{
+    return ^(NSUInteger index){
+        [self ax_popToViewControllerWithIndexFromRoot:index animated:YES];
+    };
+}
 - (void)ax_popToViewControllerWithIndexFromSelf:(NSUInteger)index animated:(BOOL)animated{
     NSArray *vcs = self.viewControllers;
     index = MIN(index, vcs.count-1);
     NSUInteger targetIndex = vcs.count-1-index;
     [self popToViewController:vcs[targetIndex] animated:YES];
+}
+- (void (^)(NSUInteger))popToViewControllerWithIndexFromSelf{
+    return ^(NSUInteger index){
+        [self ax_popToViewControllerWithIndexFromSelf:index animated:YES];
+    };
+}
+- (void (^)(NSString * _Nonnull))popToViewControllerWithClassName{
+    return ^(NSString *name){
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
+        NSArray<UIViewController *> *vcs = [self.viewControllers sortedArrayUsingDescriptors:@[descriptor]];
+        for (UIViewController *vc in vcs) {
+            if ([vc.class isKindOfClass:NSClassFromString(name)]) {
+                [self popToViewController:vc animated:YES];
+                break;
+            }
+        }
+    };
 }
 
 @end

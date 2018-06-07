@@ -15,18 +15,9 @@ inline UIView *UIViewWithHeight(CGFloat height){
     return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, height)];
 }
 
-inline UIView *UIMaskViewWithSizeAndCornerRadius(CGSize size, CGFloat cornerRadius){
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    view.backgroundColor = [UIColor whiteColor];
-    view.layer.masksToBounds = YES;
-    view.layer.cornerRadius = cornerRadius;
-    return view;
-}
-
 inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     return [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil].firstObject;
 }
-
 
 @implementation UIView (AXAdd)
 

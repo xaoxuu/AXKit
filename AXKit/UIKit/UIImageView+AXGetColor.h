@@ -121,6 +121,10 @@ CG_EXTERN void UIImageViewGetRGBAWithPoint(UIImageView *imageView, CGPoint point
  @return UIColor对象（可空）
  */
 - (nullable UIColor *)ax_getColorWithPoint:(CGPoint)point;
+
+/**
+ 获取某个点的颜色值
+ */
 - (nullable UIColor *(^)(CGPoint))colorInPoint;
 
 /**

@@ -120,7 +120,7 @@
 
 // MARK: frame
 
-- (UIView *(^)(CGFloat height))heightWith{
+- (UIView *(^)(CGFloat height))setHeight{
     return ^UIView *(CGFloat height){
         CGRect frame = self.frame;
         frame.size.height = height;
@@ -128,8 +128,16 @@
         return self;
     };
 }
+- (UIView *(^)(CGFloat width))setWidth{
+    return ^UIView *(CGFloat width){
+        CGRect frame = self.frame;
+        frame.size.width = width;
+        self.frame = frame;
+        return self;
+    };
+}
 
-- (UIView *(^)(CGSize size))sizeWith{
+- (UIView *(^)(CGSize size))setSize{
     return ^UIView *(CGSize size){
         CGRect frame = self.frame;
         frame.size = size;

@@ -19,6 +19,7 @@ CG_EXTERN UIImageView *UIImageViewWithImageNamed(NSString *name);
 
 @interface UIImageView (AXAdd)
 
+
 + (UIImageView *(^)(NSString *))initWithImageName;
 
 + (UIImageView *(^)(UIImage *))initWithImage;

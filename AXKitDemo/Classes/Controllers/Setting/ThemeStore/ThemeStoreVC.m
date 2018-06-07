@@ -21,7 +21,7 @@
     self.title = @"在线主题";
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithTitle:@"管理" action:^(UIBarButtonItem * _Nonnull sender) {
-        [weakSelf.navigationController ax_pushViewControllerNamed:@"ThemeManageVC"];
+        weakSelf.navigationController.pushViewControllerNamed(@"ThemeManageVC");
     }];
     self.view.backgroundColor = axThemeManager.color.background;
 

@@ -51,12 +51,17 @@
 /**
  设置view的高
  */
-- (UIView *(^)(CGFloat height))heightWith;
+- (UIView *(^)(CGFloat height))setHeight;
+
+/**
+ 设置view的宽
+ */
+- (UIView *(^)(CGFloat width))setWidth;
 
 /**
  设置view的size
  */
-- (UIView *(^)(CGSize size))sizeWith;
+- (UIView *(^)(CGSize size))setSize;
 
 
 @end

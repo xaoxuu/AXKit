@@ -22,16 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
 
-
-/**
- 根据尺寸和圆角半径创建view
-
- @param size 尺寸
- @param cornerRadius 圆角半径
- @return view
- */
-CG_EXTERN UIView *UIMaskViewWithSizeAndCornerRadius(CGSize size, CGFloat cornerRadius);
-
 /**
  从xib加载view
 
@@ -39,7 +29,6 @@ CG_EXTERN UIView *UIMaskViewWithSizeAndCornerRadius(CGSize size, CGFloat cornerR
  @return view
  */
 CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
-
 
 @interface UIView (AXAdd)
 
