@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+AXAdd.h"
-
+#import "UIApplication+AXAdd.h"
 
 inline UIViewController *UIViewControllerNamed(NSString *name){
     return [[[NSClassFromString(name) class] alloc] init];
@@ -27,6 +27,15 @@ inline UIViewController *UIViewControllerNamed(NSString *name){
         UIStoryboard *st = [UIStoryboard storyboardWithName:storyboard bundle:[NSBundle mainBundle]];
         return [st instantiateViewControllerWithIdentifier:identifier];
     };
+}
+
+- (void (^)(NSURL * _Nonnull))openSafari{
+    return ^(NSURL *URL){
+        [UIApplication ax_presentSafariViewControllerWithURL:URL fromViewController:self completion:nil];
+    };
+}
+- (void)presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^)(void))completion{
+    [UIApplication ax_presentSafariViewControllerWithURL:URL fromViewController:self completion:completion];
 }
 
 @end

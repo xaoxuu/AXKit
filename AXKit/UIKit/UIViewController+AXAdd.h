@@ -33,6 +33,22 @@ CG_EXTERN UIViewController *UIViewControllerNamed(NSString *name);
  */
 + (__kindof UIViewController *(^)(NSBundle *bundle, NSString *storyboard, NSString *identifier))loadFromStoryboard;
 
+
+
+/**
+ 打开app内置Safari浏览器
+ */
+- (void (^)(NSURL *))openSafari;
+
+/**
+ 打开app内置Safari浏览器
+ 
+ @param URL 网址
+ @param completion 完成回调
+ */
+- (void)presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^ __nullable)(void))completion;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -25,12 +25,10 @@
         [UIApplication ax_openBluetoothSetting];
     } else if ([model.cmd isEqualToString:@"noti"]) {
         [UIApplication ax_openNotificationSetting];
-    } else if ([model.cmd isEqualToString:@"photos"]) {
-        [UIApplication ax_openPhotosSetting];
     } else if ([model.cmd isEqualToString:@"app"]) {
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            [UIApplication ax_openAppSetting:nil];
+            UIApplication.openAppSetting();
         } else {
             // Fallback on earlier versions
             

@@ -46,11 +46,7 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 
 @implementation UIApplication (AXAdd)
 
-
-+ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL{
-    [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:nil];
-}
-+ (void (^)(NSURL * _Nonnull))presentSafariViewController{
++ (void (^)(NSURL * _Nonnull))openSafari{
     return ^(NSURL *URL){
         [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:nil];
     };
@@ -58,6 +54,8 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^)(void))completion{
     [self ax_presentSafariViewControllerWithURL:URL fromViewController:nil completion:completion];
 }
+
+
 + (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL fromViewController:(UIViewController *)viewController{
     [self ax_presentSafariViewControllerWithURL:URL fromViewController:viewController completion:nil];
 }
@@ -65,7 +63,14 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
     if (@available(iOS 9.0, *)) {
         // on newer versions
         SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:URL];
-        [viewController?:UIViewController.rootViewController presentViewController:safari animated:YES completion:completion];
+        UIViewController *fromVC = viewController?:UIViewController.rootViewController;
+        if (fromVC.presentedViewController) {
+            [fromVC.presentedViewController dismissViewControllerAnimated:YES completion:^{
+                [fromVC presentViewController:safari animated:YES completion:completion];
+            }];
+        } else {
+            [fromVC presentViewController:safari animated:YES completion:completion];
+        }
     } else {
         // Fallback on earlier versions
         [[UIApplication sharedApplication] openURL:URL];
@@ -82,7 +87,7 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 }
 + (void (^)(void))openBluetoothSetting{
     return ^{
-        [self ax_openBluetoothSetting];
+        openSettingURLWithString(urlStringWithKey(@"Bluetooth"), nil);
     };
 }
 
@@ -92,7 +97,11 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 + (void)ax_openWIFISetting{
     openSettingURLWithString(urlStringWithKey(@"WIFI"), nil);
 }
-
++ (void (^)(void))openWIFISetting{
+    return ^{
+        openSettingURLWithString(urlStringWithKey(@"WIFI"), nil);
+    };
+}
 /**
  打开通知设置
  */
@@ -101,21 +110,14 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 }
 + (void (^)(void))openNotificationSetting{
     return ^{
-        [self ax_openNotificationSetting];
+        openSettingURLWithString(urlStringWithKey(@"NOTIFICATIONS_ID"), nil);
     };
 }
-/**
- 打开相册设置
- */
-+ (void)ax_openPhotosSetting{
-    openSettingURLWithString(urlStringWithKey(@"Photos"), nil);
-}
 
-/**
- 打开浏览器设置
- */
-+ (void)ax_openSafariSetting{
-    openSettingURLWithString(urlStringWithKey(@"SAFARI"), nil);
++ (void (^)(NSString * _Nonnull))openSetting{
+    return ^(NSString *key){
+        openSettingURLWithString(urlStringWithKey(key), nil);
+    };
 }
 
 /**
@@ -127,7 +129,7 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 
 + (void (^)(void))openAppSetting{
     return ^{
-        [self ax_openAppSetting:nil];
+        openSettingURLWithString(UIApplicationOpenSettingsURLString, nil);
     };
 }
 

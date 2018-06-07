@@ -15,15 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  打开app内置Safari浏览器
-
- @param URL 网址
  */
-+ (void)ax_presentSafariViewControllerWithURL:(NSURL *)URL;
-
-/**
- 打开app内置Safari浏览器
- */
-+ (void (^)(NSURL *))presentSafariViewController;
++ (void (^)(NSURL *))openSafari;
 
 /**
  打开app内置Safari浏览器
@@ -65,6 +58,10 @@ NS_ASSUME_NONNULL_BEGIN
  打开WIFI设置
  */
 + (void)ax_openWIFISetting NS_DEPRECATED_IOS(8_0, 10_0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
+/**
+ 打开WIFI设置
+ */
++ (void (^)(void))openWIFISetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 
 /**
  打开通知设置
@@ -75,15 +72,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void (^)(void))openNotificationSetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 
-/**
- 打开相册设置
- */
-+ (void)ax_openPhotosSetting NS_DEPRECATED_IOS(8_0, 10_0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 
 /**
- 打开浏览器设置
+ 打开设置
  */
-+ (void)ax_openSafariSetting NS_DEPRECATED_IOS(8_0, 10_0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
++ (void (^)(NSString *key))openSetting;
 
 /**
  打开当前app的设置页面
