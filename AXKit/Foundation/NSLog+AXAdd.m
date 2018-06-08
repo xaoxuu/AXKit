@@ -10,9 +10,6 @@
 #import "NSString+AXFileManager.h"
 #import "NSDate+AXAdd.h"
 
-
-
-
 static LogTypeString *app = @"app";
 static LogTypeString *data = @"data";
 static LogTypeString *error = @"error";
@@ -79,7 +76,7 @@ static inline NSString *logPath(LogTypeString *type){
     NSString *path = [NSString stringWithFormat:@"%@/%@-%@.%@", logDirToday(), getTodayString(), type, logFileExtension];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         // 初始化写入第一行，记录启动时间
-        path.appendStringToFile([NSString stringWithFormat:@"-> [%@] application load completed. \n\n", getCurrentTimeString()]);
+        path.appendStringToFile([NSString stringWithFormat:@"-> [%@] application load completion. \n\n", getCurrentTimeString()]);
     }
     return path;
 }
@@ -119,7 +116,7 @@ static inline NSString *logPath(LogTypeString *type){
         if (![obj isEqualToString:@".DS_Store"]) {
             NSString *dateString = obj.lastPathComponent.stringByDeletingPathExtension;
             NSDate *thisDate = [dateFormatter(@"yyyy-MM-dd") dateFromString:dateString];
-            if (thisDate.integerValue >= date.integerValue) {
+            if (thisDate.yyyyMMdd.intValue >= date.yyyyMMdd.intValue) {
                 [tmp addObject:obj];
             }
         }

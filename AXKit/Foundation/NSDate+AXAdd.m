@@ -15,129 +15,54 @@ static inline NSCalendar *calendar(){
     return [NSCalendar currentCalendar];
 }
 
-
 @implementation NSDate (AXAdd)
 
-/**
- 8位数的整型值(yyyyMMdd)
- */
-- (NSInteger)integerValue{
-    return NSDateFormatter.sharedFormatter(yyyyMMdd).stringValue(self).integerValue;
-}
+// MARK: - init
 
-/**
- 8位数的整型值(yyyyMMdd)
- */
-- (int)intValue{
-    return NSDateFormatter.sharedFormatter(yyyyMMdd).stringValue(self).intValue;
-}
-
-/**
- ISOformat字符串(yyyy-MM-dd'T'HH:mm:ssZ)
- */
-- (NSString *)isoStringValue{
-    return NSDateFormatter.sharedFormatter(ISOFormat).stringValue(self);
-}
-
-/**
- 将8位数的日期值(yyyyMMdd)转换成日期
- 
- @param integerValue 8位数的整型值(yyyyMMdd)
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithIntegerValue:(NSInteger)integerValue{
-    NSString *dateString = [NSString stringWithFormat:@"%08d", (int)integerValue];
-    return NSDateFormatter.formatter(yyyyMMdd).date(dateString);
-}
-
-+ (NSDate * _Nonnull (^)(NSString * _Nonnull, NSString * _Nonnull))dateWithStringAndFormat{
-    return ^NSDate *(NSString *dateString, NSString *format){
++ (NSDate * _Nonnull (^)(NSString *format, NSString *dateString))initWithFormat{
+    return ^NSDate *(NSString *format, NSString *dateString){
         return NSDateFormatter.formatter(format).date(dateString);
     };
 }
 
-+ (NSDate * _Nonnull (^)(NSString * _Nonnull, NSString * _Nonnull))dateWithUTCStringAndFormat{
-    return ^NSDate *(NSString *dateString, NSString *format){
-        return NSDateFormatter.utcFormatter(format).date(dateString);
++ (nullable NSDate *(^)(NSDateFormatter *formatter, NSString *dateString))initWithFormatter{
+    return ^NSDate *(NSDateFormatter *formatter, NSString *dateString){
+        return formatter.date(dateString);
     };
 }
 
-/**
- 根据日期字符串和格式生成日期
- 
- @param dateString 日期字符串
- @param format 格式
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithString:(NSString *)dateString format:(NSString *)format{
-    return NSDateFormatter.formatter(format).date(dateString);
-}
 
-/**
- 根据日期字符串、格式、时区、locale生成日期
- 
- @param dateString 日期字符串
- @param format 格式
- @param timeZone 时区
- @param locale locale
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithString:(NSString *)dateString
-                                    format:(NSString *)format
-                                  timeZone:(nullable NSTimeZone *)timeZone
-                                    locale:(nullable NSLocale *)locale{
-    NSDateFormatter *fm = NSDateFormatter.formatterWithTimeZone(format, timeZone);
-    fm.locale = locale;
-    return fm.date(dateString);
-}
-
-/**
- 根据ISOformat字符串生成日期
- 
- @param dateString ISOformat字符串
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithISOFormatString:(NSString *)dateString{
-    return NSDateFormatter.formatter(ISOFormat).date(dateString);
-}
-
-/**
- 根据日期格式生成日期字符串
- 
- @param format 日期格式
- @return 日期字符串
- */
-- (nullable NSString *)ax_stringWithFormat:(NSString *)format{
-    return NSDateFormatter.sharedFormatter(format).stringValue(self);
-}
-
-/**
- 根据日期格式、时区、locale生成日期字符串
- 
- @param format 格式
- @param timeZone 时区
- @param locale locale
- @return 日期字符串
- */
-- (nullable NSString *)ax_stringWithFormat:(NSString *)format
-                                  timeZone:(nullable NSTimeZone *)timeZone
-                                    locale:(nullable NSLocale *)locale{
-    NSDateFormatter *fm = NSDateFormatter.formatterWithTimeZone(format, timeZone);
-    fm.locale = locale;
-    return fm.stringValue(self);
-}
+// MARK: - format
 
 /**
  生成日期format格式的字符串，传入参数为format
  */
-- (nullable NSString *(^)(NSString *))stringValue{
+- (nullable NSString *(^)(NSString *))stringWithFormat{
     return ^(NSString *format){
         return NSDateFormatter.sharedFormatter(format).stringValue(self);
     };
 }
+- (nullable NSString *(^)(NSDateFormatter *formatter))stringWithFormatter{
+    return ^(NSDateFormatter *formatter){
+        return formatter.stringValue(self);
+    };
+}
+
+- (nullable NSString *(^)(NSDateFormatterStyle dateStyle, NSDateFormatterStyle timeStyle))localizedStringWithStyle{
+    return ^(NSDateFormatterStyle dateStyle, NSDateFormatterStyle timeStyle){
+        return [NSDateFormatter localizedStringFromDate:self dateStyle:dateStyle timeStyle:timeStyle];
+    };
+}
+
+- (NSString *)yyyyMMdd{
+    return self.stringWithFormat(@"yyyyMMdd");
+}
+- (NSString *)stringWithStandardFormat{
+    return self.stringWithFormat(@"yyyy-MM-dd HH:mm:ss");
+}
 
 
-#pragma mark - 日期计算
+// MARK: - calc
 
 /**
  增加年

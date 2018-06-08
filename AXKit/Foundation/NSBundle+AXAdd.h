@@ -11,114 +11,90 @@
 @interface NSBundle (AXAdd)
 
 /**
- bundle display name
- 
- @return bundle display name
- */
-- (NSString *)ax_bundleDisplayName;
-
-/**
  bundle name
 
  @return bundle name
  */
-- (NSString *)ax_bundleName;
+- (NSString *)bundleName;
 
+/**
+ bundle display name
+
+ @return bundle display name
+ */
+- (NSString *)bundleDisplayName;
 
 /**
  bundle short version string
 
  @return bundle short version string
  */
-- (NSString *)ax_bundleShortVersionString;
+- (NSString *)bundleShortVersionString;
 
 /**
  bundle build version string
 
  @return bundle build version string
  */
-- (NSString *)ax_bundleVersion;
+- (NSString *)bundleVersion;
+
 
 
 /**
- main bundle id
-
- @return main bundle id
+ main bundle localized info dictionary
+ 
+ @return bundle localized info dictionary
  */
-+ (NSString *)ax_mainBundleId;
++ (NSDictionary *)appLocalizedInfoDictionary;
 
 /**
- app name (CFBundleDisplayName)
-
- @return app name
+ main bundle info dictionary
+ 
+ @return bundle info dictionary
  */
-+ (NSString *)ax_appDisplayName;
++ (NSDictionary *)appInfoDictionary;
+
 
 /**
- app name (CFBundleDisplayName)
+ app display name (CFBundleDisplayName)
+
+ @return app display name
+ */
++ (NSString *)appDisplayName;
+
+/**
+ app name (CFBundleName)
  
  @return app name
  */
-+ (NSString *)ax_appName;
++ (NSString *)appName;
 
 /**
  app version (CFBundleShortVersionString)
 
  @return app version
  */
-+ (NSString *)ax_appVersion;
++ (NSString *)appVersion;
 
 /**
  app build (CFBundleVersion)
 
  @return app build
  */
-+ (NSString *)ax_appBuild;
-
-
-/**
- bundle localized info dictionary
-
- @return bundle localized info dictionary
- */
-+ (NSDictionary *)ax_localizedInfoDictionary;
++ (NSString *)appBuildVersion;
 
 /**
- bundle info dictionary
+ appicon name
 
- @return bundle info dictionary
+ @return appicon name
  */
-+ (NSDictionary *)ax_infoDictionary;
-
++ (NSString *)appIconName;
 
 /**
- appicon path
+ launch image name
 
- @return appicon path
+ @return launch image name
  */
-+ (NSString *)ax_appIconPath;
-
-
-/**
- appicon
-
- @return appicon
- */
-+ (UIImage *)ax_appIcon;
-
-
-/**
- 启动图片路径
-
- @return 启动图片路径
- */
-+ (NSString *)ax_appLaunchImagePath;
-
-/**
- 启动图片
-
- @return 启动图片
- */
-+ (UIImage *)ax_appLaunchImage;
++ (NSString *)appLaunchImageName;
 
 @end

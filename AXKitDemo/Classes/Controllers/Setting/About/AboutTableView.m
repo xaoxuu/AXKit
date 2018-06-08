@@ -38,7 +38,7 @@ static id<NSObject> observer;
     
     // @xaoxuu: icon
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, iconSize, iconSize)];
-    icon.image = [NSBundle ax_appIcon];
+    icon.image = UIImage.named(NSBundle.appIconName);
     icon.contentMode = UIViewContentModeScaleAspectFit;
     if ([[UIApplication sharedApplication] supportsAlternateIcons]) {
         NSString *iconName = [[UIApplication sharedApplication] alternateIconName];
@@ -114,7 +114,7 @@ static id<NSObject> observer;
     }
     
     // @xaoxuu: app name
-    NormalLabel *appName = [NormalLabel labelWithTitle:[NSBundle ax_appDisplayName] fontSize:17];
+    NormalLabel *appName = [NormalLabel labelWithTitle:NSBundle.appDisplayName fontSize:17];
     appName.width = view.width;
     appName.centerX = 0.5 * view.width;
     appName.top = icon.bottom + 8;
@@ -155,9 +155,9 @@ static id<NSObject> observer;
     AXTableRowModel *tmp = (AXTableRowModel *)model;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            tmp.detail = [NSBundle ax_appVersion];
+            tmp.detail = NSBundle.appVersion;
         } else if (indexPath.row == 1) {
-            NSString *buildTime = @"2018".append([NSBundle ax_appBuild]);
+            NSString *buildTime = @"2018".append(NSBundle.appBuildVersion);
             NSDate *date = [NSDate dateWithString:buildTime format:@"yyyyMdd1"];
             tmp.detail = [date stringWithFormat:@"yyyy-MM-dd"];
         }

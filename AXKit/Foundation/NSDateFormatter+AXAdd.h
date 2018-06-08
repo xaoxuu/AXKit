@@ -9,7 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "AXMacros.h"
 
+/** "yyyy-MM-dd'T'HH:mm:ssZ" */
+FOUNDATION_EXTERN NSString *kDateFormat_ISO;
+/** "yyyy-MM-dd HH:mm:ss" */
+FOUNDATION_EXTERN NSString *kDateFormat_Standard;
+/** "yyyyMMdd" */
+FOUNDATION_EXTERN NSString *kDateFormat_yyyyMMdd;
+
+
 @interface NSDateFormatter (AXAdd)
+
+// MARK: - init
 
 /**
  local formatter
@@ -25,23 +35,31 @@
 + (nullable NSDateFormatter *(^)(NSString *dateFormat))utcFormatter;
 
 /**
- formatter with timezone
- */
-+ (nullable NSDateFormatter *(^)(NSString *dateFormat, NSTimeZone *timeZone))formatterWithTimeZone;
-
-
-/**
  shared instance
  */
-+ (nullable NSDateFormatter *(^)(NSString *dateFormat))sharedFormatter;
++ (nullable NSDateFormatter *(^)(NSString *__nullable dateFormat))sharedFormatter;
+
+// MARK: - set
 
 /**
- date
+ set locale
+ */
+- (NSDateFormatter *(^)(NSLocale *locale))setLocale;
+
+/**
+ set time zone
+ */
+- (NSDateFormatter *(^)(NSTimeZone *timeZone))setTimeZone;
+
+// MARK: - output
+
+/**
+ date from string
  */
 - (nullable NSDate *(^)(NSString *dateString))date;
 
 /**
- string
+ string from date
  */
 - (nullable NSString *(^)(NSDate *date))stringValue;
 

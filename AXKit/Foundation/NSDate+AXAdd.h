@@ -10,99 +10,50 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface NSDate (AXAdd)
 
+// MARK: - init
 
 /**
- 8位数的整型值(yyyyMMdd)
+ 根据日期格式和字符串生成日期
  */
-@property (assign, readonly, nonatomic) NSInteger integerValue;
++ (nullable NSDate *(^)(NSString *format, NSString *dateString))initWithFormat;
 
 /**
- 8位数的整型值(yyyyMMdd)
+ 根据NSDateFormatter和字符串生成日期
  */
-@property (assign, readonly, nonatomic) int intValue;
++ (nullable NSDate *(^)(NSDateFormatter *formatter, NSString *dateString))initWithFormatter;
 
-/**
- ISOformat字符串(yyyy-MM-dd'T'HH:mm:ssZ)
- */
-@property (strong, readonly, nonatomic) NSString *isoStringValue;
-
-/**
- 将8位数的日期值(yyyyMMdd)转换成日期
- 
- @param integerValue 8位数的整型值(yyyyMMdd)
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithIntegerValue:(NSInteger)integerValue;
-
-/**
- 根据日期字符串和格式生成日期
- */
-+ (nullable NSDate *(^)(NSString *str, NSString *format))dateWithStringAndFormat;
-
-/**
- 根据UTC日期字符串和格式生成日期
- */
-+ (nullable NSDate *(^)(NSString *str, NSString *format))dateWithUTCStringAndFormat;
-
-/**
- 根据日期字符串和格式生成日期
-
- @param dateString 日期字符串
- @param format 格式
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithString:(NSString *)dateString format:(NSString *)format;
-
-/**
- 根据日期字符串、格式、时区、locale生成日期
-
- @param dateString 日期字符串
- @param format 格式
- @param timeZone 时区
- @param locale locale
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithString:(NSString *)dateString
-                                    format:(NSString *)format
-                                  timeZone:(nullable NSTimeZone *)timeZone
-                                    locale:(nullable NSLocale *)locale;
-
-/**
- 根据ISOformat字符串生成日期
-
- @param dateString ISOformat字符串
- @return 日期
- */
-+ (nullable instancetype)ax_dateWithISOFormatString:(NSString *)dateString;
-
-/**
- 根据日期格式生成日期字符串
-
- @param format 日期格式
- @return 日期字符串
- */
-- (nullable NSString *)ax_stringWithFormat:(NSString *)format;
-
-/**
- 根据日期格式、时区、locale生成日期字符串
- 
- @param format 格式
- @param timeZone 时区
- @param locale locale
- @return 日期字符串
- */
-- (nullable NSString *)ax_stringWithFormat:(NSString *)format
-                                  timeZone:(nullable NSTimeZone *)timeZone
-                                    locale:(nullable NSLocale *)locale;
+// MARK: - format
 
 /**
  生成日期format格式的字符串，传入参数为format
  */
-- (nullable NSString *(^)(NSString *))stringValue;
+- (nullable NSString *(^)(NSString *format))stringWithFormat;
 
+/**
+ 生成日期format格式的字符串，传入参数为NSDateFormatter
+ */
+- (nullable NSString *(^)(NSDateFormatter *formatter))stringWithFormatter;
 
+/**
+ 生成日期格式化字符串
+ */
+- (nullable NSString *(^)(NSDateFormatterStyle dateStyle, NSDateFormatterStyle timeStyle))localizedStringWithStyle;
 
-#pragma mark - 日期计算
+/**
+ 生成"yyyyMMdd"格式的字符串
+
+ @return "yyyyMMdd"格式的字符串
+ */
+- (NSString *)yyyyMMdd;
+
+/**
+ 生成"yyyy-MM-dd HH:mm:ss"格式的字符串
+ 
+ @return "yyyy-MM-dd HH:mm:ss"格式的字符串
+ */
+- (NSString *)stringWithStandardFormat;
+
+// MARK: - calc
 
 /**
  增加年

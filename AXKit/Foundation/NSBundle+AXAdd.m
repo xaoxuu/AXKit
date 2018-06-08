@@ -7,63 +7,60 @@
 //
 
 #import "NSBundle+AXAdd.h"
-#import "UIView+AXAdd.h"
-
-
 
 @implementation NSBundle (AXAdd)
 
-- (NSString *)ax_bundleDisplayName{
-    NSString *bundleName = [self.localizedInfoDictionary objectForKey:@"CFBundleDisplayName"];
+- (NSString *)bundleName{
+    return self.infoDictionary[@"CFBundleName"];
+}
+- (NSString *)bundleDisplayName{
+    NSString *bundleName = self.localizedInfoDictionary[@"CFBundleDisplayName"];
     if (!bundleName) {
-        bundleName = [self.infoDictionary objectForKey:@"CFBundleDisplayName"];
+        bundleName = self.infoDictionary[@"CFBundleDisplayName"];
     }
     if (!bundleName) {
-        bundleName = [self ax_bundleName];
+        bundleName = self.bundleName;
     }
     return bundleName;
 }
-- (NSString *)ax_bundleName{
-    return [self.infoDictionary objectForKey:@"CFBundleName"];
+
+- (NSString *)bundleShortVersionString{
+    return self.infoDictionary[@"CFBundleShortVersionString"];
 }
 
-- (NSString *)ax_bundleShortVersionString{
-    return [self.infoDictionary objectForKey:@"CFBundleShortVersionString"];;
+- (NSString *)bundleVersion{
+    return self.infoDictionary[@"CFBundleVersion"];
 }
 
-- (NSString *)ax_bundleVersion{
-    return [self.infoDictionary objectForKey:@"CFBundleVersion"];;
++ (NSDictionary *)appLocalizedInfoDictionary{
+    return self.mainBundle.localizedInfoDictionary;
 }
 
-+ (NSString *)ax_mainBundleId{
-    return [[self mainBundle] bundleIdentifier];
++ (NSDictionary *)appInfoDictionary{
+    return self.mainBundle.infoDictionary;
 }
 
-+ (NSString *)ax_appDisplayName{
-    return [[self mainBundle] ax_bundleDisplayName];
++ (NSString *)appDisplayName{
+    return self.mainBundle.bundleDisplayName;
 }
 
-+ (NSString *)ax_appName{
-    return [[self mainBundle] ax_bundleName];
++ (NSString *)appName{
+    return self.mainBundle.bundleName;
 }
 
-+ (NSString *)ax_appVersion{
-    return [[self mainBundle] ax_bundleShortVersionString];
++ (NSString *)appVersion{
+    return self.mainBundle.bundleShortVersionString;
 }
 
-+ (NSString *)ax_appBuild{
-    return [[self mainBundle] ax_bundleVersion];
++ (NSString *)appBuildVersion{
+    return self.mainBundle.bundleVersion;
 }
 
-+ (NSString *)ax_appIconPath{
-    return [[self.ax_infoDictionary valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject];
++ (NSString *)appIconName{
+    return [[self.mainBundle.infoDictionary valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject];
 }
 
-+ (UIImage *)ax_appIcon{
-    return [UIImage imageNamed:[self ax_appIconPath]];
-}
-
-+ (NSString *)ax_appLaunchImagePath{
++ (NSString *)appLaunchImageName{
     CGSize viewSize = [UIScreen mainScreen].bounds.size;
     NSString *viewOrientation = @"Portrait";
     NSString *launchImageNamePath = nil;
@@ -76,22 +73,5 @@
     }
     return launchImageNamePath;
 }
-
-+ (UIImage *)ax_appLaunchImage{
-    return [UIImage imageNamed:[self ax_appLaunchImagePath]];
-}
-
-
-
-+ (NSDictionary *)ax_localizedInfoDictionary{
-    return [[NSBundle mainBundle] localizedInfoDictionary];
-}
-
-+ (NSDictionary *)ax_infoDictionary{
-    return [[NSBundle mainBundle] infoDictionary];
-}
-
-
-
 
 @end
