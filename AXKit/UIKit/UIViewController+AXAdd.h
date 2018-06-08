@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^ __nullable)(void))completion;
 
 
+- (void)ax_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)animated completion:(void (^ __nullable)(void))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,7 +9,7 @@
 #import "UIApplication+AXAdd.h"
 #import <SafariServices/SafariServices.h>
 #import "UIResponder+AXAdd.h"
-
+#import "UIViewController+AXAdd.h"
 
 /**
  获取跳转的URLString
@@ -64,13 +64,7 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
         // on newer versions
         SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:URL];
         UIViewController *fromVC = viewController?:UIViewController.rootViewController;
-        if (fromVC.presentedViewController) {
-            [fromVC.presentedViewController dismissViewControllerAnimated:YES completion:^{
-                [fromVC presentViewController:safari animated:YES completion:completion];
-            }];
-        } else {
-            [fromVC presentViewController:safari animated:YES completion:completion];
-        }
+        [fromVC ax_presentViewController:safari animated:YES completion:completion];
     } else {
         // Fallback on earlier versions
         [[UIApplication sharedApplication] openURL:URL];

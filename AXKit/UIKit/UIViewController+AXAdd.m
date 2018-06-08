@@ -38,6 +38,16 @@ static inline UIViewController *UIViewControllerNamed(NSString *name){
     [UIApplication ax_presentSafariViewControllerWithURL:URL fromViewController:self completion:completion];
 }
 
+- (void)ax_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)animated completion:(void (^ __nullable)(void))completion{
+    if (self.presentedViewController) {
+        [self.presentedViewController dismissViewControllerAnimated:animated completion:^{
+            [self presentViewController:viewControllerToPresent animated:animated completion:completion];
+        }];
+    } else {
+        [self presentViewController:viewControllerToPresent animated:animated completion:completion];
+    }
+}
+
 @end
 
 
