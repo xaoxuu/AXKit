@@ -11,9 +11,8 @@
 #import "NSLog+AXAdd.h"
 #import "_AXKitError.h"
 #import "NSObject+AXAdd.h"
-static inline NSUserDefaults *DefaultUser(){
-    return [NSUserDefaults standardUserDefaults];
-}
+
+
 @implementation NSError (AXUserDefaults)
 
 + (instancetype)axkit_errorWithReason:(NSString *(^)(void))reason{
@@ -26,12 +25,16 @@ static inline NSUserDefaults *DefaultUser(){
 
 @implementation NSUserDefaults (AXAdd)
 
++ (NSUserDefaults *)standard{
+    return NSUserDefaults.standardUserDefaults;
+}
+
 #pragma mark - read
 
 + (nullable AXResult *(^)(NSString *key))objectResult{
     return ^id (NSString *key){
         return [AXResult resultWithIdResult:^id _Nonnull(NSError * _Nullable __autoreleasing * _Nullable error) {
-            return [DefaultUser() objectForKey:key];
+            return [self.standard objectForKey:key];
         }];
     };
 }
@@ -43,12 +46,12 @@ static inline NSUserDefaults *DefaultUser(){
     };
 }
 
-+ (nullable id (^)(NSString *key))object{
++ (nullable id (^)(NSString *key))objectForKey{
     return ^id (NSString *key){
-        return [DefaultUser() objectForKey:key];
+        return [self.standard objectForKey:key];
     };
 }
-- (nullable id (^)(NSString *key))object{
+- (nullable id (^)(NSString *key))objectForKey{
     return ^id (NSString *key){
         return [self objectForKey:key];
     };
@@ -56,7 +59,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 + (nullable NSString *(^)(NSString *key))string{
     return ^id (NSString *key){
-        return [DefaultUser() objectForKey:key];
+        return [self.standard objectForKey:key];
     };
 }
 - (nullable NSString *(^)(NSString *key))string{
@@ -67,7 +70,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 + (nullable NSNumber *(^)(NSString *key))number{
     return ^id (NSString *key){
-        return autoNumber([DefaultUser() objectForKey:key], nil);
+        return autoNumber([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSNumber *(^)(NSString *key))number{
@@ -78,7 +81,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 + (nullable NSArray *(^)(NSString *key))array{
     return ^id (NSString *key){
-        return autoArray([DefaultUser() objectForKey:key], nil);
+        return autoArray([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSArray *(^)(NSString *key))array{
@@ -89,7 +92,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 + (nullable NSDictionary *(^)(NSString *key))dictionary{
     return ^id (NSString *key){
-        return autoDictionary([DefaultUser() objectForKey:key], nil);
+        return autoDictionary([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSDictionary *(^)(NSString *key))dictionary{
@@ -100,7 +103,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 + (nullable NSData *(^)(NSString *key))data{
     return ^id (NSString *key){
-        return safeData([DefaultUser() objectForKey:key], nil);
+        return safeData([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSData *(^)(NSString *key))data{
@@ -111,7 +114,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 + (nullable UIImage *(^)(NSString *key))image{
     return ^id (NSString *key){
-        return DefaultUser().image(key);
+        return self.standard.image(key);
     };
 }
 - (nullable UIImage *(^)(NSString *key))image{
@@ -127,7 +130,7 @@ static inline NSUserDefaults *DefaultUser(){
 
 + (nullable NSURL *(^)(NSString *key))URL{
     return ^NSURL *(NSString *key){
-        return [DefaultUser() URLForKey:key];
+        return [self.standard URLForKey:key];
     };
 }
 - (nullable NSURL *(^)(NSString *key))URL{
@@ -138,13 +141,13 @@ static inline NSUserDefaults *DefaultUser(){
 
 #pragma mark - write
 
-+ (void (^)(id , NSString * _Nonnull))set{
++ (void (^)(id , NSString * _Nonnull))setObjectForKey{
     return ^(id obj, NSString *key){
-        [DefaultUser() setObject:obj forKey:key];
-        [DefaultUser() synchronize];
+        [self.standard setObject:obj forKey:key];
+        [self.standard synchronize];
     };
 }
-- (void (^)(id , NSString * _Nonnull))set{
+- (void (^)(id , NSString * _Nonnull))setObjectForKey{
     return ^(id obj, NSString *key){
         [self setObject:obj forKey:key];
         [self synchronize];
@@ -152,8 +155,8 @@ static inline NSUserDefaults *DefaultUser(){
 }
 
 + (void)ax_caches:(void (^)(NSUserDefaults *defaultUser))action{
-    action(DefaultUser());
-    [DefaultUser() synchronize];
+    action(self.standard);
+    [self.standard synchronize];
 }
 
 - (void)ax_caches:(void (^)(NSUserDefaults *user))action{
@@ -163,21 +166,34 @@ static inline NSUserDefaults *DefaultUser(){
 
 #pragma mark - remove
 
-+ (void (^)(NSString *key))remove{
++ (void (^)(NSString *key))removeObjectForKey{
     return ^(NSString *key){
-        DefaultUser().remove(key);
+        self.standard.removeObjectForKey(key);
     };
 }
-- (void (^)(NSString *key))remove{
+- (void (^)(NSString *key))removeObjectForKey{
     return ^(NSString *key){
         [self removeObjectForKey:key];
         [self synchronize];
     };
 }
 
+
++ (void (^)(NSString *name))removePersistentDomainForName{
+    return ^(NSString *name){
+        [self.standard removePersistentDomainForName:name];
+    };
+}
+
+- (void (^)(NSString *name))removePersistentDomainForName{
+    return ^(NSString *name){
+        [self removePersistentDomainForName:name];
+    };
+}
+
 + (void (^)(void))removeDefaultPersistentDomain{
     return ^{
-        [DefaultUser() removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+        [self.standard removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
     };
 }
 - (void (^)(void))removeDefaultPersistentDomain{

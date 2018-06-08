@@ -622,6 +622,7 @@
 		CDC1A7841ECFDC63003AAA63 /* BaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
 		CDC1A7861ECFDC98003AAA63 /* NormalLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalLabel.h; sourceTree = "<group>"; };
 		CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalLabel.m; sourceTree = "<group>"; };
+		CDCEA50F20CA0EBC009AFBBB /* AXKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CDE94E891EC705C800596B93 /* GitHubIssueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubIssueModel.h; sourceTree = "<group>"; };
 		CDE94E8A1EC705C800596B93 /* GitHubIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubIssueModel.m; sourceTree = "<group>"; };
@@ -710,6 +711,7 @@
 				8579EF001E6BEDF900C33881 /* AppDelegate.h */,
 				8579EF011E6BEDF900C33881 /* AppDelegate.m */,
 				CD0645C71EB3AC96007FBF06 /* PrefixHeader.pch */,
+				CDCEA50F20CA0EBC009AFBBB /* AXKitDemo-Bridging-Header.h */,
 				CDB716511F8E4A190025E8D7 /* Debug.xcassets */,
 				CD149E221F0105D4007051CE /* Assets.xcassets */,
 				CD273610207A6085007C8666 /* AppIcon */,
@@ -1657,6 +1659,7 @@
 					8579EEF91E6BEDF900C33881 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 34W5TB5KD2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Manual;
 					};
 					8579EF181E6BEE4F00C33881 = {
@@ -2208,6 +2211,7 @@
 			baseConfigurationReference = A667AFA9CC077ABA3219EC84 /* Pods-AXKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -2221,6 +2225,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b3cc7f2e-794b-4893-9a3d-07eec01e9330";
 				PROVISIONING_PROFILE_SPECIFIER = "Dev All";
+				SWIFT_OBJC_BRIDGING_HEADER = "AXKitDemo/AXKitDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2230,6 +2237,7 @@
 			baseConfigurationReference = E9083E906418E89A52CCBB86 /* Pods-AXKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -2243,6 +2251,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f4b5119c-2efd-4deb-8027-3e7065363730";
 				PROVISIONING_PROFILE_SPECIFIER = "Dis All";
+				SWIFT_OBJC_BRIDGING_HEADER = "AXKitDemo/AXKitDemo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

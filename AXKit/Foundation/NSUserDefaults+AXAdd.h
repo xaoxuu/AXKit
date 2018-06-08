@@ -12,6 +12,12 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface NSUserDefaults (AXAdd)
 
+/**
+ standardUserDefaults
+
+ @return standardUserDefaults
+ */
++ (NSUserDefaults *)standard;
 
 #pragma mark - read
 
@@ -27,11 +33,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  读取object
  */
-+ (nullable id (^)(NSString *key))object;
++ (nullable id (^)(NSString *key))objectForKey;
 /**
  读取object
  */
-- (nullable id (^)(NSString *key))object;
+- (nullable id (^)(NSString *key))objectForKey;
 
 /**
  读取string
@@ -102,11 +108,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  保存
  */
-+ (void (^)(id __nullable obj, NSString *key))set;
++ (void (^)(id __nullable obj, NSString *key))setObjectForKey;
+
 /**
  保存
  */
-- (void (^)(id __nullable obj, NSString *key))set;
+- (void (^)(id __nullable obj, NSString *key))setObjectForKey;
 
 /**
  批量保存用户设置，自带synchronize
@@ -127,11 +134,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  删除用户设置，自带synchronize
  */
-+ (void (^)(NSString *key))remove;
++ (void (^)(NSString *key))removeObjectForKey;
 /**
  删除用户设置，自带synchronize
  */
-- (void (^)(NSString *key))remove;
+- (void (^)(NSString *key))removeObjectForKey;
+
++ (void (^)(NSString *name))removePersistentDomainForName;
+
+- (void (^)(NSString *name))removePersistentDomainForName;
 
 /**
  移除默认的[NSUserDefaults standardUserDefaults]的所有配置
