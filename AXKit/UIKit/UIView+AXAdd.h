@@ -13,23 +13,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- 创建一个指定高的view
-
- @param height 高度
-
- @return view
- */
-CG_EXTERN UIView *UIViewWithHeight(CGFloat height);
-
-/**
- 从xib加载view
-
- @param name xib名
- @return view
- */
-CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
-
 @interface UIView (AXAdd)
 
 /**
@@ -37,7 +20,7 @@ CG_EXTERN __kindof UIView *UIViewFromNibNamed(NSString *name);
  
  @return view
  */
-+ (__kindof UIView *(^)(NSString *))initWithXibName;
++ (__kindof UIView *(^)(NSString *))initWithNibName;
 
 /**
  创建一个指定高的view

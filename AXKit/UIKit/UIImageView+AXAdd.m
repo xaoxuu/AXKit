@@ -10,17 +10,11 @@
 #import "UIImage+AXAdd.h"
 
 
-
-inline UIImageView *UIImageViewWithImageNamed(NSString *name){
-    return [[UIImageView alloc] initWithImage:UIImage.named(name)];
-}
-
-
 @implementation UIImageView (AXAdd)
 
 + (UIImageView * _Nonnull (^)(NSString * _Nonnull))initWithImageName{
     return ^UIImageView *(NSString *name){
-        return UIImageViewWithImageNamed(name);
+        return [[UIImageView alloc] initWithImage:UIImage.named(name)];
     };
 }
 + (UIImageView *(^)(UIImage *))initWithImage{

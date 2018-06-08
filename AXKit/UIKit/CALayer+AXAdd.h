@@ -98,6 +98,5 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
  */
 - (void)ax_removeColorAnimation;
 
-
 @end
 

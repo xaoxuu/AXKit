@@ -8,17 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
-/**
- 根据image名创建一个imgage view
-
- @param name image名
- @return image view
- */
-CG_EXTERN UIImageView *UIImageViewWithImageNamed(NSString *name);
-
 @interface UIImageView (AXAdd)
-
 
 + (UIImageView *(^)(NSString *))initWithImageName;
 

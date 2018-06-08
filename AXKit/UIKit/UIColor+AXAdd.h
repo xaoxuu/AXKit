@@ -8,26 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- 颜色加深
-
- @param color 颜色
- @param percent 加深比例（0~1）
- @return 加深之后的颜色
- */
-CG_EXTERN __kindof UIColor *darken(UIColor *color, CGFloat percent);
-
-/**
- 颜色变浅
-
- @param color 颜色
- @param percent 变浅比例（0~1）
- @return 变浅之后的颜色
- */
-CG_EXTERN __kindof UIColor *lighten(UIColor *color, CGFloat percent);
-
 @interface UIColor (AXAdd)
-
 
 /**
  颜色变深，默认比例0.48

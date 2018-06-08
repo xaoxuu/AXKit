@@ -20,7 +20,7 @@
 */
 
 - (void)ax_tableViewDidLoadFinished:(AXTableViewType *)tableView{
-    tableView.tableFooterView = UIViewWithHeight(20);
+    tableView.tableFooterView = UIView.initWithHeight(20);
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(NSIndexPath *)indexPath model:(AXTableRowModelType *)model{

@@ -9,7 +9,7 @@
 #import "UIViewController+AXAdd.h"
 #import "UIApplication+AXAdd.h"
 
-inline UIViewController *UIViewControllerNamed(NSString *name){
+static inline UIViewController *UIViewControllerNamed(NSString *name){
     return [[[NSClassFromString(name) class] alloc] init];
 }
 

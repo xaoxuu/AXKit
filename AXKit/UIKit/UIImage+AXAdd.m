@@ -52,7 +52,7 @@ static inline UIImage *UIImageWithBundleImageName(NSBundle *bundle, NSString *na
     }
     return [UIImage imageWithContentsOfFile:path];
 }
-inline UIImage *UIImageNamed(NSString *name){
+static inline UIImage *UIImageNamed(NSString *name){
     UIImage *image = [UIImage imageNamed:name];
     if (!image) { // 如果是bundle image
         image = UIImageWithBundleImageName([NSBundle mainBundle], name);

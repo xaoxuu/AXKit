@@ -50,7 +50,7 @@ static BOOL hexStrToRGBA(NSString *str,
 static CGFloat safePercentValue(CGFloat p){
     return MAX(MIN(p, 1), 0);
 }
-inline UIColor *darken(UIColor *color, CGFloat percent){
+static inline UIColor *darken(UIColor *color, CGFloat percent){
     CGFloat p = safePercentValue(percent);
     CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
     [color getRed:&red green:&green blue:&blue alpha:&alpha];
@@ -59,7 +59,7 @@ inline UIColor *darken(UIColor *color, CGFloat percent){
     blue  = blue  * (1 - p);
     return [color.class colorWithRed:red green:green blue:blue alpha:percent];
 }
-inline UIColor *lighten(UIColor *color, CGFloat percent){
+static inline UIColor *lighten(UIColor *color, CGFloat percent){
     CGFloat p = safePercentValue(percent);
     CGFloat red = 0.0,green = 0.0,blue = 0.0, alpha = 1.0;
     [color getRed:&red green:&green blue:&blue alpha:&alpha];

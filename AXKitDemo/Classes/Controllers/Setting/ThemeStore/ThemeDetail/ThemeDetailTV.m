@@ -19,7 +19,7 @@
 @implementation ThemeDetailTV
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
-    self.header = UIViewFromNibNamed(@"ThemePreviewView");
+    self.header = UIView.initWithNibName(@"ThemePreviewView");
     self.header.model = self.theme;
     tableView.tableHeaderView = self.header;
 }

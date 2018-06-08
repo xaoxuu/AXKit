@@ -11,18 +11,14 @@
 #import "UIViewController+AXAdd.h"
 #import "UIImage+AXAdd.h"
 
-inline UIView *UIViewWithHeight(CGFloat height){
-    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, height)];
-}
-
-inline __kindof UIView *UIViewFromNibNamed(NSString *name){
+static inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     return [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil].firstObject;
 }
 
 @implementation UIView (AXAdd)
 
 
-+ (__kindof UIView * _Nonnull (^)(NSString * _Nonnull))initWithXibName{
++ (__kindof UIView * _Nonnull (^)(NSString * _Nonnull))initWithNibName{
     return ^UIView *(NSString *name){
         return UIViewFromNibNamed(name);
     };

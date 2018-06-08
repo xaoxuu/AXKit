@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- 读取图片，优先从asset中读取
- 找不到图片则从mainBundle中读取
- 找不到则以传入值为路径读取图片。
- */
-CG_EXTERN UIImage *UIImageNamed(NSString *name);
-
 @interface UIImage (AXAdd)
 
 /**

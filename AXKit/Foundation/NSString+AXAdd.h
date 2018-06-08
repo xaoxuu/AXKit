@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreGraphics+AXAdd.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
  isEqualToString:
  */
 - (BOOL (^)(NSString *str))isEqualToString;
-
 
 /**
  受约束的尺寸，文本使用指定的字体、在size中实际布局所需要的size
