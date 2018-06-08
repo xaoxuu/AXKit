@@ -47,21 +47,6 @@
     }
 }
 
-
-
-- (void (^)(UIViewController *viewController, BOOL animated))popToViewController{
-    return ^(UIViewController *viewController, BOOL animated){
-        if ([self.viewControllers containsObject:viewController]) {
-            [self popToViewController:viewController animated:animated];
-        }
-    };
-}
-- (void (^)(BOOL animated))popToRootViewController{
-    return ^(BOOL animated){
-        [self popToRootViewControllerAnimated:animated];
-    };
-}
-
 - (void (^)(NSUInteger))popToViewControllerWithIndexFromRoot{
     return ^(NSUInteger index){
         [self ax_popToViewControllerWithIndexFromRoot:index animated:YES];

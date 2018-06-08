@@ -38,16 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: - pop
 
 /**
- pop到指定viewController
- */
-- (void (^)(UIViewController *viewController, BOOL animated))popToViewController;
-
-/**
- pop到根viewController
- */
-- (void (^)(BOOL animated))popToRootViewController;
-
-/**
  pop到从root向下数第index个viewController
  */
 - (void (^)(NSUInteger index))popToViewControllerWithIndexFromRoot;
