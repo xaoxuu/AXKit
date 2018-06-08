@@ -35,19 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSString *(^)(NSString *key))stringValue;
 
 /**
- 解析dictionary中的string，如果值为空，返回空字符串：@""
- */
-- (NSString *(^)(NSString *key, NSString *defaultValue))safeStringValue;
-
-/**
  解析dictionary中的number，返回值可能为空
  */
 - (nullable NSNumber *(^)(NSString *key))numberValue;
-
-/**
- 解析dictionary中的number，如果值为空，返回：@0
- */
-- (NSNumber *(^)(NSString *key, NSNumber *defaultValue))safeNumberValue;
 
 
 @end
