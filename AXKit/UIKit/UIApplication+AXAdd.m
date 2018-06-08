@@ -82,9 +82,6 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 /**
  打开蓝牙设置
  */
-+ (void)ax_openBluetoothSetting{
-    openSettingURLWithString(urlStringWithKey(@"Bluetooth"), nil);
-}
 + (void (^)(void))openBluetoothSetting{
     return ^{
         openSettingURLWithString(urlStringWithKey(@"Bluetooth"), nil);
@@ -94,9 +91,6 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 /**
  打开WIFI设置
  */
-+ (void)ax_openWIFISetting{
-    openSettingURLWithString(urlStringWithKey(@"WIFI"), nil);
-}
 + (void (^)(void))openWIFISetting{
     return ^{
         openSettingURLWithString(urlStringWithKey(@"WIFI"), nil);
@@ -105,9 +99,6 @@ static inline void openSettingURLWithString(NSString *urlString, void(^ __nullab
 /**
  打开通知设置
  */
-+ (void)ax_openNotificationSetting{
-    openSettingURLWithString(urlStringWithKey(@"NOTIFICATIONS_ID"), nil);
-}
 + (void (^)(void))openNotificationSetting{
     return ^{
         openSettingURLWithString(urlStringWithKey(@"NOTIFICATIONS_ID"), nil);

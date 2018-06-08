@@ -20,11 +20,11 @@
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(nonnull NSIndexPath *)indexPath model:(nonnull AXTableRowModelType *)model{
     if ([model.cmd isEqualToString:@"wifi"]) {
-        [UIApplication ax_openWIFISetting];
+        UIApplication.openWIFISetting();
     } else if ([model.cmd isEqualToString:@"ble"]) {
-        [UIApplication ax_openBluetoothSetting];
+        UIApplication.openBluetoothSetting();
     } else if ([model.cmd isEqualToString:@"noti"]) {
-        [UIApplication ax_openNotificationSetting];
+        UIApplication.openNotificationSetting();
     } else if ([model.cmd isEqualToString:@"app"]) {
         if (@available(iOS 11.0, *)) {
             // on newer versions

@@ -48,25 +48,13 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  打开蓝牙设置
  */
-+ (void)ax_openBluetoothSetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
-/**
- 打开蓝牙设置
- */
 + (void (^)(void))openBluetoothSetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 
 /**
  打开WIFI设置
  */
-+ (void)ax_openWIFISetting NS_DEPRECATED_IOS(8_0, 10_0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
-/**
- 打开WIFI设置
- */
 + (void (^)(void))openWIFISetting NS_DEPRECATED_IOS(8.0, 10.0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 
-/**
- 打开通知设置
- */
-+ (void)ax_openNotificationSetting NS_DEPRECATED_IOS(8_0, 10_0, "Please use ax_openAppSetting instead") NS_EXTENSION_UNAVAILABLE_IOS("");
 /**
  打开通知设置
  */
