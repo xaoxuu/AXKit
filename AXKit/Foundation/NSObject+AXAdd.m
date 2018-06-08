@@ -106,6 +106,12 @@ inline NSNumber *autoNumber(id obj, NSNumber *def){
     return subclasses;
 }
 
+- (BOOL (^)(SEL aSelector))respondsToSelector{
+    return ^(SEL aSelector){
+        return [self respondsToSelector:aSelector];
+    };
+}
+
 @end
 
 

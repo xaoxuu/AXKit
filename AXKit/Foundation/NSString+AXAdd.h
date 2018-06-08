@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)isURLString;
 
+- (BOOL (^)(NSString *str))isEqualToString;
+
+- (BOOL (^)(id object))isEqual;
 /**
  受约束的尺寸，文本使用指定的字体、在size中实际布局所需要的size
  */

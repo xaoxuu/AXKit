@@ -98,6 +98,8 @@ FOUNDATION_EXTERN NSNumber *autoNumber(id obj, NSNumber *def);
  */
 + (NSArray *)ax_allSubclasses;
 
+- (BOOL (^)(SEL aSelector))respondsToSelector;
+
 @end
 
 @interface NSString (AXJsonExt)

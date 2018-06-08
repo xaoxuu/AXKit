@@ -128,6 +128,18 @@ static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
     }
 }
 
+- (BOOL (^)(NSString *str))isEqualToString{
+    return ^(NSString *str){
+        return [self isEqualToString:str];
+    };
+}
+
+- (BOOL (^)(id object))isEqual{
+    return ^(id obj){
+        return [self isEqual:obj];
+    };
+}
+
 - (CGSize (^)(UIFont *font, CGSize size))boundingSize{
     return ^CGSize(UIFont *font, CGSize size){
         return boundingSize(self, font, size, NSLineBreakByWordWrapping);
