@@ -20,7 +20,7 @@
     
     
     [self.navigationBar ax_hideSeparator];
-    self.navigationBar.layer.shadow(LayerShadowDownNormal);
+    self.navigationBar.layer.setShadow(LayerShadowDownNormal);
     
     [self updateTheme];
     

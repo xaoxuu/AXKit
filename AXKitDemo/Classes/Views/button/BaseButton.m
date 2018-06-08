@@ -73,7 +73,7 @@
 - (__kindof BaseButton *(^)(void))layoutToBottom{
     return ^{
         self.bottom = self.superview.height;
-        self.layer.shadow(LayerShadowUpLight);
+        self.layer.setShadow(LayerShadowUpLight);
         return self;
     };
 }

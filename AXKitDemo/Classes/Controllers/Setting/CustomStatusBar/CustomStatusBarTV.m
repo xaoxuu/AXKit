@@ -85,15 +85,15 @@ static NSTimer *timer;
                 }];
             } else if (row == 1) {
                 [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
-                    layer.shadow(LayerShadowDownLight);
+                    layer.setShadow(LayerShadowDownLight);
                 }];
             } else if (row == 2) {
                 [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
-                    layer.shadow(LayerShadowDownNormal);
+                    layer.setShadow(LayerShadowDownNormal);
                 }];
             } else if (row == 3) {
                 [customStatusBar ax_layer:^(CALayer * _Nonnull layer) {
-                    layer.shadow(LayerShadowDownFloat);
+                    layer.setShadow(LayerShadowDownFloat);
                 }];
             }
         } else if (section == 3) {

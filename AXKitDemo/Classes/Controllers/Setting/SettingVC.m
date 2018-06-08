@@ -22,7 +22,7 @@ static CGFloat margin = 8.0;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Preferences";
-    self.navigationController.navigationBar.layer.shadow(LayerShadowNone);
+    self.navigationController.navigationBar.layer.setShadow(LayerShadowNone);
     self.view.backgroundColor = [UIColor clearColor];
     
     if (@available(iOS 11.0, *)) {

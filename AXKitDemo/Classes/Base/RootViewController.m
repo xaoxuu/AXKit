@@ -31,7 +31,7 @@
     DebugVC *debugVC = [[DebugVC alloc] init];
     self.aboutVC = [[AboutVC alloc] init];
     self.mainVC = [[BaseNavController alloc] initWithRootViewController:debugVC];
-    self.mainVC.view.layer.shadow(LayerShadowCenterHeavy);
+    self.mainVC.view.layer.setShadow(LayerShadowCenterHeavy);
     self.mainVC.view.layer.shadowRadius = 6.0f;
     self.mainVC.view.layer.shadowOffset = CGSizeMake(0, 0);
     self.mainVC.view.layer.shadowOpacity = 0.6f;

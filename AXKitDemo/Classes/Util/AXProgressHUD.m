@@ -84,7 +84,7 @@ static NSTimeInterval static_duration;
     sPopView.layer.masksToBounds = YES;
     
     sPopView.layer.cornerRadius = 10;
-    sPopView.layer.shadow(LayerShadowDownFloat);
+    sPopView.layer.setShadow(LayerShadowDownFloat);
     
     
 //    sPopView.height = sLabel.top + sLabel.height + 16;

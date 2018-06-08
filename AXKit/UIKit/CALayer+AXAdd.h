@@ -48,7 +48,7 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
 /**
  设置圆角半径
  */
-- (CALayer *(^)(CGFloat cornerRadius))corner;
+- (CALayer *(^)(CGFloat cornerRadius))setCornerRadius;
 
 /**
  剪裁成圆形（适用用于头像）
@@ -61,7 +61,7 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
  阴影效果枚举
  shadow 阴影效果枚举
  */
-- (CALayer *(^)(LayerShadow shadow))shadow;
+- (CALayer *(^)(LayerShadow shadow))setShadow;
 
 #pragma mark - border
 
@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
 /**
  设置边框
  */
-- (CALayer *(^)(CGFloat borderWidth, UIColor *borderColor))border;
+- (CALayer *(^)(CGFloat borderWidth, UIColor *borderColor))setBorder;
 
 #pragma mark - animation
 

@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.targetView.layer.corner(8).shadow(LayerShadowDownNormal);
+    self.targetView.layer.setCornerRadius(8).setShadow(LayerShadowDownNormal);
     self.moveGestureView.layer.rounded();
     self.resizeGestureView.layer.rounded();
     

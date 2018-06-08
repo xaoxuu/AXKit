@@ -116,7 +116,7 @@ static inline void removeColorAnimation(CALayer *layer){
 #pragma mark - corner
 
 
-- (CALayer *(^)(CGFloat))corner{
+- (CALayer *(^)(CGFloat))setCornerRadius{
     return ^CALayer *(CGFloat cornerRadius){
         self.cornerRadius = cornerRadius;
         return self;
@@ -132,7 +132,7 @@ static inline void removeColorAnimation(CALayer *layer){
 
 #pragma mark - shadow
 
-- (CALayer *(^)(LayerShadow shadow))shadow{
+- (CALayer *(^)(LayerShadow shadow))setShadow{
     return ^CALayer *(LayerShadow shadow){
         setLayerShadow(self, shadow);
         return self;
@@ -160,7 +160,7 @@ static inline void removeColorAnimation(CALayer *layer){
         return self;
     };
 }
-- (CALayer *(^)(CGFloat, UIColor *))border{
+- (CALayer *(^)(CGFloat, UIColor *))setBorder{
     return ^CALayer *(CGFloat borderWidth, UIColor *borderColor){
         self.borderColor = borderColor.CGColor;
         self.borderWidth = borderWidth;
