@@ -57,67 +57,67 @@
     };
 }
 
-+ (nullable NSString *(^)(NSString *key))string{
++ (nullable NSString *(^)(NSString *key))stringForKey{
     return ^id (NSString *key){
         return [self.standard objectForKey:key];
     };
 }
-- (nullable NSString *(^)(NSString *key))string{
+- (nullable NSString *(^)(NSString *key))stringForKey{
     return ^id (NSString *key){
         return [self objectForKey:key];
     };
 }
 
-+ (nullable NSNumber *(^)(NSString *key))number{
++ (nullable NSNumber *(^)(NSString *key))numberForKey{
     return ^id (NSString *key){
         return NSNumber.autoNumber([self.standard objectForKey:key], nil);
     };
 }
-- (nullable NSNumber *(^)(NSString *key))number{
+- (nullable NSNumber *(^)(NSString *key))numberForKey{
     return ^id (NSString *key){
         return NSNumber.autoNumber([self objectForKey:key], nil);
     };
 }
 
-+ (nullable NSArray *(^)(NSString *key))array{
++ (nullable NSArray *(^)(NSString *key))arrayForKey{
     return ^id (NSString *key){
         return NSArray.autoArray([self.standard objectForKey:key], nil);
     };
 }
-- (nullable NSArray *(^)(NSString *key))array{
+- (nullable NSArray *(^)(NSString *key))arrayForKey{
     return ^id (NSString *key){
         return NSArray.autoArray([self objectForKey:key], nil);
     };
 }
 
-+ (nullable NSDictionary *(^)(NSString *key))dictionary{
++ (nullable NSDictionary *(^)(NSString *key))dictionaryForKey{
     return ^id (NSString *key){
         return NSDictionary.autoDictionary([self.standard objectForKey:key], nil);
     };
 }
-- (nullable NSDictionary *(^)(NSString *key))dictionary{
+- (nullable NSDictionary *(^)(NSString *key))dictionaryForKey{
     return ^id (NSString *key){
         return NSDictionary.autoDictionary([self objectForKey:key], nil);
     };
 }
 
-+ (nullable NSData *(^)(NSString *key))data{
++ (nullable NSData *(^)(NSString *key))dataForKey{
     return ^id (NSString *key){
         return NSData.safeData([self.standard objectForKey:key], nil);
     };
 }
-- (nullable NSData *(^)(NSString *key))data{
+- (nullable NSData *(^)(NSString *key))dataForKey{
     return ^id (NSString *key){
         return NSData.safeData([self objectForKey:key], nil);
     };
 }
 
-+ (nullable UIImage *(^)(NSString *key))image{
++ (nullable UIImage *(^)(NSString *key))imageForKey{
     return ^id (NSString *key){
-        return self.standard.image(key);
+        return self.standard.imageForKey(key);
     };
 }
-- (nullable UIImage *(^)(NSString *key))image{
+- (nullable UIImage *(^)(NSString *key))imageForKey{
     return ^id (NSString *key){
         NSData *data = NSData.safeData([self objectForKey:key], nil);
         if (data) {
@@ -128,12 +128,12 @@
     };
 }
 
-+ (nullable NSURL *(^)(NSString *key))URL{
++ (nullable NSURL *(^)(NSString *key))URLForKey{
     return ^NSURL *(NSString *key){
         return [self.standard URLForKey:key];
     };
 }
-- (nullable NSURL *(^)(NSString *key))URL{
+- (nullable NSURL *(^)(NSString *key))URLForKey{
     return ^NSURL *(NSString *key){
         return [self URLForKey:key];
     };

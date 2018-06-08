@@ -42,65 +42,65 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  读取string
  */
-+ (nullable NSString *(^)(NSString *key))string;
++ (nullable NSString *(^)(NSString *key))stringForKey;
 /**
  读取string
  */
-- (nullable NSString *(^)(NSString *key))string;
+- (nullable NSString *(^)(NSString *key))stringForKey;
 
 /**
  读取number
  */
-+ (nullable NSNumber *(^)(NSString *key))number;
++ (nullable NSNumber *(^)(NSString *key))numberForKey;
 /**
  读取number
  */
-- (nullable NSNumber *(^)(NSString *key))number;
+- (nullable NSNumber *(^)(NSString *key))numberForKey;
 
 /**
  读取array
  */
-+ (nullable NSArray *(^)(NSString *key))array;
++ (nullable NSArray *(^)(NSString *key))arrayForKey;
 /**
  读取array
  */
-- (nullable NSArray *(^)(NSString *key))array;
+- (nullable NSArray *(^)(NSString *key))arrayForKey;
 
 /**
  读取dictionary
  */
-+ (nullable NSDictionary *(^)(NSString *key))dictionary;
++ (nullable NSDictionary *(^)(NSString *key))dictionaryForKey;
 /**
  读取dictionary
  */
-- (nullable NSDictionary *(^)(NSString *key))dictionary;
+- (nullable NSDictionary *(^)(NSString *key))dictionaryForKey;
 
 /**
  读取data
  */
-+ (nullable NSData *(^)(NSString *key))data;
++ (nullable NSData *(^)(NSString *key))dataForKey;
 /**
  读取data
  */
-- (nullable NSData *(^)(NSString *key))data;
+- (nullable NSData *(^)(NSString *key))dataForKey;
 
 /**
  读取image
  */
-+ (nullable UIImage *(^)(NSString *key))image;
++ (nullable UIImage *(^)(NSString *key))imageForKey;
 /**
  读取image
  */
-- (nullable UIImage *(^)(NSString *key))image;
+- (nullable UIImage *(^)(NSString *key))imageForKey;
 
 /**
  读取URL
  */
-+ (nullable NSURL *(^)(NSString *key))URL;
++ (nullable NSURL *(^)(NSString *key))URLForKey;
 /**
  读取URL
  */
-- (nullable NSURL *(^)(NSString *key))URL;
+- (nullable NSURL *(^)(NSString *key))URLForKey;
 
 
 #pragma mark - write

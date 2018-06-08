@@ -16,7 +16,7 @@ inline FMDatabaseQueue *databaseQueue(){
     if (!queue) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            CGFloat lastDatabaseVersion = NSUserDefaults.number(@"DatabaseVersion").doubleValue;
+            CGFloat lastDatabaseVersion = NSUserDefaults.numberForKey(@"DatabaseVersion").doubleValue;
             if (currentDatabaseVersion > lastDatabaseVersion) {
                 NSUserDefaults.setObjectForKey(@(currentDatabaseVersion), @"DatabaseVersion");
                 @"com.hinteen.linksmart.sqlite".docPath.removeFile();
