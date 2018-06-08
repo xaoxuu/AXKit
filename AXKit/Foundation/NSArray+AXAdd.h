@@ -57,6 +57,25 @@
  */
 + (instancetype)arrayWithJsonString:(NSString *)string;
 
+/**
+ 倒序
+ */
+- (NSArray *(^)(void))reversed;
 
 @end
+
+@interface NSMutableArray<ObjectType> (AXAdd)
+
+/**
+ 倒序
+ */
+- (NSMutableArray *(^)(void))reversed;
+
+- (void (^)(ObjectType obj))append;
+- (void (^)(ObjectType obj, NSUInteger index))insertObjectAtIndex;
+- (void (^)(NSUInteger index))removeObjectAtIndex;
+- (void (^)(ObjectType obj))removeObject;
+
+@end
+
 

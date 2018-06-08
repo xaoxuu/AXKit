@@ -7,25 +7,25 @@
 //
 
 #import "NSDictionary+AXAdd.h"
-#import "NSObject+AXAdd.h"
+#import "NSObject+AXJsonAdd.h"
 
 
 static inline NSDictionary *dictionaryValueForKey(NSDictionary *dict, NSString *key){
-    return autoDictionary(dict[key], nil);
+    return NSDictionary.autoDictionary(dict[key], nil);
 }
 static inline NSArray *arrayValueForKey(NSDictionary *dict, NSString *key){
-    return autoArray(dict[key], nil);
+    return NSArray.autoArray(dict[key], nil);
 }
 
 static inline NSString *stringValueForKey(NSDictionary *dict, NSString *key){
     if (key.length) {
-        return autoString(dict[key], nil);
+        return NSString.autoString(dict[key], nil);
     }
     return nil;
 }
 static inline NSNumber *numberValueForKey(NSDictionary *dict, NSString *key){
     if (key.length) {
-        return autoNumber(dict[key], nil);
+        return NSNumber.autoNumber(dict[key], nil);
     }
     return nil;
 }
@@ -41,7 +41,6 @@ static inline NSNumber *numberValueForKey(NSDictionary *dict, NSString *key){
         return nil;
     }
 }
-
 
 - (NSDictionary * _Nonnull (^)(NSString * _Nonnull))dictionaryValue{
     return ^NSDictionary *(NSString *key){

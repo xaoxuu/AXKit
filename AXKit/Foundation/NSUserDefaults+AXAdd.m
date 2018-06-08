@@ -10,7 +10,7 @@
 #import "NSError+AXAdd.h"
 #import "NSLog+AXAdd.h"
 #import "_AXKitError.h"
-#import "NSObject+AXAdd.h"
+#import "NSObject+AXJsonAdd.h"
 
 
 @implementation NSError (AXUserDefaults)
@@ -70,45 +70,45 @@
 
 + (nullable NSNumber *(^)(NSString *key))number{
     return ^id (NSString *key){
-        return autoNumber([self.standard objectForKey:key], nil);
+        return NSNumber.autoNumber([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSNumber *(^)(NSString *key))number{
     return ^id (NSString *key){
-        return autoNumber([self objectForKey:key], nil);
+        return NSNumber.autoNumber([self objectForKey:key], nil);
     };
 }
 
 + (nullable NSArray *(^)(NSString *key))array{
     return ^id (NSString *key){
-        return autoArray([self.standard objectForKey:key], nil);
+        return NSArray.autoArray([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSArray *(^)(NSString *key))array{
     return ^id (NSString *key){
-        return autoArray([self objectForKey:key], nil);
+        return NSArray.autoArray([self objectForKey:key], nil);
     };
 }
 
 + (nullable NSDictionary *(^)(NSString *key))dictionary{
     return ^id (NSString *key){
-        return autoDictionary([self.standard objectForKey:key], nil);
+        return NSDictionary.autoDictionary([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSDictionary *(^)(NSString *key))dictionary{
     return ^id (NSString *key){
-        return autoDictionary([self objectForKey:key], nil);
+        return NSDictionary.autoDictionary([self objectForKey:key], nil);
     };
 }
 
 + (nullable NSData *(^)(NSString *key))data{
     return ^id (NSString *key){
-        return safeData([self.standard objectForKey:key], nil);
+        return NSData.safeData([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSData *(^)(NSString *key))data{
     return ^id (NSString *key){
-        return safeData([self objectForKey:key], nil);
+        return NSData.safeData([self objectForKey:key], nil);
     };
 }
 
@@ -119,7 +119,7 @@
 }
 - (nullable UIImage *(^)(NSString *key))image{
     return ^id (NSString *key){
-        NSData *data = safeData([self objectForKey:key], nil);
+        NSData *data = NSData.safeData([self objectForKey:key], nil);
         if (data) {
             return [UIImage imageWithData:data];
         } else {

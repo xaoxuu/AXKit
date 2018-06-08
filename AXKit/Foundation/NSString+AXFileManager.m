@@ -7,7 +7,7 @@
 //
 
 #import "NSString+AXFileManager.h"
-#import "NSObject+AXAdd.h"
+#import "NSObject+AXJsonAdd.h"
 
 // MARK: path
 /**

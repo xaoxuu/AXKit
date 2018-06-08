@@ -266,6 +266,9 @@
 		CDBB3B2F1EB9E80F00E8ED25 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB3B251EB9E80F00E8ED25 /* NSString+MJExtension.m */; };
 		CDC1A7851ECFDC63003AAA63 /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7841ECFDC63003AAA63 /* BaseLabel.m */; };
 		CDC1A7881ECFDC98003AAA63 /* NormalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */; };
+		CDCEA51320CA6117009AFBBB /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCEA51220CA6117009AFBBB /* TestSwift.swift */; };
+		CDCEA51A20CA7234009AFBBB /* NSObject+AXJsonAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDCEA51B20CA7234009AFBBB /* NSObject+AXJsonAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */; };
 		CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E8A1EC705C800596B93 /* GitHubIssueModel.m */; };
 		CDE94E941EC705C800596B93 /* GitHubLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E8C1EC705C800596B93 /* GitHubLabelModel.m */; };
 		CDE94E951EC705C800596B93 /* GitHubModels.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE94E8E1EC705C800596B93 /* GitHubModels.m */; };
@@ -623,6 +626,9 @@
 		CDC1A7861ECFDC98003AAA63 /* NormalLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalLabel.h; sourceTree = "<group>"; };
 		CDC1A7871ECFDC98003AAA63 /* NormalLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalLabel.m; sourceTree = "<group>"; };
 		CDCEA50F20CA0EBC009AFBBB /* AXKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		CDCEA51220CA6117009AFBBB /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
+		CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXJsonAdd.h"; sourceTree = "<group>"; };
+		CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXJsonAdd.m"; sourceTree = "<group>"; };
 		CDE91FCA1EAF4E6E00FC5A88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CDE94E891EC705C800596B93 /* GitHubIssueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubIssueModel.h; sourceTree = "<group>"; };
 		CDE94E8A1EC705C800596B93 /* GitHubIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubIssueModel.m; sourceTree = "<group>"; };
@@ -712,6 +718,7 @@
 				8579EF011E6BEDF900C33881 /* AppDelegate.m */,
 				CD0645C71EB3AC96007FBF06 /* PrefixHeader.pch */,
 				CDCEA50F20CA0EBC009AFBBB /* AXKitDemo-Bridging-Header.h */,
+				CDCEA51220CA6117009AFBBB /* TestSwift.swift */,
 				CDB716511F8E4A190025E8D7 /* Debug.xcassets */,
 				CD149E221F0105D4007051CE /* Assets.xcassets */,
 				CD273610207A6085007C8666 /* AppIcon */,
@@ -857,6 +864,8 @@
 				CD3EE95C20C77DC30074F083 /* NSLog+AXAdd.m */,
 				CD3EE95D20C77DC30074F083 /* NSObject+AXAdd.h */,
 				CD3EE95E20C77DC30074F083 /* NSObject+AXAdd.m */,
+				CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */,
+				CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */,
 				CD3EE95F20C77DC30074F083 /* NSString+AXAdd.h */,
 				CD3EE96020C77DC30074F083 /* NSString+AXAdd.m */,
 				CD3EE96120C77DC30074F083 /* NSString+AXFileManager.h */,
@@ -1577,6 +1586,7 @@
 				CD3EE9CD20C77DC40074F083 /* UIImageView+AXAdd.h in Headers */,
 				CD3EE9A920C77DC40074F083 /* NSDictionary+AXAdd.h in Headers */,
 				CD3EE9E320C77DC40074F083 /* UIView+AXFrameAdd.h in Headers */,
+				CDCEA51A20CA7234009AFBBB /* NSObject+AXJsonAdd.h in Headers */,
 				CD3EE9C720C77DC40074F083 /* UIColor+MDColorPack.h in Headers */,
 				CD3EE9B720C77DC40074F083 /* NSUserDefaults+AXAdd.h in Headers */,
 				CD3EE9D720C77DC40074F083 /* UIResponder+AXAdd.h in Headers */,
@@ -1911,6 +1921,7 @@
 				CD63A4161FC1A53900581AF6 /* ThemeCollectionReusableView.m in Sources */,
 				CDBB3B271EB9E80F00E8ED25 /* MJFoundation.m in Sources */,
 				CD57461E1EDC526C0014E833 /* GitHubReleaseModel.m in Sources */,
+				CDCEA51320CA6117009AFBBB /* TestSwift.swift in Sources */,
 				CD63A4061FC1925D00581AF6 /* ThemeStoreVC.m in Sources */,
 				CDBB3B2C1EB9E80F00E8ED25 /* NSObject+MJCoding.m in Sources */,
 				CD0B62FA1EC45E790024F25E /* ThemeBgButton.m in Sources */,
@@ -2035,6 +2046,7 @@
 				CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */,
 				CD3EE9E620C77DC40074F083 /* UIView+AXGestureAdd.m in Sources */,
 				CD3EE9C420C77DC40074F083 /* UIColor+AXAdd.m in Sources */,
+				CDCEA51B20CA7234009AFBBB /* NSObject+AXJsonAdd.m in Sources */,
 				CD3EE9B020C77DC40074F083 /* NSObject+AXAdd.m in Sources */,
 				CD3EE99920C77DC40074F083 /* AXDebugUtilities.m in Sources */,
 				CD3EE9BE20C77DC40074F083 /* UIActivityIndicatorView+AXAdd.m in Sources */,

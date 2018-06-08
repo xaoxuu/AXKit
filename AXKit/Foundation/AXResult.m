@@ -7,7 +7,7 @@
 //
 
 #import "AXResult.h"
-#import "NSObject+AXAdd.h"
+#import "NSObject+AXJsonAdd.h"
 #import "NSArray+AXAdd.h"
 #import "NSDictionary+AXAdd.h"
 
@@ -120,10 +120,10 @@
 - (void)setupValue:(id)value{
     _value = value;
     
-    _numberValue = autoNumber(value, nil);
-    _stringValue = autoString(value, nil);
-    _arrayValue = safeArray(value, nil);
-    _dictionaryValue = safeDictionary(value, nil);
+    _numberValue = NSNumber.autoNumber(value, nil);
+    _stringValue = NSString.autoString(value, nil);
+    _arrayValue = NSArray.safeArray(value, nil);
+    _dictionaryValue = NSDictionary.safeDictionary(value, nil);
     _dataValue = [value isKindOfClass:NSData.class]?value:nil;
     
 }
@@ -146,8 +146,8 @@
         id ret = [NSJSONSerialization JSONObjectWithData:testData options:opt error:error];
         if ([ret isKindOfClass:[NSDictionary class]] || [ret isKindOfClass:[NSArray class]]) {
             _dataValue = testData;
-            _dictionaryValue = safeDictionary(ret, nil);
-            _arrayValue = safeArray(ret, nil);
+            _dictionaryValue = NSDictionary.safeDictionary(ret, nil);
+            _arrayValue = NSArray.safeArray(ret, nil);
             _stringValue = [[NSString alloc] initWithData:testData encoding:NSUTF8StringEncoding];
         }
     }

@@ -10,7 +10,7 @@
 #import "NSString+AXAdd.h"
 #import "NSError+AXAdd.h"
 #import "_AXKitError.h"
-#import "NSObject+AXAdd.h"
+#import "NSObject+AXJsonAdd.h"
 
 
 static inline CGSize boundingSize(NSString *str, UIFont *font, CGSize size, NSLineBreakMode lineBreakMode){
@@ -134,12 +134,6 @@ static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
     };
 }
 
-- (BOOL (^)(id object))isEqual{
-    return ^(id obj){
-        return [self isEqual:obj];
-    };
-}
-
 - (CGSize (^)(UIFont *font, CGSize size))boundingSize{
     return ^CGSize(UIFont *font, CGSize size){
         return boundingSize(self, font, size, NSLineBreakByWordWrapping);
@@ -153,7 +147,7 @@ static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
 }
 
 - (NSNumber *)numberValue{
-    NSString *lower = safeString(self, nil).lowercaseString;
+    NSString *lower = NSString.safeString(self, nil).lowercaseString;
     if (!lower.length) {
         return nil;
     }

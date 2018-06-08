@@ -46,4 +46,51 @@
     }
 }
 
+- (NSArray *(^)(void))reversed{
+    return ^NSArray *{
+        return [NSMutableArray arrayWithArray:self].reversed();
+    };
+}
+
+@end
+
+@interface NSMutableArray<ObjectType> (AXAdd2)
+
+@end
+@implementation NSMutableArray (AXAdd)
+
+- (NSMutableArray *(^)(void))reversed{
+    return ^NSMutableArray *{
+        NSUInteger count = self.count;
+        int mid = floor(count / 2.0);
+        for (NSUInteger i = 0; i < mid; i++) {
+            [self exchangeObjectAtIndex:i withObjectAtIndex:(count - (i + 1))];
+        }
+        return self;
+    };
+}
+
+
+- (void (^)(id obj))append{
+    return ^(id obj){
+        [self addObject:obj];
+    };
+}
+- (void (^)(id obj, NSUInteger index))insertObjectAtIndex{
+    return ^(id obj, NSUInteger index){
+        [self insertObject:obj atIndex:index];
+    };
+}
+
+- (void (^)(NSUInteger index))removeObjectAtIndex{
+    return ^(NSUInteger index){
+        [self removeObjectAtIndex:index];
+    };
+}
+- (void (^)(id obj))removeObject{
+    return ^(id obj){
+        [self removeObject:obj];
+    };
+}
+
 @end
