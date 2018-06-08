@@ -107,6 +107,12 @@ static inline void removeColorAnimation(CALayer *layer){
     };
 }
 
+- (void (^)(CALayer *layer))addSublayer{
+    return ^(CALayer *layer){
+        [self addSublayer:layer];
+    };
+}
+
 #pragma mark - corner
 
 

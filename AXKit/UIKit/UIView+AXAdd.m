@@ -36,24 +36,25 @@ static inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     };
 }
 
-- (UIImage * _Nonnull (^)(void))screenshot{
-    return ^UIImage *{
-        return UIImage.initWithView(self);
-    };
-}
-
 - (void)ax_layer:(void (^)(CALayer *layer))layer{
     if (layer) {
         layer(self.layer);
     }
 }
 
-- (void)ax_removeAllSubviews:(Class)subClass {
-    [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
-        if (!subClass || [subview isKindOfClass:subClass]) {
-            [subview removeFromSuperview];
-        }
-    }];
+- (void (^)(__nullable Class))removeSubviews{
+    return ^(__nullable Class subClass){
+        [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+            if (!subClass || [subview isKindOfClass:subClass]) {
+                [subview removeFromSuperview];
+            }
+        }];
+    };
+}
+- (void (^)(UIView *view))addSubview{
+    return ^(UIView *view){
+        [self addSubview:view];
+    };
 }
 
 - (void)ax_allSubviews:(Class)subClass action:(void (^)(__kindof UIView *subview))action {

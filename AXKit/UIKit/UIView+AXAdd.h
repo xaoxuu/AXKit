@@ -33,11 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (__kindof UIView *(^)(CGSize size))initWithSize;
 
 /**
- 获取view
- */
-- (UIImage *(^)(void))screenshot;
-
-/**
  对view的layer进行若干操作
 
  @param layer layer
@@ -46,10 +41,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  移除所有子视图
-
- @param subClass 指定范围（只移除属于哪个类的子视图，传入nil时移除所有子视图）
+ subClass 指定范围（只移除属于哪个类的子视图，传入nil时移除所有子视图）
  */
-- (void)ax_removeAllSubviews:(nullable Class)subClass;
+- (void (^)(__nullable Class))removeSubviews;
+
+/**
+ addSubview:
+ */
+- (void (^)(UIView *view))addSubview;
 
 /**
  让每个子视图执行一段代码
