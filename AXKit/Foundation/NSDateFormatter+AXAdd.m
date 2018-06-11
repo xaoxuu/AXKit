@@ -18,7 +18,9 @@ NSString *kDateFormat_yyyyMMdd = @"yyyyMMdd";
 
 + (nullable NSDateFormatter *(^)(NSString *dateFormat))formatter{
     return ^NSDateFormatter *(NSString *dateFormat){
-        return self.localFormatter(dateFormat);
+        NSDateFormatter *fm = NSDateFormatter.new;
+        fm.dateFormat = dateFormat;
+        return fm;
     };
 }
 
