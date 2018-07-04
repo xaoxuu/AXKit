@@ -3,13 +3,13 @@ Pod::Spec.new do |s|
 # pod lib lint
 # pod trunk push AXKit.podspec
 
-  s.name         = "AXKit"
-  s.version      = "0.3.3"
-  s.summary      = "这是一个综合型开发工具包，包含对系统类的功能扩展和一些常用控件的封装。"
-  s.homepage     = "http://xaoxuu.com"
-  s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { "xaoxuu" => "xaoxuu@gmail.com" }
-  s.platform     = :ios, "8.0"
+  s.name = "AXKit"
+  s.version = "0.3.3"
+  s.summary = "这是一个综合型开发工具包，包含对系统类的功能扩展和一些常用控件的封装。"
+  s.homepage = "http://xaoxuu.com"
+  s.license = { :type => 'MIT', :file => 'LICENSE' }
+  s.author = { "xaoxuu" => "xaoxuu@gmail.com" }
+  s.platform = :ios, "8.0"
   s.ios.deployment_target = '8.0'
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
