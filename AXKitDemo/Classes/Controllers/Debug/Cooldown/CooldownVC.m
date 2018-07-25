@@ -53,7 +53,7 @@ static UIView *customView;
     tips.numberOfLines = 0;
     tips.font = [UIFont systemFontOfSize:14];
     tips.text = @"点击屏幕任意地方，计数会增加。某次点击结束后2秒内没有再次收到点击事件，就触发了事件A。（也就是说，每次点击都会延迟事件A的执行）\n\n事件A：计数器归0，弹出消息。";
-    CGFloat height = tips.text.boundingHeight(tips.font, width);
+    CGFloat height = [tips.text boundingHeightWithFont:tips.font maxWidth:width];
     tips.frame = CGRectMake(16, 16, width, height);
     [tips sizeToFit];
     tips.textColor = [UIColor darkGrayColor];

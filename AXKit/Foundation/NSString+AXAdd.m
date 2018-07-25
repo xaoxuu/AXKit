@@ -128,22 +128,12 @@ static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
     }
 }
 
-- (BOOL (^)(NSString *str))isEqualToString{
-    return ^(NSString *str){
-        return [self isEqualToString:str];
-    };
+- (CGSize)boundingSizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize{
+    return boundingSize(self, font, maxSize, NSLineBreakByWordWrapping);
 }
 
-- (CGSize (^)(UIFont *font, CGSize size))boundingSize{
-    return ^CGSize(UIFont *font, CGSize size){
-        return boundingSize(self, font, size, NSLineBreakByWordWrapping);
-    };
-}
-
-- (CGFloat (^)(UIFont *font, CGFloat width))boundingHeight{
-    return ^CGFloat(UIFont *font, CGFloat width){
-        return boundingSize(self, font, CGSizeMake(width, MAXFLOAT), NSLineBreakByWordWrapping).height;
-    };
+- (CGFloat)boundingHeightWithFont:(UIFont *)font maxWidth:(CGFloat)maxWidth{
+    return boundingSize(self, font, CGSizeMake(maxWidth, MAXFLOAT), NSLineBreakByWordWrapping).height;
 }
 
 - (NSNumber *)numberValue{

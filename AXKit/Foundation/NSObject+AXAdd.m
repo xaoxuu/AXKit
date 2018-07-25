@@ -13,7 +13,7 @@
 
 @implementation NSObject (AXAdd)
 
-+ (NSArray *)ax_allSubclasses{
++ (NSArray *)ax_subclasses{
     NSMutableArray *subclasses = [NSMutableArray array];
     unsigned int numOfClasses;
     Class *classes = objc_copyClassList(&numOfClasses);
@@ -30,18 +30,6 @@
     }
     free(classes);
     return subclasses;
-}
-
-- (BOOL (^)(id object))isEqual{
-    return ^(id obj){
-        return [self isEqual:obj];
-    };
-}
-
-- (BOOL (^)(SEL aSelector))respondsToSelector{
-    return ^(SEL aSelector){
-        return [self respondsToSelector:aSelector];
-    };
 }
 
 @end

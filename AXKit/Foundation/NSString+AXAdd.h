@@ -20,19 +20,22 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isURLString;
 
 /**
- isEqualToString:
- */
-- (BOOL (^)(NSString *str))isEqualToString;
-
-/**
  受约束的尺寸，文本使用指定的字体、在size中实际布局所需要的size
+ 
+ @param font 字体
+ @param maxSize 最大尺寸
+ @return 实际尺寸
  */
-- (CGSize (^)(UIFont *font, CGSize size))boundingSize;
+- (CGSize)boundingSizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
 
 /**
  受约束的尺寸，文本使用指定的字体、在指定的宽度中实际布局所需要的高度
+
+ @param font 字体
+ @param maxWidth 最大宽度
+ @return 实际高度
  */
-- (CGFloat (^)(UIFont *font, CGFloat width))boundingHeight;
+- (CGFloat)boundingHeightWithFont:(UIFont *)font maxWidth:(CGFloat)maxWidth;
 
 /**
  转数字

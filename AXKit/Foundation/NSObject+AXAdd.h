@@ -17,17 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 所有子类
  */
-+ (NSArray *)ax_allSubclasses;
-
-/**
- isEqual:
- */
-- (BOOL (^)(id object))isEqual;
-
-/**
- respondsToSelector:
- */
-- (BOOL (^)(SEL aSelector))respondsToSelector;
++ (NSArray *)ax_subclasses;
 
 @end
 
