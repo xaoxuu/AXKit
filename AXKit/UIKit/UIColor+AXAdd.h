@@ -49,6 +49,17 @@
 + (instancetype)colorWithHex:(NSString *)hex;
 
 /**
+ 以rgba创建颜色，传入的rgba可为0~1的值，也可为0~255的值，但同时只能传入一种类型（全部0~1或者全部0~255）的值。
+
+ @param red red
+ @param green green
+ @param blue blue
+ @param alpha alpha
+ @return UIColor实例
+ */
++ (instancetype)colorWithSmartRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
+
+/**
  获取UIColor中的R值
 
  @return R值（0~1）

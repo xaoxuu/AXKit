@@ -143,7 +143,10 @@ static inline void smartRGBA(CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a){
     }
     return nil;
 }
-
++ (instancetype)colorWithSmartRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha{
+    smartRGBA(&red, &green, &blue, &alpha);
+    return [self colorWithRed:red green:green blue:blue alpha:alpha];
+}
 
 - (CGFloat)redValue{
     CGFloat red;
