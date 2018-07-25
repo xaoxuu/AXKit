@@ -17,14 +17,14 @@
 
  @return 总和
  */
-- (CGFloat)ax_sum;
+- (CGFloat)ax_sumValue;
 
 /**
  平均值
 
  @return 平均值
  */
-- (CGFloat)ax_avg;
+- (CGFloat)ax_avgValue;
 
 
 /**
@@ -32,7 +32,7 @@
 
  @return 最大值
  */
-- (CGFloat)ax_max;
+- (CGFloat)ax_maxValue;
 
 
 /**
@@ -40,14 +40,14 @@
 
  @return 最小值
  */
-- (CGFloat)ax_min;
+- (CGFloat)ax_minValue;
 
 /**
  去重后的数组
 
  @return 去重后的数组
  */
-- (instancetype)distinctUnionOfObjects;
+- (instancetype)ax_distinctUnionOfObjects;
 
 /**
  根据json字符串创建数组
@@ -60,7 +60,7 @@
 /**
  倒序
  */
-- (NSArray *(^)(void))reversed;
+- (NSArray *)reversed;
 
 @end
 
@@ -69,12 +69,7 @@
 /**
  倒序
  */
-- (NSMutableArray *(^)(void))reversed;
-
-- (void (^)(ObjectType obj))append;
-- (void (^)(ObjectType obj, NSUInteger index))insertObjectAtIndex;
-- (void (^)(NSUInteger index))removeObjectAtIndex;
-- (void (^)(ObjectType obj))removeObject;
+- (NSMutableArray *)reversed;
 
 @end
 

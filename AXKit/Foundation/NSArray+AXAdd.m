@@ -11,23 +11,23 @@
 @implementation NSArray (AXAdd)
 
 
-- (CGFloat)ax_sum{
+- (CGFloat)ax_sumValue{
     return [[self valueForKeyPath:@"@sum.doubleValue"] doubleValue];
 }
 
-- (CGFloat)ax_avg{
+- (CGFloat)ax_avgValue{
     return [[self valueForKeyPath:@"@avg.doubleValue"] doubleValue];
 }
 
-- (CGFloat)ax_max{
+- (CGFloat)ax_maxValue{
     return [[self valueForKeyPath:@"@max.doubleValue"] doubleValue];
 }
 
-- (CGFloat)ax_min{
+- (CGFloat)ax_minValue{
     return [[self valueForKeyPath:@"@min.doubleValue"] doubleValue];
 }
 
-- (instancetype)distinctUnionOfObjects{
+- (instancetype)ax_distinctUnionOfObjects{
     return [self valueForKeyPath:@"@distinctUnionOfObjects.self"];
 }
 
@@ -46,51 +46,21 @@
     }
 }
 
-- (NSArray *(^)(void))reversed{
-    return ^NSArray *{
-        return [NSMutableArray arrayWithArray:self].reversed();
-    };
+- (NSArray *)reversed{
+    return [NSMutableArray arrayWithArray:self].reversed;
 }
 
 @end
 
-@interface NSMutableArray<ObjectType> (AXAdd2)
-
-@end
 @implementation NSMutableArray (AXAdd)
 
-- (NSMutableArray *(^)(void))reversed{
-    return ^NSMutableArray *{
-        NSUInteger count = self.count;
-        int mid = floor(count / 2.0);
-        for (NSUInteger i = 0; i < mid; i++) {
-            [self exchangeObjectAtIndex:i withObjectAtIndex:(count - (i + 1))];
-        }
-        return self;
-    };
-}
-
-
-- (void (^)(id obj))append{
-    return ^(id obj){
-        [self addObject:obj];
-    };
-}
-- (void (^)(id obj, NSUInteger index))insertObjectAtIndex{
-    return ^(id obj, NSUInteger index){
-        [self insertObject:obj atIndex:index];
-    };
-}
-
-- (void (^)(NSUInteger index))removeObjectAtIndex{
-    return ^(NSUInteger index){
-        [self removeObjectAtIndex:index];
-    };
-}
-- (void (^)(id obj))removeObject{
-    return ^(id obj){
-        [self removeObject:obj];
-    };
+- (NSMutableArray *)reversed{
+    NSUInteger count = self.count;
+    int mid = floor(count / 2.0);
+    for (NSUInteger i = 0; i < mid; i++) {
+        [self exchangeObjectAtIndex:i withObjectAtIndex:(count - (i + 1))];
+    }
+    return self;
 }
 
 @end
