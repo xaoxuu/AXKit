@@ -12,14 +12,14 @@
 @implementation UIViewController (AXResponderAdd)
 
 + (UIViewController *)rootViewController{
-    return UIWindow.keyWindow.rootViewController;
+    return UIWindow.mainWindow.rootViewController;
 }
 
 @end
 
 @implementation UIWindow (AXResponderAdd)
 
-+ (UIWindow *)keyWindow{
++ (UIWindow *)mainWindow{
     UIResponder *appDelegate = (UIResponder *)UIApplication.sharedApplication.delegate;
     return (UIWindow *)[appDelegate valueForKey:@"window"];
 }

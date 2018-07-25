@@ -46,7 +46,7 @@
     } else if ([model.target isEqualToString:@"PageVC"]) {
         PageVC *vc = [[PageVC alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
         vc.title = model.target;
-        self.controller.navigationController.pushViewController(vc);
+        [self.controller.navigationController pushViewController:vc animated:YES];
     } else {
         if ([model.cmd isEqualToString:@"share"]) {
             NSString *string = @"message";

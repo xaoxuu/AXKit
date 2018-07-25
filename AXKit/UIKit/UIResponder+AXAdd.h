@@ -23,7 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIWindow (AXResponderAdd)
 
-+ (nullable UIWindow *)keyWindow;
+/**
+ AppDelegate中的window，不一定是keyWindow。
+
+ @return AppDelegate中的window
+ */
++ (nullable UIWindow *)mainWindow;
 
 @end
 @interface UIView (AXResponderAdd)
