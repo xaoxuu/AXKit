@@ -177,7 +177,7 @@ static id<NSObject> observer;
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTI_DRAWER_CLOSE object:nil];
     }
     if (model.target.isURLString) {
-        [UIApplication ax_presentSafariViewControllerWithURL:[NSURL URLWithString:model.target] fromViewController:self.controller];
+        [self.viewController presentSafariViewControllerWithURL:[NSURL URLWithString:model.target] completion:nil];
     } else if ([model.target containsString:@"mailto:"]) {
         [[EmailManager sharedInstance] sendEmail:^(MFMailComposeViewController * _Nonnull mailCompose) {
             [mailCompose setToRecipients:@[model.detail]];

@@ -2236,7 +2236,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.AXKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b3cc7f2e-794b-4893-9a3d-07eec01e9330";
-				PROVISIONING_PROFILE_SPECIFIER = "Dev All";
+				PROVISIONING_PROFILE_SPECIFIER = "com.xaoxuu.*";
 				SWIFT_OBJC_BRIDGING_HEADER = "AXKitDemo/AXKitDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -2250,8 +2250,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 34W5TB5KD2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AXKitDemo/PrefixHeader.pch";
@@ -2262,7 +2262,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.AXKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f4b5119c-2efd-4deb-8027-3e7065363730";
-				PROVISIONING_PROFILE_SPECIFIER = "Dis All";
+				PROVISIONING_PROFILE_SPECIFIER = "com.xaoxuu.*";
 				SWIFT_OBJC_BRIDGING_HEADER = "AXKitDemo/AXKitDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -24,13 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (__kindof UIViewController *(^)(NSBundle *bundle, NSString *storyboard, NSString *identifier))loadFromStoryboard;
 
-
-
-/**
- 打开app内置Safari浏览器
- */
-- (void (^)(NSURL *))openSafari;
-
 /**
  打开app内置Safari浏览器
  
@@ -40,7 +33,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)presentSafariViewControllerWithURL:(NSURL *)URL completion:(void (^ __nullable)(void))completion;
 
 
-- (void)ax_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)animated completion:(void (^ __nullable)(void))completion;
+/**
+ 比presentViewController多了一层判断，如果已经有vc在presented状态，就将其dismiss掉，然后再present新的vc
+
+ @param viewControllerToPresent viewControllerToPresent
+ @param animated 动画
+ @param completion 完成回调
+ */
+- (void)forcePresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)animated completion:(void (^ __nullable)(void))completion;
 
 @end
 

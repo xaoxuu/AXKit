@@ -57,7 +57,7 @@ inline NSString *kStringError(void){
 + (void)ax_showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions  fromViewController:(nullable UIViewController *)viewController completion:(void (^ __nullable)(void))completion{
     UIViewController *fromVC = viewController?:UIViewController.rootViewController;
     UIViewController *toVC = [self ax_alertWithTitle:title message:message actions:actions];
-    [fromVC ax_presentViewController:toVC animated:YES completion:completion];
+    [fromVC forcePresentViewController:toVC animated:YES completion:completion];
 }
 + (instancetype)ax_alertWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
     UIAlertController *alert = [[self alloc] initAlertWithTitle:title message:message actions:actions];
@@ -99,7 +99,7 @@ inline NSString *kStringError(void){
 + (void)ax_showActionSheetWithTitle:(nullable NSString *)title message:(nullable NSString *)message actions:(void (^ __nullable)(UIAlertController *alert))actions fromViewController:(nullable UIViewController *)viewController completion:(void (^ __nullable)(void))completion{
     UIViewController *fromVC = viewController?:UIViewController.rootViewController;
     UIViewController *toVC = [self ax_actionSheetWithTitle:title message:message actions:actions];
-    [fromVC ax_presentViewController:toVC animated:YES completion:completion];
+    [fromVC forcePresentViewController:toVC animated:YES completion:completion];
 }
 + (instancetype)ax_actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(void (^)(UIAlertController * _Nonnull))actions{
     UIAlertController *alert = [[self alloc] initActionSheetWithTitle:title message:message actions:actions];

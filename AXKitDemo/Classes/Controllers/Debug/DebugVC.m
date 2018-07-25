@@ -32,7 +32,7 @@
     
     __weak typeof(self) weakSelf = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"icon_help" action:^(UIBarButtonItem * _Nonnull sender) {
-        [UIApplication ax_presentSafariViewControllerWithURL:[NSURL URLWithString:[BaseContext docsURLString]] fromViewController:weakSelf];
+        [weakSelf presentSafariViewControllerWithURL:[NSURL URLWithString:[BaseContext docsURLString]] completion:nil];
     }];
     
 }

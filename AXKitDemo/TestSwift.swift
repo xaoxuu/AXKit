@@ -7,13 +7,12 @@
 //
 
 import UIKit
-
+import AXKit
 class TestSwift: NSObject {
     func test() {
 //        var arr = [String]
 //        arr.append("")
 //        arr.insert("ds", at: 1)
-//        
-        
+//
     }
 }

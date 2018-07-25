@@ -19,16 +19,10 @@
 */
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSelectedRowAtIndexPath:(nonnull NSIndexPath *)indexPath model:(nonnull AXTableRowModelType *)model{
-    if ([model.cmd isEqualToString:@"wifi"]) {
-        UIApplication.openWIFISetting();
-    } else if ([model.cmd isEqualToString:@"ble"]) {
-        UIApplication.openBluetoothSetting();
-    } else if ([model.cmd isEqualToString:@"noti"]) {
-        UIApplication.openNotificationSetting();
-    } else if ([model.cmd isEqualToString:@"app"]) {
+    if ([model.cmd isEqualToString:@"app"]) {
         if (@available(iOS 11.0, *)) {
             // on newer versions
-            UIApplication.openAppSetting();
+            [UIApplication openAppSetting:nil];
         } else {
             // Fallback on earlier versions
             
