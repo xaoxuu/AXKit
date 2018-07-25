@@ -13,29 +13,29 @@
 
 // MARK: - [红色 -> 蓝色) ==================================================
 + (UIColor *)ax_lightRed {
-    return UIColor.initWithHEX(@"#FF6868");
+    return [UIColor colorWithHex:@"#FF6868"];
 }
 + (UIColor *)ax_red {
-    return UIColor.initWithHEX(@"#F05153");
+    return [UIColor colorWithHex:@"#F05153"];
 }
 
 + (UIColor *)ax_lightPurple {
-    return UIColor.initWithHEX(@"#B6A5F4");
+    return [UIColor colorWithHex:@"#B6A5F4"];
 }
 
 // MARK: - [蓝色 -> 绿色) ==================================================
 + (UIColor *)ax_blue {
-    return UIColor.initWithHEX(@"#52A1F8");
+    return [UIColor colorWithHex:@"#52A1F8"];
 }
 
 
 // MARK: - [绿色 -> 黄色) ==================================================
 + (UIColor *)ax_cyan {
-    return UIColor.initWithHEX(@"#66CDFA");
+    return [UIColor colorWithHex:@"#66CDFA"];
 }
 
 + (UIColor *)ax_green {
-    return UIColor.initWithHEX(@"#7CC353");
+    return [UIColor colorWithHex:@"#7CC353"];
 }
 
 // MARK: - 黑白灰 ==================================================

@@ -119,19 +119,15 @@ static inline void smartRGBA(CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a){
 - (__kindof UIColor *)dark{
     return darken(self, 0.48);
 }
-- (__kindof UIColor *(^)(CGFloat ratio))darken{
-    return ^(CGFloat ratio){
-        return darken(self, ratio);
-    };
+- (UIColor *)darken:(CGFloat)ratio{
+    return darken(self, ratio);
 }
-
 - (__kindof UIColor *)light{
     return lighten(self, 0.6);
 }
-- (__kindof UIColor *(^)(CGFloat ratio))lighten{
-    return ^(CGFloat ratio){
-        return lighten(self, ratio);
-    };
+
+- (UIColor *)lighten:(CGFloat)ratio{
+    return lighten(self, ratio);
 }
 
 + (__kindof UIColor *)randomColor{
@@ -140,41 +136,15 @@ static inline void smartRGBA(CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a){
 
 
 // color with hex string
-+ (instancetype)colorWithHexString:(NSString *)hexStr {
++ (instancetype)colorWithHex:(NSString *)hex{
     CGFloat r, g, b, a;
-    if (hexStrToRGBA(hexStr, &r, &g, &b, &a)) {
+    if (hexStrToRGBA(hex, &r, &g, &b, &a)) {
         return [self colorWithRed:r green:g blue:b alpha:a];
     }
     return nil;
 }
-+ (__kindof UIColor *(^)(NSString *))initWithHEX{
-    return ^__kindof UIColor *(NSString *hex){
-        return [self colorWithHexString:hex];
-    };
-}
 
-+ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue))initWithRGB{
-    return ^UIColor *(CGFloat red, CGFloat green, CGFloat blue){
-        smartRGBA(&red, &green, &blue, nil);
-        return [self colorWithRed:red green:green blue:blue alpha:1];
-    };
-}
-+ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha))initWithRGBA{
-    return ^UIColor *(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha){
-        smartRGBA(&red, &green, &blue, &alpha);
-        return [self colorWithRed:red green:green blue:blue alpha:alpha];
-    };
-}
-+ (__kindof UIColor *(^)(CGFloat hue, CGFloat saturation, CGFloat brightness, CGFloat alpha))initWithHSBA{
-    return ^UIColor *(CGFloat hue, CGFloat saturation, CGFloat brightness, CGFloat alpha){
-        return [self colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
-    };
-}
-+ (__kindof UIColor *(^)(CGFloat, CGFloat))initWithWhite{
-    return ^UIColor *(CGFloat white, CGFloat alpha){
-        return [UIColor colorWithWhite:white alpha:alpha];
-    };
-}
+
 - (CGFloat)redValue{
     CGFloat red;
     [self getRed:&red green:nil blue:nil alpha:nil];

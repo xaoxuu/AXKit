@@ -27,13 +27,11 @@
 /**
  颜色变深，传入参数ratio为比例（0~1）
  */
-- (__kindof UIColor *(^)(CGFloat ratio))darken;
-
+- (__kindof UIColor *)darken:(CGFloat)ratio;
 /**
  颜色变浅，传入参数ratio为比例（0~1）
  */
-- (__kindof UIColor *(^)(CGFloat ratio))lighten;
-
+- (__kindof UIColor *)lighten:(CGFloat)ratio;
 
 /**
  随机色
@@ -45,29 +43,10 @@
 /**
  以HEX字符串创建颜色
  
+ @param hex hex
  @return UIColor实例
  */
-+ (__kindof UIColor *(^)(NSString *))initWithHEX;
-
-/**
- 以RGB创建颜色
- */
-+ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue))initWithRGB;
-
-/**
- 以RGBA创建颜色
- */
-+ (__kindof UIColor *(^)(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha))initWithRGBA;
-
-/**
- 以RGBA创建颜色
- */
-+ (__kindof UIColor *(^)(CGFloat hue, CGFloat saturation, CGFloat brightness, CGFloat alpha))initWithHSBA;
-
-/**
- 以white和alpha创建颜色
- */
-+ (__kindof UIColor *(^)(CGFloat white, CGFloat alpha))initWithWhite;
++ (instancetype)colorWithHex:(NSString *)hex;
 
 /**
  获取UIColor中的R值
