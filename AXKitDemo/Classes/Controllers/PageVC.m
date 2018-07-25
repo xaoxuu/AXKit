@@ -22,7 +22,7 @@
     self.dataSource = self;
     self.delegate = self;
     
-    [self setViewControllers:@[UIViewController.initWithClassName(@"ShadowVC")] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self setViewControllers:@[[UIViewController viewControllerWithClassNamed:@"ShadowVC"]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,10 +31,10 @@
 }
 
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
-    return UIViewController.initWithClassName(@"ShadowVC");
+    return [UIViewController viewControllerWithClassNamed:@"ShadowVC"];
 }
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
-    return UIViewController.initWithClassName(@"CooldownVC");
+    return [UIViewController viewControllerWithClassNamed:@"CooldownVC"];
 }
 
 //- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController NS_AVAILABLE_IOS(6_0){

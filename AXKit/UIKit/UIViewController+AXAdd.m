@@ -31,17 +31,13 @@ static inline void presentSafariViewController(NSURL *URL, UIViewController *fro
 
 @implementation UIViewController (AXAdd)
 
-+ (__kindof UIViewController * _Nonnull (^)(NSString * _Nonnull))initWithClassName{
-    return ^UIViewController *(NSString *name){
-        return UIViewControllerNamed(name);
-    };
++ (instancetype)viewControllerWithClassNamed:(NSString *)named{
+    return UIViewControllerNamed(named);
 }
 
-+ (__kindof UIViewController * _Nonnull (^)(NSBundle * _Nonnull, NSString * _Nonnull, NSString * _Nonnull))loadFromStoryboard{
-    return ^UIViewController *(NSBundle *bundle, NSString *storyboard, NSString *identifier){
-        UIStoryboard *st = [UIStoryboard storyboardWithName:storyboard bundle:[NSBundle mainBundle]];
-        return [st instantiateViewControllerWithIdentifier:identifier];
-    };
++ (instancetype)viewControllerWithStoryboard:(NSString *)storyboard identifier:(NSString *)identifier bundle:(nullable NSBundle *)bundle{
+    UIStoryboard *st = [UIStoryboard storyboardWithName:storyboard bundle:bundle?:[NSBundle mainBundle]];
+    return [st instantiateViewControllerWithIdentifier:identifier];
 }
 
 - (void)presentSafariViewControllerWithURLString:(NSString *)URLString completion:(void (^ __nullable)(void))completion{

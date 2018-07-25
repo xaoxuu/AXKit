@@ -17,12 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return view controller实例对象
  */
-+ (__kindof UIViewController *(^)(NSString *))initWithClassName;
-
++ (instancetype)viewControllerWithClassNamed:(NSString *)named;
 /**
  获取storyboard中的VC
  */
-+ (__kindof UIViewController *(^)(NSBundle *bundle, NSString *storyboard, NSString *identifier))loadFromStoryboard;
++ (instancetype)viewControllerWithStoryboard:(NSString *)storyboard identifier:(NSString *)identifier bundle:(nullable NSBundle *)bundle;
 
 /**
  打开app内置Safari浏览器
