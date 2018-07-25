@@ -42,28 +42,21 @@ static inline NSNumber *numberValueForKey(NSDictionary *dict, NSString *key){
     }
 }
 
-- (NSDictionary * _Nonnull (^)(NSString * _Nonnull))dictionaryValue{
-    return ^NSDictionary *(NSString *key){
-        return dictionaryValueForKey(self, key);
-    };
+
+- (NSDictionary *)dictionaryValueForKey:(NSString *)key{
+    return dictionaryValueForKey(self, key);
 }
 
-- (NSArray * _Nonnull (^)(NSString * _Nonnull))arrayValue{
-    return ^NSArray *(NSString *key){
-        return arrayValueForKey(self, key);
-    };
+- (NSArray *)arrayValueForKey:(NSString *)key{
+    return arrayValueForKey(self, key);
 }
 
-- (NSString * _Nonnull (^)(NSString * _Nonnull))stringValue{
-    return ^NSString *(NSString *key){
-        return stringValueForKey(self, key);
-    };
+- (NSString *)stringValueForKey:(NSString *)key{
+    return stringValueForKey(self, key);
 }
 
-- (NSNumber * _Nonnull (^)(NSString * _Nonnull))numberValue{
-    return ^NSNumber *(NSString *key){
-        return numberValueForKey(self, key);
-    };
+- (NSNumber *)numberValueForKey:(NSString *)key{
+    return numberValueForKey(self, key);
 }
 
 @end
