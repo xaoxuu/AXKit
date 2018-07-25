@@ -10,11 +10,6 @@
 
 @interface UIImageView (AXAdd)
 
-+ (UIImageView *(^)(NSString *))initWithImageName;
-
-+ (UIImageView *(^)(UIImage *))initWithImage;
-
-+ (UIImageView *(^)(CGRect))initWithFrame;
-
++ (instancetype)imageViewWithImageNamed:(NSString *)imageNamed;
 
 @end

@@ -12,20 +12,8 @@
 
 @implementation UIImageView (AXAdd)
 
-+ (UIImageView * _Nonnull (^)(NSString * _Nonnull))initWithImageName{
-    return ^UIImageView *(NSString *name){
-        return [[UIImageView alloc] initWithImage:UIImage.named(name)];
-    };
-}
-+ (UIImageView *(^)(UIImage *))initWithImage{
-    return ^UIImageView *(UIImage *image){
-        return [UIImageView.alloc initWithImage:image];
-    };
-}
-+ (UIImageView *(^)(CGRect))initWithFrame;{
-    return ^UIImageView *(CGRect frame){
-        return [UIImageView.alloc initWithFrame:frame];
-    };
++ (instancetype)imageViewWithImageNamed:(NSString *)imageNamed{
+    return [[UIImageView alloc] initWithImage:UIImage.named(imageNamed)];
 }
 
 @end

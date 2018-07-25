@@ -165,50 +165,33 @@ static inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGS
         return UIImageNamed(name);
     };
 }
-
-+ (UIImage *(^)(UIView *))initWithView{
-    return ^UIImage *(UIView *view){
-        return UIImageFromView(view);
-    };
++ (instancetype)imageWithView:(UIView *)view{
+    return UIImageFromView(view);
 }
-
-+ (UIImage *(^)(UIColor *color, CGSize size))initWithPureColor{
-    return ^UIImage *(UIColor *color, CGSize size){
-        return UIImageGetPureColorImage(color, size);
-    };
++ (instancetype)imageWithPureColor:(UIColor *)color size:(CGSize)size{
+    return UIImageGetPureColorImage(color, size);
 }
-
-+ (UIImage *(^)(NSBundle *bundle, NSString *imageName))initWithBundleImageName{
-    return ^UIImage *(NSBundle *bundle, NSString *imageName){
-        return UIImageWithBundleImageName(bundle, imageName);
-    };
++ (instancetype)imageWithNamed:(NSString *)named inBundle:(NSBundle *)bundle{
+    return UIImageWithBundleImageName(bundle, named);
 }
-
 
 
 #pragma mark - 加工
 
 
-- (UIImage * _Nonnull (^)(void))squared{
-    return ^UIImage *{
-        return UIImageGetSquareImageAndOption(self, nil);
-    };
+- (instancetype)squared{
+    return UIImageGetSquareImageAndOption(self, nil);
 }
 
-- (UIImage * _Nonnull (^)(void))rounded{
-    return ^UIImage *{
-        return UIImageGetSquareImageAndOption(self, ^(CGContextRef ctx, CGRect rect) {
-            CGContextAddEllipseInRect(ctx, rect);
-        });
-    };
+- (instancetype)rounded{
+    return UIImageGetSquareImageAndOption(self, ^(CGContextRef ctx, CGRect rect) {
+        CGContextAddEllipseInRect(ctx, rect);
+    });
 }
 
-- (UIImage * _Nonnull (^)(CGFloat))blurred{
-    return ^UIImage *(CGFloat ratio){
-        return UIImageGetBlurredImage(self, ratio);
-    };
+- (instancetype)blurred:(CGFloat)ratio{
+    return UIImageGetBlurredImage(self, ratio);
 }
-
 - (void)blurred:(CGFloat)ratio completion:(void (^)(UIImage * _Nonnull))completion{
     UIImageBlurImageAsync(self, ratio, completion);
 }

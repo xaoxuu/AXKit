@@ -51,7 +51,7 @@
         if ([model.cmd isEqualToString:@"share"]) {
             NSString *string = @"message";
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                UIImage *imageToShare = UIImage.initWithView(UIViewController.rootViewController.view);
+                UIImage *imageToShare = [UIImage imageWithView:UIViewController.rootViewController.view];
                 UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:@[string,imageToShare] applicationActivities:nil];
                 [self.controller presentViewController:activityVC animated:YES completion:^{
                     

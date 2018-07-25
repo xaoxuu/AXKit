@@ -21,42 +21,38 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  以传入view创建截图
  */
-+ (UIImage *(^)(UIView *))initWithView;
-
++ (instancetype)imageWithView:(UIView *)view;
 /**
  创建一个纯色图片
  
  @return 图片
  */
-+ (UIImage *(^)(UIColor *color, CGSize size))initWithPureColor;
-
++ (instancetype)imageWithPureColor:(UIColor *)color size:(CGSize)size;
 /**
  从bundle中读取图片（自动追加.png/.jpg/.jpeg扩展名）
 
  @return 图片
  */
-+ (UIImage *(^)(NSBundle *bundle, NSString *imageName))initWithBundleImageName;
-
++ (instancetype)imageWithNamed:(NSString *)named inBundle:(NSBundle *)bundle;
 /**
  把图片剪裁为正方形
  
  @return 图片
  */
-- (UIImage *(^)(void))squared;
-
+- (instancetype)squared;
 /**
  把图片剪裁为圆形
 
  @return 图片
  */
-- (UIImage *(^)(void))rounded;
-
+- (instancetype)rounded;
 /**
  毛玻璃效果
 
  @return 毛玻璃效果处理后的图片
  */
-- (UIImage *(^)(CGFloat ratio))blurred;
+- (instancetype)blurred:(CGFloat)ratio;
+
 /**
  毛玻璃效果
  
