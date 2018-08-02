@@ -33,7 +33,7 @@ static inline NSNumber *numberValueForKey(NSDictionary *dict, NSString *key){
 
 @implementation NSDictionary (AXAdd)
 
-+ (instancetype)dictionaryWithJsonString:(NSString *)string{
++ (nullable instancetype)dictionaryWithJsonString:(NSString *)string{
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     if (data) {
         return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];

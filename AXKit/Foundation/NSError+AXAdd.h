@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 // @xaoxuu: LocalizedRecoverySuggestion
 @property (copy, nonatomic) NSString *localizedRecoverySuggestion;
 // @xaoxuu: localizedRecoveryOptions
-@property (copy, nonatomic) NSMutableArray<NSString *> *localizedRecoveryOptions;
+@property (strong, nonatomic) NSMutableArray<NSString *> *localizedRecoveryOptions;
 
 @end
 

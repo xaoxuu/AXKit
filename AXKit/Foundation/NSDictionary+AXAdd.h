@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param string json字符串
  @return 字典
  */
-+ (instancetype)dictionaryWithJsonString:(NSString *)string;
++ (nullable instancetype)dictionaryWithJsonString:(NSString *)string;
 
 /**
  解析dictionary中的dictionary，返回值可能为空

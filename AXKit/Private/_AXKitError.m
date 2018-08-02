@@ -30,10 +30,6 @@ static NSURL *urlForCode(NSInteger code){
         error.localizedFailureReason = reason?reason():@"";
         error.localizedRecoverySuggestion = [NSString stringWithFormat:@"See more at: %@", urlForCode(code)];
     }];
-    NSString *msg = nil;
-    if (reason) {
-        msg = reason();
-    }
     return error;
 }
 

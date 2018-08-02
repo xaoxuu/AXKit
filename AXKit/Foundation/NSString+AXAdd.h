@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 数字
  */
-- (NSNumber *)numberValue;
+- (nullable NSNumber *)numberValue;
 
 /**
  汉语转拼音

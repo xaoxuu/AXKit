@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  找不到图片则从mainBundle中读取
  找不到则以传入值为路径读取图片。
  */
-+ (UIImage *(^)(NSString *))named;
++ (nullable instancetype(^)(NSString *))named;
 
 /**
  以传入view创建截图
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 图片
  */
-+ (instancetype)imageWithNamed:(NSString *)named inBundle:(NSBundle *)bundle;
++ (nullable instancetype)imageWithNamed:(NSString *)named inBundle:(NSBundle *)bundle;
 /**
  把图片剪裁为正方形
  

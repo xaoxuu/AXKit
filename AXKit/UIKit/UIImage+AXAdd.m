@@ -47,10 +47,12 @@ static inline UIImage *UIImageWithBundleImageName(NSBundle *bundle, NSString *na
     if (!path) {
         path = [bundle pathForResource:name ofType:@"jpeg"];
     }
-    if (!path) {
-        
+    if (path) {
+        return [UIImage imageWithContentsOfFile:path];
+    } else {
+        return nil;
     }
-    return [UIImage imageWithContentsOfFile:path];
+    
 }
 static inline UIImage *UIImageNamed(NSString *name){
     UIImage *image = [UIImage imageNamed:name];
@@ -139,9 +141,11 @@ static inline UIImage *UIImageNonInterpolatedScaleWithRatio(UIImage *image, CGFl
     
     // save bitmap
     CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+    UIImage *ret = [UIImage imageWithCGImage:scaledImage];
+    CGColorSpaceRelease(cs);
     CGContextRelease(bitmapRef);
     CGImageRelease(bitmapImage);
-    return [UIImage imageWithCGImage:scaledImage];
+    return ret;
 }
 
 
@@ -160,7 +164,7 @@ static inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGS
 
 @implementation UIImage (AXAdd)
 
-+ (UIImage * _Nonnull (^)(NSString * _Nonnull))named{
++ (nullable instancetype(^)(NSString * _Nonnull))named{
     return ^UIImage *(NSString *name){
         return UIImageNamed(name);
     };
@@ -171,7 +175,7 @@ static inline UIImage *UIImageNonInterpolatedScaleWithCGSize(UIImage *image, CGS
 + (instancetype)imageWithPureColor:(UIColor *)color size:(CGSize)size{
     return UIImageGetPureColorImage(color, size);
 }
-+ (instancetype)imageWithNamed:(NSString *)named inBundle:(NSBundle *)bundle{
++ (nullable instancetype)imageWithNamed:(NSString *)named inBundle:(NSBundle *)bundle{
     return UIImageWithBundleImageName(bundle, named);
 }
 

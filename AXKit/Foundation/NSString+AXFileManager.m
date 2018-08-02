@@ -157,7 +157,6 @@ static inline AXResult *appendStringToFile(NSString *obj, NSString *path){
         NSFileHandle *handle = [NSFileHandle fileHandleForWritingAtPath:path];
         if (!handle) {
             path.saveObject(obj);
-            handle = [NSFileHandle fileHandleForWritingAtPath:path];
             return YES;
         }
         if (handle) {

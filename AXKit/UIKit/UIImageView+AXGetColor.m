@@ -66,7 +66,7 @@ static inline UIColor *UIImageViewGetColorWithPoint(UIImageView *imageView, CGPo
     }
     
     // get color with point
-    CGFloat red,green,blue,alpha;
+    CGFloat red = 0, green = 0, blue = 0, alpha = 0;
     UIImageViewGetRGBAWithPoint(imageView, point, &red, &green, &blue, &alpha);
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 
@@ -75,7 +75,7 @@ static inline UIColor *UIImageViewGetColorWithPoint(UIImageView *imageView, CGPo
 
 static inline void UIImageViewGetRGBA(UIImageView *imageView, CGPoint point, void(^completion)(CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha)){
     if (completion) {
-        CGFloat red,green,blue,alpha;
+        CGFloat red = 0, green = 0, blue = 0, alpha = 0;
         UIImageViewGetRGBAWithPoint(imageView, point, &red, &green, &blue, &alpha);
         completion(red,green,blue,alpha);
     }

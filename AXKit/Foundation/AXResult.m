@@ -90,7 +90,10 @@
     if (self = [super init]) {
         NSError *error = nil;
         if (callback) {
-            [self readJsonObject:callback(&error) opt:opt error:&error];
+            _dataValue = [self readJsonObject:callback(&error) opt:opt error:&error];
+            if (_dataValue && !_stringValue) {
+                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
+            }
             _error = error;
             _success = !error;
         }
@@ -105,7 +108,12 @@
     if (self = [super init]) {
         NSError *error = nil;
         if (callback) {
-            [self readJsonData:callback(&error) opt:opt error:&error];
+            id ret = [self readJsonData:callback(&error) opt:opt error:&error];
+            if (_dataValue) {
+                _dictionaryValue = NSDictionary.safeDictionary(ret, nil);
+                _arrayValue = NSArray.safeArray(ret, nil);
+                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
+            }
             _error = error;
             _success = !error;
         }
@@ -128,28 +136,28 @@
     
 }
 
-- (void)readJsonObject:(id)obj opt:(NSJSONWritingOptions)opt error:(NSError **)error{
+- (nullable NSData *)readJsonObject:(id)obj opt:(NSJSONWritingOptions)opt error:(NSError **)error{
     [self setupValue:obj];
     if ([NSJSONSerialization isValidJSONObject:obj]) {
-        _dataValue = [NSJSONSerialization dataWithJSONObject:obj options:opt error:error];
-        if (_dataValue && !_stringValue) {
-             _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
-        }
+        return [NSJSONSerialization dataWithJSONObject:obj options:opt error:error];
+    } else {
+        return nil;
     }
 }
 
-- (void)readJsonData:(NSData *)data opt:(NSJSONReadingOptions)opt error:(NSError **)error{
+- (nullable id)readJsonData:(NSData *)data opt:(NSJSONReadingOptions)opt error:(NSError **)error{
     _value = data;
-    NSData *testData = [data isKindOfClass:NSData.class]?data:nil;
-    if (testData) {
+    _dataValue = [data isKindOfClass:NSData.class]?data:nil;
+    if (_dataValue) {
         // 验证是否是jsondata
-        id ret = [NSJSONSerialization JSONObjectWithData:testData options:opt error:error];
+        id ret = [NSJSONSerialization JSONObjectWithData:_dataValue options:opt error:error];
         if ([ret isKindOfClass:[NSDictionary class]] || [ret isKindOfClass:[NSArray class]]) {
-            _dataValue = testData;
-            _dictionaryValue = NSDictionary.safeDictionary(ret, nil);
-            _arrayValue = NSArray.safeArray(ret, nil);
-            _stringValue = [[NSString alloc] initWithData:testData encoding:NSUTF8StringEncoding];
+            return ret;
+        } else {
+            return nil;
         }
+    } else {
+        return nil;
     }
 }
 
