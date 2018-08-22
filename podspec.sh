@@ -8,8 +8,9 @@ VERSION='1.0'
 
 # 在新的脚本中，输出更新信息，并提交文件改动
 function cmd_updated(){
-	echo -e "> \\033[0;32m更新成功！\\033[0;39m    $2 -> ${VERSION}"
-	PODVERSION=""
+	echo -e "> \\033[0;32m更新成功！\\033[0;39m    ${PARAM2} -> ${VERSION}"
+	PARAM1=""
+	PARAM2=""
 	echo '> 正在提交文件改动到git...'
 	git add podspec.sh && git commit -m "update podspec.sh" 
 	git push origin && echo -e "> \\033[0;32m提交成功！\\033[0;39m"
@@ -18,8 +19,8 @@ function cmd_updated(){
 function cmd_update_f(){
 	echo -e "> \\033[0;31m更新失败！我们都有不顺利的时候。\\033[0;39m"
 	git checkout podspec.sh
-	PODVERSION=""
-	
+	PARAM1=""
+	PARAM2=""
 }
 # 更新成功之后，重启脚本并把当前的版本传递过去
 function cmd_update_s(){
@@ -32,27 +33,28 @@ function cmd_update(){
 }
 
 
-PODVERSION=$1
+PARAM1=$1
+PARAM2=$2
 
 function cmd_push(){
 	# 输入版本号
 	while :
 	do
-		if [ "$PODVERSION" == "" ];then
-			read -p "请输入${FILENAME}版本号: " PODVERSION
+		if [ "$PARAM1" == "" ];then
+			read -p "请输入${FILENAME}版本号: " PARAM1
 		else
 			break
 		fi
 	done
 
 	# 更新podspec
-	sed -i "" "s/s.version\([ ]\{1,\}\)=\([ ]\{1,\}\)\([\'|\"]\)\([^\"]\{1,\}\([\'|\"]\)\)/s.version = \"${PODVERSION}\"/g" ${FILENAME}
+	sed -i "" "s/s.version\([ ]\{1,\}\)=\([ ]\{1,\}\)\([\'|\"]\)\([^\"]\{1,\}\([\'|\"]\)\)/s.version = \"${PARAM1}\"/g" ${FILENAME}
 	
 	# 打包验证
 	git add --all
 	git commit -am "update podspec" 
 	git push origin
-	git tag ${PODVERSION}
+	git tag ${PARAM1}
 	git push --tags
 	pod lib lint
 
@@ -88,9 +90,9 @@ function cmd_checkfile(){
 	done
 }
 function start(){
-	if [ $PODVERSION == 'update' ]; then
+	if [ $PARAM1 == 'update' ]; then
 		cmd_update
-	elif [ $PODVERSION == 'cmd_updated' ];then
+	elif [ $PARAM1 == 'cmd_updated' ];then
 		cmd_updated
 	else
 		cmd_checkfile
