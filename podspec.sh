@@ -92,6 +92,8 @@ function cmd_checkfile(){
 function start(){
 	if [ $PARAM1 == 'update' ]; then
 		cmd_update
+	elif [ $PARAM1 == 'docs' ];then
+		open https://xaoxuu.com/docs/podspec.sh
 	elif [ $PARAM1 == 'cmd_updated' ];then
 		cmd_updated
 	else
