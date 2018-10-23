@@ -87,11 +87,10 @@ static inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     [self ax_allSubviews:[UIImageView class] action:action];
 }
 
-
-- (void)ax_allSubviewsWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action {
+- (void)ax_allSubviewsWithTagsLargerThan:(NSUInteger)largerThan andLessThan:(NSUInteger)lessThan action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
-            if (AXNumberContainedInRange(@(subview.tag), @(tagRange.minValue), @(tagRange.maxValue))) {
+            if (AXNumberContainedInRange(@(subview.tag), @(largerThan), @(lessThan))) {
                 action(subview);
             }
         }

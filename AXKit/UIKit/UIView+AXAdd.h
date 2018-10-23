@@ -97,10 +97,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  让每个tag在指定范围的子视图执行一段代码
 
- @param tagRange 指定tag取值范围
+ @param largerThan 大于这个tag值
+ @param lessThan 小于这个tag值
  @param action 要执行的代码
  */
-- (void)ax_allSubviewsWithTagsInRange:(AXIntegerRange)tagRange action:(void (^)(__kindof UIView *subview))action;
+- (void)ax_allSubviewsWithTagsLargerThan:(NSUInteger)largerThan andLessThan:(NSUInteger)lessThan action:(void (^)(__kindof UIView *subview))action;
 
 /**
  让每个tag等于某个值的子视图执行一段代码

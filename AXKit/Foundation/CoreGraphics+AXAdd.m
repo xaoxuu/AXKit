@@ -133,23 +133,6 @@ inline CGFloat CGConstGetTabBarHeight(void){
 const CGFloat kAlertViewWidth = 270.0f;
 
 
-#pragma mark 取值范围创建
-
-
-inline AXFloatRange AXFloatRangeMake(CGFloat minValue, CGFloat maxValue){
-    return (AXFloatRange){minValue,maxValue};
-}
-
-inline AXIntegerRange AXIntegerRangeMake(NSInteger minValue, NSInteger maxValue){
-    return (AXIntegerRange){minValue,maxValue};
-}
-
-inline AXUIntegerRange AXUIntegerRangeMake(NSUInteger minValue, NSUInteger maxValue){
-    return (AXUIntegerRange){minValue,maxValue};
-}
-
-
-
 #pragma mark 确保值的范围
 
 inline NSNumber *AXMakeNumberInRange(NSNumber *value, NSNumber *minValue, NSNumber *maxValue){
