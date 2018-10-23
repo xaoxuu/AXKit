@@ -25,84 +25,51 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 
 
 
-//  --------------------------------------------------------------- FOUNDATION
+// FOUNDATION+
+#import "AXDebugUtilities.h"
+#import "AXMacros.h"
+#import "AXResult.h"
+#import "CoreGraphics+AXAdd.h"
+#import "GCD+AXAdd.h"
+#import "NSArray+AXAdd.h"
+#import "NSBundle+AXAdd.h"
+#import "NSDate+AXAdd.h"
+#import "NSDateFormatter+AXAdd.h"
+#import "NSDictionary+AXAdd.h"
+#import "NSError+AXAdd.h"
+#import "NSLog+AXAdd.h"
+#import "NSObject+AXAdd.h"
+#import "NSObject+AXJsonAdd.h"
+#import "NSString+AXAdd.h"
+#import "NSString+AXFileManager.h"
+#import "NSTimer+AXAdd.h"
+#import "NSUserDefaults+AXAdd.h"
 
 
-#import "AXRuntimeHelper.h"
-#import "NSObject+AXExtension.h"
-#import "UIApplication+AXExtension.h"
-#import "AXDebugHelper.h"
-
-// NSString类的扩展（随机字符串等）
-#import "NSString+AXExtension.h"
-// 沙盒文件流的链式封装，一行代码搞定沙盒文件操作
-#import "NSString+AXFileStreamChainedWrapper.h"
-
-// 宏
-#import "Foundation+AXMacros.h"
-// log宏
-#import "Foundation+AXLogExtension.h"
-// user default 封装
-#import "NSUserDefaults+AXWrapper.h"
-
-// CG数据类型的扩展，包括取值范围、随机值、常量
-#import "CoreGraphics+AXExtension.h"
-// 对NSOperation的扩展，基于<BlocksKit>改编，并增加了冷却机制
-#import "GCD+AXExtension.h"
-
-// 对NSTimer的block封装，基于<BlocksKit>改编
-#import "NSTimer+AXBlockWrapper.h"
-
-// error的扩展
-#import "NSError+AXExtension.h"
-
-// bundle
-#import "NSBundle+AXExtension.h"
-// array
-#import "NSArray+AXExtension.h"
-
-#import "NSDate+AXExtension.h"
-
-#import "NSDictionary+AXExtension.h"
-
-
-
-
-
-
-// layer
-#import "CALayer+AXWrapper.h"
-
-
-#import "UIBarButtonItem+AXBlockWrapper.h"
-
-
-#import "UINavigationBar+AXExtension.h"
-#import "UINavigationItem+AXExtension.h"
-
-#import "UITabBar+AXExtension.h"
-
+// UIKIT+
+#import "CALayer+AXAdd.h"
+#import "UIActivityIndicatorView+AXAdd.h"
+#import "UIAlertController+AXAdd.h"
+#import "UIApplication+AXAdd.h"
+#import "UIBarButtonItem+AXAdd.h"
+#import "UIColor+AXAdd.h"
 #import "UIColor+AXColorPack.h"
 #import "UIColor+MDColorPack.h"
-#import "UIColor+AXExtension.h"
-
-#import "UIActivityIndicatorView+AXWrapper.h"
-#import "UIResponder+AXExtension.h"
-#import "UIControl+AXBlockWrapper.h"
-#import "UITextView+AXExtension.h"
-#import "UITextField+AXExtension.h"
-
-#import "UIImage+AXExtension.h"
+#import "UIControl+AXAdd.h"
+#import "UIImage+AXAdd.h"
+#import "UIImageView+AXAdd.h"
 #import "UIImageView+AXGetColor.h"
-#import "UIImageView+AXExtension.h"
+#import "UINavigationBar+AXAdd.h"
+#import "UINavigationController+AXAdd.h"
+#import "UINavigationItem+AXAdd.h"
+#import "UIResponder+AXAdd.h"
+#import "UITabBar+AXAdd.h"
+#import "UITextField+AXAdd.h"
+#import "UITextView+AXAdd.h"
+#import "UIView+AXAdd.h"
+#import "UIView+AXAnimation.h"
+#import "UIView+AXFrameAdd.h"
+#import "UIView+AXGestureAdd.h"
+#import "UIViewController+AXAdd.h"
 
-
-#import "UIView+AXAnimatedWrapper.h"
-#import "UIView+AXFrameExtension.h"
-#import "UIView+AXExtension.h"
-#import "UIView+AXGestureExtension.h"
-
-#import "UIAlertController+AXWrapper.h"
-#import "UIViewController+AXExtension.h"
-#import "UINavigationController+AXExtension.h"
 

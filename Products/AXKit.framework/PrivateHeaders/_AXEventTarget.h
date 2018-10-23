@@ -10,30 +10,54 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
+NS_ASSUME_NONNULL_BEGIN
 @interface AXEventTarget : NSObject
 
-// @xaoxuu: 事件处理器target
-@property (copy, nonatomic) void (^handler)(id sender);
+/**
+ 视图手势的事件响应
 
-// @xaoxuu: 动画的view
-@property (strong, nonatomic) UIView *view;
+ @param view 视图
+ @param gestureRecognizer 手势
+ @param handler 处理事件
+ @return 响应者
+ */
++ (instancetype)targetWithView:(UIView *)view gestureRecognizer:(__kindof UIGestureRecognizer *)gestureRecognizer handler:(void (^)(__kindof UIGestureRecognizer *sender))handler;
 
-// @xaoxuu: 动画的scale
-@property (assign, nonatomic) CGFloat scale;
+/**
+ 控件事件响应
 
-// @xaoxuu: 动画的duration
-@property (assign, nonatomic) NSTimeInterval duration;
+ @param control 控件
+ @param controlEvents 事件
+ @param handler 处理事件
+ @return 响应者
+ */
++ (instancetype)targetWithControl:(UIControl *)control controlEvents:(UIControlEvents)controlEvents handler:(void (^)(__kindof UIControl *sender))handler;
 
-// @xaoxuu: 创建一个事件处理器target
-+ (instancetype)targetWithHandler:(void (^)(id sender))handler;
 
-// @xaoxuu: 设置view动画
-- (void)setupAnimationWithView:(UIView *)view scale:(CGFloat)scale duration:(NSTimeInterval)duration;
+/**
+ 移除某个视图的某个手势
 
-// @xaoxuu: 执行事件
-- (void)handleEvent:(id)sender;
+ @param gestureRecognizer 手势
+ @param view 视图
+ */
++ (void)removeGesturesRecognizer:(UIGestureRecognizer *)gestureRecognizer forView:(UIView *)view;
+
+/**
+ 移除某个视图的所有手势
+
+ @param view 视图
+ */
++ (void)removeAllGesturesRecognizerForView:(UIView *)view;
+
+/**
+ 移除某个控件的某个事件响应
+
+ @param controlEvents 事件
+ @param control 控件
+ */
++ (void)removeControlEvents:(UIControlEvents)controlEvents forControl:(UIControl *)control;
+
 
 @end
 
-
+NS_ASSUME_NONNULL_END
