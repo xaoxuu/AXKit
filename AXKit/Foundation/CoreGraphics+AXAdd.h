@@ -16,19 +16,23 @@
  屏幕尺寸枚举
  
  kCGScreenSizeEnumUnknown: 未知
- kCGScreenSizeEnum_3_5: 3.5英寸屏幕：1、2、3、3g、3gs、4、4s
+ kCGScreenSizeEnum_3_5: 3.5英寸屏幕：1、2、3、3G、3GS、4、4s
  kCGScreenSizeEnum_4_0: 4.0英寸屏幕：5、5c、5s
  kCGScreenSizeEnum_4_7: 4.7英寸屏幕：6、6s、7、8
- kCGScreenSizeEnum_5_5: 5.5英寸屏幕：6 plus、6s plus、7 plus、8 plus
- kCGScreenSizeEnum_5_8: 5.8英寸屏幕：iPhone X
+ kCGScreenSizeEnum_5_5: 5.5英寸屏幕：6 Plus、6s Plus、7 Plus、8 Plus
+ kCGScreenSizeEnum_5_8: 5.8英寸屏幕：X、XS
+ kCGScreenSizeEnum_6_1: 6.1英寸屏幕：XR
+ kCGScreenSizeEnum_6_5: 6.5英寸屏幕：XS Max
  */
 typedef NS_ENUM(NSUInteger, kCGScreenSizeEnum) {
-    kCGScreenSizeEnumUnknown,
-    kCGScreenSizeEnum_3_5,
-    kCGScreenSizeEnum_4_0,
-    kCGScreenSizeEnum_4_7,
-    kCGScreenSizeEnum_5_5,
-    kCGScreenSizeEnum_5_8
+    kCGScreenSizeEnumUnknown = 0,
+    kCGScreenSizeEnum_3_5 = 1,
+    kCGScreenSizeEnum_4_0 = 2,
+    kCGScreenSizeEnum_4_7 = 3,
+    kCGScreenSizeEnum_5_5 = 4,
+    kCGScreenSizeEnum_5_8 = 10,
+    kCGScreenSizeEnum_6_1 = 11,
+    kCGScreenSizeEnum_6_5 = 12
 };
 
 /**

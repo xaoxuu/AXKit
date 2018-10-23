@@ -30,6 +30,10 @@ inline kCGScreenSizeEnum CGConstGetScreenSizeEnum(void){
             currentSize = kCGScreenSizeEnum_5_5;
         } else if (CGSizeEqualToSize(size, CGSizeMake(1125, 2436))) {
             currentSize = kCGScreenSizeEnum_5_8;
+        } else if (CGSizeEqualToSize(size, CGSizeMake(828, 1792))) {
+            currentSize = kCGScreenSizeEnum_6_1;
+        } else if (CGSizeEqualToSize(size, CGSizeMake(1242, 2688))) {
+            currentSize = kCGScreenSizeEnum_6_5;
         } else {
             currentSize = kCGScreenSizeEnumUnknown;
         }
@@ -96,18 +100,19 @@ inline CGFloat CGConstGetTopBarHeight(void){
 
 
 /**
- 底部安全区域高度（iPhone X为34，其他机型为0）
+ 底部安全区域高度（旧系列机型为0，异形屏iPhone为34）
  
- @return 底部安全区域高度（iPhone X为34，其他机型为0）
+ @return 底部安全区域高度（旧系列机型为0，异形屏iPhone为34）
  */
 inline CGFloat CGConstGetScreenBottomSafeAreaHeight(void){
     static CGFloat height;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
-            height = 34;
-        } else {
+        // 未知机型按异形屏算，这样以后如果出新的尺寸的异形屏也可以兼容
+        if (CGConstGetScreenSizeEnum() < kCGScreenSizeEnum_5_8 && CGConstGetScreenSizeEnum() > kCGScreenSizeEnumUnknown) {
             height = 0;
+        } else {
+            height = 34;
         }
     });
     return height;
