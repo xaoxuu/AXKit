@@ -40,17 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ax_layer:(void (^)(CALayer *layer))layer;
 
 /**
- 移除所有子视图
- subClass 指定范围（只移除属于哪个类的子视图，传入nil时移除所有子视图）
- */
-- (void (^)(__nullable Class))removeSubviews;
-
-/**
- addSubview:
- */
-- (void (^)(UIView *view))addSubview;
-
-/**
  让每个子视图执行一段代码
 
  @param subClass 指定范围（属于哪个类的子视图，传入nil时代表所有子视图）

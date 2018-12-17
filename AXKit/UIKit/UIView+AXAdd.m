@@ -42,21 +42,6 @@ static inline __kindof UIView *UIViewFromNibNamed(NSString *name){
     }
 }
 
-- (void (^)(__nullable Class))removeSubviews{
-    return ^(__nullable Class subClass){
-        [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
-            if (!subClass || [subview isKindOfClass:subClass]) {
-                [subview removeFromSuperview];
-            }
-        }];
-    };
-}
-- (void (^)(UIView *view))addSubview{
-    return ^(UIView *view){
-        [self addSubview:view];
-    };
-}
-
 - (void)ax_allSubviews:(Class)subClass action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
