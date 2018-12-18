@@ -52,7 +52,7 @@ static inline NSString *logDir(){
     static NSString *dir;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        dir = [NSString stringWithFormat:@"com.xaoxuu.AXKit/%@", logFileDirName].cachePath;
+        dir = [NSString stringWithFormat:@"AXKit/%@", logFileDirName].cachePath;
         dir.createDirectory();
     });
     return dir;

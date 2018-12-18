@@ -31,8 +31,7 @@ static NSTimeInterval indicatorTimeout = 30;
     lb.textColor = [UIColor lightGrayColor];
     lb.text = NSLocalizedStringFromAXKit(@"LOADING");
     lb.textAlignment = NSTextAlignmentCenter;
-    lb.top = indicator.height + 4;
-    lb.centerX = indicator.boundsCenterX;
+    lb.setY(indicator.frame.size.height + 4).setCenterX(indicator.boundsCenter.x);
     [indicator addSubview:lb];
     return indicator;
 }
@@ -43,12 +42,8 @@ static NSTimeInterval indicatorTimeout = 30;
 }
 
 - (void)addToView:(UIView *)view withLoading:(BOOL)loading{
-    self.centerX = view.boundsCenterX;
-    if (loading) {
-        self.centerY = view.boundsCenterY - 8;
-    } else {
-        self.centerY = view.boundsCenterY;
-    }
+    self.setCenterX(view.boundsCenter.x);
+    self.setCenterY(view.boundsCenter.y - loading?8:0);
     [view addSubview:self];
     [self startAnimating];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(indicatorTimeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

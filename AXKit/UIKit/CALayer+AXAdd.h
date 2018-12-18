@@ -41,8 +41,6 @@ typedef NS_ENUM(NSUInteger,LayerShadow) {
  */
 + (CALayer *(^)(CGSize size))initWithSize;
 
-- (void (^)(CALayer *layer))addSublayer;
-
 #pragma mark - corner
 
 /**

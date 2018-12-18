@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return view controller实例对象
  */
 + (instancetype)viewControllerWithClassNamed:(NSString *)named;
+
 /**
  获取storyboard中的VC
  */

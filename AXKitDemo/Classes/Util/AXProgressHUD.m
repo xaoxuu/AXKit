@@ -75,7 +75,7 @@ static NSTimeInterval static_duration;
     sLabel.width = sPopView.width - 32;
     [sLabel sizeToFit];
     if (sLabel.width < sPopView.width - 32) {
-        sLabel.centerX = sPopView.boundsCenterX;
+        sLabel.centerX = sPopView.boundsCenter.x;
     }
     
     
@@ -90,7 +90,7 @@ static NSTimeInterval static_duration;
 //    sPopView.height = sLabel.top + sLabel.height + 16;
     sPopView.height = sLabel.height + 32;
     sPopView.center = UIViewController.rootViewController.view.boundsCenter;
-    sMaskView.centerY = sPopView.boundsCenterY;
+    sMaskView.centerY = sPopView.boundsCenter.y;
     
     
     if (axThemeManager.color.theme.isLightColor) {
