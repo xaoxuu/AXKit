@@ -70,8 +70,6 @@
 		CD3A8EF71FC3F91B00177ADC /* CachedThemeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A8EF61FC3F91B00177ADC /* CachedThemeCollectionView.m */; };
 		CD3A8EFB1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A8EF91FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m */; };
 		CD3A8EFC1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */; };
-		CD3EE99820C77DC40074F083 /* AXDebugUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE94620C77DC30074F083 /* AXDebugUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD3EE99920C77DC40074F083 /* AXDebugUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE94720C77DC30074F083 /* AXDebugUtilities.m */; };
 		CD3EE99A20C77DC40074F083 /* AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE94820C77DC30074F083 /* AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3EE99B20C77DC40074F083 /* AXResult.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE94920C77DC30074F083 /* AXResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3EE99C20C77DC40074F083 /* AXResult.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE94A20C77DC30074F083 /* AXResult.m */; };
@@ -348,8 +346,6 @@
 		CD3A8EF81FC3FCF700177ADC /* ThemePreviewCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemePreviewCollectionViewCell.h; sourceTree = "<group>"; };
 		CD3A8EF91FC3FCF700177ADC /* ThemePreviewCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemePreviewCollectionViewCell.m; sourceTree = "<group>"; };
 		CD3A8EFA1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemePreviewCollectionViewCell.xib; sourceTree = "<group>"; };
-		CD3EE94620C77DC30074F083 /* AXDebugUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDebugUtilities.h; sourceTree = "<group>"; };
-		CD3EE94720C77DC30074F083 /* AXDebugUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDebugUtilities.m; sourceTree = "<group>"; };
 		CD3EE94820C77DC30074F083 /* AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros.h; sourceTree = "<group>"; };
 		CD3EE94920C77DC30074F083 /* AXResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXResult.h; sourceTree = "<group>"; };
 		CD3EE94A20C77DC30074F083 /* AXResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXResult.m; sourceTree = "<group>"; };
@@ -839,8 +835,6 @@
 		CD3EE94520C77DC30074F083 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				CD3EE94620C77DC30074F083 /* AXDebugUtilities.h */,
-				CD3EE94720C77DC30074F083 /* AXDebugUtilities.m */,
 				CD3EE94820C77DC30074F083 /* AXMacros.h */,
 				CD3EE94920C77DC30074F083 /* AXResult.h */,
 				CD3EE94A20C77DC30074F083 /* AXResult.m */,
@@ -1577,7 +1571,6 @@
 				CD3EE9CF20C77DC40074F083 /* UIImageView+AXGetColor.h in Headers */,
 				CD3EE9D120C77DC40074F083 /* UINavigationBar+AXAdd.h in Headers */,
 				CD3EE9C120C77DC40074F083 /* UIBarButtonItem+AXAdd.h in Headers */,
-				CD3EE99820C77DC40074F083 /* AXDebugUtilities.h in Headers */,
 				CD3EE9B120C77DC40074F083 /* NSString+AXAdd.h in Headers */,
 				CD3EE9AB20C77DC40074F083 /* NSError+AXAdd.h in Headers */,
 				CD3EE9BF20C77DC40074F083 /* UIAlertController+AXAdd.h in Headers */,
@@ -2048,7 +2041,6 @@
 				CD3EE9C420C77DC40074F083 /* UIColor+AXAdd.m in Sources */,
 				CDCEA51B20CA7234009AFBBB /* NSObject+AXJsonAdd.m in Sources */,
 				CD3EE9B020C77DC40074F083 /* NSObject+AXAdd.m in Sources */,
-				CD3EE99920C77DC40074F083 /* AXDebugUtilities.m in Sources */,
 				CD3EE9BE20C77DC40074F083 /* UIActivityIndicatorView+AXAdd.m in Sources */,
 				CD3EE9DE20C77DC40074F083 /* UITextView+AXAdd.m in Sources */,
 				CD3EE9BA20C77DC40074F083 /* UIApplication+AXAdd.m in Sources */,
