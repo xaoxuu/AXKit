@@ -1,6 +1,0 @@
-framework module AXTabKit {
-  umbrella header "AXTabKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

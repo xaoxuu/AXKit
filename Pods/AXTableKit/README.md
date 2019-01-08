@@ -1,2 +1,0 @@
-# AXTableKit
-tableviewkit for iOS

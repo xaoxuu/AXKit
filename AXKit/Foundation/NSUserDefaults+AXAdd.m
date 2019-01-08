@@ -10,6 +10,7 @@
 #import "NSError+AXAdd.h"
 #import "NSLog+AXAdd.h"
 #import "_AXKitError.h"
+#import "NSObject+AXAdd.h"
 #import "NSObject+AXJsonAdd.h"
 
 
@@ -70,12 +71,12 @@
 
 + (nullable NSNumber *(^)(NSString *key))numberForKey{
     return ^id (NSString *key){
-        return NSNumber.autoNumber([self.standard objectForKey:key], nil);
+        return NSNumber.safeNumber([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSNumber *(^)(NSString *key))numberForKey{
     return ^id (NSString *key){
-        return NSNumber.autoNumber([self objectForKey:key], nil);
+        return NSNumber.safeNumber([self objectForKey:key], nil);
     };
 }
 
@@ -103,12 +104,12 @@
 
 + (nullable NSData *(^)(NSString *key))dataForKey{
     return ^id (NSString *key){
-        return NSData.safeData([self.standard objectForKey:key], nil);
+        return NSData.autoData([self.standard objectForKey:key], nil);
     };
 }
 - (nullable NSData *(^)(NSString *key))dataForKey{
     return ^id (NSString *key){
-        return NSData.safeData([self objectForKey:key], nil);
+        return NSData.autoData([self objectForKey:key], nil);
     };
 }
 

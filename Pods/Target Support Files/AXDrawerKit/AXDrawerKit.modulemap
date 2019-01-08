@@ -1,6 +1,0 @@
-framework module AXDrawerKit {
-  umbrella header "AXDrawerKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

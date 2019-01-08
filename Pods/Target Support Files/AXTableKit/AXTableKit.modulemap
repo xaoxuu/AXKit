@@ -1,6 +1,0 @@
-framework module AXTableKit {
-  umbrella header "AXTableKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

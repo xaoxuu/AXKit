@@ -213,9 +213,9 @@ static inline AXResult *saveObjectAtPath(id obj, NSString *path){
 static inline AXResult *saveJsonWithOptionsResult(id obj, NSString *path, NSJSONWritingOptions options){
     NSData *data = nil;
     if ([obj isKindOfClass:NSArray.class]) {
-        data = ((NSArray *)obj).jsonValue.dataValue;
+        data = ((NSArray *)obj).toJson().dataValue;
     } else if ([obj isKindOfClass:NSDictionary.class]) {
-        data = ((NSDictionary *)obj).jsonValue.dataValue;
+        data = ((NSDictionary *)obj).toJson().dataValue;
     } else if ([obj isKindOfClass:NSData.class] || [obj isKindOfClass:[NSString class]]) {
         NSData *testData;
         if ([obj isKindOfClass:[NSString class]]) {
@@ -223,7 +223,7 @@ static inline AXResult *saveJsonWithOptionsResult(id obj, NSString *path, NSJSON
         } else {
             testData = obj;
         }
-        data = testData.jsonValue.dataValue;
+        data = testData.toJson().dataValue;
     }
     if (data) {
         return saveObjectAtPath(data, path);

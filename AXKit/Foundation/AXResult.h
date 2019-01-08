@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  结果：成功、失败
  */
-@property (assign, readonly, nonatomic) BOOL success;
+@property (assign, readonly, nonatomic) BOOL result;
 
 /**
  错误信息

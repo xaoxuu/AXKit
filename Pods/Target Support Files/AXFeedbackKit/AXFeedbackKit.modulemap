@@ -1,6 +1,0 @@
-framework module AXFeedbackKit {
-  umbrella header "AXFeedbackKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

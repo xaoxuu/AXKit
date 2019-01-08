@@ -7,7 +7,7 @@
 //
 
 #import "AXResult.h"
-#import "NSObject+AXJsonAdd.h"
+#import "NSObject+AXAdd.h"
 #import "NSArray+AXAdd.h"
 #import "NSDictionary+AXAdd.h"
 
@@ -46,7 +46,7 @@
     if (self = [self initWithPath:path]) {
         NSError *error = nil;
         if (callback) {
-            _success = callback(&error);
+            _result = callback(&error);
             _error = error;
         }
     }
@@ -78,7 +78,7 @@
         if (callback) {
             [self setupValue:callback(&error)];
             _error = error;
-            _success = !error;
+            _result = !error;
         }
     }
     return self;
@@ -90,12 +90,12 @@
     if (self = [super init]) {
         NSError *error = nil;
         if (callback) {
-            _dataValue = [self readJsonObject:callback(&error) opt:opt error:&error];
-            if (_dataValue && !_stringValue) {
-                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
-            }
+            NSData *dt = [self readJsonObject:callback(&error) opt:opt error:&error];
+//            if (dt && !_stringValue) {
+//                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
+//            }
             _error = error;
-            _success = !error;
+            _result = !error;
         }
     }
     return self;
@@ -109,13 +109,13 @@
         NSError *error = nil;
         if (callback) {
             id ret = [self readJsonData:callback(&error) opt:opt error:&error];
-            if (_dataValue) {
-                _dictionaryValue = NSDictionary.safeDictionary(ret, nil);
-                _arrayValue = NSArray.safeArray(ret, nil);
-                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
-            }
+//            if (_dataValue) {
+//                _dictionaryValue = NSDictionary.safeDictionary(ret, nil);
+//                _arrayValue = NSArray.safeArray(ret, nil);
+//                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
+//            }
             _error = error;
-            _success = !error;
+            _result = !error;
         }
     }
     return self;
@@ -127,13 +127,30 @@
  */
 - (void)setupValue:(id)value{
     _value = value;
+//    
+//    _numberValue = NSNumber.autoNumber(value, nil);
+//    _stringValue = NSString.autoString(value, nil);
+//    _arrayValue = NSArray.safeArray(value, nil);
+//    _dictionaryValue = NSDictionary.safeDictionary(value, nil);
+//    _dataValue = [value isKindOfClass:NSData.class]?value:nil;
+//
     
-    _numberValue = NSNumber.autoNumber(value, nil);
-    _stringValue = NSString.autoString(value, nil);
-    _arrayValue = NSArray.safeArray(value, nil);
-    _dictionaryValue = NSDictionary.safeDictionary(value, nil);
-    _dataValue = [value isKindOfClass:NSData.class]?value:nil;
-    
+}
+
+- (NSNumber *)numberValue{
+    return NSNumber.safeNumber(self.value, nil);
+}
+- (NSString *)stringValue{
+    return NSString.safeString(self.value, nil);
+}
+- (NSArray *)arrayValue{
+    return NSArray.safeArray(self.value, nil);
+}
+- (NSDictionary *)dictionaryValue{
+    return NSDictionary.safeDictionary(self.value, nil);
+}
+- (NSData *)dataValue{
+    return [self.value isKindOfClass:NSData.class]?self.value:nil;
 }
 
 - (nullable NSData *)readJsonObject:(id)obj opt:(NSJSONWritingOptions)opt error:(NSError **)error{
@@ -147,10 +164,10 @@
 
 - (nullable id)readJsonData:(NSData *)data opt:(NSJSONReadingOptions)opt error:(NSError **)error{
     _value = data;
-    _dataValue = [data isKindOfClass:NSData.class]?data:nil;
-    if (_dataValue) {
+    NSData *dt = [data isKindOfClass:NSData.class]?data:nil;
+    if (dt) {
         // 验证是否是jsondata
-        id ret = [NSJSONSerialization JSONObjectWithData:_dataValue options:opt error:error];
+        id ret = [NSJSONSerialization JSONObjectWithData:dt options:opt error:error];
         if ([ret isKindOfClass:[NSDictionary class]] || [ret isKindOfClass:[NSArray class]]) {
             return ret;
         } else {
@@ -171,7 +188,7 @@
  */
 - (AXResult *)completed:(void (^)(BOOL success))block{
     if (block) {
-        block(self.success);
+        block(self.result);
     }
     return self;
 }

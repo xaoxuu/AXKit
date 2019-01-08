@@ -1,6 +1,0 @@
-framework module AXStatusKit {
-  umbrella header "AXStatusKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -10,7 +10,7 @@
 #import "NSString+AXAdd.h"
 #import "NSError+AXAdd.h"
 #import "_AXKitError.h"
-#import "NSObject+AXJsonAdd.h"
+#import "NSObject+AXAdd.h"
 #import "CoreGraphics+AXAdd.h"
 
 static inline CGSize boundingSize(NSString *str, UIFont *font, CGSize size, NSLineBreakMode lineBreakMode){
