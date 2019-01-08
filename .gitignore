@@ -27,3 +27,5 @@ DerivedData
 
 #appledoc文档
 #appledoc/
+*.xcworkspace
+Pods
