@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  如果传入obj不是NSString，但是能够转换成NSString，则返回转换后的NSString
  */
-+ (NSString *(^)(id obj, NSString * __nullable def))autoString;
++ (NSString *(^)(id obj))parse;
 
 /**
  转换成json
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  如果传入obj不是NSData，但是能够转换成NSData，则返回转换后的NSData
  */
-+ (NSData *(^)(id obj, NSData * __nullable def))autoData;
++ (NSData *(^)(id obj))parse;
 
 /**
  转换成json
@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  如果传入obj不是NSArray，但是能够转换成NSArray，则返回转换后的NSArray
  */
-+ (NSArray *(^)(id obj, NSArray * __nullable def))autoArray;
++ (NSArray *(^)(id obj))parse;
 
 /**
  转换成json
@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  如果传入obj不是NSDictionary，但是能够转换成NSDictionary，则返回转换后的NSDictionary
  */
-+ (NSDictionary *(^)(id obj, NSDictionary * __nullable def))autoDictionary;
++ (NSDictionary *(^)(id obj))parse;
 
 /**
  转换成json

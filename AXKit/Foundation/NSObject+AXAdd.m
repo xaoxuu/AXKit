@@ -11,10 +11,8 @@
 
 @import ObjectiveC.runtime;
 
-static inline BOOL isNull(id obj){
-    if (obj == nil || [obj isKindOfClass:NSNull.class]) {
-        return YES;
-    } else if ([obj isKindOfClass:NSString.class] && ((NSString *)obj).length <= 8) {
+static inline BOOL isNullStr(id obj){
+    if ([obj isKindOfClass:NSString.class] && ((NSString *)obj).length <= 8) {
         static NSArray<NSString *> *nullArray = nil;
         if (!nullArray) {
             nullArray = @[@"<null>", @"(null)", @"null", @"<nil>", @"(nil)", @"nil", @"<nsnull>", @"(nsnull)", @"nsnull"];
@@ -24,6 +22,56 @@ static inline BOOL isNull(id obj){
         }
     }
     return NO;
+}
+
+static inline NSData *safeData(NSData *obj){
+    if ([obj isKindOfClass:NSData.class]) {
+        return obj;
+    } else {
+        if ([obj isKindOfClass:NSString.class]) {
+            if (isNullStr(obj)) {
+                return nil;
+            } else {
+                return [(NSString *)obj dataUsingEncoding:NSUTF8StringEncoding] ?: nil;
+            }
+        } else {
+            return nil;
+        }
+    }
+}
+
+static inline NSString *safeString(NSString *obj){
+    if ([obj isKindOfClass:NSString.class]) {
+        if (isNullStr(obj)) {
+            return nil;
+        } else {
+            return obj;
+        }
+    } else {
+        if ([obj isKindOfClass:NSNumber.class]) {
+            return ((NSNumber *)obj).stringValue;
+        } else if ([obj isKindOfClass:NSData.class]) {
+            return [[NSString alloc] initWithData:(NSData *)obj encoding:NSUTF8StringEncoding] ?: nil;
+        } else {
+            return nil;
+        }
+    }
+}
+
+static inline NSNumber *safeNumber(NSNumber *obj){
+    if ([obj isKindOfClass:NSNumber.class]) {
+        return obj;
+    } else {
+        if ([obj isKindOfClass:NSString.class]) {
+            if (isNullStr(obj)) {
+                return nil;
+            } else {
+                return ((NSString *)obj).numberValue;
+            }
+        } else {
+            return nil;
+        }
+    }
 }
 
 @implementation NSObject (AXAdd)
@@ -52,35 +100,20 @@ static inline BOOL isNull(id obj){
 
 @implementation NSString (AXSafeAdd)
 
-+ (NSString *(^)(id obj, NSString *def))safeString{
-    return ^NSString *(id obj, NSString *def){
-        if (isNull(obj)) {
-            return def;
-        } else if ([obj isKindOfClass:NSString.class]) {
-            return obj;
-        } else if ([obj isKindOfClass:NSNumber.class]) {
-            return ((NSNumber *)obj).stringValue;
-        } else {
-            return def;
-        }
++ (NSString *(^)(NSString *obj))safe{
+    return ^NSString *(NSString *obj){
+        return safeString(obj);
     };
 }
+
 
 @end
 
 @implementation NSNumber (AXSafeAdd)
 
-+ (NSNumber *(^)(id obj, NSNumber *def))safeNumber{
-    return ^NSNumber *(id obj, NSNumber *def){
-        if (isNull(obj)) {
-            return def;
-        } else if ([obj isKindOfClass:NSNumber.class]) {
-            return obj;
-        } else if ([obj isKindOfClass:NSString.class]) {
-            return ((NSString *)obj).numberValue;
-        } else {
-            return def;
-        }
++ (NSNumber *(^)(NSNumber *obj))safe{
+    return ^NSNumber *(NSNumber *obj){
+        return safeNumber(obj);
     };
 }
 
@@ -88,15 +121,9 @@ static inline BOOL isNull(id obj){
 
 @implementation NSData (AXSafeAdd)
 
-+ (NSData *(^)(id obj, NSData *def))safeData{
-    return ^NSData *(id obj, NSData *def){
-        if (isNull(obj)) {
-            return def;
-        } else if ([obj isKindOfClass:NSData.class]) {
-            return obj;
-        } else {
-            return def;
-        }
++ (NSData *(^)(NSData *obj))safe{
+    return ^NSData *(NSData *obj){
+        return safeData(obj);
     };
 }
 
@@ -105,14 +132,12 @@ static inline BOOL isNull(id obj){
 
 @implementation NSArray (AXSafeAdd)
 
-+ (NSArray *(^)(id obj, NSArray *def))safeArray{
-    return ^NSArray *(id obj, NSArray *def){
-        if (isNull(obj)) {
-            return def;
-        } else if ([obj isKindOfClass:NSArray.class]) {
++ (NSArray *(^)(NSArray *obj))safe{
+    return ^NSArray *(NSArray *obj){
+        if ([obj isKindOfClass:NSArray.class]) {
             return obj;
         } else {
-            return def;
+            return nil;
         }
     };
 }
@@ -122,14 +147,12 @@ static inline BOOL isNull(id obj){
 
 @implementation NSDictionary (AXSafeAdd)
 
-+ (NSDictionary *(^)(id obj, NSDictionary *def))safeDictionary{
-    return ^NSDictionary *(id obj, NSDictionary *def){
-        if (isNull(obj)) {
-            return def;
-        } else if ([obj isKindOfClass:NSDictionary.class]) {
++ (NSDictionary *(^)(NSDictionary *obj))safe{
+    return ^NSDictionary *(NSDictionary *obj){
+        if ([obj isKindOfClass:NSDictionary.class]) {
             return obj;
         } else {
-            return def;
+            return nil;
         }
     };
 }

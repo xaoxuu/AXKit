@@ -11,19 +11,19 @@
 
 @implementation NSString (AXJsonAdd)
 
-+ (NSString *(^)(id obj, NSString *def))autoString{
-    return ^NSString *(id obj, NSString *def){
-        NSString *str = self.safeString(obj, nil);
++ (NSString *(^)(id obj))parse{
+    return ^NSString *(id obj){
+        NSString *str = self.safe(obj);
         if (str) {
             return str;
         } else if ([obj isKindOfClass:NSData.class]) {
-            return [[NSString alloc] initWithData:(NSData *)obj encoding:NSUTF8StringEncoding] ?: def;
+            return [[NSString alloc] initWithData:(NSData *)obj encoding:NSUTF8StringEncoding] ?: nil;
         } else if ([obj isKindOfClass:NSArray.class]) {
-            return ((NSArray *)obj).toJson().stringValue ?: def;
+            return ((NSArray *)obj).toJson().stringValue ?: nil;
         } else if ([obj isKindOfClass:NSDictionary.class]) {
-            return ((NSDictionary *)obj).toJson().stringValue ?: def;
+            return ((NSDictionary *)obj).toJson().stringValue ?: nil;
         } else {
-            return def;
+            return nil;
         }
     };
 }
@@ -46,19 +46,19 @@
 
 @implementation NSData (AXJsonAdd)
 
-+ (NSData *(^)(id obj, NSData *def))autoData{
-    return ^NSData *(id obj, NSData *def){
-        NSData *data = self.safeData(obj, nil);
++ (NSData *(^)(id obj))parse{
+    return ^NSData *(id obj){
+        NSData *data = self.safe(obj);
         if (data) {
             return data;
         } else if ([obj isKindOfClass:NSString.class]) {
-            return [(NSString *)obj dataUsingEncoding:NSUTF8StringEncoding] ?: def;
+            return [(NSString *)obj dataUsingEncoding:NSUTF8StringEncoding] ?: nil;
         } else if ([obj isKindOfClass:NSArray.class]) {
-            return ((NSArray *)obj).toJson().dataValue ?: def;
+            return ((NSArray *)obj).toJson().dataValue ?: nil;
         } else if ([obj isKindOfClass:NSDictionary.class]) {
-            return ((NSDictionary *)obj).toJson().dataValue ?: def;
+            return ((NSDictionary *)obj).toJson().dataValue ?: nil;
         } else {
-            return def;
+            return nil;
         }
     };
 }
@@ -80,21 +80,21 @@
 @end
 
 
-@implementation NSArray (AXJsonAdd)
+@implementation NSArray (AXJsonAdd2)
 
-+ (NSArray *(^)(id obj, NSArray *def))autoArray{
-    return ^NSArray *(id obj, NSArray *def){
-        NSArray *arr = self.safeArray(obj, nil);
++ (NSArray *(^)(id obj))parse{
+    return ^NSArray *(id obj){
+        NSArray *arr = self.safe(obj);
         if (arr) {
             return arr;
         } else if ([obj isKindOfClass:NSData.class]) {
-            return ((NSData *)obj).toJson().arrayValue ?: def;
+            return ((NSData *)obj).toJson().arrayValue ?: nil;
         } else if ([obj isKindOfClass:NSString.class]) {
-            return ((NSString *)obj).toJson().arrayValue ?: def;
+            return ((NSString *)obj).toJson().arrayValue ?: nil;
         } else if ([obj isKindOfClass:NSDictionary.class]) {
-            return ((NSDictionary *)obj).toJson().arrayValue ?: def;
+            return ((NSDictionary *)obj).toJson().arrayValue ?: nil;
         } else {
-            return def;
+            return nil;
         }
     };
 }
@@ -118,19 +118,19 @@
 
 @implementation NSDictionary (AXJsonAdd)
 
-+ (NSDictionary *(^)(id obj, NSDictionary *def))autoDictionary{
-    return ^NSDictionary *(id obj, NSDictionary *def){
-        NSDictionary *dict = self.safeDictionary(obj, nil);
++ (NSDictionary *(^)(id obj))parse{
+    return ^NSDictionary *(id obj){
+        NSDictionary *dict = self.safe(obj);
         if (dict) {
             return dict;
         } else if ([obj isKindOfClass:NSData.class]) {
-            return ((NSData *)obj).toJson().dictionaryValue ?: def;
+            return ((NSData *)obj).toJson().dictionaryValue ?: nil;
         } else if ([obj isKindOfClass:NSString.class]) {
-            return ((NSString *)obj).toJson().dictionaryValue ?: def;
+            return ((NSString *)obj).toJson().dictionaryValue ?: nil;
         } else if ([obj isKindOfClass:NSArray.class]) {
-            return ((NSArray *)obj).toJson().dictionaryValue ?: def;
+            return ((NSArray *)obj).toJson().dictionaryValue ?: nil;
         } else {
-            return def;
+            return nil;
         }
     };
 }

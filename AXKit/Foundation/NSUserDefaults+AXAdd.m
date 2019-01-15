@@ -13,7 +13,6 @@
 #import "NSObject+AXAdd.h"
 #import "NSObject+AXJsonAdd.h"
 
-
 @implementation NSError (AXUserDefaults)
 
 + (instancetype)axkit_errorWithReason:(NSString *(^)(void))reason{
@@ -60,56 +59,56 @@
 
 + (nullable NSString *(^)(NSString *key))stringForKey{
     return ^id (NSString *key){
-        return [self.standard objectForKey:key];
+        return NSString.parse([self.standard objectForKey:key]);
     };
 }
 - (nullable NSString *(^)(NSString *key))stringForKey{
     return ^id (NSString *key){
-        return [self objectForKey:key];
+        return NSString.parse([self objectForKey:key]);
     };
 }
 
 + (nullable NSNumber *(^)(NSString *key))numberForKey{
     return ^id (NSString *key){
-        return NSNumber.safeNumber([self.standard objectForKey:key], nil);
+        return NSNumber.safe([self.standard objectForKey:key]);
     };
 }
 - (nullable NSNumber *(^)(NSString *key))numberForKey{
     return ^id (NSString *key){
-        return NSNumber.safeNumber([self objectForKey:key], nil);
+        return NSNumber.safe([self objectForKey:key]);
     };
 }
 
 + (nullable NSArray *(^)(NSString *key))arrayForKey{
     return ^id (NSString *key){
-        return NSArray.autoArray([self.standard objectForKey:key], nil);
+        return NSArray.parse([self.standard objectForKey:key]);
     };
 }
 - (nullable NSArray *(^)(NSString *key))arrayForKey{
     return ^id (NSString *key){
-        return NSArray.autoArray([self objectForKey:key], nil);
+        return NSArray.parse([self objectForKey:key]);
     };
 }
 
 + (nullable NSDictionary *(^)(NSString *key))dictionaryForKey{
     return ^id (NSString *key){
-        return NSDictionary.autoDictionary([self.standard objectForKey:key], nil);
+        return NSDictionary.parse([self.standard objectForKey:key]);
     };
 }
 - (nullable NSDictionary *(^)(NSString *key))dictionaryForKey{
     return ^id (NSString *key){
-        return NSDictionary.autoDictionary([self objectForKey:key], nil);
+        return NSDictionary.parse([self objectForKey:key]);
     };
 }
 
 + (nullable NSData *(^)(NSString *key))dataForKey{
     return ^id (NSString *key){
-        return NSData.autoData([self.standard objectForKey:key], nil);
+        return NSData.parse([self.standard objectForKey:key]);
     };
 }
 - (nullable NSData *(^)(NSString *key))dataForKey{
     return ^id (NSString *key){
-        return NSData.autoData([self objectForKey:key], nil);
+        return NSData.parse([self objectForKey:key]);
     };
 }
 
@@ -120,7 +119,7 @@
 }
 - (nullable UIImage *(^)(NSString *key))imageForKey{
     return ^id (NSString *key){
-        NSData *data = NSData.safeData([self objectForKey:key], nil);
+        NSData *data = NSData.safe([self objectForKey:key]);
         if (data) {
             return [UIImage imageWithData:data];
         } else {

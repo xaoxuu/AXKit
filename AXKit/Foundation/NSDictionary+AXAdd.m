@@ -10,40 +10,6 @@
 #import "NSObject+AXAdd.h"
 #import "NSObject+AXJsonAdd.h"
 
-
-static inline NSDictionary *dictionaryValueForKey(NSDictionary *dict, NSString *key){
-    if (key.length) {
-        return NSDictionary.autoDictionary(dict[key], nil);
-    } else {
-        return nil;
-    }
-}
-
-static inline NSArray *arrayValueForKey(NSDictionary *dict, NSString *key){
-    if (key.length) {
-        return NSArray.autoArray(dict[key], nil);
-    } else {
-        return nil;
-    }
-}
-
-static inline NSString *stringValueForKey(NSDictionary *dict, NSString *key){
-    if (key.length) {
-        return NSString.safeString(dict[key], nil);
-    } else {
-        return nil;
-    }
-}
-
-static inline NSNumber *numberValueForKey(NSDictionary *dict, NSString *key){
-    if (key.length) {
-        return NSNumber.safeNumber(dict[key], nil);
-    } else {
-        return nil;
-    }
-}
-
-
 @implementation NSDictionary (AXAdd)
 
 + (nullable instancetype)dictionaryWithJsonString:(NSString *)string{
@@ -55,21 +21,20 @@ static inline NSNumber *numberValueForKey(NSDictionary *dict, NSString *key){
     }
 }
 
-
 - (NSDictionary *)dictionaryValueForKey:(NSString *)key{
-    return dictionaryValueForKey(self, key);
+    return key.length ? NSDictionary.parse(self[key]) : nil;
 }
 
 - (NSArray *)arrayValueForKey:(NSString *)key{
-    return arrayValueForKey(self, key);
+    return key.length ? NSArray.parse(self[key]) : nil;
 }
 
 - (NSString *)stringValueForKey:(NSString *)key{
-    return stringValueForKey(self, key);
+    return key.length ? NSString.parse(self[key]) : nil;
 }
 
 - (NSNumber *)numberValueForKey:(NSString *)key{
-    return numberValueForKey(self, key);
+    return key.length ? NSNumber.safe(self[key]) : nil;
 }
 
 @end

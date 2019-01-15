@@ -1255,7 +1255,7 @@
 				TargetAttributes = {
 					8579EEF91E6BEDF900C33881 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 34W5TB5KD2;
+						DevelopmentTeam = WU2WFZ2B66;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Manual;
 					};
@@ -1701,7 +1701,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 34W5TB5KD2;
+				DEVELOPMENT_TEAM = WU2WFZ2B66;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1710,7 +1710,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xaoxuu.AXKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b3cc7f2e-794b-4893-9a3d-07eec01e9330";
-				PROVISIONING_PROFILE_SPECIFIER = "com.xaoxuu.*";
+				PROVISIONING_PROFILE_SPECIFIER = developAll;
 				SWIFT_OBJC_BRIDGING_HEADER = "Example/Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;

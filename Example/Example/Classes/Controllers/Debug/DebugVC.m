@@ -22,13 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    NSString *ret = safeString(@"a1",@"a2");
-//    [TestSwift testWithObj:@"a12" obj2:@"A23"];
-    NSString *ret4 = NSString.safeString(nil, @"123");
-    NSString *ret1 = NSString.safeString(@2, @"123");
-    NSString *ret2 = NSString.safeString(@"null", @"123");
-    NSString *ret3 = NSString.safeString(@"<Null>", @"123");
-    
     self.view.backgroundColor = axThemeManager.color.groupTableViewBackground;
     self.title = @"AXKit";
     if (@available(iOS 11.0, *)) {

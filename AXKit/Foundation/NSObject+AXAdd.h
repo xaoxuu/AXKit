@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  NSNull, @"<Null>", @"(null)" ...  -> nil
  NSData/Array/Dictionary 需要使用toJson.stringValue来转换为字符串。
  */
-+ (NSString *(^)(id obj, NSString * __nullable def))safeString;
++ (NSString *(^)(NSString *obj))safe;
 
 @end
 
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  安全的NSNumber，如果传入obj不是NSNumber，则返回def
  */
-+ (NSNumber *(^)(id obj, NSNumber * __nullable def))safeNumber;
++ (NSNumber *(^)(NSNumber *obj))safe;
 
 @end
 
@@ -47,16 +47,16 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  安全的NSData，如果传入obj不是NSData，则返回def
  */
-+ (NSData *(^)(id obj, NSData * __nullable def))safeData;
++ (NSData *(^)(NSData *obj))safe;
 
 @end
 
 @interface NSArray (AXSafeAdd)
 
 /**
- 安全的data，如果传入obj不是data，则返回def
+ 安全的NSArray，如果传入obj是NSArray就返回obj，如果不是NSArray，则判断下一参数，直到没有参数，返回nil。
  */
-+ (NSArray *(^)(id obj, NSArray * __nullable def))safeArray;
++ (NSArray *(^)(NSArray *obj))safe;
 
 @end
 
@@ -65,7 +65,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  安全的data，如果传入obj不是data，则返回def
  */
-+ (NSDictionary *(^)(id obj, NSDictionary * __nullable def))safeDictionary;
++ (NSDictionary *(^)(NSDictionary *obj))safe;
+
 
 @end
 

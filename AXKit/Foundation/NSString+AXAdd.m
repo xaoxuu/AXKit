@@ -137,7 +137,7 @@ static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
 }
 
 - (nullable NSNumber *)numberValue{
-    NSString *lower = NSString.safeString(self, nil).lowercaseString;
+    NSString *lower = NSString.safe(self).lowercaseString;
     if (!lower.length) {
         return nil;
     }

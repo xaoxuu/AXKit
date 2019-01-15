@@ -9,8 +9,7 @@
 #import "AXResult.h"
 #import "NSObject+AXAdd.h"
 #import "NSArray+AXAdd.h"
-#import "NSDictionary+AXAdd.h"
-
+#import "NSString+AXAdd.h"
 
 @implementation AXResult
 
@@ -91,9 +90,9 @@
         NSError *error = nil;
         if (callback) {
             NSData *dt = [self readJsonObject:callback(&error) opt:opt error:&error];
-//            if (dt && !_stringValue) {
-//                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
-//            }
+            if (dt) {
+                [self updateValue:dt];
+            }
             _error = error;
             _result = !error;
         }
@@ -109,11 +108,9 @@
         NSError *error = nil;
         if (callback) {
             id ret = [self readJsonData:callback(&error) opt:opt error:&error];
-//            if (_dataValue) {
-//                _dictionaryValue = NSDictionary.safeDictionary(ret, nil);
-//                _arrayValue = NSArray.safeArray(ret, nil);
-//                _stringValue = [[NSString alloc] initWithData:_dataValue encoding:NSUTF8StringEncoding];
-//            }
+            if (ret) {
+                [self updateValue:ret];
+            }
             _error = error;
             _result = !error;
         }
@@ -127,30 +124,24 @@
  */
 - (void)setupValue:(id)value{
     _value = value;
-//    
-//    _numberValue = NSNumber.autoNumber(value, nil);
-//    _stringValue = NSString.autoString(value, nil);
-//    _arrayValue = NSArray.safeArray(value, nil);
-//    _dictionaryValue = NSDictionary.safeDictionary(value, nil);
-//    _dataValue = [value isKindOfClass:NSData.class]?value:nil;
-//
-    
+    [self updateValue:value];
 }
 
-- (NSNumber *)numberValue{
-    return NSNumber.safeNumber(self.value, nil);
-}
-- (NSString *)stringValue{
-    return NSString.safeString(self.value, nil);
-}
-- (NSArray *)arrayValue{
-    return NSArray.safeArray(self.value, nil);
-}
-- (NSDictionary *)dictionaryValue{
-    return NSDictionary.safeDictionary(self.value, nil);
-}
-- (NSData *)dataValue{
-    return [self.value isKindOfClass:NSData.class]?self.value:nil;
+- (void)updateValue:(id)value{
+    if ([value isKindOfClass:NSString.class]) {
+        _stringValue = value;
+        _numberValue = _stringValue.numberValue;
+    } else if ([value isKindOfClass:NSNumber.class]) {
+        _numberValue = value;
+        _stringValue = _numberValue.stringValue;
+    } else if ([value isKindOfClass:NSData.class]) {
+        _dataValue = value;
+        _stringValue = NSString.safe(value);
+    } else if ([value isKindOfClass:NSArray.class]) {
+        _arrayValue = value;
+    } else if ([value isKindOfClass:NSDictionary.class]) {
+        _dictionaryValue = value;
+    }
 }
 
 - (nullable NSData *)readJsonObject:(id)obj opt:(NSJSONWritingOptions)opt error:(NSError **)error{
@@ -163,8 +154,8 @@
 }
 
 - (nullable id)readJsonData:(NSData *)data opt:(NSJSONReadingOptions)opt error:(NSError **)error{
-    _value = data;
-    NSData *dt = [data isKindOfClass:NSData.class]?data:nil;
+    [self setupValue:data];
+    NSData *dt = NSData.safe(data);
     if (dt) {
         // 验证是否是jsondata
         id ret = [NSJSONSerialization JSONObjectWithData:dt options:opt error:error];
