@@ -208,6 +208,7 @@
 		CD3EEA1520C7B6420074F083 /* NSDateFormatter+AXAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+AXAdd.m"; sourceTree = "<group>"; };
 		CD5745FE1EDAE9B80014E833 /* _AXKitError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AXKitError.h; sourceTree = "<group>"; };
 		CD5745FF1EDAE9B80014E833 /* _AXKitError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AXKitError.m; sourceTree = "<group>"; };
+		CD5BA69D21EF076400A1690F /* AXKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AXKit.podspec; sourceTree = "<group>"; };
 		CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXJsonAdd.h"; sourceTree = "<group>"; };
 		CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXJsonAdd.m"; sourceTree = "<group>"; };
 		CDF5FB2220C684BB00ECA592 /* _AXEventTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AXEventTarget.m; sourceTree = "<group>"; };
@@ -235,6 +236,7 @@
 		8579EEF11E6BEDF900C33881 = {
 			isa = PBXGroup;
 			children = (
+				CD5BA69D21EF076400A1690F /* AXKit.podspec */,
 				8579EF1A1E6BEE4F00C33881 /* AXKit */,
 				8579EEFB1E6BEDF900C33881 /* Products */,
 				12A43EFBEB4D2DD409C010A2 /* Pods */,

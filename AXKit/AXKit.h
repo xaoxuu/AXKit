@@ -6,9 +6,9 @@
 //  Copyright © 2017 Titan Studio. All rights reserved.
 //
 //  ---------------------------------------------------------------
-//  Homepage   https://xaoxuu.com                (主页)
-//  docs       https://xaoxuu.com/docs/axkit     (文档)
-//  GitHub     https://github.com/xaoxuu/AXKit   (喜欢请Star或Fork)
+//  Homepage   https://xaoxuu.com                 (主页)
+//  docs       https://xaoxuu.com/wiki/axkit/     (文档)
+//  GitHub     https://github.com/xaoxuu/AXKit/   (喜欢请Star或Fork)
 //  ---------------------------------------------------------------
 //
 
