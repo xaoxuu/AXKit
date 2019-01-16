@@ -119,15 +119,19 @@ static inline void smartRGBA(CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a){
 - (__kindof UIColor *)dark{
     return darken(self, 0.48);
 }
-- (UIColor *)darken:(CGFloat)ratio{
-    return darken(self, ratio);
+- (__kindof UIColor *(^)(CGFloat ratio))darken{
+    return ^(CGFloat ratio){
+        return darken(self, ratio);
+    };
 }
 - (__kindof UIColor *)light{
     return lighten(self, 0.6);
 }
 
-- (UIColor *)lighten:(CGFloat)ratio{
-    return lighten(self, ratio);
+- (__kindof UIColor *(^)(CGFloat ratio))lighten{
+    return ^(CGFloat ratio){
+        return lighten(self, ratio);
+    };
 }
 
 + (__kindof UIColor *)randomColor{

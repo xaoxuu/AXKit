@@ -94,14 +94,15 @@
     NSData *data1 = d1.toJson().dataValue;
     NSString *str1 = d1.toJson().stringValue;
     NSString *str2 = @"2333";
-    [d1 arrayValueForKey:@""];
-    [d1 numberValueForKey:@"" def: @2];
+    
     AXResult *r1 = a1.toJson();
     AXResult *r2 = d1.toJson();
     AXResult *r3 = data1.toJson();
     AXResult *r4 = str1.toJson();
     AXResult *r5 = str2.toJson();
-
+    
+    
+    
     [str2.toJson() numberValue:^(NSNumber * _Nonnull numberValue) {
         AXLogOBJ(numberValue);
     }];

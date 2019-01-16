@@ -11,30 +11,24 @@
 #import "UIViewController+AXAdd.h"
 #import "UIImage+AXAdd.h"
 
-static inline __kindof UIView *UIViewFromNibNamed(NSString *name){
+inline __kindof UIView *UIViewWithNibNamed(NSString *name){
     return [[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil].firstObject;
 }
 
+
 @implementation UIView (AXAdd)
 
-
-+ (__kindof UIView * _Nonnull (^)(NSString * _Nonnull))initWithNibName{
-    return ^UIView *(NSString *name){
-        return UIViewFromNibNamed(name);
-    };
+- (instancetype)initWithHeight:(CGFloat)height{
+    if (self = [self initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, height)]) {
+        
+    }
+    return self;
 }
 
-+ (__kindof UIView *(^)(CGFloat height))initWithHeight{
-    return ^UIView *(CGFloat height){
-        return [[self alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, height)];
-    };
+- (instancetype)initWithSize:(CGSize)size{
+    return [self initWithFrame:CGRectMake(0, 0, size.width, size.height)];
 }
 
-+ (__kindof UIView *(^)(CGSize size))initWithSize{
-    return ^UIView *(CGSize size){
-        return [[self alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    };
-}
 
 - (void)ax_layer:(void (^)(CALayer *layer))layer{
     if (layer) {

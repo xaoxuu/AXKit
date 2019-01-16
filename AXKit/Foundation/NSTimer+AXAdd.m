@@ -32,28 +32,22 @@
     return self.timeInterval > self.fireDate.timeIntervalSinceNow;
 }
 
-- (void (^)(void))pause{
-    return ^{
-        if ([self isValid]) {
-            [self setFireDate:[NSDate distantFuture]];
-        }
-    };
+- (void)ax_pause{
+    if ([self isValid]) {
+        [self setFireDate:[NSDate distantFuture]];
+    }
 }
-- (void (^)(void))restart{
-    return ^{
-        if ([self isValid]) {
-            [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:self.timeInterval]];
-        }
-    };
+- (void)ax_restart{
+    if ([self isValid]) {
+        [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:self.timeInterval]];
+    }
 }
-- (void (^)(void))turnover{
-    return ^{
-        if (self.isRunning) {
-            self.pause();
-        } else{
-            self.restart();
-        }
-    };
+- (void)ax_turnover{
+    if (self.isRunning) {
+        [self ax_pause];
+    } else{
+        [self ax_restart];
+    }
 }
 
 @end

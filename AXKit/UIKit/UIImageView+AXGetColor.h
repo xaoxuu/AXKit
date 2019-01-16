@@ -60,10 +60,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable UIColor *)ax_getColorWithPoint:(CGPoint)point;
 
-/**
- 获取某个点的颜色值
- */
-- (nullable UIColor *(^)(CGPoint))colorInPoint;
 
 /**
  从指定点获取RGBA值（最原始最暴力的方法，不推荐用）

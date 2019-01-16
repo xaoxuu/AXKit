@@ -157,7 +157,7 @@
             
         } else {
             // Fallback on earlier versions
-            [self.view addSubview:UIView.initWithHeight(1)];
+            [self.view addSubview:[[UIView alloc] initWithHeight:1]];
         }
         AXTableViewType *tableView = [self installTableView];
         // init and add to superview

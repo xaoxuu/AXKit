@@ -35,7 +35,7 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:ThemeKitNotificationFontChanged object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf reloadData];
     }];
-    tableView.tableFooterView = UIView.initWithHeight(44);
+    tableView.tableFooterView = [[UIView alloc] initWithHeight:44];
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView willPushViewController:(UIViewController *)viewController fromRowAtIndexPath:(NSIndexPath *)indexPath{

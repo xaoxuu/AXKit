@@ -19,7 +19,7 @@
 @implementation ThemeDetailTV
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
-    self.header = UIView.initWithNibName(@"ThemePreviewView");
+    self.header = UIViewWithNibNamed(@"ThemePreviewView");
     self.header.model = self.theme;
     tableView.tableHeaderView = self.header;
 }
@@ -72,7 +72,7 @@
 - (void)reloadDataSourceAndRefreshTableView{
     self.header.model = self.theme;
     if (self.theme.color.theme) {
-        self.backgroundColor = [self.theme.color.theme lighten:0.7];
+        self.backgroundColor = self.theme.color.theme.lighten(0.7);
     }
     [super reloadDataSourceAndRefreshTableView];
 }

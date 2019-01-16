@@ -39,7 +39,7 @@
 
     self.navigationController.navigationBar.hidden = YES;
     
-    UIView *header = UIView.initWithHeight(20);
+    UIView *header = [[UIView alloc] initWithHeight:20];
     header.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:header];
     
@@ -52,7 +52,7 @@
 }
 
 - (void)didLoadWebView{
-    UIView *bg = UIView.initWithHeight(1);
+    UIView *bg = [[UIView alloc] initWithHeight:1];
     [self.view insertSubview:bg atIndex:0];
     self.webView.top = kStatusBarHeight;
     self.webView.height = self.view.height - kStatusBarHeight;

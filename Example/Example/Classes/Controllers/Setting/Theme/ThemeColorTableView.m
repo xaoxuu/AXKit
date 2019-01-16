@@ -12,7 +12,7 @@
 @implementation ThemeColorTableView
 
 - (void)ax_tableViewDidLoadFinished:(AXTableViewType *)tableView{
-    tableView.tableFooterView = UIView.initWithHeight(32);
+    tableView.tableFooterView = [[UIView alloc] initWithHeight:32];
 }
 
 - (void)ax_tableView:(AXTableViewType *)tableView didSetModelForCell:(AXTableViewCellType *)cell atIndexPath:(NSIndexPath *)indexPath{

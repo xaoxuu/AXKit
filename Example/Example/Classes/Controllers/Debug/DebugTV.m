@@ -14,7 +14,7 @@
 
 
 - (void)ax_tableViewDidLoadFinished:(UITableView<AXTableView> *)tableView{
-    tableView.tableFooterView = UIView.initWithHeight(44);
+    tableView.tableFooterView = [[UIView alloc] initWithHeight:44];
     tableView.estimatedSectionFooterHeight = 12;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationFontChanged object:nil];
     

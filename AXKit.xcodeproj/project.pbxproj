@@ -78,8 +78,6 @@
 		CD3EE9C420C77DC40074F083 /* UIColor+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE97320C77DC30074F083 /* UIColor+AXAdd.m */; };
 		CD3EE9C520C77DC40074F083 /* UIColor+AXColorPack.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE97420C77DC30074F083 /* UIColor+AXColorPack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3EE9C620C77DC40074F083 /* UIColor+AXColorPack.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE97520C77DC30074F083 /* UIColor+AXColorPack.m */; };
-		CD3EE9C720C77DC40074F083 /* UIColor+MDColorPack.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE97620C77DC30074F083 /* UIColor+MDColorPack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD3EE9C820C77DC40074F083 /* UIColor+MDColorPack.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE97720C77DC30074F083 /* UIColor+MDColorPack.m */; };
 		CD3EE9C920C77DC40074F083 /* UIControl+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE97820C77DC30074F083 /* UIControl+AXAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD3EE9CA20C77DC40074F083 /* UIControl+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EE97920C77DC30074F083 /* UIControl+AXAdd.m */; };
 		CD3EE9CB20C77DC40074F083 /* UIImage+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3EE97A20C77DC30074F083 /* UIImage+AXAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -174,8 +172,6 @@
 		CD3EE97320C77DC30074F083 /* UIColor+AXAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AXAdd.m"; sourceTree = "<group>"; };
 		CD3EE97420C77DC30074F083 /* UIColor+AXColorPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AXColorPack.h"; sourceTree = "<group>"; };
 		CD3EE97520C77DC30074F083 /* UIColor+AXColorPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AXColorPack.m"; sourceTree = "<group>"; };
-		CD3EE97620C77DC30074F083 /* UIColor+MDColorPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MDColorPack.h"; sourceTree = "<group>"; };
-		CD3EE97720C77DC30074F083 /* UIColor+MDColorPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MDColorPack.m"; sourceTree = "<group>"; };
 		CD3EE97820C77DC30074F083 /* UIControl+AXAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+AXAdd.h"; sourceTree = "<group>"; };
 		CD3EE97920C77DC30074F083 /* UIControl+AXAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+AXAdd.m"; sourceTree = "<group>"; };
 		CD3EE97A20C77DC30074F083 /* UIImage+AXAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AXAdd.h"; sourceTree = "<group>"; };
@@ -324,8 +320,6 @@
 				CD3EE97320C77DC30074F083 /* UIColor+AXAdd.m */,
 				CD3EE97420C77DC30074F083 /* UIColor+AXColorPack.h */,
 				CD3EE97520C77DC30074F083 /* UIColor+AXColorPack.m */,
-				CD3EE97620C77DC30074F083 /* UIColor+MDColorPack.h */,
-				CD3EE97720C77DC30074F083 /* UIColor+MDColorPack.m */,
 				CD3EE97820C77DC30074F083 /* UIControl+AXAdd.h */,
 				CD3EE97920C77DC30074F083 /* UIControl+AXAdd.m */,
 				CD3EE97A20C77DC30074F083 /* UIImage+AXAdd.h */,
@@ -411,7 +405,6 @@
 				CD3EE9A920C77DC40074F083 /* NSDictionary+AXAdd.h in Headers */,
 				CD3EE9E320C77DC40074F083 /* UIView+AXFrameAdd.h in Headers */,
 				CDCEA51A20CA7234009AFBBB /* NSObject+AXJsonAdd.h in Headers */,
-				CD3EE9C720C77DC40074F083 /* UIColor+MDColorPack.h in Headers */,
 				CD3EE9B720C77DC40074F083 /* NSUserDefaults+AXAdd.h in Headers */,
 				CD3EE9D720C77DC40074F083 /* UIResponder+AXAdd.h in Headers */,
 				CD3EE9DF20C77DC40074F083 /* UIView+AXAdd.h in Headers */,
@@ -604,7 +597,6 @@
 				CD3EE9DC20C77DC40074F083 /* UITextField+AXAdd.m in Sources */,
 				CD3EE9AC20C77DC40074F083 /* NSError+AXAdd.m in Sources */,
 				CD3EE9CC20C77DC40074F083 /* UIImage+AXAdd.m in Sources */,
-				CD3EE9C820C77DC40074F083 /* UIColor+MDColorPack.m in Sources */,
 				CD5746031EDAE9B80014E833 /* _AXKitError.m in Sources */,
 				CDF5FB2420C684BB00ECA592 /* _AXEventTarget.m in Sources */,
 			);

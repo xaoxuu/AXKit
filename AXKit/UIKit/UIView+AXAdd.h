@@ -13,24 +13,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (AXAdd)
+CG_EXTERN __kindof UIView *UIViewWithNibNamed(NSString *name);
 
-/**
- 从xib加载view
- 
- @return view
- */
-+ (__kindof UIView *(^)(NSString *))initWithNibName;
+@interface UIView (AXAdd)
 
 /**
  创建一个指定高的view
  */
-+ (__kindof UIView *(^)(CGFloat height))initWithHeight;
-
+- (instancetype)initWithHeight:(CGFloat)height;
 /**
  创建一个指定size的view
  */
-+ (__kindof UIView *(^)(CGSize size))initWithSize;
+- (instancetype)initWithSize:(CGSize)size;
 
 /**
  对view的layer进行若干操作

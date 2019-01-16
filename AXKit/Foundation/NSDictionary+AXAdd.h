@@ -22,34 +22,30 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  解析dictionary中的dictionary，返回值可能为空
  
- @param key 键
  @return 值
  */
-- (nullable NSDictionary *)dictionaryValueForKey:(NSString *)key;
+- (nullable NSDictionary *(^)(NSString *key))dictionaryValueForKey;
 
 /**
  解析dictionary中的array，返回值可能为空
  
- @param key 键
  @return 值
  */
-- (nullable NSArray *)arrayValueForKey:(NSString *)key;
+- (nullable NSArray *(^)(NSString *key))arrayValueForKey;
 
 /**
  解析dictionary中的string，返回值可能为空
  
- @param key 键
  @return 值
  */
-- (nullable NSString *)stringValueForKey:(NSString *)key;
+- (nullable NSString *(^)(NSString *key))stringValueForKey;
 
 /**
  解析dictionary中的number，返回值可能为空
  
- @param key 键
  @return 值
  */
-- (nullable NSNumber *)numberValueForKey:(NSString *)key;
+- (nullable NSNumber *(^)(NSString *key))numberValueForKey;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -27,11 +27,11 @@
 /**
  颜色变深，传入参数ratio为比例（0~1）
  */
-- (__kindof UIColor *)darken:(CGFloat)ratio;
+- (__kindof UIColor *(^)(CGFloat ratio))darken;
 /**
  颜色变浅，传入参数ratio为比例（0~1）
  */
-- (__kindof UIColor *)lighten:(CGFloat)ratio;
+- (__kindof UIColor *(^)(CGFloat ratio))lighten;
 
 /**
  随机色
