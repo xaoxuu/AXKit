@@ -21,31 +21,20 @@
     }
 }
 
-- (NSDictionary *(^)(NSString *key))dictionaryForKey{
-    return ^(NSString *key){
-        return key.length ? NSDictionary.parse(self[key]) : nil;
-    };
-    
+- (NSDictionary *)dictionaryForKey:(NSString *)key{
+    return key.length ? NSDictionary.parse(self[key]) : nil;
 }
 
-- (NSArray *(^)(NSString *key))arrayForKey{
-    return ^(NSString *key){
-        return key.length ? NSArray.parse(self[key]) : nil;
-    };
-    
+- (NSArray *)arrayForKey:(NSString *)key{
+    return key.length ? NSArray.parse(self[key]) : nil;
 }
 
-- (NSString *(^)(NSString *key))stringForKey{
-    return ^(NSString *key){
-        return key.length ? NSString.parse(self[key]) : nil;
-    };
-    
+- (NSString *)stringForKey:(NSString *)key{
+    return key.length ? NSString.parse(self[key]) : nil;
 }
 
-- (NSNumber *(^)(NSString *key))numberForKey{
-    return ^(NSString *key){
-        return key.length ? NSNumber.safe(self[key]) : nil;
-    };
+- (NSNumber *)numberForKey:(NSString *)key{
+    return key.length ? NSNumber.safe(self[key]) : nil;
 }
 
 @end
