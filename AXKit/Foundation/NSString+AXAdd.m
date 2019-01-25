@@ -13,6 +13,33 @@
 #import "NSObject+AXAdd.h"
 #import "CoreGraphics+AXAdd.h"
 
+
+
+inline NSString *AXLocalizedStringFromTableInBundle(NSString *key, NSString *table, NSBundle *bundle){
+    // 获取首选语言
+    NSString *language = [NSLocale preferredLanguages].firstObject;
+    // 去掉地区
+    if([language containsString:@"-"]) {
+        NSRange range = [language rangeOfString:@"-" options:NSBackwardsSearch];
+        language = [language substringToIndex:range.location];
+    }
+    bundle = [NSBundle bundleWithPath:[bundle pathForResource:language ofType:@"lproj"]];
+    NSString *localizedString = [bundle localizedStringForKey:key value:nil table:table];
+    if (localizedString.length) {
+        return localizedString;
+    } else {
+        // 首选语言没有，第二优先级为英语
+        localizedString = [[NSBundle bundleWithPath:[bundle pathForResource:@"en" ofType:@"lproj"]] localizedStringForKey:key value:nil table:table];
+        if (localizedString.length) {
+            return localizedString;
+        } else {
+            return key;
+        }
+    }
+}
+
+
+
 static inline CGSize boundingSize(NSString *str, UIFont *font, CGSize size, NSLineBreakMode lineBreakMode){
     CGSize result;
     if (!font) font = [UIFont systemFontOfSize:12];

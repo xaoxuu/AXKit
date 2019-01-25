@@ -7,33 +7,14 @@
 //
 
 #import "_AXKitBundle.h"
-
+#import "NSString+AXAdd.h"
 
 inline NSString *NSLocalizedStringFromAXKit(NSString *key){
     static NSBundle *bundle;
     if (!bundle) {
         bundle = [AXBundle axkitBundle];
-        // 获取首选语言
-        NSString *language = [NSLocale preferredLanguages].firstObject;
-        // 去掉地区
-        if([language containsString:@"-"]) {
-            NSRange range = [language rangeOfString:@"-" options:NSBackwardsSearch];
-            language = [language substringToIndex:range.location];
-        }
-        bundle = [NSBundle bundleWithPath:[bundle pathForResource:language ofType:@"lproj"]];
     }
-    NSString *localizedString = [bundle localizedStringForKey:key value:nil table:nil];
-    if (localizedString.length) {
-        return localizedString;
-    } else {
-        // 首选语言没有，第二优先级为英语
-        localizedString = [[NSBundle bundleWithPath:[bundle pathForResource:@"en" ofType:@"lproj"]] localizedStringForKey:key value:nil table:nil];
-        if (localizedString.length) {
-            return localizedString;
-        } else {
-            return key;
-        }
-    }
+    return AXLocalizedStringFromTableInBundle(key, nil, bundle);
 }
 
 

@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+FOUNDATION_EXTERN NSString *AXLocalizedStringFromTableInBundle(NSString *key, NSString * _Nullable table, NSBundle *bundle);
+
+
 @interface NSString (AXAdd)
 
 /**
