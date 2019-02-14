@@ -40,19 +40,23 @@ static inline UIImage *UIImageFromView(UIView *view){
 }
 
 static inline UIImage *UIImageWithBundleImageName(NSBundle *bundle, NSString *name){
-    NSString *path = [bundle pathForResource:name ofType:@"png"];
-    if (!path) {
-        path = [bundle pathForResource:name ofType:@"jpg"];
-    }
-    if (!path) {
-        path = [bundle pathForResource:name ofType:@"jpeg"];
-    }
-    if (path) {
-        return [UIImage imageWithContentsOfFile:path];
+    UIImage *img = [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:nil];
+    if (img) {
+        return img;
     } else {
-        return nil;
+        NSString *path = [bundle pathForResource:name ofType:@"png"];
+        if (!path) {
+            path = [bundle pathForResource:name ofType:@"jpg"];
+        }
+        if (!path) {
+            path = [bundle pathForResource:name ofType:@"jpeg"];
+        }
+        if (path) {
+            return [UIImage imageWithContentsOfFile:path];
+        } else {
+            return nil;
+        }
     }
-    
 }
 static inline UIImage *UIImageNamed(NSString *name){
     UIImage *image = [UIImage imageNamed:name];
