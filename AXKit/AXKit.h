@@ -54,6 +54,7 @@ FOUNDATION_EXPORT const unsigned char AXKitVersionString[];
 #import "UIColor+AXAdd.h"
 #import "UIColor+AXColorPack.h"
 #import "UIControl+AXAdd.h"
+#import "UIFont+AXAdd.h"
 #import "UIImage+AXAdd.h"
 #import "UIImageView+AXAdd.h"
 #import "UIImageView+AXGetColor.h"

@@ -114,6 +114,8 @@
 		CD3EEA1720C7B6420074F083 /* NSDateFormatter+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3EEA1520C7B6420074F083 /* NSDateFormatter+AXAdd.m */; };
 		CD5746021EDAE9B80014E833 /* _AXKitError.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5745FE1EDAE9B80014E833 /* _AXKitError.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CD5746031EDAE9B80014E833 /* _AXKitError.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745FF1EDAE9B80014E833 /* _AXKitError.m */; };
+		CD9F611E22155B8D00AAFA70 /* UIFont+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9F611C22155B8D00AAFA70 /* UIFont+AXAdd.h */; };
+		CD9F611F22155B8D00AAFA70 /* UIFont+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F611D22155B8D00AAFA70 /* UIFont+AXAdd.m */; };
 		CDA527BF1FECFE5C009C39EC /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
 		CDCEA51A20CA7234009AFBBB /* NSObject+AXJsonAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDCEA51B20CA7234009AFBBB /* NSObject+AXJsonAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */; };
@@ -209,6 +211,8 @@
 		CD5745FE1EDAE9B80014E833 /* _AXKitError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AXKitError.h; sourceTree = "<group>"; };
 		CD5745FF1EDAE9B80014E833 /* _AXKitError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AXKitError.m; sourceTree = "<group>"; };
 		CD5BA69D21EF076400A1690F /* AXKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AXKit.podspec; sourceTree = "<group>"; };
+		CD9F611C22155B8D00AAFA70 /* UIFont+AXAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+AXAdd.h"; sourceTree = "<group>"; };
+		CD9F611D22155B8D00AAFA70 /* UIFont+AXAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AXAdd.m"; sourceTree = "<group>"; };
 		CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXJsonAdd.h"; sourceTree = "<group>"; };
 		CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXJsonAdd.m"; sourceTree = "<group>"; };
 		CDF5FB2220C684BB00ECA592 /* _AXEventTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AXEventTarget.m; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				CD3EE97520C77DC30074F083 /* UIColor+AXColorPack.m */,
 				CD3EE97820C77DC30074F083 /* UIControl+AXAdd.h */,
 				CD3EE97920C77DC30074F083 /* UIControl+AXAdd.m */,
+				CD9F611C22155B8D00AAFA70 /* UIFont+AXAdd.h */,
+				CD9F611D22155B8D00AAFA70 /* UIFont+AXAdd.m */,
 				CD3EE97A20C77DC30074F083 /* UIImage+AXAdd.h */,
 				CD3EE97B20C77DC30074F083 /* UIImage+AXAdd.m */,
 				CD3EE97C20C77DC30074F083 /* UIImageView+AXAdd.h */,
@@ -399,6 +405,7 @@
 				CD3EE9D120C77DC40074F083 /* UINavigationBar+AXAdd.h in Headers */,
 				CD3EE9C120C77DC40074F083 /* UIBarButtonItem+AXAdd.h in Headers */,
 				CD3EE9B120C77DC40074F083 /* NSString+AXAdd.h in Headers */,
+				CD9F611E22155B8D00AAFA70 /* UIFont+AXAdd.h in Headers */,
 				CD3EE9AB20C77DC40074F083 /* NSError+AXAdd.h in Headers */,
 				CD3EE9BF20C77DC40074F083 /* UIAlertController+AXAdd.h in Headers */,
 				CD3EE99B20C77DC40074F083 /* AXResult.h in Headers */,
@@ -580,6 +587,7 @@
 				CD3EE9A820C77DC40074F083 /* NSDate+AXAdd.m in Sources */,
 				CD3EE9D820C77DC40074F083 /* UIResponder+AXAdd.m in Sources */,
 				CD3EE9A020C77DC40074F083 /* CoreGraphics+AXAdd.m in Sources */,
+				CD9F611F22155B8D00AAFA70 /* UIFont+AXAdd.m in Sources */,
 				CD3EE9E220C77DC40074F083 /* UIView+AXAnimation.m in Sources */,
 				CD3EE9A620C77DC40074F083 /* NSBundle+AXAdd.m in Sources */,
 				CD3EE9D620C77DC40074F083 /* UINavigationItem+AXAdd.m in Sources */,
