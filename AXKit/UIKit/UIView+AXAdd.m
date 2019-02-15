@@ -7,7 +7,7 @@
 //
 
 #import "UIView+AXAdd.h"
-#import "CoreGraphics+AXAdd.h"
+#import "NSNumber+AXAdd.h"
 #import "UIViewController+AXAdd.h"
 #import "UIImage+AXAdd.h"
 
@@ -69,7 +69,7 @@ inline __kindof UIView *UIViewWithNibNamed(NSString *name){
 - (void)ax_allSubviewsWithTagsLargerThan:(NSUInteger)largerThan andLessThan:(NSUInteger)lessThan action:(void (^)(__kindof UIView *subview))action {
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
         if (subview && action) {
-            if (AXNumberContainedInRange(@(subview.tag), @(largerThan), @(lessThan))) {
+            if (@(subview.tag).isLimitedWith(@(largerThan), @(lessThan))) {
                 action(subview);
             }
         }

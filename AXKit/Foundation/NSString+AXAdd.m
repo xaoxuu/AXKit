@@ -11,7 +11,7 @@
 #import "NSError+AXAdd.h"
 #import "_AXKitError.h"
 #import "NSObject+AXAdd.h"
-#import "CoreGraphics+AXAdd.h"
+#import "NSNumber+AXAdd.h"
 
 
 
@@ -129,7 +129,7 @@ static inline NSString *randomHex(NSUInteger length){
 }
 
 static inline NSString *randomLowerString(NSUInteger min, NSUInteger max){
-    NSUInteger randomLength = AXRandomIntegerInRange(min, max);
+    NSUInteger randomLength = NSNumber.randomInteger(min, max);
     NSMutableString *str = [NSMutableString string];
     for (NSUInteger i=0; i<randomLength; i++) {
         [str appendFormat:@"%c",97 + arc4random_uniform(26)];
@@ -137,7 +137,7 @@ static inline NSString *randomLowerString(NSUInteger min, NSUInteger max){
     return str;
 }
 static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
-    NSUInteger randomLength = AXRandomIntegerInRange(min, max);
+    NSUInteger randomLength = NSNumber.randomInteger(min, max);
     NSMutableString *str = [NSMutableString string];
     for (NSUInteger i=0; i<randomLength; i++) {
         [str appendFormat:@"%c",65 + arc4random_uniform(26)];
@@ -273,7 +273,7 @@ static inline NSString *randomUpperString(NSUInteger min, NSUInteger max){
 
 + (NSString * _Nonnull (^)(NSUInteger, NSUInteger))randomPassword{
     return ^NSString *(NSUInteger min, NSUInteger max){
-        NSUInteger randomLength = AXRandomIntegerInRange(min, max);
+        NSUInteger randomLength = NSNumber.randomInteger(min, max);
         NSMutableString *str = [NSMutableString string];
         for (NSUInteger i=0; i<randomLength; i++) {
             [str appendFormat:@"%c",32 + arc4random_uniform(95)];

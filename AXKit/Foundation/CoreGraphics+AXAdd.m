@@ -132,31 +132,3 @@ inline CGFloat CGConstGetTabBarHeight(void){
  */
 const CGFloat kAlertViewWidth = 270.0f;
 
-
-#pragma mark 确保值的范围
-
-inline NSNumber *AXMakeNumberInRange(NSNumber *value, NSNumber *minValue, NSNumber *maxValue){
-    value = @(MAX(value.doubleValue, minValue.doubleValue));
-    value = @(MIN(value.doubleValue, maxValue.doubleValue));
-    return value;
-}
-
-
-#pragma mark 判断值是否在范围内
-
-inline BOOL AXNumberContainedInRange(NSNumber *value, NSNumber *minValue, NSNumber *maxValue){
-    return value.doubleValue >= minValue.doubleValue && value.doubleValue <= maxValue.doubleValue;
-}
-
-
-#pragma mark - 随机值
-
-inline CGFloat AXRandomFloatInRange(CGFloat minValue, CGFloat maxValue){
-    return minValue + (CGFloat)arc4random_uniform(1000000*(int)maxValue-1000000*(int)minValue + 1) / 1000000.0f;
-}
-
-inline NSInteger AXRandomIntegerInRange(NSInteger minValue, NSInteger maxValue){
-    return minValue + (NSInteger)arc4random_uniform((int)maxValue-(int)minValue + 1);
-}
-
-

@@ -116,6 +116,8 @@
 		CD5746031EDAE9B80014E833 /* _AXKitError.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5745FF1EDAE9B80014E833 /* _AXKitError.m */; };
 		CD9F611E22155B8D00AAFA70 /* UIFont+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9F611C22155B8D00AAFA70 /* UIFont+AXAdd.h */; };
 		CD9F611F22155B8D00AAFA70 /* UIFont+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F611D22155B8D00AAFA70 /* UIFont+AXAdd.m */; };
+		CD9F6122221578B200AAFA70 /* NSNumber+AXAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9F6120221578B200AAFA70 /* NSNumber+AXAdd.h */; };
+		CD9F6123221578B200AAFA70 /* NSNumber+AXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F6121221578B200AAFA70 /* NSNumber+AXAdd.m */; };
 		CDA527BF1FECFE5C009C39EC /* AXKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD149E2C1F010AD8007051CE /* AXKit.bundle */; };
 		CDCEA51A20CA7234009AFBBB /* NSObject+AXJsonAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDCEA51B20CA7234009AFBBB /* NSObject+AXJsonAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */; };
@@ -213,6 +215,8 @@
 		CD5BA69D21EF076400A1690F /* AXKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AXKit.podspec; sourceTree = "<group>"; };
 		CD9F611C22155B8D00AAFA70 /* UIFont+AXAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+AXAdd.h"; sourceTree = "<group>"; };
 		CD9F611D22155B8D00AAFA70 /* UIFont+AXAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AXAdd.m"; sourceTree = "<group>"; };
+		CD9F6120221578B200AAFA70 /* NSNumber+AXAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+AXAdd.h"; sourceTree = "<group>"; };
+		CD9F6121221578B200AAFA70 /* NSNumber+AXAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+AXAdd.m"; sourceTree = "<group>"; };
 		CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXJsonAdd.h"; sourceTree = "<group>"; };
 		CDCEA51920CA7234009AFBBB /* NSObject+AXJsonAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXJsonAdd.m"; sourceTree = "<group>"; };
 		CDF5FB2220C684BB00ECA592 /* _AXEventTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AXEventTarget.m; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				CD3EE95A20C77DC30074F083 /* NSError+AXAdd.m */,
 				CD3EE95B20C77DC30074F083 /* NSLog+AXAdd.h */,
 				CD3EE95C20C77DC30074F083 /* NSLog+AXAdd.m */,
+				CD9F6120221578B200AAFA70 /* NSNumber+AXAdd.h */,
+				CD9F6121221578B200AAFA70 /* NSNumber+AXAdd.m */,
 				CD3EE95D20C77DC30074F083 /* NSObject+AXAdd.h */,
 				CD3EE95E20C77DC30074F083 /* NSObject+AXAdd.m */,
 				CDCEA51820CA7234009AFBBB /* NSObject+AXJsonAdd.h */,
@@ -421,6 +427,7 @@
 				CD3EE9A320C77DC40074F083 /* NSArray+AXAdd.h in Headers */,
 				CD3EE9A120C77DC40074F083 /* GCD+AXAdd.h in Headers */,
 				CD3EE9BB20C77DC40074F083 /* CALayer+AXAdd.h in Headers */,
+				CD9F6122221578B200AAFA70 /* NSNumber+AXAdd.h in Headers */,
 				CD3EE9D920C77DC40074F083 /* UITabBar+AXAdd.h in Headers */,
 				CD3EE9DB20C77DC40074F083 /* UITextField+AXAdd.h in Headers */,
 				CD3EE9CB20C77DC40074F083 /* UIImage+AXAdd.h in Headers */,
@@ -576,6 +583,7 @@
 				CD149E2B1F01080A007051CE /* _AXKitBundle.m in Sources */,
 				CD3EE9E620C77DC40074F083 /* UIView+AXGestureAdd.m in Sources */,
 				CD3EE9C420C77DC40074F083 /* UIColor+AXAdd.m in Sources */,
+				CD9F6123221578B200AAFA70 /* NSNumber+AXAdd.m in Sources */,
 				CDCEA51B20CA7234009AFBBB /* NSObject+AXJsonAdd.m in Sources */,
 				CD3EE9B020C77DC40074F083 /* NSObject+AXAdd.m in Sources */,
 				CD3EE9BE20C77DC40074F083 /* UIActivityIndicatorView+AXAdd.m in Sources */,
