@@ -44,16 +44,7 @@
     // 显示窗口
     [self.window makeKeyAndVisible];
     
-    NSMutableSet *set = [NSMutableSet set];
     
-    for (int i = 0; i < 100; i++) {
-        CGFloat t = NSNumber.randomFloat(-10, 10, 1);
-        [set addObject:@(t)];
-        
-//        AXLogFloat(t);
-    }
-    
-    AXLogOBJ(set);
     
     return YES;
 }
