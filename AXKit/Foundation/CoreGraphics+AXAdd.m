@@ -75,13 +75,7 @@ inline CGPoint CGConstGetScreenCenter(void){
  @return 状态栏高度
  */
 inline CGFloat CGConstGetStatusBarHeight(void){
-    static CGFloat height;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        UIView *bar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-        height = bar.frame.size.height;
-    });
-    return height;
+    return UIApplication.sharedApplication.statusBarFrame.size.height;
 }
 
 /**

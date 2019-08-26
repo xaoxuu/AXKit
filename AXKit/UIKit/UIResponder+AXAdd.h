@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 根控制器rootVC
  */
-+ (nullable UIViewController *)rootViewController;
+@property (strong, class, nonatomic) UIViewController *rootViewController;
 
 @end
 

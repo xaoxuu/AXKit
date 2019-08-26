@@ -8,11 +8,16 @@
 
 #import "UIResponder+AXAdd.h"
 
+static UIViewController *rootVC = nil;
 
 @implementation UIViewController (AXResponderAdd)
 
 + (UIViewController *)rootViewController{
-    return UIWindow.mainWindow.rootViewController;
+    return rootVC ?: UIWindow.mainWindow.rootViewController;
+}
+
++ (void)setRootViewController:(UIViewController *)rootViewController {
+    rootVC = rootViewController;
 }
 
 @end

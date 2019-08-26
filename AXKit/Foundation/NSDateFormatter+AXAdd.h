@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AXMacros.h"
 
+NS_ASSUME_NONNULL_BEGIN
 /** "yyyy-MM-dd'T'HH:mm:ssZ" */
 FOUNDATION_EXTERN NSString *kDateFormat_ISO;
 /** "yyyy-MM-dd HH:mm:ss" */
@@ -64,3 +65,4 @@ FOUNDATION_EXTERN NSString *kDateFormat_yyyyMMdd;
 - (nullable NSString *(^)(NSDate *date))stringValue;
 
 @end
+NS_ASSUME_NONNULL_END

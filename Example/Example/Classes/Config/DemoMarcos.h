@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-//#define kURL_BLOG @"https://blog.xaoxuu.com"
-
 #define kNSStringFromSelfClass NSStringFromClass([self class])
 
 //@class BaseTableModelSection;

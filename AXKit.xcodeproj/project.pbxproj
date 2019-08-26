@@ -496,7 +496,7 @@
 			};
 			buildConfigurationList = 8579EEF51E6BEDF900C33881 /* Build configuration list for PBXProject "AXKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,

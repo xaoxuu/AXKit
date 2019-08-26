@@ -60,7 +60,7 @@ static UIView *customView;
     
     typeof(self) weak = self;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ax_itemWithImageName:@"icon_help" action:^(UIBarButtonItem * _Nonnull sender) {
-        [weak presentSafariViewControllerWithURL:[NSURL URLWithString:@"https://blog.xaoxuu.com/ios/2017-11-09-gcd-delay"] completion:nil];
+        [weak presentSafariViewControllerWithURL:[NSURL URLWithString:@"https://xaoxuu.com/blog/2017-11-09-gcd-delay/"] completion:nil];
     }];
     
 }

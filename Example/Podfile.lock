@@ -2,7 +2,7 @@ PODS:
   - AXCameraKit (0.1.4)
   - AXDrawerKit (0.0.1)
   - AXFeedbackKit (0.0.1)
-  - AXKit (0.3.9)
+  - AXKit (0.3.10)
   - AXStatusKit (0.0.1)
   - AXTabKit (0.0.3)
   - AXTableKit (0.0.3)
@@ -34,15 +34,30 @@ DEPENDENCIES:
   - SDWebImage
   - YYKit
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AXCameraKit
+    - AXDrawerKit
+    - AXFeedbackKit
+    - AXStatusKit
+    - AXTabKit
+    - AXTableKit
+    - AXThemeKit
+    - FMDB
+    - MJRefresh
+    - SCLAlertView-Objective-C
+    - SDWebImage
+    - YYKit
+
 EXTERNAL SOURCES:
   AXKit:
-    :path: ..
+    :path: ".."
 
 SPEC CHECKSUMS:
   AXCameraKit: b7b9efb0394e94356ceb7e4ac85085903f9603c7
   AXDrawerKit: e4f40d560cb8c3054fb84cc1561f5537494eec0a
   AXFeedbackKit: 3b86e58489edd25208b804533a82cee27a957257
-  AXKit: 73dfcafed7f8d6491e4aa8c1f84b11aaf6a3fd38
+  AXKit: ea0bc94ddf3827f004521da25aecee91b480fc97
   AXStatusKit: 55b8e22a5e6f0ea9c8ca2c8dc99c72270c180447
   AXTabKit: 1746b6882d506cb6e99d65a1554a0df97b86c697
   AXTableKit: db37c30dbe9edee260d274a9f93411b675665371
@@ -55,4 +70,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: da0a65092de68748038b555693155a592de0f034
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.7.5

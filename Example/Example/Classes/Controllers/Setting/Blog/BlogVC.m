@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     
     if (!self.urlStr.length) {
-        self.urlStr = @"https://blog.xaoxuu.com";
+        self.urlStr = @"https://xaoxuu.com";
     } else {
         self.urlStr = [NSString stringWithFormat:@"https://%@", self.urlStr];
     }
