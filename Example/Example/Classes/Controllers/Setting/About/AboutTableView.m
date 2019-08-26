@@ -72,6 +72,12 @@ static id<NSObject> observer;
                             AXCachedLogError(error);
                         }];
                     }];
+                    [alert ax_addDefaultActionWithTitle:@"Icon-64" handler:^(UIAlertAction * _Nonnull sender) {
+                        icon.image = UIImage.named(sender.title);
+                        [[UIApplication sharedApplication] setAlternateIconName:sender.title completionHandler:^(NSError * _Nullable error) {
+                            AXCachedLogError(error);
+                        }];
+                    }];
                     [alert ax_addCancelAction];
                 }];
             }];

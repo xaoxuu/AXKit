@@ -8,9 +8,7 @@
 
 #import "HomeVC.h"
 #import "FullWideButton.h"
-#import "AXStatusKit.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-//#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HomeVC ()
 

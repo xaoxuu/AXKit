@@ -7,7 +7,6 @@
 //
 
 #import "RootViewController.h"
-#import "AXStatusBar.h"
 #import "AXDrawerKit.h"
 #import "SettingVC.h"
 #import "AboutVC.h"
@@ -46,16 +45,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationColorChanged object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTheme) name:ThemeKitNotificationFontChanged object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeDrawer) name:NOTI_DRAWER_CLOSE object:nil];
-    // 彩蛋
-    if (CGConstGetScreenSizeEnum() == kCGScreenSizeEnum_5_8) {
-        
-        UIView *bar = [AXStatusBar getSystemStatusBar];
-        UILabel *lb = [[UILabel alloc] initWithFrame:bar.bounds];
-        lb.height = 24;
-        lb.textAlignment = NSTextAlignmentCenter;
-        lb.text = @"^_^";
-        [bar addSubview:lb];
-    }
+    
     
 }
 

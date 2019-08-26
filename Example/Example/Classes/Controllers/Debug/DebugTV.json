@@ -72,12 +72,6 @@
                     "target":"FontVC",
                 },
                 {
-                    "title":"StatusKit",
-                    "detail":"",
-                    "cmd":"",
-                    "target":"CustomStatusBarVC",
-                },
-                {
                     "title":"UIControl",
                     "detail":"",
                     "cmd":"",

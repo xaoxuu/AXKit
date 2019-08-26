@@ -8,7 +8,6 @@
 
 #import "DocVC.h"
 #import "FullWideButton.h"
-#import "AXStatusKit.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DocVC ()

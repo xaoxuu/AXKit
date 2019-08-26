@@ -22,6 +22,8 @@
 		CD149E251F0105D4007051CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E221F0105D4007051CE /* Assets.xcassets */; };
 		CD149E261F0105D4007051CE /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E231F0105D4007051CE /* Setting.xcassets */; };
 		CD149E271F0105D4007051CE /* tmp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD149E241F0105D4007051CE /* tmp.xcassets */; };
+		CD174D402313AC1F0009A1EB /* Icon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD174D3E2313AC1F0009A1EB /* Icon-64@2x.png */; };
+		CD174D412313AC1F0009A1EB /* Icon-64@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD174D3F2313AC1F0009A1EB /* Icon-64@3x.png */; };
 		CD2096E61FC171710049739A /* ServiceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096E31FC171700049739A /* ServiceLayer.m */; };
 		CD2096E91FC1718E0049739A /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096E81FC1718E0049739A /* BaseService.m */; };
 		CD2096EC1FC171CC0049739A /* CacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2096EB1FC171CC0049739A /* CacheService.m */; };
@@ -92,8 +94,6 @@
 		CD57461B1EDC28860014E833 /* FullWideButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57461A1EDC28860014E833 /* FullWideButton.m */; };
 		CD57461E1EDC526C0014E833 /* GitHubReleaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD57461D1EDC526C0014E833 /* GitHubReleaseModel.m */; };
 		CD5746211EDC6DA10014E833 /* header.gif in Resources */ = {isa = PBXBuildFile; fileRef = CD5746201EDC6DA10014E833 /* header.gif */; };
-		CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */; };
-		CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */; };
 		CD616C9C1FB9A9D700E38244 /* BaseTabBarController.json in Resources */ = {isa = PBXBuildFile; fileRef = CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */; };
 		CD63A3FB1FC174DB00581AF6 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */; };
 		CD63A4061FC1925D00581AF6 /* ThemeStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD63A4041FC1925D00581AF6 /* ThemeStoreVC.m */; };
@@ -135,7 +135,6 @@
 		CDB54D961FCEC6260051EEFA /* LocalNotificationTV.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB54D951FCEC6260051EEFA /* LocalNotificationTV.m */; };
 		CDB54D981FCEC76B0051EEFA /* LocalNotificationTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB54D971FCEC76B0051EEFA /* LocalNotificationTV.json */; };
 		CDB54DA21FCEDAA30051EEFA /* FontTableView.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB54DA11FCEDAA20051EEFA /* FontTableView.json */; };
-		CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */ = {isa = PBXBuildFile; fileRef = CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */; };
 		CDB716451F8E441A0025E8D7 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB716441F8E441A0025E8D7 /* CameraVC.m */; };
 		CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB716511F8E4A190025E8D7 /* Debug.xcassets */; };
 		CDBB39B71EB9D74E00E8ED25 /* DemoConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBB39B41EB9D74E00E8ED25 /* DemoConst.m */; };
@@ -198,6 +197,8 @@
 		CD149E221F0105D4007051CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD149E231F0105D4007051CE /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
 		CD149E241F0105D4007051CE /* tmp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = tmp.xcassets; sourceTree = "<group>"; };
+		CD174D3E2313AC1F0009A1EB /* Icon-64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-64@2x.png"; sourceTree = "<group>"; };
+		CD174D3F2313AC1F0009A1EB /* Icon-64@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-64@3x.png"; sourceTree = "<group>"; };
 		CD2096E21FC171700049739A /* ServiceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceLayer.h; sourceTree = "<group>"; };
 		CD2096E31FC171700049739A /* ServiceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceLayer.m; sourceTree = "<group>"; };
 		CD2096E71FC1718E0049739A /* BaseService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
@@ -315,11 +316,6 @@
 		CD57461C1EDC526C0014E833 /* GitHubReleaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubReleaseModel.h; sourceTree = "<group>"; };
 		CD57461D1EDC526C0014E833 /* GitHubReleaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubReleaseModel.m; sourceTree = "<group>"; };
 		CD5746201EDC6DA10014E833 /* header.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = header.gif; sourceTree = "<group>"; };
-		CD60001F1F8D0A8B00771DE6 /* CustomStatusBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomStatusBarVC.h; sourceTree = "<group>"; };
-		CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBarVC.m; sourceTree = "<group>"; };
-		CD6000221F8D0AAC00771DE6 /* CustomStatusBarTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomStatusBarTV.h; sourceTree = "<group>"; };
-		CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBarTV.m; sourceTree = "<group>"; };
-		CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CustomStatusBarTV.json; sourceTree = "<group>"; };
 		CD616C9B1FB9A9D700E38244 /* BaseTabBarController.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BaseTabBarController.json; sourceTree = "<group>"; };
 		CD63A3F91FC174DB00581AF6 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		CD63A3FA1FC174DB00581AF6 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
@@ -594,6 +590,8 @@
 				CD273601207A5FDD007C8666 /* Icon-61@3x.png */,
 				CD273604207A5FF1007C8666 /* Icon-62@2x.png */,
 				CD273605207A5FF2007C8666 /* Icon-62@3x.png */,
+				CD174D3E2313AC1F0009A1EB /* Icon-64@2x.png */,
+				CD174D3F2313AC1F0009A1EB /* Icon-64@3x.png */,
 			);
 			path = AppIcon;
 			sourceTree = "<group>";
@@ -711,7 +709,6 @@
 				CD5745701EDADE510014E833 /* SettingTableView.m */,
 				CD57456F1EDADE510014E833 /* SettingTableView.json */,
 				CD63A3FC1FC18F9100581AF6 /* ThemeStore */,
-				CD60001E1F8D0A5A00771DE6 /* CustomStatusBar */,
 				CD57452D1EDADE510014E833 /* About */,
 				CD5745341EDADE510014E833 /* Blog */,
 				CD57453E1EDADE510014E833 /* Cache */,
@@ -861,18 +858,6 @@
 				CD5746201EDC6DA10014E833 /* header.gif */,
 			);
 			path = imgs;
-			sourceTree = "<group>";
-		};
-		CD60001E1F8D0A5A00771DE6 /* CustomStatusBar */ = {
-			isa = PBXGroup;
-			children = (
-				CD60001F1F8D0A8B00771DE6 /* CustomStatusBarVC.h */,
-				CD6000201F8D0A8B00771DE6 /* CustomStatusBarVC.m */,
-				CD6000221F8D0AAC00771DE6 /* CustomStatusBarTV.h */,
-				CD6000231F8D0AAC00771DE6 /* CustomStatusBarTV.m */,
-				CD6000251F8D0AC600771DE6 /* CustomStatusBarTV.json */,
-			);
-			path = CustomStatusBar;
 			sourceTree = "<group>";
 		};
 		CD63A3FC1FC18F9100581AF6 /* ThemeStore */ = {
@@ -1285,12 +1270,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB716271F8DB25F0025E8D7 /* CustomStatusBarTV.json in Resources */,
 				8579EF0D1E6BEDF900C33881 /* LaunchScreen.storyboard in Resources */,
 				CD0645A31EB3A3DF007FBF06 /* Localizable.strings in Resources */,
 				CD0645AB1EB3AA78007FBF06 /* footer_rhesis.json in Resources */,
 				CD5745A21EDADE510014E833 /* FontSizeTableViewCell.xib in Resources */,
 				CD63A40F1FC1957A00581AF6 /* ThemeCollectionViewCell.xib in Resources */,
+				CD174D412313AC1F0009A1EB /* Icon-64@3x.png in Resources */,
 				CDE94E9C1EC709D700596B93 /* ghinfo.json in Resources */,
 				CD273602207A5FDE007C8666 /* Icon-61@2x.png in Resources */,
 				CD3A8EFC1FC3FCF700177ADC /* ThemePreviewCollectionViewCell.xib in Resources */,
@@ -1312,6 +1297,7 @@
 				CD63A4231FC1B80700581AF6 /* ThemeManageVC.xib in Resources */,
 				CD5745B81EDADE510014E833 /* ThemeColorTableView.json in Resources */,
 				CD63A41D1FC1AA3400581AF6 /* ThemeDetailVC.xib in Resources */,
+				CD174D402313AC1F0009A1EB /* Icon-64@2x.png in Resources */,
 				CD5745891EDADE510014E833 /* ResizeableImageVC.xib in Resources */,
 				CD5745801EDADE510014E833 /* DebugTV.json in Resources */,
 				CDB716521F8E4A190025E8D7 /* Debug.xcassets in Resources */,
@@ -1349,7 +1335,6 @@
 				"${BUILT_PRODUCTS_DIR}/AXDrawerKit/AXDrawerKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AXFeedbackKit/AXFeedbackKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AXKit/AXKit.framework",
-				"${BUILT_PRODUCTS_DIR}/AXStatusKit/AXStatusKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AXTabKit/AXTabKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AXTableKit/AXTableKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AXThemeKit/AXThemeKit.framework",
@@ -1365,7 +1350,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXDrawerKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXFeedbackKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXStatusKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXTabKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXTableKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXThemeKit.framework",
@@ -1465,7 +1449,6 @@
 				CD79DF991EEF900400408BAD /* ShadowVC.m in Sources */,
 				CD5744A51ED9DD5C0014E833 /* DemoString.m in Sources */,
 				CD2735D2207A2ADD007C8666 /* BaseContext.m in Sources */,
-				CD6000211F8D0A8B00771DE6 /* CustomStatusBarVC.m in Sources */,
 				CD79DF941EEF806900408BAD /* KeyboardVC.m in Sources */,
 				CDF18CE71EB888BE004B4794 /* UITableView+Creator.m in Sources */,
 				CD57458E1EDADE510014E833 /* HomeVC.m in Sources */,
@@ -1514,7 +1497,6 @@
 				CD63A43D1FC30FC400581AF6 /* FontTableViewCell.m in Sources */,
 				CDE94E961EC705C800596B93 /* GitHubRepoModel.m in Sources */,
 				CDF18CCB1EB884F1004B4794 /* BaseNavController.m in Sources */,
-				CD6000241F8D0AAC00771DE6 /* CustomStatusBarTV.m in Sources */,
 				CDE94E931EC705C800596B93 /* GitHubIssueModel.m in Sources */,
 				CD79DFA11EEF912800408BAD /* AlertTV.m in Sources */,
 				CD57459E1EDADE510014E833 /* FeedbackVC.m in Sources */,

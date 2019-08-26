@@ -20,12 +20,6 @@
                     "icon":"",
                     "target":"",
                     "cmd":""
-                },
-                {
-                    "title":"更新日志",
-                    "detail":"",
-                    "icon":"",
-                    "target":"https://xaoxuu.com/docs/axkit/#/zh-cn/appendix/changelog"
                 }
             ]
         },
@@ -37,16 +31,10 @@
             "rowHeight":-1,
             "rows":[
                 {
-                    "title":"主页",
-                    "detail":"proj/axkit",
-                    "icon":"",
-                    "target":"https://xaoxuu.com/proj/axkit"
-                },
-                {
                     "title":"文档",
-                    "detail":"docs/axkit",
+                    "detail":"wiki/axkit",
                     "icon":"",
-                    "target":"https://xaoxuu.com/docs/axkit"
+                    "target":"https://xaoxuu.com/wiki/axkit"
                 },
                 {
                     "title":"源码",

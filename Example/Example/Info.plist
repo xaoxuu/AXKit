@@ -40,6 +40,13 @@
 					<string>Icon-63</string>
 				</array>
 			</dict>
+			<key>Icon-64</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Icon-64</string>
+				</array>
+			</dict>
 		</dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>

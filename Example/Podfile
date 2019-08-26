@@ -11,7 +11,7 @@ pod 'MJRefresh'
 pod 'SCLAlertView-Objective-C'
 
 pod 'AXKit',         :path => '..'
-pod 'AXStatusKit'#,   :path => '../AXStatusKit'
+#pod 'AXStatusKit'#,   :path => '../AXStatusKit'
 pod 'AXFeedbackKit'#, :path => '../AXFeedbackKit'
 pod 'AXTableKit'#,    :path => '../AXTableKit'
 pod 'AXTabKit'#,      :path => '../AXTabKit'
